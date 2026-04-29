@@ -42,6 +42,14 @@ from helpers.data_loader import (
     hdf5_data_load,
 )
 
+# CNN helpers
+from helpers.cnn_helpers import (
+    prepare_cnn_data,
+    format_labels_for_multitask,
+    compute_per_qubit_accuracy,
+    evaluate_cnn_predictions,
+)
+
 __all__ = [
     # HERQULES
     'get_train_val_and_test_set',
@@ -65,4 +73,9 @@ __all__ = [
     # Data loader
     'custom_hdf5_data_loader',
     'hdf5_data_load',
+    # CNN helpers
+    'prepare_cnn_data',
+    'format_labels_for_multitask',
+    'compute_per_qubit_accuracy',
+    'evaluate_cnn_predictions',
 ]

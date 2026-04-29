@@ -28,6 +28,9 @@ from networks.Transfomer import (
     PositionalEncoding,
 )
 
+# CNN
+from networks.CNN import CNN, build_cnn
+
 __all__ = [
     # HERQULES
     'Net',
@@ -45,4 +48,7 @@ __all__ = [
     'QubitClassifierTransformer',
     'PatchEmbedding',
     'PositionalEncoding',
+    # CNN
+    'CNN',
+    'build_cnn',
 ]
