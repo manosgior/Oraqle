@@ -318,7 +318,7 @@ The raw 5-qubit multiplexed trace is **demodulated** per qubit before being fed 
 
 ### 2. Transformer (QubitClassifierTransformer)
 
-**File:** [`networks/Transfomer.py`](networks/Transfomer.py)
+**File:** [`networks/Transformer.py`](networks/Transformer.py)
 
 A Vision-Transformer (ViT) inspired encoder for **direct classification from raw IQ traces**
 across all 32 states simultaneously.
@@ -440,7 +440,8 @@ qubit_state_discrimination/
 │
 ├── networks/
 │   ├── Arxiv240618807FNN.py      ← 2-hidden-layer FNN (arXiv:2406.18807)
-│   ├── Transfomer.py             ← ViT-style Transformer encoder
+│   ├── Transformer.py            ← ViT-style Transformer encoder
+│   ├── CNN.py                    ← Multi-task 1D CNN for qubit classification
 │   ├── SingleQubitFNN.py         ← Large adaptive FNN (KLiNQ teacher)
 │   ├── SingleQubitFNN_StudentModel.py  ← Intermediate student
 │   ├── KLiNQ_TeacherModel.py     ← Compact FNN teacher

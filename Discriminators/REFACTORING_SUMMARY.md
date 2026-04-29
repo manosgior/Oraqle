@@ -22,6 +22,7 @@ Discriminators/
 ├── networks/
 │   ├── Qubic.py                  [EXISTING] Qubic (ArXiv240618807FNN) single-qubit FNN
 │   ├── HERQULES.py               [NEW] HERQULES classifiers (Net, Net_rmf)
+│   ├── CNN.py                    [NEW] PyTorch 1D CNN
 │   ├── Transformer.py            [EXISTING] ViT-inspired transformer encoder
 │   ├── SingleQubitFNN.py          [ENHANCED] Both parametric FNN & baseline
 │   ├── SingleQubitFNN_StudentModel.py  [EXISTING] KLiNQ student
@@ -69,13 +70,16 @@ Discriminators/
 - **Student** (`KLiNQ_StudentModel.py`): Tiny 16→8→1 FPGA-deployable network
 - **Purpose**: Knowledge distillation for compact models
 
-### 4. **Transformer** (`networks/Transfomer.py`)
+### 4. **Transformer** (`networks/Transformer.py`)
 - **Class**: `QubitClassifierTransformer`
 - **Purpose**: ViT-inspired encoder for IQ trace classification
-- **Features**: Patch embedding, multi-head attention, positional encoding
-- **Architecture**: Configurable patches, embedding dim, and stacked encoders
 
-### 5. **SingleQubitFNN** (`networks/SingleQubitFNN.py`) ✨ ENHANCED
+### 5. **CNN** (`networks/CNN.py`) ✨ NEW
+- **Class**: `CNN`
+- **Purpose**: Multi-task 1D CNN for qubit classification
+- **Architecture**: 1D Convolutions + Residual Block + Global Average Pooling
+
+### 6. **SingleQubitFNN** (`networks/SingleQubitFNN.py`) ✨ ENHANCED
 - **Class 1**: `SingleQubitFNN`
   - **Purpose**: Parametric multi-layer FNN with dynamic sizing
   - **Architecture**: Adaptive hidden layers based on input size

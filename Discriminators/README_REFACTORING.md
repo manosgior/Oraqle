@@ -24,7 +24,7 @@ All 5 required networks are now properly organized:
 - **Purpose**: 5-qubit multi-state classification with matched filters
 
 ### 3. **Transformer** (Vision Transformer)
-- **Location**: `networks/Transfomer.py`
+- **Location**: `networks/Transformer.py`
 - **Class**: `QubitClassifierTransformer`
 - **Purpose**: Attention-based IQ trace classification
 

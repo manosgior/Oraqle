@@ -7,239 +7,152 @@ This module implements a residual CNN designed for efficient feature extraction
 from downsampled multi-qubit IQ traces. The architecture uses:
   - Temporal downsampling via strided convolutions
   - Residual blocks for gradient flow
-  - Per-qubit binary classifiers with sigmoid outputs
-  - Multi-task learning (one output per qubit)
+  - Per-qubit binary classifiers
+  - Multi-task learning (one output logit per qubit)
 
-Model input: (batch_size, time_steps, 1, channels)
-Model output: 5 sigmoid-activated scalars [0, 1] (one per qubit)
+Model input: (batch_size, in_channels, time_steps)
+Model output: (batch_size, num_qubits) raw logits (apply sigmoid externally)
 """
 
-import tensorflow as tf
-from tensorflow.keras import layers, models, optimizers
-import numpy as np
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
 
-
-class ResidualBlock2D(layers.Layer):
-    """2-D Residual block with batch normalization and ReLU activation.
+class ResidualBlock1D(nn.Module):
+    """1-D Residual block with batch normalization and ReLU activation.
 
     Architecture::
 
-        Input → Conv2D(kernel) → BatchNorm → ReLU
+        Input → Conv1d(kernel) → BatchNorm → ReLU
               ↓                                    ↓
               +────────────────────────────────────+
                                                    ↓
-                          Conv2D(kernel) → BatchNorm → ReLU
+                          Conv1d(kernel) → BatchNorm → ReLU
                           (Shortcut adapted if needed)
     """
 
-    def __init__(self, filters, kernel_size=(3, 1), **kwargs):
+    def __init__(self, in_channels, out_channels, kernel_size=3):
         """Initialize residual block.
 
         Parameters
         ----------
-        filters : int
-            Number of output filters/channels.
-        kernel_size : tuple
-            Kernel dimensions (height, width). Default: (3, 1) for temporal kernels.
+        in_channels : int
+            Number of input channels.
+        out_channels : int
+            Number of output channels.
+        kernel_size : int
+            Kernel dimension. Default: 3.
         """
-        super(ResidualBlock2D, self).__init__(**kwargs)
-        self.filters = filters
-        self.kernel_size = kernel_size
-
-    def build(self, input_shape):
-        """Build layer based on input shape."""
-        self.conv1 = layers.Conv2D(self.filters, self.kernel_size, padding='same')
-        self.bn1 = layers.BatchNormalization()
-        self.relu1 = layers.Activation('relu')
-
-        self.conv2 = layers.Conv2D(self.filters, self.kernel_size, padding='same')
-        self.bn2 = layers.BatchNormalization()
-
+        super(ResidualBlock1D, self).__init__()
+        
+        # 'same' padding for kernel_size=3 is padding=1
+        padding = kernel_size // 2
+        
+        self.conv1 = nn.Conv1d(in_channels, out_channels, kernel_size, padding=padding)
+        self.bn1 = nn.BatchNorm1d(out_channels)
+        
+        self.conv2 = nn.Conv1d(out_channels, out_channels, kernel_size, padding=padding)
+        self.bn2 = nn.BatchNorm1d(out_channels)
+        
         # Shortcut projection if channel mismatch
-        if input_shape[-1] != self.filters:
-            self.shortcut_conv = layers.Conv2D(self.filters, (1, 1), padding='same')
+        if in_channels != out_channels:
+            self.shortcut = nn.Conv1d(in_channels, out_channels, kernel_size=1)
         else:
-            self.shortcut_conv = None
+            self.shortcut = nn.Identity()
 
-        self.add = layers.Add()
-        self.relu_out = layers.Activation('relu')
-
-    def call(self, x):
+    def forward(self, x):
         """Forward pass through residual block."""
-        shortcut = x
+        identity = self.shortcut(x)
 
-        x = self.conv1(x)
-        x = self.bn1(x)
-        x = self.relu1(x)
+        out = self.conv1(x)
+        out = self.bn1(out)
+        out = F.relu(out)
 
-        x = self.conv2(x)
-        x = self.bn2(x)
+        out = self.conv2(out)
+        out = self.bn2(out)
 
-        if self.shortcut_conv is not None:
-            shortcut = self.shortcut_conv(shortcut)
+        out += identity
+        out = F.relu(out)
 
-        x = self.add([x, shortcut])
-        x = self.relu_out(x)
-
-        return x
-
-    def get_config(self):
-        """Get layer configuration for serialization."""
-        config = super().get_config()
-        config.update({
-            'filters': self.filters,
-            'kernel_size': self.kernel_size,
-        })
-        return config
+        return out
 
 
-class CNN(models.Model):
+class CNN(nn.Module):
     """Multi-task CNN for per-qubit binary classification from IQ traces.
 
-    The model performs multi-task learning with one output per qubit (5 total).
-    Each output is trained with binary cross-entropy loss and uses sigmoid
-    activation to produce probabilities in [0, 1].
+    The model performs multi-task learning with one output per qubit.
+    Each output produces a raw logit, which can be trained using
+    BCEWithLogitsLoss.
 
     Architecture overview:
-      1. Strided Conv2D (m_param filters, stride 2)
-      2. Strided Conv2D (m_param filters, stride 2)
+      1. Strided Conv1D (m_param filters, stride 2)
+      2. Strided Conv1D (m_param filters, stride 2)
       3. Residual block (skip connection)
       4. Global average pooling
-      5. 5 × Dense(1, sigmoid) outputs
+      5. num_qubits × Dense(1) outputs
 
     Parameters
     ----------
-    input_shape : tuple
-        Input tensor shape (time_steps, 1, channels). Example: (50, 1, 10)
+    in_channels : int
+        Number of input channels. Default: 10.
     m_param : int
         Model depth parameter controlling filter width. Default: 8.
     num_qubits : int
         Number of output qubits (one binary classifier per qubit). Default: 5.
-
-    Returns
-    -------
-    Model output: List of 5 tensors, each shape (batch_size, 1) with sigmoid activation.
     """
 
-    def __init__(self, input_shape, m_param=8, num_qubits=5, **kwargs):
-        """Initialize CNN model.
-
-        Parameters
-        ----------
-        input_shape : tuple
-            Shape of input (time_steps, 1, channels).
-        m_param : int
-            Model width/depth parameter. Default: 8.
-        num_qubits : int
-            Number of qubits. Default: 5.
-        """
-        super(CNN, self).__init__(**kwargs)
-        self.input_shape_spec = input_shape
+    def __init__(self, in_channels=10, m_param=8, num_qubits=5):
+        super(CNN, self).__init__()
+        self.in_channels = in_channels
         self.m_param = m_param
         self.num_qubits = num_qubits
 
         # Strided convolutions for temporal downsampling
-        self.conv1 = layers.Conv2D(m_param, (3, 1), strides=(2, 1), padding='same')
-        self.bn1 = layers.BatchNormalization()
-        self.relu1 = layers.Activation('relu')
+        self.conv1 = nn.Conv1d(in_channels, m_param, kernel_size=3, stride=2, padding=1)
+        self.bn1 = nn.BatchNorm1d(m_param)
 
-        self.conv2 = layers.Conv2D(m_param, (3, 1), strides=(2, 1), padding='same')
-        self.bn2 = layers.BatchNormalization()
-        self.relu2 = layers.Activation('relu')
+        self.conv2 = nn.Conv1d(m_param, m_param, kernel_size=3, stride=2, padding=1)
+        self.bn2 = nn.BatchNorm1d(m_param)
 
         # Residual block
-        self.res_block = ResidualBlock2D(m_param)
-
-        # Global pooling
-        self.global_pool = layers.GlobalAveragePooling2D()
+        self.res_block = ResidualBlock1D(m_param, m_param)
 
         # Per-qubit output layers
-        self.output_layers = [
-            layers.Dense(1, activation='sigmoid', name=f'q{i}')
-            for i in range(num_qubits)
-        ]
+        self.output_layers = nn.ModuleList([
+            nn.Linear(m_param, 1) for _ in range(num_qubits)
+        ])
 
-    def call(self, inputs, training=None):
+    def forward(self, x):
         """Forward pass through the network.
 
         Parameters
         ----------
-        inputs : tf.Tensor
-            Input tensor of shape (batch_size, time_steps, 1, channels).
-        training : bool, optional
-            Whether in training mode (affects batch norm). Default: None.
+        x : torch.Tensor
+            Input tensor of shape (batch_size, in_channels, time_steps).
 
         Returns
         -------
-        List[tf.Tensor]
-            List of 5 output tensors, each (batch_size, 1) with sigmoid values.
+        torch.Tensor
+            Tensor of shape (batch_size, num_qubits) containing raw logits.
         """
         # Temporal downsampling
-        x = self.conv1(inputs)
-        x = self.bn1(x, training=training)
-        x = self.relu1(x)
+        x = self.conv1(x)
+        x = self.bn1(x)
+        x = F.relu(x)
 
         x = self.conv2(x)
-        x = self.bn2(x, training=training)
-        x = self.relu2(x)
+        x = self.bn2(x)
+        x = F.relu(x)
 
         # Residual block
         x = self.res_block(x)
 
-        # Global pooling
-        x = self.global_pool(x)
+        # Global average pooling (over the time_steps dimension)
+        x = x.mean(dim=2)
 
         # Per-qubit outputs
         outputs = [layer(x) for layer in self.output_layers]
-
-        return outputs
-
-    def get_config(self):
-        """Get model configuration for serialization."""
-        config = super().get_config()
-        config.update({
-            'input_shape_spec': self.input_shape_spec,
-            'm_param': self.m_param,
-            'num_qubits': self.num_qubits,
-        })
-        return config
-
-    @classmethod
-    def from_config(cls, config):
-        """Create model from configuration."""
-        return cls(**config)
-
-
-def build_cnn(input_shape, m_param=8, num_qubits=5, learning_rate=5e-4):
-    """Build and compile a multi-task CNN for qubit classification.
-
-    Parameters
-    ----------
-    input_shape : tuple
-        Shape of input (time_steps, 1, channels). Example: (50, 1, 10).
-    m_param : int
-        Model width/depth parameter. Default: 8.
-    num_qubits : int
-        Number of qubits. Default: 5.
-    learning_rate : float
-        Initial learning rate for Adam optimizer. Default: 5e-4.
-
-    Returns
-    -------
-    model : CNN
-        Compiled Keras model ready for training.
-
-    Example
-    -------
-    >>> model = build_cnn((50, 1, 10), m_param=8)
-    >>> model.fit(X_train, y_train_dict, epochs=30)
-    """
-    model = CNN(input_shape, m_param=m_param, num_qubits=num_qubits)
-
-    model.compile(
-        optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate),
-        loss={f'q{i}': 'binary_crossentropy' for i in range(num_qubits)},
-        metrics={f'q{i}': 'accuracy' for i in range(num_qubits)},
-    )
-
-    return model
+        
+        # Concatenate outputs along the features dimension
+        # outputs shape will be [batch_size, num_qubits]
+        return torch.cat(outputs, dim=1)

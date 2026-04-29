@@ -8,7 +8,8 @@
 |---------|------|-----------|---------|
 | **Qubic** (ArXiv) | `networks/Qubic.py` | `Arxiv240618807FNN` | Single-qubit binary discrimination |
 | **HERQULES** | `networks/HERQULES.py` | `Net`, `Net_rmf` | 5-qubit MF-based classification |
-| **Transformer (ViT)** | `networks/Transfomer.py` | `QubitClassifierTransformer` | Vision-transformer for IQ traces |
+| **CNN** | `networks/CNN.py` | `CNN` | Multi-task 1D CNN for 5-qubit readout |
+| **Transformer (ViT)** | `networks/Transformer.py` | `QubitClassifierTransformer` | Vision-transformer for IQ traces |
 | **SingleQubitFNN** | `networks/SingleQubitFNN.py` | `SingleQubitFNN`, `SingleQubitFNN_Baseline` | Parametric + fixed baseline FNN |
 | **KLiNQ** (Teacher) | `networks/KLiNQ_TeacherModel.py` | `KLiNQTeacherModel` | Knowledge distillation teacher |
 | **KLiNQ** (Student) | `networks/KLiNQ_StudentModel.py` | `KLiNQStudentModel` | Tiny FPGA-deployable student |
@@ -191,6 +192,7 @@ X_norm, stats = normalize_data(X_train)
 # ============ NETWORKS ============
 from networks.Qubic import Arxiv240618807FNN
 from networks.HERQULES import Net, Net_rmf
+from networks.CNN import CNN
 from networks.Transformer import QubitClassifierTransformer, PatchEmbedding
 from networks.SingleQubitFNN import SingleQubitFNN, SingleQubitFNN_Baseline
 from networks.KLiNQ_TeacherModel import KLiNQTeacherModel
@@ -242,6 +244,7 @@ helpers/
 networks/
   ├─ Qubic.py                       # Qubic single-qubit FNN
   ├─ HERQULES.py              ✨ NEW    # HERQULES Net & Net_rmf
+  ├─ CNN.py                   ✨ NEW    # PyTorch 1D CNN
   ├─ Transformer.py                 # ViT-inspired transformer
   ├─ SingleQubitFNN.py        ✨ ENHANCED  # Parametric + Baseline
   ├─ SingleQubitFNN_StudentModel.py

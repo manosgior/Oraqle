@@ -17,7 +17,7 @@ This document verifies that all refactoring objectives have been met.
 - [x] All 5 required networks are present and properly organized:
   - ✅ **Qubic** (`networks/Qubic.py` → `Arxiv240618807FNN`)
   - ✅ **HERQULES** (`networks/HERQULES.py` → `Net`, `Net_rmf`)
-  - ✅ **Transformer** (`networks/Transfomer.py` → `QubitClassifierTransformer`)
+  - ✅ **Transformer** (`networks/Transformer.py` → `QubitClassifierTransformer`)
   - ✅ **SingleQubitFNN** (`networks/SingleQubitFNN.py` → parametric + baseline)
   - ✅ **KLiNQ** (Teacher: `KLiNQ_TeacherModel.py`, Student: `KLiNQ_StudentModel.py`)
 - [x] Created `networks/__init__.py` for clean imports

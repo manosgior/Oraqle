@@ -22,7 +22,7 @@ from networks.KLiNQ_TeacherModel import KLiNQTeacherModel
 from networks.KLiNQ_StudentModel import KLiNQStudentModel
 
 # Transformer
-from networks.Transfomer import (
+from networks.Transformer import (
     QubitClassifierTransformer,
     PatchEmbedding,
     PositionalEncoding,
@@ -52,3 +52,20 @@ __all__ = [
     'CNN',
     'build_cnn',
 ]
+
+def get_model_info(model):
+    """
+    Print the architecture and parameter counts for a given PyTorch model.
+    """
+    total_params = sum(p.numel() for p in model.parameters())
+    trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    
+    print("=" * 60)
+    print(f"Model: {model.__class__.__name__}")
+    print("=" * 60)
+    print(model)
+    print("-" * 60)
+    print(f"Total parameters:     {total_params:,}")
+    print(f"Trainable parameters: {trainable_params:,}")
+    print("=" * 60)
+

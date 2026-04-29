@@ -2,7 +2,7 @@ from helpers.data_loader import *
 from helpers.data_utils import *
 from sklearn.model_selection import train_test_split
 
-from networks.Transfomer import *
+from networks.Transformer import *
 
 import torch
 
