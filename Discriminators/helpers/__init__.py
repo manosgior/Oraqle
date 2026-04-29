@@ -34,18 +34,17 @@ from helpers.data_utils import (
     flatten_iq_dimensions,
     stratified_split,
     apply_mf_rmf,
+    custom_hdf5_data_loader,
 )
 
 # Data loader
 from helpers.data_loader import (
-    custom_hdf5_data_loader,
     hdf5_data_load,
 )
 
 # CNN helpers
 from helpers.cnn_helpers import (
     prepare_cnn_data,
-    format_labels_for_multitask,
     compute_per_qubit_accuracy,
     evaluate_cnn_predictions,
 )

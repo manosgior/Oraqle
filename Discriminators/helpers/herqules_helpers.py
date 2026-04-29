@@ -10,7 +10,7 @@ Helper functions for the HERQULES matched-filter pipeline, including:
 import numpy as np
 import h5py
 from scipy.signal import butter, sosfilt
-from helpers.data_loader import custom_hdf5_data_loader
+from helpers.data_utils import custom_hdf5_data_loader
 
 
 # ============================================================================

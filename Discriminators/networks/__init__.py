@@ -15,7 +15,7 @@ from networks.Qubic import Arxiv240618807FNN
 
 # SingleQubitFNN variants
 from networks.SingleQubitFNN import SingleQubitFNN, SingleQubitFNN_Baseline
-from networks.SingleQubitFNN_StudentModel import SingleQubitFNN_StudentModel
+from networks.SingleQubitFNN_StudentModel import SingleQubitStudentModel as SingleQubitFNN_StudentModel
 
 # KLiNQ models
 from networks.KLiNQ_TeacherModel import KLiNQTeacherModel
@@ -28,8 +28,7 @@ from networks.Transformer import (
     PositionalEncoding,
 )
 
-# CNN
-from networks.CNN import CNN, build_cnn
+from networks.CNN import CNN
 
 __all__ = [
     # HERQULES
@@ -50,7 +49,6 @@ __all__ = [
     'PositionalEncoding',
     # CNN
     'CNN',
-    'build_cnn',
 ]
 
 def get_model_info(model):
