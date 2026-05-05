@@ -29,19 +29,22 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 COPY . /app
 
 # ---------------------------------------------------------------------------------------
-# RUNNING INSTRUCTIONS:
+# RUNNING INSTRUCTIONS (on graham.dos.cit.tum.de):
 # ---------------------------------------------------------------------------------------
 # 1. Build the image:
-#    docker build -t oraqle-env .
+#    docker build -t oraqle .
 #
-# 2. Run the container with NVIDIA GPU access and volume mounting for the 30GB dataset:
+# 2. Run the container with GPU access and data mounts:
 #    docker run --gpus all -it --rm \
-#      -v /path/to/your/local/30GB_dataset:/app/dataset \
-#      oraqle-env bash
+#      -v /home/manosgior/qubit_readout_klinq/data/five_qubit_data:/data/five_qubit_data:ro \
+#      -v /home/sandra:/data/cnn:ro \
+#      oraqle bash
 #
-# Note: `--gpus all` requires the NVIDIA Container Toolkit to be installed on the host.
-# The `-v` flag maps your local dataset directory to `/app/dataset` inside the container
-# so you don't have to copy the 30GB dataset into the Docker image itself.
+# 3. Inside the container, run the hyper-optimization:
+#    cd /app/Discriminators && python runners/hyper_optimize.py
+#
+# Note: `--gpus all` requires the NVIDIA Container Toolkit on the host.
+#       `:ro` mounts data as read-only to prevent accidental modification.
 # ---------------------------------------------------------------------------------------
 
 # Default command (can be overridden when running)

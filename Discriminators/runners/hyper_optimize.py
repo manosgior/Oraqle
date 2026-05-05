@@ -47,12 +47,13 @@ from helpers.cnn_helpers import prepare_cnn_data
 # User Configuration
 # ============================================================================
 
-RAW_TRAIN_FILE = "/home/manosgior/qubit_readout_klinq/data/five_qubit_data/DRaw_C_Tr_v0-001"
-RAW_TEST_FILE = "/home/manosgior/qubit_readout_klinq/data/five_qubit_data/DRaw_C_Te_v0-002"
+# Paths inside the Docker container (mounted via docker run -v)
+RAW_TRAIN_FILE = "/data/five_qubit_data/DRaw_C_Tr_v0-001"
+RAW_TEST_FILE = "/data/five_qubit_data/DRaw_C_Te_v0-002"
 
 # CNN model uses a differently preprocessed (downsampled) file.
-CNN_TRAIN_FILE = "/home/sandra/Qubit_5Channel_ds20_train.h5"
-CNN_TEST_FILE = "/home/sandra/Qubit_5Channel_ds20_test.h5"
+CNN_TRAIN_FILE = "/data/cnn/Qubit_5Channel_ds20_train.h5"
+CNN_TEST_FILE = "/data/cnn/Qubit_5Channel_ds20_test.h5"
 
 NUM_QUBITS = 5
 TRACE_LENGTHS = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500] 
