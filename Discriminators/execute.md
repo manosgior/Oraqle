@@ -1,8 +1,5 @@
 # From your local machine, rsync the project (excludes .git, venvs, data):
-rsync -avz --exclude='.git' --exclude='.venv' --exclude='__pycache__' \
-  -e 'SSH_AUTH_SOCK= ssh -F /dev/null -i <path/to/privkey> -oProxyCommand="ssh tunnel@login.dos.cit.tum.de -i <path/to/privkey> -W %h:%p"' \
-  /home/manosgior/Documents/GitHub/Oraqle/ \
-  <yourusername>@graham.dos.cit.tum.de:~/Oraqle/
+rsync -avz --exclude='.git' --exclude='.venv' --exclude='__pycache__' -e 'SSH_AUTH_SOCK= ssh -F /dev/null -i ~/.ssh/id_rsa -oProxyCommand="ssh tunnel@login.dos.cit.tum.de -i ~/.ssh/id_rsa -W %h:%p"' /home/manosgior/Documents/GitHub/Oraqle/ manos@graham.dos.cit.tum.de:~/Oraqle/
 
 
 SSH_AUTH_SOCK= ssh -F /dev/null -i <path/to/privkey> \
@@ -12,10 +9,10 @@ SSH_AUTH_SOCK= ssh -F /dev/null -i <path/to/privkey> \
 cd ~/Oraqle
 docker build -t oraqle .
 
-docker run --gpus all -it --rm \
+docker run --device=nvidia.com/gpu=all -it --rm \
   -v /home/manosgior/qubit_readout_klinq/data/five_qubit_data:/data/five_qubit_data:ro \
   -v /home/sandra:/data/cnn:ro \
-  -v ~/oraqle_models:/app/Discriminators/saved_models\
+  -v ~/oraqle_models:/app/Discriminators/saved_models \
   oraqle bash
 
 
