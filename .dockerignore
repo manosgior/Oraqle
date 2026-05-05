@@ -1,0 +1,32 @@
+# Git
+.git
+.gitignore
+
+# Virtual environments
+.venv
+venv
+env
+.env
+__pycache__
+*.pyc
+
+# Docker
+Dockerfile
+.dockerignore
+
+# IDEs and editors
+.vscode
+.idea
+*.swp
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints
+
+# Datasets / Large files
+# Assuming the user will mount these instead of copying them into the image
+*.h5
+*.hdf5
+dataset/
+datasets/
+data/
+Discriminators/data/
