@@ -348,7 +348,7 @@ def plot_sliding_window_results(
     window_ns: float
 ):
     """
-    Plots the sliding window fidelity evolution.
+    Plots the sliding window fidelity evolution, including geometric mean.
     """
     sns.set_theme(style="whitegrid")
     palette = sns.color_palette("deep")
@@ -362,18 +362,24 @@ def plot_sliding_window_results(
             fidelities_sliding[q], 
             color=palette[q], 
             marker=markers[q],
-            markersize=5, 
-            lw=2, 
+            markersize=4, 
+            lw=1.5, 
+            alpha=0.7,
             label=f'Q{q}'
         )
+
+    # Geometric Mean
+    fids_clipped = np.clip(fidelities_sliding, 1e-6, 1.0)
+    geo_mean = gmean(fids_clipped, axis=0)
+    plt.plot(window_centers_us, geo_mean, color='black', marker='X', markersize=6, lw=3, label='Geometric Mean')
 
     plt.axhline(0.5, color='black', lw=1, ls='--', alpha=0.5, label='Chance')
     plt.xlabel('Window Center Time (µs)', fontsize=12)
     plt.ylabel(f'Local Fidelity ({window_ns}ns window)', fontsize=12)
-    plt.title('Sliding Window Readout Fidelity', fontsize=14)
+    plt.title('Sliding Window Readout Fidelity', fontsize=14, fontweight='bold')
     plt.xlim(0, 2)
     plt.ylim(0.45, 1.02)
-    plt.legend(frameon=True)
+    plt.legend(frameon=True, loc='lower right')
     
     out_path = './optimization_reports/sliding_window_fidelity.pdf'
     plt.savefig(out_path, dpi=600, bbox_inches='tight')
@@ -683,11 +689,212 @@ def save_sliding_window_results(
             writer.writerow(row)
     print(f"Saved sliding window numerical results to: {filepath}")
 
-# ─────────────────────────────────────────────
-# 8. MAIN
-# ─────────────────────────────────────────────
+def plot_baseline_sweep_from_csv(results_dir="./Discriminators/training_results", save_path="./Discriminators/training_results/baseline_sweep_from_csv.pdf"):
+    """
+    Reads Baseline_Threshold_len*.csv and Baseline_Threshold_dFdT_analysis*.csv 
+    files and plots the fidelity evolution and information gain rate side-by-side.
+    """
+    import re
+    sns.set_theme(style="whitegrid")
+    palette = sns.color_palette("deep")
+    markers = ['o', 's', '^', 'D', 'P']
+    
+    # 1. Collect and load Fidelity Data
+    if not os.path.exists(results_dir):
+        print(f"Directory {results_dir} does not exist.")
+        return
+
+    fid_files = [f for f in os.listdir(results_dir) if f.startswith("Baseline_Threshold_len") and f.endswith(".csv")]
+    fid_pattern = re.compile(r"Baseline_Threshold_len(\d+)_")
+    
+    fid_data = []
+    for f in fid_files:
+        match = fid_pattern.search(f)
+        if match:
+            length = int(match.group(1))
+            full_path = os.path.join(results_dir, f)
+            try:
+                with open(full_path, 'r') as csvfile:
+                    reader = csv.DictReader(csvfile)
+                    row = next(reader)
+                    accuracies = [float(row[f'qubit_{q}_accuracy']) / 100.0 for q in range(N_QUBITS)]
+                    fid_data.append([length] + accuracies)
+            except Exception as e:
+                print(f"Error reading {f}: {e}")
+    
+    if not fid_data:
+        print("No baseline results found in training_results.")
+        return
+        
+    fid_data = np.array(fid_data)
+    fid_data = fid_data[fid_data[:, 0].argsort()]
+    T_fid_us = fid_data[:, 0] * DT * 1e6 
+    fidelities = fid_data[:, 1:]
+
+    # Calculate geometric mean
+    fids_clipped = np.clip(fidelities, 1e-6, 1.0)
+    geo_mean = gmean(fids_clipped, axis=1)
+
+    # 2. Collect and load dFdT Data
+    dfdt_files = [f for f in os.listdir(results_dir) if f.startswith("Baseline_Threshold_dFdT_analysis") and f.endswith(".csv")]
+    if not dfdt_files:
+        print("No dFdT analysis files found.")
+        return
+    # Use the latest one based on filename timestamp
+    dfdt_files.sort(reverse=True)
+    latest_dfdt = os.path.join(results_dir, dfdt_files[0])
+    
+    dfdt_data = []
+    with open(latest_dfdt, 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            length = int(row['trace_length'])
+            vals = [float(row[f'qubit_{q}_dFdT']) for q in range(N_QUBITS)]
+            dfdt_data.append([length] + vals)
+    
+    dfdt_data = np.array(dfdt_data)
+    dfdt_data = dfdt_data[dfdt_data[:, 0].argsort()]
+    T_dfdt_us = dfdt_data[:, 0] * DT * 1e6
+
+    # 3. Plotting Subplots
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 4))
+    
+    # Subplot (a): Fidelity
+    for q in range(N_QUBITS):
+        ax1.plot(T_fid_us, fidelities[:, q], color=palette[q], marker=markers[q],
+                 markersize=5, lw=2, label=QUBIT_LABELS[q], alpha=0.6)
+    
+    # Plot geometric mean in (a)
+    ax1.plot(T_fid_us, geo_mean, color='black', marker='X', markersize=6, lw=2.5, label='G. Mean')
+
+    #ax1.axhline(0.5, color='black', lw=1, ls='--', alpha=0.5, label='Random Guessing')
+    ax1.set_xlabel('Readout Duration (µs)', fontsize=12)
+    ax1.set_ylabel('Discrimination Accuracy', fontsize=12)
+    ax1.set_title('(a) Readout Length Effect on Accuracy', fontsize=14, fontweight='bold')
+    ax1.set_xlim(0, 2)
+    ax1.set_ylim(0.45, 1.02)
+    ax1.legend(frameon=True, loc='lower right')
+
+    # Subplot (b): dFdT
+    for q in range(N_QUBITS):
+        ax2.plot(T_dfdt_us, dfdt_data[:, q+1], color=palette[q], marker=markers[q],
+                 markersize=5, lw=2, label=QUBIT_LABELS[q])
+        peak_idx = np.nanargmax(dfdt_data[:, q+1])
+        ax2.axvline(T_dfdt_us[peak_idx], color=palette[q], lw=1.0, ls=':', alpha=0.6)
+        
+    ax2.set_xlabel('Readout Duration (µs)', fontsize=12)
+    ax2.set_ylabel('Information Gain Rate', fontsize=12)
+    ax2.set_title('(b) Readout Length Effect on Information Gain Rate', fontsize=14, fontweight='bold')
+    ax2.set_xlim(0, 2)
+    ax2.legend(frameon=True)
+
+    # Global annotation
+    fig.text(0.5, 0.92, "Higher is better ↑", fontsize=14, fontweight='bold', color='navy', ha='center')
+
+    plt.tight_layout(rect=[0, 0, 1, 0.95])
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+    plt.savefig(save_path, dpi=600, bbox_inches='tight')
+    plt.close()
+    print(f"Baseline combined plot saved to {save_path}")
+
+
+def plot_sliding_window_from_csv(results_dir="./Discriminators/training_results", save_path="./Discriminators/training_results/sliding_window_combined.pdf"):
+    """
+    Reads sliding window CSV files and plots two subplots:
+    (a) 250ns window local fidelity
+    (b) 500ns window local fidelity
+    Includes per-qubit curves and the geometric mean.
+    """
+    import re
+    sns.set_theme(style="whitegrid")
+    palette = sns.color_palette("deep")
+    markers = ['o', 's', '^', 'D', 'P']
+    
+    if not os.path.exists(results_dir):
+        print(f"Directory {results_dir} does not exist.")
+        return
+
+    # Helper to load a specific window file
+    def load_window_data(window_size_ns):
+        pattern = f"Baseline_Threshold_sliding_window_{window_size_ns}ns"
+        files = [f for f in os.listdir(results_dir) if f.startswith(pattern) and f.endswith(".csv")]
+        if not files:
+            # Fallback to any sliding window file if the specific one doesn't exist
+            # This allows the "copy the data two times" requirement if 500ns is missing.
+            files = [f for f in os.listdir(results_dir) if f.startswith("Baseline_Threshold_sliding_window") and f.endswith(".csv")]
+            if not files: return None, None, None
+     
+        files.sort(reverse=True)
+        path = os.path.join(results_dir, files[0])
+        
+        data = []
+        with open(path, 'r') as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                center = float(row['window_center_us'])
+                fids = [float(row[f'qubit_{q}_fidelity']) for q in range(N_QUBITS)]
+                data.append([center] + fids)
+        
+        data = np.array(data)
+        data = data[data[:, 0].argsort()]
+        centers = data[:, 0]
+        fidelities = data[:, 1:]
+        
+        fids_clipped = np.clip(fidelities, 1e-6, 1.0)
+        geo_mean = gmean(fids_clipped, axis=1)
+        return centers, fidelities, geo_mean
+
+    # Load data for both windows
+    c250, f250, g250 = load_window_data(250)
+    c500, f500, g500 = load_window_data(500)
+    
+    # If 500ns is missing, it will have automatically fallen back to the latest file (likely 250ns)
+    if c250 is None:
+        print("No sliding window data found at all.")
+        return
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 4))
+
+    # Subplot (a) - 250ns
+    for q in range(N_QUBITS):
+        ax1.plot(c250, f250[:, q], color=palette[q], marker=markers[q], markersize=4, lw=1.5, alpha=0.6, label=f'Q{q}')
+    ax1.plot(c250, g250, color='black', marker='X', markersize=6, lw=2.5, label='G. Mean')
+    #ax1.axhline(0.5, color='black', lw=1, ls='--', alpha=0.5, label='Random Guessing')
+    ax1.set_xlabel('Window Center Time (µs)', fontsize=12)
+    ax1.set_ylabel('Discrimination Accuracy', fontsize=12)
+    ax1.set_title('(a) Readout Window Effect on Accuracy - 250 ns Window', fontsize=14, fontweight='bold')
+    ax1.set_xlim(0, 2)
+    ax1.set_ylim(0.45, 1.02)
+    ax1.legend(frameon=True, loc='lower right', fontsize=10)
+
+    # Subplot (b) - 500ns
+    for q in range(N_QUBITS):
+        ax2.plot(c500, f500[:, q], color=palette[q], marker=markers[q], markersize=4, lw=1.5, alpha=0.6, label=f'Q{q}')
+    ax2.plot(c500, g500, color='black', marker='X', markersize=6, lw=2.5, label='G. Mean')
+    #ax2.axhline(0.5, color='black', lw=1, ls='--', alpha=0.5, label='Random Guessing')
+    ax2.set_xlabel('Window Center Time (µs)', fontsize=12)
+    ax2.set_ylabel('Discrimination Accuracy', fontsize=12)
+    ax2.set_title('(b) Readout Window Effect on Accuracy - 500 ns Window', fontsize=14, fontweight='bold')
+    ax2.set_xlim(0, 2)
+    ax2.set_ylim(0.45, 1.02)
+    ax2.legend(frameon=True, loc='lower right', fontsize=10)
+
+    # Global annotation
+    fig.text(0.5, 0.95, "Higher is better ↑", fontsize=14, fontweight='bold', color='navy', ha='center')
+
+    plt.tight_layout(rect=[0, 0, 1, 0.95])
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+    plt.savefig(save_path, dpi=600, bbox_inches='tight')
+    plt.close()
+    print(f"Sliding window combined plot saved to {save_path}")
+
 
 if __name__ == '__main__':
+
+    #plot_baseline_sweep_from_csv()
+    plot_sliding_window_from_csv()
+    exit()
+
     X, y = load_and_merge(RAW_TRAIN_FILE, RAW_TEST_FILE, max_samples=MAX_SAMPLES)
     # X : (N, T_max, 2)
     # y : (N, n_qubits) or (N,)
