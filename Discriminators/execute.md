@@ -9,12 +9,7 @@ SSH_AUTH_SOCK= ssh -F /dev/null -i <path/to/privkey> \
 cd ~/Oraqle
 docker build -t oraqle .
 
-docker run -d --device=nvidia.com/gpu=all \
-  -v /home/manosgior/qubit_readout_klinq/data/five_qubit_data:/data/five_qubit_data:ro \
-  -v /home/sandra:/data/cnn:ro \
-  -v ~/oraqle_models:/app/saved_models \
-  -v ~/oraqle_reports:/app/optimization_reports \
-  --name my_oraqle_run \
-  oraqle python Discriminators/runners/hyper_optimize.py
+docker run -d --device=nvidia.com/gpu=all   -v /home/manosgior/qubit_readout_klinq/data/five_qubit_data:/data/five_qubit_data:ro   -v ~/oraqle_models:/app/saved_models   -v ~/oraqle_reports:/app/optimization_reports  -v ~/oraqle_cnn_data:/data/cnn oraqle python Discriminators/runners/hyper_optimize.py
 
 
+cd /app/Discriminators && python runners/hyper_optimize.py

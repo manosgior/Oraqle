@@ -1,0 +1,2 @@
+timestamp,model_name,target_qubit,trace_length,optimizer,learning_rate,batch_size,epochs,n_optuna_trials,best_trial_number,best_val_loss,total_parameters,num_layers,layer_descriptions,overall_accuracy,qubit_0_accuracy,qubit_1_accuracy,qubit_2_accuracy,qubit_3_accuracy,qubit_4_accuracy,temperature,alpha,device,model_path
+20260506_111725,KLiNQ_Student,0,50,Adam,0.0021654183332079596,128,25,10,2,0.646578,1985,5,fc1: Linear | bn1: BatchNorm1d | fc2: Linear | bn2: BatchNorm1d | fc3: Linear,62.4800,62.4800,nan,nan,nan,nan,1,0.5,cuda,./saved_models/KLiNQ_student_q0_len50_trial2.pth

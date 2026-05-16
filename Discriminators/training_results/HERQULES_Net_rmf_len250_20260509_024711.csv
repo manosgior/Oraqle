@@ -1,0 +1,2 @@
+timestamp,model_name,target_qubit,trace_length,optimizer,learning_rate,batch_size,epochs,n_optuna_trials,best_trial_number,best_val_loss,total_parameters,num_layers,layer_descriptions,overall_accuracy,qubit_0_accuracy,qubit_1_accuracy,qubit_2_accuracy,qubit_3_accuracy,qubit_4_accuracy,device,model_path
+20260509_024711,HERQULES_Net_rmf,all,250,Adam,0.0007875718237941723,128,25,10,1,1.315743,1002,4,hid1: Linear | hid2: Linear | oupt: Linear | relu: ReLU,55.7675,93.9112,71.6850,92.4438,92.5850,96.7588,cuda,./saved_models/HERQULES_rmf_len250_trial1.pth

@@ -10,21 +10,21 @@ num_states = 32
 chunk_size = 5000
 
 # Control behavior
-downsample_factor = 40          # <-- change this
+downsample_factor = 20          # <-- change this
 process_train = True
 process_test = True
 
 # Dataset-specific configs
 configs = {
     "train": {
-        "file_path": "/share/manos/DRaw_C_Tr_v0-001",
+        "file_path": "/data/five_qubit_data/DRaw_C_Tr_v0-001",
         "dataset_X": "X_train",
         "dataset_y": "y_train",
         "samples_per_state": 15000,
         "dtype": "float16"
     },
     "test": {
-        "file_path": "/share/manos/DRaw_C_Te_v0-002",
+        "file_path": "/data/five_qubit_data/DRaw_C_Te_v0-002",
         "dataset_X": "X_test",
         "dataset_y": "y_test",
         "samples_per_state": 35000,
