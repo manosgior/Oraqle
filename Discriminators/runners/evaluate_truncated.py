@@ -254,13 +254,20 @@ def evaluate_all():
                     
                 # 4. Transformer
                 elif model_name == "Transformer":
+                    # Parse hyperparameters safely handling NaNs from merged CSVs
+                    patch_sz = int(row['patch_size']) if pd.notna(row.get('patch_size')) else 10
+                    embed_dim = int(row['embedding_dim']) if pd.notna(row.get('embedding_dim')) else 128
+                    n_heads = int(row['num_heads']) if pd.notna(row.get('num_heads')) else 8
+                    n_layers = int(row['num_layers']) if pd.notna(row.get('num_layers')) else 4
+                    drop = float(row['dropout']) if pd.notna(row.get('dropout')) else 0.1
+
                     model = QubitClassifierTransformer(
                         num_classes=32, 
-                        patch_size=row.get('patch_size', 10),
-                        embedding_dim=row.get('embedding_dim', 128),
-                        num_heads=row.get('num_heads', 8),
-                        num_layers=row.get('num_layers', 4),
-                        dropout=row.get('dropout', 0.1)
+                        patch_size=patch_sz,
+                        embedding_dim=embed_dim,
+                        num_heads=n_heads,
+                        num_layers=n_layers,
+                        dropout=drop
                     ).to(DEVICE)
                     model.load_state_dict(torch.load(model_path, map_location=DEVICE))
                     accs = evaluate_test_accuracy(model, X_test_trunc, y_test_ref, '32class')
@@ -269,7 +276,7 @@ def evaluate_all():
                 elif model_name == "CNN":
                     try:
                         X_cnn_test, y_cnn_test = prepare_cnn_data(
-                            CNN_TEST_FILE, downsample_factor=20, original_length=500,
+                            CNN_TEST_FILE, downsample_factor=20, original_length=1000,
                             num_qubits=NUM_QUBITS, time_slice=(0, length), is_test=True)
                         
                         # Pad CNN data to length 25 (500/20) with zeros to match expected shape
