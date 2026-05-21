@@ -1,0 +1,2 @@
+timestamp,model_name,trace_length,target_steps,downsample_factor,m_param,optimizer,lr_schedule,learning_rate,batch_size,epochs,n_optuna_trials,best_trial_number,best_val_loss,total_parameters,overall_accuracy,qubit_0_accuracy,qubit_1_accuracy,qubit_2_accuracy,qubit_3_accuracy,qubit_4_accuracy,device,model_path
+20260520_010251,CNN,150,50,3,16,Adam,"step_decay(gamma=0.95, step=3)",0.004850130197723713,128,30,50,38,0.361907,3061,40.3984,86.0329,67.5477,90.6419,85.6750,89.4878,cuda,./saved_models/CNN_m16_len150_trial38.pth
