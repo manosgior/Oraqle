@@ -1,0 +1,8 @@
+# Minimal environment for `make verify`, `make verify-figures` and `make figures` (no dataset, no GPU).
+# Tested with Python 3.13 and the versions below; any recent versions should work.
+numpy>=1.26
+scipy>=1.11
+pandas>=2.0
+matplotlib>=3.9
+seaborn>=0.13
+pillow>=10.0

@@ -7,9 +7,14 @@ __pycache__
 *.pyc
 
 # Oraqle artifact: never commit the raw dataset or regenerable bulk data
-dataset/
+dataset/*
+!dataset/README.md
 work/
 out/
 *.h5
 *.hdf5
 DRaw_C_*
+
+# runtime state written to the working directory by HERQULES runners
+/*.pkl
+/logs/
