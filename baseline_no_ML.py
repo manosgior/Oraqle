@@ -769,8 +769,8 @@ def plot_baseline_sweep_from_csv(results_dir="./Discriminators/training_results"
 
     #ax1.axhline(0.5, color='black', lw=1, ls='--', alpha=0.5, label='Random Guessing')
     ax1.set_xlabel('Readout Duration (µs)', fontsize=12)
-    ax1.set_ylabel('Discrimination Accuracy', fontsize=12)
-    ax1.set_title('(a) Readout Length Effect on Accuracy', fontsize=14, fontweight='bold')
+    ax1.set_ylabel('Assignment Fidelity', fontsize=12)
+    ax1.set_title('(a) Readout Length Effect on Fidelity', fontsize=14, fontweight='bold')
     ax1.set_xlim(0, 2)
     ax1.set_ylim(0.45, 1.02)
     ax1.legend(frameon=True, loc='lower right')
@@ -861,8 +861,8 @@ def plot_sliding_window_from_csv(results_dir="./Discriminators/training_results"
     ax1.plot(c250, g250, color='black', marker='X', markersize=6, lw=2.5, label='G. Mean')
     #ax1.axhline(0.5, color='black', lw=1, ls='--', alpha=0.5, label='Random Guessing')
     ax1.set_xlabel('Window Center Time (µs)', fontsize=12)
-    ax1.set_ylabel('Discrimination Accuracy', fontsize=12)
-    ax1.set_title('(a) Readout Window Effect on Accuracy - 250 ns Window', fontsize=14, fontweight='bold')
+    ax1.set_ylabel('Assignment Fidelity', fontsize=12)
+    ax1.set_title('(a) Readout Window Effect on Fidelity - 250 ns Window', fontsize=14, fontweight='bold')
     ax1.set_xlim(0, 2)
     ax1.set_ylim(0.45, 1.02)
     ax1.legend(frameon=True, loc='lower right', fontsize=10)
@@ -873,8 +873,8 @@ def plot_sliding_window_from_csv(results_dir="./Discriminators/training_results"
     ax2.plot(c500, g500, color='black', marker='X', markersize=6, lw=2.5, label='G. Mean')
     #ax2.axhline(0.5, color='black', lw=1, ls='--', alpha=0.5, label='Random Guessing')
     ax2.set_xlabel('Window Center Time (µs)', fontsize=12)
-    ax2.set_ylabel('Discrimination Accuracy', fontsize=12)
-    ax2.set_title('(b) Readout Window Effect on Accuracy - 500 ns Window', fontsize=14, fontweight='bold')
+    ax2.set_ylabel('Assignment Fidelity', fontsize=12)
+    ax2.set_title('(b) Readout Window Effect on Fidelity - 500 ns Window', fontsize=14, fontweight='bold')
     ax2.set_xlim(0, 2)
     ax2.set_ylim(0.45, 1.02)
     ax2.legend(frameon=True, loc='lower right', fontsize=10)
@@ -891,7 +891,7 @@ def plot_sliding_window_from_csv(results_dir="./Discriminators/training_results"
 
 if __name__ == '__main__':
 
-    #plot_baseline_sweep_from_csv()
+    plot_baseline_sweep_from_csv()
     plot_sliding_window_from_csv()
     exit()
 
