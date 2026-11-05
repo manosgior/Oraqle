@@ -1,0 +1,424 @@
+{
+ "note": "em_e2seg_oldmethod_l200scan.py (tag e2seg): find the preprocessing of HybridCNN_len200.pth.\n\nem_e2seg_oldmethod.py reproduces the 1 us (L=500) CSV to within 0.05% but HybridCNN_len200.pth gives 3-5x the\nCSV error counts with DS=40. Scan the sparse-FIR downsample factor and report HybridCNN error counts vs the CSV;\nfor the DS that matches, recompute the old masks and apply them to the soft400 MCMit-CNN model.\n",
+ "scan": {
+  "40": {
+   "T_ds": 5,
+   "n_error": [
+    427193,
+    430121,
+    462384,
+    293650,
+    281670
+   ],
+   "csv": [
+    120291,
+    346773,
+    93465,
+    125567,
+    71123
+   ],
+   "abs_dev": 1137799.0
+  },
+  "20": {
+   "T_ds": 10,
+   "n_error": [
+    120290,
+    346765,
+    93475,
+    125558,
+    71115
+   ],
+   "csv": [
+    120291,
+    346773,
+    93465,
+    125567,
+    71123
+   ],
+   "abs_dev": 36.0
+  },
+  "10": {
+   "T_ds": 20,
+   "n_error": [
+    232887,
+    367538,
+    413626,
+    258031,
+    155976
+   ],
+   "csv": [
+    120291,
+    346773,
+    93465,
+    125567,
+    71123
+   ],
+   "abs_dev": 670839.0
+  },
+  "8": {
+   "T_ds": 25,
+   "n_error": [
+    296167,
+    371778,
+    398731,
+    288389,
+    156650
+   ],
+   "csv": [
+    120291,
+    346773,
+    93465,
+    125567,
+    71123
+   ],
+   "abs_dev": 754496.0
+  },
+  "5": {
+   "T_ds": 40,
+   "n_error": [
+    172243,
+    368147,
+    456185,
+    242212,
+    118642
+   ],
+   "csv": [
+    120291,
+    346773,
+    93465,
+    125567,
+    71123
+   ],
+   "abs_dev": 600210.0
+  },
+  "4": {
+   "T_ds": 50,
+   "n_error": [
+    248748,
+    374012,
+    458093,
+    250675,
+    109303
+   ],
+   "csv": [
+    120291,
+    346773,
+    93465,
+    125567,
+    71123
+   ],
+   "abs_dev": 683612.0
+  },
+  "2": {
+   "T_ds": 100,
+   "n_error": [
+    335226,
+    390378,
+    541337,
+    325084,
+    133064
+   ],
+   "csv": [
+    120291,
+    346773,
+    93465,
+    125567,
+    71123
+   ],
+   "abs_dev": 967870.0
+  },
+  "1": {
+   "T_ds": 200,
+   "n_error": [
+    315722,
+    394830,
+    546811,
+    314296,
+    127206
+   ],
+   "csv": [
+    120291,
+    346773,
+    93465,
+    125567,
+    71123
+   ],
+   "abs_dev": 941646.0
+  }
+ },
+ "best_ds": 20,
+ "hybridcnn_reproduced_best": [
+  {
+   "qubit": 0,
+   "n_test": 1120000,
+   "n_error": 120290,
+   "err_rate": 0.10740178571428571,
+   "excl_n_t1_pattern": 13,
+   "excl_n_amp_outlier": 17,
+   "excl_n_near_boundary": 120260,
+   "excl_n_other": 0,
+   "any_n_t1_pattern": 13,
+   "any_n_amp_outlier": 17,
+   "any_n_near_boundary": 120290,
+   "prep0": {
+    "n_error": 56847,
+    "t1": 13,
+    "amp": 0,
+    "amp_z_pos": 0,
+    "amp_z_neg": 0
+   },
+   "prep1": {
+    "n_error": 63443,
+    "t1": 0,
+    "amp": 17,
+    "amp_z_pos": 17,
+    "amp_z_neg": 0
+   }
+  },
+  {
+   "qubit": 1,
+   "n_test": 1120000,
+   "n_error": 346765,
+   "err_rate": 0.3096116071428571,
+   "excl_n_t1_pattern": 41128,
+   "excl_n_amp_outlier": 975,
+   "excl_n_near_boundary": 304662,
+   "excl_n_other": 0,
+   "any_n_t1_pattern": 41128,
+   "any_n_amp_outlier": 1030,
+   "any_n_near_boundary": 346765,
+   "prep0": {
+    "n_error": 158426,
+    "t1": 34660,
+    "amp": 253,
+    "amp_z_pos": 252,
+    "amp_z_neg": 1
+   },
+   "prep1": {
+    "n_error": 188339,
+    "t1": 6468,
+    "amp": 777,
+    "amp_z_pos": 777,
+    "amp_z_neg": 0
+   }
+  },
+  {
+   "qubit": 2,
+   "n_test": 1120000,
+   "n_error": 93475,
+   "err_rate": 0.08345982142857143,
+   "excl_n_t1_pattern": 0,
+   "excl_n_amp_outlier": 46,
+   "excl_n_near_boundary": 93429,
+   "excl_n_other": 0,
+   "any_n_t1_pattern": 0,
+   "any_n_amp_outlier": 46,
+   "any_n_near_boundary": 93475,
+   "prep0": {
+    "n_error": 25669,
+    "t1": 0,
+    "amp": 46,
+    "amp_z_pos": 46,
+    "amp_z_neg": 0
+   },
+   "prep1": {
+    "n_error": 67806,
+    "t1": 0,
+    "amp": 0,
+    "amp_z_pos": 0,
+    "amp_z_neg": 0
+   }
+  },
+  {
+   "qubit": 3,
+   "n_test": 1120000,
+   "n_error": 125558,
+   "err_rate": 0.11210535714285715,
+   "excl_n_t1_pattern": 0,
+   "excl_n_amp_outlier": 106,
+   "excl_n_near_boundary": 125452,
+   "excl_n_other": 0,
+   "any_n_t1_pattern": 0,
+   "any_n_amp_outlier": 106,
+   "any_n_near_boundary": 125558,
+   "prep0": {
+    "n_error": 56840,
+    "t1": 0,
+    "amp": 62,
+    "amp_z_pos": 45,
+    "amp_z_neg": 17
+   },
+   "prep1": {
+    "n_error": 68718,
+    "t1": 0,
+    "amp": 44,
+    "amp_z_pos": 1,
+    "amp_z_neg": 43
+   }
+  },
+  {
+   "qubit": 4,
+   "n_test": 1120000,
+   "n_error": 71115,
+   "err_rate": 0.06349553571428572,
+   "excl_n_t1_pattern": 1560,
+   "excl_n_amp_outlier": 14,
+   "excl_n_near_boundary": 69541,
+   "excl_n_other": 0,
+   "any_n_t1_pattern": 1560,
+   "any_n_amp_outlier": 14,
+   "any_n_near_boundary": 71115,
+   "prep0": {
+    "n_error": 27986,
+    "t1": 39,
+    "amp": 9,
+    "amp_z_pos": 9,
+    "amp_z_neg": 0
+   },
+   "prep1": {
+    "n_error": 43129,
+    "t1": 1521,
+    "amp": 5,
+    "amp_z_pos": 3,
+    "amp_z_neg": 2
+   }
+  }
+ ],
+ "soft400_MCMitCNN_oldmasks_best_ds": [
+  {
+   "qubit": 0,
+   "n_test": 1120000,
+   "n_error": 104357,
+   "err_rate": 0.09317589285714285,
+   "excl_n_t1_pattern": 13,
+   "excl_n_amp_outlier": 17,
+   "excl_n_near_boundary": 104327,
+   "excl_n_other": 0,
+   "any_n_t1_pattern": 13,
+   "any_n_amp_outlier": 17,
+   "any_n_near_boundary": 104357,
+   "prep0": {
+    "n_error": 42740,
+    "t1": 13,
+    "amp": 0,
+    "amp_z_pos": 0,
+    "amp_z_neg": 0
+   },
+   "prep1": {
+    "n_error": 61617,
+    "t1": 0,
+    "amp": 17,
+    "amp_z_pos": 17,
+    "amp_z_neg": 0
+   }
+  },
+  {
+   "qubit": 1,
+   "n_test": 1120000,
+   "n_error": 339128,
+   "err_rate": 0.30279285714285714,
+   "excl_n_t1_pattern": 40178,
+   "excl_n_amp_outlier": 977,
+   "excl_n_near_boundary": 297973,
+   "excl_n_other": 0,
+   "any_n_t1_pattern": 40178,
+   "any_n_amp_outlier": 1033,
+   "any_n_near_boundary": 339128,
+   "prep0": {
+    "n_error": 136545,
+    "t1": 30448,
+    "amp": 243,
+    "amp_z_pos": 242,
+    "amp_z_neg": 1
+   },
+   "prep1": {
+    "n_error": 202583,
+    "t1": 9730,
+    "amp": 790,
+    "amp_z_pos": 790,
+    "amp_z_neg": 0
+   }
+  },
+  {
+   "qubit": 2,
+   "n_test": 1120000,
+   "n_error": 82445,
+   "err_rate": 0.07361160714285714,
+   "excl_n_t1_pattern": 0,
+   "excl_n_amp_outlier": 46,
+   "excl_n_near_boundary": 82399,
+   "excl_n_other": 0,
+   "any_n_t1_pattern": 0,
+   "any_n_amp_outlier": 46,
+   "any_n_near_boundary": 82445,
+   "prep0": {
+    "n_error": 18686,
+    "t1": 0,
+    "amp": 46,
+    "amp_z_pos": 46,
+    "amp_z_neg": 0
+   },
+   "prep1": {
+    "n_error": 63759,
+    "t1": 0,
+    "amp": 0,
+    "amp_z_pos": 0,
+    "amp_z_neg": 0
+   }
+  },
+  {
+   "qubit": 3,
+   "n_test": 1120000,
+   "n_error": 110662,
+   "err_rate": 0.09880535714285714,
+   "excl_n_t1_pattern": 0,
+   "excl_n_amp_outlier": 91,
+   "excl_n_near_boundary": 110571,
+   "excl_n_other": 0,
+   "any_n_t1_pattern": 0,
+   "any_n_amp_outlier": 91,
+   "any_n_near_boundary": 110662,
+   "prep0": {
+    "n_error": 50064,
+    "t1": 0,
+    "amp": 42,
+    "amp_z_pos": 42,
+    "amp_z_neg": 0
+   },
+   "prep1": {
+    "n_error": 60598,
+    "t1": 0,
+    "amp": 49,
+    "amp_z_pos": 3,
+    "amp_z_neg": 46
+   }
+  },
+  {
+   "qubit": 4,
+   "n_test": 1120000,
+   "n_error": 54488,
+   "err_rate": 0.04865,
+   "excl_n_t1_pattern": 1515,
+   "excl_n_amp_outlier": 10,
+   "excl_n_near_boundary": 52963,
+   "excl_n_other": 0,
+   "any_n_t1_pattern": 1515,
+   "any_n_amp_outlier": 10,
+   "any_n_near_boundary": 54488,
+   "prep0": {
+    "n_error": 18778,
+    "t1": 43,
+    "amp": 5,
+    "amp_z_pos": 5,
+    "amp_z_neg": 0
+   },
+   "prep1": {
+    "n_error": 35710,
+    "t1": 1472,
+    "amp": 5,
+    "amp_z_pos": 3,
+    "amp_z_neg": 2
+   }
+  }
+ ]
+}

@@ -1,0 +1,7473 @@
+{
+ "tag": "e5vrepro",
+ "date": "2026-11-05",
+ "what": "Independent reproduction from raw TEST HDF5 (full 1.12M shots, all 32 states): own demodulation (IF from stationarity of the prepared-|0> mean phase, DC removed), 20-ns boxcar bins, own per-configuration core-line frames (TRAIN->TEST), own mirror-corrected leakage flag, own known-level change-point step test with an exact level-conditioned Gaussian null, own late-core overlap reference (2-sigma disc, late window 1-2 us). Model predictions are the only shared inputs (canonical preds_MCMitCNN_pb.npy at 1 us, cnn_soft_400ns.npz at 400 ns; both verified to align with y_test).",
+ "ifs_MHz": {
+  "Q1": 64.73008,
+  "Q2": 25.38762,
+  "Q3": -24.77962,
+  "Q4": -70.26395,
+  "Q5": -127.27398
+ },
+ "alignment_checks": {
+  "tb_matches_y": true,
+  "soft400_label_matches_y": true,
+  "soft1000_label_matches_y": true
+ },
+ "attribution": {
+  "1us": {
+   "gauss": {
+    "Q1": {
+     "n_err": 33364,
+     "err_rate": 2.979,
+     "err_rate_ci": [
+      2.948,
+      3.011
+     ],
+     "leakage": {
+      "value": 0.03,
+      "ci95": [
+       -0.03,
+       0.1
+      ],
+      "count": 11.0
+     },
+     "transition_T": {
+      "value": 6.46,
+      "ci95": [
+       6.11,
+       6.8
+      ],
+      "count": 2153.7
+     },
+     "overlap_O_upper": {
+      "value": 19.0,
+      "ci95": [
+       18.47,
+       19.53
+      ],
+      "count": 6340.1
+     },
+     "unresolved_S_lower": {
+      "value": 74.51,
+      "ci95": [
+       73.87,
+       75.15
+      ],
+      "count": 24859.2
+     },
+     "state_change_TS_lower": {
+      "value": 80.96,
+      "ci95": [
+       80.43,
+       81.5
+      ],
+      "count": 27012.9
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.412,
+       "ci95": [
+        2.396,
+        2.428
+       ],
+       "count": 27012.9
+      },
+      "overlap": {
+       "value": 0.566,
+       "ci95": [
+        0.55,
+        0.582
+       ],
+       "count": 6340.1
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 5887,
+       "leakage": {
+        "value": 0.25,
+        "ci95": [
+         0.04,
+         0.47
+        ],
+        "count": 15.0
+       },
+       "transition_T": {
+        "value": -1.15,
+        "ci95": [
+         -1.8,
+         -0.5
+        ],
+        "count": -67.8
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 55.77,
+        "ci95": [
+         53.72,
+         57.82
+        ],
+        "count": 3283.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 43.97,
+        "ci95": [
+         41.91,
+         46.04
+        ],
+        "count": 2588.7
+       }
+      },
+      "prep1": {
+       "n_err": 27477,
+       "leakage": {
+        "value": -0.01,
+        "ci95": [
+         -0.08,
+         0.05
+        ],
+        "count": -4.0
+       },
+       "transition_T": {
+        "value": 8.08,
+        "ci95": [
+         7.69,
+         8.48
+        ],
+        "count": 2221.4
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 11.12,
+        "ci95": [
+         10.65,
+         11.6
+        ],
+        "count": 3056.8
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 88.89,
+        "ci95": [
+         88.41,
+         89.37
+        ],
+        "count": 24424.2
+       }
+      }
+     }
+    },
+    "Q2": {
+     "n_err": 284822,
+     "err_rate": 25.431,
+     "err_rate_ci": [
+      25.35,
+      25.511
+     ],
+     "leakage": {
+      "value": 0.34,
+      "ci95": [
+       0.32,
+       0.37
+      ],
+      "count": 980.0
+     },
+     "transition_T": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "count": 0.0
+     },
+     "overlap_O_upper": {
+      "value": 95.63,
+      "ci95": [
+       95.17,
+       96.08
+      ],
+      "count": 272370.4
+     },
+     "unresolved_S_lower": {
+      "value": 4.03,
+      "ci95": [
+       3.57,
+       4.48
+      ],
+      "count": 11471.6
+     },
+     "state_change_TS_lower": {
+      "value": 4.03,
+      "ci95": [
+       3.57,
+       4.48
+      ],
+      "count": 11471.6
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 1.024,
+       "ci95": [
+        0.908,
+        1.14
+       ],
+       "count": 11471.6
+      },
+      "overlap": {
+       "value": 24.319,
+       "ci95": [
+        24.203,
+        24.435
+       ],
+       "count": 272370.4
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 113643,
+       "leakage": {
+        "value": 0.77,
+        "ci95": [
+         0.71,
+         0.83
+        ],
+        "count": 874.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 95.66,
+        "ci95": [
+         94.96,
+         96.36
+        ],
+        "count": 108708.9
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 3.57,
+        "ci95": [
+         2.87,
+         4.28
+        ],
+        "count": 4060.1
+       }
+      },
+      "prep1": {
+       "n_err": 171179,
+       "leakage": {
+        "value": 0.06,
+        "ci95": [
+         0.04,
+         0.09
+        ],
+        "count": 106.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 95.61,
+        "ci95": [
+         95.01,
+         96.21
+        ],
+        "count": 163661.5
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 4.33,
+        "ci95": [
+         3.73,
+         4.93
+        ],
+        "count": 7411.5
+       }
+      }
+     }
+    },
+    "Q3": {
+     "n_err": 65425,
+     "err_rate": 5.842,
+     "err_rate_ci": [
+      5.798,
+      5.885
+     ],
+     "leakage": {
+      "value": 3.21,
+      "ci95": [
+       3.07,
+       3.35
+      ],
+      "count": 2100.0
+     },
+     "transition_T": {
+      "value": 1.72,
+      "ci95": [
+       1.58,
+       1.86
+      ],
+      "count": 1127.6
+     },
+     "overlap_O_upper": {
+      "value": 20.86,
+      "ci95": [
+       20.29,
+       21.43
+      ],
+      "count": 13645.8
+     },
+     "unresolved_S_lower": {
+      "value": 74.21,
+      "ci95": [
+       73.61,
+       74.81
+      ],
+      "count": 48551.6
+     },
+     "state_change_TS_lower": {
+      "value": 75.93,
+      "ci95": [
+       75.35,
+       76.52
+      ],
+      "count": 49679.2
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 4.436,
+       "ci95": [
+        4.401,
+        4.47
+       ],
+       "count": 49679.2
+      },
+      "overlap": {
+       "value": 1.218,
+       "ci95": [
+        1.185,
+        1.252
+       ],
+       "count": 13645.8
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 12125,
+       "leakage": {
+        "value": 13.58,
+        "ci95": [
+         12.91,
+         14.24
+        ],
+        "count": 1646.0
+       },
+       "transition_T": {
+        "value": 9.3,
+        "ci95": [
+         8.54,
+         10.06
+        ],
+        "count": 1127.6
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 58.31,
+        "ci95": [
+         56.8,
+         59.82
+        ],
+        "count": 7069.6
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 28.12,
+        "ci95": [
+         26.47,
+         29.77
+        ],
+        "count": 3409.4
+       }
+      },
+      "prep1": {
+       "n_err": 53300,
+       "leakage": {
+        "value": 0.85,
+        "ci95": [
+         0.76,
+         0.94
+        ],
+        "count": 454.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 12.34,
+        "ci95": [
+         11.73,
+         12.95
+        ],
+        "count": 6576.1
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 86.81,
+        "ci95": [
+         86.19,
+         87.43
+        ],
+        "count": 46269.9
+       }
+      }
+     }
+    },
+    "Q4": {
+     "n_err": 59523,
+     "err_rate": 5.315,
+     "err_rate_ci": [
+      5.273,
+      5.356
+     ],
+     "leakage": "n/m (multimodal |1>)",
+     "transition_T": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "count": 0.0
+     },
+     "overlap_O_upper": {
+      "value": 13.0,
+      "ci95": [
+       12.55,
+       13.44
+      ],
+      "count": 7735.3
+     },
+     "unresolved_S_lower": {
+      "value": 87.0,
+      "ci95": [
+       86.56,
+       87.45
+      ],
+      "count": 51787.7
+     },
+     "state_change_TS_lower": {
+      "value": 87.0,
+      "ci95": [
+       86.56,
+       87.45
+      ],
+      "count": 51787.7
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 4.624,
+       "ci95": [
+        4.6,
+        4.648
+       ],
+       "count": 51787.7
+      },
+      "overlap": {
+       "value": 0.691,
+       "ci95": [
+        0.667,
+        0.715
+       ],
+       "count": 7735.3
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 17703,
+       "leakage": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 19.32,
+        "ci95": [
+         18.6,
+         20.05
+        ],
+        "count": 3420.9
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 80.68,
+        "ci95": [
+         79.95,
+         81.4
+        ],
+        "count": 14282.1
+       }
+      },
+      "prep1": {
+       "n_err": 41820,
+       "leakage": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 10.32,
+        "ci95": [
+         9.76,
+         10.88
+        ],
+        "count": 4314.4
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 89.68,
+        "ci95": [
+         89.12,
+         90.24
+        ],
+        "count": 37505.6
+       }
+      }
+     }
+    },
+    "Q5": {
+     "n_err": 33162,
+     "err_rate": 2.961,
+     "err_rate_ci": [
+      2.93,
+      2.992
+     ],
+     "leakage": {
+      "value": 1.01,
+      "ci95": [
+       0.88,
+       1.15
+      ],
+      "count": 336.0
+     },
+     "transition_T": {
+      "value": 7.0,
+      "ci95": [
+       6.67,
+       7.33
+      ],
+      "count": 2320.7
+     },
+     "overlap_O_upper": {
+      "value": 9.02,
+      "ci95": [
+       8.62,
+       9.41
+      ],
+      "count": 2990.5
+     },
+     "unresolved_S_lower": {
+      "value": 82.97,
+      "ci95": [
+       82.44,
+       83.5
+      ],
+      "count": 27514.8
+     },
+     "state_change_TS_lower": {
+      "value": 89.97,
+      "ci95": [
+       89.55,
+       90.38
+      ],
+      "count": 29835.5
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.664,
+       "ci95": [
+        2.652,
+        2.676
+       ],
+       "count": 29835.5
+      },
+      "overlap": {
+       "value": 0.267,
+       "ci95": [
+        0.255,
+        0.279
+       ],
+       "count": 2990.5
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 4794,
+       "leakage": {
+        "value": 7.57,
+        "ci95": [
+         6.76,
+         8.38
+        ],
+        "count": 363.0
+       },
+       "transition_T": {
+        "value": 11.05,
+        "ci95": [
+         9.88,
+         12.22
+        ],
+        "count": 529.6
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 39.28,
+        "ci95": [
+         37.32,
+         41.24
+        ],
+        "count": 1883.1
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 53.15,
+        "ci95": [
+         51.03,
+         55.27
+        ],
+        "count": 2547.9
+       }
+      },
+      "prep1": {
+       "n_err": 28368,
+       "leakage": {
+        "value": -0.1,
+        "ci95": [
+         -0.17,
+         -0.02
+        ],
+        "count": -27.0
+       },
+       "transition_T": {
+        "value": 6.31,
+        "ci95": [
+         5.98,
+         6.65
+        ],
+        "count": 1791.0
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 3.9,
+        "ci95": [
+         3.58,
+         4.22
+        ],
+        "count": 1107.5
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 96.19,
+        "ci95": [
+         95.86,
+         96.52
+        ],
+        "count": 27287.5
+       }
+      }
+     }
+    },
+    "pooled_Q1,Q3-Q5": {
+     "n_err": 191474,
+     "err_rate": 4.274,
+     "err_rate_ci": [
+      4.255,
+      4.293
+     ],
+     "leakage": {
+      "value": 1.28,
+      "ci95": [
+       1.22,
+       1.33
+      ],
+      "count": 2447.0
+     },
+     "transition_T": {
+      "value": 2.93,
+      "ci95": [
+       2.83,
+       3.02
+      ],
+      "count": 5602.0
+     },
+     "overlap_O_upper": {
+      "value": 16.04,
+      "ci95": [
+       15.77,
+       16.31
+      ],
+      "count": 30711.7
+     },
+     "unresolved_S_lower": {
+      "value": 79.76,
+      "ci95": [
+       79.47,
+       80.04
+      ],
+      "count": 152713.3
+     },
+     "state_change_TS_lower": {
+      "value": 82.68,
+      "ci95": [
+       82.41,
+       82.95
+      ],
+      "count": 158315.3
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 3.534,
+       "ci95": [
+        3.522,
+        3.545
+       ],
+       "count": 158315.3
+      },
+      "overlap": {
+       "value": 0.686,
+       "ci95": [
+        0.674,
+        0.697
+       ],
+       "count": 30711.7
+      }
+     }
+    },
+    "pooled_all5": {
+     "n_err": 476296,
+     "err_rate": 8.505,
+     "err_rate_ci": [
+      8.482,
+      8.528
+     ],
+     "leakage": {
+      "value": 0.72,
+      "ci95": [
+       0.69,
+       0.75
+      ],
+      "count": 3427.0
+     },
+     "transition_T": {
+      "value": 1.18,
+      "ci95": [
+       1.14,
+       1.21
+      ],
+      "count": 5602.0
+     },
+     "overlap_O_upper": {
+      "value": 63.63,
+      "ci95": [
+       63.34,
+       63.93
+      ],
+      "count": 303082.1
+     },
+     "unresolved_S_lower": {
+      "value": 34.47,
+      "ci95": [
+       34.17,
+       34.77
+      ],
+      "count": 164184.9
+     },
+     "state_change_TS_lower": {
+      "value": 35.65,
+      "ci95": [
+       35.35,
+       35.94
+      ],
+      "count": 169786.9
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 3.032,
+       "ci95": [
+        3.007,
+        3.057
+       ],
+       "count": 169786.9
+      },
+      "overlap": {
+       "value": 5.412,
+       "ci95": [
+        5.387,
+        5.437
+       ],
+       "count": 303082.1
+      }
+     }
+    },
+    "pooled_Q1,Q2,Q3,Q5": {
+     "n_err": 416773,
+     "err_rate": 9.303,
+     "err_rate_ci": [
+      9.276,
+      9.33
+     ],
+     "leakage": {
+      "value": 0.82,
+      "ci95": [
+       0.79,
+       0.85
+      ],
+      "count": 3427.0
+     },
+     "transition_T": {
+      "value": 1.34,
+      "ci95": [
+       1.3,
+       1.39
+      ],
+      "count": 5602.0
+     },
+     "overlap_O_upper": {
+      "value": 70.87,
+      "ci95": [
+       70.54,
+       71.19
+      ],
+      "count": 295346.8
+     },
+     "unresolved_S_lower": {
+      "value": 26.97,
+      "ci95": [
+       26.64,
+       27.3
+      ],
+      "count": 112397.3
+     },
+     "state_change_TS_lower": {
+      "value": 28.31,
+      "ci95": [
+       27.98,
+       28.64
+      ],
+      "count": 117999.2
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.634,
+       "ci95": [
+        2.603,
+        2.665
+       ],
+       "count": 117999.2
+      },
+      "overlap": {
+       "value": 6.593,
+       "ci95": [
+        6.562,
+        6.623
+       ],
+       "count": 295346.8
+      }
+     }
+    }
+   },
+   "emp": {
+    "Q1": {
+     "n_err": 33364,
+     "err_rate": 2.979,
+     "err_rate_ci": [
+      2.948,
+      3.011
+     ],
+     "leakage": {
+      "value": 0.03,
+      "ci95": [
+       -0.03,
+       0.1
+      ],
+      "count": 11.0
+     },
+     "transition_T": {
+      "value": 7.76,
+      "ci95": [
+       7.39,
+       8.13
+      ],
+      "count": 2588.0
+     },
+     "overlap_O_upper": {
+      "value": 19.0,
+      "ci95": [
+       18.47,
+       19.53
+      ],
+      "count": 6340.1
+     },
+     "unresolved_S_lower": {
+      "value": 73.21,
+      "ci95": [
+       72.56,
+       73.86
+      ],
+      "count": 24424.9
+     },
+     "state_change_TS_lower": {
+      "value": 80.96,
+      "ci95": [
+       80.43,
+       81.5
+      ],
+      "count": 27012.9
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.412,
+       "ci95": [
+        2.396,
+        2.428
+       ],
+       "count": 27012.9
+      },
+      "overlap": {
+       "value": 0.566,
+       "ci95": [
+        0.55,
+        0.582
+       ],
+       "count": 6340.1
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 5887,
+       "leakage": {
+        "value": 0.25,
+        "ci95": [
+         0.04,
+         0.47
+        ],
+        "count": 15.0
+       },
+       "transition_T": {
+        "value": 1.84,
+        "ci95": [
+         1.0,
+         2.69
+        ],
+        "count": 108.6
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 55.77,
+        "ci95": [
+         53.72,
+         57.82
+        ],
+        "count": 3283.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 43.97,
+        "ci95": [
+         41.91,
+         46.04
+        ],
+        "count": 2588.7
+       }
+      },
+      "prep1": {
+       "n_err": 27477,
+       "leakage": {
+        "value": -0.01,
+        "ci95": [
+         -0.08,
+         0.05
+        ],
+        "count": -4.0
+       },
+       "transition_T": {
+        "value": 9.02,
+        "ci95": [
+         8.61,
+         9.43
+        ],
+        "count": 2479.4
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 11.12,
+        "ci95": [
+         10.65,
+         11.6
+        ],
+        "count": 3056.8
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 88.89,
+        "ci95": [
+         88.41,
+         89.37
+        ],
+        "count": 24424.2
+       }
+      }
+     }
+    },
+    "Q2": {
+     "n_err": 284822,
+     "err_rate": 25.431,
+     "err_rate_ci": [
+      25.35,
+      25.511
+     ],
+     "leakage": {
+      "value": 0.34,
+      "ci95": [
+       0.32,
+       0.37
+      ],
+      "count": 980.0
+     },
+     "transition_T": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "count": 0.0
+     },
+     "overlap_O_upper": {
+      "value": 95.63,
+      "ci95": [
+       95.17,
+       96.08
+      ],
+      "count": 272370.4
+     },
+     "unresolved_S_lower": {
+      "value": 4.03,
+      "ci95": [
+       3.57,
+       4.48
+      ],
+      "count": 11471.6
+     },
+     "state_change_TS_lower": {
+      "value": 4.03,
+      "ci95": [
+       3.57,
+       4.48
+      ],
+      "count": 11471.6
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 1.024,
+       "ci95": [
+        0.908,
+        1.14
+       ],
+       "count": 11471.6
+      },
+      "overlap": {
+       "value": 24.319,
+       "ci95": [
+        24.203,
+        24.435
+       ],
+       "count": 272370.4
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 113643,
+       "leakage": {
+        "value": 0.77,
+        "ci95": [
+         0.71,
+         0.83
+        ],
+        "count": 874.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 95.66,
+        "ci95": [
+         94.96,
+         96.36
+        ],
+        "count": 108708.9
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 3.57,
+        "ci95": [
+         2.87,
+         4.28
+        ],
+        "count": 4060.1
+       }
+      },
+      "prep1": {
+       "n_err": 171179,
+       "leakage": {
+        "value": 0.06,
+        "ci95": [
+         0.04,
+         0.09
+        ],
+        "count": 106.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 95.61,
+        "ci95": [
+         95.01,
+         96.21
+        ],
+        "count": 163661.5
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 4.33,
+        "ci95": [
+         3.73,
+         4.93
+        ],
+        "count": 7411.5
+       }
+      }
+     }
+    },
+    "Q3": {
+     "n_err": 65425,
+     "err_rate": 5.842,
+     "err_rate_ci": [
+      5.798,
+      5.885
+     ],
+     "leakage": {
+      "value": 3.21,
+      "ci95": [
+       3.07,
+       3.35
+      ],
+      "count": 2100.0
+     },
+     "transition_T": {
+      "value": 1.68,
+      "ci95": [
+       1.53,
+       1.83
+      ],
+      "count": 1100.6
+     },
+     "overlap_O_upper": {
+      "value": 20.86,
+      "ci95": [
+       20.29,
+       21.43
+      ],
+      "count": 13645.8
+     },
+     "unresolved_S_lower": {
+      "value": 74.25,
+      "ci95": [
+       73.64,
+       74.86
+      ],
+      "count": 48578.7
+     },
+     "state_change_TS_lower": {
+      "value": 75.93,
+      "ci95": [
+       75.35,
+       76.52
+      ],
+      "count": 49679.2
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 4.436,
+       "ci95": [
+        4.401,
+        4.47
+       ],
+       "count": 49679.2
+      },
+      "overlap": {
+       "value": 1.218,
+       "ci95": [
+        1.185,
+        1.252
+       ],
+       "count": 13645.8
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 12125,
+       "leakage": {
+        "value": 13.58,
+        "ci95": [
+         12.91,
+         14.24
+        ],
+        "count": 1646.0
+       },
+       "transition_T": {
+        "value": 9.08,
+        "ci95": [
+         8.26,
+         9.9
+        ],
+        "count": 1100.6
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 58.31,
+        "ci95": [
+         56.8,
+         59.82
+        ],
+        "count": 7069.6
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 28.12,
+        "ci95": [
+         26.47,
+         29.77
+        ],
+        "count": 3409.4
+       }
+      },
+      "prep1": {
+       "n_err": 53300,
+       "leakage": {
+        "value": 0.85,
+        "ci95": [
+         0.76,
+         0.94
+        ],
+        "count": 454.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 12.34,
+        "ci95": [
+         11.73,
+         12.95
+        ],
+        "count": 6576.1
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 86.81,
+        "ci95": [
+         86.19,
+         87.43
+        ],
+        "count": 46269.9
+       }
+      }
+     }
+    },
+    "Q4": {
+     "n_err": 59523,
+     "err_rate": 5.315,
+     "err_rate_ci": [
+      5.273,
+      5.356
+     ],
+     "leakage": "n/m (multimodal |1>)",
+     "transition_T": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "count": 0.0
+     },
+     "overlap_O_upper": {
+      "value": 13.0,
+      "ci95": [
+       12.55,
+       13.44
+      ],
+      "count": 7735.3
+     },
+     "unresolved_S_lower": {
+      "value": 87.0,
+      "ci95": [
+       86.56,
+       87.45
+      ],
+      "count": 51787.7
+     },
+     "state_change_TS_lower": {
+      "value": 87.0,
+      "ci95": [
+       86.56,
+       87.45
+      ],
+      "count": 51787.7
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 4.624,
+       "ci95": [
+        4.6,
+        4.648
+       ],
+       "count": 51787.7
+      },
+      "overlap": {
+       "value": 0.691,
+       "ci95": [
+        0.667,
+        0.715
+       ],
+       "count": 7735.3
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 17703,
+       "leakage": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 19.32,
+        "ci95": [
+         18.6,
+         20.05
+        ],
+        "count": 3420.9
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 80.68,
+        "ci95": [
+         79.95,
+         81.4
+        ],
+        "count": 14282.1
+       }
+      },
+      "prep1": {
+       "n_err": 41820,
+       "leakage": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 10.32,
+        "ci95": [
+         9.76,
+         10.88
+        ],
+        "count": 4314.4
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 89.68,
+        "ci95": [
+         89.12,
+         90.24
+        ],
+        "count": 37505.6
+       }
+      }
+     }
+    },
+    "Q5": {
+     "n_err": 33162,
+     "err_rate": 2.961,
+     "err_rate_ci": [
+      2.93,
+      2.992
+     ],
+     "leakage": {
+      "value": 1.01,
+      "ci95": [
+       0.88,
+       1.15
+      ],
+      "count": 336.0
+     },
+     "transition_T": {
+      "value": 7.36,
+      "ci95": [
+       7.01,
+       7.7
+      ],
+      "count": 2439.3
+     },
+     "overlap_O_upper": {
+      "value": 9.02,
+      "ci95": [
+       8.62,
+       9.41
+      ],
+      "count": 2990.5
+     },
+     "unresolved_S_lower": {
+      "value": 82.61,
+      "ci95": [
+       82.08,
+       83.15
+      ],
+      "count": 27396.2
+     },
+     "state_change_TS_lower": {
+      "value": 89.97,
+      "ci95": [
+       89.55,
+       90.38
+      ],
+      "count": 29835.5
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.664,
+       "ci95": [
+        2.652,
+        2.676
+       ],
+       "count": 29835.5
+      },
+      "overlap": {
+       "value": 0.267,
+       "ci95": [
+        0.255,
+        0.279
+       ],
+       "count": 2990.5
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 4794,
+       "leakage": {
+        "value": 7.57,
+        "ci95": [
+         6.76,
+         8.38
+        ],
+        "count": 363.0
+       },
+       "transition_T": {
+        "value": 12.27,
+        "ci95": [
+         11.04,
+         13.5
+        ],
+        "count": 588.4
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 39.28,
+        "ci95": [
+         37.32,
+         41.24
+        ],
+        "count": 1883.1
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 53.15,
+        "ci95": [
+         51.03,
+         55.27
+        ],
+        "count": 2547.9
+       }
+      },
+      "prep1": {
+       "n_err": 28368,
+       "leakage": {
+        "value": -0.1,
+        "ci95": [
+         -0.17,
+         -0.02
+        ],
+        "count": -27.0
+       },
+       "transition_T": {
+        "value": 6.52,
+        "ci95": [
+         6.18,
+         6.86
+        ],
+        "count": 1850.9
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 3.9,
+        "ci95": [
+         3.58,
+         4.22
+        ],
+        "count": 1107.5
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 96.19,
+        "ci95": [
+         95.86,
+         96.52
+        ],
+        "count": 27287.5
+       }
+      }
+     }
+    },
+    "pooled_Q1,Q3-Q5": {
+     "n_err": 191474,
+     "err_rate": 4.274,
+     "err_rate_ci": [
+      4.255,
+      4.293
+     ],
+     "leakage": {
+      "value": 1.28,
+      "ci95": [
+       1.22,
+       1.33
+      ],
+      "count": 2447.0
+     },
+     "transition_T": {
+      "value": 3.2,
+      "ci95": [
+       3.1,
+       3.3
+      ],
+      "count": 6127.9
+     },
+     "overlap_O_upper": {
+      "value": 16.04,
+      "ci95": [
+       15.77,
+       16.31
+      ],
+      "count": 30711.7
+     },
+     "unresolved_S_lower": {
+      "value": 79.48,
+      "ci95": [
+       79.19,
+       79.77
+      ],
+      "count": 152187.4
+     },
+     "state_change_TS_lower": {
+      "value": 82.68,
+      "ci95": [
+       82.41,
+       82.95
+      ],
+      "count": 158315.3
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 3.534,
+       "ci95": [
+        3.522,
+        3.545
+       ],
+       "count": 158315.3
+      },
+      "overlap": {
+       "value": 0.686,
+       "ci95": [
+        0.674,
+        0.697
+       ],
+       "count": 30711.7
+      }
+     }
+    },
+    "pooled_all5": {
+     "n_err": 476296,
+     "err_rate": 8.505,
+     "err_rate_ci": [
+      8.482,
+      8.528
+     ],
+     "leakage": {
+      "value": 0.72,
+      "ci95": [
+       0.69,
+       0.75
+      ],
+      "count": 3427.0
+     },
+     "transition_T": {
+      "value": 1.29,
+      "ci95": [
+       1.25,
+       1.33
+      ],
+      "count": 6127.9
+     },
+     "overlap_O_upper": {
+      "value": 63.63,
+      "ci95": [
+       63.34,
+       63.93
+      ],
+      "count": 303082.1
+     },
+     "unresolved_S_lower": {
+      "value": 34.36,
+      "ci95": [
+       34.06,
+       34.66
+      ],
+      "count": 163659.0
+     },
+     "state_change_TS_lower": {
+      "value": 35.65,
+      "ci95": [
+       35.35,
+       35.94
+      ],
+      "count": 169786.9
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 3.032,
+       "ci95": [
+        3.007,
+        3.057
+       ],
+       "count": 169786.9
+      },
+      "overlap": {
+       "value": 5.412,
+       "ci95": [
+        5.387,
+        5.437
+       ],
+       "count": 303082.1
+      }
+     }
+    },
+    "pooled_Q1,Q2,Q3,Q5": {
+     "n_err": 416773,
+     "err_rate": 9.303,
+     "err_rate_ci": [
+      9.276,
+      9.33
+     ],
+     "leakage": {
+      "value": 0.82,
+      "ci95": [
+       0.79,
+       0.85
+      ],
+      "count": 3427.0
+     },
+     "transition_T": {
+      "value": 1.47,
+      "ci95": [
+       1.42,
+       1.52
+      ],
+      "count": 6127.9
+     },
+     "overlap_O_upper": {
+      "value": 70.87,
+      "ci95": [
+       70.54,
+       71.19
+      ],
+      "count": 295346.8
+     },
+     "unresolved_S_lower": {
+      "value": 26.84,
+      "ci95": [
+       26.51,
+       27.18
+      ],
+      "count": 111871.3
+     },
+     "state_change_TS_lower": {
+      "value": 28.31,
+      "ci95": [
+       27.98,
+       28.64
+      ],
+      "count": 117999.2
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.634,
+       "ci95": [
+        2.603,
+        2.665
+       ],
+       "count": 117999.2
+      },
+      "overlap": {
+       "value": 6.593,
+       "ci95": [
+        6.562,
+        6.623
+       ],
+       "count": 295346.8
+      }
+     }
+    }
+   },
+   "ungated": {
+    "Q1": {
+     "n_err": 33364,
+     "err_rate": 2.979,
+     "err_rate_ci": [
+      2.948,
+      3.011
+     ],
+     "leakage": {
+      "value": 0.03,
+      "ci95": [
+       -0.03,
+       0.1
+      ],
+      "count": 11.0
+     },
+     "transition_T": {
+      "value": 6.46,
+      "ci95": [
+       6.11,
+       6.8
+      ],
+      "count": 2153.7
+     },
+     "overlap_O_upper": {
+      "value": 19.0,
+      "ci95": [
+       18.47,
+       19.53
+      ],
+      "count": 6340.1
+     },
+     "unresolved_S_lower": {
+      "value": 74.51,
+      "ci95": [
+       73.87,
+       75.15
+      ],
+      "count": 24859.2
+     },
+     "state_change_TS_lower": {
+      "value": 80.96,
+      "ci95": [
+       80.43,
+       81.5
+      ],
+      "count": 27012.9
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.412,
+       "ci95": [
+        2.396,
+        2.428
+       ],
+       "count": 27012.9
+      },
+      "overlap": {
+       "value": 0.566,
+       "ci95": [
+        0.55,
+        0.582
+       ],
+       "count": 6340.1
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 5887,
+       "leakage": {
+        "value": 0.25,
+        "ci95": [
+         0.04,
+         0.47
+        ],
+        "count": 15.0
+       },
+       "transition_T": {
+        "value": -1.15,
+        "ci95": [
+         -1.8,
+         -0.5
+        ],
+        "count": -67.8
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 55.77,
+        "ci95": [
+         53.72,
+         57.82
+        ],
+        "count": 3283.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 43.97,
+        "ci95": [
+         41.91,
+         46.04
+        ],
+        "count": 2588.7
+       }
+      },
+      "prep1": {
+       "n_err": 27477,
+       "leakage": {
+        "value": -0.01,
+        "ci95": [
+         -0.08,
+         0.05
+        ],
+        "count": -4.0
+       },
+       "transition_T": {
+        "value": 8.08,
+        "ci95": [
+         7.69,
+         8.48
+        ],
+        "count": 2221.4
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 11.12,
+        "ci95": [
+         10.65,
+         11.6
+        ],
+        "count": 3056.8
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 88.89,
+        "ci95": [
+         88.41,
+         89.37
+        ],
+        "count": 24424.2
+       }
+      }
+     }
+    },
+    "Q2": {
+     "n_err": 284822,
+     "err_rate": 25.431,
+     "err_rate_ci": [
+      25.35,
+      25.511
+     ],
+     "leakage": {
+      "value": 0.34,
+      "ci95": [
+       0.32,
+       0.37
+      ],
+      "count": 980.0
+     },
+     "transition_T": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "count": 0.0
+     },
+     "overlap_O_upper": {
+      "value": 95.63,
+      "ci95": [
+       95.17,
+       96.08
+      ],
+      "count": 272370.4
+     },
+     "unresolved_S_lower": {
+      "value": 4.03,
+      "ci95": [
+       3.57,
+       4.48
+      ],
+      "count": 11471.6
+     },
+     "state_change_TS_lower": {
+      "value": 4.03,
+      "ci95": [
+       3.57,
+       4.48
+      ],
+      "count": 11471.6
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 1.024,
+       "ci95": [
+        0.908,
+        1.14
+       ],
+       "count": 11471.6
+      },
+      "overlap": {
+       "value": 24.319,
+       "ci95": [
+        24.203,
+        24.435
+       ],
+       "count": 272370.4
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 113643,
+       "leakage": {
+        "value": 0.77,
+        "ci95": [
+         0.71,
+         0.83
+        ],
+        "count": 874.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 95.66,
+        "ci95": [
+         94.96,
+         96.36
+        ],
+        "count": 108708.9
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 3.57,
+        "ci95": [
+         2.87,
+         4.28
+        ],
+        "count": 4060.1
+       }
+      },
+      "prep1": {
+       "n_err": 171179,
+       "leakage": {
+        "value": 0.06,
+        "ci95": [
+         0.04,
+         0.09
+        ],
+        "count": 106.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 95.61,
+        "ci95": [
+         95.01,
+         96.21
+        ],
+        "count": 163661.5
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 4.33,
+        "ci95": [
+         3.73,
+         4.93
+        ],
+        "count": 7411.5
+       }
+      }
+     }
+    },
+    "Q3": {
+     "n_err": 65425,
+     "err_rate": 5.842,
+     "err_rate_ci": [
+      5.798,
+      5.885
+     ],
+     "leakage": {
+      "value": 3.21,
+      "ci95": [
+       3.07,
+       3.35
+      ],
+      "count": 2100.0
+     },
+     "transition_T": {
+      "value": 3.93,
+      "ci95": [
+       3.74,
+       4.13
+      ],
+      "count": 2574.3
+     },
+     "overlap_O_upper": {
+      "value": 20.86,
+      "ci95": [
+       20.29,
+       21.43
+      ],
+      "count": 13645.8
+     },
+     "unresolved_S_lower": {
+      "value": 72.0,
+      "ci95": [
+       71.38,
+       72.62
+      ],
+      "count": 47104.9
+     },
+     "state_change_TS_lower": {
+      "value": 75.93,
+      "ci95": [
+       75.35,
+       76.52
+      ],
+      "count": 49679.2
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 4.436,
+       "ci95": [
+        4.401,
+        4.47
+       ],
+       "count": 49679.2
+      },
+      "overlap": {
+       "value": 1.218,
+       "ci95": [
+        1.185,
+        1.252
+       ],
+       "count": 13645.8
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 12125,
+       "leakage": {
+        "value": 13.58,
+        "ci95": [
+         12.91,
+         14.24
+        ],
+        "count": 1646.0
+       },
+       "transition_T": {
+        "value": 9.3,
+        "ci95": [
+         8.54,
+         10.06
+        ],
+        "count": 1127.6
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 58.31,
+        "ci95": [
+         56.8,
+         59.82
+        ],
+        "count": 7069.6
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 28.12,
+        "ci95": [
+         26.47,
+         29.77
+        ],
+        "count": 3409.4
+       }
+      },
+      "prep1": {
+       "n_err": 53300,
+       "leakage": {
+        "value": 0.85,
+        "ci95": [
+         0.76,
+         0.94
+        ],
+        "count": 454.0
+       },
+       "transition_T": {
+        "value": 2.71,
+        "ci95": [
+         2.54,
+         2.89
+        ],
+        "count": 1446.7
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 12.34,
+        "ci95": [
+         11.73,
+         12.95
+        ],
+        "count": 6576.1
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 86.81,
+        "ci95": [
+         86.19,
+         87.43
+        ],
+        "count": 46269.9
+       }
+      }
+     }
+    },
+    "Q4": {
+     "n_err": 59523,
+     "err_rate": 5.315,
+     "err_rate_ci": [
+      5.273,
+      5.356
+     ],
+     "leakage": "n/m (multimodal |1>)",
+     "transition_T": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "count": 0.0
+     },
+     "overlap_O_upper": {
+      "value": 13.0,
+      "ci95": [
+       12.55,
+       13.44
+      ],
+      "count": 7735.3
+     },
+     "unresolved_S_lower": {
+      "value": 87.0,
+      "ci95": [
+       86.56,
+       87.45
+      ],
+      "count": 51787.7
+     },
+     "state_change_TS_lower": {
+      "value": 87.0,
+      "ci95": [
+       86.56,
+       87.45
+      ],
+      "count": 51787.7
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 4.624,
+       "ci95": [
+        4.6,
+        4.648
+       ],
+       "count": 51787.7
+      },
+      "overlap": {
+       "value": 0.691,
+       "ci95": [
+        0.667,
+        0.715
+       ],
+       "count": 7735.3
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 17703,
+       "leakage": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 19.32,
+        "ci95": [
+         18.6,
+         20.05
+        ],
+        "count": 3420.9
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 80.68,
+        "ci95": [
+         79.95,
+         81.4
+        ],
+        "count": 14282.1
+       }
+      },
+      "prep1": {
+       "n_err": 41820,
+       "leakage": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 10.32,
+        "ci95": [
+         9.76,
+         10.88
+        ],
+        "count": 4314.4
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 89.68,
+        "ci95": [
+         89.12,
+         90.24
+        ],
+        "count": 37505.6
+       }
+      }
+     }
+    },
+    "Q5": {
+     "n_err": 33162,
+     "err_rate": 2.961,
+     "err_rate_ci": [
+      2.93,
+      2.992
+     ],
+     "leakage": {
+      "value": 1.01,
+      "ci95": [
+       0.88,
+       1.15
+      ],
+      "count": 336.0
+     },
+     "transition_T": {
+      "value": 7.0,
+      "ci95": [
+       6.67,
+       7.33
+      ],
+      "count": 2320.7
+     },
+     "overlap_O_upper": {
+      "value": 9.02,
+      "ci95": [
+       8.62,
+       9.41
+      ],
+      "count": 2990.5
+     },
+     "unresolved_S_lower": {
+      "value": 82.97,
+      "ci95": [
+       82.44,
+       83.5
+      ],
+      "count": 27514.8
+     },
+     "state_change_TS_lower": {
+      "value": 89.97,
+      "ci95": [
+       89.55,
+       90.38
+      ],
+      "count": 29835.5
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.664,
+       "ci95": [
+        2.652,
+        2.676
+       ],
+       "count": 29835.5
+      },
+      "overlap": {
+       "value": 0.267,
+       "ci95": [
+        0.255,
+        0.279
+       ],
+       "count": 2990.5
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 4794,
+       "leakage": {
+        "value": 7.57,
+        "ci95": [
+         6.76,
+         8.38
+        ],
+        "count": 363.0
+       },
+       "transition_T": {
+        "value": 11.05,
+        "ci95": [
+         9.88,
+         12.22
+        ],
+        "count": 529.6
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 39.28,
+        "ci95": [
+         37.32,
+         41.24
+        ],
+        "count": 1883.1
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 53.15,
+        "ci95": [
+         51.03,
+         55.27
+        ],
+        "count": 2547.9
+       }
+      },
+      "prep1": {
+       "n_err": 28368,
+       "leakage": {
+        "value": -0.1,
+        "ci95": [
+         -0.17,
+         -0.02
+        ],
+        "count": -27.0
+       },
+       "transition_T": {
+        "value": 6.31,
+        "ci95": [
+         5.98,
+         6.65
+        ],
+        "count": 1791.0
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 3.9,
+        "ci95": [
+         3.58,
+         4.22
+        ],
+        "count": 1107.5
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 96.19,
+        "ci95": [
+         95.86,
+         96.52
+        ],
+        "count": 27287.5
+       }
+      }
+     }
+    },
+    "pooled_Q1,Q3-Q5": {
+     "n_err": 191474,
+     "err_rate": 4.274,
+     "err_rate_ci": [
+      4.255,
+      4.293
+     ],
+     "leakage": {
+      "value": 1.28,
+      "ci95": [
+       1.22,
+       1.33
+      ],
+      "count": 2447.0
+     },
+     "transition_T": {
+      "value": 3.68,
+      "ci95": [
+       3.57,
+       3.79
+      ],
+      "count": 7048.7
+     },
+     "overlap_O_upper": {
+      "value": 16.04,
+      "ci95": [
+       15.77,
+       16.31
+      ],
+      "count": 30711.7
+     },
+     "unresolved_S_lower": {
+      "value": 79.0,
+      "ci95": [
+       78.71,
+       79.29
+      ],
+      "count": 151266.6
+     },
+     "state_change_TS_lower": {
+      "value": 82.68,
+      "ci95": [
+       82.41,
+       82.95
+      ],
+      "count": 158315.3
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 3.534,
+       "ci95": [
+        3.522,
+        3.545
+       ],
+       "count": 158315.3
+      },
+      "overlap": {
+       "value": 0.686,
+       "ci95": [
+        0.674,
+        0.697
+       ],
+       "count": 30711.7
+      }
+     }
+    },
+    "pooled_all5": {
+     "n_err": 476296,
+     "err_rate": 8.505,
+     "err_rate_ci": [
+      8.482,
+      8.528
+     ],
+     "leakage": {
+      "value": 0.72,
+      "ci95": [
+       0.69,
+       0.75
+      ],
+      "count": 3427.0
+     },
+     "transition_T": {
+      "value": 1.48,
+      "ci95": [
+       1.44,
+       1.52
+      ],
+      "count": 7048.7
+     },
+     "overlap_O_upper": {
+      "value": 63.63,
+      "ci95": [
+       63.34,
+       63.93
+      ],
+      "count": 303082.1
+     },
+     "unresolved_S_lower": {
+      "value": 34.17,
+      "ci95": [
+       33.87,
+       34.46
+      ],
+      "count": 162738.2
+     },
+     "state_change_TS_lower": {
+      "value": 35.65,
+      "ci95": [
+       35.35,
+       35.94
+      ],
+      "count": 169786.9
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 3.032,
+       "ci95": [
+        3.007,
+        3.057
+       ],
+       "count": 169786.9
+      },
+      "overlap": {
+       "value": 5.412,
+       "ci95": [
+        5.387,
+        5.437
+       ],
+       "count": 303082.1
+      }
+     }
+    },
+    "pooled_Q1,Q2,Q3,Q5": {
+     "n_err": 416773,
+     "err_rate": 9.303,
+     "err_rate_ci": [
+      9.276,
+      9.33
+     ],
+     "leakage": {
+      "value": 0.82,
+      "ci95": [
+       0.79,
+       0.85
+      ],
+      "count": 3427.0
+     },
+     "transition_T": {
+      "value": 1.69,
+      "ci95": [
+       1.64,
+       1.74
+      ],
+      "count": 7048.7
+     },
+     "overlap_O_upper": {
+      "value": 70.87,
+      "ci95": [
+       70.54,
+       71.19
+      ],
+      "count": 295346.8
+     },
+     "unresolved_S_lower": {
+      "value": 26.62,
+      "ci95": [
+       26.29,
+       26.95
+      ],
+      "count": 110950.5
+     },
+     "state_change_TS_lower": {
+      "value": 28.31,
+      "ci95": [
+       27.98,
+       28.64
+      ],
+      "count": 117999.2
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.634,
+       "ci95": [
+        2.603,
+        2.665
+       ],
+       "count": 117999.2
+      },
+      "overlap": {
+       "value": 6.593,
+       "ci95": [
+        6.562,
+        6.623
+       ],
+       "count": 295346.8
+      }
+     }
+    }
+   }
+  },
+  "400ns": {
+   "gauss": {
+    "Q1": {
+     "n_err": 104345,
+     "err_rate": 9.317,
+     "err_rate_ci": [
+      9.263,
+      9.37
+     ],
+     "leakage": {
+      "value": -0.04,
+      "ci95": [
+       -0.07,
+       -0.01
+      ],
+      "count": -39.0
+     },
+     "transition_T": {
+      "value": -1.19,
+      "ci95": [
+       -1.28,
+       -1.11
+      ],
+      "count": -1245.9
+     },
+     "overlap_O_upper": {
+      "value": 83.74,
+      "ci95": [
+       83.13,
+       84.35
+      ],
+      "count": 87377.5
+     },
+     "unresolved_S_lower": {
+      "value": 17.49,
+      "ci95": [
+       16.88,
+       18.11
+      ],
+      "count": 18252.4
+     },
+     "state_change_TS_lower": {
+      "value": 16.3,
+      "ci95": [
+       15.69,
+       16.91
+      ],
+      "count": 17006.5
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 1.518,
+       "ci95": [
+        1.462,
+        1.575
+       ],
+       "count": 17006.5
+      },
+      "overlap": {
+       "value": 7.802,
+       "ci95": [
+        7.745,
+        7.858
+       ],
+       "count": 87377.5
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 42784,
+       "leakage": {
+        "value": -0.04,
+        "ci95": [
+         -0.08,
+         0.01
+        ],
+        "count": -16.0
+       },
+       "transition_T": {
+        "value": -1.71,
+        "ci95": [
+         -1.84,
+         -1.58
+        ],
+        "count": -730.6
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 95.24,
+        "ci95": [
+         94.28,
+         96.2
+        ],
+        "count": 40746.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 4.8,
+        "ci95": [
+         3.84,
+         5.76
+        ],
+        "count": 2053.7
+       }
+      },
+      "prep1": {
+       "n_err": 61561,
+       "leakage": {
+        "value": -0.04,
+        "ci95": [
+         -0.08,
+         0.0
+        ],
+        "count": -23.0
+       },
+       "transition_T": {
+        "value": -0.84,
+        "ci95": [
+         -0.95,
+         -0.72
+        ],
+        "count": -515.3
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 75.75,
+        "ci95": [
+         74.96,
+         76.54
+        ],
+        "count": 46631.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 24.29,
+        "ci95": [
+         23.5,
+         25.08
+        ],
+        "count": 14952.7
+       }
+      }
+     }
+    },
+    "Q2": {
+     "n_err": 339075,
+     "err_rate": 30.275,
+     "err_rate_ci": [
+      30.19,
+      30.36
+     ],
+     "leakage": {
+      "value": 0.09,
+      "ci95": [
+       0.07,
+       0.11
+      ],
+      "count": 315.0
+     },
+     "transition_T": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "count": 0.0
+     },
+     "overlap_O_upper": {
+      "value": 97.86,
+      "ci95": [
+       97.45,
+       98.26
+      ],
+      "count": 331810.8
+     },
+     "unresolved_S_lower": {
+      "value": 2.05,
+      "ci95": [
+       1.64,
+       2.46
+      ],
+      "count": 6949.2
+     },
+     "state_change_TS_lower": {
+      "value": 2.05,
+      "ci95": [
+       1.64,
+       2.46
+      ],
+      "count": 6949.2
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 0.62,
+       "ci95": [
+        0.497,
+        0.744
+       ],
+       "count": 6949.2
+      },
+      "overlap": {
+       "value": 29.626,
+       "ci95": [
+        29.503,
+        29.749
+       ],
+       "count": 331810.8
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 136784,
+       "leakage": {
+        "value": 0.21,
+        "ci95": [
+         0.17,
+         0.24
+        ],
+        "count": 281.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 97.83,
+        "ci95": [
+         97.2,
+         98.46
+        ],
+        "count": 133813.0
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 1.97,
+        "ci95": [
+         1.34,
+         2.6
+        ],
+        "count": 2690.0
+       }
+      },
+      "prep1": {
+       "n_err": 202291,
+       "leakage": {
+        "value": 0.02,
+        "ci95": [
+         -0.01,
+         0.04
+        ],
+        "count": 34.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 97.88,
+        "ci95": [
+         97.35,
+         98.41
+        ],
+        "count": 197997.9
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 2.11,
+        "ci95": [
+         1.57,
+         2.64
+        ],
+        "count": 4259.1
+       }
+      }
+     }
+    },
+    "Q3": {
+     "n_err": 82461,
+     "err_rate": 7.363,
+     "err_rate_ci": [
+      7.314,
+      7.411
+     ],
+     "leakage": {
+      "value": 0.7,
+      "ci95": [
+       0.64,
+       0.77
+      ],
+      "count": 579.0
+     },
+     "transition_T": {
+      "value": 0.1,
+      "ci95": [
+       0.03,
+       0.17
+      ],
+      "count": 83.7
+     },
+     "overlap_O_upper": {
+      "value": 40.88,
+      "ci95": [
+       40.17,
+       41.6
+      ],
+      "count": 33714.0
+     },
+     "unresolved_S_lower": {
+      "value": 58.31,
+      "ci95": [
+       57.59,
+       59.03
+      ],
+      "count": 48084.3
+     },
+     "state_change_TS_lower": {
+      "value": 58.41,
+      "ci95": [
+       57.7,
+       59.13
+      ],
+      "count": 48168.0
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 4.301,
+       "ci95": [
+        4.248,
+        4.353
+       ],
+       "count": 48168.0
+      },
+      "overlap": {
+       "value": 3.01,
+       "ci95": [
+        2.958,
+        3.063
+       ],
+       "count": 33714.0
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 18714,
+       "leakage": {
+        "value": 2.84,
+        "ci95": [
+         2.59,
+         3.09
+        ],
+        "count": 532.0
+       },
+       "transition_T": {
+        "value": 0.45,
+        "ci95": [
+         0.13,
+         0.77
+        ],
+        "count": 83.7
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 82.39,
+        "ci95": [
+         80.97,
+         83.82
+        ],
+        "count": 15419.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 14.76,
+        "ci95": [
+         13.32,
+         16.21
+        ],
+        "count": 2762.7
+       }
+      },
+      "prep1": {
+       "n_err": 63747,
+       "leakage": {
+        "value": 0.07,
+        "ci95": [
+         0.03,
+         0.11
+        ],
+        "count": 47.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 28.7,
+        "ci95": [
+         27.88,
+         29.52
+        ],
+        "count": 18294.7
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 71.23,
+        "ci95": [
+         70.4,
+         72.05
+        ],
+        "count": 45405.3
+       }
+      }
+     }
+    },
+    "Q4": {
+     "n_err": 110668,
+     "err_rate": 9.881,
+     "err_rate_ci": [
+      9.826,
+      9.936
+     ],
+     "leakage": "n/m (multimodal |1>)",
+     "transition_T": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "count": 0.0
+     },
+     "overlap_O_upper": {
+      "value": 58.82,
+      "ci95": [
+       58.17,
+       59.46
+      ],
+      "count": 65089.5
+     },
+     "unresolved_S_lower": {
+      "value": 41.18,
+      "ci95": [
+       40.54,
+       41.83
+      ],
+      "count": 45578.5
+     },
+     "state_change_TS_lower": {
+      "value": 41.18,
+      "ci95": [
+       40.54,
+       41.83
+      ],
+      "count": 45578.5
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 4.07,
+       "ci95": [
+        4.006,
+        4.133
+       ],
+       "count": 45578.5
+      },
+      "overlap": {
+       "value": 5.812,
+       "ci95": [
+        5.748,
+        5.875
+       ],
+       "count": 65089.5
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 50109,
+       "leakage": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 78.16,
+        "ci95": [
+         77.33,
+         79.0
+        ],
+        "count": 39166.2
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 21.84,
+        "ci95": [
+         21.0,
+         22.67
+        ],
+        "count": 10942.8
+       }
+      },
+      "prep1": {
+       "n_err": 60559,
+       "leakage": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 42.81,
+        "ci95": [
+         41.85,
+         43.76
+        ],
+        "count": 25923.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 57.19,
+        "ci95": [
+         56.24,
+         58.15
+        ],
+        "count": 34635.7
+       }
+      }
+     }
+    },
+    "Q5": {
+     "n_err": 54489,
+     "err_rate": 4.865,
+     "err_rate_ci": [
+      4.825,
+      4.905
+     ],
+     "leakage": {
+      "value": -0.02,
+      "ci95": [
+       -0.07,
+       0.03
+      ],
+      "count": -13.0
+     },
+     "transition_T": {
+      "value": -1.71,
+      "ci95": [
+       -1.86,
+       -1.57
+      ],
+      "count": -933.0
+     },
+     "overlap_O_upper": {
+      "value": 55.91,
+      "ci95": [
+       55.15,
+       56.67
+      ],
+      "count": 30464.1
+     },
+     "unresolved_S_lower": {
+      "value": 45.83,
+      "ci95": [
+       45.06,
+       46.6
+      ],
+      "count": 24970.9
+     },
+     "state_change_TS_lower": {
+      "value": 44.12,
+      "ci95": [
+       43.36,
+       44.87
+      ],
+      "count": 24037.9
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.146,
+       "ci95": [
+        2.109,
+        2.183
+       ],
+       "count": 24037.9
+      },
+      "overlap": {
+       "value": 2.72,
+       "ci95": [
+        2.683,
+        2.757
+       ],
+       "count": 30464.1
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 18792,
+       "leakage": {
+        "value": 0.13,
+        "ci95": [
+         0.04,
+         0.23
+        ],
+        "count": 25.0
+       },
+       "transition_T": {
+        "value": -3.85,
+        "ci95": [
+         -4.1,
+         -3.6
+        ],
+        "count": -723.1
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 89.58,
+        "ci95": [
+         88.11,
+         91.05
+        ],
+        "count": 16834.1
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 10.29,
+        "ci95": [
+         8.82,
+         11.76
+        ],
+        "count": 1932.9
+       }
+      },
+      "prep1": {
+       "n_err": 35697,
+       "leakage": {
+        "value": -0.11,
+        "ci95": [
+         -0.17,
+         -0.05
+        ],
+        "count": -38.0
+       },
+       "transition_T": {
+        "value": -0.59,
+        "ci95": [
+         -0.77,
+         -0.41
+        ],
+        "count": -209.9
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 38.18,
+        "ci95": [
+         37.32,
+         39.04
+        ],
+        "count": 13630.0
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 61.92,
+        "ci95": [
+         61.06,
+         62.79
+        ],
+        "count": 22105.0
+       }
+      }
+     }
+    },
+    "pooled_Q1,Q3-Q5": {
+     "n_err": 351963,
+     "err_rate": 7.856,
+     "err_rate_ci": [
+      7.831,
+      7.881
+     ],
+     "leakage": {
+      "value": 0.15,
+      "ci95": [
+       0.13,
+       0.17
+      ],
+      "count": 527.0
+     },
+     "transition_T": {
+      "value": -0.6,
+      "ci95": [
+       -0.63,
+       -0.56
+      ],
+      "count": -2095.3
+     },
+     "overlap_O_upper": {
+      "value": 61.55,
+      "ci95": [
+       61.21,
+       61.89
+      ],
+      "count": 216645.1
+     },
+     "unresolved_S_lower": {
+      "value": 38.89,
+      "ci95": [
+       38.55,
+       39.23
+      ],
+      "count": 136886.1
+     },
+     "state_change_TS_lower": {
+      "value": 38.3,
+      "ci95": [
+       37.96,
+       38.64
+      ],
+      "count": 134790.9
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 3.009,
+       "ci95": [
+        2.982,
+        3.035
+       ],
+       "count": 134790.9
+      },
+      "overlap": {
+       "value": 4.836,
+       "ci95": [
+        4.809,
+        4.863
+       ],
+       "count": 216645.1
+      }
+     }
+    },
+    "pooled_all5": {
+     "n_err": 691038,
+     "err_rate": 12.34,
+     "err_rate_ci": [
+      12.313,
+      12.367
+     ],
+     "leakage": {
+      "value": 0.12,
+      "ci95": [
+       0.11,
+       0.14
+      ],
+      "count": 842.0
+     },
+     "transition_T": {
+      "value": -0.3,
+      "ci95": [
+       -0.32,
+       -0.28
+      ],
+      "count": -2095.3
+     },
+     "overlap_O_upper": {
+      "value": 79.37,
+      "ci95": [
+       79.1,
+       79.63
+      ],
+      "count": 548456.0
+     },
+     "unresolved_S_lower": {
+      "value": 20.81,
+      "ci95": [
+       20.55,
+       21.08
+      ],
+      "count": 143835.3
+     },
+     "state_change_TS_lower": {
+      "value": 20.51,
+      "ci95": [
+       20.25,
+       20.78
+      ],
+      "count": 141740.0
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.531,
+       "ci95": [
+        2.498,
+        2.564
+       ],
+       "count": 141740.0
+      },
+      "overlap": {
+       "value": 9.794,
+       "ci95": [
+        9.761,
+        9.826
+       ],
+       "count": 548456.0
+      }
+     }
+    },
+    "pooled_Q1,Q2,Q3,Q5": {
+     "n_err": 580370,
+     "err_rate": 12.955,
+     "err_rate_ci": [
+      12.924,
+      12.986
+     ],
+     "leakage": {
+      "value": 0.15,
+      "ci95": [
+       0.13,
+       0.16
+      ],
+      "count": 842.0
+     },
+     "transition_T": {
+      "value": -0.36,
+      "ci95": [
+       -0.38,
+       -0.34
+      ],
+      "count": -2095.3
+     },
+     "overlap_O_upper": {
+      "value": 83.29,
+      "ci95": [
+       83.0,
+       83.58
+      ],
+      "count": 483366.5
+     },
+     "unresolved_S_lower": {
+      "value": 16.93,
+      "ci95": [
+       16.64,
+       17.22
+      ],
+      "count": 98256.8
+     },
+     "state_change_TS_lower": {
+      "value": 16.57,
+      "ci95": [
+       16.28,
+       16.86
+      ],
+      "count": 96161.5
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.146,
+       "ci95": [
+        2.109,
+        2.184
+       ],
+       "count": 96161.5
+      },
+      "overlap": {
+       "value": 10.789,
+       "ci95": [
+        10.752,
+        10.827
+       ],
+       "count": 483366.5
+      }
+     }
+    }
+   },
+   "emp": {
+    "Q1": {
+     "n_err": 104345,
+     "err_rate": 9.317,
+     "err_rate_ci": [
+      9.263,
+      9.37
+     ],
+     "leakage": {
+      "value": -0.04,
+      "ci95": [
+       -0.07,
+       -0.01
+      ],
+      "count": -39.0
+     },
+     "transition_T": {
+      "value": 0.26,
+      "ci95": [
+       0.14,
+       0.38
+      ],
+      "count": 271.5
+     },
+     "overlap_O_upper": {
+      "value": 83.74,
+      "ci95": [
+       83.13,
+       84.35
+      ],
+      "count": 87377.5
+     },
+     "unresolved_S_lower": {
+      "value": 16.04,
+      "ci95": [
+       15.42,
+       16.66
+      ],
+      "count": 16735.0
+     },
+     "state_change_TS_lower": {
+      "value": 16.3,
+      "ci95": [
+       15.69,
+       16.91
+      ],
+      "count": 17006.5
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 1.518,
+       "ci95": [
+        1.462,
+        1.575
+       ],
+       "count": 17006.5
+      },
+      "overlap": {
+       "value": 7.802,
+       "ci95": [
+        7.745,
+        7.858
+       ],
+       "count": 87377.5
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 42784,
+       "leakage": {
+        "value": -0.04,
+        "ci95": [
+         -0.08,
+         0.01
+        ],
+        "count": -16.0
+       },
+       "transition_T": {
+        "value": 0.01,
+        "ci95": [
+         -0.18,
+         0.2
+        ],
+        "count": 4.4
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 95.24,
+        "ci95": [
+         94.28,
+         96.2
+        ],
+        "count": 40746.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 4.8,
+        "ci95": [
+         3.84,
+         5.76
+        ],
+        "count": 2053.7
+       }
+      },
+      "prep1": {
+       "n_err": 61561,
+       "leakage": {
+        "value": -0.04,
+        "ci95": [
+         -0.08,
+         0.0
+        ],
+        "count": -23.0
+       },
+       "transition_T": {
+        "value": 0.43,
+        "ci95": [
+         0.27,
+         0.6
+        ],
+        "count": 267.1
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 75.75,
+        "ci95": [
+         74.96,
+         76.54
+        ],
+        "count": 46631.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 24.29,
+        "ci95": [
+         23.5,
+         25.08
+        ],
+        "count": 14952.7
+       }
+      }
+     }
+    },
+    "Q2": {
+     "n_err": 339075,
+     "err_rate": 30.275,
+     "err_rate_ci": [
+      30.19,
+      30.36
+     ],
+     "leakage": {
+      "value": 0.09,
+      "ci95": [
+       0.07,
+       0.11
+      ],
+      "count": 315.0
+     },
+     "transition_T": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "count": 0.0
+     },
+     "overlap_O_upper": {
+      "value": 97.86,
+      "ci95": [
+       97.45,
+       98.26
+      ],
+      "count": 331810.8
+     },
+     "unresolved_S_lower": {
+      "value": 2.05,
+      "ci95": [
+       1.64,
+       2.46
+      ],
+      "count": 6949.2
+     },
+     "state_change_TS_lower": {
+      "value": 2.05,
+      "ci95": [
+       1.64,
+       2.46
+      ],
+      "count": 6949.2
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 0.62,
+       "ci95": [
+        0.497,
+        0.744
+       ],
+       "count": 6949.2
+      },
+      "overlap": {
+       "value": 29.626,
+       "ci95": [
+        29.503,
+        29.749
+       ],
+       "count": 331810.8
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 136784,
+       "leakage": {
+        "value": 0.21,
+        "ci95": [
+         0.17,
+         0.24
+        ],
+        "count": 281.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 97.83,
+        "ci95": [
+         97.2,
+         98.46
+        ],
+        "count": 133813.0
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 1.97,
+        "ci95": [
+         1.34,
+         2.6
+        ],
+        "count": 2690.0
+       }
+      },
+      "prep1": {
+       "n_err": 202291,
+       "leakage": {
+        "value": 0.02,
+        "ci95": [
+         -0.01,
+         0.04
+        ],
+        "count": 34.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 97.88,
+        "ci95": [
+         97.35,
+         98.41
+        ],
+        "count": 197997.9
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 2.11,
+        "ci95": [
+         1.57,
+         2.64
+        ],
+        "count": 4259.1
+       }
+      }
+     }
+    },
+    "Q3": {
+     "n_err": 82461,
+     "err_rate": 7.363,
+     "err_rate_ci": [
+      7.314,
+      7.411
+     ],
+     "leakage": {
+      "value": 0.7,
+      "ci95": [
+       0.64,
+       0.77
+      ],
+      "count": 579.0
+     },
+     "transition_T": {
+      "value": 0.54,
+      "ci95": [
+       0.46,
+       0.63
+      ],
+      "count": 449.3
+     },
+     "overlap_O_upper": {
+      "value": 40.88,
+      "ci95": [
+       40.17,
+       41.6
+      ],
+      "count": 33714.0
+     },
+     "unresolved_S_lower": {
+      "value": 57.87,
+      "ci95": [
+       57.15,
+       58.59
+      ],
+      "count": 47718.7
+     },
+     "state_change_TS_lower": {
+      "value": 58.41,
+      "ci95": [
+       57.7,
+       59.13
+      ],
+      "count": 48168.0
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 4.301,
+       "ci95": [
+        4.248,
+        4.353
+       ],
+       "count": 48168.0
+      },
+      "overlap": {
+       "value": 3.01,
+       "ci95": [
+        2.958,
+        3.063
+       ],
+       "count": 33714.0
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 18714,
+       "leakage": {
+        "value": 2.84,
+        "ci95": [
+         2.59,
+         3.09
+        ],
+        "count": 532.0
+       },
+       "transition_T": {
+        "value": 2.4,
+        "ci95": [
+         2.01,
+         2.79
+        ],
+        "count": 449.3
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 82.39,
+        "ci95": [
+         80.97,
+         83.82
+        ],
+        "count": 15419.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 14.76,
+        "ci95": [
+         13.32,
+         16.21
+        ],
+        "count": 2762.7
+       }
+      },
+      "prep1": {
+       "n_err": 63747,
+       "leakage": {
+        "value": 0.07,
+        "ci95": [
+         0.03,
+         0.11
+        ],
+        "count": 47.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 28.7,
+        "ci95": [
+         27.88,
+         29.52
+        ],
+        "count": 18294.7
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 71.23,
+        "ci95": [
+         70.4,
+         72.05
+        ],
+        "count": 45405.3
+       }
+      }
+     }
+    },
+    "Q4": {
+     "n_err": 110668,
+     "err_rate": 9.881,
+     "err_rate_ci": [
+      9.826,
+      9.936
+     ],
+     "leakage": "n/m (multimodal |1>)",
+     "transition_T": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "count": 0.0
+     },
+     "overlap_O_upper": {
+      "value": 58.82,
+      "ci95": [
+       58.17,
+       59.46
+      ],
+      "count": 65089.5
+     },
+     "unresolved_S_lower": {
+      "value": 41.18,
+      "ci95": [
+       40.54,
+       41.83
+      ],
+      "count": 45578.5
+     },
+     "state_change_TS_lower": {
+      "value": 41.18,
+      "ci95": [
+       40.54,
+       41.83
+      ],
+      "count": 45578.5
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 4.07,
+       "ci95": [
+        4.006,
+        4.133
+       ],
+       "count": 45578.5
+      },
+      "overlap": {
+       "value": 5.812,
+       "ci95": [
+        5.748,
+        5.875
+       ],
+       "count": 65089.5
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 50109,
+       "leakage": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 78.16,
+        "ci95": [
+         77.33,
+         79.0
+        ],
+        "count": 39166.2
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 21.84,
+        "ci95": [
+         21.0,
+         22.67
+        ],
+        "count": 10942.8
+       }
+      },
+      "prep1": {
+       "n_err": 60559,
+       "leakage": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 42.81,
+        "ci95": [
+         41.85,
+         43.76
+        ],
+        "count": 25923.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 57.19,
+        "ci95": [
+         56.24,
+         58.15
+        ],
+        "count": 34635.7
+       }
+      }
+     }
+    },
+    "Q5": {
+     "n_err": 54489,
+     "err_rate": 4.865,
+     "err_rate_ci": [
+      4.825,
+      4.905
+     ],
+     "leakage": {
+      "value": -0.02,
+      "ci95": [
+       -0.07,
+       0.03
+      ],
+      "count": -13.0
+     },
+     "transition_T": {
+      "value": 0.98,
+      "ci95": [
+       0.79,
+       1.17
+      ],
+      "count": 532.3
+     },
+     "overlap_O_upper": {
+      "value": 55.91,
+      "ci95": [
+       55.15,
+       56.67
+      ],
+      "count": 30464.1
+     },
+     "unresolved_S_lower": {
+      "value": 43.14,
+      "ci95": [
+       42.36,
+       43.92
+      ],
+      "count": 23505.7
+     },
+     "state_change_TS_lower": {
+      "value": 44.12,
+      "ci95": [
+       43.36,
+       44.87
+      ],
+      "count": 24037.9
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.146,
+       "ci95": [
+        2.109,
+        2.183
+       ],
+       "count": 24037.9
+      },
+      "overlap": {
+       "value": 2.72,
+       "ci95": [
+        2.683,
+        2.757
+       ],
+       "count": 30464.1
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 18792,
+       "leakage": {
+        "value": 0.13,
+        "ci95": [
+         0.04,
+         0.23
+        ],
+        "count": 25.0
+       },
+       "transition_T": {
+        "value": 0.42,
+        "ci95": [
+         0.08,
+         0.77
+        ],
+        "count": 79.8
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 89.58,
+        "ci95": [
+         88.11,
+         91.05
+        ],
+        "count": 16834.1
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 10.29,
+        "ci95": [
+         8.82,
+         11.76
+        ],
+        "count": 1932.9
+       }
+      },
+      "prep1": {
+       "n_err": 35697,
+       "leakage": {
+        "value": -0.11,
+        "ci95": [
+         -0.17,
+         -0.05
+        ],
+        "count": -38.0
+       },
+       "transition_T": {
+        "value": 1.27,
+        "ci95": [
+         1.05,
+         1.49
+        ],
+        "count": 452.5
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 38.18,
+        "ci95": [
+         37.32,
+         39.04
+        ],
+        "count": 13630.0
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 61.92,
+        "ci95": [
+         61.06,
+         62.79
+        ],
+        "count": 22105.0
+       }
+      }
+     }
+    },
+    "pooled_Q1,Q3-Q5": {
+     "n_err": 351963,
+     "err_rate": 7.856,
+     "err_rate_ci": [
+      7.831,
+      7.881
+     ],
+     "leakage": {
+      "value": 0.15,
+      "ci95": [
+       0.13,
+       0.17
+      ],
+      "count": 527.0
+     },
+     "transition_T": {
+      "value": 0.36,
+      "ci95": [
+       0.3,
+       0.41
+      ],
+      "count": 1253.0
+     },
+     "overlap_O_upper": {
+      "value": 61.55,
+      "ci95": [
+       61.21,
+       61.89
+      ],
+      "count": 216645.1
+     },
+     "unresolved_S_lower": {
+      "value": 37.94,
+      "ci95": [
+       37.6,
+       38.29
+      ],
+      "count": 133537.9
+     },
+     "state_change_TS_lower": {
+      "value": 38.3,
+      "ci95": [
+       37.96,
+       38.64
+      ],
+      "count": 134790.9
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 3.009,
+       "ci95": [
+        2.982,
+        3.035
+       ],
+       "count": 134790.9
+      },
+      "overlap": {
+       "value": 4.836,
+       "ci95": [
+        4.809,
+        4.863
+       ],
+       "count": 216645.1
+      }
+     }
+    },
+    "pooled_all5": {
+     "n_err": 691038,
+     "err_rate": 12.34,
+     "err_rate_ci": [
+      12.313,
+      12.367
+     ],
+     "leakage": {
+      "value": 0.12,
+      "ci95": [
+       0.11,
+       0.14
+      ],
+      "count": 842.0
+     },
+     "transition_T": {
+      "value": 0.18,
+      "ci95": [
+       0.16,
+       0.21
+      ],
+      "count": 1253.0
+     },
+     "overlap_O_upper": {
+      "value": 79.37,
+      "ci95": [
+       79.1,
+       79.63
+      ],
+      "count": 548456.0
+     },
+     "unresolved_S_lower": {
+      "value": 20.33,
+      "ci95": [
+       20.06,
+       20.6
+      ],
+      "count": 140487.1
+     },
+     "state_change_TS_lower": {
+      "value": 20.51,
+      "ci95": [
+       20.25,
+       20.78
+      ],
+      "count": 141740.0
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.531,
+       "ci95": [
+        2.498,
+        2.564
+       ],
+       "count": 141740.0
+      },
+      "overlap": {
+       "value": 9.794,
+       "ci95": [
+        9.761,
+        9.826
+       ],
+       "count": 548456.0
+      }
+     }
+    },
+    "pooled_Q1,Q2,Q3,Q5": {
+     "n_err": 580370,
+     "err_rate": 12.955,
+     "err_rate_ci": [
+      12.924,
+      12.986
+     ],
+     "leakage": {
+      "value": 0.15,
+      "ci95": [
+       0.13,
+       0.16
+      ],
+      "count": 842.0
+     },
+     "transition_T": {
+      "value": 0.22,
+      "ci95": [
+       0.18,
+       0.25
+      ],
+      "count": 1253.0
+     },
+     "overlap_O_upper": {
+      "value": 83.29,
+      "ci95": [
+       83.0,
+       83.58
+      ],
+      "count": 483366.5
+     },
+     "unresolved_S_lower": {
+      "value": 16.35,
+      "ci95": [
+       16.06,
+       16.64
+      ],
+      "count": 94908.6
+     },
+     "state_change_TS_lower": {
+      "value": 16.57,
+      "ci95": [
+       16.28,
+       16.86
+      ],
+      "count": 96161.5
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.146,
+       "ci95": [
+        2.109,
+        2.184
+       ],
+       "count": 96161.5
+      },
+      "overlap": {
+       "value": 10.789,
+       "ci95": [
+        10.752,
+        10.827
+       ],
+       "count": 483366.5
+      }
+     }
+    }
+   },
+   "ungated": {
+    "Q1": {
+     "n_err": 104345,
+     "err_rate": 9.317,
+     "err_rate_ci": [
+      9.263,
+      9.37
+     ],
+     "leakage": {
+      "value": -0.04,
+      "ci95": [
+       -0.07,
+       -0.01
+      ],
+      "count": -39.0
+     },
+     "transition_T": {
+      "value": -1.19,
+      "ci95": [
+       -1.28,
+       -1.11
+      ],
+      "count": -1245.9
+     },
+     "overlap_O_upper": {
+      "value": 83.74,
+      "ci95": [
+       83.13,
+       84.35
+      ],
+      "count": 87377.5
+     },
+     "unresolved_S_lower": {
+      "value": 17.49,
+      "ci95": [
+       16.88,
+       18.11
+      ],
+      "count": 18252.4
+     },
+     "state_change_TS_lower": {
+      "value": 16.3,
+      "ci95": [
+       15.69,
+       16.91
+      ],
+      "count": 17006.5
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 1.518,
+       "ci95": [
+        1.462,
+        1.575
+       ],
+       "count": 17006.5
+      },
+      "overlap": {
+       "value": 7.802,
+       "ci95": [
+        7.745,
+        7.858
+       ],
+       "count": 87377.5
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 42784,
+       "leakage": {
+        "value": -0.04,
+        "ci95": [
+         -0.08,
+         0.01
+        ],
+        "count": -16.0
+       },
+       "transition_T": {
+        "value": -1.71,
+        "ci95": [
+         -1.84,
+         -1.58
+        ],
+        "count": -730.6
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 95.24,
+        "ci95": [
+         94.28,
+         96.2
+        ],
+        "count": 40746.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 4.8,
+        "ci95": [
+         3.84,
+         5.76
+        ],
+        "count": 2053.7
+       }
+      },
+      "prep1": {
+       "n_err": 61561,
+       "leakage": {
+        "value": -0.04,
+        "ci95": [
+         -0.08,
+         0.0
+        ],
+        "count": -23.0
+       },
+       "transition_T": {
+        "value": -0.84,
+        "ci95": [
+         -0.95,
+         -0.72
+        ],
+        "count": -515.3
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 75.75,
+        "ci95": [
+         74.96,
+         76.54
+        ],
+        "count": 46631.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 24.29,
+        "ci95": [
+         23.5,
+         25.08
+        ],
+        "count": 14952.7
+       }
+      }
+     }
+    },
+    "Q2": {
+     "n_err": 339075,
+     "err_rate": 30.275,
+     "err_rate_ci": [
+      30.19,
+      30.36
+     ],
+     "leakage": {
+      "value": 0.09,
+      "ci95": [
+       0.07,
+       0.11
+      ],
+      "count": 315.0
+     },
+     "transition_T": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "count": 0.0
+     },
+     "overlap_O_upper": {
+      "value": 97.86,
+      "ci95": [
+       97.45,
+       98.26
+      ],
+      "count": 331810.8
+     },
+     "unresolved_S_lower": {
+      "value": 2.05,
+      "ci95": [
+       1.64,
+       2.46
+      ],
+      "count": 6949.2
+     },
+     "state_change_TS_lower": {
+      "value": 2.05,
+      "ci95": [
+       1.64,
+       2.46
+      ],
+      "count": 6949.2
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 0.62,
+       "ci95": [
+        0.497,
+        0.744
+       ],
+       "count": 6949.2
+      },
+      "overlap": {
+       "value": 29.626,
+       "ci95": [
+        29.503,
+        29.749
+       ],
+       "count": 331810.8
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 136784,
+       "leakage": {
+        "value": 0.21,
+        "ci95": [
+         0.17,
+         0.24
+        ],
+        "count": 281.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 97.83,
+        "ci95": [
+         97.2,
+         98.46
+        ],
+        "count": 133813.0
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 1.97,
+        "ci95": [
+         1.34,
+         2.6
+        ],
+        "count": 2690.0
+       }
+      },
+      "prep1": {
+       "n_err": 202291,
+       "leakage": {
+        "value": 0.02,
+        "ci95": [
+         -0.01,
+         0.04
+        ],
+        "count": 34.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 97.88,
+        "ci95": [
+         97.35,
+         98.41
+        ],
+        "count": 197997.9
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 2.11,
+        "ci95": [
+         1.57,
+         2.64
+        ],
+        "count": 4259.1
+       }
+      }
+     }
+    },
+    "Q3": {
+     "n_err": 82461,
+     "err_rate": 7.363,
+     "err_rate_ci": [
+      7.314,
+      7.411
+     ],
+     "leakage": {
+      "value": 0.7,
+      "ci95": [
+       0.64,
+       0.77
+      ],
+      "count": 579.0
+     },
+     "transition_T": {
+      "value": 1.15,
+      "ci95": [
+       1.02,
+       1.28
+      ],
+      "count": 946.5
+     },
+     "overlap_O_upper": {
+      "value": 40.88,
+      "ci95": [
+       40.17,
+       41.6
+      ],
+      "count": 33714.0
+     },
+     "unresolved_S_lower": {
+      "value": 57.27,
+      "ci95": [
+       56.54,
+       57.99
+      ],
+      "count": 47221.5
+     },
+     "state_change_TS_lower": {
+      "value": 58.41,
+      "ci95": [
+       57.7,
+       59.13
+      ],
+      "count": 48168.0
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 4.301,
+       "ci95": [
+        4.248,
+        4.353
+       ],
+       "count": 48168.0
+      },
+      "overlap": {
+       "value": 3.01,
+       "ci95": [
+        2.958,
+        3.063
+       ],
+       "count": 33714.0
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 18714,
+       "leakage": {
+        "value": 2.84,
+        "ci95": [
+         2.59,
+         3.09
+        ],
+        "count": 532.0
+       },
+       "transition_T": {
+        "value": 0.45,
+        "ci95": [
+         0.13,
+         0.77
+        ],
+        "count": 83.7
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 82.39,
+        "ci95": [
+         80.97,
+         83.82
+        ],
+        "count": 15419.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 14.76,
+        "ci95": [
+         13.32,
+         16.21
+        ],
+        "count": 2762.7
+       }
+      },
+      "prep1": {
+       "n_err": 63747,
+       "leakage": {
+        "value": 0.07,
+        "ci95": [
+         0.03,
+         0.11
+        ],
+        "count": 47.0
+       },
+       "transition_T": {
+        "value": 1.35,
+        "ci95": [
+         1.21,
+         1.5
+        ],
+        "count": 862.8
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 28.7,
+        "ci95": [
+         27.88,
+         29.52
+        ],
+        "count": 18294.7
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 71.23,
+        "ci95": [
+         70.4,
+         72.05
+        ],
+        "count": 45405.3
+       }
+      }
+     }
+    },
+    "Q4": {
+     "n_err": 110668,
+     "err_rate": 9.881,
+     "err_rate_ci": [
+      9.826,
+      9.936
+     ],
+     "leakage": "n/m (multimodal |1>)",
+     "transition_T": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "count": 0.0
+     },
+     "overlap_O_upper": {
+      "value": 58.82,
+      "ci95": [
+       58.17,
+       59.46
+      ],
+      "count": 65089.5
+     },
+     "unresolved_S_lower": {
+      "value": 41.18,
+      "ci95": [
+       40.54,
+       41.83
+      ],
+      "count": 45578.5
+     },
+     "state_change_TS_lower": {
+      "value": 41.18,
+      "ci95": [
+       40.54,
+       41.83
+      ],
+      "count": 45578.5
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 4.07,
+       "ci95": [
+        4.006,
+        4.133
+       ],
+       "count": 45578.5
+      },
+      "overlap": {
+       "value": 5.812,
+       "ci95": [
+        5.748,
+        5.875
+       ],
+       "count": 65089.5
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 50109,
+       "leakage": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 78.16,
+        "ci95": [
+         77.33,
+         79.0
+        ],
+        "count": 39166.2
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 21.84,
+        "ci95": [
+         21.0,
+         22.67
+        ],
+        "count": 10942.8
+       }
+      },
+      "prep1": {
+       "n_err": 60559,
+       "leakage": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "transition_T": {
+        "value": 0.0,
+        "ci95": [
+         0.0,
+         0.0
+        ],
+        "count": 0.0
+       },
+       "T_status": "n/m",
+       "overlap_O_upper": {
+        "value": 42.81,
+        "ci95": [
+         41.85,
+         43.76
+        ],
+        "count": 25923.3
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 57.19,
+        "ci95": [
+         56.24,
+         58.15
+        ],
+        "count": 34635.7
+       }
+      }
+     }
+    },
+    "Q5": {
+     "n_err": 54489,
+     "err_rate": 4.865,
+     "err_rate_ci": [
+      4.825,
+      4.905
+     ],
+     "leakage": {
+      "value": -0.02,
+      "ci95": [
+       -0.07,
+       0.03
+      ],
+      "count": -13.0
+     },
+     "transition_T": {
+      "value": -1.71,
+      "ci95": [
+       -1.86,
+       -1.57
+      ],
+      "count": -933.0
+     },
+     "overlap_O_upper": {
+      "value": 55.91,
+      "ci95": [
+       55.15,
+       56.67
+      ],
+      "count": 30464.1
+     },
+     "unresolved_S_lower": {
+      "value": 45.83,
+      "ci95": [
+       45.06,
+       46.6
+      ],
+      "count": 24970.9
+     },
+     "state_change_TS_lower": {
+      "value": 44.12,
+      "ci95": [
+       43.36,
+       44.87
+      ],
+      "count": 24037.9
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.146,
+       "ci95": [
+        2.109,
+        2.183
+       ],
+       "count": 24037.9
+      },
+      "overlap": {
+       "value": 2.72,
+       "ci95": [
+        2.683,
+        2.757
+       ],
+       "count": 30464.1
+      }
+     },
+     "per_bit": {
+      "prep0": {
+       "n_err": 18792,
+       "leakage": {
+        "value": 0.13,
+        "ci95": [
+         0.04,
+         0.23
+        ],
+        "count": 25.0
+       },
+       "transition_T": {
+        "value": -3.85,
+        "ci95": [
+         -4.1,
+         -3.6
+        ],
+        "count": -723.1
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 89.58,
+        "ci95": [
+         88.11,
+         91.05
+        ],
+        "count": 16834.1
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 10.29,
+        "ci95": [
+         8.82,
+         11.76
+        ],
+        "count": 1932.9
+       }
+      },
+      "prep1": {
+       "n_err": 35697,
+       "leakage": {
+        "value": -0.11,
+        "ci95": [
+         -0.17,
+         -0.05
+        ],
+        "count": -38.0
+       },
+       "transition_T": {
+        "value": -0.59,
+        "ci95": [
+         -0.77,
+         -0.41
+        ],
+        "count": -209.9
+       },
+       "T_status": "measured",
+       "overlap_O_upper": {
+        "value": 38.18,
+        "ci95": [
+         37.32,
+         39.04
+        ],
+        "count": 13630.0
+       },
+       "O_capped": false,
+       "state_change_TS_lower": {
+        "value": 61.92,
+        "ci95": [
+         61.06,
+         62.79
+        ],
+        "count": 22105.0
+       }
+      }
+     }
+    },
+    "pooled_Q1,Q3-Q5": {
+     "n_err": 351963,
+     "err_rate": 7.856,
+     "err_rate_ci": [
+      7.831,
+      7.881
+     ],
+     "leakage": {
+      "value": 0.15,
+      "ci95": [
+       0.13,
+       0.17
+      ],
+      "count": 527.0
+     },
+     "transition_T": {
+      "value": -0.35,
+      "ci95": [
+       -0.4,
+       -0.3
+      ],
+      "count": -1232.5
+     },
+     "overlap_O_upper": {
+      "value": 61.55,
+      "ci95": [
+       61.21,
+       61.89
+      ],
+      "count": 216645.1
+     },
+     "unresolved_S_lower": {
+      "value": 38.65,
+      "ci95": [
+       38.3,
+       38.99
+      ],
+      "count": 136023.4
+     },
+     "state_change_TS_lower": {
+      "value": 38.3,
+      "ci95": [
+       37.96,
+       38.64
+      ],
+      "count": 134790.9
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 3.009,
+       "ci95": [
+        2.982,
+        3.035
+       ],
+       "count": 134790.9
+      },
+      "overlap": {
+       "value": 4.836,
+       "ci95": [
+        4.809,
+        4.863
+       ],
+       "count": 216645.1
+      }
+     }
+    },
+    "pooled_all5": {
+     "n_err": 691038,
+     "err_rate": 12.34,
+     "err_rate_ci": [
+      12.313,
+      12.367
+     ],
+     "leakage": {
+      "value": 0.12,
+      "ci95": [
+       0.11,
+       0.14
+      ],
+      "count": 842.0
+     },
+     "transition_T": {
+      "value": -0.18,
+      "ci95": [
+       -0.2,
+       -0.15
+      ],
+      "count": -1232.5
+     },
+     "overlap_O_upper": {
+      "value": 79.37,
+      "ci95": [
+       79.1,
+       79.63
+      ],
+      "count": 548456.0
+     },
+     "unresolved_S_lower": {
+      "value": 20.69,
+      "ci95": [
+       20.42,
+       20.95
+      ],
+      "count": 142972.5
+     },
+     "state_change_TS_lower": {
+      "value": 20.51,
+      "ci95": [
+       20.25,
+       20.78
+      ],
+      "count": 141740.0
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.531,
+       "ci95": [
+        2.498,
+        2.564
+       ],
+       "count": 141740.0
+      },
+      "overlap": {
+       "value": 9.794,
+       "ci95": [
+        9.761,
+        9.826
+       ],
+       "count": 548456.0
+      }
+     }
+    },
+    "pooled_Q1,Q2,Q3,Q5": {
+     "n_err": 580370,
+     "err_rate": 12.955,
+     "err_rate_ci": [
+      12.924,
+      12.986
+     ],
+     "leakage": {
+      "value": 0.15,
+      "ci95": [
+       0.13,
+       0.16
+      ],
+      "count": 842.0
+     },
+     "transition_T": {
+      "value": -0.21,
+      "ci95": [
+       -0.24,
+       -0.18
+      ],
+      "count": -1232.5
+     },
+     "overlap_O_upper": {
+      "value": 83.29,
+      "ci95": [
+       83.0,
+       83.58
+      ],
+      "count": 483366.5
+     },
+     "unresolved_S_lower": {
+      "value": 16.78,
+      "ci95": [
+       16.49,
+       17.07
+      ],
+      "count": 97394.0
+     },
+     "state_change_TS_lower": {
+      "value": 16.57,
+      "ci95": [
+       16.28,
+       16.86
+      ],
+      "count": 96161.5
+     },
+     "per_shot_pct": {
+      "state_change": {
+       "value": 2.146,
+       "ci95": [
+        2.109,
+        2.184
+       ],
+       "count": 96161.5
+      },
+      "overlap": {
+       "value": 10.789,
+       "ci95": [
+        10.752,
+        10.827
+       ],
+       "count": 483366.5
+      }
+     }
+    }
+   }
+  }
+ },
+ "leak_E3_prep1_prep0_all": {
+  "Q1": {
+   "1us": {
+    "prep1": {
+     "v": 0.789,
+     "ci": [
+      0.762,
+      0.816
+     ]
+    },
+    "prep0": {
+     "v": 0.0,
+     "ci": [
+      -0.014,
+      0.014
+     ]
+    },
+    "all": 0.395,
+    "train_prep1": 0.806
+   },
+   "400ns": {
+    "prep1": {
+     "v": 0.075,
+     "ci": [
+      0.06,
+      0.09
+     ]
+    },
+    "prep0": {
+     "v": 0.003,
+     "ci": [
+      -0.011,
+      0.017
+     ]
+    },
+    "all": 0.039,
+    "train_prep1": 0.068
+   }
+  },
+  "Q2": {
+   "1us": {
+    "prep1": {
+     "v": 1.645,
+     "ci": [
+      1.609,
+      1.681
+     ]
+    },
+    "prep0": {
+     "v": 0.183,
+     "ci": [
+      0.166,
+      0.201
+     ]
+    },
+    "all": 0.914,
+    "train_prep1": 1.656
+   },
+   "400ns": {
+    "prep1": {
+     "v": 0.387,
+     "ci": [
+      0.366,
+      0.409
+     ]
+    },
+    "prep0": {
+     "v": 0.054,
+     "ci": [
+      0.039,
+      0.069
+     ]
+    },
+    "all": 0.221,
+    "train_prep1": 0.406
+   }
+  },
+  "Q3": {
+   "1us": {
+    "prep1": {
+     "v": 11.614,
+     "ci": [
+      11.524,
+      11.704
+     ]
+    },
+    "prep0": {
+     "v": 0.861,
+     "ci": [
+      0.833,
+      0.888
+     ]
+    },
+    "all": 6.237,
+    "train_prep1": 11.7
+   },
+   "400ns": {
+    "prep1": {
+     "v": 3.529,
+     "ci": [
+      3.478,
+      3.58
+     ]
+    },
+    "prep0": {
+     "v": 0.128,
+     "ci": [
+      0.112,
+      0.144
+     ]
+    },
+    "all": 1.828,
+    "train_prep1": 3.514
+   }
+  },
+  "Q4": {
+   "1us": {
+    "prep1": {
+     "v": 3.999,
+     "ci": [
+      3.922,
+      4.076
+     ]
+    },
+    "prep0": {
+     "v": 0.099,
+     "ci": [
+      0.081,
+      0.116
+     ]
+    },
+    "all": 2.049,
+    "train_prep1": 3.97
+   },
+   "400ns": {
+    "prep1": {
+     "v": 8.527,
+     "ci": [
+      8.45,
+      8.605
+     ]
+    },
+    "prep0": {
+     "v": 0.182,
+     "ci": [
+      0.165,
+      0.2
+     ]
+    },
+    "all": 4.355,
+    "train_prep1": 8.449
+   }
+  },
+  "Q5": {
+   "1us": {
+    "prep1": {
+     "v": 4.639,
+     "ci": [
+      4.58,
+      4.697
+     ]
+    },
+    "prep0": {
+     "v": 0.091,
+     "ci": [
+      0.076,
+      0.107
+     ]
+    },
+    "all": 2.365,
+    "train_prep1": 4.609
+   },
+   "400ns": {
+    "prep1": {
+     "v": 0.437,
+     "ci": [
+      0.415,
+      0.46
+     ]
+    },
+    "prep0": {
+     "v": 0.005,
+     "ci": [
+      -0.009,
+      0.019
+     ]
+    },
+    "all": 0.221,
+    "train_prep1": 0.441
+   }
+  }
+ },
+ "step_test": {
+  "1us_Q1_relax": {
+   "alpha_0.05": {
+    "T": 4011.0,
+    "flags": 6919,
+    "fp_sum": 2920.4,
+    "quasi_null_obs_over_exp": 1.006,
+    "quasi_null_ERRORS_obs_over_exp": 0.718,
+    "eff_given_mf_misread": 0.537,
+    "pflag_ge_0p5_window_ns": [
+     240,
+     880
+    ],
+    "pflag_max": 0.885,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": 2221.4,
+    "flags": 3050,
+    "fp_sum": 834.4,
+    "quasi_null_obs_over_exp": 0.983,
+    "quasi_null_ERRORS_obs_over_exp": 0.399,
+    "eff_given_mf_misread": 0.359,
+    "pflag_ge_0p5_window_ns": [
+     340,
+     780
+    ],
+    "pflag_max": 0.733,
+    "gate_pass": true
+   },
+   "alpha_0.002": {
+    "T": 741.2,
+    "flags": 959,
+    "fp_sum": 220.8,
+    "quasi_null_obs_over_exp": 0.964,
+    "quasi_null_ERRORS_obs_over_exp": 0.209,
+    "eff_given_mf_misread": 0.224,
+    "pflag_ge_0p5_window_ns": [
+     480,
+     640
+    ],
+    "pflag_max": 0.544,
+    "gate_pass": true
+   },
+   "noise": {
+    "diag_mean": 17.82541018712515,
+    "var_ratio_prep1_over_prep0": 1.0042303868357754,
+    "lag1_corr": -0.0592689888434229,
+    "n_resid": 373196
+   }
+  },
+  "1us_Q1_excite": {
+   "alpha_0.05": {
+    "T": -241.8,
+    "flags": 1032,
+    "fp_sum": 1272.4,
+    "quasi_null_obs_over_exp": 0.981,
+    "quasi_null_ERRORS_obs_over_exp": 0.652,
+    "eff_given_mf_misread": 0.537,
+    "pflag_ge_0p5_window_ns": [
+     240,
+     880
+    ],
+    "pflag_max": 0.886,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": -67.8,
+    "flags": 380,
+    "fp_sum": 447.2,
+    "quasi_null_obs_over_exp": 0.945,
+    "quasi_null_ERRORS_obs_over_exp": 0.583,
+    "eff_given_mf_misread": 0.358,
+    "pflag_ge_0p5_window_ns": [
+     340,
+     780
+    ],
+    "pflag_max": 0.732,
+    "gate_pass": true
+   },
+   "alpha_0.002": {
+    "T": 32.4,
+    "flags": 165,
+    "fp_sum": 131.5,
+    "quasi_null_obs_over_exp": 0.91,
+    "quasi_null_ERRORS_obs_over_exp": 0.708,
+    "eff_given_mf_misread": 0.222,
+    "pflag_ge_0p5_window_ns": [
+     480,
+     640
+    ],
+    "pflag_max": 0.542,
+    "gate_pass": true
+   },
+   "noise": {
+    "diag_mean": 17.82541018712515,
+    "var_ratio_prep1_over_prep0": 1.0042303868357754,
+    "lag1_corr": -0.0592689888434229,
+    "n_resid": 373196
+   }
+  },
+  "1us_Q2_relax": {
+   "alpha_0.05": {
+    "T": -731.0,
+    "flags": 9732,
+    "fp_sum": 10480.3,
+    "quasi_null_obs_over_exp": 1.33,
+    "quasi_null_ERRORS_obs_over_exp": 0.92,
+    "eff_given_mf_misread": 0.109,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.162,
+    "gate_pass": false
+   },
+   "alpha_0.01": {
+    "T": -688.9,
+    "flags": 1510,
+    "fp_sum": 2200.7,
+    "quasi_null_obs_over_exp": 1.604,
+    "quasi_null_ERRORS_obs_over_exp": 0.673,
+    "eff_given_mf_misread": 0.03,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.05,
+    "gate_pass": false
+   },
+   "alpha_0.002": {
+    "T": -254.8,
+    "flags": 195,
+    "fp_sum": 450.2,
+    "quasi_null_obs_over_exp": 2.009,
+    "quasi_null_ERRORS_obs_over_exp": 0.479,
+    "eff_given_mf_misread": 0.008,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.015,
+    "gate_pass": false
+   },
+   "noise": {
+    "diag_mean": 17.964168582965122,
+    "var_ratio_prep1_over_prep0": 1.0256953920584826,
+    "lag1_corr": -0.06508811450009365,
+    "n_resid": 227600
+   }
+  },
+  "1us_Q2_excite": {
+   "alpha_0.05": {
+    "T": -1038.6,
+    "flags": 6688,
+    "fp_sum": 7608.9,
+    "quasi_null_obs_over_exp": 0.799,
+    "quasi_null_ERRORS_obs_over_exp": 0.783,
+    "eff_given_mf_misread": 0.109,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.162,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": 3.2,
+    "flags": 1666,
+    "fp_sum": 1594.0,
+    "quasi_null_obs_over_exp": 0.709,
+    "quasi_null_ERRORS_obs_over_exp": 0.81,
+    "eff_given_mf_misread": 0.03,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.051,
+    "gate_pass": false
+   },
+   "alpha_0.002": {
+    "T": 51.5,
+    "flags": 424,
+    "fp_sum": 333.4,
+    "quasi_null_obs_over_exp": 0.636,
+    "quasi_null_ERRORS_obs_over_exp": 0.735,
+    "eff_given_mf_misread": 0.008,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.015,
+    "gate_pass": false
+   },
+   "noise": {
+    "diag_mean": 17.964168582965122,
+    "var_ratio_prep1_over_prep0": 1.0256953920584826,
+    "lag1_corr": -0.06508811450009365,
+    "n_resid": 227600
+   }
+  },
+  "1us_Q3_relax": {
+   "alpha_0.05": {
+    "T": 4146.5,
+    "flags": 7329,
+    "fp_sum": 3202.9,
+    "quasi_null_obs_over_exp": 1.397,
+    "quasi_null_ERRORS_obs_over_exp": 0.774,
+    "eff_given_mf_misread": 0.689,
+    "pflag_ge_0p5_window_ns": [
+     160,
+     940
+    ],
+    "pflag_max": 0.976,
+    "gate_pass": false
+   },
+   "alpha_0.01": {
+    "T": 1446.7,
+    "flags": 2156,
+    "fp_sum": 717.2,
+    "quasi_null_obs_over_exp": 3.079,
+    "quasi_null_ERRORS_obs_over_exp": 0.702,
+    "eff_given_mf_misread": 0.565,
+    "pflag_ge_0p5_window_ns": [
+     220,
+     880
+    ],
+    "pflag_max": 0.934,
+    "gate_pass": false
+   },
+   "alpha_0.002": {
+    "T": 207.4,
+    "flags": 374,
+    "fp_sum": 168.7,
+    "quasi_null_obs_over_exp": 8.776,
+    "quasi_null_ERRORS_obs_over_exp": 0.422,
+    "eff_given_mf_misread": 0.45,
+    "pflag_ge_0p5_window_ns": [
+     280,
+     820
+    ],
+    "pflag_max": 0.859,
+    "gate_pass": false
+   },
+   "noise": {
+    "diag_mean": 21.301273603579737,
+    "var_ratio_prep1_over_prep0": 1.0244135225223048,
+    "lag1_corr": -0.02335177153540037,
+    "n_resid": 259127
+   }
+  },
+  "1us_Q3_excite": {
+   "alpha_0.05": {
+    "T": 1188.5,
+    "flags": 3333,
+    "fp_sum": 1203.4,
+    "quasi_null_obs_over_exp": 0.997,
+    "quasi_null_ERRORS_obs_over_exp": 0.754,
+    "eff_given_mf_misread": 0.689,
+    "pflag_ge_0p5_window_ns": [
+     160,
+     940
+    ],
+    "pflag_max": 0.975,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": 1127.6,
+    "flags": 2185,
+    "fp_sum": 372.7,
+    "quasi_null_obs_over_exp": 1.266,
+    "quasi_null_ERRORS_obs_over_exp": 1.095,
+    "eff_given_mf_misread": 0.564,
+    "pflag_ge_0p5_window_ns": [
+     220,
+     880
+    ],
+    "pflag_max": 0.934,
+    "gate_pass": true
+   },
+   "alpha_0.002": {
+    "T": 836.6,
+    "flags": 1397,
+    "fp_sum": 108.6,
+    "quasi_null_obs_over_exp": 2.722,
+    "quasi_null_ERRORS_obs_over_exp": 1.833,
+    "eff_given_mf_misread": 0.449,
+    "pflag_ge_0p5_window_ns": [
+     280,
+     820
+    ],
+    "pflag_max": 0.859,
+    "gate_pass": false
+   },
+   "noise": {
+    "diag_mean": 21.301273603579737,
+    "var_ratio_prep1_over_prep0": 1.0244135225223048,
+    "lag1_corr": -0.02335177153540037,
+    "n_resid": 259127
+   }
+  },
+  "1us_Q4_relax": {
+   "alpha_0.05": {
+    "T": 1932.2,
+    "flags": 5947,
+    "fp_sum": 4013.3,
+    "quasi_null_obs_over_exp": 1.731,
+    "quasi_null_ERRORS_obs_over_exp": 0.598,
+    "eff_given_mf_misread": 0.708,
+    "pflag_ge_0p5_window_ns": [
+     200,
+     960
+    ],
+    "pflag_max": 0.99,
+    "gate_pass": false
+   },
+   "alpha_0.01": {
+    "T": 405.8,
+    "flags": 1237,
+    "fp_sum": 832.0,
+    "quasi_null_obs_over_exp": 2.762,
+    "quasi_null_ERRORS_obs_over_exp": 0.533,
+    "eff_given_mf_misread": 0.583,
+    "pflag_ge_0p5_window_ns": [
+     280,
+     940
+    ],
+    "pflag_max": 0.97,
+    "gate_pass": false
+   },
+   "alpha_0.002": {
+    "T": 54.9,
+    "flags": 231,
+    "fp_sum": 179.1,
+    "quasi_null_obs_over_exp": 4.566,
+    "quasi_null_ERRORS_obs_over_exp": 0.715,
+    "eff_given_mf_misread": 0.478,
+    "pflag_ge_0p5_window_ns": [
+     340,
+     920
+    ],
+    "pflag_max": 0.93,
+    "gate_pass": false
+   },
+   "noise": {
+    "diag_mean": 25.685565898930676,
+    "var_ratio_prep1_over_prep0": 1.3271891491743524,
+    "lag1_corr": 0.05466379851712929,
+    "n_resid": 255915
+   }
+  },
+  "1us_Q4_excite": {
+   "alpha_0.05": {
+    "T": 2607.9,
+    "flags": 5140,
+    "fp_sum": 2645.0,
+    "quasi_null_obs_over_exp": 0.839,
+    "quasi_null_ERRORS_obs_over_exp": 0.59,
+    "eff_given_mf_misread": 0.709,
+    "pflag_ge_0p5_window_ns": [
+     200,
+     960
+    ],
+    "pflag_max": 0.99,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": 1982.2,
+    "flags": 2798,
+    "fp_sum": 848.4,
+    "quasi_null_obs_over_exp": 0.777,
+    "quasi_null_ERRORS_obs_over_exp": 0.617,
+    "eff_given_mf_misread": 0.585,
+    "pflag_ge_0p5_window_ns": [
+     280,
+     940
+    ],
+    "pflag_max": 0.97,
+    "gate_pass": true
+   },
+   "alpha_0.002": {
+    "T": 1401.4,
+    "flags": 1664,
+    "fp_sum": 266.7,
+    "quasi_null_obs_over_exp": 1.014,
+    "quasi_null_ERRORS_obs_over_exp": 0.784,
+    "eff_given_mf_misread": 0.481,
+    "pflag_ge_0p5_window_ns": [
+     340,
+     920
+    ],
+    "pflag_max": 0.933,
+    "gate_pass": true
+   },
+   "noise": {
+    "diag_mean": 25.685565898930676,
+    "var_ratio_prep1_over_prep0": 1.3271891491743524,
+    "lag1_corr": 0.05466379851712929,
+    "n_resid": 255915
+   }
+  },
+  "1us_Q5_relax": {
+   "alpha_0.05": {
+    "T": 3951.6,
+    "flags": 6194,
+    "fp_sum": 2254.8,
+    "quasi_null_obs_over_exp": 1.04,
+    "quasi_null_ERRORS_obs_over_exp": 0.637,
+    "eff_given_mf_misread": 0.654,
+    "pflag_ge_0p5_window_ns": [
+     220,
+     960
+    ],
+    "pflag_max": 0.998,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": 1791.0,
+    "flags": 2325,
+    "fp_sum": 538.3,
+    "quasi_null_obs_over_exp": 1.212,
+    "quasi_null_ERRORS_obs_over_exp": 0.458,
+    "eff_given_mf_misread": 0.552,
+    "pflag_ge_0p5_window_ns": [
+     280,
+     920
+    ],
+    "pflag_max": 0.994,
+    "gate_pass": true
+   },
+   "alpha_0.002": {
+    "T": 399.0,
+    "flags": 548,
+    "fp_sum": 149.9,
+    "quasi_null_obs_over_exp": 1.868,
+    "quasi_null_ERRORS_obs_over_exp": 0.318,
+    "eff_given_mf_misread": 0.477,
+    "pflag_ge_0p5_window_ns": [
+     320,
+     900
+    ],
+    "pflag_max": 0.986,
+    "gate_pass": false
+   },
+   "noise": {
+    "diag_mean": 22.78340142364466,
+    "var_ratio_prep1_over_prep0": 1.0011997312591578,
+    "lag1_corr": -0.017805693572672428,
+    "n_resid": 329278
+   }
+  },
+  "1us_Q5_excite": {
+   "alpha_0.05": {
+    "T": 664.5,
+    "flags": 1383,
+    "fp_sum": 598.4,
+    "quasi_null_obs_over_exp": 1.011,
+    "quasi_null_ERRORS_obs_over_exp": 0.574,
+    "eff_given_mf_misread": 0.653,
+    "pflag_ge_0p5_window_ns": [
+     220,
+     960
+    ],
+    "pflag_max": 0.998,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": 529.6,
+    "flags": 816,
+    "fp_sum": 202.6,
+    "quasi_null_obs_over_exp": 1.115,
+    "quasi_null_ERRORS_obs_over_exp": 0.565,
+    "eff_given_mf_misread": 0.552,
+    "pflag_ge_0p5_window_ns": [
+     280,
+     920
+    ],
+    "pflag_max": 0.994,
+    "gate_pass": true
+   },
+   "alpha_0.002": {
+    "T": 285.6,
+    "flags": 406,
+    "fp_sum": 72.4,
+    "quasi_null_obs_over_exp": 1.564,
+    "quasi_null_ERRORS_obs_over_exp": 0.58,
+    "eff_given_mf_misread": 0.475,
+    "pflag_ge_0p5_window_ns": [
+     320,
+     900
+    ],
+    "pflag_max": 0.985,
+    "gate_pass": false
+   },
+   "noise": {
+    "diag_mean": 22.78340142364466,
+    "var_ratio_prep1_over_prep0": 1.0011997312591578,
+    "lag1_corr": -0.017805693572672428,
+    "n_resid": 329278
+   }
+  },
+  "400ns_Q1_relax": {
+   "alpha_0.05": {
+    "T": -1763.7,
+    "flags": 6010,
+    "fp_sum": 7782.6,
+    "quasi_null_obs_over_exp": 0.994,
+    "quasi_null_ERRORS_obs_over_exp": 0.663,
+    "eff_given_mf_misread": 0.21,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.442,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": -515.3,
+    "flags": 1315,
+    "fp_sum": 1834.9,
+    "quasi_null_obs_over_exp": 1.005,
+    "quasi_null_ERRORS_obs_over_exp": 0.553,
+    "eff_given_mf_misread": 0.078,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.208,
+    "gate_pass": true
+   },
+   "alpha_0.002": {
+    "T": -136.2,
+    "flags": 261,
+    "fp_sum": 398.2,
+    "quasi_null_obs_over_exp": 0.967,
+    "quasi_null_ERRORS_obs_over_exp": 0.435,
+    "eff_given_mf_misread": 0.027,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.086,
+    "gate_pass": false
+   },
+   "noise": {
+    "diag_mean": 17.833411994324297,
+    "var_ratio_prep1_over_prep0": 1.001347763974836,
+    "lag1_corr": -0.058307782700767107,
+    "n_resid": 373547
+   }
+  },
+  "400ns_Q1_excite": {
+   "alpha_0.05": {
+    "T": -2243.8,
+    "flags": 4060,
+    "fp_sum": 6296.0,
+    "quasi_null_obs_over_exp": 0.995,
+    "quasi_null_ERRORS_obs_over_exp": 0.643,
+    "eff_given_mf_misread": 0.212,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.443,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": -730.6,
+    "flags": 784,
+    "fp_sum": 1513.0,
+    "quasi_null_obs_over_exp": 0.996,
+    "quasi_null_ERRORS_obs_over_exp": 0.511,
+    "eff_given_mf_misread": 0.078,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.208,
+    "gate_pass": true
+   },
+   "alpha_0.002": {
+    "T": -195.1,
+    "flags": 151,
+    "fp_sum": 346.0,
+    "quasi_null_obs_over_exp": 0.975,
+    "quasi_null_ERRORS_obs_over_exp": 0.423,
+    "eff_given_mf_misread": 0.028,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.088,
+    "gate_pass": false
+   },
+   "noise": {
+    "diag_mean": 17.833411994324297,
+    "var_ratio_prep1_over_prep0": 1.001347763974836,
+    "lag1_corr": -0.058307782700767107,
+    "n_resid": 373547
+   }
+  },
+  "400ns_Q2_relax": {
+   "alpha_0.05": {
+    "T": -143.0,
+    "flags": 13188,
+    "fp_sum": 13361.8,
+    "quasi_null_obs_over_exp": 1.016,
+    "quasi_null_ERRORS_obs_over_exp": 0.977,
+    "eff_given_mf_misread": 0.085,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.122,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": 52.8,
+    "flags": 2824,
+    "fp_sum": 2781.6,
+    "quasi_null_obs_over_exp": 1.083,
+    "quasi_null_ERRORS_obs_over_exp": 0.978,
+    "eff_given_mf_misread": 0.021,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.035,
+    "gate_pass": false
+   },
+   "alpha_0.002": {
+    "T": 15.1,
+    "flags": 585,
+    "fp_sum": 573.3,
+    "quasi_null_obs_over_exp": 1.079,
+    "quasi_null_ERRORS_obs_over_exp": 0.909,
+    "eff_given_mf_misread": 0.005,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.009,
+    "gate_pass": false
+   },
+   "noise": {
+    "diag_mean": 18.026531339550708,
+    "var_ratio_prep1_over_prep0": 1.0170101091613108,
+    "lag1_corr": -0.06799287877746775,
+    "n_resid": 227864
+   }
+  },
+  "400ns_Q2_excite": {
+   "alpha_0.05": {
+    "T": -1211.5,
+    "flags": 7100,
+    "fp_sum": 8308.8,
+    "quasi_null_obs_over_exp": 0.903,
+    "quasi_null_ERRORS_obs_over_exp": 0.839,
+    "eff_given_mf_misread": 0.085,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.123,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": -216.5,
+    "flags": 1502,
+    "fp_sum": 1716.1,
+    "quasi_null_obs_over_exp": 0.886,
+    "quasi_null_ERRORS_obs_over_exp": 0.852,
+    "eff_given_mf_misread": 0.021,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.033,
+    "gate_pass": false
+   },
+   "alpha_0.002": {
+    "T": -22.9,
+    "flags": 323,
+    "fp_sum": 344.9,
+    "quasi_null_obs_over_exp": 0.861,
+    "quasi_null_ERRORS_obs_over_exp": 0.823,
+    "eff_given_mf_misread": 0.005,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.009,
+    "gate_pass": false
+   },
+   "noise": {
+    "diag_mean": 18.026531339550708,
+    "var_ratio_prep1_over_prep0": 1.0170101091613108,
+    "lag1_corr": -0.06799287877746775,
+    "n_resid": 227864
+   }
+  },
+  "400ns_Q3_relax": {
+   "alpha_0.05": {
+    "T": 2626.3,
+    "flags": 7977,
+    "fp_sum": 5338.6,
+    "quasi_null_obs_over_exp": 1.132,
+    "quasi_null_ERRORS_obs_over_exp": 0.809,
+    "eff_given_mf_misread": 0.376,
+    "pflag_ge_0p5_window_ns": [
+     160,
+     320
+    ],
+    "pflag_max": 0.741,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": 862.8,
+    "flags": 2127,
+    "fp_sum": 1260.4,
+    "quasi_null_obs_over_exp": 1.547,
+    "quasi_null_ERRORS_obs_over_exp": 0.73,
+    "eff_given_mf_misread": 0.2,
+    "pflag_ge_0p5_window_ns": [
+     240,
+     240
+    ],
+    "pflag_max": 0.51,
+    "gate_pass": false
+   },
+   "alpha_0.002": {
+    "T": 122.4,
+    "flags": 407,
+    "fp_sum": 283.6,
+    "quasi_null_obs_over_exp": 2.633,
+    "quasi_null_ERRORS_obs_over_exp": 0.44,
+    "eff_given_mf_misread": 0.1,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.304,
+    "gate_pass": false
+   },
+   "noise": {
+    "diag_mean": 21.271484572498405,
+    "var_ratio_prep1_over_prep0": 1.0106417677195454,
+    "lag1_corr": -0.02782616982582138,
+    "n_resid": 259588
+   }
+  },
+  "400ns_Q3_excite": {
+   "alpha_0.05": {
+    "T": -396.5,
+    "flags": 2522,
+    "fp_sum": 2780.6,
+    "quasi_null_obs_over_exp": 0.957,
+    "quasi_null_ERRORS_obs_over_exp": 0.581,
+    "eff_given_mf_misread": 0.375,
+    "pflag_ge_0p5_window_ns": [
+     160,
+     320
+    ],
+    "pflag_max": 0.741,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": 83.7,
+    "flags": 922,
+    "fp_sum": 772.5,
+    "quasi_null_obs_over_exp": 0.957,
+    "quasi_null_ERRORS_obs_over_exp": 0.503,
+    "eff_given_mf_misread": 0.201,
+    "pflag_ge_0p5_window_ns": [
+     240,
+     240
+    ],
+    "pflag_max": 0.51,
+    "gate_pass": true
+   },
+   "alpha_0.002": {
+    "T": 136.9,
+    "flags": 368,
+    "fp_sum": 192.3,
+    "quasi_null_obs_over_exp": 0.979,
+    "quasi_null_ERRORS_obs_over_exp": 0.518,
+    "eff_given_mf_misread": 0.1,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.303,
+    "gate_pass": true
+   },
+   "noise": {
+    "diag_mean": 21.271484572498405,
+    "var_ratio_prep1_over_prep0": 1.0106417677195454,
+    "lag1_corr": -0.02782616982582138,
+    "n_resid": 259588
+   }
+  },
+  "400ns_Q4_relax": {
+   "alpha_0.05": {
+    "T": -719.9,
+    "flags": 4363,
+    "fp_sum": 5085.0,
+    "quasi_null_obs_over_exp": 1.467,
+    "quasi_null_ERRORS_obs_over_exp": 0.639,
+    "eff_given_mf_misread": 0.275,
+    "pflag_ge_0p5_window_ns": [
+     240,
+     340
+    ],
+    "pflag_max": 0.637,
+    "gate_pass": false
+   },
+   "alpha_0.01": {
+    "T": -305.5,
+    "flags": 728,
+    "fp_sum": 1031.2,
+    "quasi_null_obs_over_exp": 1.806,
+    "quasi_null_ERRORS_obs_over_exp": 0.486,
+    "eff_given_mf_misread": 0.122,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.387,
+    "gate_pass": false
+   },
+   "alpha_0.002": {
+    "T": -95.8,
+    "flags": 118,
+    "fp_sum": 212.5,
+    "quasi_null_obs_over_exp": 2.301,
+    "quasi_null_ERRORS_obs_over_exp": 0.426,
+    "eff_given_mf_misread": 0.053,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.211,
+    "gate_pass": false
+   },
+   "noise": {
+    "diag_mean": 25.05892389684334,
+    "var_ratio_prep1_over_prep0": 1.2290780144259774,
+    "lag1_corr": 0.028142882695520764,
+    "n_resid": 251834
+   }
+  },
+  "400ns_Q4_excite": {
+   "alpha_0.05": {
+    "T": -3618.9,
+    "flags": 3268,
+    "fp_sum": 6823.4,
+    "quasi_null_obs_over_exp": 0.739,
+    "quasi_null_ERRORS_obs_over_exp": 0.314,
+    "eff_given_mf_misread": 0.275,
+    "pflag_ge_0p5_window_ns": [
+     240,
+     340
+    ],
+    "pflag_max": 0.64,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": -911.4,
+    "flags": 735,
+    "fp_sum": 1627.9,
+    "quasi_null_obs_over_exp": 0.593,
+    "quasi_null_ERRORS_obs_over_exp": 0.198,
+    "eff_given_mf_misread": 0.122,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.387,
+    "gate_pass": false
+   },
+   "alpha_0.002": {
+    "T": -176.6,
+    "flags": 195,
+    "fp_sum": 364.5,
+    "quasi_null_obs_over_exp": 0.5,
+    "quasi_null_ERRORS_obs_over_exp": 0.11,
+    "eff_given_mf_misread": 0.052,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.209,
+    "gate_pass": false
+   },
+   "noise": {
+    "diag_mean": 25.05892389684334,
+    "var_ratio_prep1_over_prep0": 1.2290780144259774,
+    "lag1_corr": 0.028142882695520764,
+    "n_resid": 251834
+   }
+  },
+  "400ns_Q5_relax": {
+   "alpha_0.05": {
+    "T": -471.1,
+    "flags": 4331,
+    "fp_sum": 4804.3,
+    "quasi_null_obs_over_exp": 0.996,
+    "quasi_null_ERRORS_obs_over_exp": 0.486,
+    "eff_given_mf_misread": 0.29,
+    "pflag_ge_0p5_window_ns": [
+     220,
+     360
+    ],
+    "pflag_max": 0.722,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": -209.9,
+    "flags": 1028,
+    "fp_sum": 1238.7,
+    "quasi_null_obs_over_exp": 1.013,
+    "quasi_null_ERRORS_obs_over_exp": 0.338,
+    "eff_given_mf_misread": 0.136,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.479,
+    "gate_pass": true
+   },
+   "alpha_0.002": {
+    "T": -38.7,
+    "flags": 245,
+    "fp_sum": 285.7,
+    "quasi_null_obs_over_exp": 1.012,
+    "quasi_null_ERRORS_obs_over_exp": 0.216,
+    "eff_given_mf_misread": 0.062,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.272,
+    "gate_pass": true
+   },
+   "noise": {
+    "diag_mean": 22.83297879066319,
+    "var_ratio_prep1_over_prep0": 1.0014222646250805,
+    "lag1_corr": -0.01726567240812588,
+    "n_resid": 330596
+   }
+  },
+  "400ns_Q5_excite": {
+   "alpha_0.05": {
+    "T": -2050.0,
+    "flags": 2444,
+    "fp_sum": 4493.9,
+    "quasi_null_obs_over_exp": 1.0,
+    "quasi_null_ERRORS_obs_over_exp": 0.478,
+    "eff_given_mf_misread": 0.289,
+    "pflag_ge_0p5_window_ns": [
+     220,
+     360
+    ],
+    "pflag_max": 0.722,
+    "gate_pass": true
+   },
+   "alpha_0.01": {
+    "T": -723.1,
+    "flags": 562,
+    "fp_sum": 1285.1,
+    "quasi_null_obs_over_exp": 0.98,
+    "quasi_null_ERRORS_obs_over_exp": 0.361,
+    "eff_given_mf_misread": 0.136,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.48,
+    "gate_pass": true
+   },
+   "alpha_0.002": {
+    "T": -178.1,
+    "flags": 136,
+    "fp_sum": 314.1,
+    "quasi_null_obs_over_exp": 1.001,
+    "quasi_null_ERRORS_obs_over_exp": 0.338,
+    "eff_given_mf_misread": 0.062,
+    "pflag_ge_0p5_window_ns": null,
+    "pflag_max": 0.275,
+    "gate_pass": true
+   },
+   "noise": {
+    "diag_mean": 22.83297879066319,
+    "var_ratio_prep1_over_prep0": 1.0014222646250805,
+    "lag1_corr": -0.01726567240812588,
+    "n_resid": 330596
+   }
+  }
+ },
+ "q3_relax_null_by_partner_state_1us": {
+  "Q1=0,Q2=0,Q4=0,Q5=0": {
+   "n": 15871,
+   "obs": 142,
+   "exp": 137.2,
+   "ratio": 1.035
+  },
+  "Q1=1,Q2=0,Q4=0,Q5=0": {
+   "n": 10335,
+   "obs": 369,
+   "exp": 111.9,
+   "ratio": 3.298
+  },
+  "Q1=0,Q2=1,Q4=0,Q5=0": {
+   "n": 15087,
+   "obs": 128,
+   "exp": 133.6,
+   "ratio": 0.958
+  },
+  "Q1=1,Q2=1,Q4=0,Q5=0": {
+   "n": 10810,
+   "obs": 279,
+   "exp": 109.6,
+   "ratio": 2.546
+  },
+  "Q1=0,Q2=0,Q4=1,Q5=0": {
+   "n": 11587,
+   "obs": 277,
+   "exp": 108.8,
+   "ratio": 2.546
+  },
+  "Q1=1,Q2=0,Q4=1,Q5=0": {
+   "n": 7734,
+   "obs": 461,
+   "exp": 106.8,
+   "ratio": 4.315
+  },
+  "Q1=0,Q2=1,Q4=1,Q5=0": {
+   "n": 10681,
+   "obs": 282,
+   "exp": 110.8,
+   "ratio": 2.544
+  },
+  "Q1=1,Q2=1,Q4=1,Q5=0": {
+   "n": 8078,
+   "obs": 382,
+   "exp": 90.3,
+   "ratio": 4.229
+  },
+  "Q1=0,Q2=0,Q4=0,Q5=1": {
+   "n": 10368,
+   "obs": 264,
+   "exp": 112.7,
+   "ratio": 2.342
+  },
+  "Q1=1,Q2=0,Q4=0,Q5=1": {
+   "n": 7174,
+   "obs": 408,
+   "exp": 92.3,
+   "ratio": 4.423
+  },
+  "Q1=0,Q2=1,Q4=0,Q5=1": {
+   "n": 10223,
+   "obs": 285,
+   "exp": 112.7,
+   "ratio": 2.529
+  },
+  "Q1=1,Q2=1,Q4=0,Q5=1": {
+   "n": 7413,
+   "obs": 389,
+   "exp": 92.7,
+   "ratio": 4.194
+  },
+  "Q1=0,Q2=0,Q4=1,Q5=1": {
+   "n": 8950,
+   "obs": 324,
+   "exp": 97.5,
+   "ratio": 3.323
+  },
+  "Q1=1,Q2=0,Q4=1,Q5=1": {
+   "n": 6405,
+   "obs": 417,
+   "exp": 77.3,
+   "ratio": 5.394
+  },
+  "Q1=0,Q2=1,Q4=1,Q5=1": {
+   "n": 8611,
+   "obs": 336,
+   "exp": 100.2,
+   "ratio": 3.353
+  },
+  "Q1=1,Q2=1,Q4=1,Q5=1": {
+   "n": 6794,
+   "obs": 408,
+   "exp": 78.7,
+   "ratio": 5.183
+  }
+ },
+ "q3_relax_null_by_partner_state_400ns": {
+  "Q1=0,Q2=0,Q4=0,Q5=0": {
+   "n": 15929,
+   "obs": 125,
+   "exp": 149.7,
+   "ratio": 0.835
+  },
+  "Q1=1,Q2=0,Q4=0,Q5=0": {
+   "n": 10395,
+   "obs": 164,
+   "exp": 85.7,
+   "ratio": 1.913
+  },
+  "Q1=0,Q2=1,Q4=0,Q5=0": {
+   "n": 15155,
+   "obs": 141,
+   "exp": 138.2,
+   "ratio": 1.02
+  },
+  "Q1=1,Q2=1,Q4=0,Q5=0": {
+   "n": 10876,
+   "obs": 112,
+   "exp": 98.6,
+   "ratio": 1.135
+  },
+  "Q1=0,Q2=0,Q4=1,Q5=0": {
+   "n": 11684,
+   "obs": 130,
+   "exp": 106.2,
+   "ratio": 1.225
+  },
+  "Q1=1,Q2=0,Q4=1,Q5=0": {
+   "n": 7798,
+   "obs": 160,
+   "exp": 73.0,
+   "ratio": 2.193
+  },
+  "Q1=0,Q2=1,Q4=1,Q5=0": {
+   "n": 10772,
+   "obs": 120,
+   "exp": 109.7,
+   "ratio": 1.094
+  },
+  "Q1=1,Q2=1,Q4=1,Q5=0": {
+   "n": 8155,
+   "obs": 121,
+   "exp": 71.0,
+   "ratio": 1.703
+  },
+  "Q1=0,Q2=0,Q4=0,Q5=1": {
+   "n": 10420,
+   "obs": 137,
+   "exp": 91.2,
+   "ratio": 1.501
+  },
+  "Q1=1,Q2=0,Q4=0,Q5=1": {
+   "n": 7230,
+   "obs": 135,
+   "exp": 60.1,
+   "ratio": 2.248
+  },
+  "Q1=0,Q2=1,Q4=0,Q5=1": {
+   "n": 10274,
+   "obs": 123,
+   "exp": 83.8,
+   "ratio": 1.468
+  },
+  "Q1=1,Q2=1,Q4=0,Q5=1": {
+   "n": 7455,
+   "obs": 142,
+   "exp": 65.1,
+   "ratio": 2.18
+  },
+  "Q1=0,Q2=0,Q4=1,Q5=1": {
+   "n": 9022,
+   "obs": 126,
+   "exp": 72.1,
+   "ratio": 1.748
+  },
+  "Q1=1,Q2=0,Q4=1,Q5=1": {
+   "n": 6486,
+   "obs": 119,
+   "exp": 52.7,
+   "ratio": 2.258
+  },
+  "Q1=0,Q2=1,Q4=1,Q5=1": {
+   "n": 8682,
+   "obs": 157,
+   "exp": 73.1,
+   "ratio": 2.147
+  },
+  "Q1=1,Q2=1,Q4=1,Q5=1": {
+   "n": 6836,
+   "obs": 136,
+   "exp": 58.6,
+   "ratio": 2.322
+  }
+ },
+ "q4_relax_null_by_partner_state_1us": {
+  "Q1=0,Q2=0,Q3=0,Q5=0": {
+   "n": 8769,
+   "obs": 455,
+   "exp": 173.2,
+   "ratio": 2.627
+  },
+  "Q1=1,Q2=0,Q3=0,Q5=0": {
+   "n": 8154,
+   "obs": 467,
+   "exp": 211.9,
+   "ratio": 2.204
+  },
+  "Q1=0,Q2=1,Q3=0,Q5=0": {
+   "n": 8881,
+   "obs": 521,
+   "exp": 214.0,
+   "ratio": 2.434
+  },
+  "Q1=1,Q2=1,Q3=0,Q5=0": {
+   "n": 8702,
+   "obs": 524,
+   "exp": 197.4,
+   "ratio": 2.654
+  },
+  "Q1=0,Q2=0,Q3=1,Q5=0": {
+   "n": 10403,
+   "obs": 619,
+   "exp": 209.3,
+   "ratio": 2.958
+  },
+  "Q1=1,Q2=0,Q3=1,Q5=0": {
+   "n": 10332,
+   "obs": 563,
+   "exp": 196.1,
+   "ratio": 2.872
+  },
+  "Q1=0,Q2=1,Q3=1,Q5=0": {
+   "n": 10866,
+   "obs": 626,
+   "exp": 218.1,
+   "ratio": 2.871
+  },
+  "Q1=1,Q2=1,Q3=1,Q5=0": {
+   "n": 10201,
+   "obs": 655,
+   "exp": 219.5,
+   "ratio": 2.984
+  },
+  "Q1=0,Q2=0,Q3=0,Q5=1": {
+   "n": 8903,
+   "obs": 462,
+   "exp": 168.2,
+   "ratio": 2.746
+  },
+  "Q1=1,Q2=0,Q3=0,Q5=1": {
+   "n": 8069,
+   "obs": 537,
+   "exp": 192.1,
+   "ratio": 2.795
+  },
+  "Q1=0,Q2=1,Q3=0,Q5=1": {
+   "n": 8767,
+   "obs": 426,
+   "exp": 174.2,
+   "ratio": 2.445
+  },
+  "Q1=1,Q2=1,Q3=0,Q5=1": {
+   "n": 8533,
+   "obs": 496,
+   "exp": 176.4,
+   "ratio": 2.811
+  },
+  "Q1=0,Q2=0,Q3=1,Q5=1": {
+   "n": 9960,
+   "obs": 589,
+   "exp": 207.0,
+   "ratio": 2.845
+  },
+  "Q1=1,Q2=0,Q3=1,Q5=1": {
+   "n": 9778,
+   "obs": 562,
+   "exp": 182.0,
+   "ratio": 3.087
+  },
+  "Q1=0,Q2=1,Q3=1,Q5=1": {
+   "n": 9744,
+   "obs": 566,
+   "exp": 192.0,
+   "ratio": 2.948
+  },
+  "Q1=1,Q2=1,Q3=1,Q5=1": {
+   "n": 10260,
+   "obs": 615,
+   "exp": 212.0,
+   "ratio": 2.901
+  }
+ },
+ "crosstalk_per_bin_rel_to_delta": {
+  "Q3": {
+   "Q1": {
+    "median_abs_rel": 0.04839426279067993,
+    "p95_abs_rel": 0.13302558660507202,
+    "max_abs_rel": 0.19173459708690643
+   },
+   "Q2": {
+    "median_abs_rel": 0.024079501628875732,
+    "p95_abs_rel": 0.09763124585151672,
+    "max_abs_rel": 0.14415131509304047
+   },
+   "Q4": {
+    "median_abs_rel": 0.0849473774433136,
+    "p95_abs_rel": 0.18377716839313507,
+    "max_abs_rel": 0.26529747247695923
+   },
+   "Q5": {
+    "median_abs_rel": 0.04340202361345291,
+    "p95_abs_rel": 0.11627298593521118,
+    "max_abs_rel": 0.1860758513212204
+   }
+  },
+  "Q5": {
+   "Q1": {
+    "median_abs_rel": 0.020330823957920074,
+    "p95_abs_rel": 0.05123918876051903,
+    "max_abs_rel": 0.07334090769290924
+   },
+   "Q2": {
+    "median_abs_rel": 0.008146404288709164,
+    "p95_abs_rel": 0.025029513984918594,
+    "max_abs_rel": 0.048038192093372345
+   },
+   "Q3": {
+    "median_abs_rel": 0.018032152205705643,
+    "p95_abs_rel": 0.05412876233458519,
+    "max_abs_rel": 0.08084359765052795
+   },
+   "Q4": {
+    "median_abs_rel": 0.07477805018424988,
+    "p95_abs_rel": 0.16234758496284485,
+    "max_abs_rel": 0.19129283726215363
+   }
+  },
+  "Q1": {
+   "Q2": {
+    "median_abs_rel": 0.04300849884748459,
+    "p95_abs_rel": 0.11696164309978485,
+    "max_abs_rel": 0.1628587543964386
+   },
+   "Q3": {
+    "median_abs_rel": 0.10156769305467606,
+    "p95_abs_rel": 0.23309089243412018,
+    "max_abs_rel": 0.32353681325912476
+   },
+   "Q4": {
+    "median_abs_rel": 0.11896964907646179,
+    "p95_abs_rel": 0.32801100611686707,
+    "max_abs_rel": 0.40712472796440125
+   },
+   "Q5": {
+    "median_abs_rel": 0.08531825244426727,
+    "p95_abs_rel": 0.17335736751556396,
+    "max_abs_rel": 0.24505740404129028
+   }
+  }
+ },
+ "late_window_check_1us_r2": {
+  "Q1_prep0": {
+   "errors_in_other_late_core": 34.9,
+   "ci": [
+    33.7,
+    36.1
+   ],
+   "correct_in_other_late_core": 0.1
+  },
+  "Q1_prep1": {
+   "errors_in_other_late_core": 78.0,
+   "ci": [
+    77.5,
+    78.5
+   ],
+   "correct_in_other_late_core": 4.2
+  },
+  "Q2_prep0": {
+   "errors_in_other_late_core": 34.5,
+   "ci": [
+    34.2,
+    34.7
+   ],
+   "correct_in_other_late_core": 35.0
+  },
+  "Q2_prep1": {
+   "errors_in_other_late_core": 41.7,
+   "ci": [
+    41.4,
+    41.9
+   ],
+   "correct_in_other_late_core": 26.8
+  },
+  "Q3_prep0": {
+   "errors_in_other_late_core": 14.2,
+   "ci": [
+    13.6,
+    14.8
+   ],
+   "correct_in_other_late_core": 1.8
+  },
+  "Q3_prep1": {
+   "errors_in_other_late_core": 78.1,
+   "ci": [
+    77.7,
+    78.4
+   ],
+   "correct_in_other_late_core": 24.0
+  },
+  "Q4_prep0": {
+   "errors_in_other_late_core": 26.2,
+   "ci": [
+    25.5,
+    26.8
+   ],
+   "correct_in_other_late_core": 1.6
+  },
+  "Q4_prep1": {
+   "errors_in_other_late_core": 72.8,
+   "ci": [
+    72.4,
+    73.2
+   ],
+   "correct_in_other_late_core": 3.6
+  },
+  "Q5_prep0": {
+   "errors_in_other_late_core": 32.4,
+   "ci": [
+    31.1,
+    33.7
+   ],
+   "correct_in_other_late_core": 1.5
+  },
+  "Q5_prep1": {
+   "errors_in_other_late_core": 82.3,
+   "ci": [
+    81.8,
+    82.7
+   ],
+   "correct_in_other_late_core": 9.9
+  }
+ },
+ "leaked_share_pooled_Q1Q2Q3Q5_1us": {
+  "value": 0.82,
+  "ci95": [
+   0.79,
+   0.85
+  ],
+  "count": 3427.0
+ },
+ "overlap_radius_sensitivity_pct_err": {
+  "1us": {
+   "Q1": {
+    "1.5": 18.74,
+    "2.0": 19.0,
+    "2.5": 19.0
+   },
+   "Q2": {
+    "1.5": 98.8,
+    "2.0": 95.63,
+    "2.5": 93.08
+   },
+   "Q3": {
+    "1.5": 20.11,
+    "2.0": 20.86,
+    "2.5": 21.53
+   },
+   "Q4": {
+    "1.5": 12.7,
+    "2.0": 13.0,
+    "2.5": 13.22
+   },
+   "Q5": {
+    "1.5": 8.78,
+    "2.0": 9.02,
+    "2.5": 9.34
+   }
+  },
+  "400ns": {
+   "Q1": {
+    "1.5": 83.43,
+    "2.0": 83.74,
+    "2.5": 83.68
+   },
+   "Q2": {
+    "1.5": 99.14,
+    "2.0": 97.86,
+    "2.5": 96.89
+   },
+   "Q3": {
+    "1.5": 40.34,
+    "2.0": 40.88,
+    "2.5": 41.4
+   },
+   "Q4": {
+    "1.5": 58.61,
+    "2.0": 58.82,
+    "2.5": 59.01
+   },
+   "Q5": {
+    "1.5": 55.93,
+    "2.0": 55.91,
+    "2.5": 55.86
+   }
+  }
+ },
+ "comparison_with_e4recon": {
+  "Q3_1us": {
+   "leakage": {
+    "mine": 3.21,
+    "mine_ci": [
+     3.07,
+     3.35
+    ],
+    "rec": 3.14,
+    "rec_ci": [
+     3.0,
+     3.29
+    ],
+    "diff_pp": 0.07,
+    "combined_hw_pp_indep": 0.2,
+    "agree_within_combined_ci": true
+   },
+   "transition_T": {
+    "mine": 1.72,
+    "mine_ci": [
+     1.58,
+     1.86
+    ],
+    "rec": 1.75,
+    "rec_ci": [
+     1.65,
+     1.86
+    ],
+    "diff_pp": -0.03,
+    "combined_hw_pp_indep": 0.18,
+    "agree_within_combined_ci": true,
+    "mine_emp_null": 1.68,
+    "mine_emp_null_ci": [
+     1.53,
+     1.83
+    ]
+   },
+   "overlap_O_upper": {
+    "mine": 20.86,
+    "mine_ci": [
+     20.29,
+     21.43
+    ],
+    "rec": 20.09,
+    "rec_ci": [
+     19.47,
+     20.72
+    ],
+    "diff_pp": 0.77,
+    "combined_hw_pp_indep": 0.85,
+    "agree_within_combined_ci": true
+   },
+   "state_change_TS_lower": {
+    "mine": 75.93,
+    "mine_ci": [
+     75.35,
+     76.52
+    ],
+    "rec": 76.76,
+    "rec_ci": [
+     76.13,
+     77.4
+    ],
+    "diff_pp": -0.83,
+    "combined_hw_pp_indep": 0.86,
+    "agree_within_combined_ci": true
+   },
+   "err_rate": {
+    "mine": 5.842,
+    "rec": 5.842
+   }
+  },
+  "Q3_400ns": {
+   "leakage": {
+    "mine": 0.7,
+    "mine_ci": [
+     0.64,
+     0.77
+    ],
+    "rec": 0.7,
+    "rec_ci": [
+     0.63,
+     0.76
+    ],
+    "diff_pp": 0.0,
+    "combined_hw_pp_indep": 0.09,
+    "agree_within_combined_ci": true
+   },
+   "transition_T": {
+    "mine": 0.1,
+    "mine_ci": [
+     0.03,
+     0.17
+    ],
+    "rec": 0.71,
+    "rec_ci": [
+     0.62,
+     0.8
+    ],
+    "diff_pp": -0.61,
+    "combined_hw_pp_indep": 0.11,
+    "agree_within_combined_ci": false,
+    "mine_emp_null": 0.54,
+    "mine_emp_null_ci": [
+     0.46,
+     0.63
+    ]
+   },
+   "overlap_O_upper": {
+    "mine": 40.88,
+    "mine_ci": [
+     40.17,
+     41.6
+    ],
+    "rec": 40.14,
+    "rec_ci": [
+     39.35,
+     40.93
+    ],
+    "diff_pp": 0.74,
+    "combined_hw_pp_indep": 1.07,
+    "agree_within_combined_ci": true
+   },
+   "state_change_TS_lower": {
+    "mine": 58.41,
+    "mine_ci": [
+     57.7,
+     59.13
+    ],
+    "rec": 59.16,
+    "rec_ci": [
+     58.37,
+     59.96
+    ],
+    "diff_pp": -0.75,
+    "combined_hw_pp_indep": 1.07,
+    "agree_within_combined_ci": true
+   },
+   "err_rate": {
+    "mine": 7.363,
+    "rec": 7.361
+   }
+  },
+  "Q5_1us": {
+   "leakage": {
+    "mine": 1.01,
+    "mine_ci": [
+     0.88,
+     1.15
+    ],
+    "rec": 1.03,
+    "rec_ci": [
+     0.9,
+     1.17
+    ],
+    "diff_pp": -0.02,
+    "combined_hw_pp_indep": 0.19,
+    "agree_within_combined_ci": true
+   },
+   "transition_T": {
+    "mine": 7.0,
+    "mine_ci": [
+     6.67,
+     7.33
+    ],
+    "rec": 5.02,
+    "rec_ci": [
+     4.76,
+     5.29
+    ],
+    "diff_pp": 1.98,
+    "combined_hw_pp_indep": 0.42,
+    "agree_within_combined_ci": false,
+    "mine_emp_null": 7.36,
+    "mine_emp_null_ci": [
+     7.01,
+     7.7
+    ]
+   },
+   "overlap_O_upper": {
+    "mine": 9.02,
+    "mine_ci": [
+     8.62,
+     9.41
+    ],
+    "rec": 8.75,
+    "rec_ci": [
+     8.31,
+     9.19
+    ],
+    "diff_pp": 0.27,
+    "combined_hw_pp_indep": 0.59,
+    "agree_within_combined_ci": true
+   },
+   "state_change_TS_lower": {
+    "mine": 89.97,
+    "mine_ci": [
+     89.55,
+     90.38
+    ],
+    "rec": 90.22,
+    "rec_ci": [
+     89.76,
+     90.67
+    ],
+    "diff_pp": -0.25,
+    "combined_hw_pp_indep": 0.62,
+    "agree_within_combined_ci": true
+   },
+   "err_rate": {
+    "mine": 2.961,
+    "rec": 2.961
+   }
+  },
+  "Q5_400ns": {
+   "leakage": {
+    "mine": -0.02,
+    "mine_ci": [
+     -0.07,
+     0.03
+    ],
+    "rec": -0.02,
+    "rec_ci": [
+     -0.07,
+     0.03
+    ],
+    "diff_pp": 0.0,
+    "combined_hw_pp_indep": 0.07,
+    "agree_within_combined_ci": true
+   },
+   "transition_T": {
+    "mine": -1.71,
+    "mine_ci": [
+     -1.86,
+     -1.57
+    ],
+    "rec": null,
+    "rec_ci": null,
+    "mine_emp_null": 0.98,
+    "mine_emp_null_ci": [
+     0.79,
+     1.17
+    ]
+   },
+   "overlap_O_upper": {
+    "mine": 55.91,
+    "mine_ci": [
+     55.15,
+     56.67
+    ],
+    "rec": 55.9,
+    "rec_ci": [
+     55.04,
+     56.76
+    ],
+    "diff_pp": 0.01,
+    "combined_hw_pp_indep": 1.15,
+    "agree_within_combined_ci": true
+   },
+   "state_change_TS_lower": {
+    "mine": 44.12,
+    "mine_ci": [
+     43.36,
+     44.87
+    ],
+    "rec": 44.12,
+    "rec_ci": [
+     43.27,
+     44.98
+    ],
+    "diff_pp": 0.0,
+    "combined_hw_pp_indep": 1.14,
+    "agree_within_combined_ci": true
+   },
+   "err_rate": {
+    "mine": 4.865,
+    "rec": 4.865
+   }
+  },
+  "pooled_Q1Q3Q4Q5_1us": {
+   "leakage": {
+    "mine": 1.28,
+    "mine_ci": [
+     1.22,
+     1.33
+    ],
+    "rec": 1.26,
+    "rec_ci": [
+     1.21,
+     1.32
+    ],
+    "diff_pp": 0.02,
+    "combined_hw_pp_indep": 0.08,
+    "agree_within_combined_ci": true
+   },
+   "transition_T": {
+    "mine": 2.93,
+    "mine_ci": [
+     2.83,
+     3.02
+    ],
+    "rec": 2.22,
+    "rec_ci": [
+     2.15,
+     2.29
+    ],
+    "diff_pp": 0.71,
+    "combined_hw_pp_indep": 0.12,
+    "agree_within_combined_ci": false,
+    "mine_emp_null": 3.2,
+    "mine_emp_null_ci": [
+     3.1,
+     3.3
+    ]
+   },
+   "overlap_O_upper": {
+    "mine": 16.04,
+    "mine_ci": [
+     15.77,
+     16.31
+    ],
+    "rec": 15.74,
+    "rec_ci": [
+     15.44,
+     16.04
+    ],
+    "diff_pp": 0.3,
+    "combined_hw_pp_indep": 0.4,
+    "agree_within_combined_ci": true
+   },
+   "state_change_TS_lower": {
+    "mine": 82.68,
+    "mine_ci": [
+     82.41,
+     82.95
+    ],
+    "rec": 83.0,
+    "rec_ci": [
+     82.69,
+     83.31
+    ],
+    "diff_pp": -0.32,
+    "combined_hw_pp_indep": 0.41,
+    "agree_within_combined_ci": true
+   }
+  },
+  "pooled_all5_1us": {
+   "leakage": {
+    "mine": 0.72,
+    "mine_ci": [
+     0.69,
+     0.75
+    ],
+    "rec": 0.71,
+    "rec_ci": [
+     0.68,
+     0.74
+    ],
+    "diff_pp": 0.01,
+    "combined_hw_pp_indep": 0.04,
+    "agree_within_combined_ci": true
+   },
+   "transition_T": {
+    "mine": 1.18,
+    "mine_ci": [
+     1.14,
+     1.21
+    ],
+    "rec": 0.89,
+    "rec_ci": [
+     0.86,
+     0.92
+    ],
+    "diff_pp": 0.29,
+    "combined_hw_pp_indep": 0.05,
+    "agree_within_combined_ci": false,
+    "mine_emp_null": 1.29,
+    "mine_emp_null_ci": [
+     1.25,
+     1.33
+    ]
+   },
+   "overlap_O_upper": {
+    "mine": 63.63,
+    "mine_ci": [
+     63.34,
+     63.93
+    ],
+    "rec": 65.21,
+    "rec_ci": [
+     65.01,
+     65.4
+    ],
+    "diff_pp": -1.58,
+    "combined_hw_pp_indep": 0.35,
+    "agree_within_combined_ci": false
+   },
+   "state_change_TS_lower": {
+    "mine": 35.65,
+    "mine_ci": [
+     35.35,
+     35.94
+    ],
+    "rec": 34.08,
+    "rec_ci": [
+     33.89,
+     34.28
+    ],
+    "diff_pp": 1.57,
+    "combined_hw_pp_indep": 0.35,
+    "agree_within_combined_ci": false
+   }
+  }
+ }
+}

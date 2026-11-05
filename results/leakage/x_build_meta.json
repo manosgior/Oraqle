@@ -1,0 +1,96 @@
+{
+ "params": [
+  {
+   "f": 64734700.74348367,
+   "theta": -0.6544135951324591
+  },
+  {
+   "f": 25393448.883285023,
+   "theta": -1.8336238913396607
+  },
+  {
+   "f": -24761600.642373763,
+   "theta": -2.66300598543364
+  },
+  {
+   "f": -70259573.58480258,
+   "theta": 1.9453070934133878
+  },
+  {
+   "f": -127277508.99320984,
+   "theta": 2.090839278402746
+  }
+ ],
+ "params_source": "used",
+ "chunk": 4000,
+ "splits": {
+  "train": {
+   "N": 480000,
+   "raw_file": "/data/DRaw_C_Tr_v0-001",
+   "raw_X": "X_train",
+   "raw_y": "y_train",
+   "feat_nonfinite": 0,
+   "feat_allzero_rows": 0,
+   "feat_shape": [
+    480000,
+    5,
+    20,
+    2
+   ],
+   "featbox_nonfinite": 0,
+   "featbox_allzero_rows": 0,
+   "featbox_shape": [
+    480000,
+    5,
+    20,
+    2
+   ],
+   "feat1us_nonfinite": 0,
+   "feat1us_allzero_rows": 0,
+   "feat1us_shape": [
+    480000,
+    5,
+    10,
+    2
+   ]
+  },
+  "test": {
+   "N": 1120000,
+   "raw_file": "/data/DRaw_C_Te_v0-002",
+   "raw_X": "X_test",
+   "raw_y": "y_test",
+   "feat_nonfinite": 0,
+   "feat_allzero_rows": 0,
+   "feat_shape": [
+    1120000,
+    5,
+    20,
+    2
+   ],
+   "featbox_nonfinite": 0,
+   "featbox_allzero_rows": 0,
+   "featbox_shape": [
+    1120000,
+    5,
+    20,
+    2
+   ],
+   "feat1us_nonfinite": 0,
+   "feat1us_allzero_rows": 0,
+   "feat1us_shape": [
+    1120000,
+    5,
+    10,
+    2
+   ]
+  }
+ },
+ "script_md5": {
+  "x_build_features.py": "2b51418ae3e9bf07ffb1b0266cb88f15",
+  "x_common.py": "e0cc426e3e0c7dc7122cf7752c4a6274",
+  "x_calib.py": "3ba376ea9112e2fe0e958a6d1f520a95",
+  "x_colleague_prep_verbatim.py": "c0e0a6ffcdf73f9ebd2a293b8b6959b9"
+ },
+ "elapsed_s": 43.934038162231445,
+ "created_utc": "2026-11-04T06:31:58Z"
+}

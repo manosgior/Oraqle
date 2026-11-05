@@ -1,0 +1,2447 @@
+{
+ "tag": "e8fix",
+ "date": "2026-11-05",
+ "inputs": [
+  "data/leakage/em_e4recon_final.json",
+  "data/leakage/em_e5vstat_summary.json",
+  "data/leakage/em_e5vstat_check.json",
+  "data/leakage/em_e5vrepro_results.json",
+  "data/leakage/em_e5vrepro_diag_partners.json",
+  "data/leakage/LEAKAGE_REPORT.md",
+  "data/leakage/em_e6edit_final_numbers.json",
+  "data/leakage/m1tail_v2_percfg_test.json",
+  "sims/leakage/em_e2seg_attr_v3.py (constants LATE_R, mean-shift bandwidth, MAD width)"
+ ],
+ "conventions": "Qubits Q1..Q5 = code q0..q4. TEST split, 1.12M shots per qubit (560k per prepared bit). 1 us = samples 0-499 (paper 'full trace'); 600 ns = 0-299; 400 ns = 0-199. 1 us model = canonical MCMit-CNN (preds_MCMitCNN_pb.npy); 600/400 ns = soft MCMit-CNN, same recipe. HERQULES = per-trace checkpoint (the one in tab:fidelity). Shares are of that qubit's errors unless marked. CIs: error rates Wilson; L +/-1.96 sqrt(N+ + N-); O binomial per configuration; var(T+S) = var(L) + var(O). All CIs statistical; reference/detector systematics given as ranges.",
+ "table_error_modes_1us": {
+  "Q1": {
+   "err_rate_pct": {
+    "value": 2.979,
+    "ci95": [
+     2.948,
+     3.011
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q1.err_rate_pct"
+   },
+   "n_err": 33364,
+   "leakage": {
+    "value": 0.04,
+    "ci95": [
+     -0.02,
+     0.11
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED (k=3 lower bound, mirror-corrected)",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q1.leakage"
+   },
+   "state_change": {
+    "value": 81.2,
+    "ci95": [
+     80.59,
+     81.8
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED lower bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q1.state_change_total_T_plus_S"
+   },
+   "overlap": {
+    "value": 18.76,
+    "ci95": [
+     18.16,
+     19.36
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED upper bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q1.overlap_near_boundary_upper"
+   },
+   "leaked_shots_pct_of_shots": {
+    "value": 0.41,
+    "ci95": [
+     0.39,
+     0.42
+    ],
+    "unit": "% of all shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "text_numbers.hidden_leakage_1us.Q1.leaked_pct_of_shots"
+   },
+   "leaked_read_correctly_pct": {
+    "value": 99.7,
+    "ci95": [
+     99.5,
+     99.8
+    ],
+    "unit": "% of leaked shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "text_numbers.hidden_leakage_1us.Q1.read_correctly_pct"
+   }
+  },
+  "Q2": {
+   "err_rate_pct": {
+    "value": 25.431,
+    "ci95": [
+     25.35,
+     25.511
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q2.err_rate_pct"
+   },
+   "n_err": 284822,
+   "leakage": {
+    "value": 0.34,
+    "ci95": [
+     0.32,
+     0.37
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED (k=3 lower bound, mirror-corrected)",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q2.leakage"
+   },
+   "state_change": {
+    "value": "n/m",
+    "late_core_value_uninformative": 1.2,
+    "reason": "late-window |0>/|1> cores only 0.52 sigma apart (e5vstat), so O ~ N and S ~ 0 by construction (same circularity as the old rule)"
+   },
+   "overlap": {
+    "value": "n/m",
+    "late_core_value_uninformative": 98.46
+   },
+   "leaked_shots_pct_of_shots": {
+    "value": 0.9,
+    "ci95": [
+     0.88,
+     0.92
+    ],
+    "unit": "% of all shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "text_numbers.hidden_leakage_1us.Q2.leaked_pct_of_shots"
+   },
+   "leaked_read_correctly_pct": {
+    "value": 90.3,
+    "ci95": [
+     89.7,
+     90.8
+    ],
+    "unit": "% of leaked shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "text_numbers.hidden_leakage_1us.Q2.read_correctly_pct"
+   }
+  },
+  "Q3": {
+   "err_rate_pct": {
+    "value": 5.842,
+    "ci95": [
+     5.798,
+     5.885
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q3.err_rate_pct"
+   },
+   "n_err": 65425,
+   "leakage": {
+    "value": 3.14,
+    "ci95": [
+     3.0,
+     3.29
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED (k=3 lower bound, mirror-corrected)",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q3.leakage"
+   },
+   "state_change": {
+    "value": 76.76,
+    "ci95": [
+     76.13,
+     77.4
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED lower bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q3.state_change_total_T_plus_S"
+   },
+   "overlap": {
+    "value": 20.09,
+    "ci95": [
+     19.47,
+     20.72
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED upper bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q3.overlap_near_boundary_upper"
+   },
+   "leaked_shots_pct_of_shots": {
+    "value": 6.14,
+    "ci95": [
+     6.1,
+     6.19
+    ],
+    "unit": "% of all shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "text_numbers.hidden_leakage_1us.Q3.leaked_pct_of_shots"
+   },
+   "leaked_read_correctly_pct": {
+    "value": 97.0,
+    "ci95": [
+     96.9,
+     97.1
+    ],
+    "unit": "% of leaked shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "text_numbers.hidden_leakage_1us.Q3.read_correctly_pct"
+   }
+  },
+  "Q4": {
+   "err_rate_pct": {
+    "value": 5.315,
+    "ci95": [
+     5.273,
+     5.356
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q4.err_rate_pct"
+   },
+   "n_err": 59523,
+   "leakage": {
+    "value": "n/m",
+    "reason": "multimodal |1> response (LEAKAGE_REPORT 3.2)"
+   },
+   "state_change": {
+    "value": 86.84,
+    "ci95": [
+     86.28,
+     87.4
+    ],
+    "unit": "% of errors",
+    "status": "INDICATIVE (reference fails noise-independence test)",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q4.state_change_total_T_plus_S"
+   },
+   "overlap": {
+    "value": 13.16,
+    "ci95": [
+     12.6,
+     13.72
+    ],
+    "unit": "% of errors",
+    "status": "INDICATIVE",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q4.overlap_near_boundary_upper"
+   },
+   "leaked_shots_pct_of_shots": {
+    "value": "n/m"
+   }
+  },
+  "Q5": {
+   "err_rate_pct": {
+    "value": 2.961,
+    "ci95": [
+     2.93,
+     2.992
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q5.err_rate_pct"
+   },
+   "n_err": 33162,
+   "leakage": {
+    "value": 1.03,
+    "ci95": [
+     0.9,
+     1.17
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED (k=3 lower bound, mirror-corrected)",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q5.leakage"
+   },
+   "state_change": {
+    "value": 90.22,
+    "ci95": [
+     89.76,
+     90.67
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED lower bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q5.state_change_total_T_plus_S"
+   },
+   "overlap": {
+    "value": 8.75,
+    "ci95": [
+     8.31,
+     9.19
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED upper bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q5.overlap_near_boundary_upper"
+   },
+   "leaked_shots_pct_of_shots": {
+    "value": 2.4,
+    "ci95": [
+     2.37,
+     2.43
+    ],
+    "unit": "% of all shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "text_numbers.hidden_leakage_1us.Q5.leaked_pct_of_shots"
+   },
+   "leaked_read_correctly_pct": {
+    "value": 98.7,
+    "ci95": [
+     98.6,
+     98.9
+    ],
+    "unit": "% of leaked shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "text_numbers.hidden_leakage_1us.Q5.read_correctly_pct"
+   }
+  },
+  "Q1Q3Q5": {
+   "err_rate_pct": {
+    "value": 3.927,
+    "ci95": [
+     3.906,
+     3.948
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.pooled.Q1Q3Q5.err_rate_pct"
+   },
+   "n_err": 131951,
+   "leakage": {
+    "value": 1.83,
+    "ci95": [
+     1.75,
+     1.91
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.pooled.Q1Q3Q5.leakage"
+   },
+   "state_change": {
+    "value": 81.27,
+    "ci95": [
+     80.9,
+     81.64
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED lower bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.pooled.Q1Q3Q5.state_change_total_T_plus_S"
+   },
+   "overlap": {
+    "value": 16.9,
+    "ci95": [
+     16.54,
+     17.27
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED upper bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.pooled.Q1Q3Q5.overlap_near_boundary_upper"
+   },
+   "state_change_reference_band": {
+    "values": {
+     "e4_lc": 81.27,
+     "r1.0": 81.36,
+     "r1.5": 81.27,
+     "r2.0": 80.66,
+     "r2.5": 80.23,
+     "hp": 78.6,
+     "e5vrepro_2sigma_disc": 80.73
+    },
+    "range": [
+     78.6,
+     81.4
+    ],
+    "status": "systematic (range, not CI)",
+    "source": "data/leakage/em_e5vstat_summary.json pooled.1us|cnn_canonical.Q1Q3Q5.*.SC_pct_err; data/leakage/em_e5vrepro_results.json attribution.1us.gauss",
+    "paper_text": "79--81% across reference definitions"
+   },
+   "overlap_reference_band": {
+    "values": {
+     "e4_lc": 16.9,
+     "r1.0": 16.81,
+     "r2.5": 17.94,
+     "hp": 19.57
+    },
+    "range": [
+     16.8,
+     19.6
+    ]
+   }
+  },
+  "Q1Q3Q4Q5_not_headlined": {
+   "state_change": 83.0,
+   "overlap": 15.74,
+   "leakage": 1.26,
+   "why_not": "Q4 leakage counted as 0 and Q4 O indicative (e5vstat #3)"
+  },
+  "all5_not_headlined": {
+   "state_change": 34.08,
+   "overlap": 65.21,
+   "leakage": 0.71,
+   "why_not": "dominated by Q2's 285k errors whose split is circular (e5vstat #2); e5vrepro moves it to 63.6/35.7"
+  }
+ },
+ "Q4_state_change_reference_band": {
+  "values": {
+   "e4_lc": 86.84,
+   "r1.0": 88.72,
+   "r1.5": 88.05,
+   "r2.5": 87.33,
+   "hp": 82.07
+  },
+  "range": [
+   82.1,
+   88.7
+  ],
+  "source": "data/leakage/em_e5vstat_summary.json"
+ },
+ "Q2_snr_bound": {
+  "late_window_core_separation_sigma": 0.52,
+  "other_qubits_separation_sigma": {
+   "Q1": 5.53,
+   "Q3": 7.68,
+   "Q4": 13.02,
+   "Q5": 9.71
+  },
+  "lda_delta": 1.151,
+  "lda_gaussian_predicted_error_pct": 28.26,
+  "cnn_error_pct": 25.43,
+  "status": "MEASURED (Delta from TRAIN LDA on 20 features); 'SNR-bound' = INFERRED from Phi(-Delta/2) >= observed",
+  "source": "data/leakage/em_e5vstat_summary.json lda_vs_cnn_latecore.Q2.1us.prep0; late_window_separation_sigma",
+  "paper_text": "Q2's states are only 0.5 sigma apart in the unused tail; a linear filter's Gaussian overlap alone predicts 28% error"
+ },
+ "results_per_qubit_window_cnn": {
+  "Q3_1us": {
+   "err_rate_pct": {
+    "value": 5.842,
+    "ci95": [
+     5.798,
+     5.885
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q3"
+   },
+   "state_change_pct_err": {
+    "value": 76.76,
+    "ci95": [
+     76.13,
+     77.4
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q3.state_change_total_T_plus_S"
+   },
+   "state_change_pct_shots": {
+    "value": 4.484,
+    "ci95": [
+     4.447,
+     4.521
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q3.state_change_total_T_plus_S"
+   },
+   "overlap_pct_err": {
+    "value": 20.09,
+    "ci95": [
+     19.47,
+     20.72
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q3.overlap_near_boundary_upper"
+   },
+   "overlap_pct_shots": {
+    "value": 1.174,
+    "ci95": [
+     1.137,
+     1.21
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q3.overlap_near_boundary_upper"
+   },
+   "leakage_pct_err": {
+    "value": 3.14,
+    "ci95": [
+     3.0,
+     3.29
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q3.leakage"
+   },
+   "leakage_pct_shots": {
+    "value": 0.184,
+    "ci95": [
+     0.175,
+     0.192
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q3.leakage"
+   }
+  },
+  "Q3_600ns": {
+   "err_rate_pct": {
+    "value": 6.16,
+    "ci95": [
+     6.116,
+     6.205
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q3"
+   },
+   "state_change_pct_err": {
+    "value": 72.38,
+    "ci95": [
+     71.72,
+     73.05
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q3.state_change_total_T_plus_S"
+   },
+   "state_change_pct_shots": {
+    "value": 4.459,
+    "ci95": [
+     4.418,
+     4.5
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q3.state_change_total_T_plus_S"
+   },
+   "overlap_pct_err": {
+    "value": 25.98,
+    "ci95": [
+     25.32,
+     26.64
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q3.overlap_near_boundary_upper"
+   },
+   "overlap_pct_shots": {
+    "value": 1.6,
+    "ci95": [
+     1.56,
+     1.641
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q3.overlap_near_boundary_upper"
+   },
+   "leakage_pct_err": {
+    "value": 1.64,
+    "ci95": [
+     1.54,
+     1.74
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q3.leakage"
+   },
+   "leakage_pct_shots": {
+    "value": 0.101,
+    "ci95": [
+     0.095,
+     0.107
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q3.leakage"
+   }
+  },
+  "Q3_400ns": {
+   "err_rate_pct": {
+    "value": 7.361,
+    "ci95": [
+     7.313,
+     7.41
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q3"
+   },
+   "state_change_pct_err": {
+    "value": 59.16,
+    "ci95": [
+     58.37,
+     59.96
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q3.state_change_total_T_plus_S"
+   },
+   "state_change_pct_shots": {
+    "value": 4.355,
+    "ci95": [
+     4.297,
+     4.413
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q3.state_change_total_T_plus_S"
+   },
+   "overlap_pct_err": {
+    "value": 40.14,
+    "ci95": [
+     39.35,
+     40.93
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q3.overlap_near_boundary_upper"
+   },
+   "overlap_pct_shots": {
+    "value": 2.955,
+    "ci95": [
+     2.897,
+     3.013
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q3.overlap_near_boundary_upper"
+   },
+   "leakage_pct_err": {
+    "value": 0.7,
+    "ci95": [
+     0.63,
+     0.76
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q3.leakage"
+   },
+   "leakage_pct_shots": {
+    "value": 0.051,
+    "ci95": [
+     0.046,
+     0.056
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q3.leakage"
+   }
+  },
+  "Q5_1us": {
+   "err_rate_pct": {
+    "value": 2.961,
+    "ci95": [
+     2.93,
+     2.992
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q5"
+   },
+   "state_change_pct_err": {
+    "value": 90.22,
+    "ci95": [
+     89.76,
+     90.67
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q5.state_change_total_T_plus_S"
+   },
+   "state_change_pct_shots": {
+    "value": 2.671,
+    "ci95": [
+     2.658,
+     2.685
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q5.state_change_total_T_plus_S"
+   },
+   "overlap_pct_err": {
+    "value": 8.75,
+    "ci95": [
+     8.31,
+     9.19
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q5.overlap_near_boundary_upper"
+   },
+   "overlap_pct_shots": {
+    "value": 0.259,
+    "ci95": [
+     0.246,
+     0.272
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q5.overlap_near_boundary_upper"
+   },
+   "leakage_pct_err": {
+    "value": 1.03,
+    "ci95": [
+     0.9,
+     1.17
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q5.leakage"
+   },
+   "leakage_pct_shots": {
+    "value": 0.031,
+    "ci95": [
+     0.027,
+     0.035
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q5.leakage"
+   }
+  },
+  "Q5_600ns": {
+   "err_rate_pct": {
+    "value": 2.994,
+    "ci95": [
+     2.962,
+     3.025
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q5"
+   },
+   "state_change_pct_err": {
+    "value": 86.48,
+    "ci95": [
+     85.93,
+     87.03
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q5.state_change_total_T_plus_S"
+   },
+   "state_change_pct_shots": {
+    "value": 2.589,
+    "ci95": [
+     2.572,
+     2.605
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q5.state_change_total_T_plus_S"
+   },
+   "overlap_pct_err": {
+    "value": 13.34,
+    "ci95": [
+     12.8,
+     13.88
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q5.overlap_near_boundary_upper"
+   },
+   "overlap_pct_shots": {
+    "value": 0.4,
+    "ci95": [
+     0.383,
+     0.416
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q5.overlap_near_boundary_upper"
+   },
+   "leakage_pct_err": {
+    "value": 0.18,
+    "ci95": [
+     0.08,
+     0.27
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q5.leakage"
+   },
+   "leakage_pct_shots": {
+    "value": 0.005,
+    "ci95": [
+     0.003,
+     0.008
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q5.leakage"
+   }
+  },
+  "Q5_400ns": {
+   "err_rate_pct": {
+    "value": 4.865,
+    "ci95": [
+     4.825,
+     4.905
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q5"
+   },
+   "state_change_pct_err": {
+    "value": 44.12,
+    "ci95": [
+     43.27,
+     44.98
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q5.state_change_total_T_plus_S"
+   },
+   "state_change_pct_shots": {
+    "value": 2.147,
+    "ci95": [
+     2.105,
+     2.188
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q5.state_change_total_T_plus_S"
+   },
+   "overlap_pct_err": {
+    "value": 55.9,
+    "ci95": [
+     55.04,
+     56.76
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q5.overlap_near_boundary_upper"
+   },
+   "overlap_pct_shots": {
+    "value": 2.72,
+    "ci95": [
+     2.678,
+     2.761
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q5.overlap_near_boundary_upper"
+   },
+   "leakage_pct_err": {
+    "value": -0.02,
+    "ci95": [
+     -0.07,
+     0.03
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q5.leakage"
+   },
+   "leakage_pct_shots": {
+    "value": -0.001,
+    "ci95": [
+     -0.004,
+     0.001
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q5.leakage"
+   }
+  },
+  "Q1_1us": {
+   "err_rate_pct": {
+    "value": 2.979,
+    "ci95": [
+     2.948,
+     3.011
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q1"
+   },
+   "state_change_pct_err": {
+    "value": 81.2,
+    "ci95": [
+     80.59,
+     81.8
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q1.state_change_total_T_plus_S"
+   },
+   "state_change_pct_shots": {
+    "value": 2.419,
+    "ci95": [
+     2.401,
+     2.437
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q1.state_change_total_T_plus_S"
+   },
+   "overlap_pct_err": {
+    "value": 18.76,
+    "ci95": [
+     18.16,
+     19.36
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q1.overlap_near_boundary_upper"
+   },
+   "overlap_pct_shots": {
+    "value": 0.559,
+    "ci95": [
+     0.541,
+     0.577
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q1.overlap_near_boundary_upper"
+   },
+   "leakage_pct_err": {
+    "value": 0.04,
+    "ci95": [
+     -0.02,
+     0.11
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q1.leakage"
+   },
+   "leakage_pct_shots": {
+    "value": 0.001,
+    "ci95": [
+     -0.001,
+     0.003
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q1.leakage"
+   }
+  },
+  "Q1_600ns": {
+   "err_rate_pct": {
+    "value": 4.714,
+    "ci95": [
+     4.675,
+     4.753
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q1"
+   },
+   "state_change_pct_err": {
+    "value": 42.73,
+    "ci95": [
+     41.91,
+     43.56
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q1.state_change_total_T_plus_S"
+   },
+   "state_change_pct_shots": {
+    "value": 2.014,
+    "ci95": [
+     1.975,
+     2.054
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q1.state_change_total_T_plus_S"
+   },
+   "overlap_pct_err": {
+    "value": 57.27,
+    "ci95": [
+     56.44,
+     58.09
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q1.overlap_near_boundary_upper"
+   },
+   "overlap_pct_shots": {
+    "value": 2.7,
+    "ci95": [
+     2.66,
+     2.739
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q1.overlap_near_boundary_upper"
+   },
+   "leakage_pct_err": {
+    "value": 0.0,
+    "ci95": [
+     -0.05,
+     0.05
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q1.leakage"
+   },
+   "leakage_pct_shots": {
+    "value": 0.0,
+    "ci95": [
+     -0.002,
+     0.002
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.per_qubit.Q1.leakage"
+   }
+  },
+  "Q1_400ns": {
+   "err_rate_pct": {
+    "value": 9.318,
+    "ci95": [
+     9.264,
+     9.372
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q1"
+   },
+   "state_change_pct_err": {
+    "value": 16.58,
+    "ci95": [
+     15.89,
+     17.27
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q1.state_change_total_T_plus_S"
+   },
+   "state_change_pct_shots": {
+    "value": 1.545,
+    "ci95": [
+     1.481,
+     1.61
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q1.state_change_total_T_plus_S"
+   },
+   "overlap_pct_err": {
+    "value": 83.45,
+    "ci95": [
+     82.76,
+     84.14
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q1.overlap_near_boundary_upper"
+   },
+   "overlap_pct_shots": {
+    "value": 7.776,
+    "ci95": [
+     7.712,
+     7.84
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q1.overlap_near_boundary_upper"
+   },
+   "leakage_pct_err": {
+    "value": -0.04,
+    "ci95": [
+     -0.07,
+     -0.01
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q1.leakage"
+   },
+   "leakage_pct_shots": {
+    "value": -0.003,
+    "ci95": [
+     -0.006,
+     -0.001
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.per_qubit.Q1.leakage"
+   }
+  }
+ },
+ "overlap_per_shot_fall_400ns_to_1us": {
+  "Q1": {
+   "value": 13.911,
+   "ci95": [
+    13.456,
+    14.381
+   ],
+   "unit": "x (400 ns / 1 us, per-shot overlap)",
+   "status": "MEASURED",
+   "source": "data/leakage/em_e4recon_final.json",
+   "key": "derived from results_per_qubit_window_cnn"
+  },
+  "Q3": {
+   "value": 2.517,
+   "ci95": [
+    2.426,
+    2.611
+   ],
+   "unit": "x (400 ns / 1 us, per-shot overlap)",
+   "status": "MEASURED",
+   "source": "data/leakage/em_e4recon_final.json",
+   "key": "derived from results_per_qubit_window_cnn"
+  },
+  "Q5": {
+   "value": 10.502,
+   "ci95": [
+    9.965,
+    11.068
+   ],
+   "unit": "x (400 ns / 1 us, per-shot overlap)",
+   "status": "MEASURED",
+   "source": "data/leakage/em_e4recon_final.json",
+   "key": "derived from results_per_qubit_window_cnn"
+  },
+  "paper_text": "overlap errors fall 2.5--14x"
+ },
+ "pooled_Q1Q3Q5_window_trend": {
+  "400ns": {
+   "state_change": {
+    "value": 37.35,
+    "ci95": [
+     36.9,
+     37.8
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED lower bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.pooled.Q1Q3Q5"
+   },
+   "overlap": {
+    "value": 62.43,
+    "ci95": [
+     61.99,
+     62.88
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED upper bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.400ns_cnn_soft400.pooled.Q1Q3Q5"
+   }
+  },
+  "600ns": {
+   "state_change": {
+    "value": 65.35,
+    "ci95": [
+     64.92,
+     65.77
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED lower bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.pooled.Q1Q3Q5"
+   },
+   "overlap": {
+    "value": 33.89,
+    "ci95": [
+     33.46,
+     34.31
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED upper bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "windows.600ns_cnn_soft600.pooled.Q1Q3Q5"
+   }
+  },
+  "1us": {
+   "state_change": {
+    "value": 81.27,
+    "ci95": [
+     80.9,
+     81.64
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED lower bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.pooled.Q1Q3Q5.state_change_total_T_plus_S"
+   },
+   "overlap": {
+    "value": 16.9,
+    "ci95": [
+     16.54,
+     17.27
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED upper bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.pooled.Q1Q3Q5.overlap_near_boundary_upper"
+   }
+  },
+  "paper_text": "share grows from 37% (400 ns) to 81% (1 us)"
+ },
+ "late_window_half_plane_check_1us": {
+  "Q1": {
+   "errors_on_0_side_pct": {
+    "value": 90.068,
+    "ci95": [
+     89.709,
+     90.416
+    ],
+    "unit": "% of prep-|1> errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e5vstat_summary.json",
+    "key": "identity_prep1.1us|cnn_canonical.Q1.late_other_frac_err"
+   },
+   "correct_on_0_side_pct": {
+    "value": 5.812,
+    "ci95": [
+     5.749,
+     5.875
+    ],
+    "unit": "% of correctly read prep-|1>",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e5vstat_summary.json",
+    "key": "identity_prep1.1us|cnn_canonical.Q1.late_other_frac_correct"
+   },
+   "identity_estimate_pct": {
+    "value": 89.455,
+    "ci95": [
+     89.08,
+     89.831
+    ],
+    "unit": "% of prep-|1> errors",
+    "status": "MEASURED fractions; reading as state change INFERRED",
+    "source": "data/leakage/em_e5vstat_summary.json",
+    "key": "identity_prep1...Q1.s_identity"
+   },
+   "attributed_state_change_prep1_pct": 89.02,
+   "n_err": 27477
+  },
+  "Q3": {
+   "errors_on_0_side_pct": {
+    "value": 90.97,
+    "ci95": [
+     90.724,
+     91.21
+    ],
+    "unit": "% of prep-|1> errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e5vstat_summary.json",
+    "key": "identity_prep1.1us|cnn_canonical.Q3.late_other_frac_err"
+   },
+   "correct_on_0_side_pct": {
+    "value": 32.955,
+    "ci95": [
+     32.826,
+     33.085
+    ],
+    "unit": "% of correctly read prep-|1>",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e5vstat_summary.json",
+    "key": "identity_prep1.1us|cnn_canonical.Q3.late_other_frac_correct"
+   },
+   "identity_estimate_pct": {
+    "value": 86.531,
+    "ci95": [
+     86.167,
+     86.895
+    ],
+    "unit": "% of prep-|1> errors",
+    "status": "MEASURED fractions; reading as state change INFERRED",
+    "source": "data/leakage/em_e5vstat_summary.json",
+    "key": "identity_prep1...Q3.s_identity"
+   },
+   "attributed_state_change_prep1_pct": 87.63,
+   "n_err": 53300
+  },
+  "Q4": {
+   "errors_on_0_side_pct": {
+    "value": 89.077,
+    "ci95": [
+     88.774,
+     89.372
+    ],
+    "unit": "% of prep-|1> errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e5vstat_summary.json",
+    "key": "identity_prep1.1us|cnn_canonical.Q4.late_other_frac_err"
+   },
+   "correct_on_0_side_pct": {
+    "value": 15.878,
+    "ci95": [
+     15.779,
+     15.978
+    ],
+    "unit": "% of correctly read prep-|1>",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e5vstat_summary.json",
+    "key": "identity_prep1.1us|cnn_canonical.Q4.late_other_frac_correct"
+   },
+   "identity_estimate_pct": {
+    "value": 87.015,
+    "ci95": [
+     86.66,
+     87.371
+    ],
+    "unit": "% of prep-|1> errors",
+    "status": "MEASURED fractions; reading as state change INFERRED",
+    "source": "data/leakage/em_e5vstat_summary.json",
+    "key": "identity_prep1...Q4.s_identity"
+   },
+   "attributed_state_change_prep1_pct": 89.24,
+   "n_err": 41820
+  },
+  "Q5": {
+   "errors_on_0_side_pct": {
+    "value": 94.663,
+    "ci95": [
+     94.395,
+     94.919
+    ],
+    "unit": "% of prep-|1> errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e5vstat_summary.json",
+    "key": "identity_prep1.1us|cnn_canonical.Q5.late_other_frac_err"
+   },
+   "correct_on_0_side_pct": {
+    "value": 15.326,
+    "ci95": [
+     15.23,
+     15.423
+    ],
+    "unit": "% of correctly read prep-|1>",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e5vstat_summary.json",
+    "key": "identity_prep1.1us|cnn_canonical.Q5.late_other_frac_correct"
+   },
+   "identity_estimate_pct": {
+    "value": 93.697,
+    "ci95": [
+     93.388,
+     94.006
+    ],
+    "unit": "% of prep-|1> errors",
+    "status": "MEASURED fractions; reading as state change INFERRED",
+    "source": "data/leakage/em_e5vstat_summary.json",
+    "key": "identity_prep1...Q5.s_identity"
+   },
+   "attributed_state_change_prep1_pct": 96.5,
+   "n_err": 28368
+  },
+  "pooled_Q1Q3Q5": {
+   "identity_estimate_pct": 89.13,
+   "attributed_state_change_prep1_pct": 90.29
+  },
+  "paper_text": "in the unused 1-2 us, 91% (Q3) / 95% (Q5) of prepared-|1> errors sit on the |0> side, against 33% / 15% of correctly read shots"
+ },
+ "resolved_step_T": {
+  "Q1": {
+   "e2seg_gaussian_null_alpha0.01": {
+    "value": 4.33,
+    "ci95": [
+     4.08,
+     4.57
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED, conservative lower bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q1.transition_resolved"
+   },
+   "e5vrepro_gaussian_null": {
+    "value": 6.46,
+    "ci95": [
+     6.11,
+     6.8
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED (own detector)",
+    "source": "data/leakage/em_e5vrepro_results.json",
+    "key": "attribution.1us.gauss.Q1.transition_T"
+   },
+   "e5vrepro_empirical_null": {
+    "value": 7.76,
+    "ci95": [
+     7.39,
+     8.13
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED (own detector, empirical overlap null)",
+    "source": "data/leakage/em_e5vrepro_results.json",
+    "key": "attribution.1us.emp.Q1.transition_T"
+   }
+  },
+  "Q3": {
+   "e2seg_gaussian_null_alpha0.01": {
+    "value": 1.75,
+    "ci95": [
+     1.65,
+     1.86
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED, conservative lower bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q3.transition_resolved"
+   },
+   "e5vrepro_gaussian_null": {
+    "value": 1.72,
+    "ci95": [
+     1.58,
+     1.86
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED (own detector)",
+    "source": "data/leakage/em_e5vrepro_results.json",
+    "key": "attribution.1us.gauss.Q3.transition_T"
+   },
+   "e5vrepro_empirical_null": {
+    "value": 1.68,
+    "ci95": [
+     1.53,
+     1.83
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED (own detector, empirical overlap null)",
+    "source": "data/leakage/em_e5vrepro_results.json",
+    "key": "attribution.1us.emp.Q3.transition_T"
+   },
+   "note": "excitation only (relaxation test n/m in both pipelines)"
+  },
+  "Q5": {
+   "e2seg_gaussian_null_alpha0.01": {
+    "value": 5.02,
+    "ci95": [
+     4.76,
+     5.29
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED, conservative lower bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "table_1us_cnn_canonical.per_qubit.Q5.transition_resolved"
+   },
+   "e5vrepro_gaussian_null": {
+    "value": 7.0,
+    "ci95": [
+     6.67,
+     7.33
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED (own detector)",
+    "source": "data/leakage/em_e5vrepro_results.json",
+    "key": "attribution.1us.gauss.Q5.transition_T"
+   },
+   "e5vrepro_empirical_null": {
+    "value": 7.36,
+    "ci95": [
+     7.01,
+     7.7
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED (own detector, empirical overlap null)",
+    "source": "data/leakage/em_e5vrepro_results.json",
+    "key": "attribution.1us.emp.Q5.transition_T"
+   }
+  },
+  "bracket_text": "Q1 4.3-7.8, Q5 5.0-7.4, Q3 (excitation only) 1.7-1.75 % of errors",
+  "paper_text": "only 2--8% of errors show a step resolvable inside the window",
+  "fp_null_on_misread_stationary_Q1Q5": {
+   "observed_flags": 24,
+   "expected_flags": 54.1,
+   "ratio": 0.44,
+   "status": "MEASURED",
+   "source": "data/leakage/em_e5vstat_summary.json step_null_misread_stationary",
+   "meaning": "FP correction over-subtracts on misread shots -> T conservative"
+  },
+  "sensitivity": {
+   "p_flag_ge_0.5_ns": {
+    "Q3_excitation": [
+     225,
+     775
+    ],
+    "Q5_relaxation": [
+     225,
+     700
+    ],
+    "Q5_excitation": [
+     250,
+     675
+    ]
+   },
+   "partial_100_150ns": "P(flag) 0.1-0.3 (Q3/Q5)",
+   "Q1_max_p_flag": 0.44,
+   "efficiency_given_misread": {
+    "e2seg": "16-28%",
+    "e5vrepro": "36-56%"
+   },
+   "source": "data/leakage/em_e4recon_final.json step_detector_gating_and_sensitivity; e5vstat issue 6; data/leakage/em_e5vrepro_results.json step_test"
+  },
+  "efficiency_corrected_INFERRED": {
+   "prep1": "10-27% of prep-|1> errors (Q1 22-27, Q5 10-16)",
+   "prep0": "19-51% of prep-|0> errors (Q5 19-48, Q3 19-51)",
+   "source": "data/leakage/em_e4recon_final.json transition_efficiency_corrected_INFERRED_pct_of_bit_errors"
+  },
+  "Q3_relaxation_null_by_partners": {
+   "Q1=Q4=Q5=0": [
+    1.035,
+    0.958
+   ],
+   "all_three_excited": [
+    5.394,
+    5.183
+   ],
+   "status": "MEASURED (obs/exp flags on quasi-null shots); mechanism (neighbour exchange) INFERRED",
+   "source": "data/leakage/em_e5vrepro_diag_partners.json 1us_q2"
+  }
+ },
+ "leakage": {
+  "Q3_prep1_by_window_pct": {
+   "400ns": {
+    "value": 3.507,
+    "ci95": [
+     3.456,
+     3.558
+    ],
+    "unit": "% of prep-|1> shots",
+    "status": "MEASURED (k=3 lower bound)",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "leakage_E3_by_window.400ns.Q3.prep1"
+   },
+   "600ns": {
+    "value": 6.453,
+    "ci95": [
+     6.386,
+     6.521
+    ],
+    "unit": "% of prep-|1> shots",
+    "status": "MEASURED (k=3 lower bound)",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "leakage_E3_by_window.600ns.Q3.prep1"
+   },
+   "1us": {
+    "value": 11.464,
+    "ci95": [
+     11.375,
+     11.554
+    ],
+    "unit": "% of prep-|1> shots",
+    "status": "MEASURED (k=3 lower bound)",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "leakage_E3_by_window.1us.Q3.prep1"
+   }
+  },
+  "Q3_prep1_1us_frame_range": {
+   "range": [
+    11.3,
+    11.6
+   ],
+   "multi_frame_central": 11.3,
+   "frames": [
+    10.7,
+    11.8
+   ],
+   "e5vrepro_own_IF": 11.61,
+   "source": "data/leakage/LEAKAGE_REPORT.md 3.2; data/leakage/em_e5vrepro_results.json leak_E3_prep1_prep0_all"
+  },
+  "Q3_prep0_1us_pct": {
+   "value": 0.821,
+   "ci95": [
+    0.794,
+    0.848
+   ],
+   "unit": "% of prep-|0> shots",
+   "status": "MEASURED",
+   "source": "data/leakage/em_e4recon_final.json",
+   "key": "leakage_E3_by_window.1us.Q3.prep0"
+  },
+  "Q5_prep1_by_window_pct": {
+   "400ns": {
+    "value": 0.453,
+    "ci95": [
+     0.431,
+     0.475
+    ],
+    "unit": "% of prep-|1> shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "leakage_E3_by_window.400ns.Q5.prep1"
+   },
+   "600ns": {
+    "value": 1.682,
+    "ci95": [
+     1.645,
+     1.719
+    ],
+    "unit": "% of prep-|1> shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "leakage_E3_by_window.600ns.Q5.prep1"
+   },
+   "1us": {
+    "value": 4.716,
+    "ci95": [
+     4.657,
+     4.775
+    ],
+    "unit": "% of prep-|1> shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "leakage_E3_by_window.1us.Q5.prep1"
+   }
+  },
+  "Q1_prep1_1us_pct": {
+   "value": 0.816,
+   "ci95": [
+    0.789,
+    0.844
+   ],
+   "unit": "% of prep-|1> shots",
+   "status": "MEASURED",
+   "source": "data/leakage/em_e4recon_final.json",
+   "key": "leakage_E3_by_window.1us.Q1.prep1"
+  },
+  "Q2_prep1_1us_pct": {
+   "value": 1.616,
+   "ci95": [
+    1.58,
+    1.651
+   ],
+   "unit": "% of prep-|1> shots",
+   "status": "MEASURED (probable)",
+   "source": "data/leakage/em_e4recon_final.json",
+   "key": "leakage_E3_by_window.1us.Q2.prep1"
+  },
+  "Q3_leaked_prep0_errors_share_pct": {
+   "value": 13.39,
+   "ci95": [
+    12.72,
+    14.05
+   ],
+   "unit": "% of Q3 prep-|0> errors",
+   "status": "MEASURED",
+   "source": "data/leakage/em_e4recon_final.json",
+   "key": "table_1us_cnn_canonical.per_qubit.Q3.per_bit.prep0.leakage"
+  },
+  "Q3_leakage_share_k_range": {
+   "k5": 2.3,
+   "k3": 3.1,
+   "k2": 3.8,
+   "k1": 4.7,
+   "Q3_state_change_with_k1": 75.3,
+   "source": "e5vstat issue 7 (em_e5vstat_check.json L1..L5)"
+  },
+  "identity": "non-computational; geometry disfavours |2> (pull ratio 4-7x vs 0.76x); never call it |2> (INFERRED)",
+  "paper_text": "11.5% of Q3's prepared-|1> shots (6.1% of all its shots) and 4.7% of Q5's leak; 97-99% of leaked shots read correctly; 3.5/6.5/11.5% at 400/600/1000 ns",
+  "decision_11.5_vs_11.3": "3.5 and 6.5 are single line-frame values; 11.3 is the 1 us multi-frame central. For one consistent frame use 11.5 (11.46 [11.38, 11.55]); both verifiers support it (e5vstat 11.46, e5vrepro 11.61).",
+  "Q3_growth_1us_over_400ns": {
+   "value": 3.269,
+   "ci95": [
+    3.215,
+    3.323
+   ],
+   "unit": "x",
+   "status": "MEASURED",
+   "source": "data/leakage/em_e4recon_final.json",
+   "key": "leakage_E3_by_window Q3 prep1 1us/400ns",
+   "paper_text": "leakage, by contrast, triples on Q3"
+  },
+  "Q3_leaked_prep1_read_as_1_pct": {
+   "value": 99.324,
+   "ci95": [
+    99.252,
+    99.396
+   ],
+   "unit": "% of leaked prep-|1> Q3 shots",
+   "status": "MEASURED",
+   "source": "data/leakage/em_e5vstat_check.json",
+   "key": "per_qubit.Q3.models.1us|cnn_canonical.prep1 (1 - L3/leaked_shots3)",
+   "paper_text": "99.3% of leaked prepared-|1> Q3 shots are read as |1>",
+   "note": "LEAKAGE_REPORT 3.5 (f frame): 99.35%"
+  }
+ },
+ "herqules_pertrace_1us": {
+  "Q3": {
+   "err_rate_pct": {
+    "value": 7.601,
+    "ci95": [
+     7.552,
+     7.65
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "herqules.1us_herq_pertrace.per_qubit.Q3"
+   },
+   "state_change_pct_err": {
+    "value": 69.38,
+    "ci95": [
+     68.7,
+     70.06
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED lower bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "herqules.1us_herq_pertrace.per_qubit.Q3.state_change_total_T_plus_S"
+   },
+   "overlap_pct_err": {
+    "value": 27.14,
+    "ci95": [
+     26.48,
+     27.81
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED upper bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "herqules.1us_herq_pertrace.per_qubit.Q3.overlap_near_boundary_upper"
+   },
+   "state_change_pct_shots": {
+    "value": 5.273,
+    "ci95": [
+     5.222,
+     5.325
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "..."
+   },
+   "overlap_pct_shots": {
+    "value": 2.063,
+    "ci95": [
+     2.013,
+     2.114
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "..."
+   },
+   "cofailure_frac_herq_err_also_cnn_pct": {
+    "value": 68.234,
+    "ci95": [
+     67.921,
+     68.546
+    ],
+    "unit": "% of HERQULES errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e5vstat_summary.json",
+    "key": "cofailure.1us_Q3"
+   }
+  },
+  "Q5": {
+   "err_rate_pct": {
+    "value": 3.049,
+    "ci95": [
+     3.017,
+     3.081
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "herqules.1us_herq_pertrace.per_qubit.Q5"
+   },
+   "state_change_pct_err": {
+    "value": 87.87,
+    "ci95": [
+     87.38,
+     88.36
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED lower bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "herqules.1us_herq_pertrace.per_qubit.Q5.state_change_total_T_plus_S"
+   },
+   "overlap_pct_err": {
+    "value": 11.02,
+    "ci95": [
+     10.55,
+     11.49
+    ],
+    "unit": "% of errors",
+    "status": "MEASURED upper bound",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "herqules.1us_herq_pertrace.per_qubit.Q5.overlap_near_boundary_upper"
+   },
+   "state_change_pct_shots": {
+    "value": 2.679,
+    "ci95": [
+     2.664,
+     2.694
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "..."
+   },
+   "overlap_pct_shots": {
+    "value": 0.336,
+    "ci95": [
+     0.322,
+     0.35
+    ],
+    "unit": "% of shots",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e4recon_final.json",
+    "key": "..."
+   },
+   "cofailure_frac_herq_err_also_cnn_pct": {
+    "value": 92.12,
+    "ci95": [
+     91.829,
+     92.401
+    ],
+    "unit": "% of HERQULES errors",
+    "status": "MEASURED",
+    "source": "data/leakage/em_e5vstat_summary.json",
+    "key": "cofailure.1us_Q5"
+   }
+  },
+  "Q3_cnn_fewer_errors_pct": {
+   "value": 23.146,
+   "ci95": [
+    22.359,
+    23.925
+   ],
+   "unit": "% fewer errors than per-trace HERQULES",
+   "status": "MEASURED",
+   "source": "data/leakage/em_e5vstat_summary.json",
+   "key": "cofailure.1us_Q3 (cnn_err, herq_err)"
+  },
+  "model": "per-trace HERQULES (tab:fidelity); scrambled/demux HERQULES excluded (features from different shots)",
+  "paper_text": "per-trace HERQULES: Q3 69% state change / 27% overlap; 68% of its Q3 and 92% of its Q5 errors are also CNN errors; CNN 23% fewer Q3 errors, in both modes (4.5 vs 5.3% / 1.2 vs 2.1% of shots)",
+  "dropped_claim": "'same proportions despite a 2x rate gap': no 2x gap between single-shot models (CNN/HERQ 0.77-0.98 at 1 us)"
+ },
+ "appendix_facts": {
+  "order_swap": "transition before leakage: residual / overlap / unresolved state change move by <= 0.03 pp on every qubit; only the L/T split moves (Q3 L 3.14 -> 1.70 %, T 1.75 -> 3.18 %; Q5 L 1.03 -> 0.89 %, T 5.02 -> 5.16 %): 7.7 % of Q3 prepared-|0> errors are both leaked and step-flagged",
+  "noise_independence": "CNN error rate vs late displacement flat within CIs for Q1/Q3/Q5 (both bits); not flat for Q2 (33.7->15.2%) and Q4 prep |1> (e5vstat)",
+  "repro_independent_pipeline": "e5vrepro (own demod, frames, detector, late core): L, O, T+S agree within combined CIs for Q3, Q5 (1 us, 400 ns) and the Q1,Q3-Q5 pool",
+  "old_procedure_on_canonical_cnn": "97.41 / 2.44 / 0.16 (near / T1 / amp outlier), vs paper 97.4 / 2.4 / 0.2: the wrong method, not the wrong model, set the shares",
+  "old_rule": "near-boundary = P(correct) < 0.6, true for every error; 'T1' = sign test on un-centred halves (cannot fire on Q1/Q3; flags 9.5% of all Q5 prep-|0> shots); 'leakage' = |z(mean|IQ|)|>3 among HybridCNN errors",
+  "late_core_upper_bound": "the late-core expectation multiplies the stationary-shot misread rate by ALL prepared-b shots (incl. shots that decayed or leaked inside the window) and its reference set contains a few shots that changed state and came back; O is therefore an upper bound and S / T+S lower bounds. For Q2 (SNR ~1.2) the late core is impure (|0> and |1> late clouds overlap) and O is loose.",
+  "source": "data/leakage/em_e4recon_final.json robustness_notes, old_method; e5vstat/e5vrepro issues"
+ },
+ "verifier_verdicts": {
+  "e5vstat_1_300x": "ACCEPTED: dropped; LDA matches CNN on Q5 prep-|1> late-core shots, so the late-core rate is contamination, not CNN overlap.",
+  "e5vstat_2_Q2_circular": "ACCEPTED: Q2 state change/overlap shown as n/m; SNR-bound argued from LDA Gaussian overlap (28% >= 25.4%); all-5 pool not headlined.",
+  "e5vstat_3_Q4_in_headline": "ACCEPTED: headline pool = Q1, Q3, Q5 (81.3 / 16.9 / 1.8); Q4 row indicative with footnote.",
+  "e5vstat_4_reference_systematic": "ACCEPTED: 79-81% band quoted next to the headline.",
+  "e5vstat_5_late_window_understated": "ACCEPTED: half-plane numbers (89-95% vs 6-33%) used, with the identity estimate as cross-check.",
+  "e5vstat_6_step_null": "ACCEPTED: T labelled conservative lower bound; sensitivity 225-775 ns with partial 0.1-0.3 at 100-150 ns; efficiency-corrected 10-27% (|1>) / 19-51% (|0>). Q3 excitation T kept at 1.7-1.75 (e5vrepro's own detector passes its errors-only null at 1.09 and gives 1.72), with e5vstat's 115-vs-46 excess noted.",
+  "e5vstat_7_labels": "ACCEPTED: caption 'errors on shots that stayed in their state (SNR and model boundary; upper bound)'; T+S includes sub-threshold leakage (Q3 >= 75.3% with k=1).",
+  "e5vrepro_1_T_detector_dependent": "ACCEPTED: T reported only as a bracket across two detectors (2-8% of errors); not in the table.",
+  "e5vrepro_2_FP_oversubtraction": "ACCEPTED (both verifiers measured it: 0.44 and 0.34-0.58): T called conservative; bracket upper end = empirical-null value.",
+  "e5vrepro_3_Q3_relax_cause": "ACCEPTED: cause = neighbour-driven 1->0->1 excursions (obs/exp 1.0 with Q1,Q4,Q5 in |0>, up to 5.4); mechanism INFERRED.",
+  "e5vrepro_4_all5_pool": "ACCEPTED (same as e5vstat #2).",
+  "e5vrepro_5_core_size": "ACCEPTED: half-plane definition stated in the appendix.",
+  "e5vrepro_6_Q3_11.5": "ACCEPTED: 11.5% (11.3-11.6 by frame/IF)."
+ },
+ "order_swap_Q3_L_to_T_pp": {
+  "value": 1.44,
+  "L_orderA": 3.14,
+  "L_orderB": 1.7,
+  "T_orderA": 1.75,
+  "T_orderB": 3.18,
+  "status": "MEASURED",
+  "source": "data/leakage/em_e4recon_final.json robustness_notes.order_swap",
+  "paper_text": "only on Q3 do 1.4 pp of errors (both leaked and step-flagged) move from L to T"
+ },
+ "paper_text_map": [
+  {
+   "where": "ml_discriminators.tex, Sec. 5.2 Analysis (l.89)",
+   "text": "extra length accumulates qubit state changes (was: T_1 events)",
+   "numbers": "qualitative; per-shot state change grows on Q1/Q5 (e8fix_changes.state_change_per_shot_growth_400ns_to_1us)"
+  },
+  {
+   "where": "ml_discriminators.tex, What counts as a failure",
+   "text": "state changes (relaxation/excitation before or during readout, or state-prep errors), leakage, overlap",
+   "numbers": "none"
+  },
+  {
+   "where": "Methodology",
+   "text": "overlap = error rate on shots whose 1-2 us tail sits in the prepared state's core (upper bound); MCMit-CNN all qubits 1 us, Q1/Q3/Q5 400 ns; per-trace HERQULES Q3/Q5 1 us",
+   "numbers": "scope: results_per_qubit_window_cnn (Q1/Q3/Q5 at 400 ns), herqules_pertrace_1us"
+  },
+  {
+   "where": "Results",
+   "text": ">=77% / >=90% state change vs <=20% / <=9% overlap",
+   "numbers": "e8fix_changes.results_rounding"
+  },
+  {
+   "where": "Results",
+   "text": "91%/95% of Q3/Q5 prep-|1> errors on the |0> side vs 33%/15% of correct reads",
+   "numbers": "Q3 90.97 [90.72, 91.21] vs 32.96 [32.83, 33.09]; Q5 94.66 [94.40, 94.92] vs 15.33 [15.23, 15.42]"
+  },
+  {
+   "where": "Results",
+   "text": "only 2-8% of errors show a detectable step inside the window (a lower bound)",
+   "numbers": "resolved_step_T: Q1 4.33-7.76, Q5 5.02-7.36, Q3 (excitation only) 1.68-1.75 % of errors; conservative (FP null 24 vs 54.1)"
+  },
+  {
+   "where": "Results",
+   "text": "400 ns overlap 40% (Q3), 56% (Q5)",
+   "numbers": "Q3 40.14 [39.35, 40.93]; Q5 55.90 [55.04, 56.76]"
+  },
+  {
+   "where": "Results",
+   "text": "11.5% of Q3's prep-|1> leak, as do 4.7% of Q5's (mostly when Q3 is in |1>); 97-99% of these read correctly; Q3 3.5/6.5/11.5%",
+   "numbers": "Q3 11.46 [11.38, 11.55]; Q5 4.72 [4.66, 4.78]; Q5 share with Q3=1: e8fix_changes.Q3_conditioning_of_Q1_Q5_leakage_1us; read correctly Q3 97.0, Q5 98.7"
+  },
+  {
+   "where": "Table tab:error_modes",
+   "text": "unchanged values; caption: error rate % of shots, n/m defined; footnotes dagger/ddagger, Q4 split indicative",
+   "numbers": "table_error_modes_1us; Q4_state_change_reference_band 82.1-88.7"
+  },
+  {
+   "where": "Analysis",
+   "text": "pooled Q1,Q3,Q5: 81% / 17% (79-81% and 17-20% across stayed-in-state criteria), leakage 1.8%",
+   "numbers": "81.27 [80.90, 81.64] band 78.6-81.4; 16.90 [16.54, 17.27] band 16.8-19.6; 1.83 [1.75, 1.91]"
+  },
+  {
+   "where": "Analysis",
+   "text": "only Q2 is SNR-bound (a linear filter's Gaussian overlap alone predicts 28% error)",
+   "numbers": "Q2_snr_bound: 28.26% (TRAIN LDA Delta 1.151); CNN 25.43 [25.35, 25.51]; status INFERRED"
+  },
+  {
+   "where": "Analysis",
+   "text": "at most 1.6x more frequent per shot (Q1; Q3 4.4->4.5%); 37% -> 81%; overlap falls 2.5-14x; leakage triples on Q3",
+   "numbers": "e8fix_changes.state_change_per_shot_growth_400ns_to_1us (Q1 1.566 [1.50, 1.63]); pooled_Q1Q3Q5_window_trend; overlap_per_shot_fall_400ns_to_1us; leakage.Q3_growth_1us_over_400ns 3.27"
+  },
+  {
+   "where": "Analysis",
+   "text": "per-trace HERQULES: 68%/92% co-failure; also mostly state change (Q3 69%); CNN 23% fewer Q3 errors span both modes",
+   "numbers": "herqules_pertrace_1us; e8fix_changes.herqules_vs_cnn_Q3_modes_pct_shots (SC 4.48 vs 5.27, O 1.17 vs 2.06 % of shots)"
+  },
+  {
+   "where": "Takeaway #5",
+   "text": "~80% state changes (relaxation, excitation, or faulty preparation), at most ~20% overlap; 0.4-6% of shots silently leak",
+   "numbers": "81.27 (band 78.6-81.4); 16.9 (<=19.6 under every reference); leaked shots Q1 0.41 [0.39, 0.42] .. Q3 6.14 [6.10, 6.19]"
+  },
+  {
+   "where": "Fig. iq_taxonomy caption",
+   "text": "Leakage is an off-axis, non-computational population, not necessarily |2>",
+   "numbers": "none"
+  },
+  {
+   "where": "system_bottleneck.tex RQ13 hypothesis",
+   "text": "at short readouts most residual misclassifications are low-confidence shots ('near the decision boundary' dropped)",
+   "numbers": "hypothesis; no number"
+  },
+  {
+   "where": "discussion.tex",
+   "text": "(mostly qubit state changes and SNR overlap)",
+   "numbers": "qualitative (e6edit, unchanged)"
+  },
+  {
+   "where": "appendix_herqules.tex, App. error-modes",
+   "text": "models paragraph moved before the procedure; L/T/O/S definitions; validation; leakage",
+   "numbers": "e8fix_changes.attribution_definitions, step_T_gating_1us, S_absorbs_subthreshold_leakage_Q3, half_plane_identity, Q3_conditioning_of_Q1_Q5_leakage_1us; resolved_step_T.Q3_relaxation_null_by_partners (1.035 / 5.39); appendix_facts.order_swap"
+  }
+ ],
+ "supersedes": "data/leakage/em_e6edit_final_numbers.json (kept unchanged; every e6edit entry is copied here)",
+ "e8fix_changes": {
+  "results_rounding": {
+   "text": ">=77% (Q3) and >=90% (Q5) state change vs <=20% and <=9% overlap",
+   "Q3_state_change": {
+    "value": 76.76,
+    "ci95": [
+     76.13,
+     77.4
+    ]
+   },
+   "Q5_state_change": {
+    "value": 90.22,
+    "ci95": [
+     89.76,
+     90.67
+    ]
+   },
+   "Q3_overlap": {
+    "value": 20.09,
+    "ci95": [
+     19.47,
+     20.72
+    ]
+   },
+   "Q5_overlap": {
+    "value": 8.75,
+    "ci95": [
+     8.31,
+     9.19
+    ]
+   },
+   "convention": "point estimates rounded to integers; >= / <= mark the systematic bound status (T+S lower bound, O upper bound), same as the table headers. e6edit used CI edges for Q3 only (76/21); changed to 77/20 for consistency (review nit).",
+   "status": "MEASURED"
+  },
+  "Q3_conditioning_of_Q1_Q5_leakage_1us": {
+   "Q5_prep1_pct": {
+    "Q3_prep0": {
+     "value": 0.953,
+     "ci95": [
+      0.911,
+      0.995
+     ],
+     "n_shots": 280000
+    },
+    "Q3_prep1": {
+     "value": 7.842,
+     "ci95": [
+      7.735,
+      7.95
+     ],
+     "n_shots": 280000
+    },
+    "share_of_population_with_Q3_prep1_pct": {
+     "value": 89.2,
+     "ci95": [
+      88.7,
+      89.6
+     ]
+    },
+    "Q4_prep0_only": {
+     "Q3_prep0": {
+      "value": 0.398,
+      "ci95": [
+       0.354,
+       0.442
+      ],
+      "n_shots": 140000
+     },
+     "Q3_prep1": {
+      "value": 8.699,
+      "ci95": [
+       8.54,
+       8.858
+      ],
+      "n_shots": 140000
+     },
+     "share_of_population_with_Q3_prep1_pct": {
+      "value": 95.6,
+      "ci95": [
+       95.2,
+       96.1
+      ]
+     }
+    },
+    "Q4_prep1_only": {
+     "Q3_prep0": {
+      "value": 1.509,
+      "ci95": [
+       1.437,
+       1.58
+      ],
+      "n_shots": 140000
+     },
+     "Q3_prep1": {
+      "value": 6.986,
+      "ci95": [
+       6.842,
+       7.131
+      ],
+      "n_shots": 140000
+     },
+     "share_of_population_with_Q3_prep1_pct": {
+      "value": 82.2,
+      "ci95": [
+       81.5,
+       83.0
+      ]
+     }
+    }
+   },
+   "Q1_prep1_pct": {
+    "Q3_prep0": {
+     "value": 0.126,
+     "ci95": [
+      0.102,
+      0.149
+     ],
+     "n_shots": 280000
+    },
+    "Q3_prep1": {
+     "value": 1.103,
+     "ci95": [
+      1.058,
+      1.147
+     ],
+     "n_shots": 280000
+    },
+    "share_of_population_with_Q3_prep1_pct": {
+     "value": 89.7,
+     "ci95": [
+      88.0,
+      91.5
+     ]
+    }
+   },
+   "multi_frame_ranges_LEAKAGE_REPORT_3.2": {
+    "Q5": "Q3,Q4 = 00: 0.31-0.42%; 01: 1.3-1.6%; 10: 8.6-9.7%; 11: 6.8-8.2%",
+    "Q1": "0.12-0.13% with Q3 prepared |0>, 1.3-1.5% with Q3 prepared |1>"
+   },
+   "frame": "m1tail per-state-centre frame (mean-vs-core erratum bias <=0.06 pp for Q1/Q5); mirror-subtracted E3, CI +/-1.96 sqrt(N+ + N-)/N per configuration, summed",
+   "status": "MEASURED (populations and their Q3 dependence); origin unresolved",
+   "paper_text": "main text: '4.7% of Q5's (mostly when Q3 is in |1>)'; App.: '4.7% (Q5) and 0.8% (Q1) of prepared |1>, ~90% of it with Q3 prepared in |1> (origin unresolved)'"
+  },
+  "state_change_per_shot_growth_400ns_to_1us": {
+   "Q1": {
+    "400ns_pct_shots": [
+     1.545,
+     [
+      1.481,
+      1.61
+     ]
+    ],
+    "1us_pct_shots": [
+     2.419,
+     [
+      2.401,
+      2.437
+     ]
+    ],
+    "ratio": 1.566,
+    "ratio_ci95": [
+     1.501,
+     1.634
+    ]
+   },
+   "Q3": {
+    "400ns_pct_shots": [
+     4.355,
+     [
+      4.297,
+      4.413
+     ]
+    ],
+    "1us_pct_shots": [
+     4.484,
+     [
+      4.447,
+      4.521
+     ]
+    ],
+    "ratio": 1.03,
+    "ratio_ci95": [
+     1.014,
+     1.046
+    ]
+   },
+   "Q5": {
+    "400ns_pct_shots": [
+     2.147,
+     [
+      2.105,
+      2.188
+     ]
+    ],
+    "1us_pct_shots": [
+     2.671,
+     [
+      2.658,
+      2.685
+     ]
+    ],
+    "ratio": 1.244,
+    "ratio_ci95": [
+     1.219,
+     1.269
+    ]
+   },
+   "paper_text": "Longer readouts make them at most 1.6x more frequent per shot (Q1; Q3: 4.4->4.5%)",
+   "status": "MEASURED"
+  },
+  "herqules_vs_cnn_Q3_modes_pct_shots": {
+   "cnn_state_change": [
+    4.484,
+    [
+     4.447,
+     4.521
+    ]
+   ],
+   "herq_state_change": [
+    5.273,
+    [
+     5.222,
+     5.325
+    ]
+   ],
+   "cnn_overlap": [
+    1.174,
+    [
+     1.137,
+     1.21
+    ]
+   ],
+   "herq_overlap": [
+    2.063,
+    [
+     2.013,
+     2.114
+    ]
+   ],
+   "cnn_state_change_share_pct_err": [
+    76.76,
+    [
+     76.13,
+     77.4
+    ]
+   ],
+   "herq_state_change_share_pct_err": [
+    69.38,
+    [
+     68.7,
+     70.06
+    ]
+   ],
+   "paper_text": "also mostly by state change (Q3: 69%); MCMit-CNN's 23% fewer Q3 errors span both modes",
+   "status": "MEASURED"
+  },
+  "step_T_gating_1us": {
+   "per_test": {
+    "Q1_prep0": {
+     "test": "excitation (up)",
+     "quasinull_obs_over_exp": 0.788,
+     "eff_given_cnn_proxy_misread": 0.161,
+     "measurable": true,
+     "ts_window_p_flag_ge_0.5_ns": null,
+     "p_flag_max": 0.445
+    },
+    "Q1_prep1": {
+     "test": "relaxation (down)",
+     "quasinull_obs_over_exp": 0.973,
+     "eff_given_cnn_proxy_misread": 0.186,
+     "measurable": true,
+     "ts_window_p_flag_ge_0.5_ns": null,
+     "p_flag_max": 0.437
+    },
+    "Q2_prep0": {
+     "test": "excitation (up)",
+     "quasinull_obs_over_exp": 0.801,
+     "eff_given_cnn_proxy_misread": 0.012,
+     "measurable": false,
+     "ts_window_p_flag_ge_0.5_ns": null,
+     "p_flag_max": 0.03
+    },
+    "Q2_prep1": {
+     "test": "relaxation (down)",
+     "quasinull_obs_over_exp": 1.027,
+     "eff_given_cnn_proxy_misread": 0.008,
+     "measurable": false,
+     "ts_window_p_flag_ge_0.5_ns": null,
+     "p_flag_max": 0.02
+    },
+    "Q3_prep0": {
+     "test": "excitation (up)",
+     "quasinull_obs_over_exp": 0.814,
+     "eff_given_cnn_proxy_misread": 0.186,
+     "measurable": true,
+     "ts_window_p_flag_ge_0.5_ns": [
+      225.0,
+      775.0
+     ],
+     "p_flag_max": 0.831
+    },
+    "Q3_prep1": {
+     "test": "relaxation (down)",
+     "quasinull_obs_over_exp": 2.485,
+     "eff_given_cnn_proxy_misread": 0.184,
+     "measurable": false,
+     "ts_window_p_flag_ge_0.5_ns": [
+      275.0,
+      800.0
+     ],
+     "p_flag_max": 0.772
+    },
+    "Q4_prep0": {
+     "test": "excitation (up)",
+     "quasinull_obs_over_exp": 0.001,
+     "eff_given_cnn_proxy_misread": 0.003,
+     "measurable": false,
+     "ts_window_p_flag_ge_0.5_ns": null,
+     "p_flag_max": 0.007
+    },
+    "Q4_prep1": {
+     "test": "relaxation (down)",
+     "quasinull_obs_over_exp": 1.806,
+     "eff_given_cnn_proxy_misread": 0.092,
+     "measurable": false,
+     "ts_window_p_flag_ge_0.5_ns": null,
+     "p_flag_max": 0.443
+    },
+    "Q5_prep0": {
+     "test": "excitation (up)",
+     "quasinull_obs_over_exp": 0.774,
+     "eff_given_cnn_proxy_misread": 0.176,
+     "measurable": true,
+     "ts_window_p_flag_ge_0.5_ns": [
+      250.0,
+      675.0
+     ],
+     "p_flag_max": 0.785
+    },
+    "Q5_prep1": {
+     "test": "relaxation (down)",
+     "quasinull_obs_over_exp": 1.131,
+     "eff_given_cnn_proxy_misread": 0.277,
+     "measurable": true,
+     "ts_window_p_flag_ge_0.5_ns": [
+      225.0,
+      700.0
+     ],
+     "p_flag_max": 0.801
+    }
+   },
+   "rule": "measurable iff 0.6 <= quasi-null obs/exp <= 1.3 and efficiency given a misread of the linear CNN proxy >= 5% (sims/leakage/em_e4recon_analyze.py gate_info)",
+   "excluded_at_1us": [
+    "Q2_prep0",
+    "Q2_prep1",
+    "Q3_prep1",
+    "Q4_prep0",
+    "Q4_prep1"
+   ],
+   "efficiency_range_of_used_tests_pct": [
+    16.1,
+    27.7
+   ],
+   "p_flag_ge_0.5_window_ns_used_tests": [
+    [
+     225.0,
+     700.0
+    ],
+    [
+     225.0,
+     775.0
+    ],
+    [
+     250.0,
+     675.0
+    ]
+   ],
+   "Q1_p_flag_max": [
+    0.445,
+    0.437
+   ],
+   "paper_text": "flagged with probability >=0.5 only between ~225 and ~775 ns on Q3/Q5 (Q1 peaks at 0.44); 16-28% of injected steps that flip a linear proxy of the CNN are flagged; obs/exp 0.6-1.3, efficiency >=5%; at 1 us excludes Q2, Q4, Q3 relaxation",
+   "status": "MEASURED (injection / quasi-null calibration)"
+  },
+  "attribution_definitions": {
+   "cores": "Gaussian-kernel mean-shift modes of the window-mean IQ points, bandwidth 0.5 sigma, TRAIN, per neighbour configuration",
+   "sigma_leakage": "1.4826 * MAD of the prepared-|0> perpendicular displacement from the core line (per configuration)",
+   "z_sign": "normal oriented to the off-axis side (positive Q component of n); leaked if z>3, mirror z<-3 subtracted",
+   "late_core_radius_LATE_R": 1.5,
+   "late_core_radius_units": "1.4826 * MAD of the prepared-|0> late-window (1-2 us) Q coordinate, per configuration",
+   "bins_ns": 100,
+   "source": "sims/leakage/em_e2seg_attr_v3.py (LATE_R, meanshift, mad, fit_line); em_e4recon_glrt.py reuses E.LATE_R"
+  },
+  "S_absorbs_subthreshold_leakage_Q3": {
+   "state_change_k3": 76.76,
+   "state_change_k1": 75.3,
+   "difference_pp": 1.46,
+   "paper_text": "on Q3, a z>1 cut lowers it by 1.5 pp",
+   "source": "e5vstat issue 7 (em_e5vstat_check.json L1..L5)",
+   "status": "MEASURED"
+  },
+  "half_plane_identity": {
+   "formula": "f_err = s + (1 - s) f_corr  ->  s = (f_err - f_corr) / (1 - f_corr)",
+   "errors_on_0_side_Q1_Q3_Q5_pct": [
+    90.068,
+    90.97,
+    94.663
+   ],
+   "correct_on_0_side_Q1_Q3_Q5_pct": [
+    5.812,
+    32.955,
+    15.326
+   ],
+   "pooled_s_pct": 89.13,
+   "pooled_attributed_pct": 90.29,
+   "paper_text": "90-95% vs 6-33%; s = 89% (attributed 90%)",
+   "note": "e6edit text quoted 89-95% over Q1, Q3-Q5 (89 = Q4); now restricted to Q1/Q3/Q5 to match the conclusion",
+   "status": "MEASURED fractions; reading s as state change INFERRED"
+  },
+  "reference_band": {
+   "pooled_state_change_by_reference": "e4 core 81.27, r=1.0 81.36, r=2.0 80.66, r=2.5 80.23, half-plane 78.60, e5vrepro 2-sigma disc 80.73",
+   "paper_text": "79-81% across stayed-in-state criteria (main); late-core radius 1-2.5 widths, half-plane (App.)"
+  }
+ }
+}

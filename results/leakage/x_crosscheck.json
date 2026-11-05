@@ -1,0 +1,33 @@
+{
+ "vs_colleague_preprocess_full_0_1000": {
+  "max_abs_diff_binned": 4.76837158203125e-06,
+  "max_abs_diff_per_sample": 9.530169471361205e-07,
+  "feature_std": 5.03090763092041
+ },
+ "vs_colleague_preprocess_first_0_500": {
+  "max_abs_diff_binned": 4.76837158203125e-06,
+  "max_abs_diff_per_sample": 9.530169435834068e-07,
+  "feature_std": 4.927827835083008
+ },
+ "boxcar_direct_max_abs_diff": 9.350517480299914e-07,
+ "stored_train": {
+  "max_abs_diff_feat_featbox_feat1us": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "labels_equal_sample": true,
+  "labels_equal_all": true,
+  "idx_is_arange": true
+ },
+ "stored_test": {
+  "max_abs_diff_feat_featbox_feat1us": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "labels_equal_sample": true,
+  "labels_equal_all": true,
+  "idx_is_arange": true
+ }
+}

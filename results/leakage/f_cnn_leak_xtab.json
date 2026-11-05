@@ -1,0 +1,2376 @@
+{
+ "note": "f_cnn_leak_xtab.py (tag f): what a leakage (L) flag would add to the MCMit-CNN's soft-readout erasures.\n\nLine-referenced frame (the verifiers' correction): for every qubit, prepared bit and each of the 16\nneighbour configurations, c0 / c1 = density modes of the prepared-|0> / prepared-|1> window means, the\n|0>-|1> line goes through c0 and c1, z = signed perpendicular distance from that line in units of the\nprepared-|0> perpendicular noise width (1.4826 MAD) of the same configuration. + side = the side of the\noff-axis populations (positive imag in the shared frame). Frames are fitted on TRAIN and applied to TEST.\nFor Q4 (q3) c1 = coordinate-wise median of prepared |1>, because its densest |1> peak is a sub-cloud.\n\nL flag = z > 3; mirror = z < -3. Mirror-subtracted counts estimate the off-axis (L) population.\n\nCross-tabs on TEST against the per-shot CNN probabilities of sims/soft_readout_cnn.py\n(data/sims/soft/cnn_soft_{1000,600,400}ns.npz, same model/recipe as the paper) and against the\ncanonical hard predictions preds_MCMitCNN_pb.npy:\n  - E3 per qubit and prepared bit;\n  - leaked share of CNN errors, misread rate of L shots;\n  - share of the L population that the paper's confidence flag (least confident f of pooled Q1/Q3/Q4/Q5\n    measurements, exactly as sweep_soft.py) already catches;\n  - the L flag used as an erasure: error of flagged shots, and e_u versus a confidence flag of equal size;\n  - where 1 us L-flagged shots are in the 1.2-2.0 us window (data the CNN never sees).\n\nWindows: 1 us = feat1us bins 0-9 (raw samples 0-499, causal FIR, the CNN input);\n600 ns / 400 ns = featbox bins 0-5 / 0-3 (samples 0-299 / 0-199, causal boxcar);\nlate = feat bins 12-19 (samples 600-999).\nDocker (graham, oraqle-torch): -v features:/feat:ro -v f/in:/soft:ro -v ~/oraqle_reports:/reports:ro -v f:/work\n",
+ "windows": {
+  "1us": {
+   "soft_label_equals_prepared": true,
+   "frames": {
+    "q0": {
+     "sep_raw_median": 2.8080545342513634,
+     "sigma0_median": 0.5530598216755063,
+     "angle_deg_range": [
+      -2.084151018179148,
+      0.6227378968597965
+     ]
+    },
+    "q1": {
+     "sep_raw_median": 0.8598962091092026,
+     "sigma0_median": 0.531896699116144,
+     "angle_deg_range": [
+      -3.6930879447353075,
+      -8.38979891546138
+     ]
+    },
+    "q2": {
+     "sep_raw_median": 4.671169617159389,
+     "sigma0_median": 0.6205707740458604,
+     "angle_deg_range": [
+      -8.714803647032447,
+      -7.419334210241437
+     ]
+    },
+    "q3": {
+     "sep_raw_median": 5.920800766559478,
+     "sigma0_median": 0.6936114964557965,
+     "angle_deg_range": [
+      -2.1553136447004966,
+      0.9256424531752813
+     ]
+    },
+    "q4": {
+     "sep_raw_median": 5.418149704616338,
+     "sigma0_median": 0.6569495674712418,
+     "angle_deg_range": [
+      -4.456980271393016,
+      0.4871075102720757
+     ]
+    }
+   },
+   "qubits": {
+    "q0": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 779,
+      "n_minus": 811,
+      "E3": -5.714285714285714e-05,
+      "E3_ci95": [
+       -0.00019670467140449533,
+       8.241895711878105e-05
+      ],
+      "E2": -0.0005392857142857143,
+      "E4": -1.7857142857142857e-06,
+      "E5": 0.0,
+      "E3_train": -8.75e-05,
+      "soft_errors": 5877,
+      "soft_err_plus": 34,
+      "soft_err_minus": 9,
+      "leaked_share_of_soft_errors": 0.004253871022630594,
+      "leaked_share_of_soft_errors_ci95": [
+       0.0020669424012877452,
+       0.006440799643973443
+      ],
+      "misread_rate_of_L": 25.0,
+      "canon_errors": 5887,
+      "leaked_share_of_canon_errors": 0.0033973161202649907,
+      "leaked_share_of_canon_errors_ci95": [
+       0.0011888620386965912,
+       0.00560577020183339
+      ],
+      "p1_median_plus": 0.0272674560546875,
+      "p1_median_minus": 0.034271240234375,
+      "conf_median_plus": 0.4732666015625,
+      "conf_median_all": 0.4687652587890625,
+      "L_in_conf_flag": {
+       "0.01": 2.0,
+       "0.02": 3.0,
+       "0.05": -13.0,
+       "0.1": -28.0
+      },
+      "conf_flag_rate": {
+       "0.01": 0.005746428571428572,
+       "0.02": 0.012217857142857143,
+       "0.05": 0.03227142857142857,
+       "0.1": 0.05764464285714286
+      },
+      "late_destination": {
+       "plus": [
+        746,
+        25,
+        8
+       ],
+       "minus": [
+        802,
+        8,
+        1
+       ],
+       "core": [
+        376379,
+        4775,
+        569
+       ],
+       "L_excess_late_fraction_0_1_L": [
+        -56.0,
+        17.0,
+        7.0
+       ],
+       "core_late_fraction_0_1_L": [
+        0.9860003196034821,
+        0.012509070713580267,
+        0.0014906096829376276
+       ]
+      }
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 5499,
+      "n_minus": 701,
+      "E3": 0.008567857142857143,
+      "E3_ci95": [
+       0.00829226686726673,
+       0.008843447418447555
+      ],
+      "E2": 0.025335714285714284,
+      "E4": 0.0017767857142857143,
+      "E5": 0.0003357142857142857,
+      "E3_train": 0.008758333333333333,
+      "soft_errors": 27516,
+      "soft_err_plus": 38,
+      "soft_err_minus": 42,
+      "leaked_share_of_soft_errors": -0.00014536996656490768,
+      "leaked_share_of_soft_errors_ci95": [
+       -0.0007824819357318779,
+       0.0004917420026020625
+      ],
+      "misread_rate_of_L": -0.0008336807002917883,
+      "canon_errors": 27477,
+      "leaked_share_of_canon_errors": -0.00014557630017833097,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.0007915185380772769,
+       0.0005003659377206149
+      ],
+      "p1_median_plus": 0.99609375,
+      "p1_median_minus": 0.99560546875,
+      "conf_median_plus": 0.49609375,
+      "conf_median_all": 0.49609375,
+      "L_in_conf_flag": {
+       "0.01": 0.0006252605252188412,
+       "0.02": 0.0010421008753647354,
+       "0.05": 0.003126302626094206,
+       "0.1": 0.006461025427261359
+      },
+      "conf_flag_rate": {
+       "0.01": 0.008198214285714286,
+       "0.02": 0.015580357142857142,
+       "0.05": 0.03131607142857143,
+       "0.1": 0.04284821428571429
+      },
+      "late_destination": {
+       "plus": [
+        137,
+        4106,
+        1256
+       ],
+       "minus": [
+        99,
+        594,
+        8
+       ],
+       "core": [
+        40603,
+        321586,
+        6651
+       ],
+       "L_excess_late_fraction_0_1_L": [
+        0.007919966652771988,
+        0.7319716548561901,
+        0.2601083784910379
+       ],
+       "core_late_fraction_0_1_L": [
+        0.1100829628022991,
+        0.8718848281097494,
+        0.018032209087951414
+       ]
+      }
+     },
+     "overall": {
+      "E3": 0.004255357142857143,
+      "E3_ci95": [
+       0.00410090043371183,
+       0.004409813852002457
+      ],
+      "soft_err_rate": 0.029815178571428572,
+      "canon_err_rate": 0.029789285714285713,
+      "leaked_share_of_soft_errors": 0.0006288743149761927,
+      "leaked_share_of_soft_errors_ci95": [
+       -2.208401618789739e-05,
+       0.0012798326461402826
+      ],
+      "leaked_share_of_canon_errors": 0.0004795588058985733,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.00017986288916888786,
+       0.0011389805009660344
+      ],
+      "Lflag_rate": 0.005605357142857143,
+      "Lflag_err": 0.011468620579802484,
+      "n_err_soft": 33393,
+      "n_err_soft_on_L_mirror": 21
+     }
+    },
+    "q1": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 1735,
+      "n_minus": 657,
+      "E3": 0.001925,
+      "E3_ci95": [
+       0.0017538217303510752,
+       0.002096178269648925
+      ],
+      "E2": 0.0044714285714285715,
+      "E4": 0.0010767857142857144,
+      "E5": 0.0006607142857142857,
+      "E3_train": 0.0017583333333333333,
+      "soft_errors": 108361,
+      "soft_err_plus": 1036,
+      "soft_err_minus": 161,
+      "leaked_share_of_soft_errors": 0.008074860881682524,
+      "leaked_share_of_soft_errors_ci95": [
+       0.007449068686550841,
+       0.008700653076814207
+      ],
+      "misread_rate_of_L": 0.8116883116883117,
+      "canon_errors": 113643,
+      "leaked_share_of_canon_errors": 0.007725948804589812,
+      "leaked_share_of_canon_errors_ci95": [
+       0.00711861951816035,
+       0.008333278091019273
+      ],
+      "p1_median_plus": 0.7001953125,
+      "p1_median_minus": 0.31884765625,
+      "conf_median_plus": 0.316650390625,
+      "conf_median_all": 0.242919921875,
+      "late_destination": {
+       "plus": [
+        530,
+        898,
+        307
+       ],
+       "minus": [
+        386,
+        266,
+        5
+       ],
+       "core": [
+        216494,
+        164674,
+        1465
+       ],
+       "L_excess_late_fraction_0_1_L": [
+        0.13358070500927643,
+        0.5862708719851577,
+        0.28014842300556586
+       ],
+       "core_late_fraction_0_1_L": [
+        0.5658006497087287,
+        0.4303706162301736,
+        0.0038287340610977097
+       ]
+      }
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 9788,
+      "n_minus": 702,
+      "E3": 0.016225,
+      "E3_ci95": [
+       0.015866527546386056,
+       0.016583472453613943
+      ],
+      "E2": 0.023423214285714287,
+      "E4": 0.011444642857142856,
+      "E5": 0.008294642857142856,
+      "E3_train": 0.0162625,
+      "soft_errors": 176086,
+      "soft_err_plus": 312,
+      "soft_err_minus": 204,
+      "leaked_share_of_soft_errors": 0.0006133366650386743,
+      "leaked_share_of_soft_errors_ci95": [
+       0.00036049066120489914,
+       0.0008661826688724495
+      ],
+      "misread_rate_of_L": 0.011886418666079684,
+      "canon_errors": 171179,
+      "leaked_share_of_canon_errors": 0.0005900256456691533,
+      "leaked_share_of_canon_errors_ci95": [
+       0.00034100454018877414,
+       0.0008390467511495325
+      ],
+      "p1_median_plus": 0.91357421875,
+      "p1_median_minus": 0.74169921875,
+      "conf_median_plus": 0.41357421875,
+      "conf_median_all": 0.2890625,
+      "late_destination": {
+       "plus": [
+        763,
+        4169,
+        4856
+       ],
+       "minus": [
+        257,
+        435,
+        10
+       ],
+       "core": [
+        133333,
+        232077,
+        6785
+       ],
+       "L_excess_late_fraction_0_1_L": [
+        0.05569007263922518,
+        0.4109619194364957,
+        0.5333480079242792
+       ],
+       "core_late_fraction_0_1_L": [
+        0.3582342589234138,
+        0.6235360496513924,
+        0.018229691425193782
+       ]
+      }
+     },
+     "overall": {
+      "E3": 0.009075,
+      "E3_ci95": [
+       0.008876376927322125,
+       0.009273623072677874
+      ],
+      "soft_err_rate": 0.25397053571428574,
+      "canon_err_rate": 0.2543053571428571,
+      "leaked_share_of_soft_errors": 0.003455828326542379,
+      "leaked_share_of_soft_errors_ci95": [
+       0.0031706389162853765,
+       0.003741017736799381
+      ],
+      "leaked_share_of_canon_errors": 0.003437234483291319,
+      "leaked_share_of_canon_errors_ci95": [
+       0.0031524205567709887,
+       0.003722048409811649
+      ],
+      "Lflag_rate": 0.010288392857142857,
+      "Lflag_err": 0.11698342445543695,
+      "n_err_soft": 284447,
+      "n_err_soft_on_L_mirror": 983
+     }
+    },
+    "q2": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 5295,
+      "n_minus": 688,
+      "E3": 0.008226785714285714,
+      "E3_ci95": [
+       0.007956061223335966,
+       0.008497510205235462
+      ],
+      "E2": 0.010798214285714286,
+      "E4": 0.0068,
+      "E5": 0.005473214285714286,
+      "E3_train": 0.0084625,
+      "soft_errors": 12616,
+      "soft_err_plus": 1621,
+      "soft_err_minus": 23,
+      "leaked_share_of_soft_errors": 0.12666455294863666,
+      "leaked_share_of_soft_errors_ci95": [
+       0.12036535439630341,
+       0.1329637515009699
+      ],
+      "misread_rate_of_L": 0.34686346863468637,
+      "canon_errors": 12125,
+      "leaked_share_of_canon_errors": 0.1338556701030928,
+      "leaked_share_of_canon_errors_ci95": [
+       0.12723987982149693,
+       0.14047146038468866
+      ],
+      "p1_median_plus": 0.2208251953125,
+      "p1_median_minus": 0.07122802734375,
+      "conf_median_plus": 0.3912353515625,
+      "conf_median_all": 0.42742919921875,
+      "L_in_conf_flag": {
+       "0.01": 0.14434556110266986,
+       "0.02": 0.2719774256566095,
+       "0.05": 0.4833948339483395,
+       "0.1": 0.6429346646407641
+      },
+      "conf_flag_rate": {
+       "0.01": 0.0162,
+       "0.02": 0.03435714285714286,
+       "0.05": 0.10218928571428572,
+       "0.1": 0.26973035714285715
+      },
+      "late_destination": {
+       "plus": [
+        874,
+        824,
+        3597
+       ],
+       "minus": [
+        433,
+        236,
+        19
+       ],
+       "core": [
+        242078,
+        128771,
+        10154
+       ],
+       "L_excess_late_fraction_0_1_L": [
+        0.09572389841545474,
+        0.12763186455393966,
+        0.7766442370306056
+       ],
+       "core_late_fraction_0_1_L": [
+        0.6353703251680433,
+        0.3379789660448868,
+        0.02665070878706992
+       ]
+      }
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 64678,
+      "n_minus": 531,
+      "E3": 0.11454821428571428,
+      "E3_ci95": [
+       0.11365445243264603,
+       0.11544197613878253
+      ],
+      "E2": 0.132225,
+      "E4": 0.09916607142857142,
+      "E5": 0.08428214285714286,
+      "E3_train": 0.1156,
+      "soft_errors": 52697,
+      "soft_err_plus": 476,
+      "soft_err_minus": 57,
+      "leaked_share_of_soft_errors": 0.007951116761865001,
+      "leaked_share_of_soft_errors_ci95": [
+       0.007092431944664562,
+       0.00880980157906544
+      ],
+      "misread_rate_of_L": 0.0065318721062559435,
+      "canon_errors": 53300,
+      "leaked_share_of_canon_errors": 0.008048780487804878,
+      "leaked_share_of_canon_errors_ci95": [
+       0.007190306553145953,
+       0.008907254422463803
+      ],
+      "p1_median_plus": 0.9931640625,
+      "p1_median_minus": 0.998046875,
+      "conf_median_plus": 0.4931640625,
+      "conf_median_all": 0.49609375,
+      "L_in_conf_flag": {
+       "0.01": 0.005113255491293435,
+       "0.02": 0.009712067594743324,
+       "0.05": 0.023430557937237907,
+       "0.1": 0.03689962118259622
+      },
+      "conf_flag_rate": {
+       "0.01": 0.015073214285714285,
+       "0.02": 0.02857142857142857,
+       "0.05": 0.058,
+       "0.1": 0.08829642857142857
+      },
+      "late_destination": {
+       "plus": [
+        4522,
+        10520,
+        49636
+       ],
+       "minus": [
+        106,
+        341,
+        84
+       ],
+       "core": [
+        91129,
+        186971,
+        51944
+       ],
+       "L_excess_late_fraction_0_1_L": [
+        0.06884187880960918,
+        0.15868240135937767,
+        0.7724757198310132
+       ],
+       "core_late_fraction_0_1_L": [
+        0.276111669959157,
+        0.566503254111573,
+        0.15738507592927004
+       ]
+      }
+     },
+     "overall": {
+      "E3": 0.0613875,
+      "E3_ci95": [
+       0.06092056799210163,
+       0.06185443200789836
+      ],
+      "soft_err_rate": 0.05831517857142857,
+      "canon_err_rate": 0.05841517857142857,
+      "leaked_share_of_soft_errors": 0.030882060233031708,
+      "leaked_share_of_soft_errors_ci95": [
+       0.029481874483261533,
+       0.03228224598280188
+      ],
+      "leaked_share_of_canon_errors": 0.031364157432174244,
+      "leaked_share_of_canon_errors_ci95": [
+       0.0299526316105951,
+       0.03277568325375339
+      ],
+      "Lflag_rate": 0.062475892857142855,
+      "Lflag_err": 0.029968702213711004,
+      "n_err_soft": 65313,
+      "n_err_soft_on_L_mirror": 2017
+     }
+    },
+    "q3": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 1725,
+      "n_minus": 1082,
+      "E3": 0.0011482142857142856,
+      "E3_ci95": [
+       0.0009627803352089911,
+       0.0013336482362195801
+      ],
+      "E2": 0.00014821428571428573,
+      "E4": 0.0005625,
+      "E5": 0.00020535714285714287,
+      "E3_train": 0.0011291666666666668,
+      "soft_errors": 17324,
+      "soft_err_plus": 854,
+      "soft_err_minus": 451,
+      "leaked_share_of_soft_errors": 0.02326252597552528,
+      "leaked_share_of_soft_errors_ci95": [
+       0.019175445848343412,
+       0.02734960610270715
+      ],
+      "misread_rate_of_L": 0.6267496111975117,
+      "canon_errors": 17703,
+      "leaked_share_of_canon_errors": 0.02457210642264023,
+      "leaked_share_of_canon_errors_ci95": [
+       0.02054503692936028,
+       0.028599175915920184
+      ],
+      "p1_median_plus": 0.474853515625,
+      "p1_median_minus": 0.22601318359375,
+      "conf_median_plus": 0.459869384765625,
+      "conf_median_all": 0.443206787109375,
+      "L_in_conf_flag": {
+       "0.01": 0.049766718506998445,
+       "0.02": 0.05598755832037325,
+       "0.05": -0.01866251944012442,
+       "0.1": -0.09331259720062209
+      },
+      "conf_flag_rate": {
+       "0.01": 0.010758928571428572,
+       "0.02": 0.022525,
+       "0.05": 0.06889821428571428,
+       "0.1": 0.16459642857142856
+      },
+      "late_destination": {
+       "plus": [
+        579,
+        945,
+        201
+       ],
+       "minus": [
+        811,
+        257,
+        14
+       ],
+       "core": [
+        356528,
+        23278,
+        2042
+       ],
+       "L_excess_late_fraction_0_1_L": [
+        -0.3608087091757387,
+        1.0699844479004665,
+        0.29082426127527217
+       ],
+       "core_late_fraction_0_1_L": [
+        0.9336908927112358,
+        0.060961429678825084,
+        0.005347677609939034
+       ]
+      }
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 35586,
+      "n_minus": 18633,
+      "E3": 0.030273214285714285,
+      "E3_ci95": [
+       0.02945824020637188,
+       0.03108818836505669
+      ],
+      "E2": 0.020157142857142856,
+      "E4": 0.019657142857142856,
+      "E5": 0.007685714285714285,
+      "E3_train": 0.0296125,
+      "soft_errors": 42318,
+      "soft_err_plus": 153,
+      "soft_err_minus": 129,
+      "leaked_share_of_soft_errors": 0.0005671345526726216,
+      "leaked_share_of_soft_errors_ci95": [
+       -0.00021064315474605283,
+       0.001344912260091296
+      ],
+      "misread_rate_of_L": 0.0014156786409485046,
+      "canon_errors": 41820,
+      "leaked_share_of_canon_errors": -0.00016738402678144427,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.0009069411363605122,
+       0.0005721730827976236
+      ],
+      "p1_median_plus": 0.97998046875,
+      "p1_median_minus": 0.982421875,
+      "conf_median_plus": 0.47998046875,
+      "conf_median_all": 0.47705078125,
+      "L_in_conf_flag": {
+       "0.01": 0.002182504571462278,
+       "0.02": 0.005249808293517372,
+       "0.05": 0.015395505220314989,
+       "0.1": 0.027310800448298235
+      },
+      "conf_flag_rate": {
+       "0.01": 0.014194642857142857,
+       "0.02": 0.02696607142857143,
+       "0.05": 0.05639285714285714,
+       "0.1": 0.08514821428571429
+      },
+      "late_destination": {
+       "plus": [
+        1018,
+        28597,
+        5971
+       ],
+       "minus": [
+        8681,
+        9505,
+        447
+       ],
+       "core": [
+        47526,
+        159511,
+        13352
+       ],
+       "L_excess_late_fraction_0_1_L": [
+        -0.45201439273284966,
+        1.1261723588745354,
+        0.3258420338583142
+       ],
+       "core_late_fraction_0_1_L": [
+        0.21564597144140588,
+        0.7237702426164645,
+        0.0605837859421296
+       ]
+      }
+     },
+     "overall": {
+      "E3": 0.015710714285714286,
+      "E3_ci95": [
+       0.015292812233793026,
+       0.016128616337635546
+      ],
+      "soft_err_rate": 0.05325178571428572,
+      "canon_err_rate": 0.053145535714285715,
+      "leaked_share_of_soft_errors": 0.007159384326481339,
+      "leaked_share_of_soft_errors_ci95": [
+       0.005850225505428977,
+       0.0084685431475337
+      ],
+      "leaked_share_of_canon_errors": 0.007190497790769954,
+      "leaked_share_of_canon_errors_ci95": [
+       0.005884935702194645,
+       0.008496059879345264
+      ],
+      "Lflag_rate": 0.033313392857142854,
+      "Lflag_err": 0.02698935970625285,
+      "n_err_soft": 59642,
+      "n_err_soft_on_L_mirror": 427
+     }
+    },
+    "q4": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 1293,
+      "n_minus": 763,
+      "E3": 0.0009464285714285715,
+      "E3_ci95": [
+       0.0007877275947460066,
+       0.0011051295481111364
+      ],
+      "E2": 0.0008357142857142857,
+      "E4": 0.00039464285714285713,
+      "E5": 0.00011785714285714286,
+      "E3_train": 0.0008041666666666667,
+      "soft_errors": 4876,
+      "soft_err_plus": 388,
+      "soft_err_minus": 19,
+      "leaked_share_of_soft_errors": 0.07567678424938475,
+      "leaked_share_of_soft_errors_ci95": [
+       0.06756736826013315,
+       0.08378620023863634
+      ],
+      "misread_rate_of_L": 0.6962264150943396,
+      "canon_errors": 4794,
+      "leaked_share_of_canon_errors": 0.0769712140175219,
+      "leaked_share_of_canon_errors_ci95": [
+       0.06876372019111929,
+       0.0851787078439245
+      ],
+      "p1_median_plus": 0.0457763671875,
+      "p1_median_minus": 0.042388916015625,
+      "conf_median_plus": 0.466796875,
+      "conf_median_all": 0.46490478515625,
+      "L_in_conf_flag": {
+       "0.01": 0.06415094339622641,
+       "0.02": 0.1018867924528302,
+       "0.05": 0.19056603773584907,
+       "0.1": 0.1641509433962264
+      },
+      "conf_flag_rate": {
+       "0.01": 0.0046375,
+       "0.02": 0.010073214285714286,
+       "0.05": 0.03144642857142857,
+       "0.1": 0.06426428571428572
+      },
+      "late_destination": {
+       "plus": [
+        705,
+        203,
+        385
+       ],
+       "minus": [
+        675,
+        77,
+        11
+       ],
+       "core": [
+        365287,
+        13818,
+        3679
+       ],
+       "L_excess_late_fraction_0_1_L": [
+        0.05660377358490566,
+        0.23773584905660378,
+        0.7056603773584905
+       ],
+       "core_late_fraction_0_1_L": [
+        0.9542901479685671,
+        0.036098687510449756,
+        0.009611164520983113
+       ]
+      }
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 27608,
+      "n_minus": 973,
+      "E3": 0.0475625,
+      "E3_ci95": [
+       0.046970792935651436,
+       0.048154207064348566
+      ],
+      "E2": 0.06743214285714286,
+      "E4": 0.024239285714285713,
+      "E5": 0.00800357142857143,
+      "E3_train": 0.0470375,
+      "soft_errors": 28198,
+      "soft_err_plus": 42,
+      "soft_err_minus": 61,
+      "leaked_share_of_soft_errors": -0.0006738066529541103,
+      "leaked_share_of_soft_errors_ci95": [
+       -0.0013792406364841745,
+       3.162733057595398e-05
+      ],
+      "misread_rate_of_L": -0.000713347099680871,
+      "canon_errors": 28368,
+      "leaked_share_of_canon_errors": -0.0008107727016356458,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.0015321136758835547,
+       -8.943172738773691e-05
+      ],
+      "p1_median_plus": 0.998046875,
+      "p1_median_minus": 0.9970703125,
+      "conf_median_plus": 0.498046875,
+      "conf_median_all": 0.49755859375,
+      "L_in_conf_flag": {
+       "0.01": 7.50891683874601e-05,
+       "0.02": 0.00026281208935611036,
+       "0.05": 0.0024779425567861835,
+       "0.1": 0.006682935986483949
+      },
+      "conf_flag_rate": {
+       "0.01": 0.005191071428571429,
+       "0.02": 0.009708928571428571,
+       "0.05": 0.019485714285714287,
+       "0.1": 0.02747142857142857
+      },
+      "late_destination": {
+       "plus": [
+        844,
+        8973,
+        17791
+       ],
+       "minus": [
+        417,
+        518,
+        38
+       ],
+       "core": [
+        73849,
+        250490,
+        20992
+       ],
+       "L_excess_late_fraction_0_1_L": [
+        0.016031537450722732,
+        0.3174394593579876,
+        0.6665290031912896
+       ],
+       "core_late_fraction_0_1_L": [
+        0.21384990053021594,
+        0.7253620439520344,
+        0.060788055517749635
+       ]
+      }
+     },
+     "overall": {
+      "E3": 0.024254464285714285,
+      "E3_ci95": [
+       0.023948154291590685,
+       0.024560774279837886
+      ],
+      "soft_err_rate": 0.029530357142857143,
+      "canon_err_rate": 0.02960892857142857,
+      "leaked_share_of_soft_errors": 0.010582330531535344,
+      "leaked_share_of_soft_errors_ci95": [
+       0.009244027575155894,
+       0.011920633487914795
+      ],
+      "leaked_share_of_canon_errors": 0.010433628852300826,
+      "leaked_share_of_canon_errors_ci95": [
+       0.009096262670646515,
+       0.011770995033955137
+      ],
+      "Lflag_rate": 0.025804464285714285,
+      "Lflag_err": 0.014878377910798934,
+      "n_err_soft": 33074,
+      "n_err_soft_on_L_mirror": 350
+     }
+    }
+   },
+   "pooled_erasure": {
+    "Q1Q3Q4Q5": {
+     "hard_error": 0.042728125,
+     "L_flag_fraction": 0.03179977678571429,
+     "L_flagged_error": 0.025311835353740972,
+     "e_u_L_only": 0.04330014937048376,
+     "e_u_conf_same_fraction": 0.03428812249901269,
+     "conf_flagged_error_same_fraction": 0.29969886918006783,
+     "union_vs_conf": {
+      "0.01": {
+       "conf_only_e_u": 0.03887738997113997,
+       "conf_only_flagged_err": 0.4239508928571429,
+       "union_fraction": 0.04149955357142857,
+       "union_e_u": 0.039448012404048174,
+       "union_flagged_err": 0.11848772039286137,
+       "conf_only_at_union_fraction_e_u": 0.033072027967793814,
+       "conf_only_at_union_fraction_flagged_err": 0.26575156789552384,
+       "L_not_in_conf": 0.03149955357142857
+      },
+      "0.02": {
+       "conf_only_e_u": 0.036278698979591836,
+       "conf_only_flagged_err": 0.35875,
+       "union_fraction": 0.05123080357142857,
+       "union_e_u": 0.03684096359804502,
+       "union_flagged_err": 0.15175544846937442,
+       "conf_only_at_union_fraction_e_u": 0.03211303366250354,
+       "conf_only_at_union_fraction_flagged_err": 0.23931437733645877,
+       "L_not_in_conf": 0.031230803571428573
+      },
+      "0.05": {
+       "conf_only_e_u": 0.032221334586466165,
+       "conf_only_flagged_err": 0.24235714285714285,
+       "union_fraction": 0.08062075892857143,
+       "union_e_u": 0.03274312369637996,
+       "union_flagged_err": 0.15659461599585803,
+       "conf_only_at_union_fraction_e_u": 0.029949604486140324,
+       "conf_only_at_union_fraction_flagged_err": 0.18845121974854712,
+       "L_not_in_conf": 0.03062075892857143
+      },
+      "0.1": {
+       "conf_only_e_u": 0.028738343253968256,
+       "conf_only_flagged_err": 0.16863616071428572,
+       "union_fraction": 0.1300578125,
+       "union_e_u": 0.029206322977640396,
+       "union_flagged_err": 0.13317394908514243,
+       "conf_only_at_union_fraction_e_u": 0.02708308049000588,
+       "conf_only_at_union_fraction_flagged_err": 0.1473760810353912,
+       "L_not_in_conf": 0.0300578125
+      }
+     }
+    },
+    "Q1Q3Q5": {
+     "hard_error": 0.03922023809523809,
+     "L_flag_fraction": 0.0312952380952381,
+     "L_flagged_error": 0.024716600730371272,
+     "e_u_L_only": 0.03968879652751833,
+     "e_u_conf_same_fraction": 0.031047840022022533,
+     "conf_flagged_error_same_fraction": 0.2921865489957395,
+     "union_vs_conf": {
+      "0.01": {
+       "conf_only_e_u": 0.035370670995671,
+       "conf_only_flagged_err": 0.420327380952381,
+       "union_fraction": 0.040941369047619046,
+       "union_e_u": 0.03585795470943264,
+       "union_flagged_err": 0.11798230628875497,
+       "conf_only_at_union_fraction_e_u": 0.029908109918052702,
+       "conf_only_at_union_fraction_flagged_err": 0.25735844667534147,
+       "L_not_in_conf": 0.030941369047619047
+      },
+      "0.02": {
+       "conf_only_e_u": 0.032883564139941694,
+       "conf_only_flagged_err": 0.3497172619047619,
+       "union_fraction": 0.050630357142857144,
+       "union_e_u": 0.03337741019887256,
+       "union_flagged_err": 0.14877908275432347,
+       "conf_only_at_union_fraction_e_u": 0.02899104104791337,
+       "conf_only_at_union_fraction_flagged_err": 0.2310278747692778,
+       "L_not_in_conf": 0.030630357142857143
+      },
+      "0.05": {
+       "conf_only_e_u": 0.029040726817042607,
+       "conf_only_flagged_err": 0.23263095238095238,
+       "union_fraction": 0.07995208333333333,
+       "union_e_u": 0.029515155298912032,
+       "union_flagged_err": 0.15090139555314008,
+       "conf_only_at_union_fraction_e_u": 0.02684513390703965,
+       "conf_only_at_union_fraction_flagged_err": 0.18162664393479724,
+       "L_not_in_conf": 0.029952083333333334
+      },
+      "0.1": {
+       "conf_only_e_u": 0.02556117724867725,
+       "conf_only_flagged_err": 0.1621517857142857,
+       "union_fraction": 0.12938511904761904,
+       "union_e_u": 0.025982936252634804,
+       "union_flagged_err": 0.12829224307277554,
+       "conf_only_at_union_fraction_e_u": 0.023810484243142332,
+       "conf_only_at_union_fraction_flagged_err": 0.1429103773801911,
+       "L_not_in_conf": 0.02938511904761905
+      }
+     }
+    }
+   }
+  },
+  "600ns": {
+   "soft_label_equals_prepared": true,
+   "frames": {
+    "q0": {
+     "sep_raw_median": 2.6552292232873667,
+     "sigma0_median": 0.7262620514462854,
+     "angle_deg_range": [
+      -4.228367372375091,
+      -1.626976165024875
+     ]
+    },
+    "q1": {
+     "sep_raw_median": 0.9429257814793908,
+     "sigma0_median": 0.700878793263344,
+     "angle_deg_range": [
+      -3.0897049970038464,
+      -6.515712354168238
+     ]
+    },
+    "q2": {
+     "sep_raw_median": 4.484153391320362,
+     "sigma0_median": 0.8162469914587429,
+     "angle_deg_range": [
+      -5.322347975643978,
+      -3.8644789954438243
+     ]
+    },
+    "q3": {
+     "sep_raw_median": 4.737902073930614,
+     "sigma0_median": 0.9004240940778208,
+     "angle_deg_range": [
+      -6.042963799404739,
+      -1.6584841586587544
+     ]
+    },
+    "q4": {
+     "sep_raw_median": 4.721458827611487,
+     "sigma0_median": 0.8567956143100985,
+     "angle_deg_range": [
+      -2.5045593681092444,
+      0.32867048104640456
+     ]
+    }
+   },
+   "qubits": {
+    "q0": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 806,
+      "n_minus": 770,
+      "E3": 6.428571428571429e-05,
+      "E3_ci95": [
+       -7.466031840324015e-05,
+       0.00020323174697466873
+      ],
+      "E2": -0.0007589285714285714,
+      "E4": 7.142857142857143e-06,
+      "E5": 0.0,
+      "E3_train": -1.25e-05,
+      "soft_errors": 16432,
+      "soft_err_plus": 46,
+      "soft_err_minus": 29,
+      "leaked_share_of_soft_errors": 0.001034566699123661,
+      "leaked_share_of_soft_errors_ci95": [
+       1.5763197313170378e-06,
+       0.002067557078516005
+      ],
+      "misread_rate_of_L": 0.4722222222222222,
+      "canon_errors": 5887,
+      "leaked_share_of_canon_errors": -0.00016986580601324953,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.0017665754689473298,
+       0.0014268438569208306
+      ],
+      "p1_median_plus": 0.03116607666015625,
+      "p1_median_minus": 0.038848876953125,
+      "conf_median_plus": 0.46929168701171875,
+      "conf_median_all": 0.46600341796875,
+      "L_in_conf_flag": {
+       "0.01": 0.3055555555555556,
+       "0.02": 0.3055555555555556,
+       "0.05": -0.05555555555555555,
+       "0.1": -0.7222222222222222
+      },
+      "conf_flag_rate": {
+       "0.01": 0.011546428571428572,
+       "0.02": 0.023023214285714286,
+       "0.05": 0.055660714285714286,
+       "0.1": 0.10649642857142858
+      }
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 2110,
+      "n_minus": 746,
+      "E3": 0.002435714285714286,
+      "E3_ci95": [
+       0.0022486688366918626,
+       0.002622759734736709
+      ],
+      "E2": 0.009755357142857142,
+      "E4": 0.00030535714285714286,
+      "E5": 4.107142857142857e-05,
+      "E3_train": 0.0026541666666666667,
+      "soft_errors": 36364,
+      "soft_err_plus": 34,
+      "soft_err_minus": 50,
+      "leaked_share_of_soft_errors": -0.00043999560004399956,
+      "leaked_share_of_soft_errors_ci95": [
+       -0.0009339923199930397,
+       5.4001119905040514e-05
+      ],
+      "misread_rate_of_L": -0.011730205278592375,
+      "canon_errors": 27477,
+      "leaked_share_of_canon_errors": -0.00021836445026749646,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.0008236398258000362,
+       0.00038691092526504337
+      ],
+      "p1_median_plus": 0.98876953125,
+      "p1_median_minus": 0.9912109375,
+      "conf_median_plus": 0.48876953125,
+      "conf_median_all": 0.49169921875,
+      "L_in_conf_flag": {
+       "0.01": 0.0007331378299120235,
+       "0.02": -0.006598240469208211,
+       "0.05": -0.01466275659824047,
+       "0.1": -0.009530791788856305
+      },
+      "conf_flag_rate": {
+       "0.01": 0.013682142857142858,
+       "0.02": 0.02712857142857143,
+       "0.05": 0.06338392857142858,
+       "0.1": 0.10680714285714285
+      }
+     },
+     "overall": {
+      "E3": 0.00125,
+      "E3_ci95": [
+       0.0011334967811603475,
+       0.0013665032188396526
+      ],
+      "soft_err_rate": 0.04713928571428572,
+      "canon_err_rate": 0.029789285714285713,
+      "leaked_share_of_soft_errors": 1.8940828850670506e-05,
+      "leaked_share_of_soft_errors_ci95": [
+       -0.00044917530906357005,
+       0.00048705696676491105
+      ],
+      "leaked_share_of_canon_errors": -0.00020980697758062581,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.0007823917071042312,
+       0.00036277775194297956
+      ],
+      "Lflag_rate": 0.0026035714285714286,
+      "Lflag_err": 0.027434842249657063,
+      "n_err_soft": 52796,
+      "n_err_soft_on_L_mirror": 1
+     }
+    },
+    "q1": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 1247,
+      "n_minus": 726,
+      "E3": 0.0009303571428571428,
+      "E3_ci95": [
+       0.0007748925166555531,
+       0.0010858217690587325
+      ],
+      "E2": 0.0010482142857142858,
+      "E4": 0.0005696428571428571,
+      "E5": 0.0003553571428571429,
+      "E3_train": 0.0007625,
+      "soft_errors": 124595,
+      "soft_err_plus": 663,
+      "soft_err_minus": 170,
+      "leaked_share_of_soft_errors": 0.003956820097114651,
+      "leaked_share_of_soft_errors_ci95": [
+       0.003502796988775839,
+       0.0044108432054534635
+      ],
+      "misread_rate_of_L": 0.946257197696737,
+      "canon_errors": 113643,
+      "leaked_share_of_canon_errors": 0.0042941492216854536,
+      "leaked_share_of_canon_errors_ci95": [
+       0.003794879314005877,
+       0.00479341912936503
+      ],
+      "p1_median_plus": 0.55712890625,
+      "p1_median_minus": 0.305908203125,
+      "conf_median_plus": 0.29541015625,
+      "conf_median_all": 0.224609375
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 5095,
+      "n_minus": 666,
+      "E3": 0.007908928571428572,
+      "E3_ci95": [
+       0.007643274190700529,
+       0.008174582952156615
+      ],
+      "E2": 0.010744642857142857,
+      "E4": 0.005257142857142857,
+      "E5": 0.0035589285714285714,
+      "E3_train": 0.008091666666666667,
+      "soft_errors": 183231,
+      "soft_err_plus": 240,
+      "soft_err_minus": 247,
+      "leaked_share_of_soft_errors": -3.820314248134868e-05,
+      "leaked_share_of_soft_errors_ci95": [
+       -0.0002742627062112812,
+       0.0001978564212485838
+      ],
+      "misread_rate_of_L": -0.0015804922104312486,
+      "canon_errors": 171179,
+      "leaked_share_of_canon_errors": -9.346940921491538e-05,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.000328682675006755,
+       0.0001417438565769242
+      ],
+      "p1_median_plus": 0.89892578125,
+      "p1_median_minus": 0.61328125,
+      "conf_median_plus": 0.39892578125,
+      "conf_median_all": 0.25244140625
+     },
+     "overall": {
+      "E3": 0.004419642857142857,
+      "E3_ci95": [
+       0.004265742321081413,
+       0.004573543393204302
+      ],
+      "soft_err_rate": 0.2748446428571429,
+      "canon_err_rate": 0.2543053571428571,
+      "leaked_share_of_soft_errors": 0.0015788140053146907,
+      "leaked_share_of_soft_errors_ci95": [
+       0.0013474809264702363,
+       0.0018101470841591452
+      ],
+      "leaked_share_of_canon_errors": 0.0016571753586450484,
+      "leaked_share_of_canon_errors_ci95": [
+       0.0014129066636381618,
+       0.001901444053651935
+      ],
+      "Lflag_rate": 0.0056625,
+      "Lflag_err": 0.1423841059602649,
+      "n_err_soft": 307826,
+      "n_err_soft_on_L_mirror": 486
+     }
+    },
+    "q2": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 2738,
+      "n_minus": 634,
+      "E3": 0.0037571428571428573,
+      "E3_ci95": [
+       0.0035539016211694457,
+       0.003960384093116269
+      ],
+      "E2": 0.00705,
+      "E4": 0.0026232142857142856,
+      "E5": 0.0016732142857142857,
+      "E3_train": 0.003945833333333333,
+      "soft_errors": 15391,
+      "soft_err_plus": 954,
+      "soft_err_minus": 19,
+      "leaked_share_of_soft_errors": 0.06074978883763238,
+      "leaked_share_of_soft_errors_ci95": [
+       0.05677745579071598,
+       0.06472212188454878
+      ],
+      "misread_rate_of_L": 0.4443916349809886,
+      "canon_errors": 12125,
+      "leaked_share_of_canon_errors": 0.08692783505154639,
+      "leaked_share_of_canon_errors_ci95": [
+       0.08159585185899505,
+       0.09225981824409772
+      ],
+      "p1_median_plus": 0.2108154296875,
+      "p1_median_minus": 0.081817626953125,
+      "conf_median_plus": 0.40966796875,
+      "conf_median_all": 0.423828125,
+      "L_in_conf_flag": {
+       "0.01": 0.05418250950570342,
+       "0.02": 0.10171102661596958,
+       "0.05": 0.2718631178707224,
+       "0.1": 0.48193916349809884
+      },
+      "conf_flag_rate": {
+       "0.01": 0.012489285714285715,
+       "0.02": 0.025826785714285715,
+       "0.05": 0.07306785714285714,
+       "0.1": 0.18438035714285714
+      }
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 36773,
+      "n_minus": 610,
+      "E3": 0.06457678571428571,
+      "E3_ci95": [
+       0.06390007177915506,
+       0.06525349964941636
+      ],
+      "E2": 0.07747142857142857,
+      "E4": 0.05221607142857143,
+      "E5": 0.04030892857142857,
+      "E3_train": 0.06507083333333333,
+      "soft_errors": 53605,
+      "soft_err_plus": 263,
+      "soft_err_minus": 55,
+      "leaked_share_of_soft_errors": 0.0038802350527003078,
+      "leaked_share_of_soft_errors_ci95": [
+       0.003228209927800598,
+       0.004532260177600018
+      ],
+      "misread_rate_of_L": 0.005751735198960263,
+      "canon_errors": 53300,
+      "leaked_share_of_canon_errors": 0.003452157598499062,
+      "leaked_share_of_canon_errors_ci95": [
+       0.002828099381106657,
+       0.004076215815891467
+      ],
+      "p1_median_plus": 0.99169921875,
+      "p1_median_minus": 0.99658203125,
+      "conf_median_plus": 0.49169921875,
+      "conf_median_all": 0.49462890625,
+      "L_in_conf_flag": {
+       "0.01": 0.0021292481265381743,
+       "0.02": 0.004313801399220198,
+       "0.05": 0.009954926305892764,
+       "0.1": 0.021956143019107928
+      },
+      "conf_flag_rate": {
+       "0.01": 0.009414285714285714,
+       "0.02": 0.01871964285714286,
+       "0.05": 0.04227857142857143,
+       "0.1": 0.07175714285714285
+      }
+     },
+     "overall": {
+      "E3": 0.03416696428571429,
+      "E3_ci95": [
+       0.03381367660194934,
+       0.034520251969479235
+      ],
+      "soft_err_rate": 0.06160357142857143,
+      "canon_err_rate": 0.05841517857142857,
+      "leaked_share_of_soft_errors": 0.01656617774943475,
+      "leaked_share_of_soft_errors_ci95": [
+       0.015545484414240984,
+       0.017586871084628513
+      ],
+      "leaked_share_of_canon_errors": 0.01892243026366068,
+      "leaked_share_of_canon_errors_ci95": [
+       0.017811155231109113,
+       0.020033705296212248
+      ],
+      "Lflag_rate": 0.03527767857142857,
+      "Lflag_err": 0.030801548935739415,
+      "n_err_soft": 68996,
+      "n_err_soft_on_L_mirror": 1143
+     }
+    },
+    "q3": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 1239,
+      "n_minus": 863,
+      "E3": 0.0006714285714285714,
+      "E3_ci95": [
+       0.0005109620640197043,
+       0.0008318950788374386
+      ],
+      "E2": 0.0004660714285714286,
+      "E4": 0.00033392857142857144,
+      "E5": 8.571428571428571e-05,
+      "E3_train": 0.0009083333333333334,
+      "soft_errors": 24649,
+      "soft_err_plus": 573,
+      "soft_err_minus": 235,
+      "leaked_share_of_soft_errors": 0.013712523834638323,
+      "leaked_share_of_soft_errors_ci95": [
+       0.011452242769202668,
+       0.015972804900073977
+      ],
+      "misread_rate_of_L": 0.898936170212766,
+      "canon_errors": 17703,
+      "leaked_share_of_canon_errors": 0.02270801559057787,
+      "leaked_share_of_canon_errors_ci95": [
+       0.019688093981122718,
+       0.02572793720003302
+      ],
+      "p1_median_plus": 0.128662109375,
+      "p1_median_minus": 0.18408203125,
+      "conf_median_plus": 0.463348388671875,
+      "conf_median_all": 0.4410400390625,
+      "L_in_conf_flag": {
+       "0.01": -0.06648936170212766,
+       "0.02": -0.13297872340425532,
+       "0.05": -0.48138297872340424,
+       "0.1": -0.7952127659574468
+      },
+      "conf_flag_rate": {
+       "0.01": 0.013403571428571428,
+       "0.02": 0.02681607142857143,
+       "0.05": 0.07288571428571429,
+       "0.1": 0.16538571428571427
+      }
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 26646,
+      "n_minus": 6429,
+      "E3": 0.03610178571428571,
+      "E3_ci95": [
+       0.035465257042504146,
+       0.036738314386067276
+      ],
+      "E2": 0.0488,
+      "E4": 0.014083928571428572,
+      "E5": 0.0038035714285714287,
+      "E3_train": 0.035775,
+      "soft_errors": 46053,
+      "soft_err_plus": 61,
+      "soft_err_minus": 103,
+      "leaked_share_of_soft_errors": -0.0009119927040583675,
+      "leaked_share_of_soft_errors_ci95": [
+       -0.0014570222789120528,
+       -0.0003669631292046823
+      ],
+      "misread_rate_of_L": -0.0020774595637334916,
+      "canon_errors": 41820,
+      "leaked_share_of_canon_errors": -0.0010760401721664275,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.0017203621493625141,
+       -0.00043171819497034097
+      ],
+      "p1_median_plus": 0.978515625,
+      "p1_median_minus": 0.9794921875,
+      "conf_median_plus": 0.478515625,
+      "conf_median_all": 0.47705078125,
+      "L_in_conf_flag": {
+       "0.01": -0.0009398031359746748,
+       "0.02": -0.001335509719542959,
+       "0.05": -0.00242370282435574,
+       "0.1": -0.0037097492209526638
+      },
+      "conf_flag_rate": {
+       "0.01": 0.0128625,
+       "0.02": 0.0254,
+       "0.05": 0.05943214285714286,
+       "0.1": 0.10068392857142858
+      }
+     },
+     "overall": {
+      "E3": 0.018386607142857142,
+      "E3_ci95": [
+       0.01805838532380789,
+       0.018714828961906394
+      ],
+      "soft_err_rate": 0.06312678571428572,
+      "canon_err_rate": 0.053145535714285715,
+      "leaked_share_of_soft_errors": 0.004186585952306866,
+      "leaked_share_of_soft_errors_ci95": [
+       0.0033222998997053835,
+       0.005050872004908348
+      ],
+      "leaked_share_of_canon_errors": 0.005997681568469331,
+      "leaked_share_of_canon_errors_ci95": [
+       0.004991880526027569,
+       0.007003482610911093
+      ],
+      "Lflag_rate": 0.02489732142857143,
+      "Lflag_err": 0.022736238120853507,
+      "n_err_soft": 70702,
+      "n_err_soft_on_L_mirror": 296
+     }
+    },
+    "q4": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 874,
+      "n_minus": 765,
+      "E3": 0.00019464285714285715,
+      "E3_ci95": [
+       5.2946879782877034e-05,
+       0.00033633883450283727
+      ],
+      "E2": -0.0006964285714285715,
+      "E4": 6.428571428571429e-05,
+      "E5": 1.0714285714285714e-05,
+      "E3_train": 8.333333333333333e-05,
+      "soft_errors": 5234,
+      "soft_err_plus": 115,
+      "soft_err_minus": 20,
+      "leaked_share_of_soft_errors": 0.018150554069545282,
+      "leaked_share_of_soft_errors_ci95": [
+       0.013799552526614519,
+       0.022501555612476045
+      ],
+      "misread_rate_of_L": 0.8715596330275229,
+      "canon_errors": 4794,
+      "leaked_share_of_canon_errors": 0.021068001668752608,
+      "leaked_share_of_canon_errors_ci95": [
+       0.016144863292775785,
+       0.02599114004472943
+      ],
+      "p1_median_plus": 0.0343475341796875,
+      "p1_median_minus": 0.03900146484375,
+      "conf_median_plus": 0.4683074951171875,
+      "conf_median_all": 0.465545654296875,
+      "L_in_conf_flag": {
+       "0.01": -0.027522935779816515,
+       "0.02": -0.045871559633027525,
+       "0.05": -0.22018348623853212,
+       "0.1": -0.43119266055045874
+      },
+      "conf_flag_rate": {
+       "0.01": 0.0031803571428571428,
+       "0.02": 0.006544642857142857,
+       "0.05": 0.01862142857142857,
+       "0.1": 0.040905357142857146
+      }
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 10417,
+      "n_minus": 884,
+      "E3": 0.017023214285714287,
+      "E3_ci95": [
+       0.016651142720017578,
+       0.017395285851410997
+      ],
+      "E2": 0.033367857142857144,
+      "E4": 0.004823214285714286,
+      "E5": 0.0006410714285714286,
+      "E3_train": 0.016883333333333334,
+      "soft_errors": 28294,
+      "soft_err_plus": 41,
+      "soft_err_minus": 78,
+      "leaked_share_of_soft_errors": -0.0013076977451049693,
+      "leaked_share_of_soft_errors_ci95": [
+       -0.0020633730029223866,
+       -0.0005520224872875522
+      ],
+      "misread_rate_of_L": -0.003881254589321305,
+      "canon_errors": 28368,
+      "leaked_share_of_canon_errors": -0.001692047377326565,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.002389841711759365,
+       -0.000994253042893765
+      ],
+      "p1_median_plus": 0.9951171875,
+      "p1_median_minus": 0.99658203125,
+      "conf_median_plus": 0.4951171875,
+      "conf_median_all": 0.49658203125,
+      "L_in_conf_flag": {
+       "0.01": -0.00031469631805307877,
+       "0.02": -0.0004195950907374384,
+       "0.05": -0.0006293926361061575,
+       "0.1": 0.0011538864995279555
+      },
+      "conf_flag_rate": {
+       "0.01": 0.0034214285714285714,
+       "0.02": 0.006541071428571428,
+       "0.05": 0.014669642857142857,
+       "0.1": 0.02358392857142857
+      }
+     },
+     "overall": {
+      "E3": 0.008608928571428571,
+      "E3_ci95": [
+       0.008409858860020733,
+       0.00880799828283641
+      ],
+      "soft_err_rate": 0.029935714285714284,
+      "canon_err_rate": 0.02960892857142857,
+      "leaked_share_of_soft_errors": 0.0017298973991887378,
+      "leaked_share_of_soft_errors_ci95": [
+       0.000798220597619957,
+       0.0026615742007575186
+      ],
+      "leaked_share_of_canon_errors": 0.0015982148241963693,
+      "leaked_share_of_canon_errors_ci95": [
+       0.0006693257962371584,
+       0.00252710385215558
+      ],
+      "Lflag_rate": 0.01008125,
+      "Lflag_err": 0.01381631387831016,
+      "n_err_soft": 33528,
+      "n_err_soft_on_L_mirror": 58
+     }
+    }
+   },
+   "pooled_erasure": {
+    "Q1Q3Q4Q5": {
+     "hard_error": 0.05045133928571428,
+     "L_flag_fraction": 0.01821495535714286,
+     "L_flagged_error": 0.025575040133328432,
+     "e_u_L_only": 0.05091286666483266,
+     "e_u_conf_same_fraction": 0.04366704506209876,
+     "conf_flagged_error_same_fraction": 0.4161244071909121,
+     "union_vs_conf": {
+      "0.01": {
+       "conf_only_e_u": 0.04642090548340548,
+       "conf_only_flagged_err": 0.4494642857142857,
+       "union_fraction": 0.028148660714285713,
+       "union_e_u": 0.04683944992689303,
+       "union_flagged_err": 0.175154235325837,
+       "conf_only_at_union_fraction_e_u": 0.040997093636179475,
+       "conf_only_at_union_fraction_flagged_err": 0.37686549410813125,
+       "L_not_in_conf": 0.018148660714285714
+      },
+      "0.02": {
+       "conf_only_e_u": 0.04313365524781341,
+       "conf_only_flagged_err": 0.40901785714285716,
+       "union_fraction": 0.03808772321428571,
+       "union_e_u": 0.04351543973859734,
+       "union_flagged_err": 0.22561872556891105,
+       "conf_only_at_union_fraction_e_u": 0.038844452097024924,
+       "conf_only_at_union_fraction_flagged_err": 0.343585355704934,
+       "L_not_in_conf": 0.018087723214285714
+      },
+      "0.05": {
+       "conf_only_e_u": 0.03683975563909774,
+       "conf_only_flagged_err": 0.30907142857142855,
+       "union_fraction": 0.06790602678571428,
+       "union_e_u": 0.037158557884141914,
+       "union_flagged_err": 0.23291115939504106,
+       "conf_only_at_union_fraction_e_u": 0.034542520309374464,
+       "conf_only_at_union_fraction_flagged_err": 0.26881950174052244,
+       "L_not_in_conf": 0.017906026785714287
+      },
+      "0.1": {
+       "conf_only_e_u": 0.03170659722222222,
+       "conf_only_flagged_err": 0.21915401785714286,
+       "union_fraction": 0.11761272321428572,
+       "union_e_u": 0.031970645785137974,
+       "union_flagged_err": 0.18910239986335298,
+       "conf_only_at_union_fraction_e_u": 0.030502429109343438,
+       "conf_only_at_union_fraction_flagged_err": 0.2001176682703713,
+       "L_not_in_conf": 0.017612723214285714
+      }
+     }
+    },
+    "Q1Q3Q5": {
+     "hard_error": 0.046226190476190476,
+     "L_flag_fraction": 0.0159875,
+     "L_flagged_error": 0.027048661528724077,
+     "e_u_L_only": 0.04653777264008333,
+     "e_u_conf_same_fraction": 0.040213145763126075,
+     "conf_flagged_error_same_fraction": 0.41632227558732643,
+     "union_vs_conf": {
+      "0.01": {
+       "conf_only_e_u": 0.042216209716209714,
+       "conf_only_flagged_err": 0.4432142857142857,
+       "union_fraction": 0.025905357142857143,
+       "union_e_u": 0.04249978154317898,
+       "union_flagged_err": 0.1863468210748834,
+       "conf_only_at_union_fraction_e_u": 0.03753760359894628,
+       "conf_only_at_union_fraction_flagged_err": 0.37293490498839643,
+       "L_not_in_conf": 0.01590535714285714
+      },
+      "0.02": {
+       "conf_only_e_u": 0.039056122448979595,
+       "conf_only_flagged_err": 0.3975595238095238,
+       "union_fraction": 0.035830654761904765,
+       "union_e_u": 0.03931801646433258,
+       "union_flagged_err": 0.2321186799677717,
+       "conf_only_at_union_fraction_e_u": 0.035438535946776296,
+       "conf_only_at_union_fraction_flagged_err": 0.33651186550489653,
+       "L_not_in_conf": 0.01583065476190476
+      },
+      "0.05": {
+       "conf_only_e_u": 0.033207393483709276,
+       "conf_only_flagged_err": 0.2935833333333333,
+       "union_fraction": 0.06560684523809523,
+       "union_e_u": 0.03343238115137753,
+       "union_flagged_err": 0.22843961367997495,
+       "conf_only_at_union_fraction_e_u": 0.03137636121738039,
+       "conf_only_at_union_fraction_flagged_err": 0.2577220909185761,
+       "L_not_in_conf": 0.015606845238095237
+      },
+      "0.1": {
+       "conf_only_e_u": 0.02845238095238095,
+       "conf_only_flagged_err": 0.2061904761904762,
+       "union_fraction": 0.11525595238095238,
+       "union_e_u": 0.02864259908367365,
+       "union_flagged_err": 0.18120384237979653,
+       "conf_only_at_union_fraction_e_u": 0.02743529538405646,
+       "conf_only_at_union_fraction_flagged_err": 0.1904715178433094,
+       "L_not_in_conf": 0.01525595238095238
+      }
+     }
+    }
+   }
+  },
+  "400ns": {
+   "soft_label_equals_prepared": true,
+   "frames": {
+    "q0": {
+     "sep_raw_median": 2.4140258986852148,
+     "sigma0_median": 0.8892526858503402,
+     "angle_deg_range": [
+      -5.8594426889876,
+      -4.370511119242202
+     ]
+    },
+    "q1": {
+     "sep_raw_median": 0.9646378406190057,
+     "sigma0_median": 0.8556651456075125,
+     "angle_deg_range": [
+      -1.2753126866618965,
+      -3.8983311031962966
+     ]
+    },
+    "q2": {
+     "sep_raw_median": 4.166372682395625,
+     "sigma0_median": 0.9930180612797017,
+     "angle_deg_range": [
+      -3.2877162561830264,
+      -1.6945074511362246
+     ]
+    },
+    "q3": {
+     "sep_raw_median": 3.7198198720901354,
+     "sigma0_median": 1.0963899401853705,
+     "angle_deg_range": [
+      -10.386341257084473,
+      -7.635056571933994
+     ]
+    },
+    "q4": {
+     "sep_raw_median": 3.793210122679791,
+     "sigma0_median": 1.044382113208715,
+     "angle_deg_range": [
+      -0.8242672153631542,
+      0.7746046722306684
+     ]
+    }
+   },
+   "qubits": {
+    "q0": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 767,
+      "n_minus": 774,
+      "E3": -1.25e-05,
+      "E3_ci95": [
+       -0.00014989450498473366,
+       0.00012489450498473365
+      ],
+      "E2": -0.0015785714285714285,
+      "E4": 1.4285714285714285e-05,
+      "E5": 0.0,
+      "E3_train": -8.75e-05,
+      "soft_errors": 42740,
+      "soft_err_plus": 47,
+      "soft_err_minus": 54,
+      "leaked_share_of_soft_errors": -0.00016378100140383717,
+      "leaked_share_of_soft_errors_ci95": [
+       -0.0006246550355029701,
+       0.0002970930326952958
+      ],
+      "misread_rate_of_L": -7.0,
+      "canon_errors": 5887,
+      "leaked_share_of_canon_errors": 0.0,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.001412531976686563,
+       0.001412531976686563
+      ],
+      "p1_median_plus": 0.057525634765625,
+      "p1_median_minus": 0.05401611328125,
+      "conf_median_plus": 0.443389892578125,
+      "conf_median_all": 0.447540283203125,
+      "L_in_conf_flag": {
+       "0.01": -1.0,
+       "0.02": -5.0,
+       "0.05": -3.0,
+       "0.1": -6.0
+      },
+      "conf_flag_rate": {
+       "0.01": 0.014064285714285715,
+       "0.02": 0.028239285714285713,
+       "0.05": 0.07006428571428572,
+       "0.1": 0.13913928571428572
+      }
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 1211,
+      "n_minus": 709,
+      "E3": 0.0008964285714285715,
+      "E3_ci95": [
+       0.0007430662553271249,
+       0.001049790887530018
+      ],
+      "E2": 0.004366071428571428,
+      "E4": 7.5e-05,
+      "E5": 5.357142857142857e-06,
+      "E3_train": 0.0008208333333333334,
+      "soft_errors": 61617,
+      "soft_err_plus": 69,
+      "soft_err_minus": 90,
+      "leaked_share_of_soft_errors": -0.0003408150348118214,
+      "leaked_share_of_soft_errors_ci95": [
+       -0.000741916348042265,
+       6.0286278418622194e-05
+      ],
+      "misread_rate_of_L": -0.04183266932270916,
+      "canon_errors": 27477,
+      "leaked_share_of_canon_errors": -0.0006186992757579066,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.0011477144169562727,
+       -8.968413455954073e-05
+      ],
+      "p1_median_plus": 0.98291015625,
+      "p1_median_minus": 0.96728515625,
+      "conf_median_plus": 0.48291015625,
+      "conf_median_all": 0.46728515625,
+      "L_in_conf_flag": {
+       "0.01": 0.0099601593625498,
+       "0.02": 0.01195219123505976,
+       "0.05": -0.00199203187250996,
+       "0.1": 0.00398406374501992
+      },
+      "conf_flag_rate": {
+       "0.01": 0.015735714285714287,
+       "0.02": 0.031585714285714286,
+       "0.05": 0.07806607142857143,
+       "0.1": 0.15141785714285713
+      }
+     },
+     "overall": {
+      "E3": 0.0004419642857142857,
+      "E3_ci95": [
+       0.0003390113231537066,
+       0.0005449172482748648
+      ],
+      "soft_err_rate": 0.09317589285714285,
+      "canon_err_rate": 0.029789285714285713,
+      "leaked_share_of_soft_errors": -0.0002683097444349684,
+      "leaked_share_of_soft_errors_ci95": [
+       -0.0005711552686770443,
+       3.4535779807107485e-05
+      ],
+      "leaked_share_of_canon_errors": -0.0005095312312672341,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.0010114568798951671,
+       -7.6055826393010015e-06
+      ],
+      "Lflag_rate": 0.0017660714285714285,
+      "Lflag_err": 0.05864509605662285,
+      "n_err_soft": 104357,
+      "n_err_soft_on_L_mirror": -28
+     }
+    },
+    "q1": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 1120,
+      "n_minus": 756,
+      "E3": 0.00065,
+      "E3_ci95": [
+       0.0004984051452060459,
+       0.000801594854793954
+      ],
+      "E2": 0.0019589285714285715,
+      "E4": 0.00030535714285714286,
+      "E5": 0.000175,
+      "E3_train": 0.00042083333333333333,
+      "soft_errors": 136545,
+      "soft_err_plus": 474,
+      "soft_err_minus": 189,
+      "leaked_share_of_soft_errors": 0.0020872239920905196,
+      "leaked_share_of_soft_errors_ci95": [
+       0.0017176196762739885,
+       0.0024568283079070504
+      ],
+      "misread_rate_of_L": 0.782967032967033,
+      "canon_errors": 113643,
+      "leaked_share_of_canon_errors": 0.0026398458330033525,
+      "leaked_share_of_canon_errors_ci95": [
+       0.002200132069434903,
+       0.003079559596571802
+      ],
+      "p1_median_plus": 0.420654296875,
+      "p1_median_minus": 0.3529052734375,
+      "conf_median_plus": 0.2470703125,
+      "conf_median_all": 0.1884765625
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 2969,
+      "n_minus": 778,
+      "E3": 0.0039125,
+      "E3_ci95": [
+       0.00369825539680076,
+       0.0041267446031992405
+      ],
+      "E2": 0.006664285714285715,
+      "E4": 0.0024375,
+      "E5": 0.0014767857142857143,
+      "E3_train": 0.004095833333333333,
+      "soft_errors": 202583,
+      "soft_err_plus": 323,
+      "soft_err_minus": 267,
+      "leaked_share_of_soft_errors": 0.0002764299077415183,
+      "leaked_share_of_soft_errors_ci95": [
+       4.142383822016075e-05,
+       0.0005114359772628758
+      ],
+      "misread_rate_of_L": 0.025559105431309903,
+      "canon_errors": 171179,
+      "leaked_share_of_canon_errors": -0.00021030617073355962,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.00045211547958924885,
+       3.150313812212962e-05
+      ],
+      "p1_median_plus": 0.85693359375,
+      "p1_median_minus": 0.607177734375,
+      "conf_median_plus": 0.357421875,
+      "conf_median_all": 0.19677734375
+     },
+     "overall": {
+      "E3": 0.00228125,
+      "E3_ci95": [
+       0.0021500233354077762,
+       0.0024124766645922235
+      ],
+      "soft_err_rate": 0.30279285714285714,
+      "canon_err_rate": 0.2543053571428571,
+      "leaked_share_of_soft_errors": 0.0010055200396310538,
+      "leaked_share_of_soft_errors_ci95": [
+       0.0008009377860864418,
+       0.0012101022931756658
+      ],
+      "leaked_share_of_canon_errors": 0.0009268946921235017,
+      "leaked_share_of_canon_errors_ci95": [
+       0.0006990768065654772,
+       0.0011547125776815261
+      ],
+      "Lflag_rate": 0.0036508928571428573,
+      "Lflag_err": 0.19491318170701882,
+      "n_err_soft": 339128,
+      "n_err_soft_on_L_mirror": 341
+     }
+    },
+    "q2": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 1418,
+      "n_minus": 686,
+      "E3": 0.0013071428571428572,
+      "E3_ci95": [
+       0.0011466000279663413,
+       0.0014676856863193731
+      ],
+      "E2": 0.0035357142857142857,
+      "E4": 0.0006428571428571428,
+      "E5": 0.00043035714285714286,
+      "E3_train": 0.0010666666666666667,
+      "soft_errors": 18686,
+      "soft_err_plus": 553,
+      "soft_err_minus": 20,
+      "leaked_share_of_soft_errors": 0.028524028684576687,
+      "leaked_share_of_soft_errors_ci95": [
+       0.026013200252699535,
+       0.03103485711645384
+      ],
+      "misread_rate_of_L": 0.7281420765027322,
+      "canon_errors": 12125,
+      "leaked_share_of_canon_errors": 0.04222680412371134,
+      "leaked_share_of_canon_errors_ci95": [
+       0.038456522651085595,
+       0.045997085596337084
+      ],
+      "p1_median_plus": 0.1591796875,
+      "p1_median_minus": 0.083251953125,
+      "conf_median_plus": 0.42578125,
+      "conf_median_all": 0.41680908203125,
+      "L_in_conf_flag": {
+       "0.01": 0.017759562841530054,
+       "0.02": 0.020491803278688523,
+       "0.05": 0.06967213114754098,
+       "0.1": 0.1489071038251366
+      },
+      "conf_flag_rate": {
+       "0.01": 0.006842857142857143,
+       "0.02": 0.013757142857142857,
+       "0.05": 0.03615535714285714,
+       "0.1": 0.0812875
+      }
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 20436,
+      "n_minus": 704,
+      "E3": 0.03523571428571429,
+      "E3_ci95": [
+       0.034726828247391366,
+       0.03574460032403721
+      ],
+      "E2": 0.045135714285714286,
+      "E4": 0.025826785714285715,
+      "E5": 0.01744642857142857,
+      "E3_train": 0.035104166666666665,
+      "soft_errors": 63759,
+      "soft_err_plus": 113,
+      "soft_err_minus": 64,
+      "leaked_share_of_soft_errors": 0.0007685189541868599,
+      "leaked_share_of_soft_errors_ci95": [
+       0.0003595397668803755,
+       0.0011774981414933443
+      ],
+      "misread_rate_of_L": 0.002483275897020069,
+      "canon_errors": 53300,
+      "leaked_share_of_canon_errors": 0.0010318949343339587,
+      "leaked_share_of_canon_errors_ci95": [
+       0.0005624089145175374,
+       0.00150138095415038
+      ],
+      "p1_median_plus": 0.99267578125,
+      "p1_median_minus": 0.99462890625,
+      "conf_median_plus": 0.49267578125,
+      "conf_median_all": 0.4931640625,
+      "L_in_conf_flag": {
+       "0.01": 0.00040543279951348065,
+       "0.02": 0.0005067909993918508,
+       "0.05": 0.001976484897628218,
+       "0.1": 0.004713156294344213
+      },
+      "conf_flag_rate": {
+       "0.01": 0.007069642857142857,
+       "0.02": 0.014123214285714286,
+       "0.05": 0.034882142857142855,
+       "0.1": 0.06748928571428571
+      }
+     },
+     "overall": {
+      "E3": 0.01827142857142857,
+      "E3_ci95": [
+       0.018004623867571984,
+       0.018538233275285157
+      ],
+      "soft_err_rate": 0.07361160714285714,
+      "canon_err_rate": 0.05841517857142857,
+      "leaked_share_of_soft_errors": 0.0070592516222936505,
+      "leaked_share_of_soft_errors_ci95": [
+       0.006408189573224498,
+       0.007710313671362803
+      ],
+      "leaked_share_of_canon_errors": 0.008666411922048147,
+      "leaked_share_of_canon_errors_ci95": [
+       0.007869845405621571,
+       0.009462978438474722
+      ],
+      "Lflag_rate": 0.0195125,
+      "Lflag_err": 0.03047497025716116,
+      "n_err_soft": 82445,
+      "n_err_soft_on_L_mirror": 582
+     }
+    },
+    "q3": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 1059,
+      "n_minus": 815,
+      "E3": 0.0004357142857142857,
+      "E3_ci95": [
+       0.0002842002599608922,
+       0.0005872283114676792
+      ],
+      "E2": -0.0001,
+      "E4": 0.00014464285714285715,
+      "E5": 2.3214285714285715e-05,
+      "E3_train": 0.0005708333333333333,
+      "soft_errors": 50064,
+      "soft_err_plus": 371,
+      "soft_err_minus": 245,
+      "leaked_share_of_soft_errors": 0.0025167785234899327,
+      "leaked_share_of_soft_errors_ci95": [
+       0.0015451038532221923,
+       0.003488453193757673
+      ],
+      "misread_rate_of_L": 0.5163934426229508,
+      "canon_errors": 17703,
+      "leaked_share_of_canon_errors": 0.016720329887589674,
+      "leaked_share_of_canon_errors_ci95": [
+       0.014397937815722198,
+       0.01904272195945715
+      ],
+      "p1_median_plus": 0.07159423828125,
+      "p1_median_minus": 0.21923828125,
+      "conf_median_plus": 0.456329345703125,
+      "conf_median_all": 0.42791748046875,
+      "L_in_conf_flag": {
+       "0.01": -0.11065573770491803,
+       "0.02": -0.25,
+       "0.05": -0.5163934426229508,
+       "0.1": -0.9180327868852459
+      },
+      "conf_flag_rate": {
+       "0.01": 0.014942857142857143,
+       "0.02": 0.02960892857142857,
+       "0.05": 0.07414285714285715,
+       "0.1": 0.1496482142857143
+      }
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 18126,
+      "n_minus": 2630,
+      "E3": 0.027671428571428573,
+      "E3_ci95": [
+       0.027167185574451917,
+       0.02817567156840523
+      ],
+      "E2": 0.04895,
+      "E4": 0.00830357142857143,
+      "E5": 0.00175,
+      "E3_train": 0.026933333333333333,
+      "soft_errors": 60598,
+      "soft_err_plus": 72,
+      "soft_err_minus": 135,
+      "leaked_share_of_soft_errors": -0.0010396382718901615,
+      "leaked_share_of_soft_errors_ci95": [
+       -0.0015049917382929932,
+       -0.0005742848054873298
+      ],
+      "misread_rate_of_L": -0.004065565307176045,
+      "canon_errors": 41820,
+      "leaked_share_of_canon_errors": -0.0015064562410329987,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.0020746948130044235,
+       -0.0009382176690615736
+      ],
+      "p1_median_plus": 0.9794921875,
+      "p1_median_minus": 0.96630859375,
+      "conf_median_plus": 0.4794921875,
+      "conf_median_all": 0.46923828125,
+      "L_in_conf_flag": {
+       "0.01": 0.0,
+       "0.02": -0.00045172947857511617,
+       "0.05": -0.0023231801755291687,
+       "0.1": -0.006324212700051626
+      },
+      "conf_flag_rate": {
+       "0.01": 0.011657142857142857,
+       "0.02": 0.0234875,
+       "0.05": 0.05865714285714286,
+       "0.1": 0.1147625
+      }
+     },
+     "overall": {
+      "E3": 0.01405357142857143,
+      "E3_ci95": [
+       0.013790314187455443,
+       0.014316828669687415
+      ],
+      "soft_err_rate": 0.09880535714285714,
+      "canon_err_rate": 0.053145535714285715,
+      "leaked_share_of_soft_errors": 0.0005693011151072636,
+      "leaked_share_of_soft_errors_ci95": [
+       6.119142896295277e-05,
+       0.0010774108012515744
+      ],
+      "leaked_share_of_canon_errors": 0.0039144532365640175,
+      "leaked_share_of_canon_errors_ci95": [
+       0.0031166600735316433,
+       0.004712246399596391
+      ],
+      "Lflag_rate": 0.017129464285714286,
+      "Lflag_err": 0.023090956476413866,
+      "n_err_soft": 110662,
+      "n_err_soft_on_L_mirror": 63
+     }
+    },
+    "q4": {
+     "prep0": {
+      "n": 560000,
+      "n_plus": 785,
+      "n_minus": 769,
+      "E3": 2.857142857142857e-05,
+      "E3_ci95": [
+       -0.0001094013948395606,
+       0.00016654425198241776
+      ],
+      "E2": -0.0005517857142857143,
+      "E4": 1.6071428571428572e-05,
+      "E5": 1.7857142857142857e-06,
+      "E3_train": -0.0002125,
+      "soft_errors": 18778,
+      "soft_err_plus": 56,
+      "soft_err_minus": 29,
+      "leaked_share_of_soft_errors": 0.001437852806475663,
+      "leaked_share_of_soft_errors_ci95": [
+       0.0004755401461127885,
+       0.0024001654668385376
+      ],
+      "misread_rate_of_L": 1.6875,
+      "canon_errors": 4794,
+      "leaked_share_of_canon_errors": 0.0050062578222778474,
+      "leaked_share_of_canon_errors_ci95": [
+       0.0021737008069795585,
+       0.007838814837576136
+      ],
+      "p1_median_plus": 0.03704833984375,
+      "p1_median_minus": 0.037078857421875,
+      "conf_median_plus": 0.46417236328125,
+      "conf_median_all": 0.463897705078125,
+      "L_in_conf_flag": {
+       "0.01": -0.125,
+       "0.02": -0.125,
+       "0.05": -0.375,
+       "0.1": -0.625
+      },
+      "conf_flag_rate": {
+       "0.01": 0.005203571428571429,
+       "0.02": 0.010308928571428571,
+       "0.05": 0.025939285714285713,
+       "0.1": 0.052523214285714284
+      }
+     },
+     "prep1": {
+      "n": 560000,
+      "n_plus": 3369,
+      "n_minus": 765,
+      "E3": 0.00465,
+      "E3_ci95": [
+       0.004424963336320501,
+       0.004875036663679499
+      ],
+      "E2": 0.015644642857142857,
+      "E4": 0.0006321428571428572,
+      "E5": 4.2857142857142856e-05,
+      "E3_train": 0.004658333333333333,
+      "soft_errors": 35710,
+      "soft_err_plus": 38,
+      "soft_err_minus": 76,
+      "leaked_share_of_soft_errors": -0.0010641276953234388,
+      "leaked_share_of_soft_errors_ci95": [
+       -0.0016501560732002623,
+       -0.0004780993174466153
+      ],
+      "misread_rate_of_L": -0.014592933947772658,
+      "canon_errors": 28368,
+      "leaked_share_of_canon_errors": -0.0019035532994923859,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.002608155544743504,
+       -0.001198951054241268
+      ],
+      "p1_median_plus": 0.99853515625,
+      "p1_median_minus": 0.9921875,
+      "conf_median_plus": 0.49853515625,
+      "conf_median_all": 0.494140625,
+      "L_in_conf_flag": {
+       "0.01": -0.00038402457757296467,
+       "0.02": -0.0015360983102918587,
+       "0.05": -0.004224270353302612,
+       "0.1": -0.0038402457757296467
+      },
+      "conf_flag_rate": {
+       "0.01": 0.004483928571428571,
+       "0.02": 0.008889285714285714,
+       "0.05": 0.022092857142857143,
+       "0.1": 0.04373214285714286
+      }
+     },
+     "overall": {
+      "E3": 0.0023392857142857143,
+      "E3_ci95": [
+       0.0022073027608409605,
+       0.002471268667730468
+      ],
+      "soft_err_rate": 0.04865,
+      "canon_err_rate": 0.02960892857142857,
+      "leaked_share_of_soft_errors": -0.00020187931287622964,
+      "leaked_share_of_soft_errors_ci95": [
+       -0.0007093158589073766,
+       0.0003055572331549173
+      ],
+      "leaked_share_of_canon_errors": -0.0009046499004885109,
+      "leaked_share_of_canon_errors_ci95": [
+       -0.001633330405031011,
+       -0.0001759693959460109
+      ],
+      "Lflag_rate": 0.0037089285714285714,
+      "Lflag_err": 0.02262879152623977,
+      "n_err_soft": 54488,
+      "n_err_soft_on_L_mirror": -11
+     }
+    }
+   },
+   "pooled_erasure": {
+    "Q1Q3Q4Q5": {
+     "hard_error": 0.07856071428571429,
+     "L_flag_fraction": 0.010529241071428571,
+     "L_flagged_error": 0.027962095355197048,
+     "e_u_L_only": 0.07909914864751155,
+     "e_u_conf_same_fraction": 0.0742550637527412,
+     "conf_flagged_error_same_fraction": 0.4831782239087575,
+     "union_vs_conf": {
+      "0.01": {
+       "conf_only_e_u": 0.07447307900432901,
+       "conf_only_flagged_err": 0.48323660714285716,
+       "union_fraction": 0.020508035714285715,
+       "union_e_u": 0.07498170060827816,
+       "union_flagged_err": 0.24949932517741302,
+       "conf_only_at_union_fraction_e_u": 0.07044422627984077,
+       "conf_only_at_union_fraction_flagged_err": 0.4662153337106535,
+       "L_not_in_conf": 0.010508035714285715
+      },
+      "0.02": {
+       "conf_only_e_u": 0.07063342747813411,
+       "conf_only_flagged_err": 0.46699776785714286,
+       "union_fraction": 0.03049330357142857,
+       "union_e_u": 0.07110989342426077,
+       "union_flagged_err": 0.3154527487006808,
+       "conf_only_at_union_fraction_e_u": 0.066902120233274,
+       "conf_only_at_union_fraction_flagged_err": 0.44923504867872044,
+       "L_not_in_conf": 0.010493303571428572
+      },
+      "0.05": {
+       "conf_only_e_u": 0.060757283834586465,
+       "conf_only_flagged_err": 0.41682589285714283,
+       "union_fraction": 0.06044486607142857,
+       "union_e_u": 0.061152373831935565,
+       "union_flagged_err": 0.3491559973854568,
+       "conf_only_at_union_fraction_e_u": 0.05787218352530536,
+       "conf_only_at_union_fraction_flagged_err": 0.4001432828765884,
+       "L_not_in_conf": 0.010444866071428572
+      },
+      "0.1": {
+       "conf_only_e_u": 0.049078869047619045,
+       "conf_only_flagged_err": 0.34389732142857143,
+       "union_fraction": 0.11035580357142857,
+       "union_e_u": 0.04937994372750342,
+       "union_flagged_err": 0.31380437464855965,
+       "conf_only_at_union_fraction_e_u": 0.04724275304683905,
+       "conf_only_at_union_fraction_flagged_err": 0.3310335481417655,
+       "L_not_in_conf": 0.010355803571428571
+      }
+     }
+    },
+    "Q1Q3Q5": {
+     "hard_error": 0.0718125,
+     "L_flag_fraction": 0.008329166666666667,
+     "L_flagged_error": 0.03130136496819839,
+     "e_u_L_only": 0.0721527580616408,
+     "e_u_conf_same_fraction": 0.06837066110766642,
+     "conf_flagged_error_same_fraction": 0.4815979418280569,
+     "union_vs_conf": {
+      "0.01": {
+       "conf_only_e_u": 0.06769781144781145,
+       "conf_only_flagged_err": 0.4791666666666667,
+       "union_fraction": 0.018307738095238096,
+       "union_e_u": 0.0680160534257232,
+       "union_flagged_err": 0.2753844653249667,
+       "conf_only_at_union_fraction_e_u": 0.06445623840756032,
+       "conf_only_at_union_fraction_flagged_err": 0.46626784146698314,
+       "L_not_in_conf": 0.008307738095238095
+      },
+      "0.02": {
+       "conf_only_e_u": 0.06382774538386783,
+       "conf_only_flagged_err": 0.46306547619047617,
+       "union_fraction": 0.02829047619047619,
+       "union_e_u": 0.06412085475279208,
+       "union_flagged_err": 0.3360019357010604,
+       "conf_only_at_union_fraction_e_u": 0.06087516355563832,
+       "conf_only_at_union_fraction_flagged_err": 0.4474835886214442,
+       "L_not_in_conf": 0.00829047619047619
+      },
+      "0.05": {
+       "conf_only_e_u": 0.05421679197994987,
+       "conf_only_flagged_err": 0.40613095238095237,
+       "union_fraction": 0.05823333333333333,
+       "union_e_u": 0.0544496538926334,
+       "union_flagged_err": 0.35260957559898604,
+       "conf_only_at_union_fraction_e_u": 0.05204851823573729,
+       "conf_only_at_union_fraction_flagged_err": 0.39144145065009406,
+       "L_not_in_conf": 0.008233333333333334
+      },
+      "0.1": {
+       "conf_only_e_u": 0.043348875661375665,
+       "conf_only_flagged_err": 0.32798511904761907,
+       "union_fraction": 0.10813125,
+       "union_e_u": 0.043518174619303567,
+       "union_flagged_err": 0.3051846714062771,
+       "conf_only_at_union_fraction_e_u": 0.04206856990688693,
+       "conf_only_at_union_fraction_flagged_err": 0.3171410405674321,
+       "L_not_in_conf": 0.00813125
+      }
+     }
+    }
+   }
+  }
+ },
+ "canon_tb_equals_prepared": true
+}

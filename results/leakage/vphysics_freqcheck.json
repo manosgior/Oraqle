@@ -1,0 +1,222 @@
+{
+ "vphysics_classmeans2|q1_y0_2|core0|ours": {
+  "slope_kHz": -42.957686437809066,
+  "rot_deg_300_1800ns": -16.14273286160046,
+  "n": 24338
+ },
+ "vphysics_classmeans2|q1_y0_2|core0|herq": {
+  "slope_kHz": -15.522347271613459,
+  "rot_deg_300_1800ns": -1.3321595181997912,
+  "n": 24338
+ },
+ "vphysics_classmeans2|q1_y0_2|core1|ours": {
+  "slope_kHz": -69.50863210695739,
+  "rot_deg_300_1800ns": -38.23020111166291,
+  "n": 17760
+ },
+ "vphysics_classmeans2|q1_y0_2|core1|herq": {
+  "slope_kHz": -42.107775578149166,
+  "rot_deg_300_1800ns": -23.44986611584829,
+  "n": 17760
+ },
+ "vphysics_classmeans2|q1_y4_6|core0|ours": {
+  "slope_kHz": -17.6025153783984,
+  "rot_deg_300_1800ns": -7.192161254834011,
+  "n": 23772
+ },
+ "vphysics_classmeans2|q1_y4_6|core0|herq": {
+  "slope_kHz": 9.848076412202115,
+  "rot_deg_300_1800ns": 7.628304450529178,
+  "n": 23772
+ },
+ "vphysics_classmeans2|q1_y4_6|core1|ours": {
+  "slope_kHz": -22.269715835544666,
+  "rot_deg_300_1800ns": -24.22925727266364,
+  "n": 17905
+ },
+ "vphysics_classmeans2|q1_y4_6|core1|herq": {
+  "slope_kHz": 5.165245582991065,
+  "rot_deg_300_1800ns": -9.421420208578681,
+  "n": 17905
+ },
+ "vphysics_classmeans2|q3_y0_8|core0|ours": {
+  "slope_kHz": -8.602110928271776,
+  "rot_deg_300_1800ns": -4.929841462675894,
+  "n": 23957
+ },
+ "vphysics_classmeans2|q3_y0_8|core0|herq": {
+  "slope_kHz": 0.8241402489023407,
+  "rot_deg_300_1800ns": 0.1535657570981709,
+  "n": 23957
+ },
+ "vphysics_classmeans2|q3_y0_8|core1|ours": {
+  "slope_kHz": 12.324736618884886,
+  "rot_deg_300_1800ns": 18.717339553752232,
+  "n": 1537
+ },
+ "vphysics_classmeans2|q3_y0_8|core1|herq": {
+  "slope_kHz": 21.75105064187707,
+  "rot_deg_300_1800ns": 23.799794193563102,
+  "n": 1537
+ },
+ "vphysics_classmeans2|q0_y4_5|core0|ours": {
+  "slope_kHz": -4.57312273346025,
+  "rot_deg_300_1800ns": -2.1403013513299363,
+  "n": 24056
+ },
+ "vphysics_classmeans2|q0_y4_5|core0|herq": {
+  "slope_kHz": 1.1276859987491503,
+  "rot_deg_300_1800ns": 0.9316583600907061,
+  "n": 24056
+ },
+ "vphysics_classmeans2|q0_y4_5|core1|ours": {
+  "slope_kHz": -6.501009990706271,
+  "rot_deg_300_1800ns": 5.063055489013905,
+  "n": 16624
+ },
+ "vphysics_classmeans2|q0_y4_5|core1|herq": {
+  "slope_kHz": -0.7988849978494555,
+  "rot_deg_300_1800ns": 8.124989184991707,
+  "n": 16624
+ },
+ "vphysics_classmeans2|q2_y16_20|core0|ours": {
+  "slope_kHz": -29.01255446823609,
+  "rot_deg_300_1800ns": -14.972095823500446,
+  "n": 24003
+ },
+ "vphysics_classmeans2|q2_y16_20|core0|herq": {
+  "slope_kHz": -0.6137422066203677,
+  "rot_deg_300_1800ns": 0.3432303056713959,
+  "n": 24003
+ },
+ "vphysics_classmeans2|q2_y16_20|core1|ours": {
+  "slope_kHz": -27.134071457581438,
+  "rot_deg_300_1800ns": -14.603349922698873,
+  "n": 8126
+ },
+ "vphysics_classmeans2|q2_y16_20|core1|herq": {
+  "slope_kHz": 1.2642225406542584,
+  "rot_deg_300_1800ns": 0.710667408465379,
+  "n": 8126
+ },
+ "vphysics_classmeans|q2_y0_4|core0|ours": {
+  "slope_kHz": -28.617463775418347,
+  "rot_deg_300_1800ns": -14.866771178830621,
+  "n": 11305
+ },
+ "vphysics_classmeans|q2_y0_4|core0|herq": {
+  "slope_kHz": -0.21891080424190937,
+  "rot_deg_300_1800ns": 0.45028934591877623,
+  "n": 11305
+ },
+ "vphysics_classmeans|q2_y0_4|core1|ours": {
+  "slope_kHz": -27.32262274813354,
+  "rot_deg_300_1800ns": -14.399312096732672,
+  "n": 6192
+ },
+ "vphysics_classmeans|q2_y0_4|core1|herq": {
+  "slope_kHz": 1.0762843802813709,
+  "rot_deg_300_1800ns": 0.917987928666029,
+  "n": 6192
+ },
+ "vphysics_classmeans|q1_y0_2|core0|ours": {
+  "slope_kHz": -65.9796666744778,
+  "rot_deg_300_1800ns": -31.33079076519439,
+  "n": 22
+ },
+ "vphysics_classmeans|q1_y0_2|core0|herq": {
+  "slope_kHz": -38.51570128077025,
+  "rot_deg_300_1800ns": -16.52135806676439,
+  "n": 22
+ },
+ "vphysics_classmeans|q1_y0_2|core1|ours": {
+  "slope_kHz": 639.042213164949,
+  "rot_deg_300_1800ns": 459.63711048907703,
+  "n": 6
+ },
+ "vphysics_classmeans|q1_y0_2|core1|herq": {
+  "slope_kHz": 666.4413420807907,
+  "rot_deg_300_1800ns": 475.6748866587172,
+  "n": 6
+ },
+ "vphysics_classmeans|q4_y4_20|core0|ours": {
+  "slope_kHz": -5.869199131416939,
+  "rot_deg_300_1800ns": -9.882175234473044,
+  "n": 16115
+ },
+ "vphysics_classmeans|q4_y4_20|core0|herq": {
+  "slope_kHz": -1.3775762456690053,
+  "rot_deg_300_1800ns": -7.462028805625682,
+  "n": 16115
+ },
+ "vphysics_classmeans|q4_y4_20|core1|ours": {
+  "slope_kHz": -0.0809991231146101,
+  "rot_deg_300_1800ns": 2.040579377076105,
+  "n": 8182
+ },
+ "vphysics_classmeans|q4_y4_20|core1|herq": {
+  "slope_kHz": 4.409398103162366,
+  "rot_deg_300_1800ns": 4.461059483928421,
+  "n": 8182
+ },
+ "vphysics_classmeans|q4_y0_16|core0|ours": {
+  "slope_kHz": -6.95705956165079,
+  "rot_deg_300_1800ns": -9.502553694042195,
+  "n": 16150
+ },
+ "vphysics_classmeans|q4_y0_16|core0|herq": {
+  "slope_kHz": -2.4656100678410255,
+  "rot_deg_300_1800ns": -7.082588564772885,
+  "n": 16150
+ },
+ "vphysics_classmeans|q4_y0_16|core1|ours": {
+  "slope_kHz": -1.908387496765496,
+  "rot_deg_300_1800ns": 0.48477109562405024,
+  "n": 12384
+ },
+ "vphysics_classmeans|q4_y0_16|core1|herq": {
+  "slope_kHz": 2.5820606143632525,
+  "rot_deg_300_1800ns": 2.9052610097528135,
+  "n": 12384
+ },
+ "vphysics_classmeans|q0_y4_5|core0|ours": {
+  "slope_kHz": -4.338607221460644,
+  "rot_deg_300_1800ns": -1.7462518696935219,
+  "n": 4666
+ },
+ "vphysics_classmeans|q0_y4_5|core0|herq": {
+  "slope_kHz": 1.3621121607536504,
+  "rot_deg_300_1800ns": 1.32642055910781,
+  "n": 4666
+ },
+ "vphysics_classmeans|q0_y4_5|core1|ours": {
+  "slope_kHz": -8.10718384596151,
+  "rot_deg_300_1800ns": 5.621354135194888,
+  "n": 3004
+ },
+ "vphysics_classmeans|q0_y4_5|core1|herq": {
+  "slope_kHz": -2.4053730838211944,
+  "rot_deg_300_1800ns": 8.682066062609648,
+  "n": 3004
+ },
+ "vphysics_classmeans|q3_y0_8|core0|ours": {
+  "slope_kHz": -8.71321720134073,
+  "rot_deg_300_1800ns": -4.99172452342492,
+  "n": 15753
+ },
+ "vphysics_classmeans|q3_y0_8|core0|herq": {
+  "slope_kHz": 0.713122127413226,
+  "rot_deg_300_1800ns": 0.09175318099521948,
+  "n": 15753
+ },
+ "vphysics_classmeans|q3_y0_8|core1|ours": {
+  "slope_kHz": 18.10247189128821,
+  "rot_deg_300_1800ns": 20.672988221898326,
+  "n": 987
+ },
+ "vphysics_classmeans|q3_y0_8|core1|herq": {
+  "slope_kHz": 27.528463501694617,
+  "rot_deg_300_1800ns": 25.755015302903473,
+  "n": 987
+ }
+}

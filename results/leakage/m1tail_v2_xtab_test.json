@@ -1,0 +1,2406 @@
+{
+ "1us": {
+  "t0_s1_srcprep0": {
+   "src_c0like": {
+    "n": 235373,
+    "frac_of_shots": 0.8406178571428572,
+    "P_target_offaxis": 0.007677176226670009,
+    "mirror_E3_target": 0.006015983141651761
+   },
+   "src_c1like": {
+    "n": 43813,
+    "frac_of_shots": 0.156475,
+    "P_target_offaxis": 0.009540547326136078,
+    "mirror_E3_target": 0.007783078081847854
+   },
+   "src_offaxis": {
+    "n": 814,
+    "frac_of_shots": 0.0029071428571428573,
+    "P_target_offaxis": 0.0085995085995086,
+    "mirror_E3_target": 0.0085995085995086
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.8095878136200717,
+    0.18727598566308243,
+    0.0031362007168458782
+   ],
+   "P_src_cat_given_target_not": [
+    0.840867198525388,
+    0.15622749920797213,
+    0.0029053022666397856
+   ]
+  },
+  "t0_s1_srcprep1": {
+   "src_c0like": {
+    "n": 103860,
+    "frac_of_shots": 0.37092857142857144,
+    "P_target_offaxis": 0.007269401116888119,
+    "mirror_E3_target": 0.00593106104371269
+   },
+   "src_c1like": {
+    "n": 171458,
+    "frac_of_shots": 0.61235,
+    "P_target_offaxis": 0.0074128941198427604,
+    "mirror_E3_target": 0.006024799076158592
+   },
+   "src_offaxis": {
+    "n": 4682,
+    "frac_of_shots": 0.01672142857142857,
+    "P_target_offaxis": 0.0066211020931225975,
+    "mirror_E3_target": 0.005766766339171294
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.3670393777345649,
+    0.6178901312591152,
+    0.015070491006319884
+   ],
+   "P_src_cat_given_target_not": [
+    0.37095735456550444,
+    0.6123089986076282,
+    0.016733646826867378
+   ]
+  },
+  "t0_s2_srcprep0": {
+   "src_c0like": {
+    "n": 272361,
+    "frac_of_shots": 0.9727178571428572,
+    "P_target_offaxis": 0.0025921479213250062,
+    "mirror_E3_target": 0.0012409999963284024
+   },
+   "src_c1like": {
+    "n": 5011,
+    "frac_of_shots": 0.01789642857142857,
+    "P_target_offaxis": 0.003392536419876272,
+    "mirror_E3_target": 0.0015964877270005988
+   },
+   "src_offaxis": {
+    "n": 2628,
+    "frac_of_shots": 0.009385714285714285,
+    "P_target_offaxis": 0.004185692541856925,
+    "mirror_E3_target": 0.00228310502283105
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9618528610354223,
+    0.02316076294277929,
+    0.014986376021798364
+   ],
+   "P_src_cat_given_target_not": [
+    0.9727464138133536,
+    0.017882592223901227,
+    0.009370993962745197
+   ]
+  },
+  "t0_s2_srcprep1": {
+   "src_c0like": {
+    "n": 71579,
+    "frac_of_shots": 0.25563928571428574,
+    "P_target_offaxis": 0.03861467748920773,
+    "mirror_E3_target": 0.03725953142681513
+   },
+   "src_c1like": {
+    "n": 177992,
+    "frac_of_shots": 0.6356857142857143,
+    "P_target_offaxis": 0.0038372511124095464,
+    "mirror_E3_target": 0.0020675086520742505
+   },
+   "src_offaxis": {
+    "n": 30429,
+    "frac_of_shots": 0.108675,
+    "P_target_offaxis": 0.00354924578527063,
+    "mirror_E3_target": 0.001741759505734661
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.7774964838255978,
+    0.19212376933895922,
+    0.030379746835443037
+   ],
+   "P_src_cat_given_target_not": [
+    0.24892835826294563,
+    0.6413897882038019,
+    0.10968185353325255
+   ]
+  },
+  "t0_s3_srcprep0": {
+   "src_c0like": {
+    "n": 271517,
+    "frac_of_shots": 0.9697035714285714,
+    "P_target_offaxis": 0.0076532961103724624,
+    "mirror_E3_target": 0.0062463860458092865
+   },
+   "src_c1like": {
+    "n": 7928,
+    "frac_of_shots": 0.028314285714285715,
+    "P_target_offaxis": 0.005676084762865792,
+    "mirror_E3_target": 0.004540867810292634
+   },
+   "src_offaxis": {
+    "n": 555,
+    "frac_of_shots": 0.0019821428571428572,
+    "P_target_offaxis": 0.010810810810810811,
+    "mirror_E3_target": 0.007207207207207207
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9760450915922968,
+    0.021136683889149837,
+    0.0028182245185533112
+   ],
+   "P_src_cat_given_target_not": [
+    0.969654983787441,
+    0.028369279269877028,
+    0.001975736942682036
+   ]
+  },
+  "t0_s3_srcprep1": {
+   "src_c0like": {
+    "n": 73670,
+    "frac_of_shots": 0.2631071428571429,
+    "P_target_offaxis": 0.008049409528980589,
+    "mirror_E3_target": 0.006651282747386996
+   },
+   "src_c1like": {
+    "n": 192856,
+    "frac_of_shots": 0.6887714285714286,
+    "P_target_offaxis": 0.007653378686688514,
+    "mirror_E3_target": 0.005962998299249181
+   },
+   "src_offaxis": {
+    "n": 13474,
+    "frac_of_shots": 0.04812142857142857,
+    "P_target_offaxis": 0.0067537479590322105,
+    "mirror_E3_target": 0.0047498886744841914
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.274537037037037,
+    0.6833333333333333,
+    0.04212962962962963
+   ],
+   "P_src_cat_given_target_not": [
+    0.2630182839044054,
+    0.6888137057299165,
+    0.04816801036567809
+   ]
+  },
+  "t0_s4_srcprep0": {
+   "src_c0like": {
+    "n": 275915,
+    "frac_of_shots": 0.9854107142857143,
+    "P_target_offaxis": 0.007948099958320498,
+    "mirror_E3_target": 0.006400521899860464
+   },
+   "src_c1like": {
+    "n": 3429,
+    "frac_of_shots": 0.012246428571428571,
+    "P_target_offaxis": 0.009332166812481774,
+    "mirror_E3_target": 0.006415864683581219
+   },
+   "src_offaxis": {
+    "n": 656,
+    "frac_of_shots": 0.002342857142857143,
+    "P_target_offaxis": 0.007621951219512195,
+    "mirror_E3_target": 0.007621951219512195
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9834080717488789,
+    0.014349775784753363,
+    0.002242152466367713
+   ],
+   "P_src_cat_given_target_not": [
+    0.9854267919501746,
+    0.012229542427187962,
+    0.002343665622637434
+   ]
+  },
+  "t0_s4_srcprep1": {
+   "src_c0like": {
+    "n": 23493,
+    "frac_of_shots": 0.08390357142857142,
+    "P_target_offaxis": 0.00778955433533393,
+    "mirror_E3_target": 0.006299748861362959
+   },
+   "src_c1like": {
+    "n": 243659,
+    "frac_of_shots": 0.8702107142857143,
+    "P_target_offaxis": 0.00755974538186564,
+    "mirror_E3_target": 0.0061233116773851985
+   },
+   "src_offaxis": {
+    "n": 12848,
+    "frac_of_shots": 0.04588571428571429,
+    "P_target_offaxis": 0.002646326276463263,
+    "mirror_E3_target": 0.0005448318804483188
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.08887809616318601,
+    0.8946090335114133,
+    0.01651287032540068
+   ],
+   "P_src_cat_given_target_not": [
+    0.08386671991537772,
+    0.8700299703893992,
+    0.04610330969522309
+   ]
+  },
+  "t1_s0_srcprep0": {
+   "src_c0like": {
+    "n": 276780,
+    "frac_of_shots": 0.9885,
+    "P_target_offaxis": 0.016876219380013005,
+    "mirror_E3_target": 0.015297348074282823
+   },
+   "src_c1like": {
+    "n": 2839,
+    "frac_of_shots": 0.010139285714285714,
+    "P_target_offaxis": 0.023599859105318775,
+    "mirror_E3_target": 0.023599859105318775
+   },
+   "src_offaxis": {
+    "n": 381,
+    "frac_of_shots": 0.0013607142857142856,
+    "P_target_offaxis": 0.02099737532808399,
+    "mirror_E3_target": 0.015748031496062992
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.984197218710493,
+    0.014117151285292878,
+    0.001685630004214075
+   ],
+   "P_src_cat_given_target_not": [
+    0.9885741896575526,
+    0.010070698336808912,
+    0.0013551120056384284
+   ]
+  },
+  "t1_s0_srcprep1": {
+   "src_c0like": {
+    "n": 15471,
+    "frac_of_shots": 0.05525357142857143,
+    "P_target_offaxis": 0.022622972012151767,
+    "mirror_E3_target": 0.02126559369142266
+   },
+   "src_c1like": {
+    "n": 262472,
+    "frac_of_shots": 0.9374,
+    "P_target_offaxis": 0.01638650979914048,
+    "mirror_E3_target": 0.01506827394922125
+   },
+   "src_offaxis": {
+    "n": 2057,
+    "frac_of_shots": 0.0073464285714285715,
+    "P_target_offaxis": 0.015070491006319884,
+    "mirror_E3_target": 0.013612056392805057
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.074754378470739,
+    0.9186245194361384,
+    0.0066211020931225975
+   ],
+   "P_src_cat_given_target_not": [
+    0.05492194480564293,
+    0.9377192918733973,
+    0.007358763320959763
+   ]
+  },
+  "t1_s2_srcprep0": {
+   "src_c0like": {
+    "n": 272160,
+    "frac_of_shots": 0.972,
+    "P_target_offaxis": 0.01388154027042916,
+    "mirror_E3_target": 0.012393445032333921
+   },
+   "src_c1like": {
+    "n": 4891,
+    "frac_of_shots": 0.017467857142857143,
+    "P_target_offaxis": 0.0265794316090779,
+    "mirror_E3_target": 0.025761602944183195
+   },
+   "src_offaxis": {
+    "n": 2949,
+    "frac_of_shots": 0.010532142857142858,
+    "P_target_offaxis": 0.03594438792811122,
+    "mirror_E3_target": 0.03560528992878942
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9412057797708022,
+    0.03238664673642252,
+    0.026407573492775286
+   ],
+   "P_src_cat_given_target_not": [
+    0.9724478777909025,
+    0.01725087504438631,
+    0.010301247164711253
+   ]
+  },
+  "t1_s2_srcprep1": {
+   "src_c0like": {
+    "n": 60518,
+    "frac_of_shots": 0.2161357142857143,
+    "P_target_offaxis": 0.011748570673188142,
+    "mirror_E3_target": 0.009699593509369114
+   },
+   "src_c1like": {
+    "n": 186281,
+    "frac_of_shots": 0.6652892857142857,
+    "P_target_offaxis": 0.016968987712112346,
+    "mirror_E3_target": 0.015578615102989569
+   },
+   "src_offaxis": {
+    "n": 33201,
+    "frac_of_shots": 0.118575,
+    "P_target_offaxis": 0.04644438420529502,
+    "mirror_E3_target": 0.04596247100990934
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.13132619135574436,
+    0.5838566678980421,
+    0.2848171407462135
+   ],
+   "P_src_cat_given_target_not": [
+    0.21780789989292973,
+    0.6668948890329441,
+    0.11529721107412613
+   ]
+  },
+  "t1_s3_srcprep0": {
+   "src_c0like": {
+    "n": 271174,
+    "frac_of_shots": 0.9684785714285714,
+    "P_target_offaxis": 0.014923997138368722,
+    "mirror_E3_target": 0.013496869168873122
+   },
+   "src_c1like": {
+    "n": 8259,
+    "frac_of_shots": 0.029496428571428573,
+    "P_target_offaxis": 0.03801913064535658,
+    "mirror_E3_target": 0.0370504903741373
+   },
+   "src_offaxis": {
+    "n": 567,
+    "frac_of_shots": 0.002025,
+    "P_target_offaxis": 0.02821869488536155,
+    "mirror_E3_target": 0.02821869488536155
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9246058944482523,
+    0.07173863376742061,
+    0.003655471784327165
+   ],
+   "P_src_cat_given_target_not": [
+    0.9691752865326914,
+    0.02882560599079177,
+    0.0019991074765168364
+   ]
+  },
+  "t1_s3_srcprep1": {
+   "src_c0like": {
+    "n": 72998,
+    "frac_of_shots": 0.26070714285714286,
+    "P_target_offaxis": 0.01639770952628839,
+    "mirror_E3_target": 0.015000410970163566
+   },
+   "src_c1like": {
+    "n": 193075,
+    "frac_of_shots": 0.6895535714285714,
+    "P_target_offaxis": 0.018314126634727437,
+    "mirror_E3_target": 0.01682765764599249
+   },
+   "src_offaxis": {
+    "n": 13927,
+    "frac_of_shots": 0.049739285714285715,
+    "P_target_offaxis": 0.02283334530049544,
+    "mirror_E3_target": 0.021038270984418756
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.23698277568798257,
+    0.7000593941793705,
+    0.062957830132647
+   ],
+   "P_src_cat_given_target_not": [
+    0.26114297560638516,
+    0.689360572324322,
+    0.04949645206929285
+   ]
+  },
+  "t1_s4_srcprep0": {
+   "src_c0like": {
+    "n": 275933,
+    "frac_of_shots": 0.985475,
+    "P_target_offaxis": 0.017333918016330052,
+    "mirror_E3_target": 0.015945899910485516
+   },
+   "src_c1like": {
+    "n": 3393,
+    "frac_of_shots": 0.012117857142857142,
+    "P_target_offaxis": 0.025051576775714707,
+    "mirror_E3_target": 0.022104332449160036
+   },
+   "src_offaxis": {
+    "n": 674,
+    "frac_of_shots": 0.0024071428571428573,
+    "P_target_offaxis": 0.008902077151335312,
+    "mirror_E3_target": 0.005934718100890208
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9813295034878949,
+    0.017439474764054164,
+    0.0012310217480508822
+   ],
+   "P_src_cat_given_target_not": [
+    0.9855484396240268,
+    0.012023581922464617,
+    0.0024279784535085744
+   ]
+  },
+  "t1_s4_srcprep1": {
+   "src_c0like": {
+    "n": 23694,
+    "frac_of_shots": 0.08462142857142857,
+    "P_target_offaxis": 0.016797501477167215,
+    "mirror_E3_target": 0.01570017726006584
+   },
+   "src_c1like": {
+    "n": 243348,
+    "frac_of_shots": 0.8691,
+    "P_target_offaxis": 0.016293538471653764,
+    "mirror_E3_target": 0.014793628877163569
+   },
+   "src_offaxis": {
+    "n": 12958,
+    "frac_of_shots": 0.046278571428571426,
+    "P_target_offaxis": 0.014739929001389103,
+    "mirror_E3_target": 0.01296496372897052
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.08739569609134827,
+    0.870663153271849,
+    0.04194115063680281
+   ],
+   "P_src_cat_given_target_not": [
+    0.08457556109001402,
+    0.8690741560959316,
+    0.046350282814054296
+   ]
+  },
+  "t2_s0_srcprep0": {
+   "src_c0like": {
+    "n": 276924,
+    "frac_of_shots": 0.9890142857142857,
+    "P_target_offaxis": 0.11829599456890699,
+    "mirror_E3_target": 0.11689488812815069
+   },
+   "src_c1like": {
+    "n": 2689,
+    "frac_of_shots": 0.009603571428571428,
+    "P_target_offaxis": 0.13090368166604685,
+    "mirror_E3_target": 0.12978802528821123
+   },
+   "src_offaxis": {
+    "n": 387,
+    "frac_of_shots": 0.0013821428571428572,
+    "P_target_offaxis": 0.15762273901808785,
+    "mirror_E3_target": 0.1524547803617571
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9875497407452068,
+    0.010611358977450863,
+    0.001838900277342337
+   ],
+   "P_src_cat_given_target_not": [
+    0.9892111105709239,
+    0.009468131654431425,
+    0.0013207577746446918
+   ]
+  },
+  "t2_s0_srcprep1": {
+   "src_c0like": {
+    "n": 16081,
+    "frac_of_shots": 0.057432142857142855,
+    "P_target_offaxis": 0.1182762266028232,
+    "mirror_E3_target": 0.11740563397798644
+   },
+   "src_c1like": {
+    "n": 260364,
+    "frac_of_shots": 0.9298714285714286,
+    "P_target_offaxis": 0.10915103470525879,
+    "mirror_E3_target": 0.10772610652778418
+   },
+   "src_offaxis": {
+    "n": 3555,
+    "frac_of_shots": 0.012696428571428572,
+    "P_target_offaxis": 0.030379746835443037,
+    "mirror_E3_target": 0.02841068917018284
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.06250616188504388,
+    0.9339445923296855,
+    0.00354924578527063
+   ],
+   "P_src_cat_given_target_not": [
+    0.05681349195218996,
+    0.9293748071691021,
+    0.013811700878707863
+   ]
+  },
+  "t2_s1_srcprep0": {
+   "src_c0like": {
+    "n": 234442,
+    "frac_of_shots": 0.8372928571428572,
+    "P_target_offaxis": 0.09435169466221922,
+    "mirror_E3_target": 0.09292276981087007
+   },
+   "src_c1like": {
+    "n": 44570,
+    "frac_of_shots": 0.15917857142857142,
+    "P_target_offaxis": 0.1765986089297734,
+    "mirror_E3_target": 0.17509535562037246
+   },
+   "src_offaxis": {
+    "n": 988,
+    "frac_of_shots": 0.0035285714285714287,
+    "P_target_offaxis": 0.4139676113360324,
+    "mirror_E3_target": 0.41295546558704455
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.7276315789473684,
+    0.2589144736842105,
+    0.013453947368421053
+   ],
+   "P_src_cat_given_target_not": [
+    0.8506490384615385,
+    0.14703125,
+    0.0023197115384615383
+   ]
+  },
+  "t2_s1_srcprep1": {
+   "src_c0like": {
+    "n": 106044,
+    "frac_of_shots": 0.3787285714285714,
+    "P_target_offaxis": 0.10489042284334804,
+    "mirror_E3_target": 0.10332503489117725
+   },
+   "src_c1like": {
+    "n": 168542,
+    "frac_of_shots": 0.6019357142857142,
+    "P_target_offaxis": 0.1218450000593324,
+    "mirror_E3_target": 0.12058122011130756
+   },
+   "src_offaxis": {
+    "n": 5414,
+    "frac_of_shots": 0.019335714285714286,
+    "P_target_offaxis": 0.2848171407462135,
+    "mirror_E3_target": 0.2842630217953454
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.33502002951718324,
+    0.6185355862775218,
+    0.04644438420529502
+   ],
+   "P_src_cat_given_target_not": [
+    0.38460852758722686,
+    0.599702591987812,
+    0.015688880424961204
+   ]
+  },
+  "t2_s3_srcprep0": {
+   "src_c0like": {
+    "n": 268273,
+    "frac_of_shots": 0.9581178571428571,
+    "P_target_offaxis": 0.09041536047235466,
+    "mirror_E3_target": 0.08899889291878049
+   },
+   "src_c1like": {
+    "n": 11071,
+    "frac_of_shots": 0.039539285714285714,
+    "P_target_offaxis": 0.592268087796947,
+    "mirror_E3_target": 0.5919067834883931
+   },
+   "src_offaxis": {
+    "n": 656,
+    "frac_of_shots": 0.002342857142857143,
+    "P_target_offaxis": 0.38109756097560976,
+    "mirror_E3_target": 0.38109756097560976
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.7808646943308759,
+    0.2110871454785436,
+    0.008048160190580434
+   ],
+   "P_src_cat_given_target_not": [
+    0.9802359633160197,
+    0.01813310194948923,
+    0.001630934734491056
+   ]
+  },
+  "t2_s3_srcprep1": {
+   "src_c0like": {
+    "n": 69202,
+    "frac_of_shots": 0.24715,
+    "P_target_offaxis": 0.08998294846969741,
+    "mirror_E3_target": 0.08823444409121124
+   },
+   "src_c1like": {
+    "n": 198226,
+    "frac_of_shots": 0.70795,
+    "P_target_offaxis": 0.1224814101076549,
+    "mirror_E3_target": 0.12114455217781724
+   },
+   "src_offaxis": {
+    "n": 12572,
+    "frac_of_shots": 0.0449,
+    "P_target_offaxis": 0.16162901686286987,
+    "mirror_E3_target": 0.1604358892777601
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.19137623701518225,
+    0.7461737045915545,
+    0.06245005839326326
+   ],
+   "P_src_cat_given_target_not": [
+    0.25448351666114394,
+    0.7029240853141089,
+    0.042592398024747236
+   ]
+  },
+  "t2_s4_srcprep0": {
+   "src_c0like": {
+    "n": 275543,
+    "frac_of_shots": 0.9840821428571429,
+    "P_target_offaxis": 0.12099381947645195,
+    "mirror_E3_target": 0.11956391561389693
+   },
+   "src_c1like": {
+    "n": 3693,
+    "frac_of_shots": 0.013189285714285714,
+    "P_target_offaxis": 0.13945301922556189,
+    "mirror_E3_target": 0.13836988897914973
+   },
+   "src_offaxis": {
+    "n": 764,
+    "frac_of_shots": 0.0027285714285714287,
+    "P_target_offaxis": 0.112565445026178,
+    "mirror_E3_target": 0.1099476439790576
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9822922804949912,
+    0.015173836181496758,
+    0.00253388332351208
+   ],
+   "P_src_cat_given_target_not": [
+    0.9843290254409494,
+    0.012915549053076486,
+    0.0027554255059741525
+   ]
+  },
+  "t2_s4_srcprep1": {
+   "src_c0like": {
+    "n": 24112,
+    "frac_of_shots": 0.08611428571428571,
+    "P_target_offaxis": 0.11330457863304579,
+    "mirror_E3_target": 0.11156270736562707
+   },
+   "src_c1like": {
+    "n": 233146,
+    "frac_of_shots": 0.8326642857142857,
+    "P_target_offaxis": 0.1124702975817728,
+    "mirror_E3_target": 0.11107632127508085
+   },
+   "src_offaxis": {
+    "n": 22742,
+    "frac_of_shots": 0.08122142857142857,
+    "P_target_offaxis": 0.031087855069914697,
+    "mirror_E3_target": 0.03029636795356609
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.09210748120427498,
+    0.8840565051751458,
+    0.023836013620579213
+   ],
+   "P_src_cat_given_target_not": [
+    0.08540419191576222,
+    0.8265751640775109,
+    0.08802064400672688
+   ]
+  },
+  "t3_s0_srcprep0": {
+   "src_c0like": {
+    "n": 276798,
+    "frac_of_shots": 0.9885642857142857,
+    "P_target_offaxis": 0.047424475610372906,
+    "mirror_E3_target": 0.025021857094343167
+   },
+   "src_c1like": {
+    "n": 2848,
+    "frac_of_shots": 0.01017142857142857,
+    "P_target_offaxis": 0.04459269662921348,
+    "mirror_E3_target": 0.018960674157303372
+   },
+   "src_offaxis": {
+    "n": 354,
+    "frac_of_shots": 0.0012642857142857143,
+    "P_target_offaxis": 0.03954802259887006,
+    "mirror_E3_target": -0.00847457627118644
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9893729273439855,
+    0.009571902321374736,
+    0.0010551703346397348
+   ],
+   "P_src_cat_given_target_not": [
+    0.9885240616049068,
+    0.010201250693580072,
+    0.0012746877015131293
+   ]
+  },
+  "t3_s0_srcprep1": {
+   "src_c0like": {
+    "n": 15349,
+    "frac_of_shots": 0.05481785714285714,
+    "P_target_offaxis": 0.04736464916281191,
+    "mirror_E3_target": 0.025539123069906834
+   },
+   "src_c1like": {
+    "n": 262491,
+    "frac_of_shots": 0.9374678571428572,
+    "P_target_offaxis": 0.04821498641858197,
+    "mirror_E3_target": 0.02536848882437874
+   },
+   "src_offaxis": {
+    "n": 2160,
+    "frac_of_shots": 0.007714285714285714,
+    "P_target_offaxis": 0.04212962962962963,
+    "mirror_E3_target": 0.016203703703703703
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.05395576666171887,
+    0.939290485379249,
+    0.0067537479590322105
+   ],
+   "P_src_cat_given_target_not": [
+    0.0548614394092884,
+    0.9373757156900265,
+    0.007762844900685111
+   ]
+  },
+  "t3_s1_srcprep0": {
+   "src_c0like": {
+    "n": 233964,
+    "frac_of_shots": 0.8355857142857143,
+    "P_target_offaxis": 0.04595151390812262,
+    "mirror_E3_target": 0.024268690909712606
+   },
+   "src_c1like": {
+    "n": 44933,
+    "frac_of_shots": 0.160475,
+    "P_target_offaxis": 0.04453297131284357,
+    "mirror_E3_target": 0.022522422273162264
+   },
+   "src_offaxis": {
+    "n": 1103,
+    "frac_of_shots": 0.003939285714285715,
+    "P_target_offaxis": 0.057116953762466005,
+    "mirror_E3_target": 0.03445149592021759
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.8389387436597737,
+    0.15614514241123684,
+    0.004916113928989466
+   ],
+   "P_src_cat_given_target_not": [
+    0.8354248928644946,
+    0.1606826730542508,
+    0.0038924340812545614
+   ]
+  },
+  "t3_s1_srcprep1": {
+   "src_c0like": {
+    "n": 105667,
+    "frac_of_shots": 0.37738214285714283,
+    "P_target_offaxis": 0.04955189415806259,
+    "mirror_E3_target": 0.026223892038195463
+   },
+   "src_c1like": {
+    "n": 169282,
+    "frac_of_shots": 0.6045785714285714,
+    "P_target_offaxis": 0.049461844732458266,
+    "mirror_E3_target": 0.02565541522430028
+   },
+   "src_offaxis": {
+    "n": 5051,
+    "frac_of_shots": 0.018039285714285713,
+    "P_target_offaxis": 0.062957830132647,
+    "mirror_E3_target": 0.043753712136210654
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.37596036475910105,
+    0.6012062899404035,
+    0.02283334530049544
+   ],
+   "P_src_cat_given_target_not": [
+    0.37745656267265,
+    0.6047550860102303,
+    0.017788351317119738
+   ]
+  },
+  "t3_s2_srcprep0": {
+   "src_c0like": {
+    "n": 269383,
+    "frac_of_shots": 0.9620821428571429,
+    "P_target_offaxis": 0.04928670331832372,
+    "mirror_E3_target": 0.02604470215269709
+   },
+   "src_c1like": {
+    "n": 7381,
+    "frac_of_shots": 0.026360714285714286,
+    "P_target_offaxis": 0.08847039696518087,
+    "mirror_E3_target": 0.08007045115837963
+   },
+   "src_offaxis": {
+    "n": 3236,
+    "frac_of_shots": 0.011557142857142858,
+    "P_target_offaxis": 0.07416563658838071,
+    "mirror_E3_target": 0.061495673671199014
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9369795342272407,
+    0.0460832745236415,
+    0.016937191249117856
+   ],
+   "P_src_cat_given_target_not": [
+    0.9634202309746831,
+    0.02530940826844224,
+    0.011270360756874695
+   ]
+  },
+  "t3_s2_srcprep1": {
+   "src_c0like": {
+    "n": 64933,
+    "frac_of_shots": 0.23190357142857143,
+    "P_target_offaxis": 0.04068809388138543,
+    "mirror_E3_target": 0.015939506876318666
+   },
+   "src_c1like": {
+    "n": 182529,
+    "frac_of_shots": 0.6518892857142857,
+    "P_target_offaxis": 0.04326983657391428,
+    "mirror_E3_target": 0.019739329092911262
+   },
+   "src_offaxis": {
+    "n": 32538,
+    "frac_of_shots": 0.11620714285714286,
+    "P_target_offaxis": 0.06245005839326326,
+    "mirror_E3_target": 0.049757206958018316
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.21014953865733377,
+    0.6282214444797963,
+    0.16162901686286987
+   ],
+   "P_src_cat_given_target_not": [
+    0.2329262455689008,
+    0.6530019294913023,
+    0.11407182493979688
+   ]
+  },
+  "t3_s4_srcprep0": {
+   "src_c0like": {
+    "n": 273386,
+    "frac_of_shots": 0.9763785714285714,
+    "P_target_offaxis": 0.04656419860563452,
+    "mirror_E3_target": 0.024236793398345197
+   },
+   "src_c1like": {
+    "n": 5761,
+    "frac_of_shots": 0.020575,
+    "P_target_offaxis": 0.11560492969970491,
+    "mirror_E3_target": 0.11039750043395244
+   },
+   "src_offaxis": {
+    "n": 853,
+    "frac_of_shots": 0.0030464285714285715,
+    "P_target_offaxis": 0.05861664712778429,
+    "mirror_E3_target": 0.031652989449003514
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9467499628142199,
+    0.049531459170013385,
+    0.003718578015766771
+   ],
+   "P_src_cat_given_target_not": [
+    0.9778731514064692,
+    0.01911432580265162,
+    0.0030125227908791466
+   ]
+  },
+  "t3_s4_srcprep1": {
+   "src_c0like": {
+    "n": 25049,
+    "frac_of_shots": 0.08946071428571428,
+    "P_target_offaxis": 0.06575112778953252,
+    "mirror_E3_target": 0.04339494590602419
+   },
+   "src_c1like": {
+    "n": 242383,
+    "frac_of_shots": 0.8656535714285715,
+    "P_target_offaxis": 0.04514755572791821,
+    "mirror_E3_target": 0.021730071828469817
+   },
+   "src_offaxis": {
+    "n": 12568,
+    "frac_of_shots": 0.044885714285714286,
+    "P_target_offaxis": 0.05617441120305538,
+    "mirror_E3_target": 0.03341820496499045
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.12387184115523465,
+    0.8230294825511432,
+    0.053098676293622145
+   ],
+   "P_src_cat_given_target_not": [
+    0.08774521566980623,
+    0.8677785110084588,
+    0.044476273321734955
+   ]
+  },
+  "t4_s0_srcprep0": {
+   "src_c0like": {
+    "n": 276770,
+    "frac_of_shots": 0.9884642857142857,
+    "P_target_offaxis": 0.04661271091520035,
+    "mirror_E3_target": 0.0443220002167865
+   },
+   "src_c1like": {
+    "n": 2836,
+    "frac_of_shots": 0.010128571428571428,
+    "P_target_offaxis": 0.04301833568406206,
+    "mirror_E3_target": 0.04160789844851904
+   },
+   "src_offaxis": {
+    "n": 394,
+    "frac_of_shots": 0.0014071428571428572,
+    "P_target_offaxis": 0.017766497461928935,
+    "mirror_E3_target": 0.012690355329949238
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9900997697620875,
+    0.009363008442056791,
+    0.0005372217958557175
+   ],
+   "P_src_cat_given_target_not": [
+    0.9883844626737086,
+    0.010165936247518447,
+    0.0014496010787728958
+   ]
+  },
+  "t4_s0_srcprep1": {
+   "src_c0like": {
+    "n": 15288,
+    "frac_of_shots": 0.0546,
+    "P_target_offaxis": 0.04912349555206698,
+    "mirror_E3_target": 0.047030350601779174
+   },
+   "src_c1like": {
+    "n": 262653,
+    "frac_of_shots": 0.9380464285714286,
+    "P_target_offaxis": 0.045927516533220636,
+    "mirror_E3_target": 0.04375354555249702
+   },
+   "src_offaxis": {
+    "n": 2059,
+    "frac_of_shots": 0.007353571428571429,
+    "P_target_offaxis": 0.01651287032540068,
+    "mirror_E3_target": 0.013113161728994658
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.05845267745952677,
+    0.9389009962640099,
+    0.002646326276463263
+   ],
+   "P_src_cat_given_target_not": [
+    0.05441471521830269,
+    0.9380053302988561,
+    0.007579954482841229
+   ]
+  },
+  "t4_s1_srcprep0": {
+   "src_c0like": {
+    "n": 235293,
+    "frac_of_shots": 0.8403321428571429,
+    "P_target_offaxis": 0.04507571410964202,
+    "mirror_E3_target": 0.04281470336984101
+   },
+   "src_c1like": {
+    "n": 43886,
+    "frac_of_shots": 0.15673571428571428,
+    "P_target_offaxis": 0.05195278676571116,
+    "mirror_E3_target": 0.04967415576721506
+   },
+   "src_offaxis": {
+    "n": 821,
+    "frac_of_shots": 0.002932142857142857,
+    "P_target_offaxis": 0.04141291108404385,
+    "mirror_E3_target": 0.040194884287454324
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.8208978328173374,
+    0.17647058823529413,
+    0.002631578947368421
+   ],
+   "P_src_cat_given_target_not": [
+    0.8412722779691478,
+    0.15578103938894713,
+    0.0029466826419050473
+   ]
+  },
+  "t4_s1_srcprep1": {
+   "src_c0like": {
+    "n": 106616,
+    "frac_of_shots": 0.3807714285714286,
+    "P_target_offaxis": 0.04404592181286111,
+    "mirror_E3_target": 0.04173857582351617
+   },
+   "src_c1like": {
+    "n": 168830,
+    "frac_of_shots": 0.6029642857142857,
+    "P_target_offaxis": 0.04780548480720251,
+    "mirror_E3_target": 0.04562577740922822
+   },
+   "src_offaxis": {
+    "n": 4554,
+    "frac_of_shots": 0.016264285714285714,
+    "P_target_offaxis": 0.04194115063680281,
+    "mirror_E3_target": 0.041282389108476064
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.36240160518598546,
+    0.6228584658126254,
+    0.014739929001389103
+   ],
+   "P_src_cat_given_target_not": [
+    0.38166280959549437,
+    0.6019989364968806,
+    0.016338253907625017
+   ]
+  },
+  "t4_s2_srcprep0": {
+   "src_c0like": {
+    "n": 272417,
+    "frac_of_shots": 0.9729178571428572,
+    "P_target_offaxis": 0.01045823131449212,
+    "mirror_E3_target": 0.008765972755004276
+   },
+   "src_c1like": {
+    "n": 4806,
+    "frac_of_shots": 0.017164285714285715,
+    "P_target_offaxis": 0.04535996670828132,
+    "mirror_E3_target": 0.04411152725759467
+   },
+   "src_offaxis": {
+    "n": 2777,
+    "frac_of_shots": 0.009917857142857143,
+    "P_target_offaxis": 0.02484695714800144,
+    "mirror_E3_target": 0.02484695714800144
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9084821428571429,
+    0.06951530612244898,
+    0.022002551020408163
+   ],
+   "P_src_cat_given_target_not": [
+    0.9736477115117892,
+    0.016571312991215902,
+    0.009780975496994915
+   ]
+  },
+  "t4_s2_srcprep1": {
+   "src_c0like": {
+    "n": 76269,
+    "frac_of_shots": 0.2723892857142857,
+    "P_target_offaxis": 0.23938952916650277,
+    "mirror_E3_target": 0.2370950189460987
+   },
+   "src_c1like": {
+    "n": 174070,
+    "frac_of_shots": 0.6216785714285714,
+    "P_target_offaxis": 0.021698167403917962,
+    "mirror_E3_target": 0.01863043603148159
+   },
+   "src_offaxis": {
+    "n": 29661,
+    "frac_of_shots": 0.10593214285714286,
+    "P_target_offaxis": 0.023836013620579213,
+    "mirror_E3_target": 0.0213411550520886
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.8028317650162694,
+    0.16608037991381586,
+    0.031087855069914697
+   ],
+   "P_src_cat_given_target_not": [
+    0.22549736062629733,
+    0.6619541471985322,
+    0.11254849217517045
+   ]
+  },
+  "t4_s3_srcprep0": {
+   "src_c0like": {
+    "n": 271431,
+    "frac_of_shots": 0.9693964285714286,
+    "P_target_offaxis": 0.04738220763287907,
+    "mirror_E3_target": 0.045289594777309886
+   },
+   "src_c1like": {
+    "n": 7958,
+    "frac_of_shots": 0.02842142857142857,
+    "P_target_offaxis": 0.05214878110077909,
+    "mirror_E3_target": 0.05164614224679568
+   },
+   "src_offaxis": {
+    "n": 611,
+    "frac_of_shots": 0.0021821428571428573,
+    "P_target_offaxis": 0.05564648117839607,
+    "mirror_E3_target": 0.05073649754500818
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9662659654395191,
+    0.031179564237415476,
+    0.0025544703230653645
+   ],
+   "P_src_cat_given_target_not": [
+    0.9695526641418876,
+    0.028283775169672655,
+    0.0021635606884397615
+   ]
+  },
+  "t4_s3_srcprep1": {
+   "src_c0like": {
+    "n": 74940,
+    "frac_of_shots": 0.2676428571428571,
+    "P_target_offaxis": 0.03987189751801441,
+    "mirror_E3_target": 0.03653589538297305
+   },
+   "src_c1like": {
+    "n": 191764,
+    "frac_of_shots": 0.6848714285714286,
+    "P_target_offaxis": 0.04627563046244342,
+    "mirror_E3_target": 0.044262739617446444
+   },
+   "src_offaxis": {
+    "n": 13296,
+    "frac_of_shots": 0.047485714285714284,
+    "P_target_offaxis": 0.053098676293622145,
+    "mirror_E3_target": 0.05016546329723225
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.2377466581795035,
+    0.7060789306174411,
+    0.05617441120305538
+   ],
+   "P_src_cat_given_target_not": [
+    0.2690478327200933,
+    0.6838747793831703,
+    0.047077387896736364
+   ]
+  }
+ },
+ "2us": {
+  "t0_s1_srcprep0": {
+   "src_c0like": {
+    "n": 244681,
+    "frac_of_shots": 0.8738607142857143,
+    "P_target_offaxis": 0.025780506046648492,
+    "mirror_E3_target": 0.023647116040885888
+   },
+   "src_c1like": {
+    "n": 34024,
+    "frac_of_shots": 0.12151428571428571,
+    "P_target_offaxis": 0.024747237244298143,
+    "mirror_E3_target": 0.02289560310369151
+   },
+   "src_offaxis": {
+    "n": 1295,
+    "frac_of_shots": 0.004625,
+    "P_target_offaxis": 0.021621621621621623,
+    "mirror_E3_target": 0.020077220077220077
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.8787963220952911,
+    0.11730286988018947,
+    0.003900808024519365
+   ],
+   "P_src_cat_given_target_not": [
+    0.8737308574821678,
+    0.12162508888579367,
+    0.004644053632038472
+   ]
+  },
+  "t0_s1_srcprep1": {
+   "src_c0like": {
+    "n": 114840,
+    "frac_of_shots": 0.41014285714285714,
+    "P_target_offaxis": 0.025792406826889585,
+    "mirror_E3_target": 0.023981191222570534
+   },
+   "src_c1like": {
+    "n": 156479,
+    "frac_of_shots": 0.5588535714285714,
+    "P_target_offaxis": 0.023568657775164717,
+    "mirror_E3_target": 0.021772889652924673
+   },
+   "src_offaxis": {
+    "n": 8681,
+    "frac_of_shots": 0.03100357142857143,
+    "P_target_offaxis": 0.025112314249510426,
+    "mirror_E3_target": 0.023269208616518836
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.43127548048922537,
+    0.5369831100757134,
+    0.03174140943506115
+   ],
+   "P_src_cat_given_target_not": [
+    0.40961146991198394,
+    0.5594035118550738,
+    0.030985018232942314
+   ]
+  },
+  "t0_s2_srcprep0": {
+   "src_c0like": {
+    "n": 264577,
+    "frac_of_shots": 0.9449178571428571,
+    "P_target_offaxis": 0.005518242326430491,
+    "mirror_E3_target": 0.004221833341522506
+   },
+   "src_c1like": {
+    "n": 8688,
+    "frac_of_shots": 0.03102857142857143,
+    "P_target_offaxis": 0.0108195211786372,
+    "mirror_E3_target": 0.009783609576427255
+   },
+   "src_offaxis": {
+    "n": 6735,
+    "frac_of_shots": 0.024053571428571428,
+    "P_target_offaxis": 0.007275426874536006,
+    "mirror_E3_target": 0.005345211581291759
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9107922645040549,
+    0.058640049906425455,
+    0.03056768558951965
+   ],
+   "P_src_cat_given_target_not": [
+    0.9451143510885534,
+    0.030869585519958907,
+    0.024016063391487697
+   ]
+  },
+  "t0_s2_srcprep1": {
+   "src_c0like": {
+    "n": 98690,
+    "frac_of_shots": 0.35246428571428573,
+    "P_target_offaxis": 0.1016415036984497,
+    "mirror_E3_target": 0.09921977910629243
+   },
+   "src_c1like": {
+    "n": 128492,
+    "frac_of_shots": 0.4589,
+    "P_target_offaxis": 0.01390748062136164,
+    "mirror_E3_target": 0.011238053730971578
+   },
+   "src_offaxis": {
+    "n": 52818,
+    "frac_of_shots": 0.1886357142857143,
+    "P_target_offaxis": 0.011833087205119467,
+    "mirror_E3_target": 0.00908781097353175
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.8061560716868922,
+    0.14361488387044924,
+    0.05022904444265852
+   ],
+   "P_src_cat_given_target_not": [
+    0.33136490542202224,
+    0.4735626427265966,
+    0.1950724518513812
+   ]
+  },
+  "t0_s3_srcprep0": {
+   "src_c0like": {
+    "n": 265914,
+    "frac_of_shots": 0.9496928571428571,
+    "P_target_offaxis": 0.02494415487714073,
+    "mirror_E3_target": 0.023056326481494017
+   },
+   "src_c1like": {
+    "n": 13305,
+    "frac_of_shots": 0.04751785714285714,
+    "P_target_offaxis": 0.015783540022547914,
+    "mirror_E3_target": 0.014130026305900038
+   },
+   "src_offaxis": {
+    "n": 781,
+    "frac_of_shots": 0.002789285714285714,
+    "P_target_offaxis": 0.02176696542893726,
+    "mirror_E3_target": 0.016645326504481434
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9669096209912537,
+    0.030612244897959183,
+    0.002478134110787172
+   ],
+   "P_src_cat_given_target_not": [
+    0.9492604525151936,
+    0.04794244709672695,
+    0.002797100388079373
+   ]
+  },
+  "t0_s3_srcprep1": {
+   "src_c0like": {
+    "n": 68734,
+    "frac_of_shots": 0.24547857142857143,
+    "P_target_offaxis": 0.026202461663805396,
+    "mirror_E3_target": 0.02441295428754328
+   },
+   "src_c1like": {
+    "n": 192243,
+    "frac_of_shots": 0.6865821428571428,
+    "P_target_offaxis": 0.02583188984774478,
+    "mirror_E3_target": 0.023787602149363044
+   },
+   "src_offaxis": {
+    "n": 19023,
+    "frac_of_shots": 0.06793928571428572,
+    "P_target_offaxis": 0.022025968564369447,
+    "mirror_E3_target": 0.019502707249119487
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.25062621764542165,
+    0.6910659615919844,
+    0.058307820762593936
+   ],
+   "P_src_cat_given_target_not": [
+    0.2453429809320636,
+    0.6864640377693227,
+    0.0681929812986137
+   ]
+  },
+  "t0_s4_srcprep0": {
+   "src_c0like": {
+    "n": 271019,
+    "frac_of_shots": 0.967925,
+    "P_target_offaxis": 0.025769411000704748,
+    "mirror_E3_target": 0.02371420453916515
+   },
+   "src_c1like": {
+    "n": 6702,
+    "frac_of_shots": 0.023935714285714286,
+    "P_target_offaxis": 0.023276633840644583,
+    "mirror_E3_target": 0.02118770516263802
+   },
+   "src_offaxis": {
+    "n": 2279,
+    "frac_of_shots": 0.008139285714285713,
+    "P_target_offaxis": 0.02413339183852567,
+    "mirror_E3_target": 0.02106186924089513
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9706740792216817,
+    0.021681723419041,
+    0.007644197359277276
+   ],
+   "P_src_cat_given_target_not": [
+    0.9678524953721522,
+    0.023995161379006983,
+    0.008152343248840748
+   ]
+  },
+  "t0_s4_srcprep1": {
+   "src_c0like": {
+    "n": 40486,
+    "frac_of_shots": 0.14459285714285713,
+    "P_target_offaxis": 0.025119794496863114,
+    "mirror_E3_target": 0.023217902484809563
+   },
+   "src_c1like": {
+    "n": 211700,
+    "frac_of_shots": 0.7560714285714286,
+    "P_target_offaxis": 0.026041568256967407,
+    "mirror_E3_target": 0.02429853566367501
+   },
+   "src_offaxis": {
+    "n": 27814,
+    "frac_of_shots": 0.09933571428571429,
+    "P_target_offaxis": 0.011540950600417056,
+    "mirror_E3_target": 0.009096138635219674
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.14844548241132682,
+    0.8047000437892279,
+    0.04685447379944534
+   ],
+   "P_src_cat_given_target_not": [
+    0.1444962273337995,
+    0.7548517475809906,
+    0.1006520250852099
+   ]
+  },
+  "t1_s0_srcprep0": {
+   "src_c0like": {
+    "n": 277821,
+    "frac_of_shots": 0.9922178571428572,
+    "P_target_offaxis": 0.03096958113317568,
+    "mirror_E3_target": 0.02953340460224389
+   },
+   "src_c1like": {
+    "n": 1717,
+    "frac_of_shots": 0.006132142857142857,
+    "P_target_offaxis": 0.1065812463599301,
+    "mirror_E3_target": 0.10483401281304601
+   },
+   "src_offaxis": {
+    "n": 462,
+    "frac_of_shots": 0.00165,
+    "P_target_offaxis": 0.06277056277056277,
+    "mirror_E3_target": 0.05844155844155844
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9759528130671506,
+    0.02075771324863884,
+    0.003289473684210526
+   ],
+   "P_src_cat_given_target_not": [
+    0.9927466222196,
+    0.005656675910083191,
+    0.0015967018703168328
+   ]
+  },
+  "t1_s0_srcprep1": {
+   "src_c0like": {
+    "n": 21634,
+    "frac_of_shots": 0.07726428571428572,
+    "P_target_offaxis": 0.04155495978552279,
+    "mirror_E3_target": 0.03998335952667098
+   },
+   "src_c1like": {
+    "n": 251498,
+    "frac_of_shots": 0.8982071428571429,
+    "P_target_offaxis": 0.030075785890941478,
+    "mirror_E3_target": 0.028719910297497396
+   },
+   "src_offaxis": {
+    "n": 6868,
+    "frac_of_shots": 0.024528571428571427,
+    "P_target_offaxis": 0.03174140943506115,
+    "mirror_E3_target": 0.03013977868375073
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.10355949775371501,
+    0.8713281879967746,
+    0.025112314249510426
+   ],
+   "P_src_cat_given_target_not": [
+    0.07642295600381839,
+    0.8990671497388683,
+    0.02450989425731335
+   ]
+  },
+  "t1_s2_srcprep0": {
+   "src_c0like": {
+    "n": 264223,
+    "frac_of_shots": 0.9436535714285714,
+    "P_target_offaxis": 0.02609538155270359,
+    "mirror_E3_target": 0.024664771802606133
+   },
+   "src_c1like": {
+    "n": 8351,
+    "frac_of_shots": 0.029825,
+    "P_target_offaxis": 0.04873667824212669,
+    "mirror_E3_target": 0.04706023230750808
+   },
+   "src_offaxis": {
+    "n": 7426,
+    "frac_of_shots": 0.02652142857142857,
+    "P_target_offaxis": 0.05669270131968759,
+    "mirror_E3_target": 0.05440344734715863
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.892787776770685,
+    0.05269972808494108,
+    0.05451249514437395
+   ],
+   "P_src_cat_given_target_not": [
+    0.945096354080587,
+    0.02917616985643297,
+    0.02572747606297998
+   ]
+  },
+  "t1_s2_srcprep1": {
+   "src_c0like": {
+    "n": 83920,
+    "frac_of_shots": 0.2997142857142857,
+    "P_target_offaxis": 0.02438036224976168,
+    "mirror_E3_target": 0.022950428979980935
+   },
+   "src_c1like": {
+    "n": 136596,
+    "frac_of_shots": 0.48784285714285713,
+    "P_target_offaxis": 0.032219098655890364,
+    "mirror_E3_target": 0.030967231836949837
+   },
+   "src_offaxis": {
+    "n": 59484,
+    "frac_of_shots": 0.21244285714285716,
+    "P_target_offaxis": 0.05593100665725237,
+    "mirror_E3_target": 0.05441799475489207
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.20933087783916512,
+    0.45027624309392267,
+    0.34039287906691224
+   ],
+   "P_src_cat_given_target_not": [
+    0.3029834286856187,
+    0.489201631227195,
+    0.2078149400871863
+   ]
+  },
+  "t1_s3_srcprep0": {
+   "src_c0like": {
+    "n": 264991,
+    "frac_of_shots": 0.9463964285714286,
+    "P_target_offaxis": 0.028570781649188085,
+    "mirror_E3_target": 0.027193376378820414
+   },
+   "src_c1like": {
+    "n": 14182,
+    "frac_of_shots": 0.05065,
+    "P_target_offaxis": 0.056762092793682134,
+    "mirror_E3_target": 0.05563390212945988
+   },
+   "src_offaxis": {
+    "n": 827,
+    "frac_of_shots": 0.0029535714285714287,
+    "P_target_offaxis": 0.05562273276904474,
+    "mirror_E3_target": 0.05562273276904474
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.8989551175492757,
+    0.0955829969128473,
+    0.005461885537876989
+   ],
+   "P_src_cat_given_target_not": [
+    0.947867647600321,
+    0.049256567174071536,
+    0.002875785225607376
+   ]
+  },
+  "t1_s3_srcprep1": {
+   "src_c0like": {
+    "n": 68267,
+    "frac_of_shots": 0.2438107142857143,
+    "P_target_offaxis": 0.03089340384080156,
+    "mirror_E3_target": 0.02975083129476907
+   },
+   "src_c1like": {
+    "n": 192065,
+    "frac_of_shots": 0.6859464285714286,
+    "P_target_offaxis": 0.03260875224533361,
+    "mirror_E3_target": 0.031098846744591676
+   },
+   "src_offaxis": {
+    "n": 19668,
+    "frac_of_shots": 0.07024285714285715,
+    "P_target_offaxis": 0.0357433394346146,
+    "mirror_E3_target": 0.03365873500101688
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.23239669421487602,
+    0.690137741046832,
+    0.07746556473829201
+   ],
+   "P_src_cat_given_target_not": [
+    0.24419304235489528,
+    0.685806034880502,
+    0.07000092276460275
+   ]
+  },
+  "t1_s4_srcprep0": {
+   "src_c0like": {
+    "n": 270992,
+    "frac_of_shots": 0.9678285714285715,
+    "P_target_offaxis": 0.03197511365649171,
+    "mirror_E3_target": 0.030576548385192182
+   },
+   "src_c1like": {
+    "n": 6704,
+    "frac_of_shots": 0.023942857142857144,
+    "P_target_offaxis": 0.038931980906921244,
+    "mirror_E3_target": 0.03729116945107398
+   },
+   "src_offaxis": {
+    "n": 2304,
+    "frac_of_shots": 0.008228571428571429,
+    "P_target_offaxis": 0.025607638888888888,
+    "mirror_E3_target": 0.0234375
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9643850862548692,
+    0.02904841402337229,
+    0.006566499721758486
+   ],
+   "P_src_cat_given_target_not": [
+    0.9679427337970223,
+    0.023773591867608804,
+    0.00828367433536889
+   ]
+  },
+  "t1_s4_srcprep1": {
+   "src_c0like": {
+    "n": 40782,
+    "frac_of_shots": 0.14565,
+    "P_target_offaxis": 0.03163160217743122,
+    "mirror_E3_target": 0.030111323623167083
+   },
+   "src_c1like": {
+    "n": 210861,
+    "frac_of_shots": 0.753075,
+    "P_target_offaxis": 0.029844305016100654,
+    "mirror_E3_target": 0.02847847634223493
+   },
+   "src_offaxis": {
+    "n": 28357,
+    "frac_of_shots": 0.101275,
+    "P_target_offaxis": 0.03276087033184046,
+    "mirror_E3_target": 0.031173960574108685
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.15155075187969924,
+    0.7393092105263158,
+    0.10914003759398497
+   ],
+   "P_src_cat_given_target_not": [
+    0.14546499292786422,
+    0.753506600660066,
+    0.10102840641206978
+   ]
+  },
+  "t2_s0_srcprep0": {
+   "src_c0like": {
+    "n": 277753,
+    "frac_of_shots": 0.991975,
+    "P_target_offaxis": 0.2175962095818947,
+    "mirror_E3_target": 0.21605167180912538
+   },
+   "src_c1like": {
+    "n": 1785,
+    "frac_of_shots": 0.006375,
+    "P_target_offaxis": 0.2560224089635854,
+    "mirror_E3_target": 0.2549019607843137
+   },
+   "src_offaxis": {
+    "n": 462,
+    "frac_of_shots": 0.00165,
+    "P_target_offaxis": 0.2532467532467532,
+    "mirror_E3_target": 0.2510822510822511
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9905920146856356,
+    0.007490329771192552,
+    0.001917655543171835
+   ],
+   "P_src_cat_given_target_not": [
+    0.9923603119805652,
+    0.006064259228816191,
+    0.001575428790618664
+   ]
+  },
+  "t2_s0_srcprep1": {
+   "src_c0like": {
+    "n": 21409,
+    "frac_of_shots": 0.07646071428571428,
+    "P_target_offaxis": 0.2155635480405437,
+    "mirror_E3_target": 0.21416226820496054
+   },
+   "src_c1like": {
+    "n": 246148,
+    "frac_of_shots": 0.8791,
+    "P_target_offaxis": 0.1932902156426215,
+    "mirror_E3_target": 0.19167736483741488
+   },
+   "src_offaxis": {
+    "n": 12443,
+    "frac_of_shots": 0.044439285714285716,
+    "P_target_offaxis": 0.05022904444265852,
+    "mirror_E3_target": 0.04902354737603472
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.08737551592260215,
+    0.9007913968722784,
+    0.011833087205119467
+   ],
+   "P_src_cat_given_target_not": [
+    0.07392311010555414,
+    0.8740569235238708,
+    0.052019966370575134
+   ]
+  },
+  "t2_s1_srcprep0": {
+   "src_c0like": {
+    "n": 240294,
+    "frac_of_shots": 0.8581928571428571,
+    "P_target_offaxis": 0.15115233838547779,
+    "mirror_E3_target": 0.14953348814369063
+   },
+   "src_c1like": {
+    "n": 37949,
+    "frac_of_shots": 0.13553214285714285,
+    "P_target_offaxis": 0.44712640649292473,
+    "mirror_E3_target": 0.44567709294052543
+   },
+   "src_offaxis": {
+    "n": 1757,
+    "frac_of_shots": 0.006275,
+    "P_target_offaxis": 0.601593625498008,
+    "mirror_E3_target": 0.6010244735344337
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.6683288558495566,
+    0.3122216906488058,
+    0.019449453501637654
+   ],
+   "P_src_cat_given_target_not": [
+    0.9039192746417081,
+    0.09297863100144468,
+    0.0031020943568472086
+   ]
+  },
+  "t2_s1_srcprep1": {
+   "src_c0like": {
+    "n": 117005,
+    "frac_of_shots": 0.417875,
+    "P_target_offaxis": 0.16472800307679158,
+    "mirror_E3_target": 0.163249433784881
+   },
+   "src_c1like": {
+    "n": 153221,
+    "frac_of_shots": 0.5472178571428571,
+    "P_target_offaxis": 0.24071765619595226,
+    "mirror_E3_target": 0.23915129127208412
+   },
+   "src_offaxis": {
+    "n": 9774,
+    "frac_of_shots": 0.03490714285714286,
+    "P_target_offaxis": 0.34039287906691224,
+    "mirror_E3_target": 0.338755882954778
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.3240199045121377,
+    0.6200490888306099,
+    0.05593100665725237
+   ],
+   "P_src_cat_given_target_not": [
+    0.44319233071523156,
+    0.5275716954778792,
+    0.029235973806889297
+   ]
+  },
+  "t2_s3_srcprep0": {
+   "src_c0like": {
+    "n": 258199,
+    "frac_of_shots": 0.9221392857142857,
+    "P_target_offaxis": 0.152378591706397,
+    "mirror_E3_target": 0.15063962292650243
+   },
+   "src_c1like": {
+    "n": 20762,
+    "frac_of_shots": 0.07415,
+    "P_target_offaxis": 0.7572006550428668,
+    "mirror_E3_target": 0.7567190058761198
+   },
+   "src_offaxis": {
+    "n": 1039,
+    "frac_of_shots": 0.0037107142857142855,
+    "P_target_offaxis": 0.6410009624639076,
+    "mirror_E3_target": 0.6400384985563041
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.705962570203298,
+    0.2820871687211785,
+    0.011950261075523497
+   ],
+   "P_src_cat_given_target_not": [
+    0.9758593474800351,
+    0.022477471251042276,
+    0.0016631812689225885
+   ]
+  },
+  "t2_s3_srcprep1": {
+   "src_c0like": {
+    "n": 65163,
+    "frac_of_shots": 0.232725,
+    "P_target_offaxis": 0.17193806301121803,
+    "mirror_E3_target": 0.16992771971824502
+   },
+   "src_c1like": {
+    "n": 197465,
+    "frac_of_shots": 0.7052321428571429,
+    "P_target_offaxis": 0.21404805914972275,
+    "mirror_E3_target": 0.21269592079609045
+   },
+   "src_offaxis": {
+    "n": 17372,
+    "frac_of_shots": 0.06204285714285714,
+    "P_target_offaxis": 0.2664057103384757,
+    "mirror_E3_target": 0.2654846880036841
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.192843250314119,
+    0.7274996127299953,
+    0.07965713695588564
+   ],
+   "P_src_cat_given_target_not": [
+    0.2431669978954579,
+    0.6994019855701417,
+    0.05743101653440048
+   ]
+  },
+  "t2_s4_srcprep0": {
+   "src_c0like": {
+    "n": 270119,
+    "frac_of_shots": 0.9647107142857143,
+    "P_target_offaxis": 0.22100629722455659,
+    "mirror_E3_target": 0.21939589588292568
+   },
+   "src_c1like": {
+    "n": 7272,
+    "frac_of_shots": 0.025971428571428572,
+    "P_target_offaxis": 0.24284928492849284,
+    "mirror_E3_target": 0.2407865786578658
+   },
+   "src_offaxis": {
+    "n": 2609,
+    "frac_of_shots": 0.009317857142857143,
+    "P_target_offaxis": 0.2246071291682637,
+    "mirror_E3_target": 0.22307397470295132
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9620950846091861,
+    0.02846091861402095,
+    0.00944399677679291
+   ],
+   "P_src_cat_given_target_not": [
+    0.9654553796742372,
+    0.025262674925441615,
+    0.009281945400321175
+   ]
+  },
+  "t2_s4_srcprep1": {
+   "src_c0like": {
+    "n": 40267,
+    "frac_of_shots": 0.1438107142857143,
+    "P_target_offaxis": 0.21027143815034643,
+    "mirror_E3_target": 0.208533041945017
+   },
+   "src_c1like": {
+    "n": 193441,
+    "frac_of_shots": 0.6908607142857143,
+    "P_target_offaxis": 0.2028267016816497,
+    "mirror_E3_target": 0.20126550214277222
+   },
+   "src_offaxis": {
+    "n": 46292,
+    "frac_of_shots": 0.16532857142857144,
+    "P_target_offaxis": 0.08809297502808261,
+    "mirror_E3_target": 0.08705607880411302
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.16351873310158363,
+    0.7577249903437621,
+    0.07875627655465431
+   ],
+   "P_src_cat_given_target_not": [
+    0.1393392340723863,
+    0.6756901235649811,
+    0.18497064236263255
+   ]
+  },
+  "t3_s0_srcprep0": {
+   "src_c0like": {
+    "n": 277910,
+    "frac_of_shots": 0.9925357142857143,
+    "P_target_offaxis": 0.06769097909395128,
+    "mirror_E3_target": 0.006163865999784103
+   },
+   "src_c1like": {
+    "n": 1631,
+    "frac_of_shots": 0.005825,
+    "P_target_offaxis": 0.054567749846719804,
+    "mirror_E3_target": -0.014714898835070508
+   },
+   "src_offaxis": {
+    "n": 459,
+    "frac_of_shots": 0.0016392857142857142,
+    "P_target_offaxis": 0.07625272331154684,
+    "mirror_E3_target": 0.002178649237472767
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9934516265314745,
+    0.004700042247570765,
+    0.0018483312209547952
+   ],
+   "P_src_cat_given_target_not": [
+    0.992469279563632,
+    0.005906597615910275,
+    0.0016241228204578189
+   ]
+  },
+  "t3_s0_srcprep1": {
+   "src_c0like": {
+    "n": 21258,
+    "frac_of_shots": 0.07592142857142857,
+    "P_target_offaxis": 0.07225515100197573,
+    "mirror_E3_target": 0.013500799698936871
+   },
+   "src_c1like": {
+    "n": 251556,
+    "frac_of_shots": 0.8984142857142857,
+    "P_target_offaxis": 0.06784970344575363,
+    "mirror_E3_target": 0.004579497209368888
+   },
+   "src_offaxis": {
+    "n": 7186,
+    "frac_of_shots": 0.025664285714285716,
+    "P_target_offaxis": 0.058307820762593936,
+    "mirror_E3_target": -0.008210409128861675
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.08074436208799873,
+    0.8972296693476318,
+    0.022025968564369447
+   ],
+   "P_src_cat_given_target_not": [
+    0.07556987780532384,
+    0.8985006341555003,
+    0.025929488039175864
+   ]
+  },
+  "t3_s1_srcprep0": {
+   "src_c0like": {
+    "n": 242239,
+    "frac_of_shots": 0.8651392857142857,
+    "P_target_offaxis": 0.06522896808523813,
+    "mirror_E3_target": 0.0041859485879647785
+   },
+   "src_c1like": {
+    "n": 36078,
+    "frac_of_shots": 0.12885,
+    "P_target_offaxis": 0.06513664837296967,
+    "mirror_E3_target": 0.010560452353234658
+   },
+   "src_offaxis": {
+    "n": 1683,
+    "frac_of_shots": 0.006010714285714286,
+    "P_target_offaxis": 0.08318478906714201,
+    "mirror_E3_target": 0.0285204991087344
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.8638674758077743,
+    0.1284784866874419,
+    0.007654037504783774
+   ],
+   "P_src_cat_given_target_not": [
+    0.8652281732764253,
+    0.12887596528969197,
+    0.005895861433882672
+   ]
+  },
+  "t3_s1_srcprep1": {
+   "src_c0like": {
+    "n": 115563,
+    "frac_of_shots": 0.412725,
+    "P_target_offaxis": 0.0695032146967455,
+    "mirror_E3_target": 0.004499710114829141
+   },
+   "src_c1like": {
+    "n": 155362,
+    "frac_of_shots": 0.5548642857142857,
+    "P_target_offaxis": 0.07037113322434058,
+    "mirror_E3_target": 0.005863724720330582
+   },
+   "src_offaxis": {
+    "n": 9075,
+    "frac_of_shots": 0.032410714285714286,
+    "P_target_offaxis": 0.07746556473829201,
+    "mirror_E3_target": 0.021597796143250688
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.40837909294285135,
+    0.555877567622534,
+    0.0357433394346146
+   ],
+   "P_src_cat_given_target_not": [
+    0.4130533318992671,
+    0.5547877325876189,
+    0.03215893551311402
+   ]
+  },
+  "t3_s2_srcprep0": {
+   "src_c0like": {
+    "n": 257430,
+    "frac_of_shots": 0.9193928571428571,
+    "P_target_offaxis": 0.0692887386862448,
+    "mirror_E3_target": -0.003181447383754807
+   },
+   "src_c1like": {
+    "n": 13561,
+    "frac_of_shots": 0.048432142857142854,
+    "P_target_offaxis": 0.12388466927217757,
+    "mirror_E3_target": 0.10257355652238036
+   },
+   "src_offaxis": {
+    "n": 9009,
+    "frac_of_shots": 0.032175,
+    "P_target_offaxis": 0.11877011877011877,
+    "mirror_E3_target": 0.0959040959040959
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.8664205566619712,
+    0.08160489629377762,
+    0.051974547044251224
+   ],
+   "P_src_cat_given_target_not": [
+    0.9235967357071543,
+    0.045799555149510625,
+    0.030603709143335146
+   ]
+  },
+  "t3_s2_srcprep1": {
+   "src_c0like": {
+    "n": 91407,
+    "frac_of_shots": 0.32645357142857145,
+    "P_target_offaxis": 0.053978360519435054,
+    "mirror_E3_target": -0.007439255199273578
+   },
+   "src_c1like": {
+    "n": 130494,
+    "frac_of_shots": 0.46605,
+    "P_target_offaxis": 0.05984949499593851,
+    "mirror_E3_target": -0.005479179119346483
+   },
+   "src_offaxis": {
+    "n": 58099,
+    "frac_of_shots": 0.20749642857142858,
+    "P_target_offaxis": 0.07965713695588564,
+    "mirror_E3_target": 0.05213514862562178
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.2840202624913654,
+    0.4495740271701589,
+    0.2664057103384757
+   ],
+   "P_src_cat_given_target_not": [
+    0.3292603987389007,
+    0.4671398327672602,
+    0.2035997684938392
+   ]
+  },
+  "t3_s4_srcprep0": {
+   "src_c0like": {
+    "n": 264597,
+    "frac_of_shots": 0.9449892857142858,
+    "P_target_offaxis": 0.062351424997259985,
+    "mirror_E3_target": 0.001311428323072446
+   },
+   "src_c1like": {
+    "n": 11674,
+    "frac_of_shots": 0.04169285714285714,
+    "P_target_offaxis": 0.14211067329107419,
+    "mirror_E3_target": 0.13106047627205755
+   },
+   "src_offaxis": {
+    "n": 3729,
+    "frac_of_shots": 0.013317857142857143,
+    "P_target_offaxis": 0.12201662644140521,
+    "mirror_E3_target": 0.10217216411906678
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.8864173651407694,
+    0.08913604126370084,
+    0.024446593595529767
+   ],
+   "P_src_cat_given_target_not": [
+    0.9491598696191103,
+    0.03831468927418244,
+    0.01252544110670727
+   ]
+  },
+  "t3_s4_srcprep1": {
+   "src_c0like": {
+    "n": 43549,
+    "frac_of_shots": 0.15553214285714287,
+    "P_target_offaxis": 0.08881949068864957,
+    "mirror_E3_target": 0.033158051849640637
+   },
+   "src_c1like": {
+    "n": 206376,
+    "frac_of_shots": 0.7370571428571429,
+    "P_target_offaxis": 0.06294821103229058,
+    "mirror_E3_target": -0.007345815404892042
+   },
+   "src_offaxis": {
+    "n": 30075,
+    "frac_of_shots": 0.10741071428571429,
+    "P_target_offaxis": 0.0827265170407315,
+    "mirror_E3_target": 0.02939318370739817
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.19992763735979738,
+    0.6714736134801261,
+    0.1285987491600765
+   ],
+   "P_src_cat_given_target_not": [
+    0.1522368819848611,
+    0.7419250881440076,
+    0.10583802987113135
+   ]
+  },
+  "t4_s0_srcprep0": {
+   "src_c0like": {
+    "n": 277919,
+    "frac_of_shots": 0.9925678571428571,
+    "P_target_offaxis": 0.10261622990871441,
+    "mirror_E3_target": 0.0996765244549671
+   },
+   "src_c1like": {
+    "n": 1643,
+    "frac_of_shots": 0.0058678571428571425,
+    "P_target_offaxis": 0.08399269628727937,
+    "mirror_E3_target": 0.07851491174680462
+   },
+   "src_offaxis": {
+    "n": 438,
+    "frac_of_shots": 0.0015642857142857142,
+    "P_target_offaxis": 0.08447488584474885,
+    "mirror_E3_target": 0.0776255707762557
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9939011640064125,
+    0.00480936781208615,
+    0.001289468181501359
+   ],
+   "P_src_cat_given_target_not": [
+    0.9924156207969567,
+    0.005988714953085083,
+    0.0015956642499582183
+   ]
+  },
+  "t4_s0_srcprep1": {
+   "src_c0like": {
+    "n": 21026,
+    "frac_of_shots": 0.07509285714285714,
+    "P_target_offaxis": 0.10781889089698468,
+    "mirror_E3_target": 0.10596404451631314
+   },
+   "src_c1like": {
+    "n": 252123,
+    "frac_of_shots": 0.9004392857142857,
+    "P_target_offaxis": 0.10005433855697418,
+    "mirror_E3_target": 0.0978609646878706
+   },
+   "src_offaxis": {
+    "n": 6851,
+    "frac_of_shots": 0.024467857142857142,
+    "P_target_offaxis": 0.04685447379944534,
+    "mirror_E3_target": 0.04364326375711575
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.08150571654562451,
+    0.9069533328539584,
+    0.011540950600417056
+   ],
+   "P_src_cat_given_target_not": [
+    0.07438557255359139,
+    0.8997208409665881,
+    0.02589358647982045
+   ]
+  },
+  "t4_s1_srcprep0": {
+   "src_c0like": {
+    "n": 244718,
+    "frac_of_shots": 0.8739928571428571,
+    "P_target_offaxis": 0.10186827286918003,
+    "mirror_E3_target": 0.09931022646474717
+   },
+   "src_c1like": {
+    "n": 33977,
+    "frac_of_shots": 0.12134642857142858,
+    "P_target_offaxis": 0.0908261470995085,
+    "mirror_E3_target": 0.08820672808076052
+   },
+   "src_offaxis": {
+    "n": 1305,
+    "frac_of_shots": 0.004660714285714285,
+    "P_target_offaxis": 0.10421455938697317,
+    "mirror_E3_target": 0.10344827586206896
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.8855458065432844,
+    0.109623103974992,
+    0.004831089481723562
+   ],
+   "P_src_cat_given_target_not": [
+    0.8727014997081585,
+    0.12265683008469361,
+    0.004641670207147934
+   ]
+  },
+  "t4_s1_srcprep1": {
+   "src_c0like": {
+    "n": 117248,
+    "frac_of_shots": 0.41874285714285714,
+    "P_target_offaxis": 0.10440263373362445,
+    "mirror_E3_target": 0.10174160753275109
+   },
+   "src_c1like": {
+    "n": 154240,
+    "frac_of_shots": 0.5508571428571428,
+    "P_target_offaxis": 0.0984634336099585,
+    "mirror_E3_target": 0.0959219398340249
+   },
+   "src_offaxis": {
+    "n": 8512,
+    "frac_of_shots": 0.0304,
+    "P_target_offaxis": 0.10914003759398497,
+    "mirror_E3_target": 0.10643796992481203
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.4316747187643263,
+    0.5355644109038332,
+    0.03276087033184046
+   ],
+   "P_src_cat_given_target_not": [
+    0.4172855990430888,
+    0.5525804413395167,
+    0.030133959617394485
+   ]
+  },
+  "t4_s2_srcprep0": {
+   "src_c0like": {
+    "n": 264747,
+    "frac_of_shots": 0.945525,
+    "P_target_offaxis": 0.032030580138774,
+    "mirror_E3_target": 0.030293072253887676
+   },
+   "src_c1like": {
+    "n": 8170,
+    "frac_of_shots": 0.02917857142857143,
+    "P_target_offaxis": 0.13121175030599755,
+    "mirror_E3_target": 0.13023255813953488
+   },
+   "src_offaxis": {
+    "n": 7083,
+    "frac_of_shots": 0.02529642857142857,
+    "P_target_offaxis": 0.0937455880276719,
+    "mirror_E3_target": 0.09275730622617535
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.8300704776820673,
+    0.10493343774471417,
+    0.06499608457321848
+   ],
+   "P_src_cat_given_target_not": [
+    0.9498969546007177,
+    0.026309936838359575,
+    0.023793108560922812
+   ]
+  },
+  "t4_s2_srcprep1": {
+   "src_c0like": {
+    "n": 102129,
+    "frac_of_shots": 0.3647464285714286,
+    "P_target_offaxis": 0.32337533903200855,
+    "mirror_E3_target": 0.32020288067052455
+   },
+   "src_c1like": {
+    "n": 126091,
+    "frac_of_shots": 0.450325,
+    "P_target_offaxis": 0.07286800802594952,
+    "mirror_E3_target": 0.06912467979475141
+   },
+   "src_offaxis": {
+    "n": 51780,
+    "frac_of_shots": 0.18492857142857144,
+    "P_target_offaxis": 0.07875627655465431,
+    "mirror_E3_target": 0.07543453070683662
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.7134278061004061,
+    0.19847921887151126,
+    0.08809297502808261
+   ],
+   "P_src_cat_given_target_not": [
+    0.29568093518407584,
+    0.5002096633405788,
+    0.20410940147534531
+   ]
+  },
+  "t4_s3_srcprep0": {
+   "src_c0like": {
+    "n": 265893,
+    "frac_of_shots": 0.9496178571428572,
+    "P_target_offaxis": 0.09207087061336704,
+    "mirror_E3_target": 0.08937429717969259
+   },
+   "src_c1like": {
+    "n": 13282,
+    "frac_of_shots": 0.04743571428571428,
+    "P_target_offaxis": 0.13838277367866286,
+    "mirror_E3_target": 0.136726396627014
+   },
+   "src_offaxis": {
+    "n": 825,
+    "frac_of_shots": 0.0029464285714285716,
+    "P_target_offaxis": 0.13818181818181818,
+    "mirror_E3_target": 0.13333333333333333
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.9261529149169598,
+    0.06953429425339537,
+    0.004312790829644762
+   ],
+   "P_src_cat_given_target_not": [
+    0.9520639515394353,
+    0.04513205582745389,
+    0.0028039926331107756
+   ]
+  },
+  "t4_s3_srcprep1": {
+   "src_c0like": {
+    "n": 71317,
+    "frac_of_shots": 0.2547035714285714,
+    "P_target_offaxis": 0.0773588344994882,
+    "mirror_E3_target": 0.07351683329360462
+   },
+   "src_c1like": {
+    "n": 189336,
+    "frac_of_shots": 0.6762,
+    "P_target_offaxis": 0.11656525964423037,
+    "mirror_E3_target": 0.11471141251531669
+   },
+   "src_offaxis": {
+    "n": 19347,
+    "frac_of_shots": 0.06909642857142857,
+    "P_target_offaxis": 0.1285987491600765,
+    "mirror_E3_target": 0.1247221791492221
+   },
+   "P_src_cat_given_target_offaxis": [
+    0.18344139650872818,
+    0.7338320864505403,
+    0.0827265170407315
+   ],
+   "P_src_cat_given_target_not": [
+    0.26327898369510855,
+    0.6692647794338301,
+    0.06745623687106132
+   ]
+  }
+ }
+}

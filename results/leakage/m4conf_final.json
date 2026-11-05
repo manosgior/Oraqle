@@ -1,0 +1,1385 @@
+{
+ "definition": "m4conf_final.py -- final confounder funnel and leakage-like estimate (agent tag m4conf).\n\nCandidates  A: |zA| > 5 (perp, z per split x qubit x prepared bit, median / 1.4826 MAD), window 1 us\n            (feat1us bins 0-9 = raw samples 0-499) and, secondary, 2 us (feat bins 0-19).\nScreens (cumulative, in this order):\n  S_xtalk : still > 5 when the centre is the median of the shot's FULL 32-state configuration (neighbours'\n            prepared bits), same per-bit noise scale. Tests static crosstalk / dispersive cross-shifts only.\n            (The earlier variant that also rescales by the per-state MAD is reported as S_xtalk_rescaled:\n            it is biased because the per-state MAD is inflated by the very events under test.)\n  S_simul : no other qubit with |z32_perp| > 4 in the same shot (z32 = per-32-state centre and MAD).\n  S_raw   : no raw-trace glitch flag (|robust z| >= 6 per block for out-of-band power, DC I, DC Q, max jump).\n  S_time  : not in a burst (Poisson p < 1e-4 for the count in +-250 rows of the same block) and still > 5\n            relative to the median of its own 500-row bin (drift removed).\n  -> BASE survivors (upper estimate of single-channel, stationary, glitch-free off-axis events)\n  S_nbr   : no NEIGHBOUR EVENT in the same shot: any other qubit j with |zA0_j| > 5 (off-axis, |0>-noise scale);\n            or, for j in the high-SNR qubits (Q1, Q3, Q4, Q5): along beyond 1.5 separations, or a state flip\n            that is already present in the first 200 ns (prepared 1 read < 0.5 sep in both 0-200 ns and 1 us,\n            or prepared 0 read >= 0.5 in both). Q2 flips are not used (SNR 1.2: they are mostly noise).\n  -> SINGLE-QUBIT estimate = BASE survivors among shots without a neighbour event, divided by the number of\n     prepared-b shots without a neighbour event (conditional rate; lower estimate, because a real event of q\n     that also disturbs a neighbour is removed).\nUsage: python m4conf_final.py /feat /work/out\n",
+ "funnel": {
+  "1us": {
+   "q0_prep0": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 0,
+     "n": 800000,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      4.801800544220816e-06
+     ]
+    },
+    "after_S_xtalk": 0,
+    "after_S_simul": 0,
+    "after_S_raw": 0,
+    "after_S_time": 0,
+    "pass_alone": {
+     "S_xtalk": 0,
+     "S_xtalk_rescaled": 0,
+     "S_simul": 0,
+     "S_raw": 0,
+     "S_time": 0,
+     "S_nbr": 0
+    },
+    "BASE_survivor_rate": {
+     "k": 0,
+     "n": 800000,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      4.801800544220816e-06
+     ]
+    },
+    "BASE_surviving_fraction": null,
+    "n_no_neighbour_event": 636030,
+    "candidates_no_neighbour_event": {
+     "k": 0,
+     "n": 636030,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      6.0397083156531155e-06
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 0,
+     "n": 636030,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      6.0397083156531155e-06
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": null,
+    "neighbour_event_rate_in_noncandidates": 0.2049625,
+    "neighbour_event_rate_in_BASE_survivors": null,
+    "survivor_sign_positive": null,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": null
+   },
+   "q0_prep1": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 165,
+     "n": 800000,
+     "rate": 0.00020625,
+     "ci95": [
+      0.0001770916040893807,
+      0.00024020821571211562
+     ]
+    },
+    "after_S_xtalk": 147,
+    "after_S_simul": 140,
+    "after_S_raw": 140,
+    "after_S_time": 139,
+    "pass_alone": {
+     "S_xtalk": 147,
+     "S_xtalk_rescaled": 111,
+     "S_simul": 157,
+     "S_raw": 165,
+     "S_time": 149,
+     "S_nbr": 106
+    },
+    "BASE_survivor_rate": {
+     "k": 139,
+     "n": 800000,
+     "rate": 0.00017375,
+     "ci95": [
+      0.00014716855117293258,
+      0.00020513158074559907
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 139,
+     "n": 165,
+     "rate": 0.8424242424242424,
+     "ci95": [
+      0.7791275238881716,
+      0.8901393774328161
+     ]
+    },
+    "n_no_neighbour_event": 627558,
+    "candidates_no_neighbour_event": {
+     "k": 106,
+     "n": 627558,
+     "rate": 0.00016890869051147464,
+     "ci95": [
+      0.00013967094608612038,
+      0.00020426561063557796
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 97,
+     "n": 627558,
+     "rate": 0.00015456738660012302,
+     "ci95": [
+      0.0001267181639720774,
+      0.0001885359605001462
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.7494176320005965,
+    "neighbour_event_rate_in_noncandidates": 0.21552320166034244,
+    "neighbour_event_rate_in_BASE_survivors": 0.302158273381295,
+    "survivor_sign_positive": 1.0,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.4244604316546763,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.583209395439279,
+     0.9629933803284476
+    ]
+   },
+   "q1_prep0": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 465,
+     "n": 800000,
+     "rate": 0.00058125,
+     "ci95": [
+      0.0005307786927509005,
+      0.0006365175257001877
+     ]
+    },
+    "after_S_xtalk": 460,
+    "after_S_simul": 375,
+    "after_S_raw": 375,
+    "after_S_time": 374,
+    "pass_alone": {
+     "S_xtalk": 460,
+     "S_xtalk_rescaled": 459,
+     "S_simul": 377,
+     "S_raw": 465,
+     "S_time": 460,
+     "S_nbr": 259
+    },
+    "BASE_survivor_rate": {
+     "k": 374,
+     "n": 800000,
+     "rate": 0.0004675,
+     "ci95": [
+      0.0004224692780490681,
+      0.0005173280328116438
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 374,
+     "n": 465,
+     "rate": 0.8043010752688172,
+     "ci95": [
+      0.7658094112043204,
+      0.8378061493206962
+     ]
+    },
+    "n_no_neighbour_event": 619512,
+    "candidates_no_neighbour_event": {
+     "k": 259,
+     "n": 619512,
+     "rate": 0.0004180709978176371,
+     "ci95": [
+      0.0003701701154197642,
+      0.00047216743910091677
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 257,
+     "n": 619512,
+     "rate": 0.00041484265034414183,
+     "ci95": [
+      0.0003671382633160964,
+      0.0004687426362939039
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.7137077855383086,
+    "neighbour_event_rate_in_noncandidates": 0.22548356232059885,
+    "neighbour_event_rate_in_BASE_survivors": 0.31283422459893045,
+    "survivor_sign_positive": 0.9973262032085561,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.2727272727272727,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.6128765497625622,
+     0.8311279055061537
+    ]
+   },
+   "q1_prep1": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 5773,
+     "n": 800000,
+     "rate": 0.00721625,
+     "ci95": [
+      0.007033126243932638,
+      0.007404106254625227
+     ]
+    },
+    "after_S_xtalk": 5747,
+    "after_S_simul": 5318,
+    "after_S_raw": 5318,
+    "after_S_time": 5287,
+    "pass_alone": {
+     "S_xtalk": 5747,
+     "S_xtalk_rescaled": 5678,
+     "S_simul": 5336,
+     "S_raw": 5772,
+     "S_time": 5720,
+     "S_nbr": 4096
+    },
+    "BASE_survivor_rate": {
+     "k": 5287,
+     "n": 800000,
+     "rate": 0.00660875,
+     "ci95": [
+      0.006433552866392688,
+      0.006788685466352838
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 5287,
+     "n": 5773,
+     "rate": 0.9158150008661008,
+     "ci95": [
+      0.9083729743597988,
+      0.9227040136747195
+     ]
+    },
+    "n_no_neighbour_event": 613709,
+    "candidates_no_neighbour_event": {
+     "k": 4096,
+     "n": 613709,
+     "rate": 0.0066741729386403,
+     "ci95": [
+      0.006473528511245371,
+      0.006880993188836111
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 4057,
+     "n": 613709,
+     "rate": 0.006610624905288989,
+     "ci95": [
+      0.006410946398494709,
+      0.006816480030426105
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.9160748179856558,
+    "neighbour_event_rate_in_noncandidates": 0.23244488036795527,
+    "neighbour_event_rate_in_BASE_survivors": 0.23264611310762248,
+    "survivor_sign_positive": 1.0,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.49423113296765653,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.880140848402178,
+     0.9534758824919185
+    ]
+   },
+   "q2_prep0": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 3219,
+     "n": 800000,
+     "rate": 0.00402375,
+     "ci95": [
+      0.0038873901901082734,
+      0.004164872967946067
+     ]
+    },
+    "after_S_xtalk": 3203,
+    "after_S_simul": 3128,
+    "after_S_raw": 3080,
+    "after_S_time": 3059,
+    "pass_alone": {
+     "S_xtalk": 3203,
+     "S_xtalk_rescaled": 3191,
+     "S_simul": 3144,
+     "S_raw": 3170,
+     "S_time": 3186,
+     "S_nbr": 2734
+    },
+    "BASE_survivor_rate": {
+     "k": 3059,
+     "n": 800000,
+     "rate": 0.00382375,
+     "ci95": [
+      0.0036908685238786305,
+      0.003961396554895928
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 3059,
+     "n": 3219,
+     "rate": 0.9502951227089158,
+     "ci95": [
+      0.9422358349065375,
+      0.9572809539231225
+     ]
+    },
+    "n_no_neighbour_event": 695946,
+    "candidates_no_neighbour_event": {
+     "k": 2734,
+     "n": 695946,
+     "rate": 0.003928465714293925,
+     "ci95": [
+      0.0037842127308367474,
+      0.004078195064832804
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 2628,
+     "n": 695946,
+     "rate": 0.003776155046512229,
+     "ci95": [
+      0.0036347685331166693,
+      0.003923019608418618
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.9384666160949932,
+    "neighbour_event_rate_in_noncandidates": 0.12998427422340644,
+    "neighbour_event_rate_in_BASE_survivors": 0.14089571755475647,
+    "survivor_sign_positive": 0.9996730957829356,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.5746976135992155,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.8914227728807431,
+     0.9879931456974481
+    ]
+   },
+   "q2_prep1": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 38976,
+     "n": 800000,
+     "rate": 0.04872,
+     "ci95": [
+      0.048250414182255445,
+      0.04919391973084374
+     ]
+    },
+    "after_S_xtalk": 38499,
+    "after_S_simul": 37630,
+    "after_S_raw": 37553,
+    "after_S_time": 37306,
+    "pass_alone": {
+     "S_xtalk": 38499,
+     "S_xtalk_rescaled": 38542,
+     "S_simul": 38094,
+     "S_raw": 38896,
+     "S_time": 38369,
+     "S_nbr": 32414
+    },
+    "BASE_survivor_rate": {
+     "k": 37306,
+     "n": 800000,
+     "rate": 0.0466325,
+     "ci95": [
+      0.046172635039131806,
+      0.047096718921484655
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 37306,
+     "n": 38976,
+     "rate": 0.9571531198686372,
+     "ci95": [
+      0.9550971817307481,
+      0.9591189532320221
+     ]
+    },
+    "n_no_neighbour_event": 680964,
+    "candidates_no_neighbour_event": {
+     "k": 32414,
+     "n": 680964,
+     "rate": 0.047600166822328344,
+     "ci95": [
+      0.04709700577497548,
+      0.04810843200309619
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 31451,
+     "n": 680964,
+     "rate": 0.04618599514805482,
+     "ci95": [
+      0.045690041008065015,
+      0.04668706937663989
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.9479884061587607,
+    "neighbour_event_rate_in_noncandidates": 0.14779297367757127,
+    "neighbour_event_rate_in_BASE_survivors": 0.1569452634964885,
+    "survivor_sign_positive": 1.0,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.5771189620972498,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.9343412566187588,
+     0.9618348883186677
+    ]
+   },
+   "q3_prep0": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 121,
+     "n": 800000,
+     "rate": 0.00015125,
+     "ci95": [
+      0.00012659609262834085,
+      0.0001807042553712153
+     ]
+    },
+    "after_S_xtalk": 117,
+    "after_S_simul": 87,
+    "after_S_raw": 87,
+    "after_S_time": 86,
+    "pass_alone": {
+     "S_xtalk": 117,
+     "S_xtalk_rescaled": 119,
+     "S_simul": 90,
+     "S_raw": 121,
+     "S_time": 115,
+     "S_nbr": 85
+    },
+    "BASE_survivor_rate": {
+     "k": 86,
+     "n": 800000,
+     "rate": 0.0001075,
+     "ci95": [
+      8.705525524501796e-05,
+      0.00013274551291208585
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 86,
+     "n": 121,
+     "rate": 0.7107438016528925,
+     "ci95": [
+      0.6244586360434976,
+      0.7840594993340513
+     ]
+    },
+    "n_no_neighbour_event": 676495,
+    "candidates_no_neighbour_event": {
+     "k": 85,
+     "n": 676495,
+     "rate": 0.00012564763967213357,
+     "ci95": [
+      0.00010162632163623856,
+      0.00015534597192512796
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 76,
+     "n": 676495,
+     "rate": 0.00011234377194214296,
+     "ci95": [
+      8.976733178700395e-05,
+      0.00014059737740484217
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.7427687401133419,
+    "neighbour_event_rate_in_noncandidates": 0.15435959688902948,
+    "neighbour_event_rate_in_BASE_survivors": 0.11627906976744186,
+    "survivor_sign_positive": 1.0,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.11627906976744186,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.5575376272692323,
+     0.9895393141298163
+    ]
+   },
+   "q3_prep1": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 2,
+     "n": 800000,
+     "rate": 2.5e-06,
+     "ci95": [
+      6.855904343781135e-07,
+      9.116186100839981e-06
+     ]
+    },
+    "after_S_xtalk": 2,
+    "after_S_simul": 2,
+    "after_S_raw": 2,
+    "after_S_time": 2,
+    "pass_alone": {
+     "S_xtalk": 2,
+     "S_xtalk_rescaled": 2,
+     "S_simul": 2,
+     "S_raw": 2,
+     "S_time": 2,
+     "S_nbr": 2
+    },
+    "BASE_survivor_rate": {
+     "k": 2,
+     "n": 800000,
+     "rate": 2.5e-06,
+     "ci95": [
+      6.855904343781135e-07,
+      9.116186100839981e-06
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "ci95": [
+      0.3423802239546494,
+      1.0
+     ]
+    },
+    "n_no_neighbour_event": 665397,
+    "candidates_no_neighbour_event": {
+     "k": 2,
+     "n": 665397,
+     "rate": 3.0057244021238448e-06,
+     "ci95": [
+      8.242784245008078e-07,
+      1.0960285694930902e-05
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 2,
+     "n": 665397,
+     "rate": 3.0057244021238448e-06,
+     "ci95": [
+      8.242784245008078e-07,
+      1.0960285694930902e-05
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 1.2022897608495378,
+    "neighbour_event_rate_in_noncandidates": 0.16825417063542658,
+    "neighbour_event_rate_in_BASE_survivors": 0.0,
+    "survivor_sign_positive": 1.0,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.5,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.16935309408412155,
+     1.5
+    ]
+   },
+   "q4_prep0": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 74,
+     "n": 800000,
+     "rate": 9.25e-05,
+     "ci95": [
+      7.368990084528366e-05,
+      0.0001161110113658365
+     ]
+    },
+    "after_S_xtalk": 71,
+    "after_S_simul": 69,
+    "after_S_raw": 69,
+    "after_S_time": 69,
+    "pass_alone": {
+     "S_xtalk": 71,
+     "S_xtalk_rescaled": 74,
+     "S_simul": 72,
+     "S_raw": 73,
+     "S_time": 71,
+     "S_nbr": 54
+    },
+    "BASE_survivor_rate": {
+     "k": 69,
+     "n": 800000,
+     "rate": 8.625e-05,
+     "ci95": [
+      6.815946589717339e-05,
+      0.00010914150633645355
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 69,
+     "n": 74,
+     "rate": 0.9324324324324325,
+     "ci95": [
+      0.8513880599165187,
+      0.9707959140194855
+     ]
+    },
+    "n_no_neighbour_event": 637370,
+    "candidates_no_neighbour_event": {
+     "k": 54,
+     "n": 637370,
+     "rate": 8.472315923247094e-05,
+     "ci95": [
+      6.494005222244563e-05,
+      0.00011053225556053894
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 51,
+     "n": 637370,
+     "rate": 8.001631705288922e-05,
+     "ci95": [
+      6.086407653480597e-05,
+      0.00010519460362539031
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.8650412654366402,
+    "neighbour_event_rate_in_noncandidates": 0.20328130352057566,
+    "neighbour_event_rate_in_BASE_survivors": 0.2608695652173913,
+    "survivor_sign_positive": 0.9855072463768116,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.36231884057971014,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.6055194139049316,
+     1.235792567050061
+    ]
+   },
+   "q4_prep1": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 1668,
+     "n": 800000,
+     "rate": 0.002085,
+     "ci95": [
+      0.0019874079100904705,
+      0.0021873738669454805
+     ]
+    },
+    "after_S_xtalk": 1287,
+    "after_S_simul": 1250,
+    "after_S_raw": 1250,
+    "after_S_time": 1170,
+    "pass_alone": {
+     "S_xtalk": 1287,
+     "S_xtalk_rescaled": 506,
+     "S_simul": 1621,
+     "S_raw": 1668,
+     "S_time": 1249,
+     "S_nbr": 679
+    },
+    "BASE_survivor_rate": {
+     "k": 1170,
+     "n": 800000,
+     "rate": 0.0014625,
+     "ci95": [
+      0.0013811198163496705,
+      0.0015486679389279587
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 1170,
+     "n": 1668,
+     "rate": 0.7014388489208633,
+     "ci95": [
+      0.6790348762687325,
+      0.7229171129166926
+     ]
+    },
+    "n_no_neighbour_event": 620816,
+    "candidates_no_neighbour_event": {
+     "k": 679,
+     "n": 620816,
+     "rate": 0.0010937218112935234,
+     "ci95": [
+      0.0010145302807815404,
+      0.0011790875257645071
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 515,
+     "n": 620816,
+     "rate": 0.0008295533620267519,
+     "ci95": [
+      0.0007609599750609223,
+      0.0009043242021519776
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.3978673199169074,
+    "neighbour_event_rate_in_noncandidates": 0.22320914105910825,
+    "neighbour_event_rate_in_BASE_survivors": 0.5598290598290598,
+    "survivor_sign_positive": 1.0,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.3957264957264957,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.3604555583387248,
+     0.439162056447213
+    ]
+   }
+  },
+  "2us": {
+   "q0_prep0": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 12,
+     "n": 800000,
+     "rate": 1.5e-05,
+     "ci95": [
+      8.58096974166408e-06,
+      2.622068674854041e-05
+     ]
+    },
+    "after_S_xtalk": 10,
+    "after_S_simul": 9,
+    "after_S_raw": 9,
+    "after_S_time": 9,
+    "pass_alone": {
+     "S_xtalk": 10,
+     "S_xtalk_rescaled": 11,
+     "S_simul": 10,
+     "S_raw": 12,
+     "S_time": 11,
+     "S_nbr": 8
+    },
+    "BASE_survivor_rate": {
+     "k": 9,
+     "n": 800000,
+     "rate": 1.125e-05,
+     "ci95": [
+      5.918853551415052e-06,
+      2.138283895229352e-05
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 9,
+     "n": 12,
+     "rate": 0.75,
+     "ci95": [
+      0.4676946629183366,
+      0.9110583323051143
+     ]
+    },
+    "n_no_neighbour_event": 593151,
+    "candidates_no_neighbour_event": {
+     "k": 8,
+     "n": 593151,
+     "rate": 1.3487290757328234e-05,
+     "ci95": [
+      6.834361037755408e-06,
+      2.6616362946045116e-05
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 7,
+     "n": 593151,
+     "rate": 1.1801379412662205e-05,
+     "ci95": [
+      5.716707138055894e-06,
+      2.4362215993405732e-05
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.7867586275108136,
+    "neighbour_event_rate_in_noncandidates": 0.25856012840192605,
+    "neighbour_event_rate_in_BASE_survivors": 0.2222222222222222,
+    "survivor_sign_positive": 1.0,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.5555555555555556,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.30974879027161034,
+     1.5
+    ]
+   },
+   "q0_prep1": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 991,
+     "n": 800000,
+     "rate": 0.00123875,
+     "ci95": [
+      0.0011640307649617618,
+      0.001318259139121611
+     ]
+    },
+    "after_S_xtalk": 818,
+    "after_S_simul": 760,
+    "after_S_raw": 760,
+    "after_S_time": 736,
+    "pass_alone": {
+     "S_xtalk": 818,
+     "S_xtalk_rescaled": 550,
+     "S_simul": 924,
+     "S_raw": 991,
+     "S_time": 826,
+     "S_nbr": 660
+    },
+    "BASE_survivor_rate": {
+     "k": 736,
+     "n": 800000,
+     "rate": 0.00092,
+     "ci95": [
+      0.0008559184006213958,
+      0.0009888745646098238
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 736,
+     "n": 991,
+     "rate": 0.7426841574167508,
+     "ci95": [
+      0.7145661044069477,
+      0.7689280199140137
+     ]
+    },
+    "n_no_neighbour_event": 594034,
+    "candidates_no_neighbour_event": {
+     "k": 660,
+     "n": 594034,
+     "rate": 0.001111047515798759,
+     "ci95": [
+      0.001029496168036939,
+      0.0011990511844854356
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 540,
+     "n": 594034,
+     "rate": 0.000909038876562621,
+     "ci95": [
+      0.0008355620679050323,
+      0.0009889706187997734
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.7338356218467172,
+    "neighbour_event_rate_in_noncandidates": 0.25736255786855966,
+    "neighbour_event_rate_in_BASE_survivors": 0.266304347826087,
+    "survivor_sign_positive": 1.0,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.6127717391304348,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.6608341701500774,
+     0.8149014445921583
+    ]
+   },
+   "q1_prep0": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 885,
+     "n": 800000,
+     "rate": 0.00110625,
+     "ci95": [
+      0.0010357631191654812,
+      0.0011815280573950356
+     ]
+    },
+    "after_S_xtalk": 884,
+    "after_S_simul": 661,
+    "after_S_raw": 661,
+    "after_S_time": 656,
+    "pass_alone": {
+     "S_xtalk": 884,
+     "S_xtalk_rescaled": 878,
+     "S_simul": 662,
+     "S_raw": 885,
+     "S_time": 878,
+     "S_nbr": 334
+    },
+    "BASE_survivor_rate": {
+     "k": 656,
+     "n": 800000,
+     "rate": 0.00082,
+     "ci95": [
+      0.0007596275980846928,
+      0.0008851663275066355
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 656,
+     "n": 885,
+     "rate": 0.7412429378531074,
+     "ci95": [
+      0.7113900746308064,
+      0.7690105589506042
+     ]
+    },
+    "n_no_neighbour_event": 586449,
+    "candidates_no_neighbour_event": {
+     "k": 334,
+     "n": 586449,
+     "rate": 0.0005695294902028991,
+     "ci95": [
+      0.0005116520649516947,
+      0.0006339497829479575
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 330,
+     "n": 586449,
+     "rate": 0.0005627087777453794,
+     "ci95": [
+      0.0005051973973485157,
+      0.0006267631149919139
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.508663301916727,
+    "neighbour_event_rate_in_noncandidates": 0.2665448652571908,
+    "neighbour_event_rate_in_BASE_survivors": 0.4969512195121951,
+    "survivor_sign_positive": 1.0,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.6509146341463414,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.4482769661313554,
+     0.5771841389704844
+    ]
+   },
+   "q1_prep1": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 11112,
+     "n": 800000,
+     "rate": 0.01389,
+     "ci95": [
+      0.013635865810275578,
+      0.014148802596249522
+     ]
+    },
+    "after_S_xtalk": 11092,
+    "after_S_simul": 10327,
+    "after_S_raw": 10327,
+    "after_S_time": 10275,
+    "pass_alone": {
+     "S_xtalk": 11092,
+     "S_xtalk_rescaled": 11038,
+     "S_simul": 10347,
+     "S_raw": 11112,
+     "S_time": 11045,
+     "S_nbr": 7662
+    },
+    "BASE_survivor_rate": {
+     "k": 10275,
+     "n": 800000,
+     "rate": 0.01284375,
+     "ci95": [
+      0.012599337360862125,
+      0.013092841093430613
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 10275,
+     "n": 11112,
+     "rate": 0.9246760259179265,
+     "ci95": [
+      0.9196209481006484,
+      0.9294375811085155
+     ]
+    },
+    "n_no_neighbour_event": 578425,
+    "candidates_no_neighbour_event": {
+     "k": 7662,
+     "n": 578425,
+     "rate": 0.013246315425508925,
+     "ci95": [
+      0.012954901618506659,
+      0.013544194485038697
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 7579,
+     "n": 578425,
+     "rate": 0.01310282231922894,
+     "ci95": [
+      0.012812988208519078,
+      0.013399123588397784
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.9433277407652225,
+    "neighbour_event_rate_in_noncandidates": 0.2764967904189188,
+    "neighbour_event_rate_in_BASE_survivors": 0.2623844282238443,
+    "survivor_sign_positive": 1.0,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.7451094890510949,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.91636177451176,
+     0.9710872400492071
+    ]
+   },
+   "q2_prep0": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 6887,
+     "n": 800000,
+     "rate": 0.00860875,
+     "ci95": [
+      0.008408656595975275,
+      0.008813562529568076
+     ]
+    },
+    "after_S_xtalk": 6822,
+    "after_S_simul": 6441,
+    "after_S_raw": 6396,
+    "after_S_time": 6383,
+    "pass_alone": {
+     "S_xtalk": 6822,
+     "S_xtalk_rescaled": 6795,
+     "S_simul": 6500,
+     "S_raw": 6841,
+     "S_time": 6822,
+     "S_nbr": 5760
+    },
+    "BASE_survivor_rate": {
+     "k": 6383,
+     "n": 800000,
+     "rate": 0.00797875,
+     "ci95": [
+      0.007786145249300657,
+      0.008176079926511377
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 6383,
+     "n": 6887,
+     "rate": 0.9268186438216931,
+     "ci95": [
+      0.920427030125714,
+      0.9327343776763508
+     ]
+    },
+    "n_no_neighbour_event": 701731,
+    "candidates_no_neighbour_event": {
+     "k": 5760,
+     "n": 701731,
+     "rate": 0.008208273540715745,
+     "ci95": [
+      0.007999843942698672,
+      0.00842208750212406
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 5550,
+     "n": 701731,
+     "rate": 0.00790901356787715,
+     "ci95": [
+      0.00770443799787278,
+      0.008118976777709421
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.9187179983013968,
+    "neighbour_event_rate_in_noncandidates": 0.12248191619605277,
+    "neighbour_event_rate_in_BASE_survivors": 0.13050289832367226,
+    "survivor_sign_positive": 0.9984333385555382,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.8345605514648284,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.8869332509166705,
+     0.9516418056607793
+    ]
+   },
+   "q2_prep1": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 28153,
+     "n": 800000,
+     "rate": 0.03519125,
+     "ci95": [
+      0.03478970019636667,
+      0.03559726364145074
+     ]
+    },
+    "after_S_xtalk": 27472,
+    "after_S_simul": 26270,
+    "after_S_raw": 26199,
+    "after_S_time": 25893,
+    "pass_alone": {
+     "S_xtalk": 27472,
+     "S_xtalk_rescaled": 27228,
+     "S_simul": 26926,
+     "S_raw": 28080,
+     "S_time": 27294,
+     "S_nbr": 22609
+    },
+    "BASE_survivor_rate": {
+     "k": 25893,
+     "n": 800000,
+     "rate": 0.03236625,
+     "ci95": [
+      0.031980692599798,
+      0.03275629836819249
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 25893,
+     "n": 28153,
+     "rate": 0.9197243633005363,
+     "ci95": [
+      0.9164928032066069,
+      0.9228413967785845
+     ]
+    },
+    "n_no_neighbour_event": 661414,
+    "candidates_no_neighbour_event": {
+     "k": 22609,
+     "n": 661414,
+     "rate": 0.03418282648991403,
+     "ci95": [
+      0.03374763702640265,
+      0.03462342680691643
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 21444,
+     "n": 661414,
+     "rate": 0.03242144859346793,
+     "ci95": [
+      0.03199731133185919,
+      0.03285101716843539
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.921292895065334,
+    "neighbour_event_rate_in_noncandidates": 0.1723683579776821,
+    "neighbour_event_rate_in_BASE_survivors": 0.17182250028965357,
+    "survivor_sign_positive": 1.0,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.9527285366701425,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.905343151155046,
+     0.9375236311391781
+    ]
+   },
+   "q3_prep0": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 486,
+     "n": 800000,
+     "rate": 0.0006075,
+     "ci95": [
+      0.0005558510404392556,
+      0.000663944925917304
+     ]
+    },
+    "after_S_xtalk": 464,
+    "after_S_simul": 363,
+    "after_S_raw": 363,
+    "after_S_time": 349,
+    "pass_alone": {
+     "S_xtalk": 464,
+     "S_xtalk_rescaled": 472,
+     "S_simul": 383,
+     "S_raw": 486,
+     "S_time": 451,
+     "S_nbr": 281
+    },
+    "BASE_survivor_rate": {
+     "k": 349,
+     "n": 800000,
+     "rate": 0.00043625,
+     "ci95": [
+      0.00039282713042983246,
+      0.00048447048054341347
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 349,
+     "n": 486,
+     "rate": 0.7181069958847737,
+     "ci95": [
+      0.6765163885543197,
+      0.7562767043050869
+     ]
+    },
+    "n_no_neighbour_event": 628040,
+    "candidates_no_neighbour_event": {
+     "k": 281,
+     "n": 628040,
+     "rate": 0.00044742373097254954,
+     "ci95": [
+      0.00039808843248976134,
+      0.0005028701018171822
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 252,
+     "n": 628040,
+     "rate": 0.00040124832813196614,
+     "ci95": [
+      0.0003546794854057781,
+      0.00045392880808792533
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.6604910751143476,
+    "neighbour_event_rate_in_noncandidates": 0.21482425573535924,
+    "neighbour_event_rate_in_BASE_survivors": 0.27793696275071633,
+    "survivor_sign_positive": 0.9140401146131805,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.5272206303724928,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.567290568170356,
+     0.769003549120708
+    ]
+   },
+   "q3_prep1": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 0,
+     "n": 800000,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      4.801800544220816e-06
+     ]
+    },
+    "after_S_xtalk": 0,
+    "after_S_simul": 0,
+    "after_S_raw": 0,
+    "after_S_time": 0,
+    "pass_alone": {
+     "S_xtalk": 0,
+     "S_xtalk_rescaled": 0,
+     "S_simul": 0,
+     "S_raw": 0,
+     "S_time": 0,
+     "S_nbr": 0
+    },
+    "BASE_survivor_rate": {
+     "k": 0,
+     "n": 800000,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      4.801800544220816e-06
+     ]
+    },
+    "BASE_surviving_fraction": null,
+    "n_no_neighbour_event": 606152,
+    "candidates_no_neighbour_event": {
+     "k": 0,
+     "n": 606152,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      6.337411303420699e-06
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 0,
+     "n": 606152,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      6.337411303420699e-06
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": null,
+    "neighbour_event_rate_in_noncandidates": 0.24231,
+    "neighbour_event_rate_in_BASE_survivors": null,
+    "survivor_sign_positive": null,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": null
+   },
+   "q4_prep0": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 993,
+     "n": 800000,
+     "rate": 0.00124125,
+     "ci95": [
+      0.001166453149530069,
+      0.001320836730544301
+     ]
+    },
+    "after_S_xtalk": 976,
+    "after_S_simul": 899,
+    "after_S_raw": 899,
+    "after_S_time": 897,
+    "pass_alone": {
+     "S_xtalk": 976,
+     "S_xtalk_rescaled": 993,
+     "S_simul": 914,
+     "S_raw": 993,
+     "S_time": 977,
+     "S_nbr": 684
+    },
+    "BASE_survivor_rate": {
+     "k": 897,
+     "n": 800000,
+     "rate": 0.00112125,
+     "ci95": [
+      0.001050271675361689,
+      0.0011970193571448117
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 897,
+     "n": 993,
+     "rate": 0.9033232628398792,
+     "ci95": [
+      0.8833582835456039,
+      0.9201797242925945
+     ]
+    },
+    "n_no_neighbour_event": 611351,
+    "candidates_no_neighbour_event": {
+     "k": 684,
+     "n": 611351,
+     "rate": 0.0011188335342544626,
+     "ci95": [
+      0.0010381102217855893,
+      0.0012058263038623614
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 669,
+     "n": 611351,
+     "rate": 0.0010942977111348473,
+     "ci95": [
+      0.0010144968239132646,
+      0.0011803683638380068
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.8816094349525457,
+    "neighbour_event_rate_in_noncandidates": 0.23571758445170068,
+    "neighbour_event_rate_in_BASE_survivors": 0.25418060200668896,
+    "survivor_sign_positive": 1.0,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.7235228539576366,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.7993269625243485,
+     0.9723620398625943
+    ]
+   },
+   "q4_prep1": {
+    "n_prepared": 800000,
+    "candidates": {
+     "k": 10420,
+     "n": 800000,
+     "rate": 0.013025,
+     "ci95": [
+      0.012778874493174538,
+      0.013275802220465507
+     ]
+    },
+    "after_S_xtalk": 7749,
+    "after_S_simul": 7415,
+    "after_S_raw": 7415,
+    "after_S_time": 7076,
+    "pass_alone": {
+     "S_xtalk": 7749,
+     "S_xtalk_rescaled": 2852,
+     "S_simul": 9971,
+     "S_raw": 10420,
+     "S_time": 7650,
+     "S_nbr": 5887
+    },
+    "BASE_survivor_rate": {
+     "k": 7076,
+     "n": 800000,
+     "rate": 0.008845,
+     "ci95": [
+      0.008642171138744636,
+      0.009052545717947958
+     ]
+    },
+    "BASE_surviving_fraction": {
+     "k": 7076,
+     "n": 10420,
+     "rate": 0.6790786948176584,
+     "ci95": [
+      0.6700506922100249,
+      0.6879747070366482
+     ]
+    },
+    "n_no_neighbour_event": 604521,
+    "candidates_no_neighbour_event": {
+     "k": 5887,
+     "n": 604521,
+     "rate": 0.009738288661601499,
+     "ci95": [
+      0.009493837621731718,
+      0.009988970446929596
+     ]
+    },
+    "SINGLE_QUBIT_rate": {
+     "k": 4230,
+     "n": 604521,
+     "rate": 0.0069972755288898155,
+     "ci95": [
+      0.006790258515830033,
+      0.0072105581229962
+     ]
+    },
+    "SINGLE_QUBIT_over_candidate_rate": 0.5372188505865502,
+    "neighbour_event_rate_in_noncandidates": 0.2418323665746346,
+    "neighbour_event_rate_in_BASE_survivors": 0.4022046353872244,
+    "survivor_sign_positive": 1.0,
+    "BASE_survivors_still_off_axis_in_late_window_1to2us_absz0_gt5": 0.863623516110797,
+    "SINGLE_QUBIT_over_candidate_rate_ci95": [
+     0.5184423822978289,
+     0.5566753476951274
+    ]
+   }
+  }
+ }
+}

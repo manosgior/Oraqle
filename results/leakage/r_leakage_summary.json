@@ -1,0 +1,1373 @@
+{
+ "tag": "r",
+ "date": "2026-11-04",
+ "question": "does the readout trace dataset contain actual leakage (|2>) errors, and how much?",
+ "headline": "Yes, qubit-dependent. Q3 (q2) has a genuine |2>-like third state: 11.2 % [11.1, 11.3] of prepared-|1> and 0.73 % [0.62, 0.84] of prepared-|0> shots at the paper's 1 us window (6.0 % of all Q3 shots), decaying to |1> with tau 1.8 us < T1 and mostly created during the readout. Q5 (4.5 % / 0.10 %) and Q1 (0.69 % / <=0.02 %) carry |2>-like populations produced mainly by exchange with Q3; Q2 1.5 % / 0.17 % (probable); Q4 inconclusive. Most leaked shots are read as |1>, so leakage is a hidden channel beside, not inside, the 2-level error budget; the paper's 0.0-0.2 %-of-errors column is not a leakage measurement.",
+ "leakage_present": "qubit-dependent",
+ "definitions": {
+  "window": "paper '1 us' = raw samples 0-499 at 500 MS/s (feat1us bins 0-9, strictly causal FIR = CNN input)",
+  "denominators": "TEST split: 560,000 shots per prepared bit per qubit (1,120,000 per qubit); train replicates within CI",
+  "primary_statistic": "E3 = [N(z>3) - N(z<-3)]/N, z = (perp - centre of prepared 5-bit state)/(perp noise width of the prepared-|0> state with the same neighbours); one-sided mirror excess, MEASURED, lower bound on 'visited the third state within the window'",
+  "best_estimate": "mean of m1tail_v2 and r_spotcheck E3; ci95 = envelope of their statistical 95 % CIs (includes the frame systematic)",
+  "method_range": "span of m2mix far-component weights and m3time HMM occupancies (different definitions), not a CI",
+  "overall": "(prep0 + prep1)/2 = share of all shots (equal counts)",
+  "measured_vs_inferred": "existence, size, location, timing and correlations MEASURED; identification as |2> and the exchange mechanism INFERRED"
+ },
+ "per_qubit": [
+  {
+   "qubit_paper": "Q1",
+   "qubit_code": "q0",
+   "window": "paper '1 us' = raw samples 0-499 at 500 MS/s (feat1us bins 0-9, strictly causal FIR = CNN input)",
+   "denominators": "TEST split: 560,000 shots per prepared bit per qubit (1,120,000 per qubit); train replicates within CI",
+   "verdict": "third-state-like population present on prepared |1>, mostly paired with Q3 (exchange); own part small",
+   "evidence_level": "moderate (MEASURED one-sided excess; |2>/exchange identity INFERRED)",
+   "prep0": {
+    "best_pct": 0.0012,
+    "ci95_pct": [
+     -0.0141,
+     0.0165
+    ],
+    "r_E3_pct": [
+     -0.0004,
+     -0.0141,
+     0.0133
+    ],
+    "m1_E3_pct": [
+     0.0029,
+     -0.0108,
+     0.0165
+    ],
+    "reported_as": "consistent with 0; 95% upper bound 0.017 %",
+    "method_values_pct": {
+     "m1_E3": 0.003,
+     "r_E3": -0.0,
+     "m2_M1f_G2": 0.0,
+     "m4_BASE_5sigma_trainplustest": 0.0
+    }
+   },
+   "prep1": {
+    "best_pct": 0.6912,
+    "ci95_pct": [
+     0.5892,
+     0.7944
+    ],
+    "r_E3_pct": [
+     0.768,
+     0.7417,
+     0.7944
+    ],
+    "m1_E3_pct": [
+     0.6143,
+     0.5892,
+     0.6394
+    ],
+    "method_range_pct": [
+     0.43,
+     0.77
+    ],
+    "method_values_pct": {
+     "m1_E3": 0.614,
+     "r_E3": 0.768,
+     "m2_M1f_G2": 0.429,
+     "m2_ci": [
+      0.186,
+      0.749
+     ],
+     "m4_BASE_5sigma_floor": 0.0174,
+     "m3_startL_unreliable": 4.77,
+     "m3_null_false_positive_startL": 1.19
+    }
+   },
+   "overall": {
+    "best_pct": 0.3462,
+    "ci95_pct": [
+     0.2875,
+     0.4054
+    ]
+   },
+   "conditional_prep1_1us_pct": {
+    "Q3_prep0": [
+     0.135,
+     0.1116,
+     0.1584
+    ],
+    "Q3_prep1": [
+     1.4011,
+     1.3538,
+     1.4484
+    ],
+    "m1_per_config_range_Q3_0": [
+     0.08,
+     0.16
+    ],
+    "m1_per_config_range_Q3_1": [
+     0.98,
+     1.26
+    ]
+   },
+   "E3_by_window_r_pct": {
+    "200ns": {
+     "prep0": [
+      -0.0027,
+      -0.0163,
+      0.0109
+     ],
+     "prep1": [
+      0.0007,
+      -0.0126,
+      0.014
+     ]
+    },
+    "400ns": {
+     "prep0": [
+      0.0145,
+      0.0009,
+      0.028
+     ],
+     "prep1": [
+      0.0604,
+      0.0456,
+      0.0751
+     ]
+    },
+    "1us": {
+     "prep0": [
+      -0.0004,
+      -0.0141,
+      0.0133
+     ],
+     "prep1": [
+      0.768,
+      0.7417,
+      0.7944
+     ]
+    },
+    "2us": {
+     "prep0": [
+      0.0095,
+      -0.0048,
+      0.0237
+     ],
+     "prep1": [
+      2.983,
+      2.936,
+      3.03
+     ]
+    }
+   },
+   "dynamics": "HMM L 1.46 sigma/bin from |1> (unreliable rates); L entries coincide with Q3 |1>->|0> (lift 9.4), L->|1> with Q3 |0>->|1> (18.5); Q3 decay rate 2.07 -> 4.33 %/100 ns when Q1 prepared |1>",
+   "location_sep": "(1.44-1.60 along, +0.5-0.9 perp) separations from c0, beyond |1>",
+   "cnn": {
+    "cnn_error_rate_pct": [
+     2.9789,
+     2.9476,
+     3.0106
+    ],
+    "n_err": 33364,
+    "prep0": {
+     "N": 560000,
+     "n_err": 5887,
+     "err_rate_pct": [
+      1.0513,
+      1.0249,
+      1.0783
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      0.1529,
+      -0.0441,
+      0.3498
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      5.7924,
+      5.224,
+      6.4185
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      2.8758,
+      1.9067,
+      4.3158
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      null,
+      null,
+      null
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      93.6813,
+      90.6973,
+      95.753
+     ]
+    },
+    "prep1": {
+     "N": 560000,
+     "n_err": 27477,
+     "err_rate_pct": [
+      4.9066,
+      4.8503,
+      4.9635
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      0.1419,
+      0.077,
+      0.2069
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      0.051,
+      0.0304,
+      0.0855
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      1.2222,
+      0.9527,
+      1.5667
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      0.0,
+      0.0,
+      2.2486
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      0.0229,
+      0.0136,
+      0.0384
+     ]
+    },
+    "prepall": {
+     "N": 1120000,
+     "n_err": 33364,
+     "err_rate_pct": [
+      2.9789,
+      2.9476,
+      3.0106
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      0.1439,
+      0.0801,
+      0.2077
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      1.064,
+      0.9594,
+      1.1799
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      1.442,
+      1.1648,
+      1.7839
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      0.0,
+      0.0,
+      2.2486
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      0.5765,
+      0.5197,
+      0.6395
+     ]
+    }
+   },
+   "paper_table_leakage_share_of_errors_pct": 0.0
+  },
+  {
+   "qubit_paper": "Q2",
+   "qubit_code": "q1",
+   "window": "paper '1 us' = raw samples 0-499 at 500 MS/s (feat1us bins 0-9, strictly causal FIR = CNN input)",
+   "denominators": "TEST split: 560,000 shots per prepared bit per qubit (1,120,000 per qubit); train replicates within CI",
+   "verdict": "probable |2>-like off-axis population (sourced from |1>, decays to |1>); moderate confidence (low SNR, partly correlated with Q3)",
+   "evidence_level": "moderate-low",
+   "prep0": {
+    "best_pct": 0.1671,
+    "ci95_pct": [
+     0.149,
+     0.1855
+    ],
+    "r_E3_pct": [
+     0.1659,
+     0.149,
+     0.1828
+    ],
+    "m1_E3_pct": [
+     0.1684,
+     0.1513,
+     0.1855
+    ],
+    "method_range_pct": [
+     0.047,
+     0.34
+    ],
+    "method_values_pct": {
+     "m1_E3": 0.168,
+     "r_E3": 0.166,
+     "m2": 0.11,
+     "m3_everL_1us": 0.342,
+     "m3_null_everL": 0.031,
+     "m4_BASE_5sigma_floor": 0.0468
+    }
+   },
+   "prep1": {
+    "best_pct": 1.5286,
+    "ci95_pct": [
+     1.483,
+     1.5745
+    ],
+    "r_E3_pct": [
+     1.518,
+     1.483,
+     1.5531
+    ],
+    "m1_E3_pct": [
+     1.5391,
+     1.5037,
+     1.5745
+    ],
+    "method_range_pct": [
+     0.46,
+     2.8
+    ],
+    "method_values_pct": {
+     "m1_E3": 1.539,
+     "r_E3": 1.518,
+     "m2": 1.503,
+     "m2_ci": [
+      1.401,
+      1.626
+     ],
+     "m2_model_range": [
+      0.46,
+      2.45
+     ],
+     "m3_everL_1us": 2.797,
+     "m3_L_at_bin9": 2.092,
+     "m3_startL": 0.28,
+     "m3_null_startL": 0.021,
+     "m4_BASE_5sigma_floor": 0.661
+    }
+   },
+   "overall": {
+    "best_pct": 0.8478,
+    "ci95_pct": [
+     0.816,
+     0.88
+    ]
+   },
+   "conditional_prep1_1us_pct": {
+    "Q3_prep0": [
+     1.2725,
+     1.2263,
+     1.3187
+    ],
+    "Q3_prep1": [
+     1.7636,
+     1.7108,
+     1.8163
+    ],
+    "all_other_bits_0": [
+     1.3143,
+     1.1846,
+     1.4439
+    ]
+   },
+   "E3_by_window_r_pct": {
+    "200ns": {
+     "prep0": [
+      0.0146,
+      0.0009,
+      0.0284
+     ],
+     "prep1": [
+      0.0821,
+      0.0666,
+      0.0977
+     ]
+    },
+    "400ns": {
+     "prep0": [
+      0.0525,
+      0.0377,
+      0.0673
+     ],
+     "prep1": [
+      0.3961,
+      0.375,
+      0.4172
+     ]
+    },
+    "1us": {
+     "prep0": [
+      0.1659,
+      0.149,
+      0.1828
+     ],
+     "prep1": [
+      1.518,
+      1.483,
+      1.5531
+     ]
+    },
+    "2us": {
+     "prep0": [
+      0.2639,
+      0.2452,
+      0.2827
+     ],
+     "prep1": [
+      2.6463,
+      2.6012,
+      2.6913
+     ]
+    }
+   },
+   "dynamics": "L decays to |1> (HMM 99.9 %, L-starters 90.3 % [88.3, 92.0]); tau_L 0.71-0.78 us vs Q2 |1>->|0> under readout 0.64-1.04 us (ratio not diagnostic); 30 % of prep1 / 65 % of prep0 excess in shots where Q3 is off-axis (m1)",
+   "location_sep": "plume at about (+2.5, +2.9) ADC from |0> (separation units inflated by the tiny separation)",
+   "cnn": {
+    "cnn_error_rate_pct": [
+     25.4305,
+     25.35,
+     25.5113
+    ],
+    "n_err": 284822,
+    "prep0": {
+     "N": 560000,
+     "n_err": 113643,
+     "err_rate_pct": [
+      20.2934,
+      20.1883,
+      20.3989
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      0.5904,
+      0.532,
+      0.6489
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      1.3991,
+      1.3325,
+      1.4691
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      55.8697,
+      53.4459,
+      58.2658
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      97.8528,
+      95.6348,
+      98.9561
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      83.0721,
+      81.3262,
+      84.6855
+     ]
+    },
+    "prep1": {
+     "N": 560000,
+     "n_err": 171179,
+     "err_rate_pct": [
+      30.5677,
+      30.4472,
+      30.6885
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      0.1402,
+      0.1148,
+      0.1656
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      0.1939,
+      0.1742,
+      0.2159
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      3.9521,
+      3.574,
+      4.3683
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      0.4412,
+      0.2827,
+      0.6882
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      2.1194,
+      1.9053,
+      2.3569
+     ]
+    },
+    "prepall": {
+     "N": 1120000,
+     "n_err": 284822,
+     "err_rate_pct": [
+      25.4305,
+      25.35,
+      25.5113
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      0.3198,
+      0.292,
+      0.3477
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      0.6748,
+      0.6454,
+      0.7055
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      11.7101,
+      11.1196,
+      12.3277
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      7.2971,
+      6.5829,
+      8.082
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      10.9335,
+      10.4807,
+      11.4034
+     ]
+    }
+   },
+   "paper_table_leakage_share_of_errors_pct": 0.2
+  },
+  {
+   "qubit_paper": "Q3",
+   "qubit_code": "q2",
+   "window": "paper '1 us' = raw samples 0-499 at 500 MS/s (feat1us bins 0-9, strictly causal FIR = CNN input)",
+   "denominators": "TEST split: 560,000 shots per prepared bit per qubit (1,120,000 per qubit); train replicates within CI",
+   "verdict": "LEAKAGE PRESENT: distinct third state with |2> dynamics, mostly created during the readout",
+   "evidence_level": "strong (all four methods + r spot checks; identity as |2> INFERRED from dynamics)",
+   "prep0": {
+    "best_pct": 0.7302,
+    "ci95_pct": [
+     0.6243,
+     0.8381
+    ],
+    "r_E3_pct": [
+     0.6495,
+     0.6243,
+     0.6747
+    ],
+    "m1_E3_pct": [
+     0.8109,
+     0.7836,
+     0.8381
+    ],
+    "method_range_pct": [
+     0.33,
+     1.25
+    ],
+    "method_values_pct": {
+     "m1_E3": 0.811,
+     "r_E3": 0.649,
+     "m2_M2f_far": 0.331,
+     "m3_everL_1us": 1.248,
+     "m3_L_at_bin9": 1.117,
+     "m3_startL": 0.054,
+     "m3_null_startL": 0.0,
+     "m4_BASE_5sigma_floor": 0.382
+    }
+   },
+   "prep1": {
+    "best_pct": 11.1902,
+    "ci95_pct": [
+     11.0751,
+     11.306
+    ],
+    "r_E3_pct": [
+     11.1632,
+     11.0751,
+     11.2513
+    ],
+    "m1_E3_pct": [
+     11.2171,
+     11.1283,
+     11.306
+    ],
+    "method_range_pct": [
+     8.94,
+     14.53
+    ],
+    "method_values_pct": {
+     "m1_E3": 11.217,
+     "r_E3": 11.163,
+     "m2_M2f_far": 8.937,
+     "m2_ci": [
+      8.796,
+      9.041
+     ],
+     "m2_model_range": [
+      8.9,
+      14.3
+     ],
+     "m3_everL_1us": 14.53,
+     "m3_everL_ci": [
+      14.438,
+      14.623
+     ],
+     "m3_L_at_bin9": 12.593,
+     "m3_startL_bins1_2": 1.971,
+     "m3_hmm_P_L_bin0": 0.605,
+     "m3_null_startL": 0.005,
+     "m4_BASE_5sigma_floor": 4.663,
+     "m4_candidates_surviving_screens": "95.7 %",
+     "r_threshold_curve_E2_E3_E4_E5_E6_m4style": [
+      15.55,
+      11.16,
+      9.14,
+      7.54,
+      6.07,
+      4.87
+     ]
+    }
+   },
+   "overall": {
+    "best_pct": 5.9602,
+    "ci95_pct": [
+     5.8497,
+     6.072
+    ]
+   },
+   "overall_method_range_pct": [
+    4.63,
+    7.89
+   ],
+   "E3_by_window_r_pct": {
+    "200ns": {
+     "prep0": [
+      0.0282,
+      0.014,
+      0.0424
+     ],
+     "prep1": [
+      0.8593,
+      0.8312,
+      0.8874
+     ]
+    },
+    "400ns": {
+     "prep0": [
+      0.1164,
+      0.1006,
+      0.1323
+     ],
+     "prep1": [
+      3.5743,
+      3.5232,
+      3.6254
+     ]
+    },
+    "1us": {
+     "prep0": [
+      0.6495,
+      0.6243,
+      0.6747
+     ],
+     "prep1": [
+      11.1632,
+      11.0751,
+      11.2513
+     ]
+    },
+    "2us": {
+     "prep0": [
+      1.1096,
+      1.0739,
+      1.1454
+     ],
+     "prep1": [
+      23.1575,
+      23.0286,
+      23.2864
+     ]
+    }
+   },
+   "m1_E3_0_500ns_prep1_pct": 5.05,
+   "lienhard_tabV_P2_pi_0p5us_MF": 0.052,
+   "present_at_readout_start_prep1_pct": {
+    "hmm_P_L_bin0": [
+     0.605,
+     0.589,
+     0.622
+    ],
+    "viterbi_L_bins1_2": [
+     1.971,
+     1.934,
+     2.007
+    ]
+   },
+   "present_at_readout_start_prep0_pct": {
+    "hmm_P_L_bin0": [
+     0.0097,
+     0.0076,
+     0.0118
+    ],
+    "viterbi_L_bins1_2": [
+     0.054,
+     0.048,
+     0.06
+    ]
+   },
+   "dynamics": {
+    "L_exit_branch_to_1": "HMM 99.91 % [99.90, 99.93]; L-starters 96.4 % [95.8, 97.0]; |0>-origin L episodes 96.8 % [96.2, 97.4] (r_spot2); model-light |1>:|0> destination 3:1 for both prepared bits",
+    "tau_L_us": "1.79 [1.77, 1.80] (HMM), 1.63 (no FIR), 1.81 [1.75, 1.87] (survival)",
+    "tau_1_to_0_under_readout_us": "2.47 [2.46, 2.48]; 4.78 [4.73, 4.84] with Q1 and Q5 prepared |0>",
+    "tau_L_over_tau_10": "0.72 (0.37 vs exchange-free)",
+    "tau_1_to_L_us": "3.79 (about 2.6 % per 100 ns)",
+    "entry_prob_bins3_9_by_start_state": "start |1>: 13.0 % (prep1), 15.8 % (prep0); start |0>: 1.34 % (prep1), 1.05 % (prep0)"
+   },
+   "location_sep": "(1.73-1.90 along, +1.05-1.51 perp) separations from c0; same for both prepared bits and all 16 neighbour configurations",
+   "cnn": {
+    "cnn_error_rate_pct": [
+     5.8415,
+     5.7982,
+     5.8851
+    ],
+    "n_err": 65425,
+    "prep0": {
+     "N": 560000,
+     "n_err": 12125,
+     "err_rate_pct": [
+      2.1652,
+      2.1274,
+      2.2036
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      10.6474,
+      10.0245,
+      11.2703
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      16.1567,
+      15.5123,
+      16.8225
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      31.4597,
+      30.1061,
+      32.8455
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      43.7445,
+      41.7161,
+      45.7941
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      28.0298,
+      26.9891,
+      29.0946
+     ]
+    },
+    "prep1": {
+     "N": 560000,
+     "n_err": 53300,
+     "err_rate_pct": [
+      9.5179,
+      9.4413,
+      9.595
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      2.5647,
+      2.4286,
+      2.7009
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      1.2983,
+      1.2057,
+      1.398
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      2.1757,
+      2.0646,
+      2.2927
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      0.6113,
+      0.5413,
+      0.6903
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      0.8504,
+      0.7896,
+      0.9159
+     ]
+    },
+    "prepall": {
+     "N": 1120000,
+     "n_err": 65425,
+     "err_rate_pct": [
+      5.8415,
+      5.7982,
+      5.8851
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      4.0627,
+      3.9026,
+      4.2228
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      4.052,
+      3.9036,
+      4.2058
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      4.0945,
+      3.9474,
+      4.2468
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      2.8127,
+      2.6631,
+      2.9705
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      3.0003,
+      2.8898,
+      3.1148
+     ]
+    }
+   },
+   "paper_table_leakage_share_of_errors_pct": 0.1
+  },
+  {
+   "qubit_paper": "Q4",
+   "qubit_code": "q3",
+   "window": "paper '1 us' = raw samples 0-499 at 500 MS/s (feat1us bins 0-9, strictly causal FIR = CNN input)",
+   "denominators": "TEST split: 560,000 shots per prepared bit per qubit (1,120,000 per qubit); train replicates within CI",
+   "verdict": "INCONCLUSIVE: multimodal |1> response; no method isolates a |2> population",
+   "evidence_level": "inconclusive",
+   "prep0": {
+    "best_pct": null,
+    "ci95_pct": null,
+    "reported_as": "not measurable"
+   },
+   "prep1": {
+    "best_pct": null,
+    "ci95_pct": null,
+    "reported_as": "not measurable"
+   },
+   "overall": {
+    "best_pct": null,
+    "ci95_pct": null
+   },
+   "descriptive_measurements": {
+    "sub_cloud_between_cores_m2_pct": {
+     "prep1_1us": 20.8,
+     "prep0_1us": 0.3,
+     "prep1_2us": 14.35,
+     "location_sep": [
+      0.41,
+      -0.22
+     ]
+    },
+    "main_cloud_in_prep0_m2_pct": 1.55,
+    "ratio_subcloud_to_main_prep0_vs_prep1": [
+     0.19,
+     0.3
+    ],
+    "r_gmm_segment_crosstab_prep1": "sub-cloud (0.5-1 us) -> (1.2-2 us): stays 72 %, -> main 20 %, -> |0> 8 %; the two halves of the broad main cloud exchange 24-34 % (this is m3's |1><->L telegraph)",
+    "m4_offaxis_5sigma_prep1": "2 / 800,000 (Gaussian expectation 0.46)",
+    "m4_shot_to_shot_memory": "sub-cloud lag-1 autocorrelation 0.15, over-dispersed in 500-shot bins",
+    "mirror_E3_prep1_1us_pct": {
+     "m1": 2.511,
+     "r": -8.3488,
+     "note": "frame dependent, not interpretable"
+    }
+   },
+   "lienhard_tabV_P2_pi": "0.734: most likely the split |1> response, not a |2> population",
+   "cnn": {
+    "cnn_error_rate_pct": [
+     5.3146,
+     5.2732,
+     5.3563
+    ],
+    "n_err": 59523,
+    "prep0": {
+     "N": 560000,
+     "n_err": 17703,
+     "err_rate_pct": [
+      3.1613,
+      3.1157,
+      3.2074
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      1.5365,
+      1.1376,
+      1.9353
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      61.0744,
+      60.3538,
+      61.7902
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      46.9779,
+      44.5946,
+      49.375
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      90.9091,
+      83.0746,
+      95.3214
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      54.0762,
+      53.3848,
+      54.7661
+     ]
+    },
+    "prep1": {
+     "N": 560000,
+     "n_err": 41820,
+     "err_rate_pct": [
+      7.4679,
+      7.3993,
+      7.537
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      -2.3505,
+      -2.5041,
+      -2.197
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      3.9144,
+      3.7327,
+      4.1045
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      0.3171,
+      0.2371,
+      0.424
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      0.0723,
+      0.0128,
+      0.4081
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      0.4382,
+      0.4176,
+      0.4599
+     ]
+    },
+    "prepall": {
+     "N": 1120000,
+     "n_err": 59523,
+     "err_rate_pct": [
+      5.3146,
+      5.2732,
+      5.3563
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      -1.1945,
+      -1.3548,
+      -1.0342
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      20.9146,
+      20.5898,
+      21.2432
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      5.233,
+      4.8971,
+      5.5905
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      5.5027,
+      4.4494,
+      6.7877
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      3.1633,
+      3.1091,
+      3.2185
+     ]
+    }
+   },
+   "paper_table_leakage_share_of_errors_pct": 0.04
+  },
+  {
+   "qubit_paper": "Q5",
+   "qubit_code": "q4",
+   "window": "paper '1 us' = raw samples 0-499 at 500 MS/s (feat1us bins 0-9, strictly causal FIR = CNN input)",
+   "denominators": "TEST split: 560,000 shots per prepared bit per qubit (1,120,000 per qubit); train replicates within CI",
+   "verdict": "|2>-like population of Q5 created mainly by a two-qubit exchange with Q3 (|1_Q3 1_Q5> -> |0_Q3 2_Q5>), weakly Q4-dependent; own baseline 0.3-0.5 % of prepared |1>",
+   "evidence_level": "moderate-strong for the population and its Q3 pairing (MEASURED); mechanism INFERRED",
+   "prep0": {
+    "best_pct": 0.1037,
+    "ci95_pct": [
+     0.0855,
+     0.122
+    ],
+    "r_E3_pct": [
+     0.1014,
+     0.0855,
+     0.1174
+    ],
+    "m1_E3_pct": [
+     0.1059,
+     0.0898,
+     0.122
+    ],
+    "method_range_pct": [
+     0.037,
+     0.79
+    ],
+    "method_values_pct": {
+     "m1_E3": 0.106,
+     "r_E3": 0.101,
+     "m2_M2f_far": 0.037,
+     "m3_everL_1us": 0.785,
+     "m3_null_everL": 0.0625,
+     "m4_BASE_5sigma_floor": 0.0086
+    }
+   },
+   "prep1": {
+    "best_pct": 4.468,
+    "ci95_pct": [
+     4.3402,
+     4.5965
+    ],
+    "r_E3_pct": [
+     4.5382,
+     4.4799,
+     4.5965
+    ],
+    "m1_E3_pct": [
+     4.3979,
+     4.3402,
+     4.4555
+    ],
+    "method_range_pct": [
+     3.09,
+     13.26
+    ],
+    "method_values_pct": {
+     "m1_E3": 4.398,
+     "r_E3": 4.538,
+     "m2_M2f_far": 3.09,
+     "m2_ci": [
+      2.728,
+      3.368
+     ],
+     "m2_model_range": [
+      3.1,
+      8.5
+     ],
+     "m3_everL_1us": 13.263,
+     "m3_null_everL": 1.165,
+     "m3_L_at_bin9": 11.252,
+     "m3_startL": 3.331,
+     "m3_null_startL": 0.359,
+     "m4_BASE_5sigma_floor": 0.146,
+     "r_threshold_curve_E2_E3_E4_E5_E6_m4style": [
+      6.14,
+      4.54,
+      2.27,
+      0.72,
+      0.13,
+      0.21
+     ]
+    }
+   },
+   "overall": {
+    "best_pct": 2.2858,
+    "ci95_pct": [
+     2.2128,
+     2.3592
+    ]
+   },
+   "conditional_prep1_1us_pct": {
+    "Q3_prep0": [
+     0.9071,
+     0.8654,
+     0.9489
+    ],
+    "Q3_prep1": [
+     8.1693,
+     8.0604,
+     8.2781
+    ],
+    "m1_per_config": {
+     "Q3=0,Q4=0": [
+      0.33,
+      0.49
+     ],
+     "Q3=1,Q4=0": [
+      8.56,
+      8.89
+     ],
+     "Q3=0,Q4=1": [
+      1.35,
+      1.66
+     ],
+     "Q3=1,Q4=1": [
+      6.8,
+      7.11
+     ]
+    },
+    "m3_startL_Q3=0_Q4=0": [
+     0.394,
+     0.362,
+     0.429
+    ],
+    "m3_null_startL": 0.359
+   },
+   "E3_by_window_r_pct": {
+    "200ns": {
+     "prep0": [
+      0.0132,
+      -0.0006,
+      0.0271
+     ],
+     "prep1": [
+      0.0036,
+      -0.0111,
+      0.0183
+     ]
+    },
+    "400ns": {
+     "prep0": [
+      0.0004,
+      -0.0133,
+      0.014
+     ],
+     "prep1": [
+      0.4845,
+      0.461,
+      0.5079
+     ]
+    },
+    "1us": {
+     "prep0": [
+      0.1014,
+      0.0855,
+      0.1174
+     ],
+     "prep1": [
+      4.5382,
+      4.4799,
+      4.5965
+     ]
+    },
+    "2us": {
+     "prep0": [
+      0.5955,
+      0.5713,
+      0.6197
+     ],
+     "prep1": [
+      10.0877,
+      10.0031,
+      10.1722
+     ]
+    }
+   },
+   "dynamics": "Q5 |1>->L coincides with Q3 |1>->|0> (lift 10.3 at lag 0), Q5 L->|1> with Q3 |0>->|1> (lift 20.4); Q3 decay 2.07 -> 3.92 %/100 ns when Q5 prepared |1>; Q3 flip precedes Q5 perp rise by about 200 ns (m4); L exits to |1> 87-94 % (HMM), model-light 13-14 % to |1> vs 1.4-2.0 % to |0>; Lienhard frequencies: Q3 f01 5.000 GHz vs Q5 f12 4.965 GHz (35 MHz)",
+   "location_sep": "(1.02-1.05 along, +0.48-0.65 perp) separations: directly above |1>",
+   "cnn": {
+    "cnn_error_rate_pct": [
+     2.9609,
+     2.9297,
+     2.9924
+    ],
+    "n_err": 33162,
+    "prep0": {
+     "N": 560000,
+     "n_err": 4794,
+     "err_rate_pct": [
+      0.8561,
+      0.8323,
+      0.8805
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      7.5094,
+      6.6999,
+      8.3188
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      21.965,
+      20.8157,
+      23.1591
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      28.3988,
+      26.0351,
+      30.8875
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      87.5,
+      77.2254,
+      93.5278
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      23.9481,
+      22.7098,
+      25.232
+     ]
+    },
+    "prep1": {
+     "N": 560000,
+     "n_err": 28368,
+     "err_rate_pct": [
+      5.0657,
+      5.0086,
+      5.1235
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      0.0881,
+      0.0044,
+      0.1719
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      0.8707,
+      0.769,
+      0.9857
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      0.3236,
+      0.2621,
+      0.3995
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      0.0499,
+      0.0137,
+      0.1818
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      0.3326,
+      0.2936,
+      0.3766
+     ]
+    },
+    "prepall": {
+     "N": 1120000,
+     "n_err": 33162,
+     "err_rate_pct": [
+      2.9609,
+      2.9297,
+      2.9924
+     ],
+     "leaked_share_of_errors_mirror3_pct": [
+      1.161,
+      1.0238,
+      1.2982
+     ],
+     "leaked_share_of_errors_hmm_everL_pct": [
+      3.9201,
+      3.7166,
+      4.1344
+     ],
+     "cnn_err_on_z_gt3_pct": [
+      1.656,
+      1.5128,
+      1.8126
+     ],
+     "cnn_err_on_z_gt5_pct": [
+      1.4247,
+      1.1038,
+      1.8372
+     ],
+     "cnn_err_on_hmm_everL_pct": [
+      1.6525,
+      1.5657,
+      1.7439
+     ]
+    }
+   },
+   "paper_table_leakage_share_of_errors_pct": 0.0
+  }
+ ],
+ "error_budget": {
+  "cnn_source": "~/oraqle_reports/preds_MCMitCNN_{pb,tb}.npy (runners/_xtalk_cnn.py, canonical MCMit-CNN m=16, colleague prep, 1 us = raw samples 0-499, full test file)",
+  "pooled_Q1_Q2_Q3_Q5_leaked_share_of_errors_pct": [
+   0.96,
+   0.926,
+   0.994
+  ],
+  "pooled_Q1_Q3_Q5_leaked_share_of_errors_pct": 2.34,
+  "statement": "Q3 leaked share of shots (5.96 %) equals its CNN error rate (5.84 %); Q5 2.29 % vs 2.96 %; Q1 0.35 % vs 2.98 %; Q2 0.85 % vs 25.43 %. About 98 % of leaked prepared-|1> shots are read as |1>."
+ },
+ "existing_numbers": [
+  {
+   "source": "oraqle-ics/chapters/ml_discriminators.tex Table tab:error_modes (HybridCNN, from herqules_error_breakdown_hybridcnn.csv)",
+   "value": "Leakage share of errors: Q1 0.0, Q2 0.2, Q3 0.1, Q4 0.04, Q5 0.0 %; pooled 0.2 %",
+   "assessment": "inconsistent (Q3, Q5) / not a leakage measurement",
+   "reason": "misclassified shots with |z(time-mean |IQ|)|>3 only; radial test misses the off-axis state and leaked shots read as correct are never counted; measured leaked share of canonical MCMit-CNN errors: Q1 0.14 %, Q2 0.32 %, Q3 4.06 % [3.90, 4.22], Q5 1.16 % [1.02, 1.30] (HMM 3.9 %); model is HybridCNN, not MCMit-CNN"
+  },
+  {
+   "source": "same, converted to share of shots (s1local)",
+   "value": "Q1 0, Q2 0.060 %, Q3 0.0081 %, Q4 0.0023 %, Q5 0; pooled 0.014 %",
+   "assessment": "inconsistent",
+   "reason": "measured leaked share of shots at 1 us: Q1 0.35 %, Q2 0.85 %, Q3 5.96 %, Q5 2.29 %"
+  },
+  {
+   "source": "paper text 'Excitation errors stay at 1e-3--1e-2 % of shots'",
+   "value": "1e-3-1e-2 %",
+   "assessment": "mislabelled and inconsistent",
+   "reason": "same amplitude-outlier metric"
+  },
+  {
+   "source": "three_level_labels.hdf5 (build_three_level_labels.py, perp > 3 sigma_pooled)",
+   "value": "overall 0.58/1.07/5.08/1.00/1.92 %; prep1 0.93/1.77/9.43/1.94/3.65 %; prep0 0.23/0.38/0.74/0.06/0.19 %",
+   "assessment": "circular calibration; roughly consistent in magnitude for Q2/Q3/Q5 prepared |1>, inconsistent for Q1, Q4 and prepared |0>",
+   "reason": "k tuned to a target rate (and the target is not met); Q1 prep0 labels are pure Gaussian tail (0 % survive), Q4 prep1 labels are its broad core (0.013 % survive); per-shot Jaccard with screened candidates 0.008-0.52; perp-only rule misses along-axis displacement"
+  },
+  {
+   "source": "Mude et al. 2025, arXiv 2405.08982",
+   "value": "487 (Q1) to 17,642 (Q4) of 1.6 M = 0.030-1.10 %",
+   "assessment": "not comparable / inconsistent",
+   "reason": "smallest spectral cluster is method dependent; the largest measured population here is Q3 (5.96 %), Q4 is not measurable, Q1 is 0.35 % overall"
+  },
+  {
+   "source": "herqules_error_modes_*.csv, herqules_error_breakdown_{hybridcnn,full}.csv",
+   "value": "amp outliers among errors at 1 us: HybridCNN Q2 673, Q3 91, Q4 26; HERQULES Q2 641, Q3 162, Q4 18; full-data Q2 537, Q3 137",
+   "assessment": "not a leakage measurement; inconsistent",
+   "reason": "same radial rule; measured leaked shots among canonical CNN errors for Q3 about 2,660 of 65,425"
+  },
+  {
+   "source": "synth_transfer_sweep_leakage_F0.98_*.csv",
+   "value": "gmean 0.978->0.953 (HERQULES), 0.971->0.942 (CNN) for p=0-0.2",
+   "assessment": "not comparable",
+   "reason": "synthetic |2> on the MF boundary labelled 1; real third states (Q1, Q3, Q5) lie on/beyond the |1> side and cost little 2-level accuracy"
+  },
+  {
+   "source": "HERQULES preclassifier 'ket2' (preclassifier_state.pkl)",
+   "value": "41-88 % of |1>-prepared",
+   "assessment": "not comparable (geometric artefact)",
+   "reason": "tangent purity circles collect the Gaussian tail"
+  },
+  {
+   "source": "iq_error_gallery_q5 (paper Fig. iq_taxonomy)",
+   "value": ">=2500 shots; 1.20 % of a 4000-shot |1> subsample",
+   "assessment": "consistent",
+   "reason": "stricter subset of the measured Q5 population (4.47 %); contradicts the table's Q5 0.0 %"
+  },
+  {
+   "source": "s2cluster Gaussian-null excess (prep1, k=3)",
+   "value": "Q1 0.60, Q2 1.44, Q3 8.78, Q4 -0.72, Q5 3.14 %",
+   "assessment": "consistent",
+   "reason": "same one-sided idea, HERQULES frame"
+  },
+  {
+   "source": "Lienhard et al. Tab. V P(2|pi)",
+   "value": "Q1 0.001, Q2 0.019, Q3 0.052, Q4 0.734, Q5 <<0.001",
+   "assessment": "Q3 consistent (m1 0-500 ns: 5.05 %); Q2 roughly consistent; Q1/Q5 not comparable (1-D MF blind to off-axis states); Q4 not a |2> population",
+   "reason": "per-qubit MF boxcar (Q3 0.5 us)"
+  },
+  {
+   "source": "s3lit thermal prior",
+   "value": "<= about 2e-3 per |1>-prepared shot",
+   "assessment": "inconsistent for Q3",
+   "reason": "Q3 leakage is readout-induced (|1>->L about 2.6 %/100 ns), within the literature readout-induced range 0.1-8 %"
+  }
+ ],
+ "spot_checks": {
+  "r_spotcheck.json": "A: unified E3 at 200/400 ns, 1/2 us, m4-style reproduction (Q3 prep1 4.869 % vs m4 4.872 %); B: GMM segment cross-tabs (Q4 telegraph = halves of broad |1> cloud); C: canonical MCMit-CNN errors vs leakage flags",
+  "r_spot2.json": "third-state exit destination and origin (Q3 |0>-origin L exits to |1> 96.8 %)",
+  "cluster_dir": "graham:~/oraqle-ics-sims/leakage/r/"
+ }
+}

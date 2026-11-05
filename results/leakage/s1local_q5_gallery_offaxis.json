@@ -1,0 +1,62 @@
+{
+  "source": "iq_error_gallery_q5.npz (HERQULES demod, Q5 = code q4, window T=500 samples = 1000 ns)",
+  "note": "cloud0/cloud1 are uniform random subsamples (4000 each) of prepared-|0>/|1> Q5 shots; leak_cloud is capped at 2500 so the full leak_m count is only known to be >= 2500",
+  "cloud0": {
+    "n": 4000,
+    "perp_skew": 0.013082541525363922,
+    "robust_sigma_perp": 0.6432884931564331,
+    "n_z_gt_3": 12,
+    "n_z_lt_m3": 8,
+    "n_z_gt_4": 0,
+    "n_z_lt_m4": 0,
+    "gallery_leak_rule_k": 0,
+    "gallery_leak_rule_pct_ci": [
+      0.0,
+      0.0,
+      0.09217947494830554
+    ],
+    "z_gt_3_pct_ci": [
+      0.3,
+      0.15510748538565558,
+      0.5234526285947689
+    ],
+    "par_over_r_quantiles_of_z_gt_3": [
+      -1.1603643894195557,
+      -0.9281271994113922,
+      -0.7621191740036011,
+      1.061466008424759,
+      1.4237820029258723
+    ]
+  },
+  "cloud1": {
+    "n": 4000,
+    "perp_skew": 0.9388211965560913,
+    "robust_sigma_perp": 0.7394362092018127,
+    "n_z_gt_3": 129,
+    "n_z_lt_m3": 1,
+    "n_z_gt_4": 51,
+    "n_z_lt_m4": 0,
+    "gallery_leak_rule_k": 48,
+    "gallery_leak_rule_pct_ci": [
+      1.2,
+      0.8860744216979299,
+      1.5879103280413567
+    ],
+    "z_gt_3_pct_ci": [
+      3.225,
+      2.699421853192276,
+      3.8202667495547384
+    ],
+    "par_over_r_quantiles_of_z_gt_3": [
+      0.834934675693512,
+      1.0620430707931519,
+      1.2629530429840088,
+      1.4791181087493896,
+      1.8196411371231078
+    ]
+  },
+  "leak_cloud": {
+    "n": 2500,
+    "frac_on_positive_side": 0.9872
+  }
+}
