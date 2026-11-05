@@ -1,0 +1,102 @@
+{
+  "units": [
+    "LUT",
+    "FF",
+    "BRAM18"
+  ],
+  "budget": [
+    2574208,
+    5148416,
+    7482
+  ],
+  "shared_qshell": [
+    109735,
+    171022,
+    265
+  ],
+  "common_static": [
+    63989,
+    128578,
+    64
+  ],
+  "native_helios_d9": [
+    115339,
+    59274,
+    34
+  ],
+  "applications": {
+    "Helios d9": [
+      116575,
+      63594,
+      34
+    ],
+    "MicroBlossom d9": [
+      155399,
+      67887,
+      39
+    ],
+    "MicroBlossom d3": [
+      9431,
+      11639,
+      39
+    ],
+    "Helios d3": [
+      7758,
+      17136,
+      34
+    ]
+  },
+  "source_reports": {
+    "helios-d9-hierarchy.rpt-c977c059": {
+      "sha256": "5565740db50a17996c437d41d2e25df6fdb3efebd28a45429d5d83c7ef3b66e5",
+      "report": "helios-d9-hierarchy.rpt"
+    },
+    "shell_utilization_c0.rpt-b1cf7df3": {
+      "sha256": "e75d6bcd5f66cd345e9a4bc6847ee714bd86624cb16a9cb1425fdbae3dae1827",
+      "report": "shell_utilization_c0.rpt"
+    },
+    "shell_utilization_c0.rpt-aec313f6": {
+      "sha256": "04c4f905a20af76162d786555ef30d5aba6282077456259eac31eaf92ec87f65",
+      "report": "shell_utilization_c0.rpt"
+    },
+    "user_synthed_c0_0.rpt-365b447f": {
+      "sha256": "747127ae5e24080c0ddb30b935f5e7ffbcf2f956fba1879e1d5dd86a8a35a361",
+      "report": "user_synthed_c0_0.rpt"
+    }
+  },
+  "shell_package": "/nix/store/is4i7q08jyfk22a80m7dy9qk53yzhlbi-qshell-v80-shell-0.1.0",
+  "classification": "Report-derived resource model; Helios d3 application is synthesis, other application footprints are routed hierarchy/subtractions. Not measured multi-slot placement.",
+  "slot_policy": {
+    "count": 10,
+    "class_counts": {
+      "small": 4,
+      "medium": 3,
+      "large": 3
+    },
+    "rounding_quantum": [
+      10000,
+      10000,
+      8
+    ]
+  },
+  "mixed_requests": [
+    "Helios d9",
+    "MicroBlossom d9",
+    "Helios d9",
+    "MicroBlossom d9",
+    "Helios d3",
+    "MicroBlossom d3",
+    "Helios d9",
+    "MicroBlossom d9",
+    "Helios d9",
+    "MicroBlossom d9"
+  ],
+  "activity": {
+    "family": "Helios d9",
+    "window_ns": 9000,
+    "runtime_file": "capacity_runtime.json",
+    "physical_error_rate": 0.005,
+    "offered_streams": 64,
+    "classification": "Trace-derived serialized native service, shared with Figures 8 and 9. Mean completed jobs per nine-round window over 100 periods; not a maximum logical-qubit count or measured hardware throughput. Slots dedicates one stream per service; Timesharing uses all offered streams."
+  }
+}

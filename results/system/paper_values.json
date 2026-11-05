@@ -1,0 +1,1598 @@
+{
+ "description": "Paper values of §7 (system_bottleneck.tex, oraqle-ics working tree 2026-11-05, HEAD d7cd4e9 + uncommitted edits) and the tolerance implied by the paper's rounding. Checked by system/paper_numbers.py --check (kinds: abs |m-e|<=tol; range [min,max] each within tol of the paper's endpoints; within every value in [lo-tol, hi+tol]; min m>=e; max m<=e; lt m<e; exact equality). known_issues are listed but not counted.",
+ "values": {
+  "lambda_2_2.6": {
+   "key": "lambda_cnn_600_1000",
+   "ref": "system_bottleneck.tex:9",
+   "text": "lattice-sim ... Lambda~2-2.6 (MCMit-CNN, 600-1000 ns)",
+   "expected": [
+    2.0,
+    2.6
+   ],
+   "tol": 0.05,
+   "kind": "within"
+  },
+  "t_r_gates": {
+   "key": "gates_ns",
+   "ref": "system_bottleneck.tex:9",
+   "text": "t_r = T + 340 ns",
+   "expected": 340,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "readout_share": {
+   "key": "readout_share_400_1000_pct",
+   "ref": "system_bottleneck.tex:9",
+   "text": "readout is 54-75% of the round between 400 and 1000 ns",
+   "expected": [
+    54,
+    75
+   ],
+   "tol": 0.5,
+   "kind": "range"
+  },
+  "distances_disc": {
+   "key": "distances_disc_hi",
+   "ref": "system_bottleneck.tex:9",
+   "text": "d in {5,...,15} (discriminator set)",
+   "expected": [
+    5,
+    7,
+    9,
+    11,
+    13,
+    15
+   ],
+   "tol": 0,
+   "kind": "exact"
+  },
+  "distances_grid": {
+   "key": "distances_grid",
+   "ref": "system_bottleneck.tex:9",
+   "text": "d in {5,...,15} (grid)",
+   "expected": [
+    5,
+    7,
+    9,
+    11,
+    13,
+    15
+   ],
+   "tol": 0,
+   "kind": "exact"
+  },
+  "fails_disc_1000": {
+   "key": "disc_hi_min_fails",
+   "ref": "system_bottleneck.tex:9",
+   "text": "~1,000 logical failures per point (discriminator set; every point >= 1000)",
+   "expected": 1000,
+   "tol": 0,
+   "kind": "min"
+  },
+  "fails_grid_200": {
+   "key": "grid_median_fails",
+   "ref": "system_bottleneck.tex:9",
+   "text": "~200 logical failures per point (grid; median >= 200, target 200)",
+   "expected": 200,
+   "tol": 0,
+   "kind": "min"
+  },
+  "grid_T": {
+   "key": "grid_T_range",
+   "ref": "system_bottleneck.tex:9",
+   "text": "grid T in [200, 1000] ns",
+   "expected": [
+    200,
+    1000
+   ],
+   "tol": 0,
+   "kind": "range"
+  },
+  "grid_p": {
+   "key": "grid_p_range_pct",
+   "ref": "system_bottleneck.tex:9",
+   "text": "grid p in [1, 20]%",
+   "expected": [
+    1,
+    20
+   ],
+   "tol": 1e-09,
+   "kind": "range"
+  },
+  "mb_772": {
+   "key": "mb_latency_ns",
+   "ref": "system_bottleneck.tex:13",
+   "text": "Micro Blossom 772 ns at d=9 (external, results/external)",
+   "expected": 772,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "helios_308": {
+   "key": "helios_p99_ns",
+   "ref": "system_bottleneck.tex:13",
+   "text": "Helios 308 ns at p99 (d=9, p=1e-3; external)",
+   "expected": 308,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "helios_weighted_2.5": {
+   "key": "helios_weighted_factor",
+   "ref": "system_bottleneck.tex:13",
+   "text": "weighted mode 2.5x longer per round (Helios Fig. 7c: 38/15)",
+   "expected": 2.5,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "gpu_2.1": {
+   "key": "gpu_latency_us",
+   "ref": "system_bottleneck.tex:13",
+   "text": "GPU decoder ~2.1 us at d=13 (external)",
+   "expected": 2.1,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "decode_dmax_57": {
+   "key": "decode_timing_dmax",
+   "ref": "system_bottleneck.tex:13",
+   "text": "PyMatching timed on pinned cores up to d=57",
+   "expected": 57,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "k_lut_3.4": {
+   "key": "k_lut",
+   "ref": "system_bottleneck.tex:13",
+   "text": "footprints scaled as d^3.4",
+   "expected": 3.4,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "k_lut_fit_9_21": {
+   "key": "helios_table_fit_ds",
+   "ref": "system_bottleneck.tex:13",
+   "text": "growth of Helios's synthesis from d=9 to 21",
+   "expected": [
+    9,
+    21
+   ],
+   "tol": 0,
+   "kind": "range"
+  },
+  "lq_30_2050": {
+   "key": "workload_lq_range",
+   "ref": "system_bottleneck.tex:15",
+   "text": "from 30 to 2,050 logical qubits",
+   "expected": [
+    30,
+    2050
+   ],
+   "tol": 0,
+   "kind": "range"
+  },
+  "rot_eps": {
+   "key": "rotation_eps",
+   "ref": "system_bottleneck.tex:15",
+   "text": "rotations synthesized to 1e-6",
+   "expected": 1e-06,
+   "tol": 1e-12,
+   "kind": "abs"
+  },
+  "budget_1pct": {
+   "key": "program_budget",
+   "ref": "system_bottleneck.tex:15",
+   "text": "1% total failure probability",
+   "expected": 0.01,
+   "tol": 1e-12,
+   "kind": "abs"
+  },
+  "cap_lambda2_p6_a": {
+   "key": "grid_lambda_max_p07",
+   "ref": "system_bottleneck.tex:31",
+   "text": "Lambda>=2 needs a readout error <=6%: Lambda<2 at p=7% for every T",
+   "expected": 2.0,
+   "tol": 0,
+   "kind": "lt"
+  },
+  "cap_lambda2_p6_b": {
+   "key": "grid_lambda_max_p06",
+   "ref": "system_bottleneck.tex:31",
+   "text": "... and Lambda>=2 is reached at p=6% (some T)",
+   "expected": 2.0,
+   "tol": 0,
+   "kind": "min"
+  },
+  "cap_cross_400": {
+   "key": "disc4_p400_min_pct",
+   "ref": "system_bottleneck.tex:31",
+   "text": "every discriminator crosses 6% between 400 and 600 ns: all > 6% at 400 ns",
+   "expected": 6.0,
+   "tol": 0,
+   "kind": "min"
+  },
+  "cap_st400_4_12": {
+   "key": "st400_rel_disc4",
+   "ref": "system_bottleneck.tex:31",
+   "text": "400 ns costs 4-12x the spacetime (4 plotted discriminators)",
+   "expected": [
+    4,
+    12
+   ],
+   "tol": 0.5,
+   "kind": "range"
+  },
+  "grid_p4_T200": {
+   "key": "grid_lambda_p04_T200",
+   "ref": "system_bottleneck.tex:36",
+   "text": "p=4%: 4.07 at 200 ns",
+   "expected": 4.07,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "grid_p4_T1000": {
+   "key": "grid_lambda_p04_T1000",
+   "ref": "system_bottleneck.tex:36",
+   "text": "p=4%: 2.50 at 1000 ns",
+   "expected": 2.5,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "grid_p5_T600": {
+   "key": "grid_lambda_p05_T600",
+   "ref": "system_bottleneck.tex:36",
+   "text": "2.49 at p=5%, 600 ns",
+   "expected": 2.49,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "grid_p8_T600": {
+   "key": "grid_lambda_p08_T600",
+   "ref": "system_bottleneck.tex:36",
+   "text": "1.44 at 8%, 600 ns",
+   "expected": 1.44,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "cnn_lambda_1000": {
+   "key": "cnn_lambda_1000",
+   "ref": "system_bottleneck.tex:36",
+   "text": "MCMit-CNN Lambda 2.41 at 1000 ns",
+   "expected": 2.41,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "cnn_lambda_800": {
+   "key": "cnn_lambda_800",
+   "ref": "system_bottleneck.tex:36",
+   "text": "2.61 at 800 ns",
+   "expected": 2.61,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "cnn_lambda_600": {
+   "key": "cnn_lambda_600",
+   "ref": "system_bottleneck.tex:36",
+   "text": "2.49 at 600 ns",
+   "expected": 2.49,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "cnn_lambda_400": {
+   "key": "cnn_lambda_400",
+   "ref": "system_bottleneck.tex:36",
+   "text": "1.49 at 400 ns",
+   "expected": 1.49,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "cnn_d_1000": {
+   "key": "cnn_d_1000",
+   "ref": "system_bottleneck.tex:36",
+   "text": "d=47 at 1000 ns (1e-9 per op)",
+   "expected": 47,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "cnn_d_800": {
+   "key": "cnn_d_800",
+   "ref": "system_bottleneck.tex:36",
+   "text": "d=43 at 800 ns",
+   "expected": 43,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "cnn_d_600": {
+   "key": "cnn_d_600",
+   "ref": "system_bottleneck.tex:36",
+   "text": "d=45 at 600 ns",
+   "expected": 45,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "cnn_d_400": {
+   "key": "cnn_d_400",
+   "ref": "system_bottleneck.tex:36",
+   "text": "d=105 at 400 ns",
+   "expected": 105,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "above_thr_200": {
+   "key": "n_below_threshold_200",
+   "ref": "system_bottleneck.tex:36",
+   "text": "at 200 ns every discriminator sits above threshold",
+   "expected": 0,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "op_speedup": {
+   "key": "op_speedup_600_800",
+   "ref": "system_bottleneck.tex:38",
+   "text": "each operation runs 1.3-1.5x faster at 600-800 ns",
+   "expected": [
+    1.3,
+    1.5
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "st_600_800": {
+   "key": "st_rel_600_800",
+   "ref": "system_bottleneck.tex:38",
+   "text": "spacetime falls to 0.62-0.65x at 600-800 ns",
+   "expected": [
+    0.62,
+    0.65
+   ],
+   "tol": 0.005,
+   "kind": "range"
+  },
+  "st_400_cnn": {
+   "key": "st400_rel",
+   "ref": "system_bottleneck.tex:38",
+   "text": "400 ns: spacetime rises 6.1x (CNN)",
+   "expected": 6.1,
+   "tol": 0.05,
+   "kind": "abs",
+   "index": "MCMit-CNN"
+  },
+  "qubicml_p_1000": {
+   "key": "qubicml_p1000_pct",
+   "ref": "system_bottleneck.tex:38",
+   "text": "readout error 6.2% (QubiCML)",
+   "expected": 6.2,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "cnn_p_1000": {
+   "key": "cnn_p1000_pct",
+   "ref": "system_bottleneck.tex:38",
+   "text": "instead of 4.3% (MCMit-CNN)",
+   "expected": 4.3,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "qubicml_lambda_1000": {
+   "key": "qubicml_lambda_1000",
+   "ref": "system_bottleneck.tex:38",
+   "text": "lowers Lambda from 2.41 to 1.79 at 1000 ns",
+   "expected": 1.79,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "qubicml_qubits": {
+   "key": "qubicml_qubits_rel_1000",
+   "ref": "system_bottleneck.tex:38",
+   "text": "2.3x the qubits",
+   "expected": 2.3,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "qubicml_st": {
+   "key": "qubicml_st_rel_1000",
+   "ref": "system_bottleneck.tex:38",
+   "text": "3.4x the spacetime (also Takeaway #9, :40)",
+   "expected": 3.4,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "herqules_1.0_1.3": {
+   "key": "herqules_st_rel_cnn1000_600_1000",
+   "ref": "system_bottleneck.tex:38",
+   "text": "HERQULES within 1.0-1.3x of the CNN at 600-1000 ns (relative to CNN at 1000 ns)",
+   "expected": [
+    1.0,
+    1.3
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "tk9_0.6": {
+   "key": "st_rel_600_800",
+   "ref": "system_bottleneck.tex:40",
+   "text": "600-800 ns is the spacetime optimum (0.6x of 1 us)",
+   "expected": [
+    0.6,
+    0.6
+   ],
+   "tol": 0.06,
+   "kind": "range"
+  },
+  "cap_cores_1000": {
+   "key": "cores_d17_1000",
+   "ref": "system_bottleneck.tex:56",
+   "text": "d=17: 15 cores at 1000 ns",
+   "expected": 15,
+   "tol": 0.5,
+   "kind": "abs"
+  },
+  "cap_cores_400": {
+   "key": "cores_d17_400",
+   "ref": "system_bottleneck.tex:56",
+   "text": "46 at 400 ns",
+   "expected": 46,
+   "tol": 0.5,
+   "kind": "abs"
+  },
+  "cap_rel_600": {
+   "key": "decode_rel_600",
+   "ref": "system_bottleneck.tex:56",
+   "text": "decode time per round 1.1x at 600 ns (all d)",
+   "expected": [
+    1.1,
+    1.1
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "cap_rel_400": {
+   "key": "decode_rel_400",
+   "ref": "system_bottleneck.tex:56",
+   "text": "1.7-1.9x at 400 ns (all d)",
+   "expected": [
+    1.7,
+    1.9
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "tab_sys_reaction": {
+   "key": "tab_sys_reaction_rows",
+   "ref": "system_bottleneck.tex:70,72-75",
+   "text": "Table tab:sys_reaction, every cell (t_r row and R / w per decoder)",
+   "expected": [
+    "Round $t_r$ & $0.74$\\,\\textmu s & $0.94$\\,\\textmu s & $1.14$\\,\\textmu s & $1.34$\\,\\textmu s \\\\",
+    "Micro Blossom (V80, measured) & $0.95$ / $2$ & $0.95$ / $2$ & $0.95$ / $1$ & $0.95$ / $1$ \\\\",
+    "Helios, unweighted$^\\ast$ (V80, measured) & $1.32$ / $2$ & $1.18$ / $2$ & $1.15$ / $2$ & $1.14$ / $1$ \\\\",
+    "Helios, $16$ weight levels$^\\dagger$ & $3.07$ / $5$ & $2.72$ / $3$ & $2.65$ / $3$ & $2.63$ / $2$ \\\\",
+    "GPU (reported) & $2.27$ / $4$ & $2.27$ / $3$ & $2.27$ / $2$ & $2.27$ / $2$ \\\\"
+   ],
+   "kind": "exact"
+  },
+  "det_1000": {
+   "key": "detection_pct_d9_1000",
+   "ref": "system_bottleneck.tex:80",
+   "text": "detection events cover 10.2% of the detectors per round at 1000 ns",
+   "expected": 10.2,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "det_600": {
+   "key": "detection_pct_d9_600",
+   "ref": "system_bottleneck.tex:80",
+   "text": "11.3% at 600 ns",
+   "expected": 11.3,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "det_400": {
+   "key": "detection_pct_d9_400",
+   "ref": "system_bottleneck.tex:80",
+   "text": "15.9% at 400 ns",
+   "expected": 15.9,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "det_200": {
+   "key": "detection_pct_d9_200",
+   "ref": "system_bottleneck.tex:80",
+   "text": "33% at 200 ns",
+   "expected": 33,
+   "tol": 0.5,
+   "kind": "abs"
+  },
+  "dec_rel_200": {
+   "key": "decode_rel_200",
+   "ref": "system_bottleneck.tex:80",
+   "text": "decode time per round 5-7x at 200 ns (every d within the stated envelope)",
+   "expected": [
+    5,
+    7
+   ],
+   "tol": 0.0,
+   "kind": "within"
+  },
+  "cores_600": {
+   "key": "cores_d17_600",
+   "ref": "system_bottleneck.tex:80",
+   "text": "cores for one d=17 patch: 23 at 600 ns",
+   "expected": 23,
+   "tol": 0.5,
+   "kind": "abs"
+  },
+  "cores_200": {
+   "key": "cores_d17_200",
+   "ref": "system_bottleneck.tex:80",
+   "text": "250 at 200 ns",
+   "expected": 250,
+   "tol": 0.5,
+   "kind": "abs"
+  },
+  "p_equiv": {
+   "key": "p_equiv_pct_400_1000",
+   "ref": "system_bottleneck.tex:80",
+   "text": "these detection rates match uniform circuit noise of p~0.7-1.2%",
+   "expected": [
+    0.7,
+    1.2
+   ],
+   "tol": 0.06,
+   "kind": "range"
+  },
+  "helios_p99_1us": {
+   "key": "helios_p99_ns_600_1000",
+   "ref": "system_bottleneck.tex:80",
+   "text": "where its p99 reaches ~1 us (600-1000 ns)",
+   "expected": [
+    1000,
+    1000
+   ],
+   "tol": 50,
+   "kind": "range"
+  },
+  "prog_d_range": {
+   "key": "program_d_range_cnn",
+   "ref": "system_bottleneck.tex:82",
+   "text": "feed-forward step of d+1 rounds (d=23-107 across our programs)",
+   "expected": [
+    23,
+    107
+   ],
+   "tol": 0,
+   "kind": "range"
+  },
+  "waiting_2_11": {
+   "key": "waiting_pct_range_cnn",
+   "ref": "system_bottleneck.tex:82",
+   "text": "waiting takes 2-11% of a program's runtime (also :84)",
+   "expected": [
+    2,
+    11
+   ],
+   "tol": 0.5,
+   "kind": "range"
+  },
+  "sw_cost_1.5_3": {
+   "key": "sw_decoding_cost_600_400",
+   "ref": "system_bottleneck.tex:84",
+   "text": "raise the software decoding cost 1.5-3x at 600-400 ns (cores, d=17)",
+   "expected": [
+    1.5,
+    3.0
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "rt_600": {
+   "key": "prog_runtime_600",
+   "ref": "system_bottleneck.tex:105",
+   "text": "600 ns CNN runs in 0.68-0.72x the time of 1 us (also caption :100, Takeaway :109)",
+   "expected": [
+    0.68,
+    0.72
+   ],
+   "tol": 0.005,
+   "kind": "range"
+  },
+  "q_600": {
+   "key": "prog_qubits_600",
+   "ref": "system_bottleneck.tex:105",
+   "text": "on 0.85-1.0x the physical qubits",
+   "expected": [
+    0.85,
+    1.0
+   ],
+   "tol": 0.005,
+   "kind": "range"
+  },
+  "ising_12.3": {
+   "key": "ising100_runtime_1000_s",
+   "ref": "system_bottleneck.tex:105",
+   "text": "100-qubit Ising drops from 12.3 s",
+   "expected": 12.3,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "ising_8.5": {
+   "key": "ising100_runtime_600_s",
+   "ref": "system_bottleneck.tex:105",
+   "text": "to 8.5 s",
+   "expected": 8.5,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "ising_0.92": {
+   "key": "ising100_qubits_600_rel",
+   "ref": "system_bottleneck.tex:105",
+   "text": "on 0.92x the qubits",
+   "expected": 0.92,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "rt_400": {
+   "key": "prog_runtime_400",
+   "ref": "system_bottleneck.tex:105",
+   "text": "400 ns makes every program 1.19-1.25x slower (caption :100: 1.2x)",
+   "expected": [
+    1.19,
+    1.25
+   ],
+   "tol": 0.005,
+   "kind": "range"
+  },
+  "q_400": {
+   "key": "prog_qubits_400",
+   "ref": "system_bottleneck.tex:105",
+   "text": "and 4.8-5.3x larger (caption: ~5x)",
+   "expected": [
+    4.8,
+    5.3
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "rt_qubicml": {
+   "key": "prog_runtime_qubicml1000",
+   "ref": "system_bottleneck.tex:105",
+   "text": "QubiCML at 1 us costs 1.4-1.5x the time",
+   "expected": [
+    1.4,
+    1.5
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "q_qubicml": {
+   "key": "prog_qubits_qubicml1000",
+   "ref": "system_bottleneck.tex:105",
+   "text": "and 2.2-2.5x the qubits (every program within the envelope; see known issue)",
+   "expected": [
+    2.2,
+    2.5
+   ],
+   "tol": 0.05,
+   "kind": "within"
+  },
+  "lq_adder14": {
+   "key": "workload_lq",
+   "index": "Adder-14",
+   "ref": "system_bottleneck.tex:105",
+   "text": "a 30-qubit adder",
+   "expected": 30,
+   "kind": "exact"
+  },
+  "lq_adder1024": {
+   "key": "workload_lq",
+   "index": "Adder-1024",
+   "ref": "system_bottleneck.tex:105",
+   "text": "a 2,050-qubit adder",
+   "expected": 2050,
+   "kind": "exact"
+  },
+  "lq_ising100": {
+   "key": "workload_lq",
+   "index": "Ising-100",
+   "ref": "system_bottleneck.tex:105",
+   "text": "a 100-qubit Ising simulation",
+   "expected": 100,
+   "kind": "exact"
+  },
+  "phys_range": {
+   "key": "log10_phys_qubits_range_cnn",
+   "ref": "system_bottleneck.tex:107",
+   "text": "from 3x10^4 to 4x10^7 physical qubits (log10)",
+   "expected": [
+    4.4771,
+    7.6021
+   ],
+   "tol": 0.06,
+   "kind": "range"
+  },
+  "gbps_plateau": {
+   "key": "gbps_cnn_600_1000",
+   "ref": "system_bottleneck.tex:121",
+   "text": "1.6-2.2 Gb/s of hard bits at 600-1000 ns with the CNN",
+   "expected": [
+    1.6,
+    2.2
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "gbps_400": {
+   "key": "gbps_cnn_400",
+   "ref": "system_bottleneck.tex:121",
+   "text": "14.9 Gb/s at 400 ns",
+   "expected": 14.9,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "v80_mb_19": {
+   "key": "v80_dmax_mb",
+   "ref": "system_bottleneck.tex:121",
+   "text": "one V80 holds a Micro Blossom instance only up to d=19",
+   "expected": 19,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "v80_helios_21": {
+   "key": "v80_dmax_helios",
+   "ref": "system_bottleneck.tex:121",
+   "text": "(Helios: d=21)",
+   "expected": 21,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "cards_plateau": {
+   "key": "mb_cards_cnn_600_1000",
+   "ref": "system_bottleneck.tex:121",
+   "text": "12-17 V80 cards of Micro Blossom at 600-1000 ns (also :125)",
+   "expected": [
+    12,
+    17
+   ],
+   "tol": 0.5,
+   "kind": "range"
+  },
+  "cards_400": {
+   "key": "mb_cards_cnn_400",
+   "ref": "system_bottleneck.tex:121",
+   "text": "and 254 at 400 ns",
+   "expected": 254,
+   "tol": 0.5,
+   "kind": "abs"
+  },
+  "helios_25pct": {
+   "key": "helios_smaller_pct",
+   "ref": "system_bottleneck.tex:121",
+   "text": "Unweighted Helios is 25% smaller",
+   "expected": 25,
+   "tol": 0.5,
+   "kind": "abs"
+  },
+  "qft30_cards": {
+   "key": "qft30_cards_600_1000",
+   "ref": "system_bottleneck.tex:121",
+   "text": "for the 30-qubit QFT this is 184-223 cards",
+   "expected": [
+    184,
+    223
+   ],
+   "tol": 0.5,
+   "kind": "range"
+  },
+  "qft30_cards_400": {
+   "key": "qft30_cards_400",
+   "ref": "system_bottleneck.tex:121",
+   "text": "against 3,721",
+   "expected": 3721,
+   "tol": 0.5,
+   "kind": "abs"
+  },
+  "rate_1.3": {
+   "key": "gbps_ratio_600_vs_1000",
+   "ref": "system_bottleneck.tex:123",
+   "text": "the faster round raises the syndrome rate by at most 1.3x",
+   "expected": 1.3,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "bw_7_9": {
+   "key": "gbps_mult_400",
+   "ref": "system_bottleneck.tex:123",
+   "text": "below it the distance multiplies the bandwidth by 7-9x",
+   "expected": [
+    7,
+    9
+   ],
+   "tol": 0.5,
+   "kind": "range"
+  },
+  "cards_15_21": {
+   "key": "cards_mult_400",
+   "ref": "system_bottleneck.tex:123",
+   "text": "and the decoding hardware by 15-21x",
+   "expected": [
+    15,
+    21
+   ],
+   "tol": 0.5,
+   "kind": "range"
+  },
+  "qubicml_bw_2.3": {
+   "key": "qubicml_gbps_rel_1000",
+   "ref": "system_bottleneck.tex:123",
+   "text": "QubiCML at 1 us needs 2.3x the bandwidth",
+   "expected": 2.3,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "qubicml_cards_4.0": {
+   "key": "qubicml_cards_rel_1000",
+   "ref": "system_bottleneck.tex:123",
+   "text": "and 4.0x the decoder cards of the CNN (Takeaway :125 'up to 4x')",
+   "expected": 4.0,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "cards_d_43_133": {
+   "key": "per_lq_d_range_disc4",
+   "ref": "system_bottleneck.tex:123",
+   "text": "extrapolate one synthesized distance to d=43-133",
+   "expected": [
+    43,
+    133
+   ],
+   "tol": 0,
+   "kind": "range"
+  },
+  "soft_1.12M": {
+   "key": "soft_test_shots",
+   "ref": "system_bottleneck.tex:139",
+   "text": "probability of |1> for each of 1.12M test shots",
+   "expected": [
+    1120000
+   ],
+   "tol": 0,
+   "kind": "exact"
+  },
+  "soft_f_grid": {
+   "key": "soft_f_grid_pct",
+   "ref": "system_bottleneck.tex:139",
+   "text": "f in {0,1,2,5,10,20}%",
+   "expected": [
+    0.0,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "tol": 0,
+   "kind": "exact"
+  },
+  "soft_8_patterns": {
+   "key": "soft_patterns",
+   "ref": "system_bottleneck.tex:139",
+   "text": "eight erasure patterns per point",
+   "expected": 8,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "soft_raises_all": {
+   "key": "soft_flag_raises_lambda_all_T",
+   "ref": "system_bottleneck.tex:145",
+   "text": "a 2-10% flag raises Lambda at every readout length (min gain > 0)",
+   "expected": 0.0,
+   "tol": 0,
+   "kind": "min"
+  },
+  "soft_cut_4x": {
+   "key": "soft_st_cut_400",
+   "ref": "system_bottleneck.tex:145",
+   "text": "the flag cuts it 4x at 400 ns (also :152, :154)",
+   "expected": 4.0,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "soft_0.46": {
+   "key": "soft_st_600_f5",
+   "ref": "system_bottleneck.tex:145",
+   "text": "to 0.46x of hard 1 us at 600 ns (also :152, :154)",
+   "expected": 0.46,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "soft_bw_cost": {
+   "key": "soft_gbps_cost_best_600_1000",
+   "ref": "system_bottleneck.tex:145",
+   "text": "the extra bit costs 1.5-1.8x at 600-1000 ns (best flags)",
+   "expected": [
+    1.5,
+    1.8
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "soft_bw_saves_400": {
+   "key": "soft_gbps_ratio_best_400",
+   "ref": "system_bottleneck.tex:145",
+   "text": "and saves bandwidth at 400 ns",
+   "expected": 1.0,
+   "tol": 0,
+   "kind": "lt"
+  },
+  "soft_42": {
+   "key": "soft_flagged_err_400_f5_pct",
+   "ref": "system_bottleneck.tex:150",
+   "text": "at 400 ns the least confident 5% are wrong 42% of the time",
+   "expected": 42,
+   "tol": 0.5,
+   "kind": "abs"
+  },
+  "soft_7.9": {
+   "key": "soft_eu_400_f0_pct",
+   "ref": "system_bottleneck.tex:150",
+   "text": "lowers the error of the rest from 7.9%",
+   "expected": 7.9,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "soft_4.9": {
+   "key": "soft_eu_400_f10_pct",
+   "ref": "system_bottleneck.tex:150",
+   "text": "to 4.9% (400 ns, 10% flagged)",
+   "expected": 4.9,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "soft_3.7": {
+   "key": "soft_eu_600_f5_pct",
+   "ref": "system_bottleneck.tex:150",
+   "text": "(600 ns, 5% flagged: ... to 3.7%)",
+   "expected": 3.7,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "soft_l400": {
+   "key": "soft_lambda_400_f0",
+   "ref": "system_bottleneck.tex:150",
+   "text": "Lambda from 1.50",
+   "expected": 1.5,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "soft_l400f": {
+   "key": "soft_lambda_400_f0.1",
+   "ref": "system_bottleneck.tex:150",
+   "text": "to 1.87 at 400 ns (10%)",
+   "expected": 1.87,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "soft_l600": {
+   "key": "soft_lambda_600_f0",
+   "ref": "system_bottleneck.tex:150",
+   "text": "from 2.52",
+   "expected": 2.52,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "soft_l600f": {
+   "key": "soft_lambda_600_f0.05",
+   "ref": "system_bottleneck.tex:150",
+   "text": "to 2.90 at 600 ns (5%)",
+   "expected": 2.9,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "soft_l1000": {
+   "key": "soft_lambda_1000_f0",
+   "ref": "system_bottleneck.tex:150",
+   "text": "from 2.48",
+   "expected": 2.48,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "soft_l1000f": {
+   "key": "soft_lambda_1000_f0.02",
+   "ref": "system_bottleneck.tex:150",
+   "text": "to 2.59 at 1000 ns (2%)",
+   "expected": 2.59,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "soft_f20_2.0": {
+   "key": "soft_lambda_f20_600_1000",
+   "ref": "system_bottleneck.tex:150",
+   "text": "flagging 20% lowers Lambda to ~2.0 (600-1000 ns; see known issue for 400 ns)",
+   "expected": [
+    2.0,
+    2.0
+   ],
+   "tol": 0.06,
+   "kind": "range"
+  },
+  "soft_200_above": {
+   "key": "soft_n_below_threshold_200",
+   "ref": "system_bottleneck.tex:150",
+   "text": "at 200 ns the code stays above threshold at every flag fraction",
+   "expected": 0,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "soft_d400": {
+   "key": "soft_d_400",
+   "ref": "system_bottleneck.tex:152",
+   "text": "distance from 103",
+   "expected": 103,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "soft_d400f": {
+   "key": "soft_d_400_f10",
+   "ref": "system_bottleneck.tex:152",
+   "text": "to 65 (400 ns)",
+   "expected": 65,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "soft_st400": {
+   "key": "soft_st_400",
+   "ref": "system_bottleneck.tex:152",
+   "text": "spacetime from 6.5x",
+   "expected": 6.5,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "soft_st400f": {
+   "key": "soft_st_400_f10",
+   "ref": "system_bottleneck.tex:152",
+   "text": "to 1.65x that of hard 1 us",
+   "expected": 1.65,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "soft_d600": {
+   "key": "soft_d_600",
+   "ref": "system_bottleneck.tex:152",
+   "text": "at 600 ns distance from 45",
+   "expected": 45,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "soft_d600f": {
+   "key": "soft_d_600_f5",
+   "ref": "system_bottleneck.tex:152",
+   "text": "to 39",
+   "expected": 39,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "soft_bw600f": {
+   "key": "soft_gbps_600_f5",
+   "ref": "system_bottleneck.tex:152",
+   "text": "3.2 Gb/s",
+   "expected": 3.2,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "soft_bw600": {
+   "key": "soft_gbps_600",
+   "ref": "system_bottleneck.tex:152",
+   "text": "instead of 2.2 Gb/s at 600 ns",
+   "expected": 2.2,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "soft_bw400": {
+   "key": "soft_gbps_400",
+   "ref": "system_bottleneck.tex:152",
+   "text": "at 400 ns from 14.3",
+   "expected": 14.3,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "soft_bw400f": {
+   "key": "soft_gbps_400_f10",
+   "ref": "system_bottleneck.tex:152",
+   "text": "to 11.4 Gb/s",
+   "expected": 11.4,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "soft_wrong_24_42": {
+   "key": "soft_flagged_err_f5_pct_400_1000",
+   "ref": "system_bottleneck.tex:152",
+   "text": "flagged measurements are wrong only 24-42% of the time (5% flag, 1000-400 ns)",
+   "expected": [
+    24,
+    42
+   ],
+   "tol": 0.5,
+   "kind": "range"
+  },
+  "soft_tk_1.5": {
+   "key": "soft_gbps_cost_best_600_1000",
+   "ref": "system_bottleneck.tex:154",
+   "text": "for 1.5x the bandwidth (600 ns, best flag)",
+   "expected": 1.5,
+   "tol": 0.05,
+   "kind": "abs",
+   "index": 0
+  },
+  "flip_vs_cz": {
+   "key": "flip_vs_cz_ratio",
+   "ref": "system_bottleneck.tex:164",
+   "text": "at 4-8% a measurement flip is 35-65x likelier than a CZ fault (0.12%)",
+   "expected": [
+    35,
+    65
+   ],
+   "tol": 1.5,
+   "kind": "range"
+  },
+  "cz_0.12": {
+   "key": "cz_error_pct",
+   "ref": "system_bottleneck.tex:164",
+   "text": "two-qubit gate fault (0.12%)",
+   "expected": 0.12,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "dec_5_variants": {
+   "key": "dec_n_matching_variants",
+   "ref": "system_bottleneck.tex:166",
+   "text": "five variants of PyMatching",
+   "expected": 5,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "dec_300": {
+   "key": "dec_target_fails",
+   "ref": "system_bottleneck.tex:166",
+   "text": "at least 300 failures of the full-weight decoder per point",
+   "expected": 300,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "dec_ds": {
+   "key": "dec_distances",
+   "ref": "system_bottleneck.tex:166",
+   "text": "d in {5,...,13}",
+   "expected": [
+    5,
+    7,
+    9,
+    11,
+    13
+   ],
+   "tol": 0,
+   "kind": "exact"
+  },
+  "dec_soft_pts": {
+   "key": "dec_soft_points",
+   "ref": "system_bottleneck.tex:166",
+   "text": "best soft flags: 600 ns with 5%, 400 ns with 10%",
+   "expected": [
+    [
+     600,
+     0.05
+    ],
+    [
+     400,
+     0.1
+    ]
+   ],
+   "tol": 0,
+   "kind": "exact"
+  },
+  "cap_whel_5pct": {
+   "key": "whel_vs_mb_same_point_ising100",
+   "ref": "system_bottleneck.tex:172",
+   "text": "weighted Helios stays within 5% of Micro Blossom's runtime (Ising-100)",
+   "expected": [
+    1.0,
+    1.05
+   ],
+   "tol": 0.0,
+   "kind": "within"
+  },
+  "cap_uhel_rt": {
+   "key": "uhel_rt_hard_ising100",
+   "ref": "system_bottleneck.tex:172",
+   "text": "unweighted Helios takes 2.4-2.9x the time (hard readout, Ising-100)",
+   "expected": [
+    2.4,
+    2.9
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "dec_lw": {
+   "key": "dec_lambda_w_600_1000",
+   "ref": "system_bottleneck.tex:177",
+   "text": "Lambda falls from 2.46-2.53 (full weights, 600-1000 ns)",
+   "expected": [
+    2.46,
+    2.53
+   ],
+   "tol": 0.005,
+   "kind": "range"
+  },
+  "dec_lu": {
+   "key": "dec_lambda_u_600_1000",
+   "ref": "system_bottleneck.tex:177",
+   "text": "to 1.31-1.38 (uniform weights)",
+   "expected": [
+    1.31,
+    1.38
+   ],
+   "tol": 0.005,
+   "kind": "range"
+  },
+  "dec_lu400": {
+   "key": "dec_lambda_u_400",
+   "ref": "system_bottleneck.tex:177",
+   "text": "400 ns crosses threshold (Lambda=0.95)",
+   "expected": 0.95,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "dec_du": {
+   "key": "dec_d_u_600_1000",
+   "ref": "system_bottleneck.tex:177",
+   "text": "133-159 instead of",
+   "expected": [
+    133,
+    159
+   ],
+   "tol": 0,
+   "kind": "range"
+  },
+  "dec_dw": {
+   "key": "dec_d_w_600_1000",
+   "ref": "system_bottleneck.tex:177",
+   "text": "45-47",
+   "expected": [
+    45,
+    47
+   ],
+   "tol": 0,
+   "kind": "range"
+  },
+  "dec_stu": {
+   "key": "dec_st_u_600_1000",
+   "ref": "system_bottleneck.tex:177",
+   "text": "spacetime reaches 19-27x that of full weights at 1 us",
+   "expected": [
+    19,
+    27
+   ],
+   "tol": 0.5,
+   "kind": "range"
+  },
+  "dec_stu600": {
+   "key": "dec_st_u_600",
+   "ref": "system_bottleneck.tex:177",
+   "text": "600 ns costs more spacetime than 1 us (26.8x",
+   "expected": 26.8,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "dec_stu1000": {
+   "key": "dec_st_u_1000",
+   "ref": "system_bottleneck.tex:177",
+   "text": "against 23.4x)",
+   "expected": 23.4,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "dec_q16": {
+   "key": "dec_q16_max_abs_dlambda_hard",
+   "ref": "system_bottleneck.tex:177",
+   "text": "16 weight levels stay within 0.03 of full weights in Lambda (hard readout points; see known issue)",
+   "expected": 0.03,
+   "tol": 0,
+   "kind": "max"
+  },
+  "dec_q16_d": {
+   "key": "dec_q16_same_d_all",
+   "ref": "system_bottleneck.tex:177",
+   "text": "and need the same distance at every point",
+   "expected": 1,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "dec_q4_dl": {
+   "key": "dec_q4_dlambda_all",
+   "ref": "system_bottleneck.tex:177",
+   "text": "4 levels lower Lambda by 0.1-0.5",
+   "expected": [
+    0.1,
+    0.5
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "dec_q4_st": {
+   "key": "dec_q4_st_ratio_hard",
+   "ref": "system_bottleneck.tex:177",
+   "text": "and cost 1.5-2.2x the spacetime (hard readout points; see known issue)",
+   "expected": [
+    1.5,
+    2.2
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "dec_corr": {
+   "key": "dec_corr_dlambda_600_1000",
+   "ref": "system_bottleneck.tex:177",
+   "text": "correlated matching adds 0.16-0.29 to Lambda at 600-1000 ns",
+   "expected": [
+    0.16,
+    0.29
+   ],
+   "tol": 0.005,
+   "kind": "range"
+  },
+  "dec_corr_st": {
+   "key": "dec_corr_st_600",
+   "ref": "system_bottleneck.tex:177",
+   "text": "reaching 0.47x the spacetime at 600 ns",
+   "expected": 0.47,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "dec_corr_400": {
+   "key": "dec_corr_dlambda_400",
+   "ref": "system_bottleneck.tex:177",
+   "text": "and nothing at 400 ns",
+   "expected": 0.01,
+   "tol": 0,
+   "kind": "max"
+  },
+  "dec_flag_u0": {
+   "key": "dec_lambda_u_600",
+   "ref": "system_bottleneck.tex:177",
+   "text": "at 600 ns, uniform weights rise from Lambda=1.31",
+   "expected": 1.31,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "dec_flag_u": {
+   "key": "dec_flag600_lambda_u",
+   "ref": "system_bottleneck.tex:177",
+   "text": "to 1.69 (5% flagged)",
+   "expected": 1.69,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "dec_flag_w": {
+   "key": "dec_flag600_lambda_w",
+   "ref": "system_bottleneck.tex:177",
+   "text": "full weights to 3.00",
+   "expected": 3.0,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "dec_flag_c": {
+   "key": "dec_flag600_lambda_c",
+   "ref": "system_bottleneck.tex:177",
+   "text": "and correlated matching to 3.30",
+   "expected": 3.3,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "dec_flag_st": {
+   "key": "dec_flag600_st_c",
+   "ref": "system_bottleneck.tex:177",
+   "text": "0.29x the spacetime of hard 1 us readout",
+   "expected": 0.29,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "whel_2.5x": {
+   "key": "whel_slowdown",
+   "ref": "system_bottleneck.tex:179",
+   "text": "weighted Helios decodes 2.5x slower than unweighted Helios (also :181)",
+   "expected": 2.5,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "whel_wait5": {
+   "key": "whel_max_wait",
+   "ref": "system_bottleneck.tex:179",
+   "text": "and waits up to five rounds",
+   "expected": 5,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "whel_2_15": {
+   "key": "whel_vs_mb_same_point_all",
+   "ref": "system_bottleneck.tex:179",
+   "text": "yet it runs within 2-15% of Micro Blossom at every operating point (six programs; Takeaway :181 'at most 15%')",
+   "expected": [
+    1.02,
+    1.15
+   ],
+   "tol": 0.005,
+   "kind": "range"
+  },
+  "uhel_rt1000": {
+   "key": "uhel_rt_1000_all",
+   "ref": "system_bottleneck.tex:179",
+   "text": "unweighted Helios runs 2.8-2.9x longer at 1 us",
+   "expected": [
+    2.8,
+    2.9
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "uhel_q1000": {
+   "key": "uhel_q_1000_all",
+   "ref": "system_bottleneck.tex:179",
+   "text": "on 8-10x the qubits",
+   "expected": [
+    8,
+    10
+   ],
+   "tol": 0.5,
+   "kind": "range"
+  },
+  "uhel_rt600": {
+   "key": "uhel_rt_600_all",
+   "ref": "system_bottleneck.tex:179",
+   "text": "2.3-2.5x longer at 600 ns",
+   "expected": [
+    2.3,
+    2.5
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "uhel_q600": {
+   "key": "uhel_q_600_all",
+   "ref": "system_bottleneck.tex:179",
+   "text": "on 12-14x the qubits",
+   "expected": [
+    12,
+    14
+   ],
+   "tol": 0.5,
+   "kind": "range"
+  },
+  "uhel_no400": {
+   "key": "uhel_runs_at_400_hard",
+   "ref": "system_bottleneck.tex:179",
+   "text": "and cannot run at 400 ns",
+   "expected": 0,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "uhel_flag_rt": {
+   "key": "uhel_rt_600f5_all",
+   "ref": "system_bottleneck.tex:179",
+   "text": "at 600 ns with 5% flagged, unweighted Helios needs 1.2x the runtime",
+   "expected": [
+    1.2,
+    1.2
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "uhel_flag_q": {
+   "key": "uhel_q_600f5_all",
+   "ref": "system_bottleneck.tex:179",
+   "text": "and 2.9-3.2x the qubits of Micro Blossom at 1 us",
+   "expected": [
+    2.9,
+    3.2
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "mb_flag_rt": {
+   "key": "mb_rt_600f5_all",
+   "ref": "system_bottleneck.tex:179",
+   "text": "Micro Blossom itself needs 0.58-0.62x the runtime",
+   "expected": [
+    0.58,
+    0.62
+   ],
+   "tol": 0.005,
+   "kind": "range"
+  },
+  "mb_flag_q": {
+   "key": "mb_q_600f5_all",
+   "ref": "system_bottleneck.tex:179",
+   "text": "on 0.63-0.72x the qubits",
+   "expected": [
+    0.63,
+    0.72
+   ],
+   "tol": 0.005,
+   "kind": "range"
+  },
+  "tk14_rt": {
+   "key": "uhel_rt_hard_all",
+   "ref": "system_bottleneck.tex:181",
+   "text": "uniform weights cost 2.3-2.9x the runtime",
+   "expected": [
+    2.3,
+    2.9
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "tk14_q": {
+   "key": "uhel_q_hard_all",
+   "ref": "system_bottleneck.tex:181",
+   "text": "and 8-14x the qubits",
+   "expected": [
+    8,
+    14
+   ],
+   "tol": 0.5,
+   "kind": "range"
+  }
+ },
+ "known_issues": {
+  "st400_qubicml_rounding": {
+   "key": "st400_rel",
+   "ref": "system_bottleneck.tex:38",
+   "issue": "'12.4x (QubiCML)' at 400 ns: the value is 12.35 (st400_rel[QubiCML]), which rounds to 12.3 (the caption's 4-12x is fine)."
+  },
+  "qubicml_600_above_6pct": {
+   "key": "disc4_p600_max_pct",
+   "ref": "system_bottleneck.tex:31",
+   "issue": "'every discriminator crosses [6%] between 400 and 600 ns' and :36 'every operating curve crosses the Lambda=2 contour between 400 and 600 ns': QubiCML at 600 ns has p = 6.15% and Lambda = 1.96 (disc4_lambda600); it reaches Lambda >= 2 only at 800 ns (2.00) and falls back to 1.79 at 1000 ns."
+  },
+  "herqules_qualifier": {
+   "key": "herqules_st_rel_same_T_600_1000",
+   "ref": "system_bottleneck.tex:38",
+   "issue": "'HERQULES stays within 1.0-1.3x of the CNN at 600-1000 ns' holds only relative to the CNN at 1000 ns; at equal readout length HERQULES costs 1.28-1.63x the CNN's spacetime."
+  },
+  "soft_5.1_rounding": {
+   "key": "soft_eu_600_f0_pct",
+   "ref": "system_bottleneck.tex:150",
+   "issue": "'(600 ns, 5% flagged: 5.1% to 3.7%)': the retrained soft CNN's unflagged error at 600 ns is 5.045% (rounds to 5.0%); 5.06% is the Table-fidelity value (discriminators.py)."
+  },
+  "soft_f20_400": {
+   "key": "soft_lambda_f20_400",
+   "ref": "system_bottleneck.tex:150",
+   "issue": "'flagging 20% ... lowers Lambda to ~2.0 everywhere' is false at 400 ns (Lambda = 1.66 with 20% flagged)."
+  },
+  "q16_soft_point": {
+   "key": "dec_q16_max_abs_dlambda_all",
+   "ref": "system_bottleneck.tex:177",
+   "issue": "'16 weight levels stay within 0.03 of full weights in Lambda' holds at the four hard-readout points (max 0.019) but not at the 600 ns / 5% soft point (2.968 vs 3.004, 0.036)."
+  },
+  "q4_soft_point": {
+   "key": "dec_q4_st_ratio_all",
+   "ref": "system_bottleneck.tex:177",
+   "issue": "'4 levels ... cost 1.5-2.2x the spacetime' holds at the hard-readout points; at the 600 ns / 5% soft point it is 1.17x."
+  },
+  "caption_uhel_qubits": {
+   "key": "uhel_q_hard_ising100",
+   "ref": "system_bottleneck.tex:172",
+   "issue": "Caption 'unweighted Helios takes ... 9-12x the qubits of Micro Blossom at 1000 ns' (hard readout, Ising-100): the range is 8.50-12.03 (800 ns gives 8.498)."
+  },
+  "sys13_168ns": {
+   "key": null,
+   "ref": "system_bottleneck.tex:13",
+   "issue": "'308 ns at p99 (d=9, p=1e-3, 168 ns per round)': 168 ns/round belongs to the 1.51 us whole-shot path (incl. serialization), not to the 308 ns decode stage (~34 ns/round); the number is not used in any computation (results/external/COMPARISON_qshell_vs_sec7.md)."
+  },
+  "sys13_772_unverified": {
+   "key": null,
+   "ref": "system_bottleneck.tex:13",
+   "issue": "Micro Blossom 772 ns at d=9 'on an AMD Alveo V80': no bench, log or script exists in any repository (transcribed from CXL-Quantum Table tab:req-decoders, commit 3307a11); results/external/README.md."
+  },
+  "q_qubicml_rounding": {
+   "key": "prog_qubits_qubicml1000",
+   "ref": "system_bottleneck.tex:105",
+   "issue": "'QubiCML at 1 us costs ... 2.2-2.5x the qubits': the six programs give 2.19-2.45x, i.e. 2.2-2.4x when rounded."
+  }
+ }
+}

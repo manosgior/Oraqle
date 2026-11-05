@@ -1,0 +1,65 @@
+{
+ "source": "CXL-Quantum paper repository (Overleaf git), Table tab:req-decoders, section 'Ours: cycle-accurate RTL, batch, no transport'",
+ "repo": "CXL-Quantum (local: ~/Documents/GitHub/CXL-Quantum)",
+ "commit": "2ac2adf759fcd69c9e816e68cd93a500f7b3c2da",
+ "commit_date": "2026-10-28",
+ "file": "sections/requirements.tex lines 1-25 (copy: cxl_quantum/requirements_tab_req-decoders.tex)",
+ "introduced_in": "commit 3307a11 (2026-10-07, 'updated numbers for decoding'); that commit's prose: 'Decoding a whole d=9 shot in batch takes 772 ns with Micro Blossom and 1.51 us with Helios, but most of Helios's path is its native interface serializing a 52-byte request and a 263-byte correction; the decode stage itself, from the last syndrome to the first result, takes 184 ns at the median and 308 ns at p99 over 50,000 shots under circuit-level noise at p=1e-3.'",
+ "values": [
+  {
+   "quantity": "Helios d=9 whole-shot latency (V80, batch, incl. native interface serialization)",
+   "value_ns": 1510,
+   "per_round_ns": 168,
+   "used_in": [
+    "oraqle-ics/sims/system_cost.py @ d7cd4e9 (canonical copy in this repo: system/system_cost.py): docstring only (168 ns per round)",
+    "oraqle-ics/chapters/system_bottleneck.tex (working tree 2026-11-05):13 '168 ns per round'"
+   ],
+   "upstream": "qShell RTL bench: XSim 1516/1552 ns zero/hook input (qshell sections/appendix.tex:265-266); per round = 1.51 us / 9"
+  },
+  {
+   "quantity": "Helios d=9 decode stage, median / p99, SI1000 p=1e-3, 50,000 shots",
+   "value_ns": [
+    184,
+    308
+   ],
+   "used_in": [
+    "oraqle-ics/sims/system_cost.py @ d7cd4e9 (canonical copy in this repo: system/system_cost.py): HELIOS_P99_NS = 308 (line 66)",
+    "oraqle-ics/chapters/system_bottleneck.tex (working tree 2026-11-05):13 '308 ns at p99'"
+   ],
+   "upstream": "qshell figures/figure8_ler.json (CXL-Quantum plots/fig_budget.py:14-16 says so); = qShell kernel-counter quantiles (figure8_core_ler.json: 172 / 296 ns) + 12 ns, see qshell_summary.json"
+  },
+  {
+   "quantity": "Micro Blossom d=9 whole-shot latency (V80, batch)",
+   "value_ns": 772,
+   "per_round_ns": 86,
+   "used_in": [
+    "oraqle-ics/sims/system_cost.py @ d7cd4e9 (canonical copy in this repo: system/system_cost.py): DECODERS['Micro Blossom'].lat_ns = 772 (line 72)",
+    "oraqle-ics/chapters/system_bottleneck.tex (working tree 2026-11-05):13, tab:sys_reaction (0.95 us = 74 + 772 + 100 ns)"
+   ],
+   "upstream": "NOT FOUND: no bench output, log or script producing 772 ns exists in CXL-Quantum, qshell, oraqle-ics or the cluster. qShell's only Micro Blossom d=9 latency (figures/plots.py:428-435: 240 / 480 ns zero / nonzero syndrome) is marked 'illustrative' in its caption (sections/evaluation.tex:154-156)."
+  },
+  {
+   "quantity": "Micro Blossom d=9 streaming mean (reported)",
+   "value_ns": 370,
+   "used_in": [
+    "oraqle-ics/sims/system_cost.py @ d7cd4e9 (canonical copy in this repo: system/system_cost.py): docstring only (not used in any computation)"
+   ],
+   "upstream": "Wu2025Micro (arXiv 2502.14787), as cited by CXL-Quantum"
+  },
+  {
+   "quantity": "CUDA-Q QEC GPU decode, d=13 (reported)",
+   "value_ns": 2100,
+   "used_in": [
+    "oraqle-ics/sims/system_cost.py @ d7cd4e9 (canonical copy in this repo: system/system_cost.py): DECODERS['GPU'].lat_ns = 2100 (line 75)",
+    "oraqle-ics/chapters/system_bottleneck.tex (working tree 2026-11-05):13, tab:sys_reaction (2.27 us = 74 + 2100 + 100 ns)"
+   ],
+   "upstream": "Nvidia2026Cudaq (CUDA-Q QEC 0.6 blog, 2026-04-14), as cited by CXL-Quantum"
+  }
+ ],
+ "workloads": {
+  "file": "plots/workloads.py (copy: cxl_quantum/workloads.py; last changed in cd4249f, 2026-10-21)",
+  "our_copy": "oraqle-ics/sims/workloads.py == system/workloads.py",
+  "diff": "grover(), adder(), ising(), qft(), EPS = 1e-6 and T_PER_ROT are byte-identical apart from whitespace; ours rewrites the docstring (d+1 instead of d rounds per logical op, matching the lattice-surgery op of analyze.py), drops the __main__ printout and adds Adder-1024 and Ising-100 (r = 1000) to WORKLOADS."
+ },
+ "checked": "Transcription CXL-Quantum -> system_cost.py verified (values identical). The 308/184 ns pair verified against its primary data (qShell figure8_ler.json / figure8_core_ler.json, offset constant). 772 ns and 1.51 us could not be traced to a primary measurement record."
+}

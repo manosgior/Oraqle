@@ -1,0 +1,68 @@
+{
+ "values": [
+  {
+   "quantity": "Lambda measured on hardware (Willow, d=3..7 memory)",
+   "value": 2.14,
+   "bib_key": "Acharya2025Quantum (references.bib:2684; Nature 638, 2025)",
+   "used_in": [
+    "oraqle-ics/chapters/system_bottleneck.tex (working tree 2026-11-05):9 'Lambda=2.14 measured on hardware'"
+   ],
+   "checked": "NOT checked against a local copy (no PDF in any local repo); cited value only"
+  },
+  {
+   "quantity": "Workload model: magic-state / lattice-surgery cost model",
+   "bib_key": "Litinski2019Game (references.bib:3849)",
+   "used_in": [
+    "system/workloads.py docstring",
+    "oraqle-ics/chapters/system_bottleneck.tex (working tree 2026-11-05):15"
+   ],
+   "checked": "model citation only, no number transcribed"
+  },
+  {
+   "quantity": "Rotation synthesis: ~3 log2(1/eps) sequential T gates per rotation, eps = 1e-6 -> 60",
+   "bib_key": "Ross2016Optimal (references.bib:3859)",
+   "used_in": [
+    "system/workloads.py: EPS, T_PER_ROT (lines 18-19)",
+    "oraqle-ics/chapters/system_bottleneck.tex (working tree 2026-11-05):15 'rotations synthesized to 1e-6'"
+   ],
+   "checked": "NOT checked against a local copy; 3 log2(1/eps) is the commonly quoted Ross-Selinger T-count scaling, inherited unchanged from CXL-Quantum/plots/workloads.py"
+  },
+  {
+   "quantity": "Micro Blossom streaming mean 0.37 us at d=9",
+   "bib_key": "Wu2025Micro (references.bib:3835; arXiv 2502.14787)",
+   "used_in": [
+    "oraqle-ics/sims/system_cost.py @ d7cd4e9 (canonical copy in this repo: system/system_cost.py): docstring only"
+   ],
+   "checked": "NOT checked against a local copy; transcription chain CXL-Quantum tab:req-decoders only"
+  },
+  {
+   "quantity": "GPU (CUDA-Q QEC 0.6 on NVQLink) ~2.1 us at d=13",
+   "value_ns": 2100,
+   "bib_key": "Nvidia2026Cudaq (references.bib:3842)",
+   "used_in": [
+    "oraqle-ics/sims/system_cost.py @ d7cd4e9 (canonical copy in this repo: system/system_cost.py): DECODERS['GPU'] lat_ns=2100 (line 75)",
+    "oraqle-ics/chapters/system_bottleneck.tex (working tree 2026-11-05):13, :75"
+   ],
+   "checked": "NOT checked against the primary (web blog); transcription chain CXL-Quantum tab:req-decoders only"
+  },
+  {
+   "quantity": "ibm_boston (IBM Heron r3) noise preset",
+   "values": {
+    "CZ_error": 0.001191,
+    "SX_error": 0.0001637,
+    "T1_us": 284.95,
+    "T2_us": 322.68,
+    "readout_median": 0.00354,
+    "SX_ns": 32,
+    "CZ_ns": 68
+   },
+   "used_in": [
+    "system/sweep_ler.py PRESETS (CZ, T1, T2; CNOT 70 ns is lattice-sim's own latency)",
+    "ECCentric drivers run_ler_noise_models.py / run_ler_discriminators.py (CZ, SX, T1, T2, 32/68 ns)",
+    "oraqle-ics/chapters/qec_impact.tex:20 footnote"
+   ],
+   "source": "IBM Quantum platform dashboard snapshot of ibm_boston (eccentric run_ler_noise_models.py:69-72: 'SX error, CZ error, T2: ibm_boston dashboard image; T1, gate latencies, reset: evaluate_mcm_latency.py')",
+   "checked": "NOT checkable: the dashboard image was not archived; values agree across eccentric@da7164c, lattice-sim compare_readout_artifact.py and system/sweep_ler.py"
+  }
+ ]
+}

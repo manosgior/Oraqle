@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/work/sims/decode_timing.py", line 61, in <module>
+    main()
+  File "/work/sims/decode_timing.py", line 36, in main
+    c, m, t_circ = build(a.d, T, p, a.preset)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/sims/sweep_ler.py", line 56, in build
+    sim = circuit(distance=d, num_patches_x=20, num_patches_y=20, spacing=1, disable_noise=False,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/lattice-sim/sim/circuit_4.py", line 129, in __init__
+    self.assign_decoder_latency()
+  File "/work/lattice-sim/sim/circuit_4.py", line 134, in assign_decoder_latency
+    self.decoder_latency = latencies[self.d]
+                           ~~~~~~~~~^^^^^^^^
+KeyError: 21

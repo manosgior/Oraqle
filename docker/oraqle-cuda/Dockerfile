@@ -1,3 +1,12 @@
+# oraqle (CUDA): the image of the May-June 2026 discriminator runs (Discriminators/runners/hyper_optimize*.py, HERQULES
+# runners, baseline_no_ML.py), i.e. the §4/§5 numbers that feed results/discriminators/master_fidelity.csv.
+# Moved here from the repository root (Oraqle/Dockerfile @87d3162, identical on graham ~/Oraqle). Changes: the
+# requirements path follows the new layout (Discriminators/ -> discriminators/); nothing else.
+# NOT PINNED: the image no longer exists on graham or steve, so its package versions cannot be recovered;
+# discriminators/requirements.txt is unpinned. The closest pinned environment is docker/torch-gpu (torch 2.5.1 cu124).
+# Build context = repository root:  docker build -f docker/oraqle-cuda/Dockerfile -t oraqle .
+# The run instructions below are the historical ones (graham paths); use docker/README.md for the new layout.
+#
 FROM nvidia/cuda:12.2.2-cudnn8-runtime-ubuntu22.04
 
 # Prevent interactive prompts during package installation
@@ -19,7 +28,7 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 WORKDIR /app
 
 # Copy the requirements file first to leverage Docker cache for dependencies
-COPY Discriminators/requirements.txt /app/requirements.txt
+COPY discriminators/requirements.txt /app/requirements.txt
 
 # Install Python dependencies
 RUN pip3 install --no-cache-dir -r requirements.txt

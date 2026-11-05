@@ -1,0 +1,10 @@
+2 readout points x 1 distances: 8 jobs, 8 workers
+[   128s] 1/8 d=13 T=400 f=0.1: mwpm_w=100 mwpm_c=83 mwpm_q16=100 mwpm_q4=218 mwpm_u=1140 uf_w=0 uf_u=0 / 15000 (0 UF)
+[   288s] 2/8 d=13 T=400 f=0.1: mwpm_w=110 mwpm_c=90 mwpm_q16=108 mwpm_q4=212 mwpm_u=1775 uf_w=0 uf_u=0 / 35000 (0 UF)
+[   301s] 3/8 d=13 T=400 f=0.1: mwpm_w=109 mwpm_c=96 mwpm_q16=116 mwpm_q4=271 mwpm_u=2008 uf_w=0 uf_u=0 / 35000 (0 UF)
+[   311s] 4/8 d=13 T=400 f=0.1: mwpm_w=140 mwpm_c=127 mwpm_q16=139 mwpm_q4=340 mwpm_u=2191 uf_w=0 uf_u=0 / 35000 (0 UF)
+[   951s] 5/8 d=13 T=600 f=0.05: mwpm_w=100 mwpm_c=69 mwpm_q16=114 mwpm_q4=137 mwpm_u=2573 uf_w=0 uf_u=0 / 195000 (0 UF)
+[   966s] 6/8 d=13 T=600 f=0.05: mwpm_w=77 mwpm_c=42 mwpm_q16=77 mwpm_q4=116 mwpm_u=2318 uf_w=0 uf_u=0 / 195000 (0 UF)
+[  1138s] 7/8 d=13 T=600 f=0.05: mwpm_w=77 mwpm_c=42 mwpm_q16=83 mwpm_q4=111 mwpm_u=2598 uf_w=0 uf_u=0 / 235000 (0 UF)
+[  1314s] 8/8 d=13 T=600 f=0.05: mwpm_w=81 mwpm_c=55 mwpm_q16=82 mwpm_q4=144 mwpm_u=3268 uf_w=0 uf_u=0 / 275000 (0 UF)
+done

@@ -1,0 +1,33 @@
+{
+ "note": "Constants in system_cost.py that are design choices, not measurements; listed so nobody mistakes them for external data.",
+ "values": [
+  {
+   "name": "FRAME_NS",
+   "value": 100,
+   "meaning": "frame update and branch selection after decoding (reaction R = t_disc + t_dec + FRAME_NS)",
+   "origin": "same 0.1 us 'decision allowance' as CXL-Quantum (plots/fig_budget.py: 'a deliberately loose allowance'; the only measured point is 4 ns for a d=3 PFU, yang2026nndecoder Table I)",
+   "used_in": "oraqle-ics/sims/system_cost.py @ d7cd4e9 (canonical copy in this repo: system/system_cost.py) line 63; oraqle-ics/chapters/system_bottleneck.tex (working tree 2026-11-05):64 table caption"
+  },
+  {
+   "name": "BUDGET",
+   "value": 0.01,
+   "meaning": "total program failure probability",
+   "origin": "design choice",
+   "used_in": "oraqle-ics/sims/system_cost.py @ d7cd4e9 (canonical copy in this repo: system/system_cost.py) line 61; oraqle-ics/chapters/system_bottleneck.tex (working tree 2026-11-05):15"
+  },
+  {
+   "name": "LATENCY_NS['MCMit-CNN']",
+   "value": 74,
+   "meaning": "FPGA inference latency of the discriminator",
+   "origin": "paper Table tab:fpga_resources (internal, not external)",
+   "used_in": "system/discriminators.py line 32"
+  },
+  {
+   "name": "GATES_NS",
+   "value": 340,
+   "meaning": "non-readout part of a lattice-sim round (4 CNOT x 70 ns + 2 H x 30 ns)",
+   "origin": "lattice-sim circuit timing (checked against circuit_ns)",
+   "used_in": "system/analyze.py, system_cost.py"
+  }
+ ]
+}

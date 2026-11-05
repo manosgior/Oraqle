@@ -1,0 +1,314 @@
+{
+ "description": "Paper values of \u00a76 (qec_impact.tex) and the QEC appendix (appendix_herqules.tex) with the tolerance implied by the paper's rounding. Checked by qec/eccentric/paper_numbers.py --check (kind abs: |measured-expected|<=tol; min: measured>=expected; max: measured<=expected; source driver: constants parsed from the ECCentric drivers). Line numbers refer to oraqle-ics working tree of 2026-11-05.",
+ "values": {
+  "noise_cz": {
+   "source": "driver",
+   "field": "cz",
+   "ref": "qec_impact.tex:20",
+   "text": "CZ error 1.191x10^-3",
+   "expected": 0.001191,
+   "tol": 1e-09,
+   "unit": "abs"
+  },
+  "noise_sx": {
+   "source": "driver",
+   "field": "sx",
+   "ref": "qec_impact.tex:20",
+   "text": "SX error 1.637x10^-4",
+   "expected": 0.0001637,
+   "tol": 1e-10,
+   "unit": "abs"
+  },
+  "noise_t1": {
+   "source": "driver",
+   "field": "t1_us",
+   "ref": "qec_impact.tex:20",
+   "text": "T1=284.95 us",
+   "expected": 284.95,
+   "tol": 1e-06,
+   "unit": "us"
+  },
+  "noise_t2": {
+   "source": "driver",
+   "field": "t2_us",
+   "ref": "qec_impact.tex:20",
+   "text": "T2=322.68 us",
+   "expected": 322.68,
+   "tol": 1e-06,
+   "unit": "us"
+  },
+  "d5_swing_surface": {
+   "key": "d5_swing_surface_pct",
+   "ref": "qec_impact.tex:27,32,38",
+   "text": "LER swings by up to ~590% (surface)",
+   "expected": 590,
+   "tol": 1.0,
+   "unit": "%",
+   "kind": "abs"
+  },
+  "d5_surface_cnn_200": {
+   "key": "d5_surface_cnn_ler_200",
+   "ref": "qec_impact.tex:32",
+   "text": "surface 0.419 (200 ns, MCMit-CNN)",
+   "expected": 0.419,
+   "tol": 0.0005,
+   "unit": "abs",
+   "kind": "abs"
+  },
+  "d5_surface_cnn_1000": {
+   "key": "d5_surface_cnn_ler_1000",
+   "ref": "qec_impact.tex:32",
+   "text": "to 0.061 (1000 ns)",
+   "expected": 0.061,
+   "tol": 0.0005,
+   "unit": "abs",
+   "kind": "abs"
+  },
+  "d5_swing_mean3": {
+   "key": "d5_swing_mean3_pct",
+   "ref": "qec_impact.tex:32",
+   "text": "~415% averaged over the three responsive codes (paper rounds loosely; measured 416.0 with max/min-1)",
+   "expected": 415,
+   "tol": 2.0,
+   "unit": "%",
+   "kind": "abs"
+  },
+  "d5_spread_200": {
+   "key": "d5_spread_mean4_200_pct",
+   "ref": "qec_impact.tex:27,32",
+   "text": "spread ~10% at 200 ns (mean over 4 codes)",
+   "expected": 10,
+   "tol": 0.5,
+   "unit": "%",
+   "kind": "abs"
+  },
+  "d5_spread_1000": {
+   "key": "d5_spread_mean4_1000_pct",
+   "ref": "qec_impact.tex:27,32",
+   "text": "~39% at 1000 ns (mean over 4 codes)",
+   "expected": 39,
+   "tol": 0.5,
+   "unit": "%",
+   "kind": "abs"
+  },
+  "d5_spread_max": {
+   "key": "d5_spread_max_pct",
+   "ref": "qec_impact.tex:27,32,38",
+   "text": "peaking at 69% on surface at 1000 ns",
+   "expected": 69,
+   "tol": 0.5,
+   "unit": "%",
+   "kind": "abs"
+  },
+  "d5_spread_max_where": {
+   "key": "d5_spread_max_is_surface_1000",
+   "ref": "qec_impact.tex:32",
+   "text": "the 69% peak is surface at 1000 ns",
+   "expected": 1,
+   "tol": 0,
+   "unit": "bool",
+   "kind": "abs"
+  },
+  "d5_surface_qubicml_1000": {
+   "key": "d5_surface_qubicml_ler_1000",
+   "ref": "qec_impact.tex:32",
+   "text": "QubiCML 0.103 vs MCMit-CNN 0.061",
+   "expected": 0.103,
+   "tol": 0.0005,
+   "unit": "abs",
+   "kind": "abs"
+  },
+  "d5_spread_mean": {
+   "key": "d5_spread_mean_pct",
+   "ref": "qec_impact.tex:32",
+   "text": "averages ~26%",
+   "expected": 26,
+   "tol": 0.5,
+   "unit": "%",
+   "kind": "abs"
+  },
+  "d5_bacon_sat_min": {
+   "key": "d5_bacon_ler_min",
+   "ref": "qec_impact.tex:32",
+   "text": "Bacon-Shor is saturated (~0.5)",
+   "expected": 0.45,
+   "tol": null,
+   "unit": "abs",
+   "kind": "min"
+  },
+  "d5_bacon_sat_max": {
+   "key": "d5_bacon_ler_max",
+   "ref": "qec_impact.tex:32",
+   "text": "Bacon-Shor is saturated (~0.5)",
+   "expected": 0.55,
+   "tol": null,
+   "unit": "abs",
+   "kind": "max"
+  },
+  "d12_gap_surface": {
+   "key": "d12_swing_surface_pct",
+   "ref": "qec_impact.tex:35",
+   "text": "surface 1%",
+   "expected": 1,
+   "tol": 0.5,
+   "unit": "%",
+   "kind": "abs"
+  },
+  "d12_gap_hh": {
+   "key": "d12_swing_hh_pct",
+   "ref": "qec_impact.tex:35",
+   "text": "heavy-hex 2%",
+   "expected": 2,
+   "tol": 0.5,
+   "unit": "%",
+   "kind": "abs"
+  },
+  "d12_gap_bacon": {
+   "key": "d12_swing_bacon_pct",
+   "ref": "qec_impact.tex:35",
+   "text": "Bacon-Shor 6%",
+   "expected": 6,
+   "tol": 0.5,
+   "unit": "%",
+   "kind": "abs"
+  },
+  "d12_gap_gross": {
+   "key": "d12_swing_gross_pct",
+   "ref": "qec_impact.tex:35",
+   "text": "Gross 0%",
+   "expected": 0,
+   "tol": 0.5,
+   "unit": "%",
+   "kind": "abs"
+  },
+  "d12_gap_max": {
+   "key": "d12_swing_max_pct",
+   "ref": "qec_impact.tex:27,35,38",
+   "text": "duration gap <=6% (largest, Bacon-Shor 6.3%, rounds to 6)",
+   "expected": 6,
+   "tol": 0.5,
+   "unit": "%",
+   "kind": "abs"
+  },
+  "d12_spread_mean": {
+   "key": "d12_spread_mean_pct",
+   "ref": "qec_impact.tex:27,35,38",
+   "text": "discriminator spread ~2.4% on average",
+   "expected": 2.4,
+   "tol": 0.05,
+   "unit": "%",
+   "kind": "abs"
+  },
+  "d12_spread_max": {
+   "key": "d12_spread_max_pct",
+   "ref": "qec_impact.tex:27,35",
+   "text": "top 7.5%",
+   "expected": 7.5,
+   "tol": 0.05,
+   "unit": "%",
+   "kind": "abs"
+  },
+  "d12_sat_min": {
+   "key": "d12_sat_ler_min",
+   "ref": "qec_impact.tex:27,35",
+   "text": "surface/Bacon/heavy-hex ~0.5 at d=12",
+   "expected": 0.45,
+   "tol": null,
+   "unit": "abs",
+   "kind": "min"
+  },
+  "d12_sat_max": {
+   "key": "d12_sat_ler_max",
+   "ref": "qec_impact.tex:27,35",
+   "text": "surface/Bacon/heavy-hex ~0.5 at d=12",
+   "expected": 0.55,
+   "tol": null,
+   "unit": "abs",
+   "kind": "max"
+  },
+  "d12_gross_sat": {
+   "key": "d12_gross_ler_min",
+   "ref": "qec_impact.tex:27,35",
+   "text": "Gross ~1.0 at d=12",
+   "expected": 0.99,
+   "tol": null,
+   "unit": "abs",
+   "kind": "min"
+  },
+  "lowcoh_cut": {
+   "key": "lowcoh_max_cut_pct",
+   "ref": "qec_impact.tex:101,106,109",
+   "text": "shortening cuts the LER by up to ~27%",
+   "expected": 27,
+   "tol": 0.5,
+   "unit": "%",
+   "kind": "abs"
+  },
+  "lowcoh_cut_where": {
+   "key": "lowcoh_max_cut_is_surface5",
+   "ref": "qec_impact.tex:101",
+   "text": "(largest cut is surface d=5: 1 - 0.0222/0.0303)",
+   "expected": 1,
+   "tol": 0,
+   "unit": "bool",
+   "kind": "abs"
+  },
+  "app_latsim_u600": {
+   "key": "app_latsim_current_argmin_all600",
+   "ref": "appendix_herqules.tex:409,416",
+   "text": "lattice-sim U-shaped optimum near 600 ns (argmin = 600 ns at every d, current noise)",
+   "expected": 1,
+   "tol": 0,
+   "unit": "bool",
+   "kind": "abs"
+  },
+  "app_orders_lower": {
+   "key": "app_ecc_over_latsim_600_min_ratio",
+   "ref": "appendix_herqules.tex:409,416; qec_impact.tex:20",
+   "text": "lattice-sim orders of magnitude lower (ECCentric/lattice-sim LER at 600 ns >= 10x at every d)",
+   "expected": 10,
+   "tol": null,
+   "unit": "x",
+   "kind": "min"
+  },
+  "app_decoh_bacon": {
+   "key": "app_decoh_bacon_ler_max",
+   "ref": "appendix_herqules.tex:433,438",
+   "text": "decoherence-only: Bacon-Shor ~0",
+   "expected": 0.001,
+   "tol": null,
+   "unit": "abs",
+   "kind": "max"
+  },
+  "app_decoh_gross": {
+   "key": "app_decoh_gross_ler_min",
+   "ref": "appendix_herqules.tex:433,438",
+   "text": "decoherence-only: Gross fails regardless",
+   "expected": 0.99,
+   "tol": null,
+   "unit": "abs",
+   "kind": "min"
+  }
+ },
+ "known_issues": {
+  "best_is_mcmit": {
+   "key": "claim_best_is_mcmit_resp3_allT",
+   "ref": "qec_impact.tex:27,32",
+   "issue": "'The best discriminator is always an MCMit variant' is false at 400 ns (Baseline FNN best on surface 0.1218 and color 0.1546; KLiNQ on Bacon-Shor); over all four codes also at 800 ns (Baseline FNN on Bacon-Shor). Holds at 200/600/800/1000 ns on the three responsive codes."
+  },
+  "worst_is_qubicml_linear": {
+   "key": "claim_worst_is_qubicml_or_linear_resp3_allT",
+   "ref": "qec_impact.tex:27,32",
+   "issue": "'the worst QubiCML or the Linear threshold' is false at 200 ns (HERQULES worst on surface and heavy-hex)."
+  },
+  "ecc_saturation_value": {
+   "key": "app_ecc_current_d7plus_ler_max",
+   "ref": "qec_impact.tex:20; appendix_herqules.tex:409",
+   "issue": "'ECCentric has the LER saturated near 0.5' for the lattice-surgery CNOT: the plotted CSV saturates at ~0.73-0.75 for d>=7 (three logical observables), 0.44-0.75 at d=5. Qualitative wording only; the figure itself is reproduced exactly."
+  },
+  "appendix_readout_model": {
+   "ref": "qec_impact.tex:20; appendix_herqules.tex:409-427",
+   "issue": "Figs. readout_ler_herqules_{current,futuristic}.pdf (fig:ler_current, fig:ler_futuristic) use the OLD mixed-shot HERQULES fidelities (HERQULES_ACC in compare_readout_*.py @7858c2c; measure_error 0.221/0.051/0.034/0.034/0.033), not the MCMit-CNN readout that qec_impact:20 states. CNN-readout reruns exist for both halves: readout_compare/eccentric_readout_ler_cnn.csv and synchronization-artifact/artifact_readout_ler_cnn.csv (lattice-sim, 49 of 50 points, d=13/200 ns/current missing), but the lattice-sim CSV was never copied next to the ECCentric one, so eccentric's readout_ler_cnn_*.pdf has an empty lattice-sim panel. extras/qec/plot_readout_compare_cnn.py draws the CNN version with both panels (same qualitative picture)."
+  }
+ }
+}

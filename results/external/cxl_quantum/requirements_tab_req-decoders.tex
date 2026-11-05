@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\caption{\capsec{Decoder latency (\S\ref{sec:req-latency})}{Delay from the last syndrome to the result. Per-round figures divide it by $d$, so they bound only throughput. $^\dagger$End to end on hardware, with transport.}}
+\label{tab:req-decoders}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrr}
+\toprule
+Decoder & Platform & Scale & Latency & Per round \\
+\midrule
+\multicolumn{5}{l}{\emph{Ours: cycle-accurate RTL, batch, no transport}} \\
+Helios~\cite{liyanage2023helios} & V80 & $d{=}9$ & $1.51$\,\textmu s & $168$\,ns \\
+\quad decode stage & V80 & $d{=}9$ & $184$\,/\,$308$\,ns & \\
+Micro Blossom~\cite{wu2025microblossom} & V80 & $d{=}9$ & $772$\,ns & $86$\,ns \\
+\midrule
+\multicolumn{5}{l}{\emph{Reported}} \\
+Micro Blossom~\cite{wu2025microblossom} & FPGA & $d{=}9$, stream & $0.37$\,\textmu s & \\
+Relay-BP~\cite{ibm2025qdc} & FPGA & qLDPC & ${<}480$\,ns & \\
+CUDA-Q QEC~\cite{nvidia2026cudaqqec} & GPU & $d{=}13$ & ${\sim}2.1$\,\textmu s & \\
+DECONET~\cite{liyanage2025deconet} & $5{\times}$FPGA & $d{=}5$, $16$--$36$ LQ & $1.65$--$1.85$\,\textmu s & \\
+NN decoder$^\dagger$~\cite{yang2026nndecoder} & FPGA & $d{=}3$ & $550$\,ns & \\
+Google$^\dagger$~\cite{google2025below} & --- & $d{=}7$ & tens of \textmu s & \\
+\bottomrule
+\end{tabular}
+\end{table}

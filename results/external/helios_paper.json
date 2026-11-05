@@ -1,0 +1,38 @@
+{
+ "source": "Liyanage, Wu, Deters, Zhong, 'Scalable Quantum Error Correction for Surface Codes using FPGA' (Helios), arXiv:2301.08419v2 (15 May 2023); IEEE QCE 2023",
+ "bib_key": "Liyanage2023Scalable (oraqle-ics/references.bib:3684)",
+ "primary_copy": "CXL-Quantum/helios.pdf (md5 75781375c9ba57603a53ddf0713978ca) and helios.txt (pdftotext), added in CXL-Quantum c4ade69 (2026-09-02); not redistributed here",
+ "values": [
+  {
+   "quantity": "Table I: LUTs of Helios on VCU129 per d",
+   "values": {
+    "3": 970,
+    "5": 6425,
+    "9": 52111,
+    "13": 165718,
+    "17": 448314,
+    "21": 898715
+   },
+   "used_in": [
+    "oraqle-ics/sims/system_cost.py @ d7cd4e9 (canonical copy in this repo: system/system_cost.py): HELIOS_TABLE1 (line 78); K_LUT = slope of log LUT vs log d over d >= 9 = 3.386 (line 79)",
+    "oraqle-ics/chapters/system_bottleneck.tex (working tree 2026-11-05):13 'scaled as d^3.4', :121"
+   ],
+   "checked": "primary source: identical to helios.txt lines 1296-1338"
+  },
+  {
+   "quantity": "Fig. 7c / Sec. V text: mean decoding time per round, d=13, unweighted -> w_max=16",
+   "values_ns": [
+    15,
+    38
+   ],
+   "ratio": 2.533333333333333,
+   "noise": "edge error probabilities ~ N(0.001, 0.0005); weights 2..w_max ~ -log p",
+   "used_in": [
+    "oraqle-ics/sims/system_cost.py @ d7cd4e9 (canonical copy in this repo: system/system_cost.py): HELIOS_WEIGHTED = 38/15 (line 71)",
+    "oraqle-ics/chapters/system_bottleneck.tex (working tree 2026-11-05):13 '2.5x longer per round', :64 table footnote, :179"
+   ],
+   "checked": "primary source: helios.txt lines 1496-1500 ('the average decoding time per round of 15 ns increases to 38 ns when wmax increases to 16')"
+  }
+ ],
+ "caveat": "The 2.5x is a mean per-round ratio at d=13; system_cost.py applies it to the d=9 p99 (no weighted tail reported). Stated in system_cost.py docstring."
+}

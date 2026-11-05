@@ -1,0 +1,11 @@
+# oraqle-latsim:dec: oraqle-latsim + ldpc (union-find) for sweep_decoders.py, crosscheck_stim.py, sweep_large.py
+# and analyze_decoders.py / merge_decoders.sh.
+# Origin: steve ~/oraqle-ics-sims/docker/Dockerfile.dec (2026-10-29, no git):
+#   FROM oraqle-latsim
+#   RUN pip install --no-cache-dir ldpc==2.4.1 scipy
+# Pinned: requirements-dec.lock = `pip freeze` of oraqle-latsim:dec on steve (ff7469718be1); it adds ldpc 2.4.1 and
+# its test dependencies (pytest, pluggy, iniconfig, Pygments) to the oraqle-latsim set.
+# Build (after oraqle-latsim): docker build -f docker/latsim/Dockerfile.dec -t oraqle-latsim:dec docker/latsim
+FROM oraqle-latsim
+COPY requirements-dec.lock /tmp/requirements-dec.lock
+RUN pip install --no-cache-dir -r /tmp/requirements-dec.lock

@@ -1,0 +1,4 @@
+2 readout points x 1 distances: 2 jobs, 8 workers
+[   143s] 1/2 d=11 T=400 f=0.1: mwpm_w=171 mwpm_c=143 mwpm_q16=184 mwpm_q4=322 mwpm_u=2078 uf_w=0 uf_u=0 / 35000 (0 UF)
+[   147s] 2/2 d=11 T=400 f=0.1: mwpm_w=139 mwpm_c=124 mwpm_q16=144 mwpm_q4=314 mwpm_u=2013 uf_w=0 uf_u=0 / 35000 (0 UF)
+done

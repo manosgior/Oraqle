@@ -1,0 +1,4 @@
+[cnn-soft] L=500 samples (1000 ns) device=cuda
+[cnn-soft] train 384000 test 1120000
+[cnn-soft] 1000 ns  Q1-5 [0.97, 0.746, 0.942, 0.947, 0.97]
+[cnn-soft] done

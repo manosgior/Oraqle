@@ -1,0 +1,94 @@
+{
+ "producer": "system/derive_uniform_fraction.py",
+ "stim_version": "1.16.0",
+ "circuit": "surface_code:rotated_memory_z d=9 rounds=9",
+ "shots": 20000,
+ "seed": 1,
+ "noise": "after_clifford_depolarization = before_round_data_depolarization = before_measure_flip_probability = after_reset_flip_probability = p",
+ "uniform": [
+  {
+   "p": 0.001,
+   "detection_fraction": 0.016589305555555555,
+   "rounded": 0.0166,
+   "expected": 0.0166,
+   "detectors": 720,
+   "match": true
+  },
+  {
+   "p": 0.003,
+   "detection_fraction": 0.048053125,
+   "rounded": 0.0481,
+   "expected": 0.0481,
+   "detectors": 720,
+   "match": true
+  },
+  {
+   "p": 0.005,
+   "detection_fraction": 0.07744090277777778,
+   "rounded": 0.0774,
+   "expected": 0.0774,
+   "detectors": 720,
+   "match": true
+  },
+  {
+   "p": 0.01,
+   "detection_fraction": 0.14277743055555556,
+   "rounded": 0.1428,
+   "expected": 0.1428,
+   "detectors": 720,
+   "match": true
+  },
+  {
+   "p": 0.02,
+   "detection_fraction": 0.24476493055555557,
+   "rounded": 0.2448,
+   "expected": 0.2448,
+   "detectors": 720,
+   "match": true
+  }
+ ],
+ "timing_d9": [
+  {
+   "T": 200,
+   "d": 9,
+   "detection_fraction": 0.32978683333333336,
+   "expected": 0.3298,
+   "p_equiv_uniform": 0.029340398015596864,
+   "match": true
+  },
+  {
+   "T": 400,
+   "d": 9,
+   "detection_fraction": 0.1590220303030303,
+   "expected": 0.159,
+   "p_equiv_uniform": 0.011484005827666401,
+   "match": true
+  },
+  {
+   "T": 600,
+   "d": 9,
+   "detection_fraction": 0.11261736363636363,
+   "expected": 0.1126,
+   "p_equiv_uniform": 0.00764347990992749,
+   "match": true
+  },
+  {
+   "T": 800,
+   "d": 9,
+   "detection_fraction": 0.1043884393939394,
+   "expected": 0.1044,
+   "p_equiv_uniform": 0.007014500626570163,
+   "match": true
+  },
+  {
+   "T": 1000,
+   "d": 9,
+   "detection_fraction": 0.10190415151515153,
+   "expected": 0.1019,
+   "p_equiv_uniform": 0.006825871343460545,
+   "match": true
+  }
+ ],
+ "all_match": true,
+ "provenance": "inline run, transcript 94019386-7e9a-4302-8276-39a280e43d5e.jsonl line 1039, 2026-10-26T11:57Z, stim 1.16.0"
+}
