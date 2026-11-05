@@ -1,0 +1,54 @@
+% requires: \usepackage{booktabs,longtable,multirow,xcolor,colortbl}
+\begin{longtable}{ll rrrrr r}
+\caption{Per-qubit readout fidelity vs.\ trace duration. \textbf{Bold} = best duration for that qubit within a model; \colorbox{blue!12}{shaded} = highest fidelity for that qubit across all configurations.}\label{tab:fidelity}\\
+\toprule
+Model & Duration & Qubit 1 & Qubit 2 & Qubit 3 & Qubit 4 & Qubit 5 & $F_{5Q}$ \\
+\midrule
+\endfirsthead
+\toprule
+Model & Duration & Qubit 1 & Qubit 2 & Qubit 3 & Qubit 4 & Qubit 5 & $F_{5Q}$ \\
+\midrule
+\endhead
+\multirow{5}{*}{Linear Threshold} & 1000\,ns & \textbf{0.967} & \textbf{0.730} & 0.894 & \textbf{0.936} & 0.958 & 0.892 \\
+ & 800\,ns & 0.961 & 0.726 & 0.903 & 0.936 & 0.963 & \textbf{0.893} \\
+ & 600\,ns & 0.947 & 0.715 & \textbf{0.910} & 0.930 & \textbf{0.965} & 0.888 \\
+ & 400\,ns & 0.900 & 0.693 & 0.910 & 0.898 & 0.942 & 0.864 \\
+ & 200\,ns & 0.753 & 0.635 & 0.840 & 0.749 & 0.731 & 0.739 \\
+\midrule
+\multirow{5}{*}{Baseline FNN} & 1000\,ns & \textbf{0.968} & \textbf{0.749} & \textbf{0.937} & \textbf{0.945} & 0.969 & \textbf{0.909} \\
+ & 800\,ns & 0.965 & 0.741 & 0.936 & 0.943 & \textbf{0.969} & 0.906 \\
+ & 600\,ns & 0.953 & 0.730 & 0.933 & 0.936 & 0.969 & 0.899 \\
+ & 400\,ns & 0.915 & 0.705 & 0.923 & 0.910 & 0.958 & 0.877 \\
+ & 200\,ns & 0.784 & 0.648 & 0.866 & 0.777 & 0.774 & 0.767 \\
+\midrule
+\multirow{5}{*}{HERQULES} & 1000\,ns & \textbf{0.962} & \textbf{0.734} & 0.917 & 0.938 & \textbf{0.967} & \textbf{0.899} \\
+ & 800\,ns & 0.955 & 0.721 & \textbf{0.918} & \textbf{0.938} & 0.966 & 0.895 \\
+ & 600\,ns & 0.934 & 0.631 & 0.909 & 0.922 & 0.951 & 0.860 \\
+ & 400\,ns & 0.894 & 0.688 & 0.905 & 0.896 & 0.939 & 0.859 \\
+ & 200\,ns & 0.744 & 0.629 & 0.821 & 0.723 & 0.694 & 0.720 \\
+\midrule
+\multirow{5}{*}{QubiCML} & 1000\,ns & \textbf{0.967} & \textbf{0.732} & 0.894 & 0.938 & 0.956 & 0.893 \\
+ & 800\,ns & 0.963 & 0.725 & 0.903 & \textbf{0.938} & 0.963 & \textbf{0.893} \\
+ & 600\,ns & 0.947 & 0.715 & 0.912 & 0.930 & \textbf{0.966} & 0.889 \\
+ & 400\,ns & 0.899 & 0.693 & \textbf{0.915} & 0.896 & 0.944 & 0.864 \\
+ & 200\,ns & 0.753 & 0.635 & 0.840 & 0.747 & 0.729 & 0.738 \\
+\midrule
+\multirow{5}{*}{KLiNQ} & 1000\,ns & \textbf{0.968} & \textbf{0.744} & 0.926 & \textbf{0.933} & 0.956 & \textbf{0.901} \\
+ & 800\,ns & 0.964 & 0.737 & 0.926 & 0.933 & 0.961 & 0.900 \\
+ & 600\,ns & 0.952 & 0.725 & \textbf{0.928} & 0.925 & \textbf{0.966} & 0.894 \\
+ & 400\,ns & 0.914 & 0.703 & 0.926 & 0.901 & 0.957 & 0.875 \\
+ & 200\,ns & 0.783 & 0.647 & 0.866 & 0.775 & 0.773 & 0.766 \\
+\midrule
+\multirow{5}{*}{MCMit-T} & 1000\,ns & \cellcolor{blue!12}\textbf{0.969} & \cellcolor{blue!12}\textbf{0.749} & 0.941 & \cellcolor{blue!12}\textbf{0.946} & 0.970 & \cellcolor{blue!12}\textbf{0.911} \\
+ & 800\,ns & 0.966 & 0.743 & \cellcolor{blue!12}\textbf{0.941} & 0.944 & \cellcolor{blue!12}\textbf{0.970} & 0.909 \\
+ & 600\,ns & 0.953 & 0.730 & 0.938 & 0.937 & 0.970 & 0.901 \\
+ & 400\,ns & 0.915 & 0.706 & 0.929 & 0.909 & 0.958 & 0.878 \\
+ & 200\,ns & 0.784 & 0.648 & 0.866 & 0.777 & 0.775 & 0.767 \\
+\midrule
+\multirow{5}{*}{MCMit-CNN} & 1000\,ns & \textbf{0.969} & \textbf{0.744} & \textbf{0.941} & \textbf{0.945} & \textbf{0.970} & \textbf{0.909} \\
+ & 800\,ns & 0.964 & 0.733 & 0.940 & 0.943 & 0.970 & 0.905 \\
+ & 600\,ns & 0.949 & 0.721 & 0.936 & 0.932 & 0.969 & 0.896 \\
+ & 400\,ns & 0.909 & 0.696 & 0.925 & 0.902 & 0.952 & 0.871 \\
+ & 200\,ns & 0.770 & 0.640 & 0.854 & 0.762 & 0.752 & 0.753 \\
+\bottomrule
+\end{longtable}

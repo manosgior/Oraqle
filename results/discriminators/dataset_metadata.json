@@ -1,0 +1,67 @@
+{
+ "_about": "Layout of the raw Lienhard et al. five-qubit dataset, probed with h5py on graham (2026-11-05) from ~/qubit_readout_klinq/data/five_qubit_data. No data values are stored here. Used by verify/discriminators.py for the dataset facts quoted in overview.tex (Stage 1).",
+ "sampling_rate_MSps": 500,
+ "sample_period_ns": 2,
+ "files": {
+  "DRaw_C_Tr_v0-001": {
+   "bytes": 7681922048,
+   "sha256": "1aabfa02cb434f2ebbc648d44553643ca7d957ce734111f45a41ad152d815b8c",
+   "datasets": {
+    "X_train": {
+     "shape": [
+      480000,
+      1000,
+      2
+     ],
+     "dtype": "float64"
+    },
+    "y_train": {
+     "shape": [
+      480000
+     ],
+     "dtype": "int32"
+    }
+   },
+   "hdf5_attrs": {},
+   "chunks": null,
+   "compression": null,
+   "labels": [
+    0,
+    31
+   ],
+   "shots_per_state": 15000,
+   "layout": "32 contiguous blocks of 15000 shots, state 0..31 in order"
+  },
+  "DRaw_C_Te_v0-002": {
+   "bytes": 17924482048,
+   "sha256": "d538fcf42c0ed63ffd60eb2c86e0c2edd2a8fe73899c22d81593cff53a4bcea4",
+   "datasets": {
+    "X_test": {
+     "shape": [
+      1120000,
+      1000,
+      2
+     ],
+     "dtype": "float64"
+    },
+    "y_test": {
+     "shape": [
+      1120000
+     ],
+     "dtype": "int32"
+    }
+   },
+   "hdf5_attrs": {},
+   "chunks": null,
+   "compression": null,
+   "labels": [
+    0,
+    31
+   ],
+   "shots_per_state": 35000,
+   "layout": "32 contiguous blocks of 35000 shots, state 0..31 in order"
+  }
+ },
+ "label_encoding": "y = sum_q bit_q << q, bit q (0..4) = paper qubit Q(q+1)",
+ "last_axis": "[I, Q]"
+}

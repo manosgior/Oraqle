@@ -1,0 +1,6 @@
+split,qubit,n_test,n_correct,n_error,accuracy_pct,excl_n_t1_pattern,excl_n_amp_outlier,excl_n_near_boundary,excl_n_other,any_n_t1_pattern,any_n_amp_outlier,any_n_near_boundary
+hybridcnn,0,1120000,1084092,35908,96.7939,1,0,35907,0,1,0,35908
+hybridcnn,1,1120000,831515,288485,74.2424,6636,673,281176,0,6636,823,288485
+hybridcnn,2,1120000,1051189,68811,93.8562,0,91,68720,0,0,91,68811
+hybridcnn,3,1120000,1056974,63026,94.3727,330,26,62670,0,330,26,63026
+hybridcnn,4,1120000,1085940,34060,96.9589,4879,0,29181,0,4879,0,34060

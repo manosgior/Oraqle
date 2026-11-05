@@ -1,0 +1,6 @@
+split,qubit,n_test,n_correct,n_error,accuracy_pct,excl_n_t1_pattern,excl_n_amp_outlier,excl_n_near_boundary,excl_n_other,any_n_t1_pattern,any_n_amp_outlier,any_n_near_boundary
+scrambled,0,1120000,1099749,20251,98.1919,1,0,20250,0,1,0,20251
+scrambled,1,1120000,841430,278570,75.1277,10021,633,267916,0,10021,758,278570
+scrambled,2,1120000,1078622,41378,96.3055,0,162,41216,0,0,162,41378
+scrambled,3,1120000,1077497,42503,96.2051,397,24,42082,0,397,24,42503
+scrambled,4,1120000,1105161,14839,98.6751,721,0,14118,0,721,0,14839

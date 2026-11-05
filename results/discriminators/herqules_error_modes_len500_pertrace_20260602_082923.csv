@@ -1,0 +1,6 @@
+split,qubit,n_test,n_correct,n_error,accuracy_pct,excl_n_t1_pattern,excl_n_amp_outlier,excl_n_near_boundary,excl_n_other,any_n_t1_pattern,any_n_amp_outlier,any_n_near_boundary
+pertrace,0,1120000,1084764,35236,96.8539,1,0,35235,0,1,0,35236
+pertrace,1,1120000,828057,291943,73.9337,9786,641,281516,0,9786,772,291943
+pertrace,2,1120000,1034871,85129,92.3992,0,162,84967,0,0,162,85129
+pertrace,3,1120000,1054357,65643,94.1390,721,18,64904,0,721,18,65643
+pertrace,4,1120000,1085851,34149,96.9510,2719,0,31430,0,2719,0,34149

@@ -1,0 +1,2 @@
+timestamp,model_name,trace_length,split,overall_accuracy,qubit_0_accuracy,qubit_1_accuracy,qubit_2_accuracy,qubit_3_accuracy,qubit_4_accuracy,model_path
+20260602_081043,HERQULES,200,scrambled,58.4813,94.3406,70.4554,95.4331,94.6968,97.2314,/app/saved_models/HERQULES_len200.pth

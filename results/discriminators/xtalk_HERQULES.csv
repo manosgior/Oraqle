@@ -1,0 +1,10 @@
+metric,k,value
+crossfid_dist,1,0.01061
+crossfid_dist,2,0.00938
+crossfid_dist,3,0.00581
+crossfid_dist,4,0.00171
+F_vs_N,1,0.92591
+F_vs_N,2,0.92267
+F_vs_N,3,0.91951
+F_vs_N,4,0.91634
+F_vs_N,5,0.91323

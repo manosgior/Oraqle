@@ -1,0 +1,11 @@
+metric,k,value
+F5Q_afid,5,0.91055
+crossfid_dist,1,0.00350
+crossfid_dist,2,0.00765
+crossfid_dist,3,0.00204
+crossfid_dist,4,0.00109
+F_vs_N,1,0.92376
+F_vs_N,2,0.91863
+F_vs_N,3,0.91556
+F_vs_N,4,0.91297
+F_vs_N,5,0.91055

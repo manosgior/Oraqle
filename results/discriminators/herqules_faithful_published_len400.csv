@@ -1,0 +1,3 @@
+model,duration_ns,trace_samples,parameters,Q1_fidelity,Q2_fidelity,Q3_fidelity,Q4_fidelity,Q5_fidelity,F5Q_gmean,shot_mixing
+"HERQULES (faithful, mixed (published))",800,400,1002,0.9774,0.7383,0.9558,0.9620,0.9828,0.9181,on
+"HERQULES (faithful, no-mix (per-shot))",800,400,1002,0.9609,0.7328,0.9202,0.9376,0.9658,0.8988,off

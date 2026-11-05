@@ -1,0 +1,2 @@
+config,method,length_ns,trace_samples,seed,Q1,Q2,Q3,Q4,Q5,gmean,arith_mean,failed
+no-mix,shared-choice,250,125,1,0.8436,0.6535,0.9169,0.8441,0.8348,0.8135,0.8186,1

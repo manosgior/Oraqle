@@ -1,0 +1,2 @@
+timestamp,model_name,target_qubit,trace_length,overall_accuracy,geometric_mean_accuracy,geometric_mean_accuracy_excl_q1,qubit_0_accuracy,qubit_1_accuracy,qubit_2_accuracy,qubit_3_accuracy,qubit_4_accuracy
+20260514_133940,Baseline_Threshold,all,800,88.2663,88.2663,92.5138,96.7114,73.1387,86.9396,92.7662,93.9165

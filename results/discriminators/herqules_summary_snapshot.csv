@@ -1,0 +1,13 @@
+label,config,method,length_ns,trace_samples,n_runs,n_failed,Q1,Q2,Q3,Q4,Q5,gmean,gmean_std,arith_mean
+1000ns no-mix (21-seed success mean),no-mix,shared-choice,1000,500,21,1,0.9743,0.7322,0.9549,0.9582,0.9822,0.9149,0.0072,0.9204
+1000ns mixed  (21-seed success mean),mixed,scramble-original,1000,500,21,1,0.9755,0.7389,0.9538,0.9575,0.9834,0.9166,0.0062,0.9218
+"200ns no-mix (all 21 seeds)",no-mix,shared-choice,200,100,21,21,0.7782,0.6358,0.8712,0.7587,0.7159,0.7478,0.0078,0.752
+"400ns no-mix (all 21 seeds)",no-mix,shared-choice,400,200,21,1,0.934,0.6884,0.9473,0.9445,0.9717,0.8899,0.0122,0.8972
+"600ns no-mix (all 21 seeds)",no-mix,shared-choice,600,300,21,0,0.9654,0.7189,0.9565,0.9597,0.9827,0.9105,0.0074,0.9166
+"800ns no-mix (all 21 seeds)",no-mix,shared-choice,800,400,21,0,0.9725,0.722,0.9547,0.9587,0.9797,0.9115,0.0085,0.9175
+"1000ns no-mix (all 21 seeds)",no-mix,shared-choice,1000,500,21,1,0.9685,0.7214,0.9472,0.9532,0.9815,0.9083,0.0304,0.9144
+CURRENT master_fidelity.csv,(in master),np.arange single-run,200,100,,,0.7499,0.6328,0.8178,0.7295,0.6904,0.7215,,
+CURRENT master_fidelity.csv,(in master),np.arange single-run,400,200,,,0.9047,0.6944,0.9139,0.8974,0.9452,0.8660,,
+CURRENT master_fidelity.csv,(in master),np.arange single-run,600,300,,,0.9495,0.7192,0.9166,0.9301,0.9669,0.8914,,
+CURRENT master_fidelity.csv,(in master),np.arange single-run,800,400,,,0.9609,0.7328,0.9202,0.9376,0.9658,0.8988,,
+CURRENT master_fidelity.csv,(in master),np.arange single-run,1000,500,,,0.9631,0.7376,0.9183,0.9350,0.9686,0.9001,,

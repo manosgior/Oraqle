@@ -1,0 +1,113 @@
+checkpoint,bytes,referenced_by_result_csv,paper_use
+Arxiv_q0_len100_trial7.pth,3529,Arxiv240618807FNN_q0_len100_20260513_161953.csv,tab:fidelity QubiCML 200 ns
+Arxiv_q0_len150_trial3.pth,3529,Arxiv240618807FNN_q0_len150_20260513_183506.csv,not used by the paper
+Arxiv_q0_len200_trial2.pth,3529,Arxiv240618807FNN_q0_len200_20260513_203425.csv,tab:fidelity QubiCML 400 ns
+Arxiv_q0_len250_trial7.pth,3529,Arxiv240618807FNN_q0_len250_20260513_233146.csv,not used by the paper
+Arxiv_q0_len300_trial4.pth,3529,Arxiv240618807FNN_q0_len300_20260514_015218.csv,tab:fidelity QubiCML 600 ns
+Arxiv_q0_len350_trial3.pth,3529,Arxiv240618807FNN_q0_len350_20260514_035556.csv,not used by the paper
+Arxiv_q0_len400_trial7.pth,3529,Arxiv240618807FNN_q0_len400_20260514_062722.csv,tab:fidelity QubiCML 800 ns
+Arxiv_q0_len450_trial4.pth,3529,Arxiv240618807FNN_q0_len450_20260514_082804.csv,not used by the paper
+Arxiv_q0_len500_trial3.pth,3529,Arxiv240618807FNN_q0_len500_20260514_110545.csv,tab:fidelity QubiCML 1000 ns; fpga/hls4ml QubiCML_q0_1000ns.pth (tab:fpga_resources QubiCML)
+Arxiv_q0_len50_trial1.pth,3453,Arxiv240618807FNN_q0_len50_20260513_140604.csv,not used by the paper
+Arxiv_q1_len100_trial4.pth,3529,Arxiv240618807FNN_q1_len100_20260513_165053.csv,tab:fidelity QubiCML 200 ns
+Arxiv_q1_len150_trial9.pth,3529,Arxiv240618807FNN_q1_len150_20260513_190321.csv,not used by the paper
+Arxiv_q1_len200_trial4.pth,3529,Arxiv240618807FNN_q1_len200_20260513_210716.csv,tab:fidelity QubiCML 400 ns
+Arxiv_q1_len250_trial6.pth,3529,Arxiv240618807FNN_q1_len250_20260513_235656.csv,not used by the paper
+Arxiv_q1_len300_trial3.pth,3529,Arxiv240618807FNN_q1_len300_20260514_020717.csv,tab:fidelity QubiCML 600 ns
+Arxiv_q1_len350_trial3.pth,3529,Arxiv240618807FNN_q1_len350_20260514_041501.csv,not used by the paper
+Arxiv_q1_len400_trial5.pth,3529,Arxiv240618807FNN_q1_len400_20260514_065119.csv,tab:fidelity QubiCML 800 ns
+Arxiv_q1_len450_trial2.pth,3529,Arxiv240618807FNN_q1_len450_20260514_090544.csv,not used by the paper
+Arxiv_q1_len500_trial0.pth,3529,Arxiv240618807FNN_q1_len500_20260514_113104.csv,tab:fidelity QubiCML 1000 ns
+Arxiv_q1_len50_trial2.pth,3453,Arxiv240618807FNN_q1_len50_20260513_142653.csv,not used by the paper
+Arxiv_q2_len100_trial2.pth,3529,Arxiv240618807FNN_q2_len100_20260513_171911.csv,tab:fidelity QubiCML 200 ns
+Arxiv_q2_len150_trial3.pth,3529,Arxiv240618807FNN_q2_len150_20260513_192604.csv,not used by the paper
+Arxiv_q2_len200_trial2.pth,3529,Arxiv240618807FNN_q2_len200_20260513_213529.csv,tab:fidelity QubiCML 400 ns
+Arxiv_q2_len250_trial3.pth,3529,Arxiv240618807FNN_q2_len250_20260514_001712.csv,not used by the paper
+Arxiv_q2_len300_trial1.pth,3529,Arxiv240618807FNN_q2_len300_20260514_022415.csv,tab:fidelity QubiCML 600 ns
+Arxiv_q2_len350_trial7.pth,3529,Arxiv240618807FNN_q2_len350_20260514_045030.csv,not used by the paper
+Arxiv_q2_len400_trial2.pth,3529,Arxiv240618807FNN_q2_len400_20260514_071712.csv,tab:fidelity QubiCML 800 ns
+Arxiv_q2_len450_trial7.pth,3529,Arxiv240618807FNN_q2_len450_20260514_093527.csv,not used by the paper
+Arxiv_q2_len500_trial2.pth,3529,Arxiv240618807FNN_q2_len500_20260514_120518.csv,tab:fidelity QubiCML 1000 ns
+Arxiv_q2_len50_trial1.pth,3453,Arxiv240618807FNN_q2_len50_20260513_144035.csv,not used by the paper
+Arxiv_q3_len100_trial9.pth,3529,Arxiv240618807FNN_q3_len100_20260513_173401.csv,tab:fidelity QubiCML 200 ns
+Arxiv_q3_len150_trial1.pth,3529,Arxiv240618807FNN_q3_len150_20260513_194434.csv,not used by the paper
+Arxiv_q3_len200_trial1.pth,3529,Arxiv240618807FNN_q3_len200_20260513_220304.csv,tab:fidelity QubiCML 400 ns
+Arxiv_q3_len250_trial8.pth,3529,Arxiv240618807FNN_q3_len250_20260514_005844.csv,not used by the paper
+Arxiv_q3_len300_trial1.pth,3529,Arxiv240618807FNN_q3_len300_20260514_030739.csv,tab:fidelity QubiCML 600 ns
+Arxiv_q3_len350_trial3.pth,3529,Arxiv240618807FNN_q3_len350_20260514_053721.csv,not used by the paper
+Arxiv_q3_len400_trial2.pth,3529,Arxiv240618807FNN_q3_len400_20260514_073240.csv,tab:fidelity QubiCML 800 ns
+Arxiv_q3_len450_trial7.pth,3529,Arxiv240618807FNN_q3_len450_20260514_100126.csv,not used by the paper
+Arxiv_q3_len500_trial1.pth,3529,Arxiv240618807FNN_q3_len500_20260514_122308.csv,tab:fidelity QubiCML 1000 ns
+Arxiv_q3_len50_trial4.pth,3453,Arxiv240618807FNN_q3_len50_20260513_150429.csv,not used by the paper
+Arxiv_q4_len100_trial0.pth,3529,Arxiv240618807FNN_q4_len100_20260513_180942.csv,tab:fidelity QubiCML 200 ns
+Arxiv_q4_len150_trial9.pth,3529,Arxiv240618807FNN_q4_len150_20260513_201527.csv,not used by the paper
+Arxiv_q4_len200_trial5.pth,3529,Arxiv240618807FNN_q4_len200_20260513_230044.csv,tab:fidelity QubiCML 400 ns
+Arxiv_q4_len250_trial2.pth,3529,Arxiv240618807FNN_q4_len250_20260514_012350.csv,not used by the paper
+Arxiv_q4_len300_trial0.pth,3529,Arxiv240618807FNN_q4_len300_20260514_033042.csv,tab:fidelity QubiCML 600 ns
+Arxiv_q4_len350_trial1.pth,3529,Arxiv240618807FNN_q4_len350_20260514_060339.csv,not used by the paper
+Arxiv_q4_len400_trial9.pth,3529,Arxiv240618807FNN_q4_len400_20260514_080224.csv,tab:fidelity QubiCML 800 ns
+Arxiv_q4_len450_trial9.pth,3529,Arxiv240618807FNN_q4_len450_20260514_103426.csv,not used by the paper
+Arxiv_q4_len500_trial1.pth,3529,Arxiv240618807FNN_q4_len500_20260514_124156.csv,tab:fidelity QubiCML 1000 ns
+Arxiv_q4_len50_trial6.pth,3453,Arxiv240618807FNN_q4_len50_20260513_155033.csv,not used by the paper
+CNN_m16_len100_trial39.pth,26245,CNN_m16_len100_20260519_215228.csv,not used by the paper
+CNN_m16_len150_trial38.pth,26245,CNN_m16_len150_20260520_010251.csv,not used by the paper
+CNN_m16_len200_trial30.pth,26245,CNN_m16_len200_20260520_050627.csv,not used by the paper
+CNN_m16_len250_trial28.pth,26245,CNN_m16_len250_20260520_072821.csv,not used by the paper
+CNN_m16_len300_trial26.pth,26245,-,not used by the paper
+CNN_m16_len350_trial26.pth,26245,CNN_m16_len350_20260520_121001.csv,not used by the paper
+CNN_m16_len400_trial2.pth,26137,CNN_m16_len400_20260520_135840.csv,not used by the paper
+CNN_m16_len450_trial29.pth,26245,CNN_m16_len450_20260520_160940.csv,not used by the paper
+CNN_m16_len500_trial36.pth,26245,CNN_m16_len500_20260520_192919.csv,fpga/hls4ml CNN_1000ns.pth (cnn-m16.txt report; not in the paper table)
+CNN_m16_len50_trial31.pth,26137,CNN_m16_len50_20260519_180146.csv,not used by the paper
+FNN_len100_trial9.pth,115407,FNN_len100_20260506_235733.csv,tab:fidelity Baseline FNN 200 ns
+FNN_len150_trial4.pth,244879,FNN_len150_20260507_174644.csv,not used by the paper
+FNN_len200_trial5.pth,424719,FNN_len200_20260508_084433.csv,tab:fidelity Baseline FNN 400 ns
+FNN_len250_trial2.pth,654159,FNN_len250_20260508_233935.csv,not used by the paper
+FNN_len300_trial0.pth,934031,FNN_len300_20260509_195044.csv,tab:fidelity Baseline FNN 600 ns
+FNN_len350_trial4.pth,1264143,FNN_len350_20260510_133007.csv,not used by the paper
+FNN_len400_trial1.pth,1643663,FNN_len400_20260511_063129.csv,tab:fidelity Baseline FNN 800 ns
+FNN_len450_trial1.pth,2073423,FNN_len450_20260511_212319.csv,not used by the paper
+FNN_len500_trial3.pth,2552911,FNN_len500_20260512_141449.csv,tab:fidelity Baseline FNN 1000 ns
+FNN_len50_trial0.pth,45945,FNN_len50_20260506_080719.csv,not used by the paper
+HERQULES_len100.pth,7029,HERQULES_len100_pertrace_20260601_142051.csv,not used by the paper
+HERQULES_len200.pth,7029,HERQULES_len200_pertrace_20260601_141038.csv; HERQULES_len200_pertrace_20260602_082117.csv; HERQULES_len200_scrambled_20260602_073711.csv; HERQULES_len200_scrambled_20260602_081043.csv,leakage per-trace HERQULES (em_e3herq_regen_pertrace_ckpt.py) with rmf_len200.pkl
+HERQULES_len300.pth,7029,HERQULES_len300_pertrace_20260601_135815.csv,not used by the paper
+HERQULES_len400.pth,7029,HERQULES_len400_pertrace_20260601_134351.csv,not used by the paper
+HERQULES_len500.pth,7029,HERQULES_len500_pertrace_20260601_132605.csv; HERQULES_len500_pertrace_20260602_082923.csv; HERQULES_len500_scrambled_20260602_072025.csv; HERQULES_len500_scrambled_20260602_074006.csv; HERQULES_len500_scrambled_20260602_081648.csv,"fpga/hls4ml HERQULES_1000ns.pth (tab:fpga_resources HERQULES); leakage per-trace HERQULES (Sec. 5.3, em_e3herq_regen_pertrace_ckpt.py) with rmf_len500.pkl"
+HybridCNN_len200.pth,26301,-,not used by the paper
+HybridCNN_len500.pth,26301,-,not used by the paper
+KLiNQ_student_paper_q0_1000ns.pth,9175,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 1000 ns (student, qubit 1); fpga/hls4ml KLiNQ small student (tab:fpga_resources KLiNQ)"
+KLiNQ_student_paper_q0_200ns.pth,9153,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 200 ns (student, qubit 1)"
+KLiNQ_student_paper_q0_400ns.pth,9153,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 400 ns (student, qubit 1)"
+KLiNQ_student_paper_q0_600ns.pth,9153,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 600 ns (student, qubit 1)"
+KLiNQ_student_paper_q0_800ns.pth,9153,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 800 ns (student, qubit 1)"
+KLiNQ_student_paper_q1_1000ns.pth,20055,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 1000 ns (student, qubit 2)"
+KLiNQ_student_paper_q1_200ns.pth,20033,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 200 ns (student, qubit 2)"
+KLiNQ_student_paper_q1_400ns.pth,20033,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 400 ns (student, qubit 2)"
+KLiNQ_student_paper_q1_600ns.pth,20033,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 600 ns (student, qubit 2)"
+KLiNQ_student_paper_q1_800ns.pth,20033,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 800 ns (student, qubit 2)"
+KLiNQ_student_paper_q2_1000ns.pth,20055,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 1000 ns (student, qubit 3); fpga/hls4ml KLiNQ larger student (tab:fpga_resources KLiNQ)"
+KLiNQ_student_paper_q2_200ns.pth,20033,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 200 ns (student, qubit 3)"
+KLiNQ_student_paper_q2_400ns.pth,20033,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 400 ns (student, qubit 3)"
+KLiNQ_student_paper_q2_600ns.pth,20033,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 600 ns (student, qubit 3)"
+KLiNQ_student_paper_q2_800ns.pth,20033,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 800 ns (student, qubit 3)"
+KLiNQ_student_paper_q3_1000ns.pth,9175,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 1000 ns (student, qubit 4)"
+KLiNQ_student_paper_q3_200ns.pth,9153,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 200 ns (student, qubit 4)"
+KLiNQ_student_paper_q3_400ns.pth,9153,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 400 ns (student, qubit 4)"
+KLiNQ_student_paper_q3_600ns.pth,9153,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 600 ns (student, qubit 4)"
+KLiNQ_student_paper_q3_800ns.pth,9153,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 800 ns (student, qubit 4)"
+KLiNQ_student_paper_q4_1000ns.pth,9175,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 1000 ns (student, qubit 5)"
+KLiNQ_student_paper_q4_200ns.pth,9153,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 200 ns (student, qubit 5)"
+KLiNQ_student_paper_q4_400ns.pth,9153,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 400 ns (student, qubit 5)"
+KLiNQ_student_paper_q4_600ns.pth,9153,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 600 ns (student, qubit 5)"
+KLiNQ_student_paper_q4_800ns.pth,9153,KLiNQ_paper_repro_20260601_124013.csv; KLiNQ_paper_repro_20260601_141220.csv,"tab:fidelity KLiNQ 800 ns (student, qubit 5)"
+Transformer_len100_trial25.pth,972885,Transformer_len100_20260522_025422.csv,tab:fidelity MCMit-T 200 ns
+Transformer_len150_trial20.pth,6982933,Transformer_len150_20260522_222442.csv,not used by the paper
+Transformer_len200_trial45.pth,1925333,Transformer_len200_20260523_133940.csv,tab:fidelity MCMit-T 400 ns
+Transformer_len250_trial27.pth,1395157,Transformer_len250_20260524_090002.csv,not used by the paper
+Transformer_len300_trial46.pth,780949,Transformer_len300_20260525_020600.csv,tab:fidelity MCMit-T 600 ns
+Transformer_len350_trial18.pth,1190421,Transformer_len350_20260526_200830.csv,not used by the paper
+Transformer_len400_trial38.pth,576213,Transformer_len400_20260527_070445.csv,tab:fidelity MCMit-T 800 ns
+Transformer_len450_trial17.pth,5075925,Transformer_len450_20260528_102230.csv,not used by the paper
+Transformer_len500_trial37.pth,19638421,Transformer_len500_20260529_105807.csv,tab:fidelity MCMit-T 1000 ns
+Transformer_len50_trial32.pth,576175,Transformer_len50_20260521_121537.csv,not used by the paper

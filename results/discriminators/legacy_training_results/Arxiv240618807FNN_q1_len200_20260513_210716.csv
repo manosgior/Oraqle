@@ -1,0 +1,2 @@
+timestamp,model_name,target_qubit,trace_length,optimizer,learning_rate,batch_size,epochs,n_optuna_trials,best_trial_number,best_val_loss,total_parameters,num_layers,layer_descriptions,overall_accuracy,qubit_0_accuracy,qubit_1_accuracy,qubit_2_accuracy,qubit_3_accuracy,qubit_4_accuracy,device,model_path
+20260513_210716,Arxiv240618807FNN,1,200,Adam,0.0004931730761006544,256,25,10,4,0.585932,65,6,fc1: Linear | relu1: ReLU | fc2: Linear | relu2: ReLU | fc3: Linear | sigmoid: Sigmoid,69.3325,nan,69.3325,nan,nan,nan,cuda,./saved_models/Arxiv_q1_len200_trial4.pth
