@@ -77,3 +77,5 @@ because they are preprocessed slices of the non-public Lienhard et al. test set.
 table do not depend on them. Regenerate them with `hls_input_prep/_make_example_inputs.py` (and
 `_make_klinq_large_input.py`, `_cnn_small_hls.py`) once ORAQLE_DATA is set, then copy them into
 `hls4ml/inputs/` before running the `run-*.py` scripts.
+
+License: MIT, as part of this repository, with the author's (Felix Gust) consent (2026-11-05).

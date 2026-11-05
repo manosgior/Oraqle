@@ -69,5 +69,5 @@ cluster path) and what was changed during consolidation. Changes were limited to
 ## License
 
 MIT (see [LICENSE](LICENSE)). Parts adapted from HERQULES and KLiNQ (Apache-2.0), the vendored
-lattice-sim (MIT) and the contributed FPGA scripts are listed with their licenses in
+lattice-sim (MIT) and the FPGA scripts contributed by Felix Gust (MIT) are listed in
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The raw dataset is not included and is not covered.
