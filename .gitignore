@@ -5,3 +5,11 @@ env
 .env
 __pycache__
 *.pyc
+
+# Oraqle artifact: never commit the raw dataset or regenerable bulk data
+dataset/
+work/
+out/
+*.h5
+*.hdf5
+DRaw_C_*
