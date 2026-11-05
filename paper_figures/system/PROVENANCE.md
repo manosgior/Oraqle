@@ -8,7 +8,7 @@ hand-transcribed from `system_cost.py` output; all 20 cells match). `compare_fig
 
 | Target | Paper item | Output |
 |---|---|---|
-| sys_spacetime | fig:sys_spacetime (system_bottleneck.tex:29) | readout_spacetime.pdf |
+| sys_spacetime | fig:sys_spacetime (system_bottleneck.tex:30) | readout_spacetime.pdf |
 | sys_decoder | fig:sys_decoder (:54) | decoder_load.pdf |
 | sys_cost | fig:sys_cost (:98) | system_cost.pdf |
 | sys_soft | fig:sys_soft (:143) | soft_readout.pdf |

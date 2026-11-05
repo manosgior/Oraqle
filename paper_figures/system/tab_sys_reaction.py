@@ -1,4 +1,4 @@
-"""Table tab:sys_reaction (system_bottleneck.tex:61-78): reaction time R and waiting rounds w per hardware decoder.
+"""Table tab:sys_reaction (system_bottleneck.tex:65-82): reaction time R and waiting rounds w per hardware decoder.
 
 The paper's table was hand-transcribed from system_cost.py (stdout and system_cost.json["reaction"]); this script
 prints the same cells from results/system/system_cost.json (or --data) and writes the LaTeX body to

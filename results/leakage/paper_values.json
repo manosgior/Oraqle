@@ -1,7 +1,7 @@
 {
  "meta": {
   "what": "Expected values of every number of Sec. 5.3 (subsec:failures), Table tab:error_modes, Takeaway #5 and App. app:error-modes, as printed in the paper, with chapter:line references. Checked by verify/leakage.py.",
-  "paper_source": "oraqle-ics (Overleaf git) d7cd4e9 2026-11-02 + uncommitted edits in: chapters/appendix_herqules.tex, chapters/ml_discriminators.tex",
+  "paper_source": "oraqle-ics (Overleaf git) e2ba1ac + uncommitted [audit fix] edits of 2026-11-05 in chapters/{qubit_readout,ml_discriminators,appendix_herqules,qec_impact,system_bottleneck}.tex",
   "extracted": "2026-11-05",
   "kinds": {
    "num": "printed scalar; |value - printed| <= half a unit in the last printed digit",
@@ -23,15 +23,15 @@
   {
    "id": "s53.scope",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:335",
-   "snippet": "for MCMit-CNN (all qubits at $1\\,\\mu$s, Q1/Q3/Q5 at $400$\\,ns) and per-trace HERQULES (Q3/Q5, $1\\,\\mu$s)",
+   "ref": "chapters/ml_discriminators.tex:340",
+   "snippet": "for MCMit-CNN (all qubits at $1\\,\\mu$s, Q1/Q3/Q5 at $400$\\,ns) and a per-trace HERQULES checkpoint (Q3/Q5, $1\\,\\mu$s)",
    "printed": "CNN Q1-Q5 @1us; CNN Q1,Q3,Q5 @400ns; per-trace HERQULES Q3,Q5 @1us",
    "kind": "scope"
   },
   {
    "id": "s53.res.Q3_state_change",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "${\\geq}77\\%$ of MCMit-CNN's Q3",
    "printed": 77,
    "kind": "num",
@@ -40,7 +40,7 @@
   {
    "id": "s53.res.Q5_state_change",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "${\\geq}90\\%$ of its Q5 errors",
    "printed": 90,
    "kind": "num",
@@ -49,7 +49,7 @@
   {
    "id": "s53.res.Q3_overlap",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "${\\leq}20\\%$ and",
    "printed": 20,
    "kind": "num",
@@ -58,7 +58,7 @@
   {
    "id": "s53.res.Q5_overlap",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "${\\leq}9\\%$ overlap",
    "printed": 9,
    "kind": "num",
@@ -67,7 +67,7 @@
   {
    "id": "s53.res.Q3_err_on_0_side",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "$91\\%$/$95\\%$ of Q3/Q5 prepared-$|1\\rangle$ errors",
    "printed": 91,
    "kind": "num",
@@ -76,7 +76,7 @@
   {
    "id": "s53.res.Q5_err_on_0_side",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "$91\\%$/$95\\%$ of Q3/Q5 prepared-$|1\\rangle$ errors",
    "printed": 95,
    "kind": "num",
@@ -85,7 +85,7 @@
   {
    "id": "s53.res.Q3_corr_on_0_side",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "(vs.\\ $33\\%$/$15\\%$ of correct reads)",
    "printed": 33,
    "kind": "num",
@@ -94,7 +94,7 @@
   {
    "id": "s53.res.Q5_corr_on_0_side",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "(vs.\\ $33\\%$/$15\\%$ of correct reads)",
    "printed": 15,
    "kind": "num",
@@ -103,7 +103,7 @@
   {
    "id": "s53.res.step_T_range",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "only $2$--$8\\%$ of errors show a detectable step",
    "printed": [
     2,
@@ -115,7 +115,7 @@
   {
    "id": "s53.res.Q3_overlap_400ns",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "overlap rises to $40\\%$ (Q3)",
    "printed": 40,
    "kind": "num",
@@ -124,7 +124,7 @@
   {
    "id": "s53.res.Q5_overlap_400ns",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "and $56\\%$ (Q5)",
    "printed": 56,
    "kind": "num",
@@ -133,7 +133,7 @@
   {
    "id": "s53.res.Q3_leak_prep1",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "$11.5\\%$ of Q3's prepared-$|1\\rangle$ shots leak",
    "printed": 11.5,
    "kind": "num",
@@ -142,7 +142,7 @@
   {
    "id": "s53.res.Q5_leak_prep1",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "as do $4.7\\%$ of Q5's",
    "printed": 4.7,
    "kind": "num",
@@ -151,7 +151,7 @@
   {
    "id": "s53.res.Q5_leak_mostly_Q3_1",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "(mostly when Q3 is in $|1\\rangle$)",
    "printed": 50,
    "kind": "ge",
@@ -161,7 +161,7 @@
   {
    "id": "s53.res.leak_read_correctly",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "yet $97$--$99\\%$ of these are read correctly",
    "printed": [
     97,
@@ -173,7 +173,7 @@
   {
    "id": "s53.res.Q3_leak_400ns",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "(Q3: $3.5$/$6.5$/$11.5\\%$ at $400$/$600$/$1000$\\,ns)",
    "printed": 3.5,
    "kind": "num",
@@ -182,7 +182,7 @@
   {
    "id": "s53.res.Q3_leak_600ns",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "(Q3: $3.5$/$6.5$/$11.5\\%$ at $400$/$600$/$1000$\\,ns)",
    "printed": 6.5,
    "kind": "num",
@@ -191,7 +191,7 @@
   {
    "id": "s53.res.Q3_leak_1us",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:367",
+   "ref": "chapters/ml_discriminators.tex:372",
    "snippet": "(Q3: $3.5$/$6.5$/$11.5\\%$ at $400$/$600$/$1000$\\,ns)",
    "printed": 11.5,
    "kind": "num",
@@ -200,7 +200,7 @@
   {
    "id": "tab.Q1.err_rate",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:402",
+   "ref": "chapters/ml_discriminators.tex:407",
    "snippet": "Q1 & $2.98$ & $0.0$ & $81.2$ & $18.8$ & $0.4$ ($99.7$)",
    "printed": 2.98,
    "kind": "num",
@@ -209,7 +209,7 @@
   {
    "id": "tab.Q1.leakage",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:402",
+   "ref": "chapters/ml_discriminators.tex:407",
    "snippet": "Q1 & $2.98$ & $0.0$ & $81.2$ & $18.8$ & $0.4$ ($99.7$)",
    "printed": 0.0,
    "kind": "num",
@@ -218,7 +218,7 @@
   {
    "id": "tab.Q1.state_change",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:402",
+   "ref": "chapters/ml_discriminators.tex:407",
    "snippet": "Q1 & $2.98$ & $0.0$ & $81.2$ & $18.8$ & $0.4$ ($99.7$)",
    "printed": 81.2,
    "kind": "num",
@@ -227,7 +227,7 @@
   {
    "id": "tab.Q1.overlap",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:402",
+   "ref": "chapters/ml_discriminators.tex:407",
    "snippet": "Q1 & $2.98$ & $0.0$ & $81.2$ & $18.8$ & $0.4$ ($99.7$)",
    "printed": 18.8,
    "kind": "num",
@@ -236,7 +236,7 @@
   {
    "id": "tab.Q1.leaked_shots",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:402",
+   "ref": "chapters/ml_discriminators.tex:407",
    "snippet": "Q1 & $2.98$ & $0.0$ & $81.2$ & $18.8$ & $0.4$ ($99.7$)",
    "printed": 0.4,
    "kind": "num",
@@ -245,7 +245,7 @@
   {
    "id": "tab.Q1.leaked_read_correctly",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:402",
+   "ref": "chapters/ml_discriminators.tex:407",
    "snippet": "Q1 & $2.98$ & $0.0$ & $81.2$ & $18.8$ & $0.4$ ($99.7$)",
    "printed": 99.7,
    "kind": "num",
@@ -254,7 +254,7 @@
   {
    "id": "tab.Q2.err_rate",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:403",
+   "ref": "chapters/ml_discriminators.tex:408",
    "snippet": "Q2 (hardware)\\textsuperscript{\\dag} & $25.43$ & $0.3$ & n/m & n/m & $0.9$ ($90.3$)",
    "printed": 25.43,
    "kind": "num",
@@ -263,7 +263,7 @@
   {
    "id": "tab.Q2.leakage",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:403",
+   "ref": "chapters/ml_discriminators.tex:408",
    "snippet": "Q2 (hardware)\\textsuperscript{\\dag} & $25.43$ & $0.3$ & n/m & n/m & $0.9$ ($90.3$)",
    "printed": 0.3,
    "kind": "num",
@@ -272,7 +272,7 @@
   {
    "id": "tab.Q2.state_change",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:403",
+   "ref": "chapters/ml_discriminators.tex:408",
    "snippet": "Q2 (hardware)\\textsuperscript{\\dag} & $25.43$ & $0.3$ & n/m & n/m & $0.9$ ($90.3$)",
    "printed": "n/m",
    "kind": "nm"
@@ -280,7 +280,7 @@
   {
    "id": "tab.Q2.overlap",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:403",
+   "ref": "chapters/ml_discriminators.tex:408",
    "snippet": "Q2 (hardware)\\textsuperscript{\\dag} & $25.43$ & $0.3$ & n/m & n/m & $0.9$ ($90.3$)",
    "printed": "n/m",
    "kind": "nm"
@@ -288,7 +288,7 @@
   {
    "id": "tab.Q2.leaked_shots",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:403",
+   "ref": "chapters/ml_discriminators.tex:408",
    "snippet": "Q2 (hardware)\\textsuperscript{\\dag} & $25.43$ & $0.3$ & n/m & n/m & $0.9$ ($90.3$)",
    "printed": 0.9,
    "kind": "num",
@@ -297,7 +297,7 @@
   {
    "id": "tab.Q2.leaked_read_correctly",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:403",
+   "ref": "chapters/ml_discriminators.tex:408",
    "snippet": "Q2 (hardware)\\textsuperscript{\\dag} & $25.43$ & $0.3$ & n/m & n/m & $0.9$ ($90.3$)",
    "printed": 90.3,
    "kind": "num",
@@ -306,7 +306,7 @@
   {
    "id": "tab.Q3.err_rate",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:404",
+   "ref": "chapters/ml_discriminators.tex:409",
    "snippet": "Q3 & $5.84$ & $3.1$ & $76.8$ & $20.1$ & $6.1$ ($97.0$)",
    "printed": 5.84,
    "kind": "num",
@@ -315,7 +315,7 @@
   {
    "id": "tab.Q3.leakage",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:404",
+   "ref": "chapters/ml_discriminators.tex:409",
    "snippet": "Q3 & $5.84$ & $3.1$ & $76.8$ & $20.1$ & $6.1$ ($97.0$)",
    "printed": 3.1,
    "kind": "num",
@@ -324,7 +324,7 @@
   {
    "id": "tab.Q3.state_change",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:404",
+   "ref": "chapters/ml_discriminators.tex:409",
    "snippet": "Q3 & $5.84$ & $3.1$ & $76.8$ & $20.1$ & $6.1$ ($97.0$)",
    "printed": 76.8,
    "kind": "num",
@@ -333,7 +333,7 @@
   {
    "id": "tab.Q3.overlap",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:404",
+   "ref": "chapters/ml_discriminators.tex:409",
    "snippet": "Q3 & $5.84$ & $3.1$ & $76.8$ & $20.1$ & $6.1$ ($97.0$)",
    "printed": 20.1,
    "kind": "num",
@@ -342,7 +342,7 @@
   {
    "id": "tab.Q3.leaked_shots",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:404",
+   "ref": "chapters/ml_discriminators.tex:409",
    "snippet": "Q3 & $5.84$ & $3.1$ & $76.8$ & $20.1$ & $6.1$ ($97.0$)",
    "printed": 6.1,
    "kind": "num",
@@ -351,7 +351,7 @@
   {
    "id": "tab.Q3.leaked_read_correctly",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:404",
+   "ref": "chapters/ml_discriminators.tex:409",
    "snippet": "Q3 & $5.84$ & $3.1$ & $76.8$ & $20.1$ & $6.1$ ($97.0$)",
    "printed": 97.0,
    "kind": "num",
@@ -360,7 +360,7 @@
   {
    "id": "tab.Q4.err_rate",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:405",
+   "ref": "chapters/ml_discriminators.tex:410",
    "snippet": "Q4\\textsuperscript{\\ddag} & $5.31$ & n/m & $86.8$ & $13.2$ & n/m",
    "printed": 5.31,
    "kind": "num",
@@ -369,7 +369,7 @@
   {
    "id": "tab.Q4.leakage",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:405",
+   "ref": "chapters/ml_discriminators.tex:410",
    "snippet": "Q4\\textsuperscript{\\ddag} & $5.31$ & n/m & $86.8$ & $13.2$ & n/m",
    "printed": "n/m",
    "kind": "nm"
@@ -377,7 +377,7 @@
   {
    "id": "tab.Q4.state_change",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:405",
+   "ref": "chapters/ml_discriminators.tex:410",
    "snippet": "Q4\\textsuperscript{\\ddag} & $5.31$ & n/m & $86.8$ & $13.2$ & n/m",
    "printed": 86.8,
    "kind": "num",
@@ -386,7 +386,7 @@
   {
    "id": "tab.Q4.overlap",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:405",
+   "ref": "chapters/ml_discriminators.tex:410",
    "snippet": "Q4\\textsuperscript{\\ddag} & $5.31$ & n/m & $86.8$ & $13.2$ & n/m",
    "printed": 13.2,
    "kind": "num",
@@ -395,7 +395,7 @@
   {
    "id": "tab.Q4.leaked_shots",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:405",
+   "ref": "chapters/ml_discriminators.tex:410",
    "snippet": "Q4\\textsuperscript{\\ddag} & $5.31$ & n/m & $86.8$ & $13.2$ & n/m",
    "printed": "n/m",
    "kind": "nm"
@@ -403,8 +403,8 @@
   {
    "id": "tab.Q5.err_rate",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:406",
-   "snippet": "Q5 & $2.96$ & $1.0$ & $90.2$ & $8.8$ & $2.4$ ($98.7$)",
+   "ref": "chapters/ml_discriminators.tex:412",
+   "snippet": "Q5 & $2.96$ & $1.0$ & $90.2$ & $8.7$ & $2.4$ ($98.7$)",
    "printed": 2.96,
    "kind": "num",
    "decimals": 2
@@ -412,8 +412,8 @@
   {
    "id": "tab.Q5.leakage",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:406",
-   "snippet": "Q5 & $2.96$ & $1.0$ & $90.2$ & $8.8$ & $2.4$ ($98.7$)",
+   "ref": "chapters/ml_discriminators.tex:412",
+   "snippet": "Q5 & $2.96$ & $1.0$ & $90.2$ & $8.7$ & $2.4$ ($98.7$)",
    "printed": 1.0,
    "kind": "num",
    "decimals": 1
@@ -421,8 +421,8 @@
   {
    "id": "tab.Q5.state_change",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:406",
-   "snippet": "Q5 & $2.96$ & $1.0$ & $90.2$ & $8.8$ & $2.4$ ($98.7$)",
+   "ref": "chapters/ml_discriminators.tex:412",
+   "snippet": "Q5 & $2.96$ & $1.0$ & $90.2$ & $8.7$ & $2.4$ ($98.7$)",
    "printed": 90.2,
    "kind": "num",
    "decimals": 1
@@ -430,26 +430,18 @@
   {
    "id": "tab.Q5.overlap",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:406",
-   "snippet": "Q5 & $2.96$ & $1.0$ & $90.2$ & $8.8$ & $2.4$ ($98.7$)",
-   "printed": 8.8,
+   "ref": "chapters/ml_discriminators.tex:412",
+   "snippet": "Q5 & $2.96$ & $1.0$ & $90.2$ & $8.7$ & $2.4$ ($98.7$)",
+   "printed": 8.7,
    "kind": "num",
    "decimals": 1,
-   "known_issue": {
-    "accept": {
-     "kind": "num",
-     "printed": 8.7,
-     "decimals": 1
-    },
-    "why": "Q5 overlap = 2901.5 / 33162 errors = 8.7495 %; em_e4recon_final.json stores 8.75 (2 decimals) and the table re-rounded that to 8.8 (double rounding). Correct 1-decimal value: 8.7. State change + overlap + leakage then sum to 90.2 + 8.7 + 1.0 = 99.9 (rounding).",
-    "suggested_text": "Q5 & $2.96$ & $1.0$ & $90.2$ & $8.7$ & $2.4$ ($98.7$)"
-   }
+   "note": "was 8.8 before the 2026-11-05 [audit fix] (double rounding of the stored 8.75); 2901.5 / 33162 errors = 8.7495 %"
   },
   {
    "id": "tab.Q5.leaked_shots",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:406",
-   "snippet": "Q5 & $2.96$ & $1.0$ & $90.2$ & $8.8$ & $2.4$ ($98.7$)",
+   "ref": "chapters/ml_discriminators.tex:412",
+   "snippet": "Q5 & $2.96$ & $1.0$ & $90.2$ & $8.7$ & $2.4$ ($98.7$)",
    "printed": 2.4,
    "kind": "num",
    "decimals": 1
@@ -457,8 +449,8 @@
   {
    "id": "tab.Q5.leaked_read_correctly",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:406",
-   "snippet": "Q5 & $2.96$ & $1.0$ & $90.2$ & $8.8$ & $2.4$ ($98.7$)",
+   "ref": "chapters/ml_discriminators.tex:412",
+   "snippet": "Q5 & $2.96$ & $1.0$ & $90.2$ & $8.7$ & $2.4$ ($98.7$)",
    "printed": 98.7,
    "kind": "num",
    "decimals": 1
@@ -466,7 +458,7 @@
   {
    "id": "tab.Q1Q3Q5.err_rate",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:408",
+   "ref": "chapters/ml_discriminators.tex:414",
    "snippet": "Q1, Q3, Q5 & $3.93$ & $1.8$ & $\\mathbf{81.3}$ & $16.9$ & ---",
    "printed": 3.93,
    "kind": "num",
@@ -475,7 +467,7 @@
   {
    "id": "tab.Q1Q3Q5.leakage",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:408",
+   "ref": "chapters/ml_discriminators.tex:414",
    "snippet": "Q1, Q3, Q5 & $3.93$ & $1.8$ & $\\mathbf{81.3}$ & $16.9$ & ---",
    "printed": 1.8,
    "kind": "num",
@@ -484,7 +476,7 @@
   {
    "id": "tab.Q1Q3Q5.state_change",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:408",
+   "ref": "chapters/ml_discriminators.tex:414",
    "snippet": "Q1, Q3, Q5 & $3.93$ & $1.8$ & $\\mathbf{81.3}$ & $16.9$ & ---",
    "printed": 81.3,
    "kind": "num",
@@ -493,7 +485,7 @@
   {
    "id": "tab.Q1Q3Q5.overlap",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:408",
+   "ref": "chapters/ml_discriminators.tex:414",
    "snippet": "Q1, Q3, Q5 & $3.93$ & $1.8$ & $\\mathbf{81.3}$ & $16.9$ & ---",
    "printed": 16.9,
    "kind": "num",
@@ -502,7 +494,7 @@
   {
    "id": "tab.footnote.Q2_sep_sigma",
    "item": "tab:error_modes",
-   "ref": "chapters/ml_discriminators.tex:410",
+   "ref": "chapters/ml_discriminators.tex:416",
    "snippet": "States $0.5\\sigma$ apart in the unused tail",
    "printed": 0.5,
    "kind": "num",
@@ -511,7 +503,7 @@
   {
    "id": "s53.ana.pooled_state_change",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "state changes are $81\\%$ of errors",
    "printed": 81,
    "kind": "num",
@@ -520,7 +512,7 @@
   {
    "id": "s53.ana.pooled_overlap",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "overlap $17\\%$",
    "printed": 17,
    "kind": "num",
@@ -529,7 +521,7 @@
   {
    "id": "s53.ana.pooled_state_change_band",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "($79$--$81\\%$ and",
    "printed": [
     79,
@@ -541,7 +533,7 @@
   {
    "id": "s53.ana.pooled_overlap_band",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "$17$--$20\\%$ across stayed-in-state criteria)",
    "printed": [
     17,
@@ -553,7 +545,7 @@
   {
    "id": "s53.ana.pooled_leakage",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "leakage $1.8\\%$",
    "printed": 1.8,
    "kind": "num",
@@ -562,7 +554,7 @@
   {
    "id": "s53.ana.Q2_gauss_pred_err",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "Gaussian overlap alone predicts $28\\%$ error",
    "printed": 28,
    "kind": "num",
@@ -571,7 +563,7 @@
   {
    "id": "s53.ana.Q2_gauss_ge_cnn",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "only Q2 is SNR-bound",
    "printed": "Gaussian-predicted error >= CNN error on Q2",
    "kind": "ge_pair",
@@ -580,7 +572,7 @@
   {
    "id": "s53.ana.Q1_sc_growth",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "at most $1.6\\times$ more frequent per shot (Q1;",
    "printed": 1.6,
    "kind": "num",
@@ -589,7 +581,7 @@
   {
    "id": "s53.ana.sc_growth_is_max_on_Q1",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "at most $1.6\\times$ more frequent per shot (Q1;",
    "printed": "Q1",
    "kind": "argmax"
@@ -597,7 +589,7 @@
   {
    "id": "s53.ana.Q3_sc_400ns",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "Q3: $4.4\\!\\to\\!4.5\\%$)",
    "printed": 4.4,
    "kind": "num",
@@ -606,7 +598,7 @@
   {
    "id": "s53.ana.Q3_sc_1us",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "Q3: $4.4\\!\\to\\!4.5\\%$)",
    "printed": 4.5,
    "kind": "num",
@@ -615,7 +607,7 @@
   {
    "id": "s53.ana.pooled_sc_400ns",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "($37\\%$ at $400$\\,ns, $81\\%$ at $1\\,\\mu$s)",
    "printed": 37,
    "kind": "num",
@@ -624,7 +616,7 @@
   {
    "id": "s53.ana.pooled_sc_1us",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "($37\\%$ at $400$\\,ns, $81\\%$ at $1\\,\\mu$s)",
    "printed": 81,
    "kind": "num",
@@ -633,7 +625,7 @@
   {
    "id": "s53.ana.overlap_fall",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "as overlap falls $2.5$--$14\\times$",
    "printed": [
     2.5,
@@ -648,7 +640,7 @@
   {
    "id": "s53.ana.Q3_leak_triples",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "leakage, by contrast, triples on Q3",
    "printed": 3,
    "kind": "approx",
@@ -657,7 +649,7 @@
   {
    "id": "s53.ana.herq_cofail_Q3",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "($68\\%$/$92\\%$ of its Q3/Q5 errors)",
    "printed": 68,
    "kind": "num",
@@ -666,7 +658,7 @@
   {
    "id": "s53.ana.herq_cofail_Q5",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "($68\\%$/$92\\%$ of its Q3/Q5 errors)",
    "printed": 92,
    "kind": "num",
@@ -675,7 +667,7 @@
   {
    "id": "s53.ana.herq_Q3_state_change",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "also mostly by state change (Q3: $69\\%$)",
    "printed": 69,
    "kind": "num",
@@ -684,7 +676,7 @@
   {
    "id": "s53.ana.cnn_fewer_Q3_errors",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "MCMit-CNN's $23\\%$ fewer Q3 errors",
    "printed": 23,
    "kind": "num",
@@ -693,7 +685,7 @@
   {
    "id": "s53.ana.fewer_errors_span_both_modes",
    "item": "subsec:failures (Sec. 5.3)",
-   "ref": "chapters/ml_discriminators.tex:418",
+   "ref": "chapters/ml_discriminators.tex:424",
    "snippet": "span both modes",
    "printed": "CNN < HERQULES in both state change and overlap (% of shots)",
    "kind": "both_less"
@@ -701,7 +693,7 @@
   {
    "id": "tk5.state_change_approx80",
    "item": "Takeaway #5",
-   "ref": "chapters/ml_discriminators.tex:424",
+   "ref": "chapters/ml_discriminators.tex:430",
    "snippet": "${\\sim}80\\%$ of errors on Q1, Q3, Q5 are state changes",
    "printed": 80,
    "kind": "approx",
@@ -711,7 +703,7 @@
   {
    "id": "tk5.overlap_le20",
    "item": "Takeaway #5",
-   "ref": "chapters/ml_discriminators.tex:424",
+   "ref": "chapters/ml_discriminators.tex:430",
    "snippet": "${\\leq}20\\%$ overlap",
    "printed": 20,
    "kind": "le",
@@ -721,7 +713,7 @@
   {
    "id": "tk5.leak_shots_range",
    "item": "Takeaway #5",
-   "ref": "chapters/ml_discriminators.tex:424",
+   "ref": "chapters/ml_discriminators.tex:430",
    "snippet": "$0.4$--$6\\%$ of shots silently leak",
    "printed": [
     0.4,
@@ -737,7 +729,7 @@
   {
    "id": "tk5.model_choice_le23",
    "item": "Takeaway #5",
-   "ref": "chapters/ml_discriminators.tex:424",
+   "ref": "chapters/ml_discriminators.tex:430",
    "snippet": "Model choice shifts errors by ${\\leq}23\\%$ (Q3)",
    "printed": 23,
    "kind": "num",
@@ -746,7 +738,7 @@
   {
    "id": "app.scope_windows",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:341",
+   "ref": "chapters/appendix_herqules.tex:347",
    "snippet": "on Q1, Q3, and Q5 at $400$ and $600$\\,ns",
    "printed": "CNN Q1,Q3,Q5 @400ns and @600ns",
    "kind": "scope"
@@ -754,7 +746,7 @@
   {
    "id": "app.n_configs",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:350",
+   "ref": "chapters/appendix_herqules.tex:358",
    "snippet": "Per neighbour configuration (16 per qubit)",
    "printed": 16,
    "kind": "param"
@@ -762,7 +754,7 @@
   {
    "id": "app.z_cut",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:354",
+   "ref": "chapters/appendix_herqules.tex:362",
    "snippet": "A shot leaked if $z>3$",
    "printed": 3,
    "kind": "param"
@@ -770,7 +762,7 @@
   {
    "id": "app.bins_ns",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:358",
+   "ref": "chapters/appendix_herqules.tex:366",
    "snippet": "in $100$\\,ns bins",
    "printed": 100,
    "kind": "param"
@@ -778,7 +770,7 @@
   {
    "id": "app.alpha",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:360",
+   "ref": "chapters/appendix_herqules.tex:368",
    "snippet": "likelihood-ratio test at $\\alpha=0.01$",
    "printed": 0.01,
    "kind": "param"
@@ -786,7 +778,7 @@
   {
    "id": "app.p_flag_window",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:363",
+   "ref": "chapters/appendix_herqules.tex:371",
    "snippet": "flagged with probability ${\\geq}0.5$ only between ${\\sim}225$",
    "printed": [
     225,
@@ -794,12 +786,12 @@
    ],
    "kind": "range",
    "decimals": 0,
-   "note": "union over the used Q3/Q5 tests of the injected-step times with P(flag) >= 0.5 (ns); text continues on l.364"
+   "note": "union over the used Q3/Q5 tests of the injected-step times with P(flag) >= 0.5 (ns); text continues on l.372"
   },
   {
    "id": "app.Q1_p_flag_max",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:364",
+   "ref": "chapters/appendix_herqules.tex:372",
    "snippet": "(Q1 peaks at $0.44$)",
    "printed": 0.44,
    "kind": "num",
@@ -808,7 +800,7 @@
   {
    "id": "app.efficiency_range",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:364",
+   "ref": "chapters/appendix_herqules.tex:372",
    "snippet": "$16$--$28\\%$ of injected steps",
    "printed": [
     16,
@@ -820,7 +812,7 @@
   {
    "id": "app.gate_obs_exp",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:366",
+   "ref": "chapters/appendix_herqules.tex:374",
    "snippet": "(observed/expected flags $0.6$--$1.3$)",
    "printed": [
     0.6,
@@ -831,7 +823,7 @@
   {
    "id": "app.gate_efficiency",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:367",
+   "ref": "chapters/appendix_herqules.tex:375",
    "snippet": "${\\geq}5\\%$; at $1\\,\\mu$s this excludes Q2, Q4, and Q3 relaxation",
    "printed": 5,
    "kind": "param"
@@ -839,7 +831,7 @@
   {
    "id": "app.gate_excluded",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:367",
+   "ref": "chapters/appendix_herqules.tex:375",
    "snippet": "this excludes Q2, Q4, and Q3 relaxation",
    "printed": [
     "Q2_prep0",
@@ -853,7 +845,7 @@
   {
    "id": "app.late_core_radius",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:369",
+   "ref": "chapters/appendix_herqules.tex:377",
    "snippet": "lies within $1.5$ robust",
    "printed": 1.5,
    "kind": "param"
@@ -861,7 +853,7 @@
   {
    "id": "app.S_k1_shift",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:376",
+   "ref": "chapters/appendix_herqules.tex:384",
    "snippet": "a $z>1$ cut lowers it by $1.5$\\,pp",
    "printed": 1.5,
    "kind": "num",
@@ -870,7 +862,7 @@
   {
    "id": "app.order_swap_O_S",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:379",
+   "ref": "chapters/appendix_herqules.tex:387",
    "snippet": "Swapping steps 1 and 2 moves $O$ and $S$ by ${\\leq}0.03$\\,pp",
    "printed": 0.03,
    "kind": "text_bound",
@@ -879,7 +871,7 @@
   {
    "id": "app.order_swap_Q3_L_to_T",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:380",
+   "ref": "chapters/appendix_herqules.tex:388",
    "snippet": "only on Q3 do $1.4$\\,pp of errors",
    "printed": 1.4,
    "kind": "num",
@@ -888,7 +880,7 @@
   {
    "id": "app.Q2_late_sep",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:382",
+   "ref": "chapters/appendix_herqules.tex:390",
    "snippet": "late-window cores are only $0.5\\sigma$ apart",
    "printed": 0.5,
    "kind": "num",
@@ -897,7 +889,7 @@
   {
    "id": "app.pooled_sc_reference_band",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:384",
+   "ref": "chapters/appendix_herqules.tex:392",
    "snippet": "Q1/Q3/Q5 state change stays at $79$--$81\\%$",
    "printed": [
     79,
@@ -909,7 +901,7 @@
   {
    "id": "app.halfplane_err_range",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:385",
+   "ref": "chapters/appendix_herqules.tex:393",
    "snippet": "$90$--$95\\%$ of prepared-$|1\\rangle$ errors on Q1, Q3, and Q5",
    "printed": [
     90,
@@ -921,7 +913,7 @@
   {
    "id": "app.halfplane_corr_range",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:386",
+   "ref": "chapters/appendix_herqules.tex:394",
    "snippet": "against $6$--$33\\%$ of correctly read shots",
    "printed": [
     6,
@@ -933,7 +925,7 @@
   {
    "id": "app.halfplane_s",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:387",
+   "ref": "chapters/appendix_herqules.tex:395",
    "snippet": "gives $s=89\\%$ of their",
    "printed": 89,
    "kind": "num",
@@ -942,7 +934,7 @@
   {
    "id": "app.halfplane_attributed",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:388",
+   "ref": "chapters/appendix_herqules.tex:396",
    "snippet": "(attributed: $90\\%$)",
    "printed": 90,
    "kind": "num",
@@ -951,7 +943,7 @@
   {
    "id": "app.fp_null_observed",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:392",
+   "ref": "chapters/appendix_herqules.tex:400",
    "snippet": "$24$ observed vs.\\ $54$ expected flags",
    "printed": 24,
    "kind": "num",
@@ -960,7 +952,7 @@
   {
    "id": "app.fp_null_expected",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:392",
+   "ref": "chapters/appendix_herqules.tex:400",
    "snippet": "$24$ observed vs.\\ $54$ expected flags",
    "printed": 54,
    "kind": "num",
@@ -969,7 +961,7 @@
   {
    "id": "app.step_T_Q1Q5_range",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:393",
+   "ref": "chapters/appendix_herqules.tex:402",
    "snippet": "two detectors give $4$--$8\\%$ of the errors on Q1 and Q5",
    "printed": [
     4,
@@ -981,29 +973,20 @@
   {
    "id": "app.step_T_Q3",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:393",
-   "snippet": "and $1.7\\%$ on Q3",
-   "printed": 1.7,
-   "kind": "range_all",
+   "ref": "chapters/appendix_herqules.tex:402",
+   "snippet": "and $1.7$--$1.8\\%$ on Q3",
+   "printed": [
+    1.7,
+    1.8
+   ],
+   "kind": "range",
    "decimals": 1,
-   "note": "every detector variant for Q3 (excitation only) should round to 1.7",
-   "known_issue": {
-    "accept": {
-     "kind": "range",
-     "printed": [
-      1.7,
-      1.8
-     ],
-     "decimals": 1
-    },
-    "why": "the three detector variants give 1.752 (e2seg/e4recon), 1.72 and 1.68 (e5vrepro) % of Q3 errors; 1.752 rounds to 1.8, so '1.7%' summarises a 1.7-1.8 bracket (em_e8fix bracket_text: '1.7-1.75')",
-    "suggested_text": "$1.7$--$1.8\\%$ on Q3"
-   }
+   "note": "detector variants for Q3 (excitation only): 1.752 (e2seg/e4recon), 1.72 and 1.68 (e5vrepro) %; was '1.7%' before the 2026-11-05 [audit fix]"
   },
   {
    "id": "app.Q3_relax_null_partners0",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:396",
+   "ref": "chapters/appendix_herqules.tex:405",
    "snippet": "flags are $1.0$ with Q1, Q4, and Q5 in $|0\\rangle$",
    "printed": 1.0,
    "kind": "range_all",
@@ -1013,7 +996,7 @@
   {
    "id": "app.Q3_relax_null_all_excited",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:396",
+   "ref": "chapters/appendix_herqules.tex:405",
    "snippet": "and up to $5.4$ with all three excited",
    "printed": 5.4,
    "kind": "num",
@@ -1022,7 +1005,7 @@
   {
    "id": "app.leak_Q3_prep1",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:398",
+   "ref": "chapters/appendix_herqules.tex:407",
    "snippet": "At $1\\,\\mu$s, $11.5\\%$ of Q3's prepared-$|1\\rangle$",
    "printed": 11.5,
    "kind": "num",
@@ -1031,7 +1014,7 @@
   {
    "id": "app.leak_Q3_prep0",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:398",
+   "ref": "chapters/appendix_herqules.tex:407",
    "snippet": "and $0.8\\%$ of",
    "printed": 0.8,
    "kind": "num",
@@ -1040,7 +1023,7 @@
   {
    "id": "app.leak_Q5_prep1",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:399",
+   "ref": "chapters/appendix_herqules.tex:408",
    "snippet": "as do $4.7\\%$ (Q5)",
    "printed": 4.7,
    "kind": "num",
@@ -1049,7 +1032,7 @@
   {
    "id": "app.leak_Q1_prep1",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:399",
+   "ref": "chapters/appendix_herqules.tex:408",
    "snippet": "and $0.8\\%$ (Q1) of prepared",
    "printed": 0.8,
    "kind": "num",
@@ -1058,7 +1041,7 @@
   {
    "id": "app.leak_Q1Q5_share_Q3_1",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:400",
+   "ref": "chapters/appendix_herqules.tex:409",
    "snippet": "${\\sim}90\\%$ of it with Q3 prepared in $|1\\rangle$",
    "printed": 90,
    "kind": "approx",
@@ -1068,7 +1051,7 @@
   {
    "id": "app.leak_Q2_prep1",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:401",
+   "ref": "chapters/appendix_herqules.tex:410",
    "snippet": "probably $1.6\\%$ (Q2)",
    "printed": 1.6,
    "kind": "num",
@@ -1077,7 +1060,7 @@
   {
    "id": "app.leak_Q4_nm",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:401",
+   "ref": "chapters/appendix_herqules.tex:410",
    "snippet": "Q4 is n/m",
    "printed": "n/m",
    "kind": "nm"
@@ -1085,7 +1068,7 @@
   {
    "id": "app.leak_share_Q3_prep0_err",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:401",
+   "ref": "chapters/appendix_herqules.tex:410",
    "snippet": "Leaked shots are $13\\%$ of Q3's prepared-$|0\\rangle$ errors",
    "printed": 13,
    "kind": "num",
@@ -1094,7 +1077,7 @@
   {
    "id": "app.leak_share_Q3_err",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:402",
+   "ref": "chapters/appendix_herqules.tex:411",
    "snippet": "only $3.1\\%$ of all its errors",
    "printed": 3.1,
    "kind": "num",
@@ -1103,7 +1086,7 @@
   {
    "id": "app.Q3_leaked_read_as_1",
    "item": "app:error-modes",
-   "ref": "chapters/appendix_herqules.tex:402",
+   "ref": "chapters/appendix_herqules.tex:411",
    "snippet": "since $99.3\\%$ of leaked prepared-$|1\\rangle$ Q3 shots",
    "printed": 99.3,
    "kind": "num",

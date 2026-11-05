@@ -4,9 +4,10 @@ variant), pointed at the CNN-readout results of BOTH simulators: the ECCentric h
 readout_compare/eccentric_readout_ler_cnn.csv and the lattice-sim half from
 synchronization-artifact/artifact_readout_ler_cnn.csv (49 of 50 points; d=13 / 200 ns / current is missing). The
 lattice-sim CSV was produced on 2026-06-13 but never copied next to the ECCentric one, so the da7164c figure shows an
-empty lattice-sim panel. This is the comparison that matches qec_impact.tex:20 ("both use ... the MCMit-CNN readout");
-the paper's fig:ler_current / fig:ler_futuristic use the older HERQULES readout instead (see
-results/qec/paper_values.json, known_issues). Output: $ORAQLE_OUT/extras/qec/readout_ler_cnn_{current,futuristic}.pdf
+empty lattice-sim panel. This is the comparison that matches qec_impact.tex:21 ("both use ... the MCMit-CNN readout").
+Superseded since the 2026-11-05 [audit fix]: the paper's fig:ler_current / fig:ler_futuristic now show the CNN readout
+with all 50 lattice-sim points (paper_figures/qec/make_readout_ler_cnn.py). Kept as a draft (make ... cnn49).
+Output: $ORAQLE_OUT/extras/qec/readout_ler_cnn_{current,futuristic}.pdf
 
 --- original docstring ---
 plot_readout_compare.py

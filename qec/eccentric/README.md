@@ -21,7 +21,9 @@ pieces that are not in that revision, or that needed a path fix, live here.
 make -C paper_figures/qec all compare numbers PY=python3    # into $ORAQLE_OUT/paper_figures/qec (default out/)
 ```
 All seven figures come out pixel-identical to the paper PDFs (300 dpi raster, 0 differing pixels; matplotlib 3.10.9
-vs. the paper's 3.9.3). `make extras` draws the CNN-readout version of the simulator comparison (see below).
+vs. the paper's 3.9.3). Since the 2026-11-05 [audit fix] fig:ler_current / fig:ler_futuristic are the CNN-readout
+figures (`readout_ler_cnn_*`, `paper_figures/qec/make_readout_ler_cnn.py`); `make extras` draws the superseded
+HERQULES-readout version (see below).
 
 ## Re-run the simulations (ECCentric image, CPU; hours per sweep)
 
@@ -56,18 +58,18 @@ environment variables are inferred from the CSV contents (codes, shot counts) an
 | `discriminators/ler_discriminators_d9.csv` | (not in the paper) | `LER_DIST=9 LER_CODES=surface,bacon,color,hh python run_ler_discriminators.py` | reconstructed |
 | `discriminators/ler_discriminators_d12.csv` | fig:ler_discriminators (right), d=12 numbers | `LER_DIST=12 LER_CODES=surface,bacon,hh LER_INCLUDE_CNN=1 python run_ler_discriminators.py` | reconstructed |
 | `discriminators/ler_discriminators_d12_futuristic.csv` | (not in the paper) | `LER_DIST=12 LER_CODES=surface,bacon,hh,gross LER_INCLUDE_CNN=1 LER_FUTURISTIC=1 python run_ler_discriminators.py` | reconstructed |
-| `readout_compare/eccentric_readout_ler_herqules.csv` | fig:ler_current (a), fig:ler_futuristic (a) | `compare_readout_eccentric.py` @7858c2c (`READOUT_MODE="herqules"`) with d+1 memory rounds | **partial**: the committed 7858c2c file sets `MEMORY_ROUNDS = 1` (it then writes `..._nmr1.csv`); the d+1 state that wrote this CSV on 2026-06-10 10:29 UTC was never committed. Its log header (graham `readout_compare/eccentric_run_herqules.log`) matches the 7858c2c shots/distances. |
+| `readout_compare/eccentric_readout_ler_herqules.csv` | superseded fig:ler_current (a), fig:ler_futuristic (a) (extras) | `compare_readout_eccentric.py` @7858c2c (`READOUT_MODE="herqules"`) with d+1 memory rounds | **partial**: the committed 7858c2c file sets `MEMORY_ROUNDS = 1` (it then writes `..._nmr1.csv`); the d+1 state that wrote this CSV on 2026-06-10 10:29 UTC was never committed. Its log header (graham `readout_compare/eccentric_run_herqules.log`) matches the 7858c2c shots/distances. |
 | `readout_compare/eccentric_readout_ler_herqules_nmr1.csv` | (control, not plotted) | `python compare_readout_eccentric.py` in the `--with-7858c2c` worktree | exact code |
-| `readout_compare/artifact_readout_ler_herqules.csv` (= `synchronization-artifact/artifact_readout_ler_herqules.csv`) | fig:ler_current (b), fig:ler_futuristic (b) | `cd synchronization-artifact && python compare_readout_artifact.py` @7858c2c (`READOUT_MODE="herqules"`; lattice-sim, idle x3, 500k shots; runs in the eccentric image), then copy into `experiment_results/readout_compare/` | exact code |
-| `readout_compare/eccentric_readout_ler_cnn{,_nmr1}.csv` | (CNN rerun; extras) | `MEMORY_ROUNDS=dplus1` / `MEMORY_ROUNDS=1 python compare_readout_eccentric.py` @da7164c | documented (run_cnn_all.sh) |
-| `synchronization-artifact/artifact_readout_ler_cnn.csv` | (CNN rerun; extras) | `cd synchronization-artifact && python compare_readout_artifact.py` @da7164c (`READOUT_MODE="cnn"`) | exact code; 49 of 50 points (d=13, 200 ns, current missing) |
+| `readout_compare/artifact_readout_ler_herqules.csv` (= `synchronization-artifact/artifact_readout_ler_herqules.csv`) | superseded fig:ler_current (b), fig:ler_futuristic (b) (extras) | `cd synchronization-artifact && python compare_readout_artifact.py` @7858c2c (`READOUT_MODE="herqules"`; lattice-sim, idle x3, 500k shots; runs in the eccentric image), then copy into `experiment_results/readout_compare/` | exact code |
+| `readout_compare/eccentric_readout_ler_cnn{,_nmr1}.csv` | fig:ler_current (a), fig:ler_futuristic (a) (`_nmr1`: control, not plotted) | `MEMORY_ROUNDS=dplus1` / `MEMORY_ROUNDS=1 python compare_readout_eccentric.py` @da7164c | documented (run_cnn_all.sh) |
+| `synchronization-artifact/artifact_readout_ler_cnn.csv` | fig:ler_current (b), fig:ler_futuristic (b), via `results/qec/artifact_readout_ler_cnn_complete.csv` | `cd synchronization-artifact && python compare_readout_artifact.py` @da7164c (`READOUT_MODE="cnn"`) | exact code; 49 of 50 points; the missing d=13 / 200 ns / current point was computed on 2026-11-05 with the same driver (`extras/qec/run_latsim_cnn_missing_point.py`) |
 | `noise_models/{readout_length_tradeoff,surface_readout_mechanisms}.*`, `RESULTS.md` | (not in the paper) | `make_readout_tradeoff.py`, `explore_readout.py`, `gen_noise_results_md.py` | documented |
-| `*/buggy_herqules/*` | (superseded; kept because the appendix comparison figures still use this readout) | earlier runs with the mixed-shot HERQULES table | moved there by commit 5658bb8 |
+| `*/buggy_herqules/*` | (superseded; kept for the record) | earlier runs with the mixed-shot HERQULES table | moved there by commit 5658bb8 |
 
 The other Oraqle drivers in the pinned revision, used unchanged: `run_ler_noise_models.py`,
 `compare_readout_eccentric.py`, `explore_readout.py`, `make_readout_tradeoff.py`, `gen_noise_results_md.py`,
 `run_cnn_all.sh`, `synchronization-artifact/{compare_readout_artifact,run_herqules_both,run_herqules_futuristic,run_tradeoff_final}.py`
-(the last three are MCMit runs). The §6 noise constants (qec_impact:20: CZ 1.191e-3, SX 1.637e-4,
+(the last three are MCMit runs). The §6 noise constants (qec_impact:21: CZ 1.191e-3, SX 1.637e-4,
 T1/T2 284.95/322.68 µs) are checked against these drivers by `paper_numbers.py`.
 
 `run_ler_discriminators.py` reads the per-qubit fidelities of six discriminators from `master_fidelity.csv`
@@ -97,6 +99,7 @@ prints the LER of one configuration and its z-score against the paper's CSV. Run
 ## The extra figure
 
 `extras/qec/plot_readout_compare_cnn.py` is eccentric's own CNN variant of the comparison plot, pointed at the CNN
-reruns of both simulators. The paper's fig:ler_current / fig:ler_futuristic use the older HERQULES readout
-(contrary to qec_impact:20); the CNN version shows the same qualitative picture (ECCentric saturated, lattice-sim
-U-shaped with its minimum at 600-800 ns).
+reruns of both simulators (49 lattice-sim points). Until the 2026-11-05 [audit fix] the paper's fig:ler_current /
+fig:ler_futuristic used the older HERQULES readout (contrary to qec_impact:21); they now show the CNN readout with
+all 50 points (`paper_figures/qec/make_readout_ler_cnn.py`, the paper's own plotting function). This draft is kept as
+`make -C paper_figures/qec cnn49`; the HERQULES version as `make -C paper_figures/qec extras`.

@@ -59,7 +59,7 @@
    "used_in": [
     "system/sweep_ler.py PRESETS (CZ, T1, T2; CNOT 70 ns is lattice-sim's own latency)",
     "ECCentric drivers run_ler_noise_models.py / run_ler_discriminators.py (CZ, SX, T1, T2, 32/68 ns)",
-    "oraqle-ics/chapters/qec_impact.tex:20 footnote"
+    "oraqle-ics/chapters/qec_impact.tex:21 footnote"
    ],
    "source": "IBM Quantum platform dashboard snapshot of ibm_boston (eccentric run_ler_noise_models.py:69-72: 'SX error, CZ error, T2: ibm_boston dashboard image; T1, gate latencies, reset: evaluate_mcm_latency.py')",
    "checked": "NOT checkable: the dashboard image was not archived; values agree across eccentric@da7164c, lattice-sim compare_readout_artifact.py and system/sweep_ler.py"

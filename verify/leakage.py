@@ -403,7 +403,7 @@ def getters(C):
         m = C.VC["per_qubit"]["Q3"]["models"]["1us|cnn_canonical"]
         n = m["prep0"]["N"] + m["prep1"]["N"]
         naive = 100 * sum(m[b]["L1"] - m[b]["L3"] for b in ("prep0", "prep1")) / n
-        NOTES.append(f"app:376 'z>1 lowers state change by 1.5 pp': e5vstat value {x:.2f} pp; the naive count "
+        NOTES.append(f"app:384 'z>1 lowers state change by 1.5 pp': e5vstat value {x:.2f} pp; the naive count "
                      f"difference (L1-L3)/N_err from em_e5vstat_check.json is {naive:.2f} pp (both round to 1.5).")
         return x
     G["app.S_k1_shift"] = sk1
@@ -649,15 +649,16 @@ def notes(C):
                  "_train_and_analyze_errors.py (2026-06-02), re-inferred by em_e3herq_regen_pertrace_ckpt.py; the "
                  "tab:fidelity HERQULES row comes from _herqules_length_both.py (retrained, no checkpoint). Per-qubit "
                  f"fidelity at 1 us differs by at most {max(d):.2f} pp from the unrounded table CSV (Q{1 + d.index(max(d))}; "
-                 f"{pp:.2f} pp from the printed 3-decimal table); F5Q {h['F5Q']} vs 0.9046.")
+                 f"{pp:.2f} pp from the printed 3-decimal table, as the paper states since the 2026-11-05 [audit fix]); "
+                 f"F5Q {h['F5Q']} vs 0.9046.")
     NOTES.append("The 1 us MCMit-CNN is preds_MCMitCNN_pb.npy (runners/_xtalk_cnn.py, a separate training run of the "
                  "tab:fidelity recipe; per-qubit fidelity within 1e-4 of the table); the 400/600 ns models are "
                  "cnn_soft_{400,600}ns.npz of sims/soft_readout_cnn.py (same recipe).")
-    NOTES.append("app:364 'Q1 peaks at 0.44': injection P(flag) maxima are 0.445 (excitation) and 0.437 (relaxation); "
-                 "0.445 sits exactly on the rounding boundary. app:393 '1.7% on Q3': detector variants 1.75/1.72/1.68.")
+    NOTES.append("app:372 'Q1 peaks at 0.44': injection P(flag) maxima are 0.445 (excitation) and 0.437 (relaxation); "
+                 "0.445 sits exactly on the rounding boundary. app:402 '1.7--1.8% on Q3': detector variants 1.75/1.72/1.68.")
     NOTES.append("Leakage numbers are k=3 mirror-corrected lower bounds (E3); Q4 leakage and Q2 state change/overlap "
                  "are n/m by construction (multimodal |1> / late cores 0.52 sigma apart).")
-    NOTES.append("app:379 '<= 0.03 pp' is quoted from em_e4recon_final.json robustness_notes (string), not recomputable "
+    NOTES.append("app:387 '<= 0.03 pp' is quoted from em_e4recon_final.json robustness_notes (string), not recomputable "
                  "from the shipped JSON; the order-B per-shot arrays are cluster intermediates.")
 
 

@@ -1,0 +1,2 @@
+tool,distance,readout_ns,noise_model,measure_error,logical_error_rate,shots,failures,chunks,seconds
+artifact,13,200,current,0.2034041393624929,0.484496,500000,242248,50,47.3

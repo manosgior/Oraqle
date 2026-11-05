@@ -67,7 +67,7 @@ def compute(data=None):
     from discriminators import FIDELITY, measure_error
     v = {}
 
-    # ---------------- §7.1 methodology (sys:9, 11, 13, 15)
+    # ---------------- §7.1 methodology (sys:9, 11, 14, 16)
     disc = {(s["label"], s["T"]): s for s in S["disc_hi"]}
     grid = {(s["T"], round(s["p"], 4)): s for s in S["grid"]}
     lam = lambda s: s.get("Lambda", float("nan"))  # noqa: E731
@@ -94,12 +94,14 @@ def compute(data=None):
     v["rotation_eps"] = WL.EPS
     v["program_budget"] = SC.BUDGET
 
-    # ---------------- §7.2 error suppression and spacetime (sys:31, 36, 38, 40)
+    # ---------------- §7.2 error suppression and spacetime (sys:33, 39, 42, 44)
     v["grid_lambda_max_p07"] = max(lam(grid[(T, 0.07)]) for T in range(200, 1001, 100))
     v["grid_lambda_max_p06"] = max(lam(grid[(T, 0.06)]) for T in range(200, 1001, 100))
     v["disc4_p400_min_pct"] = min(100 * disc[(m, 400)]["p"] for m in DISC4)
     v["disc4_p600_max_pct"] = max(100 * disc[(m, 600)]["p"] for m in DISC4)
     v["disc4_lambda600"] = {m: lam(disc[(m, 600)]) for m in DISC4}
+    v["disc3_p600_max_pct"] = max(100 * disc[(m, 600)]["p"] for m in DISC4 if m != "QubiCML")    # 'every ... but QubiCML'
+    v["disc3_lambda600_min"] = min(lam(disc[(m, 600)]) for m in DISC4 if m != "QubiCML")
     base = disc[("MCMit-CNN", 1000)]
     st = lambda m, T: disc[(m, T)]["spacetime@1e-09"] / base["spacetime@1e-09"]  # noqa: E731
     qb = lambda m, T: disc[(m, T)]["qubits@1e-09"] / base["qubits@1e-09"]  # noqa: E731
@@ -125,7 +127,7 @@ def compute(data=None):
     v["herqules_st_rel_same_T_600_1000"] = rng([disc[("HERQULES", T)]["spacetime@1e-09"] /
                                                 disc[("MCMit-CNN", T)]["spacetime@1e-09"] for T in (600, 800, 1000)])
 
-    # ---------------- §7.3 decoder load (sys:56, 61-78, 80, 82, 84)
+    # ---------------- §7.3 decoder load (sys:60, 65-82, 85, 87, 89)
     dec = {(r["d"], r["T"]): r for r in S["decode"]}
     cores = lambda d, T: dec[(d, T)]["batch_ns_per_round"] / 2 / (T + GATES_NS)  # noqa: E731
     rel = lambda d, T: dec[(d, T)]["batch_ns_per_round"] / dec[(d, 1000)]["batch_ns_per_round"]  # noqa: E731
@@ -147,7 +149,7 @@ def compute(data=None):
     v["waiting_pct_range_cnn"] = rng([100 * w["steps"] * c["w"] / c["rounds"] for _, _, c, w in cnn_cfg])
     v["sw_decoding_cost_600_400"] = [cores(17, 600) / cores(17, 1000), cores(17, 400) / cores(17, 1000)]
 
-    # ---------------- §7.4 programs (sys:100, 105, 107, 109)
+    # ---------------- §7.4 programs (sys:105, 111, 113, 115)
     def ratios(cfg_key):
         out_rt, out_q = [], []
         for wl in C["workloads"].values():
@@ -166,7 +168,7 @@ def compute(data=None):
     v["log10_phys_qubits_range_cnn"] = [math.log10(x) for x in rng([c["qubits"] for _, _, c, _ in cnn_cfg])]
     v["workload_lq"] = {n: w["lq"] for n, w in WL.WORKLOADS.items()}
 
-    # ---------------- §7.5 classical plane (sys:121, 123, 125)
+    # ---------------- §7.5 classical plane (sys:127, 129, 131)
     L = C["per_lq"]
     v["gbps_cnn_600_1000"] = rng([L[f"MCMit-CNN/{T}"]["gbps_hard"] for T in (600, 800, 1000)])
     v["gbps_cnn_400"] = L["MCMit-CNN/400"]["gbps_hard"]
@@ -187,7 +189,7 @@ def compute(data=None):
     v["per_lq_d_range_disc4"] = rng([L[f"{m}/{T}"]["d"] for m in DISC4 for T in (400, 600, 800, 1000)
                                      if f"{m}/{T}" in L])
 
-    # ---------------- §7.6 soft readout (sys:139, 145, 150, 152, 154)
+    # ---------------- §7.6 soft readout (sys:145, 151, 157, 159, 161)
     sw = consts("sweep_soft.py", {"F_GRID", "PATTERNS", "QUBITS"})
     v["soft_f_grid_pct"] = [100 * f for f in sw["F_GRID"]]
     v["soft_patterns"] = sw["PATTERNS"]
@@ -222,7 +224,7 @@ def compute(data=None):
     v["soft_gbps_ratio_best_400"] = bw(400, best[400]) / bw(400, 0.0)
     v["soft_flagged_err_f5_pct_400_1000"] = rng([100 * P[str(T)]["0.05"]["e_flagged"] for T in (400, 600, 800, 1000)])
 
-    # ---------------- §7.7 decoders (sys:164, 166, 172, 177, 179, 181)
+    # ---------------- §7.7 decoders (sys:171, 173, 180, 186, 188, 190)
     v["cz_error_pct"] = 100 * consts("sweep_ler.py", {"PRESETS"})["PRESETS"]["ibm_boston"]["cz"]
     v["flip_vs_cz_ratio"] = rng([v["cnn_readout_error_pct"][T] / v["cz_error_pct"] for T in (400, 1000)])
     sd = consts("sweep_decoders.py", {"MATCHING", "TARGET_FAILS", "DISTANCES", "SOFT", "PATTERNS"})

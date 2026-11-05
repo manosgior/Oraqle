@@ -15,7 +15,10 @@ Default (numpy + matplotlib only, minutes; e.g. Discriminators/.venv/bin/python 
               (qec/eccentric/paper_numbers.py)
 Options:
   --figures  regenerate the 5 §7 and 7 §6/appendix figures into $ORAQLE_OUT/paper_figures/{system,qec} and compare
-             them with the paper PDFs (page size, text, raster, drawing streams; needs poppler-utils)
+             them with the paper PDFs (page size, text, raster, drawing streams; needs poppler-utils). The appendix
+             figures fig:ler_current / fig:ler_futuristic are plots/readout_ler_cnn_{current,futuristic}.pdf
+             (MCMit-CNN readout, since the 2026-11-05 [audit fix]); the superseded readout_ler_herqules_*.pdf are
+             extras (make -C paper_figures/qec extras compare-extras), not checked here
   --stim     re-derive UNIFORM_FRACTION (system/derive_uniform_fraction.py; needs stim 1.16.0, i.e. the
              oraqle-latsim image:  docker run --rm -v $PWD:/repo:ro -e ORAQLE_OUT=/tmp/out -w /repo oraqle-latsim \\
              python verify/qec_system.py --stim)
@@ -141,6 +144,10 @@ def verify_figures(which):
     if "qec" in which:
         print("\n== §6 / appendix figures", flush=True)
         report("regenerate §6/appendix figures", run([PY, "paper_figures/qec/make_figure.py", "all"]).returncode == 0)
+        ref = RESULTS / "qec" / "reference_figures"
+        want = {"readout_ler_cnn_current.pdf", "readout_ler_cnn_futuristic.pdf"}
+        report("reference figures = the 7 paper PDFs (incl. readout_ler_cnn_*)",
+               len(list(ref.glob("*.pdf"))) == 7 and want <= {f.name for f in ref.glob("*.pdf")})
         p = run([PY, "paper_figures/qec/compare_figures.py"], quiet=False)
         report("§6/appendix figures == paper PDFs", p.returncode == 0)
 

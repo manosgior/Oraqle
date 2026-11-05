@@ -1,4 +1,4 @@
-"""Regenerate Fig. fig:iq_taxonomy (plots/iq_error_gallery_q5_v2.pdf, chapters/ml_discriminators.tex l.337-348).
+"""Regenerate Fig. fig:iq_taxonomy (plots/iq_error_gallery_q5_v2.pdf, chapters/ml_discriminators.tex l.342-353).
 
 Pipeline (same as leakage/em_e6edit_iq_gallery.py, which made the paper PDF on 2026-11-05):
   1. extract (needs the raw dataset; run once, already done): discriminators/runners/iq_error_gallery.py

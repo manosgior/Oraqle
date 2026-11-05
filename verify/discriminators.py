@@ -22,7 +22,10 @@ tab:fpga_resources is recomputed from the Vitis HLS reports in fpga/hls4ml/repor
     Discriminators/.venv/bin/python verify/discriminators.py [-v] [--paper-root ../oraqle-ics]
 
 --paper-root additionally checks that each printed value still appears on the
-referenced line of the paper source. Exit code 0 = all checks pass.
+referenced line of the paper source, and that the bold/shading of tab:fidelity and
+tab:fidelity_linear follows the highlighting rule of build_table2.flags() (bold = best
+printed value per model, shortest duration on ties; shading = best printed value per
+column, ties to MCMit-CNN). Exit code 0 = all checks pass.
 """
 import argparse
 import csv
@@ -119,6 +122,10 @@ class Data:
             return float(self.herq[(a[0], int(a[1]))][a[2]])
         if k == "freeze":
             return float(self.freeze[(a[0], int(a[1]))][a[2]])
+        if k == "freeze_vs_herq_maxdiff":           # max |no-retrain row - tab:fidelity HERQULES row| over Q1..Q5
+            ns = int(a[0])
+            return max(abs(float(self.freeze[("freeze", ns)][f"Q{i}"]) - self.mval("HERQULES", ns, f"Q{i}"))
+                       for i in range(1, 6))
         if k == "herq_seed":
             return float(self.seed[a[0]][a[1]])
         if k == "herq_errred":                      # (released - pertrace) / (1 - pertrace), F5Q
@@ -186,6 +193,10 @@ class Data:
             z = []
             for q in range(5):
                 z.append(next(self.dfdt_t[j] for j in range(len(self.dfdt_t)) if self.dfdt[j][q] < 0))
+            return [min(z), max(z)]
+        if k == "dfdt_zero_qubits":                 # dfdt_zero_qubits:<q list> -> [min, max] first negative dF/dT
+            z = [next(self.dfdt_t[j] for j in range(len(self.dfdt_t)) if self.dfdt[j][int(q) - 1] < 0)
+                 for q in a[0].split(",")]
             return [min(z), max(z)]
         if k == "win_peak":                         # win_peak:<w>:val|center
             c, f, g = self.win[int(a[0])]
@@ -314,6 +325,13 @@ def main():
             lines = open(os.path.join(a.paper_root, path)).read().splitlines()
             if e["paper_text"] not in lines[int(line) - 1]:
                 fails.append(f"{e['id']}: {e['paper_text']!r} not found on {e['ref']} (paper edited?)")
+        # bold/shading of tab:fidelity and tab:fidelity_linear must follow build_table2.flags()
+        hl = BT.paper_diffs(D.tables, ml_tex=os.path.join(a.paper_root, "chapters", "ml_discriminators.tex"),
+                            app_tex=os.path.join(a.paper_root, "chapters", "appendix_herqules.tex"))
+        for label, (num, fmt, ncells) in hl.items():
+            fails += [f"{label} highlighting: {x}" for x in fmt]
+            print(f"  {label}: bold/shading of {ncells} cells vs the rule of build_table2.flags(): "
+                  f"{'identical' if not fmt else f'{len(fmt)} differences'}")
 
     n = len(entries) - len(unverifiable)
     print(f"verify/discriminators.py: {n} paper values checked against results/discriminators/")

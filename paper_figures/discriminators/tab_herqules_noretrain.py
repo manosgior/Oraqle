@@ -1,4 +1,4 @@
-"""tab:herqules-noretrain, "Retraining across durations" (appendix_herqules.tex:196-213). [unify, new file]
+"""tab:herqules-noretrain, "Retraining across durations" (appendix_herqules.tex:199-217). [unify, new file]
 
 No-retraining HERQULES (one model trained at 1 us, evaluated on truncated inputs) from
 results/discriminators/herqules_truncation_pertrace_deployment.csv, policy=freeze

@@ -1,7 +1,7 @@
 # fpga/ — FPGA cost of the deployable discriminators (tab:fpga_resources)
 
-`tab:fpga_resources` (chapters/ml_discriminators.tex:275-293) and the FPGA claims in the
-prose (ml_discriminators.tex:297: "≤74 ns", "~70% of LUTs/DSPs") come from Vitis HLS
+`tab:fpga_resources` (chapters/ml_discriminators.tex:277-296) and the FPGA claims in the
+prose (ml_discriminators.tex:301: "≤74 ns", "~70% of LUTs/DSPs") come from Vitis HLS
 synthesis reports of hls4ml models. The hls4ml scripts and reports were written by
 **Felix Gust** (github.com/gustifix/mcmit-model, commit `56cfcc0`, 2026-06-15) and are
 vendored here unchanged in `hls4ml/`.
@@ -25,7 +25,7 @@ Notes and discrepancies (also in docs/reproduce/discriminators.md):
 
 * The numbers are **Vitis HLS 2023.2 C-synthesis estimates** (part `xczu49dr-ffvf1760-2-e`,
   2.00 ns target clock = 500 MHz; estimated clock 1.38-1.60 ns), not post-place-and-route
-  results. ml_discriminators.tex:259 calls them "measured".
+  results. ml_discriminators.tex:260 calls them "HLS-estimated" (since the 2026-11-05 [audit fix]; "measured" before).
 * Only the neural network is synthesized. The demodulation / matched-filter / FIR
   front-ends of every model are not part of the hls4ml graph (`hls4ml/inputs/README.txt`).
 * The MCMit CNN row is the smaller m_param=8 variant, not the 3061-parameter model whose

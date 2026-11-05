@@ -1,6 +1,6 @@
 # Reproducing the error-mode / leakage results
 
-Paper: `oraqle-ics` working tree of 2026-11-05 (HEAD d7cd4e9 + uncommitted edits). Chapters:
+Paper: `oraqle-ics` working tree of 2026-11-05 (HEAD e2ba1ac + the uncommitted `[audit fix]` edits). Chapters:
 `ml` = `chapters/ml_discriminators.tex`, `app` = `chapters/appendix_herqules.tex`. Pipeline, paths and
 docker recipe: [`leakage/README.md`](../../leakage/README.md). File origins: [`leakage/PROVENANCE.md`](../../leakage/PROVENANCE.md).
 
@@ -12,22 +12,22 @@ committed results (2026-11-05); **not run** = only the original run exists.
 
 | paper item (label, chapter:line) | command | output | needs dataset? | runtime | verified |
 |---|---|---|---|---|---|
-| Table `tab:error_modes` (ml:392-412) | `python paper_figures/leakage/make_error_modes_table.py` | `$ORAQLE_OUT/leakage/tab_error_modes.tex` | no | < 1 s | tier 1: identical to the paper block; all 27 cells recomputed from counts. Q5 overlap is 8.7495 % (paper 8.8, see §3); `--exact` prints 8.7. Upstream numbers tier 2 (§2) |
-| Fig. `fig:iq_taxonomy` (ml:337-348), `plots/iq_error_gallery_q5_v2.pdf` | `python paper_figures/leakage/make_iq_taxonomy.py` (plot step) | `$ORAQLE_OUT/leakage/iq_error_gallery_q5_v2.pdf` | no (uses `results/discriminators/iq_error_gallery_q5.npz`) | ~3 s | tier 1: pixel-identical to the paper PDF at 300 dpi (`verify/leakage.py --figure`) |
+| Table `tab:error_modes` (ml:397-418) | `python paper_figures/leakage/make_error_modes_table.py` | `$ORAQLE_OUT/leakage/tab_error_modes.tex` | no | < 1 s | tier 1: identical to the paper block; all 27 cells recomputed from counts (Q5 overlap 8.7495 % -> 8.7, as printed since the fix, §3); `--stored` gives the old 8.8. Upstream numbers tier 2 (§2) |
+| Fig. `fig:iq_taxonomy` (ml:342-353), `plots/iq_error_gallery_q5_v2.pdf` | `python paper_figures/leakage/make_iq_taxonomy.py` (plot step) | `$ORAQLE_OUT/leakage/iq_error_gallery_q5_v2.pdf` | no (uses `results/discriminators/iq_error_gallery_q5.npz`) | ~3 s | tier 1: pixel-identical to the paper PDF at 300 dpi (`verify/leakage.py --figure`) |
 | ... its extraction step (`iq_error_gallery_q5.npz`) | `IQ_QUBIT=5 IQ_REPORTS=<dir> HERQULES_TRACE_LENGTH=500 python discriminators/runners/iq_error_gallery.py` (extract + plot; owner: discriminators) | `<dir>/iq_error_gallery_q5.npz` | yes | minutes (HERQULES demodulation of 1.6 M shots) | not run (the June-2 npz is the committed input) |
-| Sec. 5.3 methodology scope (ml:335) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1 |
-| Sec. 5.3 results: state change / overlap, half-plane 91/95 vs 33/15 %, step 2-8 %, 400 ns overlap 40/56 %, leakage 11.5/4.7 %, 97-99 %, 3.5/6.5/11.5 % (ml:367) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1 (18 numbers); attribution inputs tier 2 |
-| Sec. 5.3 analysis: 81/17 %, bands 79-81 / 17-20, 1.8 %, 28 %, 1.6x, 4.4->4.5, 37->81 %, 2.5-14x, triples, 68/92 %, 69 %, 23 % (ml:418) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1 (19 numbers) |
-| Takeaway #5: ~80 %, <=20 %, 0.4-6 %, <=23 % (ml:424) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1 |
-| App. `app:error-modes` scope (app:340-343) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1 |
-| App. attribution procedure: 16 configs, z>3, 100 ns, alpha=0.01, 225-775 ns, 0.44, 16-28 %, gate 0.6-1.3 / >=5 %, excluded tests, 1.5 widths, 1.5 pp (app:350-376) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1; parameters read from the code (`ALPHA0`, `ALPHAS[ALPHA_IDX]`, `LATE_R`) and the gate rule re-applied to every test |
-| App. validation: <=0.03 pp, 1.4 pp, 0.5 sigma, 79-81 %, 90-95 vs 6-33 %, s=89 % (90 %), 24 vs 54, 4-8 % / 1.7 %, obs/exp 1.0 / 5.4 (app:379-396) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1 ("1.7 %" see §3; "<=0.03 pp" is quoted from a robustness note, not recomputable) |
-| App. leakage paragraph: 11.5, 0.8, 4.7, 0.8 %, ~90 %, 1.6 %, Q4 n/m, 13 %, 3.1 %, 99.3 % (app:398-403) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1 |
+| Sec. 5.3 methodology scope (ml:340) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1 |
+| Sec. 5.3 results: state change / overlap, half-plane 91/95 vs 33/15 %, step 2-8 %, 400 ns overlap 40/56 %, leakage 11.5/4.7 %, 97-99 %, 3.5/6.5/11.5 % (ml:372) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1 (18 numbers); attribution inputs tier 2 |
+| Sec. 5.3 analysis: 81/17 %, bands 79-81 / 17-20, 1.8 %, 28 %, 1.6x, 4.4->4.5, 37->81 %, 2.5-14x, triples, 68/92 %, 69 %, 23 % (ml:424) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1 (19 numbers) |
+| Takeaway #5: ~80 %, <=20 %, 0.4-6 %, <=23 % (ml:430) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1 |
+| App. `app:error-modes` scope (app:346-351) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1 |
+| App. attribution procedure: 16 configs, z>3, 100 ns, alpha=0.01, 225-775 ns, 0.44, 16-28 %, gate 0.6-1.3 / >=5 %, excluded tests, 1.5 widths, 1.5 pp (app:358-384) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1; parameters read from the code (`ALPHA0`, `ALPHAS[ALPHA_IDX]`, `LATE_R`) and the gate rule re-applied to every test |
+| App. validation: <=0.03 pp, 1.4 pp, 0.5 sigma, 79-81 %, 90-95 vs 6-33 %, s=89 % (90 %), 24 vs 54, 4-8 % / 1.7-1.8 %, obs/exp 1.0 / 5.4 (app:387-405) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1 ("<=0.03 pp" is quoted from a robustness note, not recomputable) |
+| App. leakage paragraph: 11.5, 0.8, 4.7, 0.8 %, ~90 %, 1.6 %, Q4 n/m, 13 %, 3.1 %, 99.3 % (app:407-412) | `python verify/leakage.py` | stdout | no | ~5 s | tier 1 |
 | Final numbers file `em_e8fix_final_numbers.json` (source of all of the above) | `ORAQLE_LEAK_RESULTS=<copy of results/leakage> python leakage/em_e8fix_finalize.py` (after `em_e6edit_finalize.py` etc.) | `<copy>/em_e8fix_final_numbers.json` | no | < 1 s | tier 1: byte-identical (`verify/leakage.py` regen) |
 | `discussion.tex` "mostly qubit state changes and SNR overlap" | - | qualitative | - | - | consistent with the above (not owned here) |
 
-`verify/leakage.py` result on 2026-11-05: 112/114 numbers at the printed precision, 2 documented
-discrepancies, table identical, 10/10 regenerated files byte-identical, all 114 line references valid (`--tex`).
+`verify/leakage.py` result on 2026-11-05 (paper with the `[audit fix]` edits): 114/114 numbers at the printed
+precision, 0 documented discrepancies, table identical, 10/10 regenerated files byte-identical, all 114 line references valid (`--tex`).
 Exit status 0 (1 with `--strict`).
 
 ## 2. Pipeline steps
@@ -54,15 +54,13 @@ graham, measured in the smoke test unless marked (orig) = original run.
 | e5vrepro (independent reproduction) | see README S6 | `em_e5vrepro_*.json` | yes | ~10 min (orig: demod ~1 min, analyze 321 s, 3 diagnostics) | not run (assembly tier 1) |
 | other m1tail steps, m2mix, m4conf, s, r, v families | see README S8 | LEAKAGE_REPORT inputs | yes / features | min-h (orig) | not run (summaries tier 1) |
 
-## 3. Documented discrepancies (paper text vs. results)
+## 3. Documented discrepancies (paper text vs. results): none open
 
-Both are rounding-level; `verify/leakage.py` lists them and fails on them only with `--strict`.
+Both rounding-level discrepancies of the first audit were fixed in the paper on 2026-11-05 (`[audit fix]`):
 
-1. **ml:406, Table `tab:error_modes`, Q5 overlap printed 8.8.** Exact value 2901.5 / 33162 errors = 8.7495 %,
-   i.e. 8.7. The table re-rounded the stored 2-decimal 8.75. Suggested row:
-   `Q5 & $2.96$ & $1.0$ & $90.2$ & $8.7$ & $2.4$ ($98.7$) \\`. The main text "<=9 %" (ml:367) is unaffected.
-2. **app:393, "1.7 % on Q3".** The detector variants give 1.752 (e2seg/e4recon), 1.72 and 1.68 (e5vrepro) % of
-   Q3 errors; 1.752 rounds to 1.8. Suggested: "$1.7$--$1.8\%$ on Q3".
+1. **ml:412, Table `tab:error_modes`, Q5 overlap**: printed 8.8 (double rounding of the stored 8.75), now 8.7
+   (2901.5 / 33162 errors = 8.7495 %). The table script now recomputes every share from counts by default.
+2. **app:402, Q3 detector share**: printed "1.7 %", now "1.7--1.8 %" (variants 1.752, 1.72, 1.68 %).
 
 (Separately, the table generator recomputes the error-rate column from counts: re-rounding the stored 3-decimal
 5.315 % of Q4 would print 5.32, while the exact 5.3146 % gives the paper's correct 5.31.)
@@ -73,12 +71,13 @@ Both are rounding-level; `verify/leakage.py` lists them and fails on them only w
   (`_train_and_analyze_errors.py`, 2026-06-02), re-inferred by `em_e3herq_regen_pertrace_ckpt.py`. The
   `tab:fidelity` HERQULES row comes from `_herqules_length_both.py`, which retrains and saves no checkpoint.
   Per-qubit fidelity at 1 us differs by at most 0.23 pp from the unrounded CSV (Q4: 0.9414 vs 0.9437; 0.26 pp from
-  the printed 0.944), F5Q 0.904 vs 0.9046. The App. phrase "per-trace HERQULES (Table tab:fidelity)" is therefore
-  approximate.
+  the printed 0.944), F5Q 0.904 vs 0.9046. Since the 2026-11-05 fix the paper says so (ml:340 "a per-trace HERQULES checkpoint",
+  app:350 "a separately trained per-trace HERQULES checkpoint (per-qubit fidelity within 0.26 pp of Table
+  tab:fidelity)").
 * **MCMit-CNN**: 1 us = `preds_MCMitCNN_pb.npy` (`_xtalk_cnn.py`, a separate training of the `tab:fidelity`
   recipe; per-qubit fidelity within 1e-4 of the table); 400/600 ns = `cnn_soft_{400,600}ns.npz` of
   `sims/soft_readout_cnn.py` (same recipe, owned by the QEC/system part).
-* "Q1 peaks at 0.44" (app:364): the maxima are 0.445 and 0.437; 0.445 sits exactly on the rounding boundary.
+* "Q1 peaks at 0.44" (app:372): the maxima are 0.445 and 0.437; 0.445 sits exactly on the rounding boundary.
 * Leakage values are k=3 mirror-corrected lower bounds; Q4 leakage and Q2 state change/overlap are n/m by
   construction.
 * `em_e4recon_make_herq_in.py` is a reconstruction of an inline step (verified byte-identical output).

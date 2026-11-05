@@ -330,4 +330,4 @@ All files are byte copies of `oraqle-ics/data/leakage/<same name>` (md5 checked 
 |---|---|
 | `make_error_modes_table.py`, `make_iq_taxonomy.py` | new (the table had no generator; the figure wrapper repeats `em_e6edit_iq_gallery.py` without its absolute paths and refuse-to-overwrite guard) |
 | `reference/iq_error_gallery_q5_v2.pdf` | `oraqle-ics/plots/iq_error_gallery_q5_v2.pdf` (untracked there), md5 `c240f180f7071bdd2e65b56acda129af` |
-| `reference/tab_error_modes.tex` | `oraqle-ics/chapters/ml_discriminators.tex` lines 392-412 (2026-11-05 working tree) |
+| `reference/tab_error_modes.tex` | `oraqle-ics/chapters/ml_discriminators.tex` lines 397-418 (2026-11-05 working tree with the [audit fix] edits: Q5 overlap 8.7, was 8.8) |

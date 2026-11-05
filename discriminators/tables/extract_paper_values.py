@@ -45,22 +45,24 @@ PROSE = [
     ("readout/caption/250ns_window_peak_center", QR, r"near a $0.3$--$0.4\,\mu$s center", [0.3, 0.4], "win_peak:250:center", {"mode": "within"}),
     ("readout/caption/500ns_window_peak", QR, r"($\sim$0.89 peak)", 0.89, "win_peak:500:val", {"mode": "tol", "tol": 0.01}),
     ("readout/caption/info_gain_peak_t", QR, r"peaks at $t\!\approx\!0.3\,\mu$s (dotted)", 0.3, "dfdt_peak_t_all", {"mode": "eq"}),
-    ("readout/caption/info_gain_turns_negative", QR, r"turns negative beyond $t\!\approx\!1\,\mu$s", [1.0, 1.0], "dfdt_zero_range", {"mode": "tol", "tol": 0.1}),
+    ("readout/caption/info_gain_turns_negative", QR, r"turns negative at $t\!\approx\!0.7$--$1.7\,\mu$s", [0.7, 1.7], "dfdt_zero_range", {"mode": "tol", "tol": 0.05}),
     # ---- Sec. 4.1 results / analysis
-    ("readout/4.1/sweep_range_end", QR, r"$T \in [0.1, 2.0]\,\mu$s in $0.1\,\mu$s steps", 2.0, "trunc_last_t", {"mode": "eq"}),
+    ("readout/4.1/sweep_range_end", QR, r"$T \in [0.1, 1.9]\,\mu$s in $0.1\,\mu$s steps", 1.9, "trunc_last_t", {"mode": "eq"}),
     ("readout/4.1/gmean_at_0.1us", QR, r"$\sim0.60$ at $T=0.1\,\mu$s", 0.60, "trunc_g:0.1", {"mode": "tol", "tol": 0.01}),
-    ("readout/4.1/gmean_at_0.3us", QR, r"$\sim0.86$ at $0.3\,\mu$s", 0.86, "trunc_g:0.3", {"mode": "tol", "tol": 0.01}),
+    ("readout/4.1/gmean_at_0.3us", QR, r"$\sim0.82$ at $0.3\,\mu$s", 0.82, "trunc_g:0.3", {"mode": "tol", "tol": 0.01}),
     ("readout/4.1/gmean_at_0.5us", QR, r"$\sim0.88$ at $0.5\,\mu$s", 0.88, "trunc_g:0.5", {"mode": "tol", "tol": 0.01}),
     ("readout/4.1/Q1_at_1.0us", QR, r"$\sim0.97$", 0.97, "trunc_q:1:1.0", {"mode": "tol", "tol": 0.01}),
     ("readout/4.1/Q2_at_1.0us", QR, r"$\sim0.73$", 0.73, "trunc_q:2:1.0", {"mode": "tol", "tol": 0.01}),
     ("readout/4.1/Q4_at_1.0us", QR, r"$\sim0.94$", 0.94, "trunc_q:4:1.0", {"mode": "tol", "tol": 0.01}),
-    ("readout/4.1/Q3_peak_position", QR, r"peak around $0.7$--$1.0\,\mu$s", [0.7, 1.0], "trunc_peak:3:t", {"mode": "within"}),
-    ("readout/4.1/Q5_peak_position", QR, r"peak around $0.7$--$1.0\,\mu$s", [0.7, 1.0], "trunc_peak:5:t", {"mode": "within"}),
-    ("readout/4.1/Q3_peak_value", QR, r"$\sim0.90$", 0.90, "trunc_peak:3:val", {"mode": "tol", "tol": 0.01}),
-    ("readout/4.1/Q5_peak_value", QR, r"$\sim0.96$", 0.96, "trunc_peak:5:val", {"mode": "tol", "tol": 0.01}),
-    ("readout/4.1/Q3Q5_relative_drop", QR, r"relative drop of up to $\sim$40\%", 0.40, "trunc_reldrop_max:3,5", {"mode": "tol", "tol": 0.05}),
+    ("readout/4.1/Q3_peak_position", QR, r"peak around $0.5$--$0.6\,\mu$s", [0.5, 0.6], "trunc_peak:3:t", {"mode": "within"}),
+    ("readout/4.1/Q5_peak_position", QR, r"peak around $0.5$--$0.6\,\mu$s", [0.5, 0.6], "trunc_peak:5:t", {"mode": "within"}),
+    ("readout/4.1/Q3_peak_value", QR, r"($\sim0.91$, $\sim0.97$)", 0.91, "trunc_peak:3:val", {"mode": "tol", "tol": 0.01}),
+    ("readout/4.1/Q5_peak_value", QR, r"($\sim0.91$, $\sim0.97$)", 0.97, "trunc_peak:5:val", {"mode": "tol", "tol": 0.01}),
+    ("readout/4.1/Q3Q5_relative_drop", QR, r"relative drop of up to $\sim$50\%", 0.50, "trunc_reldrop_max:3,5", {"mode": "tol", "tol": 0.05}),
+    ("readout/4.1/drop_end_t", QR, r"by $T=1.9\,\mu$s", 1.9, "trunc_last_t", {"mode": "eq"}),
     ("readout/4.1/info_gain_peak_all_qubits", QR, r"peaks at $T = 0.3\,\mu$s on all five qubits", 0.3, "dfdt_peak_t_all", {"mode": "eq"}),
-    ("readout/4.1/info_gain_zero_crossing", QR, r"crosses zero between $T \approx 0.8$ and $1.0\,\mu$s", [0.8, 1.0], "dfdt_zero_range", {"mode": "tol", "tol": 0.05}),
+    ("readout/4.1/info_gain_zero_crossing", QR, r"crosses zero between $T \approx 0.7$ (Q3) and $1.7\,\mu$s (Q2)", [0.7, 1.7], "dfdt_zero_range", {"mode": "tol", "tol": 0.05}),
+    ("readout/4.1/info_gain_negative_Q3Q5", QR, r"negative rate beyond $0.7$--$0.9\,\mu$s", [0.7, 0.9], "dfdt_zero_qubits:3,5", {"mode": "tol", "tol": 0.05}),
     # ---- Sec. 4.2
     ("readout/4.2/peak_center_250", QR, r"centered around $0.3$--$0.4\,\mu$s", [0.3, 0.4], "win_peak:250:center", {"mode": "within"}),
     ("readout/4.2/peak_center_500", QR, r"centered around $0.3$--$0.4\,\mu$s", [0.3, 0.4], "win_peak:500:center", {"mode": "within"}),
@@ -68,11 +70,11 @@ PROSE = [
     ("readout/4.2/250ns_at_1.8us", QR, r"$\sim$0.77 at a $1.8\,\mu$s center", 0.77, "win_at:250:1.8", {"mode": "tol", "tol": 0.01}),
     ("readout/4.2/250ns_relative_drop", QR, r"$\sim$39\% relative drop", 0.39, "win_reldrop:250:1.8", {"mode": "tol", "tol": 0.015}),
     ("readout/4.2/500ns_ceiling", QR, r"higher ceiling ($\sim$0.89)", 0.89, "win_peak:500:val", {"mode": "tol", "tol": 0.01}),
-    ("readout/4.2/Q2_weakest_250", QR, r"Q2 weakest) at every position", True, "win_q2_weakest_all:250", {"mode": "eq"}),
-    ("readout/4.2/Q2_weakest_500", QR, r"Q2 weakest) at every position", True, "win_q2_weakest_all:500", {"mode": "eq"}),
-    ("readout/4.2/Q1Q5_strongest_250", QR, r"(Q1 and Q5 strongest", 1.0, "win_q1q5_top2_frac:250", {"mode": "tol", "tol": 1e-9}),
-    ("readout/4.2/Q1Q5_strongest_500", QR, r"(Q1 and Q5 strongest", 1.0, "win_q1q5_top2_frac:500", {"mode": "tol", "tol": 1e-9}),
-    ("readout/4.2/gap_250ns_vs_plateau", QR, r"peaks $\sim$21\% (relative) below", 0.21, "win_gap_vs_plateau:250", {"mode": "tol", "tol": 0.015}),
+    ("readout/4.2/Q2_weakest_250", QR, r"Q2 weakest at every position)", True, "win_q2_weakest_all:250", {"mode": "eq"}),
+    ("readout/4.2/Q2_weakest_500", QR, r"Q2 weakest at every position)", True, "win_q2_weakest_all:500", {"mode": "eq"}),
+    ("readout/4.2/Q1Q5_strongest_250", QR, r"(Q1 and Q5 mostly strongest", [0.5, 1.0], "win_q1q5_top2_frac:250", {"mode": "within"}),
+    ("readout/4.2/Q1Q5_strongest_500", QR, r"(Q1 and Q5 mostly strongest", [0.5, 1.0], "win_q1q5_top2_frac:500", {"mode": "within"}),
+    ("readout/4.2/gap_250ns_vs_plateau", QR, r"peaks $\sim$25\% (relative) below", 0.25, "win_gap_vs_plateau:250", {"mode": "tol", "tol": 0.015}),
     ("readout/4.2/truncation_plateau", QR, r"$\sim$0.89 plateau", 0.89, "trunc_plateau", {"mode": "tol", "tol": 0.01}),
     ("readout/4.2/500ns_never_exceeds_plateau", QR, r"even the $500\,$ns window never exceeds it", True, "win_below_plateau:500", {"mode": "eq"}),
     # ---- Sec. 5.1 (ml_discriminators.tex:85, :91, Takeaway #3)
@@ -90,7 +92,7 @@ PROSE = [
     ("ml/takeaway3/error_increase", ML, r"costs only $\sim$10\% more per-shot error", 0.10, "err_increase:mean_all6:1000:600", {"mode": "tol", "tol": 0.02}),
     ("ml/takeaway3/Q2_range_400_1000ns", ML, r"stays at $\sim$0.69--0.75", [0.69, 0.75], "range:Q2:400,600,800,1000:all6", {"mode": "tol", "tol": 0.005}),
     # ---- Sec. 5.2
-    ("ml/5.2/orders_of_magnitude", ML, r"span five orders of magnitude", 5, "orders_of_magnitude", {"mode": "tol", "tol": 0.5}),
+    ("ml/5.2/orders_of_magnitude", ML, r"span six orders of magnitude", 6, "orders_of_magnitude", {"mode": "tol", "tol": 0.5}),
     ("ml/5.2/linear_params", ML, r"$\sim$5-parameter Linear threshold", 5, "master:Linear Threshold:1000:params", {"mode": "eq"}),
     ("ml/5.2/MCMitT_params", ML, r"$\sim$5M-parameter MCMit-T", 5e6, "master:MCMit-T:1000:params", {"mode": "tol", "tol": 0.5e6}),
     ("ml/5.2/error_reduction_T_vs_linear", ML, r"only $\sim$18\% in $F_{5Q}$ error reduction", 0.18, "errred_vs:MCMit-T:Linear Threshold:1000", {"mode": "tol", "tol": 0.015}),
@@ -124,6 +126,7 @@ PROSE = [
     ("app/herqules/mixed_gain_below_600", AP, r"$\sim$31--35\% below", [0.31, 0.35], "herq_errred_range:200,400,600", {"mode": "tol", "tol": 0.006}),
     ("app/herqules/released_200ns", AP, r"($F_{5Q}=0.794$ vs.\ $0.702$", 0.794, "herq:demux_subsample:200:gmean5", FMT3),
     ("app/herqules/pertrace_200ns", AP, r"($F_{5Q}=0.794$ vs.\ $0.702$", 0.702, "herq:deployment_pertrace:200:gmean5", FMT3),
+    ("app/noretrain/1us_within", AP, r"per-trace HERQULES numbers within $0.002$", [0.0, 0.002], "freeze_vs_herq_maxdiff:1000", {"mode": "within"}),
     ("app/noretrain/1us_F5Q", AP, r"($F_{5Q}=0.905$)", 0.905, "freeze:freeze:1000:gmean5", FMT3),
     ("app/noretrain/800ns_F5Q", AP, r"falling to $0.881$ at $800$\,ns", 0.881, "freeze:freeze:800:gmean5", FMT3),
     ("app/noretrain/600ns_F5Q", AP, r"$0.775$ at $600$\,ns", 0.775, "freeze:freeze:600:gmean5", FMT3),
@@ -136,22 +139,10 @@ PROSE = [
 
 # Notes for every value where the paper text disagrees with the data (required).
 KNOWN_NOTES = {
-    "readout/caption/info_gain_turns_negative": "First negative dF/dT per qubit: Q3 0.7, Q5 0.9, Q4 1.0, Q1 1.4, Q2 1.7 us; 'beyond ~1 us' holds for Q3-Q5 only.",
-    "readout/4.1/sweep_range_end": "The sweep stops at 950 samples = 1.9 us (baseline_no_ML.py caps T_END at T_max-1 = 999 samples); there is no 2.0 us point.",
-    "readout/4.1/gmean_at_0.3us": "Geometric mean at 0.3 us is 0.824; ~0.86 is the 0.4 us value (0.8635).",
-    "readout/4.1/Q3_peak_position": "Q3 peaks at 0.5 us (0.9116), not in 0.7-1.0 us.",
-    "readout/4.1/Q5_peak_position": "Q5 peaks at 0.6 us (0.9655; 0.9649 at 0.7 us), just outside 0.7-1.0 us.",
-    "readout/4.1/Q3_peak_value": "Q3 peak is 0.912 (at 0.5 us), not ~0.90.",
-    "readout/4.1/Q3Q5_relative_drop": "With the paper's error-reduction metric (peak-last)/(1-last) to the last point (1.9 us): Q3 37%, Q5 50%; 'up to ~40%' understates Q5.",
-    "readout/4.1/info_gain_zero_crossing": "First negative dF/dT per qubit: Q3 0.7, Q5 0.9, Q4 1.0, Q1 1.4, Q2 1.7 us; 'between 0.8 and 1.0' holds for Q4/Q5 only.",
-    "readout/4.2/Q1Q5_strongest_250": "Q2 is weakest everywhere, but Q1 and Q5 are the top two at only this fraction of window positions (Q3 or Q4 is sometimes second).",
-    "readout/4.2/Q1Q5_strongest_500": "Q2 is weakest everywhere, but Q1 and Q5 are the top two at only this fraction of window positions.",
-    "readout/4.2/gap_250ns_vs_plateau": "21% follows from the rounded 0.89 and 0.86; with the unrounded truncation plateau 0.8931 (0.9 us) and 250 ns window peak 0.8579 it is 24.8%.",
-    "ml/5.2/orders_of_magnitude": "5 parameters (Linear) to 4,773,408 (MCMit-T, 1000 ns) is 10^5.98, i.e. six orders of magnitude.",
+    # All 16 disagreements recorded on 2026-11-05 were fixed in the paper ([audit fix] edits of the same day);
+    # the notes below are kept for the record and are only attached if a value disagrees again.
     "app/noretrain/1us_F5Q": "The freeze run's own 1000 ns row gives F5Q 0.9045 (printed 0.905 = tab:fidelity's 0.9046).",
-    "app/noretrain/1us_row": "The printed 1000 ns row is copied from tab:fidelity (HERQULES 1000 ns); the no-retrain (freeze) run's own 1000 ns row is Q1 0.9685, Q2 0.7401, Q3 0.9247, Q4 0.942, Q5 0.9697, F5Q 0.9045.",
-    "tab:fidelity_linear/800/Q5": "Typo: the CSV value is 0.9633 (printed 0.936).",
-    "tab:fidelity_linear/800/F4Q": "Follows from the Q5 typo: with Q5 = 0.9633, F4Q at 800 ns is 0.941 (and becomes the best F4Q, so the bold should move from 600 to 800 ns).",
+    "app/noretrain/1us_row": "The no-retrain (freeze) run's own 1000 ns row is Q1 0.9685, Q2 0.7401, Q3 0.9247, Q4 0.942, Q5 0.9697, F5Q 0.9045; tab:fidelity's HERQULES 1000 ns row differs by at most 0.0017 (Q4).",
 }
 UNVERIFIABLE_NOTE = ("No synthesis report exists for the Baseline FNN or MCMit-T (fpga/hls4ml/reports covers "
                      "QubiCML, HERQULES, MCMit CNN m8/m16 and KLiNQ only), so 'do not fit' cannot be checked.")
@@ -160,6 +151,13 @@ PROSE_NOTES = {   # notes on values that agree but need context
     "tab:fpga_resources/HERQULES": "herqules.txt (Net_rmf, 1002 params; checkpoint = HERQULES_len500.pth, the June-2 per-trace model, not the Table 2 sweep run, which saved no checkpoint). MF/RMF front-end not included.",
     "tab:fpga_resources/MCMit CNN": "cnn-m8-parallelizationfactors.txt: m_param=8 CNN with 957 parameters on ds40 (10,13) input (runners/_cnn_small_hls.py), NOT the 3061-parameter m16 model of tab:fidelity (that one, cnn-m16.txt, needs 65% LUT / 54% FF / 47% DSP, 198 ns).",
     "tab:fpga_resources/KLiNQ": "3 x klinq.txt (705-param student, = KLiNQ_student_paper_q0_1000ns.pth) + 2 x klinq-larger-reuse4.txt (3425-param student, = KLiNQ_student_paper_q2_1000ns.pth, ReuseFactor 4); latency = slowest instance (42 ns). The run script for the reuse-4 variant was not committed (fpga/README.md).",
+    "app/noretrain/1us_within": "Max |no-retrain 1000 ns - tab:fidelity HERQULES 1000 ns| over Q1..Q5 = 0.0017 (Q4: 0.9420 vs 0.9437); F5Q 0.9045 vs 0.9046.",
+    "readout/4.2/Q1Q5_strongest_250": "Q1 and Q5 are the top two at 72% of the 250 ns window positions (Q3 or Q4 is sometimes second); Q2 is weakest at all of them.",
+    "readout/4.2/Q1Q5_strongest_500": "Q1 and Q5 are the top two at 80% of the 500 ns window positions; Q2 is weakest at all of them.",
+    "readout/4.2/gap_250ns_vs_plateau": "Unrounded truncation plateau 0.8931 (0.9 us) vs 250 ns window peak 0.8579: 24.8%.",
+    "readout/4.1/info_gain_zero_crossing": "First negative dF/dT per qubit: Q3 0.7, Q5 0.9, Q4 1.0, Q1 1.4, Q2 1.7 us.",
+    "readout/caption/info_gain_turns_negative": "First negative dF/dT per qubit: Q3 0.7, Q5 0.9, Q4 1.0, Q1 1.4, Q2 1.7 us.",
+    "readout/4.1/Q3Q5_relative_drop": "Error-reduction metric (peak-last)/(1-last) to the last sweep point (1.9 us): Q3 37%, Q5 50%.",
     "ml/5.2/fpga_latency": "Slowest deployable row is MCMit CNN (37 cycles x 2 ns).",
     "ml/5.2/fpga_klinq_share": "KLiNQ composition: 70.2% LUT, 69.0% DSP.",
     "app/herqules/seed_variance": "The CSV value is the standard deviation of F5Q over 5 seeds (not a variance), measured with the released (demux) feature assembly (mean F5Q 0.9250), not with the per-trace model.",
@@ -283,7 +281,7 @@ def main():
                       "status: match | known_discrepancy (paper text disagrees with the data; see note) | "
                       "unverifiable (no artifact). Generated by discriminators/tables/extract_paper_values.py "
                       "from the oraqle-ics working tree."),
-           "paper_source": "oraqle-ics working tree, 2026-11-05 (git HEAD d7cd4e9 + uncommitted chapter edits)",
+           "paper_source": "oraqle-ics working tree, 2026-11-05 (git HEAD e2ba1ac + uncommitted [audit fix] chapter edits)",
            "entries": entries}
     json.dump(out, open(a.out, "w"), indent=1)
     print(f"wrote {a.out}: {len(entries)} entries, {n_kd} known discrepancies, "

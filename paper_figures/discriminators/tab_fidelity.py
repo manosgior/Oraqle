@@ -1,4 +1,4 @@
-"""tab:fidelity (ml_discriminators.tex:145-191) and tab:fidelity_linear (appendix_herqules.tex:224-240).
+"""tab:fidelity (ml_discriminators.tex:145-191) and tab:fidelity_linear (appendix_herqules.tex:228-246).
 [unify, new file]
 
 Rebuilds master_fidelity.csv from the per-model CSVs (byte-identical check against

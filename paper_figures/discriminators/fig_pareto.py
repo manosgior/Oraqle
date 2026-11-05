@@ -1,4 +1,4 @@
-"""fig:pareto (ml_discriminators.tex:263) -> plots/pareto_params_vs_fidelity_600ns_1000ns.pdf.  [unify, new file]
+"""fig:pareto (ml_discriminators.tex:264) -> plots/pareto_params_vs_fidelity_600ns_1000ns.pdf.  [unify, new file]
 
 Runs plot_fidelities.plot_pareto_params_vs_fidelity() on master_fidelity.csv as rebuilt
 by build_table2.py from the per-model CSVs (identical to the published one; pass

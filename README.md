@@ -30,9 +30,10 @@ make verify-figures  # also re-render figures and compare them with the paper's 
 make figures         # regenerate all data figures/tables into $ORAQLE_OUT (default: out/)
 ```
 
-`make verify` exits non-zero on any mismatch. The paper's few known typos (for example a value printed
-as 0.936 where the data says 0.963) are recorded as documented discrepancies in
-`results/*/paper_values.json` rather than hidden.
+`make verify` exits non-zero on any mismatch. Paper statements the data contradict are recorded as
+documented discrepancies / known issues in `results/*/paper_values.json` rather than hidden; those
+found by the 2026-11-05 audit were fixed in the paper (recorded in `docs/reproduce/*.md` and as
+`resolved_issues` in the QEC/system files), and the remaining open items are listed in `docs/reproduce/*.md`.
 
 ## Full reproduction with the dataset
 

@@ -1,18 +1,20 @@
 """Regenerate Table tab:error_modes (chapters/ml_discriminators.tex) from results/leakage.
 
 Source: results/leakage/em_e8fix_final_numbers.json, key table_error_modes_1us (the final, reviewed numbers;
-its entries point back to em_e4recon_final.json). The error-rate column is recomputed from the error and shot
-counts (n_err / n_shots of em_e4recon_final.json) instead of re-rounding the stored 3-decimal value: Q4 is
-5.31455 %, stored as 5.315, which would round a second time to 5.32 (the paper prints the correct 5.31).
+its entries point back to em_e4recon_final.json). Every share and the error-rate column are recomputed from the
+counts of em_e4recon_final.json (n_err / n_shots, mode counts) instead of re-rounding stored values: Q4's error
+rate is 5.31455 %, stored as 5.315, which would round a second time to 5.32 (the paper prints 5.31), and Q5's
+overlap is 2901.5 / 33162 = 8.7495 %, stored as 8.75, which would round a second time to 8.8 (the paper printed
+8.8 until the 2026-11-05 [audit fix] and prints 8.7 since). 'n/m' cells are kept as decided in em_e8fix.
 Output: $ORAQLE_OUT/leakage/tab_error_modes.tex, the full table environment as it appears in the paper
-(caption and footnotes copied verbatim from the paper). Verified identical to ml_discriminators.tex l.392-412.
+(caption and footnotes copied verbatim from the paper). Verified identical to ml_discriminators.tex l.397-418
+(reference/tab_error_modes.tex).
 
---exact recomputes every share from the counts of em_e4recon_final.json (no re-rounding of stored values).
-It differs from the paper in one cell: Q5 overlap = 2901.5 / 33162 = 8.7495 % -> 8.7 (the paper prints 8.8,
-a double rounding of the stored 8.75). See docs/reproduce/leakage.md (known discrepancies).
+--stored uses the stored (2-decimal) shares of em_e8fix_final_numbers.json instead; it reproduces the paper
+before the 2026-11-05 fix (Q5 overlap 8.8). --exact is accepted for compatibility (it is the default now).
 
 No dataset needed. Usage:
-    python paper_figures/leakage/make_error_modes_table.py [--exact] [--out FILE] [--rows-only]
+    python paper_figures/leakage/make_error_modes_table.py [--stored] [--out FILE] [--rows-only]
 """
 import argparse
 import json
@@ -66,7 +68,7 @@ def exact_shares(e4, q, stored):
     return out
 
 
-def table_rows(e8, e4, exact=False):
+def table_rows(e8, e4, exact=True):
     """Return {row key: LaTeX row} for the five qubits and the Q1/Q3/Q5 pool."""
     t = e8["table_error_modes_1us"]
     rows = {}
@@ -88,7 +90,7 @@ def table_rows(e8, e4, exact=False):
     return rows
 
 
-def render(e8, e4, exact=False):
+def render(e8, e4, exact=True):
     r = table_rows(e8, e4, exact)
     lines = [r"\begin{table}[t]", r"\centering", r"\scriptsize", r"\setlength{\tabcolsep}{3pt}",
              r"\caption{" + CAPTION + "}", r"\label{tab:error_modes}", r"\begin{tabular}{l r r r r r}", r"\toprule",
@@ -102,12 +104,14 @@ def main():
     ap.add_argument("--results", default=str(LP.RES))
     ap.add_argument("--out", default=None)
     ap.add_argument("--rows-only", action="store_true")
-    ap.add_argument("--exact", action="store_true", help="recompute every share from counts")
+    ap.add_argument("--exact", action="store_true", help="recompute every share from counts (default)")
+    ap.add_argument("--stored", action="store_true", help="use the stored shares (paper before the 2026-11-05 fix)")
     a = ap.parse_args()
+    a.exact = not a.stored
     e8 = json.load(open(os.path.join(a.results, "em_e8fix_final_numbers.json")))
     e4 = json.load(open(os.path.join(a.results, "em_e4recon_final.json")))
     txt = "\n".join(table_rows(e8, e4, a.exact).values()) + "\n" if a.rows_only else render(e8, e4, a.exact)
-    out = a.out or os.path.join(LP.outdir(LP.FIGS), "tab_error_modes_exact.tex" if a.exact else "tab_error_modes.tex")
+    out = a.out or os.path.join(LP.outdir(LP.FIGS), "tab_error_modes.tex" if a.exact else "tab_error_modes_stored.tex")
     open(out, "w").write(txt)
     print(txt, end="")
     print("wrote", out)

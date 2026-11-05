@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild tab:fpga_resources (ml_discriminators.tex:275-293) from the Vitis HLS reports.
+"""Rebuild tab:fpga_resources (ml_discriminators.tex:277-296) from the Vitis HLS reports.
 [unify, new file]
 
 Reads the synthesis reports in fpga/hls4ml/reports/ (Vitis HLS 2023.2, part

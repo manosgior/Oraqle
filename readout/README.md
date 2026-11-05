@@ -5,7 +5,7 @@
 | `baseline_no_ML.py` | integration-and-threshold baseline (demodulate, integrate to T, logistic-regression boundary refit at every T): truncation sweep, dF/dT, sliding windows; also the Linear Threshold rows of tab:fidelity_linear | yes (functions) |
 | `run_baseline_sweeps.py` | driver that runs the steps of `baseline_no_ML.py` in order and writes `Baseline_Threshold_*.csv` (the original `__main__` was hand-edited between runs) | yes |
 | `plot_readout_sweeps.py` | fig:readout_sweeps (qubit_readout.tex:8) from the pinned published CSVs | no |
-| `iq_clouds_vs_length.py` | fig:iq_clouds (qubit_readout.tex:34): `extract()` (HERQULES front-end demodulation, needs the dataset) + `plot()` (`IQ_REPLOT=1`, uses `results/discriminators/iq_clouds_vs_length_q5.npz`) | extract: yes; plot: no |
+| `iq_clouds_vs_length.py` | fig:iq_clouds (qubit_readout.tex:35): `extract()` (HERQULES front-end demodulation, needs the dataset) + `plot()` (`IQ_REPLOT=1`, uses `results/discriminators/iq_clouds_vs_length_q5.npz`) | extract: yes; plot: no |
 | `replot_baseline.py` | older two-panel versions of the §4 figures (not in the paper) | no |
 | `export_traces.py`, `plot_clusters.py`, `legacy_plots/` | early averaged-trace and IQ-cluster figures (May 2026; not in the paper) | yes |
 

@@ -26,7 +26,9 @@ them).
 It also rebuilds cnn_length_deployment.csv (no aggregator script survived; the
 file is cnn_length_*ns.csv plus gmean4_no_q2 = geometric mean of the rounded
 Q1, Q3, Q4, Q5), emits tab:fidelity and tab:fidelity_linear as LaTeX, and, with
---paper-tex, diffs every cell (value, bold, shading) against the paper source.
+--paper-tex / --paper-appendix, diffs every cell (value, bold, shading) against the paper
+source; with --check, any value or highlighting difference is an error (the highlighting
+rule is documented in flags()).
 
 Usage
 -----
@@ -195,16 +197,22 @@ def cell_values(data, models, with_f4q=False):
     return rows
 
 
-def flags(rows, models, cols, eps=1e-9, rule="paper"):
+def flags(rows, models, cols, eps=1e-9, rule="paper", tie_model="MCMit-CNN"):
     """Bold = best duration within a model, shading = best over all rows.
 
     rule="exact": compare full-precision values (ties at full precision all marked).
-    rule="paper": the convention the paper's bolding follows: compare the printed
-    3-decimal values and, among durations tied at that precision, bold only the
-    shortest; shading still uses full precision.
+    rule="paper": the convention the paper's highlighting follows (tab:fidelity and
+    tab:fidelity_linear, oraqle-ics 2026-11-05):
+      bold    compare the printed 3-decimal values; among durations tied at that
+              precision, bold only the shortest (e.g. tab:fidelity_linear F4Q: 800 ns,
+              0.941, over 600 ns, 0.938);
+      shading the highest printed 3-decimal value of the column over all rows; a tie at
+              that precision goes to `tie_model` (MCMit-CNN), on its bold cell (Table 2
+              Q5: MCMit-CNN 600 ns 0.9700, tied at 0.970 with MCMit-T 800 ns 0.9704 and
+              MCMit-CNN 1000 ns); without `tie_model` among the tied cells, the
+              full-precision maximum is shaded.
     """
     out = {}
-    global_best = {c: max(v[c] for v in rows.values()) for c in cols}
     for m in models:
         for c in cols:
             if rule == "exact":
@@ -214,8 +222,23 @@ def flags(rows, models, cols, eps=1e-9, rule="paper"):
                 best3 = max(round(rows[(m, t)][c], 3) for t in TABLE_NS)
                 bold_t = {min(t for t in TABLE_NS if abs(round(rows[(m, t)][c], 3) - best3) < eps)}
             for t in TABLE_NS:
-                out[(m, t, c)] = (t in bold_t, abs(rows[(m, t)][c] - global_best[c]) < eps)
-    return out
+                out[(m, t, c)] = [t in bold_t, False]
+    for c in cols:
+        if rule == "exact":
+            best = max(v[c] for v in rows.values())
+            shade = {k for k, v in rows.items() if abs(v[c] - best) < eps}
+        else:
+            best3 = max(round(v[c], 3) for v in rows.values())
+            tied = [k for k, v in rows.items() if abs(round(v[c], 3) - best3) < eps]
+            pref = [k for k in tied if k[0] == tie_model and out[(k[0], k[1], c)][0]]
+            if pref:
+                shade = set(pref)
+            else:
+                best = max(rows[k][c] for k in tied)
+                shade = {k for k in tied if abs(rows[k][c] - best) < eps}
+        for k in shade:
+            out[(k[0], k[1], c)][1] = True
+    return {k: tuple(v) for k, v in out.items()}
 
 
 def fmt_cell(v, bold, shade):
@@ -318,6 +341,26 @@ def diff_against_paper(rows, fl, paper, cols, chapter, models):
     return num, fmt
 
 
+def paper_diffs(data, ml_tex=None, app_tex=None):
+    """{table label: (value mismatches, bold/shading differences, cells parsed)} of the paper's
+    tab:fidelity (ml_tex) and tab:fidelity_linear (app_tex) against the data and the rule of flags()."""
+    out = {}
+    if ml_tex:
+        _, rows, fl = table2_tex(data)
+        row_re = r"^(?:\\multirow\{5\}\{\*\}\{(?P<model>[^}]*?)(?:\\footnotemark)?\})?\s*&\s*(?P<t>\d+)\s*&(?P<rest>.*)$"
+        paper = parse_paper_table(ml_tex, "tab:fidelity", TABLE2_MODELS, COLS, row_re)
+        out["tab:fidelity"] = diff_against_paper(rows, fl, paper, COLS, os.path.basename(ml_tex), TABLE2_MODELS) + (len(paper),)
+    if app_tex:
+        _, lrows, lfl = linear_tex(data)
+        row_re = r"^(?P<model>)(?P<t>\d+)\\,ns\s*&(?P<rest>.*)$"
+        paper = parse_paper_table(app_tex, "tab:fidelity_linear", ["Linear Threshold"], COLS + ["F4Q"], row_re)
+        paper = {("Linear Threshold", t, c): v for (_, t, c), v in paper.items()}
+        lfl2 = {k: (b, False) for k, (b, s) in lfl.items()}          # the appendix table has no shading
+        out["tab:fidelity_linear"] = diff_against_paper(lrows, lfl2, paper, COLS + ["F4Q"], os.path.basename(app_tex),
+                                                        ["Linear Threshold"]) + (len(paper),)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(description="Rebuild master_fidelity.csv and tab:fidelity")
     ap.add_argument("--out", default=str(OUT / "discriminators" / "tables"))
@@ -359,25 +402,19 @@ def main():
                     print(f"    line {i + 1}: published {x!r}\n             rebuilt   {y!r}")
 
     if a.paper_tex:
-        row_re = r"^(?:\\multirow\{5\}\{\*\}\{(?P<model>[^}]*?)(?:\\footnotemark)?\})?\s*&\s*(?P<t>\d+)\s*&(?P<rest>.*)$"
-        paper = parse_paper_table(a.paper_tex, "tab:fidelity", TABLE2_MODELS, COLS, row_re)
-        num, fmt = diff_against_paper(rows, fl, paper, COLS, os.path.basename(a.paper_tex), TABLE2_MODELS)
-        print(f"\ntab:fidelity vs {a.paper_tex}: {len(paper)} cells parsed, {len(num)} value mismatches, "
+        num, fmt, n = paper_diffs(data, ml_tex=a.paper_tex)["tab:fidelity"]
+        print(f"\ntab:fidelity vs {a.paper_tex}: {n} cells parsed, {len(num)} value mismatches, "
               f"{len(fmt)} bold/shading differences from the stated rule")
         for x in num + fmt:
             print("   ", x)
-        ok &= not num
+        ok &= not num and not fmt
     if a.paper_appendix:
-        row_re = r"^(?P<model>)(?P<t>\d+)\\,ns\s*&(?P<rest>.*)$"
-        paper = parse_paper_table(a.paper_appendix, "tab:fidelity_linear", ["Linear Threshold"], COLS + ["F4Q"], row_re)
-        paper = {("Linear Threshold", t, c): v for (_, t, c), v in paper.items()}
-        lfl2 = {k: (b, False) for k, (b, s) in lfl.items()}
-        num, fmt = diff_against_paper(lrows, lfl2, paper, COLS + ["F4Q"], os.path.basename(a.paper_appendix),
-                                      ["Linear Threshold"])
-        print(f"\ntab:fidelity_linear vs {a.paper_appendix}: {len(paper)} cells parsed, {len(num)} value mismatches, "
+        num, fmt, n = paper_diffs(data, app_tex=a.paper_appendix)["tab:fidelity_linear"]
+        print(f"\ntab:fidelity_linear vs {a.paper_appendix}: {n} cells parsed, {len(num)} value mismatches, "
               f"{len(fmt)} bold differences")
         for x in num + fmt:
             print("   ", x)
+        ok &= not num and not fmt
     if a.check and not ok:
         sys.exit(1)
 

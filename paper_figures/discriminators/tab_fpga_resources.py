@@ -1,4 +1,4 @@
-"""tab:fpga_resources (ml_discriminators.tex:275-293) from the Vitis HLS reports.  [unify, new file]
+"""tab:fpga_resources (ml_discriminators.tex:277-296) from the Vitis HLS reports.  [unify, new file]
 
 Composes the rows from fpga/hls4ml/reports with fpga/parse_reports.py (QubiCML = 5 x qubic,
 HERQULES, MCMit CNN = m8 with ParallelizationFactor, KLiNQ = 3 x small + 2 x larger reuse-4)

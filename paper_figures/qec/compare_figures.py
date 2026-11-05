@@ -9,6 +9,10 @@ For every reference PDF that has a regenerated counterpart in the output directo
   - drawing streams (informational): whether every decompressed PDF content stream is byte-identical. True means
     the same drawing commands; only metadata (creator, creation date) and byte offsets differ.
 
+Only the top level of --ref is compared (the paper's figures); the superseded HERQULES-readout versions of
+fig:ler_current / fig:ler_futuristic live in reference_figures/extras (compare with --ref .../extras after
+`make_figure.py extras`).
+
 Needs poppler-utils (pdfinfo, pdftotext, pdftoppm) and numpy.
 Usage: python compare_figures.py [--out DIR] [--ref DIR] [--max-diff 0.01]
 Exit status 1 if any page size or text differs, or any raster difference exceeds --max-diff.
