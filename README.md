@@ -65,3 +65,9 @@ CPU-days. Every step was smoke-tested from this layout, and several were replaye
 
 Every folder has a `PROVENANCE.md` that records where each file came from (repository and commit, or
 cluster path) and what was changed during consolidation. Changes were limited to path handling and imports.
+
+## License
+
+MIT (see [LICENSE](LICENSE)). Parts adapted from HERQULES and KLiNQ (Apache-2.0), the vendored
+lattice-sim (MIT) and the contributed FPGA scripts are listed with their licenses in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The raw dataset is not included and is not covered.
