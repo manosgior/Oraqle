@@ -1,8 +1,10 @@
-# Minimal environment for `make verify`, `make verify-figures` and `make figures` (no dataset, no GPU).
-# Tested with Python 3.13 and the versions below; any recent versions should work.
-numpy>=1.26
-scipy>=1.11
-pandas>=2.0
-matplotlib>=3.9
-seaborn>=0.13
-pillow>=10.0
+# Environment for `make verify`, `make verify-figures` and `make figures` (no dataset, no GPU).
+# Exact pins: with these versions every regenerated figure is pixel-identical to the paper's PDFs
+# (tested with Python 3.13). Newer matplotlib still passes `make verify` but changes antialiasing,
+# so `make verify-figures` reports a small raster difference for fig:iq_taxonomy.
+numpy==2.4.4
+scipy==1.17.1
+pandas==3.0.2
+matplotlib==3.10.9
+seaborn==0.13.2
+pillow==12.2.0
