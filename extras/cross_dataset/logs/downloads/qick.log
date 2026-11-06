@@ -1,0 +1,9 @@
+17:43:57 fetching 0528_X_test_0_770.npy (1232000128 bytes)
+17:45:25 OK 0528_X_test_0_770.npy
+17:45:25 fetching 0528_y_train_0_770.npy (7200128 bytes)
+17:45:27 OK 0528_y_train_0_770.npy
+17:45:27 fetching 0528_y_test_0_770.npy (800128 bytes)
+17:45:27 OK 0528_y_test_0_770.npy
+17:45:27 fetching 0528_X_train_0_770.npy (11088000128 bytes)
+17:54:41 OK 0528_X_train_0_770.npy
+17:54:41 done record 14427490

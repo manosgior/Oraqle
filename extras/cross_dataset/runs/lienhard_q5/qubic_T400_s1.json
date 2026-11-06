@@ -1,0 +1,20 @@
+{
+ "dataset": "lienhard_q5",
+ "model": "qubic",
+ "T_ns": 400.0,
+ "samples": 200,
+ "seed": 1,
+ "F": 0.9292339285714286,
+ "p01": 0.08930714285714286,
+ "p10": 0.052225,
+ "n_test": 1120000,
+ "seconds": 188.7,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 65,
+ "val_loss": 0.19874463975429535,
+ "lr": 0.004522777132120277,
+ "batch_size": 128,
+ "trial": 4
+}

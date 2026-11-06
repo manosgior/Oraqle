@@ -1,0 +1,21 @@
+Hidden Layer Size: 100 50
+  trial 0 lr=3.43e-04 bs=1024 val=0.63186
+Hidden Layer Size: 100 50
+  trial 1 lr=2.71e-05 bs=1024 val=0.63333
+Hidden Layer Size: 100 50
+  trial 2 lr=7.01e-03 bs=128 val=0.63267
+Hidden Layer Size: 100 50
+  trial 3 lr=1.86e-04 bs=256 val=0.63215
+Hidden Layer Size: 100 50
+  trial 4 lr=3.04e-03 bs=256 val=0.63227
+Hidden Layer Size: 100 50
+  trial 5 lr=4.45e-04 bs=256 val=0.63202
+Hidden Layer Size: 100 50
+  trial 6 lr=1.21e-05 bs=1024 val=0.63470
+Hidden Layer Size: 100 50
+  trial 7 lr=4.12e-04 bs=1024 val=0.63198
+Hidden Layer Size: 100 50
+  trial 8 lr=9.75e-05 bs=256 val=0.63219
+Hidden Layer Size: 100 50
+  trial 9 lr=8.12e-05 bs=1024 val=0.63245
+{"dataset": "lienhard_q2", "model": "fnn", "T_ns": 200.0, "F": 0.6436232142857143, "p01": 0.3738910714285714, "p10": 0.3388625, "params": 25552, "seconds": 324.8}

@@ -1,0 +1,90 @@
+03664 I g {'data': ((40, 8000, 51), 'complex128'), 'excited_data': ((40, 3000), 'complex128'), 'f_data': ((40, 3000), 'complex128'), 'gate_seq': ((40, 51), 'int64'), 'ground_data': ((40, 3000), 'complex128'), 'index': ((40, 3000), 'int64'), 'sweep_param': ((40,), 'float64')}
+ sweep [2.50000000e-07 5.03846154e-07 7.57692308e-07] [9.89615385e-06 1.01500000e-05]
+ gate_seq[0][:6] [0 0 0 0 0 0]
+  k=0 |ground mean|=3.8e-06 ground std=3.54e-06 excited mean diff=2.62e-06 f diff=4.95e-06 data[:,0] mean=4e-06 std=1.25e-05
+  k=4 |ground mean|=3.76e-06 ground std=3.53e-06 excited mean diff=2.65e-06 f diff=5.21e-06 data[:,0] mean=3.48e-06 std=4.33e-06
+  k=10 |ground mean|=3.85e-06 ground std=3.62e-06 excited mean diff=2.54e-06 f diff=5.01e-06 data[:,0] mean=3.6e-06 std=3.5e-06
+  k=25 |ground mean|=3.83e-06 ground std=3.47e-06 excited mean diff=2.64e-06 f diff=5.19e-06 data[:,0] mean=3.55e-06 std=2.94e-06
+  k=39 |ground mean|=3.9e-06 ground std=3.57e-06 excited mean diff=2.47e-06 f diff=5e-06 data[:,0] mean=3.62e-06 std=2.82e-06
+03665 I e {'data': ((40, 8000, 51), 'complex128'), 'excited_data': ((40, 3000), 'complex128'), 'f_data': ((40, 3000), 'complex128'), 'gate_seq': ((40, 51), 'int64'), 'ground_data': ((40, 3000), 'complex128'), 'index': ((40, 3000), 'int64'), 'sweep_param': ((40,), 'float64')}
+ sweep [2.50000000e-07 5.03846154e-07 7.57692308e-07] [9.89615385e-06 1.01500000e-05]
+ gate_seq[0][:6] [1 0 0 0 0 0]
+  k=0 |ground mean|=3.89e-06 ground std=3.63e-06 excited mean diff=2.68e-06 f diff=5.01e-06 data[:,0] mean=5.98e-06 std=1.24e-05
+  k=4 |ground mean|=3.98e-06 ground std=3.64e-06 excited mean diff=2.53e-06 f diff=4.87e-06 data[:,0] mean=5.83e-06 std=4.22e-06
+  k=10 |ground mean|=3.95e-06 ground std=3.62e-06 excited mean diff=2.43e-06 f diff=4.93e-06 data[:,0] mean=5.88e-06 std=3.26e-06
+  k=25 |ground mean|=3.77e-06 ground std=3.53e-06 excited mean diff=2.71e-06 f diff=5.18e-06 data[:,0] mean=5.88e-06 std=2.75e-06
+  k=39 |ground mean|=3.77e-06 ground std=3.61e-06 excited mean diff=2.54e-06 f diff=4.99e-06 data[:,0] mean=5.8e-06 std=2.63e-06
+   /ro_freq 8006300000.0
+   /ro_lo_freq 7800000000.0
+   /ro_pulse_length sweeping
+   /ro_power_amp 0.2
+   /ro_power False
+   /ro_acquire_range -50
+   /ro_power_range 10
+   /ro_exLO_power False
+   /ro_exLO_freq False
+   /qu_pi_pulse_length False
+   /readout_delay 0.0
+   /onetone/ro_freq_step 500000.0
+   /onetone/ro_freq_start 7950000000.0
+   /onetone/ro_freq_stop 8050000000.0
+   /onetone/ro_freq_npts False
+   /onetone/ro_pulse_length 6.3e-06
+   /onetone/ro_power_amp 0.3
+   /onetone/ro_power False
+   /onetone/ro_acquire_range -50
+   /onetone_cav_drive/ro_pulse_length 4.6e-06
+   /onetone_cav_drive/ro_freq_step False
+   /onetone_cav_drive/ro_freq_start 8006300000.0
+   /onetone_cav_drive/ro_freq_stop 8016300000.0
+   /onetone_cav_drive/ro_freq_npts 1
+   /raw_trace/_integration_length 1.5e-06
+   /raw_trace/ro_power_amp 0.6
+   /raw_trace/ro_pulse_length 1e-06
+   /twotone/ro_pulse_length 3.08e-06
+   /twotone/ro_power_amp 0.5
+   /twotone/qu_pi_pulse_length 4e-06
+   /CKP/ro_pulse_length 3.15e-06
+   /CKP/ro_power_amp 0.232
+   /time_rabi/qu_pulse_length_step False
+   /time_rabi/qu_pulse_length_start 0.0
+   /time_rabi/qu_pulse_length_stop 1e-06
+   /time_rabi/qu_pulse_length_npts 41
+   /threetone_time_rabi/_pulse_length_step False
+   /threetone_time_rabi/_pulse_length_start 0.0
+   /threetone_time_rabi/_pulse_length_stop 3e-07
+   /threetone_time_rabi/_pulse_length_npts 41
+   /fourtone_time_rabi/_pulse_length_step False
+   /fourtone_time_rabi/_pulse_length_start 0
+   /fourtone_time_rabi/_pulse_length_stop 3e-07
+   /fourtone_time_rabi/_pulse_length_npts 41
+   /heralded_interleaved_T1_T2cpmg_single_shot/ro_pulse_length 2.65e-06
+   eralded_interleaved_T1_T2cpmg_single_shot/_single_shot_ro_pulse_length 2.65e-06
+   /heralded_interleaved_T1_T2cpmg_single_shot/ro_power_amp 0.48
+   /QND_with_single_shot/_single_shot_ro_pulse_length 3.15e-06
+   /QND_with_single_shot/ro_power_amp 0.2
+   /RED_RB_with_single_shot/_single_shot_ro_pulse_length 3.15e-06
+   /DUST_with_single_shot/ro_freq 8006300000.0
+   /DUST_with_single_shot/_single_shot_ro_pulse_length 3.05e-06
+   /DUST_with_single_shot/ro_pulse_length 3.1e-06
+   /DUST_with_single_shot/ro_power_amp 0.62
+   /auto_temp_study/_config_dict/QND_with_single_shot_vs_ro_power_amp False
+   /auto_temp_study/_config_dict/iteration_num_QND_vs_ro_power_amp 5
+   /auto_temp_study/_local_param_dict/readout_config/ro_pulse_length 2.65e-06
+   /auto_temp_study/_local_param_dict/readout_config/ro_power_amp 0.48
+   /auto_temp_study/_local_param_dict/readout_config/acquire_delay 1.5e-07
+   /auto_temp_study/_local_param_dict/single_shot_low/ro_pulse_length 1.45e-06
+   /auto_temp_study/_local_param_dict/single_shot_low/ro_power_amp 0.48
+   _study/_local_param_dict/QND_with_single_shot_vs_ro_power_amp/_n_shots 1500
+   am_dict/QND_with_single_shot_vs_ro_power_amp/_single_shot_external_avg 1
+   ram_dict/QND_with_single_shot_vs_ro_power_amp/_single_shot_reset_delay 0.0007649999999999998
+   dict/QND_with_single_shot_vs_ro_power_amp/_single_shot_ro_pulse_length 4.15e-06
+   /_local_param_dict/QND_with_single_shot_vs_ro_power_amp/_QND_cycle_num 3000
+   _study/_local_param_dict/QND_with_single_shot_vs_ro_power_amp/ringdown 2.5e-07
+   udy/_local_param_dict/QND_with_single_shot_vs_ro_power_amp/sweep_start 0.1
+   tudy/_local_param_dict/QND_with_single_shot_vs_ro_power_amp/sweep_stop 0.6
+   tudy/_local_param_dict/QND_with_single_shot_vs_ro_power_amp/sweep_npts 21
+   tudy/_local_param_dict/QND_with_single_shot_vs_ro_power_amp/sweep_list False
+   udy/_local_param_dict/QND_with_single_shot_vs_ro_power_amp/reset_delay 0.0007649999999999998
+   ram_dict/QND_with_single_shot_vs_ringdown/_single_shot_ro_pulse_length 4.15e-06
+   _local_param_dict/RED_RB_with_single_shot/_single_shot_ro_pulse_length 4.15e-06

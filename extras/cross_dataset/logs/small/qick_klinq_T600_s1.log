@@ -1,0 +1,2 @@
+Hidden Layer Size: 308 154
+{"dataset": "qick", "model": "klinq", "T_ns": 600.0, "F": 0.8448100000000001, "p01": 0.15422, "p10": 0.15616, "params": 705, "seconds": 98.1}

@@ -1,0 +1,188 @@
+=== control minus Table 2 (pp), single-channel code vs published 5-channel row
+linear    T200: -4.13 -1.37 -3.55 -4.75 -5.73 | T400: -1.40 -0.54 -0.21 -1.22 -1.45 | T600: -0.47 -0.13 +0.04 -0.31 -0.02 | T800: -0.05 -0.14 +0.01 -0.06 +0.00 | T1000: -0.05 -0.09 +0.00 -0.04 -0.01
+fnn       T200: -0.79 -0.44 -0.77 -1.05 -1.21 | T400: -0.31 -0.55 -0.29 -0.48 -0.27 | T600: -0.11 -0.54 -0.75 -0.24 +0.07 | T800: +0.08 -0.38 -0.99 -0.07 +0.09 | T1000: +0.24 -0.32 -1.11 +0.04 +0.09
+herqules  T200: -0.04 +12.23 +1.01 +0.06 +0.83 | T400: +0.05 +0.10 +0.08 -0.07 +0.14 | T600: +0.02 +0.15 +0.18 -0.07 +0.10 | T800: +0.07 +0.27 +0.06 +0.00 +0.07 | T1000: +0.14 +0.40 +0.04 -0.22 +0.03
+qubic     T200: -3.99 -1.35 -3.35 -4.42 -5.36 | T400: -1.28 -0.47 -0.29 -0.99 -1.48 | T600: -0.40 +0.08 +0.02 -0.25 -0.00 | T800: -0.15 +0.27 +0.10 -0.12 +0.07 | T1000: +0.00 +0.06 +0.20 -0.06 +0.15
+klinq     T200: -1.42 -0.44 -0.72 -1.31 -2.06 | T400: -0.51 -0.28 -0.53 +0.12 -0.44 | T600: -0.09 -0.10 -0.25 +0.72 +0.38 | T800: +0.11 +0.03 -0.02 +0.78 +0.94 | T1000: +0.27 +0.15 +0.04 +0.99 +1.47
+cnn       T200: -3.75 -1.36 -3.00 -4.41 -5.97 | T400: -1.25 -0.69 -0.94 -1.25 -1.28 | T600: -0.28 -0.37 -1.29 -0.51 -0.01 | T800: -0.10 -0.26 -1.43 -0.40 +0.03 | T1000: +0.02 -0.11 -1.51 -0.31 +0.01
+T<=400 mean diff -1.18 pp, median abs 1.00, max abs 12.23, n=60
+T>=600 mean diff -0.06 pp, median abs 0.11, max abs 1.51, n=90
+=== paired comparisons, QICK and Cao (pp, 95% CI), + = first model better
+-- qick
+  T=  400      cnn-fnn     -1.695 [-1.901,-1.481]*
+  T=  400 herqules-fnn     -2.302 [-2.523,-2.076]*
+  T=  400      cnn-herqules +0.607 [+0.491,+0.725]*
+  T=  400    klinq-fnn     +0.080 [-0.028,+0.197]
+  T=  400      cnn-linear  +1.844 [+1.589,+2.116]*
+  T=  400      fnn-linear  +3.539 [+3.280,+3.801]*
+  T=  600      cnn-fnn     +0.021 [-0.068,+0.109]
+  T=  600 herqules-fnn     -1.398 [-1.569,-1.235]*
+  T=  600      cnn-herqules +1.419 [+1.258,+1.574]*
+  T=  600    klinq-fnn     +0.085 [+0.001,+0.164]*
+  T=  600      cnn-linear  +3.815 [+3.621,+4.021]*
+  T=  600      fnn-linear  +3.794 [+3.609,+4.000]*
+  T= 1000      cnn-fnn     +0.021 [-0.033,+0.072]
+  T= 1000 herqules-fnn     -0.198 [-0.269,-0.124]*
+  T= 1000      cnn-herqules +0.219 [+0.146,+0.286]*
+  T= 1000    klinq-fnn     +0.057 [+0.008,+0.107]*
+  T= 1000      cnn-linear  +1.283 [+1.176,+1.392]*
+  T= 1000      fnn-linear  +1.262 [+1.150,+1.368]*
+  T= 1800      cnn-fnn     +0.113 [+0.077,+0.152]*
+  T= 1800 herqules-fnn     +0.092 [+0.055,+0.132]*
+  T= 1800      cnn-herqules +0.021 [-0.012,+0.053]
+  T= 1800    klinq-fnn     +0.115 [+0.077,+0.151]*
+  T= 1800      cnn-linear  +0.275 [+0.228,+0.324]*
+  T= 1800      fnn-linear  +0.162 [+0.117,+0.210]*
+  T= 2000      cnn-fnn     +0.114 [+0.072,+0.158]*
+  T= 2000 herqules-fnn     +0.129 [+0.092,+0.168]*
+  T= 2000      cnn-herqules -0.015 [-0.050,+0.016]
+  T= 2000    klinq-fnn     +0.120 [+0.084,+0.155]*
+  T= 2000      cnn-linear  +0.314 [+0.262,+0.366]*
+  T= 2000      fnn-linear  +0.200 [+0.154,+0.250]*
+-- cao
+  T=  400      cnn-fnn     -1.330 [-1.665,-0.999]*
+  T=  400 herqules-fnn     -3.121 [-3.507,-2.756]*
+  T=  400      cnn-herqules +1.792 [+1.472,+2.108]*
+  T=  400    klinq-fnn     -0.013 [-0.202,+0.169]
+  T=  400      cnn-linear  +2.965 [+2.564,+3.367]*
+  T=  400      fnn-linear  +4.295 [+3.873,+4.705]*
+  T=  600      cnn-fnn     -0.102 [-0.255,+0.055]
+  T=  600 herqules-fnn     -2.265 [-2.539,-1.986]*
+  T=  600      cnn-herqules +2.163 [+1.908,+2.435]*
+  T=  600    klinq-fnn     -0.031 [-0.150,+0.089]
+  T=  600      cnn-linear  +4.475 [+4.161,+4.786]*
+  T=  600      fnn-linear  +4.577 [+4.255,+4.895]*
+  T= 1000      cnn-fnn     +0.077 [-0.007,+0.158]
+  T= 1000 herqules-fnn     -0.167 [-0.266,-0.074]*
+  T= 1000      cnn-herqules +0.244 [+0.150,+0.333]*
+  T= 1000    klinq-fnn     +0.048 [-0.019,+0.115]
+  T= 1000      cnn-linear  +1.936 [+1.759,+2.119]*
+  T= 1000      fnn-linear  +1.859 [+1.687,+2.040]*
+  T= 1200      cnn-fnn     -0.025 [-0.106,+0.052]
+  T= 1200 herqules-fnn     -0.069 [-0.141,+0.000]
+  T= 1200      cnn-herqules +0.044 [-0.042,+0.118]
+  T= 1200    klinq-fnn     +0.026 [-0.035,+0.090]
+  T= 1200      cnn-linear  +1.445 [+1.274,+1.611]*
+  T= 1200      fnn-linear  +1.470 [+1.304,+1.625]*
+-- lienhard_q1
+  T=  400      cnn-fnn     -1.762 [-1.802,-1.722]*
+  T=  400 herqules-fnn     -0.569 [-0.600,-0.538]*
+  T=  400      cnn-herqules -1.193 [-1.227,-1.158]*
+  T=  400    klinq-fnn     -0.322 [-0.349,-0.294]*
+  T=  400      cnn-linear  +0.865 [+0.815,+0.912]*
+  T=  400      fnn-linear  +2.626 [+2.577,+2.673]*
+  T=  600      cnn-fnn     -0.206 [-0.227,-0.186]*
+  T=  600 herqules-fnn     -0.164 [-0.182,-0.147]*
+  T=  600      cnn-herqules -0.042 [-0.056,-0.030]*
+  T=  600    klinq-fnn     -0.116 [-0.134,-0.099]*
+  T=  600      cnn-linear  +0.800 [+0.773,+0.827]*
+  T=  600      fnn-linear  +1.007 [+0.978,+1.033]*
+  T= 1000      cnn-fnn     +0.008 [-0.003,+0.020]
+  T= 1000 herqules-fnn     -0.024 [-0.035,-0.014]*
+  T= 1000      cnn-herqules +0.032 [+0.021,+0.042]*
+  T= 1000    klinq-fnn     +0.011 [+0.002,+0.021]*
+  T= 1000      cnn-linear  +0.382 [+0.365,+0.402]*
+  T= 1000      fnn-linear  +0.374 [+0.356,+0.391]*
+-- lienhard_q5
+  T=  400      cnn-fnn     -1.666 [-1.700,-1.631]*
+  T=  400 herqules-fnn     -0.890 [-0.916,-0.862]*
+  T=  400      cnn-herqules -0.776 [-0.800,-0.750]*
+  T=  400    klinq-fnn     -0.248 [-0.268,-0.230]*
+  T=  400      cnn-linear  +1.060 [+1.021,+1.098]*
+  T=  400      fnn-linear  +2.726 [+2.687,+2.763]*
+  T=  600      cnn-fnn     +0.008 [-0.002,+0.018]
+  T=  600 herqules-fnn     -0.030 [-0.039,-0.020]*
+  T=  600      cnn-herqules +0.038 [+0.028,+0.048]*
+  T=  600    klinq-fnn     +0.009 [+0.001,+0.017]*
+  T=  600      cnn-linear  +0.454 [+0.438,+0.471]*
+  T=  600      fnn-linear  +0.446 [+0.429,+0.464]*
+  T= 1000      cnn-fnn     +0.022 [+0.012,+0.032]*
+  T= 1000 herqules-fnn     -0.035 [-0.045,-0.024]*
+  T= 1000      cnn-herqules +0.057 [+0.045,+0.068]*
+  T= 1000    klinq-fnn     +0.022 [+0.013,+0.030]*
+  T= 1000      cnn-linear  +1.289 [+1.264,+1.315]*
+  T= 1000      fnn-linear  +1.267 [+1.243,+1.293]*
+=== training noise across seeds (sd in pp)
+  qick cnn T=1000: F=0.9421 sd=0.001 pp (n=3)
+  qick cnn T=1800: F=0.9625 sd=0.005 pp (n=3)
+  qick klinq T=1000: F=0.9422 sd=0.017 pp (n=3)
+  qick klinq T=1800: F=0.9626 sd=0.002 pp (n=3)
+  qick herqules T=1000: F=0.9401 sd=0.015 pp (n=3)
+  qick herqules T=1800: F=0.9623 sd=0.003 pp (n=3)
+  cao herqules T=1000: F=0.8892 sd=0.018 pp (n=3)
+  cao klinq T=1000: F=0.8913 sd=0.014 pp (n=3)
+  cao cnn T=1000: F=0.8911 sd=0.053 pp (n=3)
+  lienhard_q1 klinq T=1000: F=0.9703 sd=0.001 pp (n=3)
+  lienhard_q1 herqules T=1000: F=0.9700 sd=0.005 pp (n=3)
+  lienhard_q1 cnn T=1000: F=0.9703 sd=0.005 pp (n=3)
+=== params
+{'qubic': 65, 'cnn': 2609, 'klinq': 705, 'fnn': 238856, 'herqules': 292, 'klinq_fnnb': 3425, 'linear_lp': 5, 'linear': 5}
+=== truncation cost: error at T / error at best T
+-- qick
+  linear    best T= 1800 F=0.9598  600ns x4.83 800ns x2.81 1000ns x1.76
+  qubic     best T= 1800 F=0.9598  600ns x4.82 800ns x2.80 1000ns x1.76
+  herqules  best T= 2000 F=0.9629  600ns x4.58 800ns x2.55 1000ns x1.62
+  klinq     best T= 2000 F=0.9628  600ns x4.17 800ns x2.37 1000ns x1.55
+  fnn       best T= 2000 F=0.9616  600ns x4.06 800ns x2.30 1000ns x1.51
+  transformer best T=  400 F=0.7126  
+  cnn       best T= 2000 F=0.9627  600ns x4.18 800ns x2.46 1000ns x1.56
+-- cao
+  linear    best T= 1360 F=0.8818  600ns x1.92 800ns x1.29 1000ns x1.08
+  qubic     best T= 1360 F=0.8857  600ns x1.96 800ns x1.31 1000ns x1.08
+  herqules  best T= 1360 F=0.8964  600ns x1.96 800ns x1.26 1000ns x1.07
+  klinq     best T= 1360 F=0.8970  600ns x1.76 800ns x1.20 1000ns x1.05
+  fnn       best T= 1360 F=0.8964  600ns x1.74 800ns x1.19 1000ns x1.05
+  cnn       best T= 1360 F=0.8968  600ns x1.76 800ns x1.22 1000ns x1.05
+-- lienhard_q1
+  linear    best T= 1000 F=0.9665  600ns x1.73 800ns x1.19 1000ns x1.00
+  qubic     best T= 1000 F=0.9674  600ns x1.76 800ns x1.19 1000ns x1.00
+  herqules  best T= 1000 F=0.9700  600ns x1.65 800ns x1.16 1000ns x1.00
+  klinq     best T= 1000 F=0.9703  600ns x1.66 800ns x1.17 1000ns x1.00
+  fnn       best T= 1000 F=0.9702  600ns x1.61 800ns x1.16 1000ns x1.00
+  cnn       best T= 1000 F=0.9703  600ns x1.68 800ns x1.22 1000ns x1.00
+-- lienhard_q3
+  linear    best T=  600 F=0.9106  600ns x1.00 800ns x1.08 1000ns x1.19
+  qubic     best T=  600 F=0.9125  600ns x1.00 800ns x1.10 1000ns x1.18
+  herqules  best T=  600 F=0.9241  600ns x1.00 800ns x1.01 1000ns x1.00
+  klinq     best T= 1000 F=0.9262  600ns x1.01 800ns x1.00 1000ns x1.00
+  fnn       best T= 1000 F=0.9261  600ns x1.01 800ns x1.00 1000ns x1.00
+  cnn       best T= 1000 F=0.9265  600ns x1.01 800ns x1.00 1000ns x1.00
+-- lienhard_q4
+  linear    best T= 1000 F=0.9359  600ns x1.14 800ns x1.00 1000ns x1.00
+  qubic     best T= 1000 F=0.9373  600ns x1.15 800ns x1.01 1000ns x1.00
+  herqules  best T= 1000 F=0.9415  600ns x1.17 800ns x1.03 1000ns x1.00
+  klinq     best T= 1000 F=0.9434  600ns x1.20 800ns x1.05 1000ns x1.00
+  fnn       best T= 1000 F=0.9454  600ns x1.22 800ns x1.05 1000ns x1.00
+  cnn       best T= 1000 F=0.9436  600ns x1.21 800ns x1.06 1000ns x1.00
+-- lienhard_q5
+  linear    best T=  600 F=0.9653  600ns x1.00 800ns x1.06 1000ns x1.22
+  qubic     best T=  600 F=0.9663  600ns x1.00 800ns x1.09 1000ns x1.25
+  herqules  best T= 1000 F=0.9699  600ns x1.01 800ns x1.00 1000ns x1.00
+  klinq     best T= 1000 F=0.9705  600ns x1.02 800ns x1.00 1000ns x1.00
+  fnn       best T=  800 F=0.9703  600ns x1.02 800ns x1.00 1000ns x1.00
+  cnn       best T=  800 F=0.9706  600ns x1.03 800ns x1.00 1000ns x1.00
+=== asymmetry p01/p10 at chosen T, CNN
+  qick T=1000 F=0.9421 p(0|1)=6.69% p(1|0)=4.90%
+  qick T=1800 F=0.9625 p(0|1)=5.03% p(1|0)=2.47%
+  cao T=1000 F=0.8911 p(0|1)=15.79% p(1|0)=5.99%
+  cao T=1360 F=0.8968 p(0|1)=15.23% p(1|0)=5.42%
+  lienhard_q1 T=1000 F=0.9703 p(0|1)=4.59% p(1|0)=1.36%
+  lienhard_q5 T=1000 F=0.9705 p(0|1)=4.84% p(1|0)=1.07%
+=== error modes with CNN
+  qick         T=  600 sep=1.56s overlap=21.91% cnn_err=15.58% overlap_share=100%
+  qick         T= 1000 sep=3.29s overlap=5.29% cnn_err=5.79% overlap_share=91%
+  qick         T= 1500 sep=5.00s overlap=0.66% cnn_err=3.88% overlap_share=17%
+  qick         T= 1800 sep=5.63s overlap=0.25% cnn_err=3.76% overlap_share=7%
+  cao          T=  600 sep=1.84s overlap=18.09% cnn_err=18.17% overlap_share=100%
+  cao          T= 1000 sep=3.84s overlap=2.78% cnn_err=10.82% overlap_share=26%
+  cao          T= 1200 sep=4.24s overlap=1.86% cnn_err=10.47% overlap_share=18%
+  lienhard_q1  T=  600 sep=3.68s overlap=3.33% cnn_err=5.01% overlap_share=66%
+  lienhard_q1  T= 1000 sep=4.73s overlap=0.96% cnn_err=2.97% overlap_share=32%
+  lienhard_q2  T=  600 sep=1.47s overlap=23.14% cnn_err=27.87% overlap_share=83%
+  lienhard_q2  T= 1000 sep=1.52s overlap=22.19% cnn_err=25.56% overlap_share=87%
+  lienhard_q3  T=  600 sep=4.45s overlap=1.30% cnn_err=7.45% overlap_share=18%
+  lienhard_q3  T= 1000 sep=5.04s overlap=0.60% cnn_err=7.35% overlap_share=8%
+  lienhard_q4  T=  600 sep=3.61s overlap=3.89% cnn_err=6.83% overlap_share=57%
+  lienhard_q4  T= 1000 sep=5.45s overlap=0.32% cnn_err=5.64% overlap_share=6%
+  lienhard_q5  T=  600 sep=5.75s overlap=0.22% cnn_err=3.01% overlap_share=7%
+  lienhard_q5  T= 1000 sep=7.40s overlap=0.02% cnn_err=2.95% overlap_share=1%

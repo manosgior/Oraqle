@@ -1,0 +1,2 @@
+  ep 0 val 0.55824 (96 s)
+{"dataset": "qick", "model": "transformer", "T_ns": 400.0, "F": 0.71416, "p01": 0.34324, "p10": 0.22844, "params": 405250, "seconds": 127.7}

@@ -1,0 +1,17 @@
+g 60 files
+Traceback (most recent call last):
+  File "/w/cross_dataset/repo/extras/cross_dataset/prepare.py", line 162, in <module>
+    {"qick": prepare_qick, "cao": prepare_cao, "lienhard": prepare_lienhard}[sys.argv[1]]()
+  File "/w/cross_dataset/repo/extras/cross_dataset/prepare.py", line 75, in prepare_cao
+    with h5py.File(p, "r") as f:
+         ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/h5py/_hl/files.py", line 555, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/h5py/_hl/files.py", line 232, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 106, in h5py.h5f.open
+OSError: Unable to synchronously open file (file signature not found)

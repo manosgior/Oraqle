@@ -1,0 +1,114 @@
+=== GUNYHO
+magic b'\x89HDF\r\n\x1a\n'
+   qubit_pi_pulse_amplitude (2,) float64 {'units': 'V', 'long_name': 'amplitude'}
+   readout_meta_CH0_im (2, 1000, 781) float64 {'units': 'V', 'long_name': 'Channel 0'}
+   readout_meta_CH0_re (2, 1000, 781) float64 {'units': 'V', 'long_name': 'Channel 0'}
+   readout_meta_shot_index (1000,) int64 {'units': '', 'long_name': ''}
+   readout_meta_time (781,) float64 {'units': 's', 'long_name': ''}
+   time [0.00e+00 6.40e-08 1.28e-07] 4.992e-05
+   pi amp [0. 1.]
+['three-bolometer-micrographs.svg', 'characterization measurements.py', 'utils.py', 'three-bolometer multiplexing example.ipynb', 'single-shot.py', 'data', 'characterization measurements.ipynb', 'timetrace-sensitivity-rabi.ipynb', 'timetrace-sensitivity-rabi.py', 'requirements.txt', 'README.md', 'requirements-extra.txt']
+=== HASSANI Fig7b
+31 ['2pulseQND_e_neg13,5_44_data_230209_22h24m31s.mat', '2pulseQND_e_neg13_46_data_230209_22h35m17s.mat', '2pulseQND_e_neg14,5_40_data_230209_22h02m50s.mat', '2pulseQND_e_neg14_42_data_230209_22h13m59s.mat'] ...
+Counter({'e': 13, 'g': 13, '?': 5}) [('?', 5), ('neg13,5', 2), ('neg13', 2), ('neg14,5', 2), ('neg14', 2), ('neg15,5', 2), ('neg15', 2), ('neg16,5', 2), ('neg16', 2), ('neg17', 2), ('neg18', 2), ('neg19', 2), ('neg20', 2), ('neg21', 2)]
+2pulseQND_e_neg13,5_44_data_230209_22h24m31s.mat {'Repeat_sweep_reps_0': ((1, 501), 'float64'), 'Timens_2': ((1, 64), 'float64'), 'I_4': ((501, 64), 'float64'), 'Q_6': ((501, 64), 'float64'), 'I1_8': ((501, 64), 'float64'), 'Q1_10': ((501, 64), 'float64')}
+=== ZHENG
+114 files [('.py', 30), ('.json', 28), ('', 19), ('.ddh5', 14), ('.h5', 14), ('.md', 4), ('.cff', 2), ('.toml', 2)]
+   RED_package/data/fluxonium1/32505-QNDness_neartime_vs_ro_pulse_length_2026-05-05T060219/data.ddh5 75.8 MB
+   RED_package/data/fluxonium1/32504-QNDness_neartime_vs_ro_pulse_length_2026-05-05T055914/data.ddh5 75.8 MB
+   RED_package/data/fluxonium1/32501-QNDness_neartime_vs_ro_pulse_length_2026-05-05T054938/data.ddh5 75.8 MB
+   RED_package/data/fluxonium1/32502-QNDness_neartime_vs_ro_pulse_length_2026-05-05T055254/data.ddh5 75.8 MB
+   RED_package/data/small_validation_files/fluxonium1_32502_XtauX_e_11us.h5 2.9 MB
+   RED_package/data/small_validation_files/transmon_03663_allX_6p596us.h5 3.0 MB
+   RED_package/data/small_validation_files/transmon_03665_I_e_6p596us.h5 3.0 MB
+   RED_package/data/small_validation_files/fluxonium1_32504_I_g_11us.h5 2.9 MB
+   RED_package/data/small_validation_files/fluxonium1_32505_I_e_11us.h5 2.9 MB
+   RED_package/data/small_validation_files/transmon_03664_I_g_6p596us.h5 3.0 MB
+   RED_package/data/small_validation_files/fluxonium1_32501_XtauX_g_11us.h5 2.9 MB
+   RED_package/data/transmon/03663-QND_with_single_shot_gef_vsro_pulse_length_2026-06-18T151703/data.ddh5 273.9 MB
+   RED_package/data/transmon/03665-QND_with_single_shot_gef_vsro_pulse_length_2026-06-18T154840/data.ddh5 273.9 MB
+   RED_package/data/transmon/03664-QND_with_single_shot_gef_vsro_pulse_length_2026-06-18T153522/data.ddh5 273.9 MB
+   __MACOSX/RED_package/data/small_validation_files/._fluxonium1_32502_XtauX_e_11us.h5 0.0 MB
+   __MACOSX/RED_package/data/small_validation_files/._transmon_03665_I_e_6p596us.h5 0.0 MB
+   __MACOSX/RED_package/data/small_validation_files/._transmon_03663_allX_6p596us.h5 0.0 MB
+   __MACOSX/RED_package/data/small_validation_files/._fluxonium1_32504_I_g_11us.h5 0.0 MB
+   __MACOSX/RED_package/data/small_validation_files/._transmon_03664_I_g_6p596us.h5 0.0 MB
+   __MACOSX/RED_package/data/small_validation_files/._fluxonium1_32505_I_e_11us.h5 0.0 MB
+   __MACOSX/RED_package/data/small_validation_files/._fluxonium1_32501_XtauX_g_11us.h5 0.0 MB
+   __MACOSX/RED_package/data/fluxonium1/32504-QNDness_neartime_vs_ro_pulse_length_2026-05-05T055914/._data.ddh5 0.0 MB
+   __MACOSX/RED_package/data/fluxonium1/32501-QNDness_neartime_vs_ro_pulse_length_2026-05-05T054938/._data.ddh5 0.0 MB
+   __MACOSX/RED_package/data/fluxonium1/32502-QNDness_neartime_vs_ro_pulse_length_2026-05-05T055254/._data.ddh5 0.0 MB
+   __MACOSX/RED_package/data/fluxonium1/32505-QNDness_neartime_vs_ro_pulse_length_2026-05-05T060219/._data.ddh5 0.0 MB
+   __MACOSX/RED_package/data/transmon/03664-QND_with_single_shot_gef_vsro_pulse_length_2026-06-18T153522/._data.ddh5 0.0 MB
+   __MACOSX/RED_package/data/transmon/03663-QND_with_single_shot_gef_vsro_pulse_length_2026-06-18T151703/._data.ddh5 0.0 MB
+   __MACOSX/RED_package/data/transmon/03665-QND_with_single_shot_gef_vsro_pulse_length_2026-06-18T154840/._data.ddh5 0.0 MB
+---  RED_package/data/README.md
+# Data
+
+## Manuscript raw IQ data (`fluxonium1/`, `transmon/`)
+
+These directories contain the raw experimental IQ datasets for the full
+readout-duration sweeps of the main-text figures listed below. Each run
+folder holds two files, copied byte for byte from the lab NAS (SHA-256
+checked against the source):
+
+- `data.ddh5`, the original measurement file;
+- `param_dict.json`, the measurement parameters.
+
+Nothing is thresholded, converted or reduced. The folder names are the
+original run names.
+
+| Figure | Device | Measurement | Source run(s) | Public file(s) | Sweep |
+|--------|--------|-------------|---------------|----------------|-------|
+| Fig. 3(a) | Fluxonium 1 | assignment / bit flip, I sequence | 32504 (\|g⟩), 32505 (\|e⟩) | `fluxonium1/32504-…/data.ddh5`, `fluxonium1/32505-…/data.ddh5` | full t_RO sweep, 2–20 µs (19 points) |
+| Fig. 3(b) | Transmon | assignment / bit flip, I sequence | 03664 (\|g⟩), 03665 (\|e⟩) | `transmon/03664-…/data.ddh5`, `transmon/03665-…/data.ddh5` | full t_RO sweep, 0.25–10.15 µs (40 points) |
+| Fig. 4(c) | Transmon | long-lived leakage, all-X (+ I references) | 03663 (+ 03664, 03665) | `transmon/03663-…/data.ddh5` (+ the two files above) | full t_RO sweep, 0.25–10.15 µs (40 points) |
+| Fig. 4(e) | Fluxonium 1 | short-lived leakage, X-τ-X + I reference | 32501 (\|g⟩), 32502 (\|e⟩) + 32504, 32505 | `fluxonium1/32501-…/data.ddh5`, `fluxonium1/32502-…/data.ddh5` (+ the Fig. 3(a) files) | full t_RO sweep, 2–20 µs (19 points) |
+
+Each I-sequence dataset is stored once, even when two figures use it:
+
+- 32504 and 32505 are used by Fig. 3(a) and Fig. 4(e);
+- 03664 and 03665 are used by Fig. 3(b) and Fig. 4(c).
+
+Fig. 4(f) (the τ sweep) is **not** included.
+
+### Common file layout
+
+Each `data.ddh5` file (plottr/labcore DDH5, read with `red.load_ddh5`) has
+an HDF5 group `data` containing:
+
+- `data`: the repeated-readout IQ, shape `(n_tRO, n_runs, n_cycles)`;
+- `ground_data`, `excited_data` (and `f_data` for the transmon): the
+  single-shot calibration IQ at every sweep point, shape `(n_tRO, n_cal)`;
+- `gate_seq`: the gate before each readout, 0 = I, 1 = X, shape
+  `(n_tRO, n_cycles)`;
+- the sweep axis: `sweep_param1` (Fluxonium 1) or `sweep_param` (transmon),
+  the readout duration in seconds.
+
+### Fluxonium 1 (`fluxonium1/`, acquired 2026-05-05)
+
+Each file: `data` is complex64 `(19, 8192, 50)`, with calibration complex128
+`(19, 8192)`. The sweep `sweep_param1` runs from 2 to 20 µs in 1 µs steps
+(index k ↔ t_RO = k + 2 µs).
+
+| Run | Sequence | Stored `gate_seq` | Physical branch | Contributes to | Shared |
+|---|---|---|---|---|---|
+| 32504 | I | X, I, I, … | \|g⟩ | ε_a = P(S2), ε_bf = P(S1); I reference for ε_sl | Fig. 3(a), Fig. 4(e) |
+| 32505 | I | I, I, I, … | \|e⟩ | ε_a = P(S2), ε_bf = P(S1); I reference for ε_sl | Fig. 3(a), Fig. 4(e) |
+| 32501 | X-τ-X, τ = 1.5 µs | X, I, I, … (net gate; the X-τ-X pair is an identity) | \|g⟩ | P(S1 \| X-τ-X) for ε_sl = P(S1\|X-τ-X) − P(S1\|I) | Fig. 4(e) only |
+| 32502 | X-τ-X, τ = 1.5 µs | I, I, I, … | \|e⟩ | as above | Fig. 4(e) only |
+
+**Branch mapping (important).** The stored calibration field names are
+*inverted* relative to the physical labels used in the paper:
+
+| Stored field | Physical state |
+|---|---|
+| `ground_data` | \|e⟩ (the state left by reset) |
+| `excited_data` | \|g⟩ |
+
+So the qubit starts in physical |e⟩ (`initial_state = 1` in the package):
+
+- the I runs without an X (32505, 32502) are the |e⟩ branch;
+- the runs with an X before the first readout (32504, 325
+=== CAO
+186 ['001_prep_e_natural_decay_0', '001_prep_e_natural_decay_1', '001_prep_e_natural_decay_10', '001_prep_e_natural_decay_11', '001_prep_e_natural_decay_12', '001_prep_e_natural_decay_13'] ['001_prep_g_natural_decay_8', '001_prep_g_natural_decay_9', 'Gaussian_fit_library.py', 'data_analysis.ipynb', 'data_analysis_function.py', 'natural_decay_prep_e', 'natural_decay_prep_f', 'natural_decay_prep_g']

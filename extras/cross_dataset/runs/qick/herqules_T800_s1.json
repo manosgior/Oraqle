@@ -1,0 +1,19 @@
+{
+ "dataset": "qick",
+ "model": "herqules",
+ "T_ns": 800.0,
+ "samples": 246,
+ "seed": 1,
+ "F": 0.90555,
+ "p01": 0.1056,
+ "p10": 0.0833,
+ "n_test": 100000,
+ "seconds": 99.1,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 292,
+ "val_acc": 0.9046634920634921,
+ "boxcar": 1,
+ "n_relax": 25170
+}

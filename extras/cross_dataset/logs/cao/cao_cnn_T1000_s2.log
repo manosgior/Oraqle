@@ -1,0 +1,8 @@
+  ep 0 train 0.34323 (5 s)
+  ep 5 train 0.32658 (5 s)
+  ep 10 train 0.32405 (6 s)
+  ep 15 train 0.32254 (5 s)
+  ep 20 train 0.32153 (5 s)
+  ep 25 train 0.32015 (5 s)
+  ep 29 train 0.31975 (5 s)
+{"dataset": "cao", "model": "cnn", "T_ns": 1000.0, "F": 0.8906103070355678, "p01": 0.15417915417915418, "p10": 0.06460023174971032, "params": 2609, "seconds": 154.3}

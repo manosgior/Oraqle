@@ -1,0 +1,8 @@
+  ep 0 train 0.37963 (39 s)
+  ep 5 train 0.37021 (42 s)
+  ep 10 train 0.36940 (44 s)
+  ep 15 train 0.36909 (37 s)
+  ep 20 train 0.36890 (40 s)
+  ep 25 train 0.36865 (41 s)
+  ep 29 train 0.36865 (37 s)
+{"dataset": "qick", "model": "cnn", "T_ns": 600.0, "F": 0.84417, "p01": 0.1563, "p10": 0.15536, "params": 2609, "seconds": 1167.3}

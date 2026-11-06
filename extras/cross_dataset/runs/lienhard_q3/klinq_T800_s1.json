@@ -1,0 +1,19 @@
+{
+ "dataset": "lienhard_q3",
+ "model": "klinq",
+ "T_ns": 800.0,
+ "samples": 400,
+ "seed": 1,
+ "F": 0.9261125,
+ "p01": 0.123175,
+ "p10": 0.0246,
+ "n_test": 1120000,
+ "seconds": 58.3,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 3425,
+ "bins": 100,
+ "val_loss": 0.2203950583934784,
+ "teacher_samples": 500
+}

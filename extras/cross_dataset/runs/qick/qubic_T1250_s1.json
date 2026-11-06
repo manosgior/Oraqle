@@ -1,0 +1,20 @@
+{
+ "dataset": "qick",
+ "model": "qubic",
+ "T_ns": 1250.0,
+ "samples": 385,
+ "seed": 1,
+ "F": 0.95078,
+ "p01": 0.06412,
+ "p10": 0.03432,
+ "n_test": 100000,
+ "seconds": 181.3,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 65,
+ "val_loss": 0.1717298924922943,
+ "lr": 0.007894032212920647,
+ "batch_size": 64,
+ "trial": 2
+}

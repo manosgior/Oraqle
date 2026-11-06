@@ -1,0 +1,20 @@
+{
+ "dataset": "qick",
+ "model": "fnn",
+ "T_ns": 400.0,
+ "samples": 123,
+ "seed": 1,
+ "F": 0.71539,
+ "p01": 0.2894,
+ "p10": 0.27982,
+ "n_test": 100000,
+ "seconds": 383.8,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 38437,
+ "val_loss": 0.5555245876312256,
+ "lr": 8.120532108251914e-05,
+ "batch_size": 1024,
+ "trial": 9
+}

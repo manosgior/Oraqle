@@ -1,0 +1,8 @@
+  ep 0 val 0.55825 (87 s)
+  ep 5 val 0.55400 (80 s)
+  ep 10 val 0.55439 (80 s)
+  ep 15 val 0.55649 (96 s)
+  ep 20 val 0.56003 (86 s)
+  ep 25 val 0.56093 (86 s)
+  ep 29 val 0.56121 (83 s)
+{"dataset": "qick", "model": "transformer", "T_ns": 400.0, "F": 0.7125699999999999, "p01": 0.28394, "p10": 0.29092, "params": 405250, "seconds": 2551.3}

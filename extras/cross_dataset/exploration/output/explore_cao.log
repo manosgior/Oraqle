@@ -1,0 +1,8 @@
+186 ['001_prep_e_natural_decay_0', '001_prep_e_natural_decay_1', '001_prep_e_natural_decay_10']
+   I_data (220000, 80) float64 
+   Q_data (220000, 80) float64 
+   x_data (121,) float64 [   0.  250.  500.  750. 1000.]
+attrs {}
+mean trace |z| per 10 samples [ 2.14  1.92  7.19  5.11 12.89  7.39  5.    3.89]
+noise std per sample [ 9.09  9.2   9.19  9.7  10.41 10.54  9.78  9.53]
+adjacent-sample corr 0.284 lag2 0.209

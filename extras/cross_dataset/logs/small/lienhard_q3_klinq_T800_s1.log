@@ -1,0 +1,2 @@
+Hidden Layer Size: 500 250
+{"dataset": "lienhard_q3", "model": "klinq", "T_ns": 800.0, "F": 0.9261125, "p01": 0.123175, "p10": 0.0246, "params": 3425, "seconds": 58.3}

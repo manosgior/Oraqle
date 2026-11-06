@@ -1,0 +1,19 @@
+{
+ "dataset": "lienhard_q4",
+ "model": "cnn",
+ "T_ns": 200.0,
+ "samples": 100,
+ "seed": 1,
+ "F": 0.729825,
+ "p01": 0.3172714285714286,
+ "p10": 0.22307857142857143,
+ "n_test": 1120000,
+ "seconds": 532.7,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 2609,
+ "T_ds": 3,
+ "theta": 1.9171448945999146,
+ "f_cal": 0.0
+}

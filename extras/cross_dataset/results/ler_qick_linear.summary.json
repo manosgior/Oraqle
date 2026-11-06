@@ -1,0 +1,122 @@
+[
+ {
+  "label": "qick/linear",
+  "T": 200,
+  "p": 0.44944,
+  "Lambda": null,
+  "d@1e-09": null,
+  "qubits@1e-09": null,
+  "op_us@1e-09": null,
+  "spacetime@1e-09": null,
+  "t_r_us": 0.54,
+  "readout_share": 0.37037037037037035
+ },
+ {
+  "label": "qick/linear",
+  "T": 400,
+  "p": 0.32,
+  "Lambda": null,
+  "d@1e-09": null,
+  "qubits@1e-09": null,
+  "op_us@1e-09": null,
+  "spacetime@1e-09": null,
+  "t_r_us": 0.74,
+  "readout_share": 0.5405405405405406
+ },
+ {
+  "label": "qick/linear",
+  "T": 600,
+  "p": 0.19398,
+  "Lambda": null,
+  "d@1e-09": null,
+  "qubits@1e-09": null,
+  "op_us@1e-09": null,
+  "spacetime@1e-09": null,
+  "t_r_us": 0.94,
+  "readout_share": 0.6382978723404256
+ },
+ {
+  "label": "qick/linear",
+  "T": 800,
+  "p": 0.11282,
+  "Lambda": 1.1069457164587835,
+  "d@1e-09": null,
+  "qubits@1e-09": null,
+  "op_us@1e-09": null,
+  "spacetime@1e-09": null,
+  "t_r_us": 1.14,
+  "readout_share": 0.7017543859649122
+ },
+ {
+  "label": "qick/linear",
+  "T": 1000,
+  "p": 0.07077,
+  "Lambda": 1.547862125324366,
+  "d@1e-09": 97,
+  "qubits@1e-09": 18817,
+  "op_us@1e-09": 131.32000000000002,
+  "spacetime@1e-09": 2471048.44,
+  "t_r_us": 1.34,
+  "readout_share": 0.746268656716418
+ },
+ {
+  "label": "qick/linear",
+  "T": 1250,
+  "p": 0.04976,
+  "Lambda": 1.9754229187716157,
+  "d@1e-09": 61,
+  "qubits@1e-09": 7441,
+  "op_us@1e-09": 98.58,
+  "spacetime@1e-09": 733533.78,
+  "t_r_us": 1.59,
+  "readout_share": 0.7861635220125787
+ },
+ {
+  "label": "qick/linear",
+  "T": 1500,
+  "p": 0.04189,
+  "Lambda": 2.022180768165134,
+  "d@1e-09": 59,
+  "qubits@1e-09": 6961,
+  "op_us@1e-09": 110.4,
+  "spacetime@1e-09": 768494.4,
+  "t_r_us": 1.84,
+  "readout_share": 0.8152173913043478
+ },
+ {
+  "label": "qick/linear",
+  "T": 1800,
+  "p": 0.0402,
+  "Lambda": 1.8405532851225581,
+  "d@1e-09": 69,
+  "qubits@1e-09": 9521,
+  "op_us@1e-09": 149.8,
+  "spacetime@1e-09": 1426245.8,
+  "t_r_us": 2.14,
+  "readout_share": 0.8411214953271028
+ },
+ {
+  "label": "qick/linear",
+  "T": 2000,
+  "p": 0.04039,
+  "Lambda": 1.720029785870242,
+  "d@1e-09": 77,
+  "qubits@1e-09": 11857,
+  "op_us@1e-09": 182.51999999999998,
+  "spacetime@1e-09": 2164139.6399999997,
+  "t_r_us": 2.34,
+  "readout_share": 0.8547008547008547
+ },
+ {
+  "label": "qick/linear",
+  "T": 2400,
+  "p": 0.04222,
+  "Lambda": 1.5153024156156392,
+  "d@1e-09": 103,
+  "qubits@1e-09": 21217,
+  "op_us@1e-09": 284.96000000000004,
+  "spacetime@1e-09": 6045996.32,
+  "t_r_us": 2.74,
+  "readout_share": 0.8759124087591241
+ }
+]

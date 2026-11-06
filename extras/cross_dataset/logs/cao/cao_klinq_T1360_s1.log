@@ -1,0 +1,4 @@
+Hidden Layer Size: 68 34
+  teacher stopped at epoch 89, val 0.31411, params 11901
+Hidden Layer Size: 68 34
+{"dataset": "cao", "model": "klinq", "T_ns": 1360.0, "F": 0.8969745526503514, "p01": 0.15298986727558156, "p10": 0.05306102742371572, "params": 705, "seconds": 40.9}

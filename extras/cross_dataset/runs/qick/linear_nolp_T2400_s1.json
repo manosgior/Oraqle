@@ -1,0 +1,16 @@
+{
+ "dataset": "qick",
+ "model": "linear",
+ "T_ns": 2400.0,
+ "samples": 739,
+ "seed": 1,
+ "F": 0.95778,
+ "p01": 0.06146,
+ "p10": 0.02298,
+ "n_test": 100000,
+ "seconds": 14.7,
+ "threads": 8,
+ "tag": "nolp",
+ "epochs_override": 0,
+ "params": 5
+}

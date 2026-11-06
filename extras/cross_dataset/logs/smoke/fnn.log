@@ -1,0 +1,3 @@
+Hidden Layer Size: 123 61
+  trial 0 lr=3.43e-04 bs=1024 val=0.55973
+{"dataset": "qick", "model": "fnn", "T_ns": 400.0, "F": 0.71323, "p01": 0.27638, "p10": 0.29716, "params": 38437, "seconds": 22.1}

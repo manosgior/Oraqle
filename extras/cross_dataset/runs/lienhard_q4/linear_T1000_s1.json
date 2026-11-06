@@ -1,0 +1,16 @@
+{
+ "dataset": "lienhard_q4",
+ "model": "linear",
+ "T_ns": 1000.0,
+ "samples": 500,
+ "seed": 1,
+ "F": 0.9359160714285715,
+ "p01": 0.08177321428571428,
+ "p10": 0.046394642857142857,
+ "n_test": 1120000,
+ "seconds": 95.0,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 5
+}

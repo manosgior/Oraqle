@@ -1,0 +1,4 @@
+Hidden Layer Size: 500 250
+  teacher stopped at epoch 30, val 0.11057, params 627501
+Hidden Layer Size: 500 250
+{"dataset": "lienhard_q1", "model": "klinq", "T_ns": 1000.0, "F": 0.9703205357142857, "p01": 0.046976785714285714, "p10": 0.012382142857142857, "params": 705, "seconds": 201.2}

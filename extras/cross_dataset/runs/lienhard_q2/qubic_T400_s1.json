@@ -1,0 +1,20 @@
+{
+ "dataset": "lienhard_q2",
+ "model": "qubic",
+ "T_ns": 400.0,
+ "samples": 200,
+ "seed": 1,
+ "F": 0.6885839285714286,
+ "p01": 0.3474964285714286,
+ "p10": 0.2753357142857143,
+ "n_test": 1120000,
+ "seconds": 193.2,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 65,
+ "val_loss": 0.5896037220954895,
+ "lr": 0.0010559497443981638,
+ "batch_size": 512,
+ "trial": 0
+}

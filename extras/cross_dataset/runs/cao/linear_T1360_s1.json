@@ -1,0 +1,16 @@
+{
+ "dataset": "cao",
+ "model": "linear",
+ "T_ns": 1360.0,
+ "samples": 68,
+ "seed": 1,
+ "F": 0.8816467046995933,
+ "p01": 0.14994529280243565,
+ "p10": 0.08676129779837775,
+ "n_test": 41733,
+ "seconds": 0.5,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 5
+}

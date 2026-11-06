@@ -1,0 +1,11 @@
+  trial 0 lr=1.06e-03 bs=512 val=0.59812
+  trial 1 lr=1.94e-04 bs=512 val=0.59786
+  trial 2 lr=7.89e-03 bs=64 val=0.59816
+  trial 3 lr=7.03e-04 bs=128 val=0.59781
+  trial 4 lr=4.52e-03 bs=128 val=0.59975
+  trial 5 lr=1.26e-03 bs=128 val=0.59770
+  trial 6 lr=1.14e-04 bs=512 val=0.60315
+  trial 7 lr=1.19e-03 bs=512 val=0.59779
+  trial 8 lr=4.57e-04 bs=128 val=0.59813
+  trial 9 lr=4.04e-04 bs=512 val=0.59851
+{"dataset": "qick", "model": "qubic", "T_ns": 400.0, "F": 0.68044, "p01": 0.31432, "p10": 0.3248, "params": 65, "seconds": 180.4}

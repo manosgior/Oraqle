@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/w/cross_dataset/repo/extras/cross_dataset/sweep_linear.py", line 144, in <module>
+    r = from_cache("cao", np.arange(40, 1280, 40))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/w/cross_dataset/repo/extras/cross_dataset/sweep_linear.py", line 53, in from_cache
+    ds = Dataset(name)
+         ^^^^^^^^^^^^^
+  File "/w/cross_dataset/repo/extras/cross_dataset/common.py", line 37, in __init__
+    self.meta = json.loads((self.dir / "meta.json").read_text())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 1058, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/w/cross_dataset/cache/cao/meta.json'

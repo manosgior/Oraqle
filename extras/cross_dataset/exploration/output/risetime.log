@@ -1,0 +1,7 @@
+Lienhard Q1  max contrast at    525 ns; reaches 50% at   125 ns, 90% at   225 ns; value at end 0.94 of max
+Lienhard Q2  max contrast at    125 ns; reaches 50% at    75 ns, 90% at   125 ns; value at end 0.40 of max
+Lienhard Q3  max contrast at    275 ns; reaches 50% at    75 ns, 90% at   125 ns; value at end 0.85 of max
+Lienhard Q4  max contrast at    775 ns; reaches 50% at   175 ns, 90% at   375 ns; value at end 0.92 of max
+Lienhard Q5  max contrast at    475 ns; reaches 50% at   175 ns, 90% at   325 ns; value at end 0.75 of max
+qick         max contrast at   1325 ns; reaches 50% at   325 ns, 90% at   675 ns; value at end 0.95 of max
+cao          max contrast at    675 ns; reaches 50% at   375 ns, 90% at   575 ns; value at end 0.50 of max

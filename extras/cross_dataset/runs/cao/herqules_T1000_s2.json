@@ -1,0 +1,19 @@
+{
+ "dataset": "cao",
+ "model": "herqules",
+ "T_ns": 1000.0,
+ "samples": 50,
+ "seed": 2,
+ "F": 0.8889942962737202,
+ "p01": 0.15760430046144333,
+ "p10": 0.06440710699111626,
+ "n_test": 41733,
+ "seconds": 20.8,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 292,
+ "val_acc": 0.8884418118707583,
+ "boxcar": 1,
+ "n_relax": 9065
+}

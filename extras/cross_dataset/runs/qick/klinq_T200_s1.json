@@ -1,0 +1,19 @@
+{
+ "dataset": "qick",
+ "model": "klinq",
+ "T_ns": 200.0,
+ "samples": 62,
+ "seed": 1,
+ "F": 0.5633,
+ "p01": 0.45426,
+ "p10": 0.41914,
+ "n_test": 100000,
+ "seconds": 35.4,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 705,
+ "bins": 15,
+ "val_loss": 0.6803990602493286,
+ "teacher_samples": 308
+}

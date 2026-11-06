@@ -1,0 +1,19 @@
+{
+ "dataset": "cao",
+ "model": "klinq",
+ "T_ns": 1000.0,
+ "samples": 50,
+ "seed": 2,
+ "F": 0.8915248004492335,
+ "p01": 0.15703344274772846,
+ "p10": 0.059916956353804555,
+ "n_test": 41733,
+ "seconds": 43.4,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 705,
+ "bins": 15,
+ "val_loss": 0.32000312209129333,
+ "teacher_samples": 50
+}

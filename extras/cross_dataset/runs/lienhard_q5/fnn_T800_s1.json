@@ -1,0 +1,20 @@
+{
+ "dataset": "lienhard_q5",
+ "model": "fnn",
+ "T_ns": 800.0,
+ "samples": 400,
+ "seed": 1,
+ "F": 0.9702848214285714,
+ "p01": 0.0492875,
+ "p10": 0.010142857142857143,
+ "n_test": 1120000,
+ "seconds": 746.2,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 402202,
+ "val_loss": 0.1119217649102211,
+ "lr": 0.0004454316403308543,
+ "batch_size": 256,
+ "trial": 5
+}

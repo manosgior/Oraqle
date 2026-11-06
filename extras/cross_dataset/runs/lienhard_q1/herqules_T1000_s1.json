@@ -1,0 +1,19 @@
+{
+ "dataset": "lienhard_q1",
+ "model": "herqules",
+ "T_ns": 1000.0,
+ "samples": 500,
+ "seed": 1,
+ "F": 0.96996875,
+ "p01": 0.047392857142857146,
+ "p10": 0.012669642857142857,
+ "n_test": 1120000,
+ "seconds": 53.4,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 292,
+ "val_acc": 0.9704107142857142,
+ "boxcar": 1,
+ "n_relax": 11273
+}

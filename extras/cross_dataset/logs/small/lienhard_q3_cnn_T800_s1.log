@@ -1,0 +1,8 @@
+  ep 0 train 0.24051 (18 s)
+  ep 5 train 0.22497 (20 s)
+  ep 10 train 0.22392 (17 s)
+  ep 15 train 0.22343 (19 s)
+  ep 20 train 0.22320 (19 s)
+  ep 25 train 0.22300 (17 s)
+  ep 29 train 0.22261 (17 s)
+{"dataset": "lienhard_q3", "model": "cnn", "T_ns": 800.0, "F": 0.9263758928571428, "p01": 0.12571428571428572, "p10": 0.021533928571428572, "params": 2609, "seconds": 593.2}

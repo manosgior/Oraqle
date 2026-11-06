@@ -1,0 +1,11 @@
+  trial 0 lr=1.06e-03 bs=512 val=0.13859
+  trial 1 lr=1.94e-04 bs=512 val=0.12703
+  trial 2 lr=7.89e-03 bs=64 val=0.12124
+  trial 3 lr=7.03e-04 bs=128 val=0.12148
+  trial 4 lr=4.52e-03 bs=128 val=0.12105
+  trial 5 lr=1.26e-03 bs=128 val=0.12104
+  trial 6 lr=1.14e-04 bs=512 val=0.17921
+  trial 7 lr=1.19e-03 bs=512 val=0.12138
+  trial 8 lr=4.57e-04 bs=128 val=0.12111
+  trial 9 lr=4.04e-04 bs=512 val=0.12197
+{"dataset": "lienhard_q1", "model": "qubic", "T_ns": 1000.0, "F": 0.9674214285714285, "p01": 0.05178571428571429, "p10": 0.01337142857142857, "params": 65, "seconds": 203.2}

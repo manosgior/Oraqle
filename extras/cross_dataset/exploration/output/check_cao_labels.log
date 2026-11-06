@@ -1,0 +1,46 @@
+{'g': (220000, 80), 'e': (220000, 80), 'f': (220000, 80)}
+prep_g: first-msmt mean -3.80+2.91j, second-msmt mean -3.25+4.11j, std 3.90/3.97
+prep_e: first-msmt mean -3.79+2.84j, second-msmt mean -3.31+3.59j, std 3.92/4.17
+prep_f: first-msmt mean -3.87+2.87j, second-msmt mean -2.57+2.91j, std 3.94/5.03
+n pairs 110000
+autocorr {1: 0.76, 2: 0.83, 10: 0.65, 60: 0.26, 100: 0.57, 110: 0.62, 119: 0.71, 120: 0.72, 121: 0.64, 130: 0.6, 200: 0.43, 240: 0.67}
+first-msmt clusters [-3.47+5.9j  -4.91+0.31j  1.99-1.11j] weights [0.474 0.468 0.058] sigma [1.51 1.48]
+g cluster index 0
+prep_g: herald pass 0.475; assigned populations of the 2nd msmt (cluster order) after herald, by delay index:
+   j=  0 t=     0ns n= 442 pop [0.957 0.041 0.002]
+   j=  1 t=   250ns n= 428 pop [0.939 0.056 0.005]
+   j=  2 t=   500ns n= 431 pop [0.928 0.065 0.007]
+   j=  4 t=  1000ns n= 416 pop [0.947 0.048 0.005]
+   j=  8 t=  2000ns n= 427 pop [0.941 0.052 0.007]
+   j= 16 t=  4000ns n= 442 pop [0.914 0.068 0.018]
+   j= 32 t=  8000ns n= 446 pop [0.917 0.065 0.018]
+   j= 64 t= 16000ns n= 413 pop [0.91  0.068 0.022]
+   j=119 t= 29750ns n= 441 pop [0.855 0.12  0.025]
+prep_e: herald pass 0.471; assigned populations of the 2nd msmt (cluster order) after herald, by delay index:
+   j=  0 t=     0ns n= 445 pop [0.115 0.856 0.029]
+   j=  1 t=   250ns n= 436 pop [0.144 0.8   0.055]
+   j=  2 t=   500ns n= 418 pop [0.141 0.809 0.05 ]
+   j=  4 t=  1000ns n= 437 pop [0.176 0.771 0.053]
+   j=  8 t=  2000ns n= 441 pop [0.24 0.71 0.05]
+   j= 16 t=  4000ns n= 448 pop [0.301 0.625 0.074]
+   j= 32 t=  8000ns n= 466 pop [0.421 0.506 0.073]
+   j= 64 t= 16000ns n= 416 pop [0.514 0.409 0.077]
+   j=119 t= 29750ns n= 446 pop [0.702 0.224 0.074]
+prep_f: herald pass 0.473; assigned populations of the 2nd msmt (cluster order) after herald, by delay index:
+   j=  0 t=     0ns n= 450 pop [0.091 0.236 0.673]
+   j=  1 t=   250ns n= 471 pop [0.087 0.236 0.677]
+   j=  2 t=   500ns n= 437 pop [0.105 0.268 0.627]
+   j=  4 t=  1000ns n= 436 pop [0.103 0.232 0.665]
+   j=  8 t=  2000ns n= 445 pop [0.142 0.285 0.573]
+   j= 16 t=  4000ns n= 415 pop [0.142 0.41  0.448]
+   j= 32 t=  8000ns n= 417 pop [0.209 0.415 0.376]
+   j= 64 t= 16000ns n= 439 pop [0.362 0.369 0.269]
+   j=119 t= 29750ns n= 418 pop [0.577 0.301 0.122]
+rows 0-66000: pop near-e at j<4: 0.143 (fraction assigned to g); at j>100: 0.669
+rows 66000-110000: pop near-e at j<4: 0.143 (fraction assigned to g); at j>100: 0.671
+prep_g mean trace every 8 samples [  1.03+1.86j   0.4 +1.6j    7.48+7.14j   1.19+6.43j  -3.22+7.25j
+ -13.38+2.44j  -8.02+6.39j  -3.66+7.23j  -0.55+6.68j   0.97+5.25j]
+prep_e mean trace every 8 samples [  0.81+1.67j   0.62+2.06j   7.75+6.85j   1.7 +4.04j  -2.4 +2.37j
+ -12.24-4.51j  -8.68-1.44j  -5.99+0.55j  -3.54+1.65j  -2.11+2.03j]
+prep_f mean trace every 8 samples [ 0.87+1.67j  0.54+2.12j  8.41+6.83j  3.19+2.54j  3.23-0.81j -4.54-7.58j
+ -1.22-2.99j -0.47-0.32j  0.21+0.16j  0.57+1.08j]

@@ -1,0 +1,4 @@
+Hidden Layer Size: 769 384
+  teacher stopped at epoch 19, val 0.14898, params 1481862
+Hidden Layer Size: 769 384
+{"dataset": "qick", "model": "klinq", "T_ns": 1800.0, "F": 0.96256, "p01": 0.05094, "p10": 0.02394, "params": 705, "seconds": 486.6}

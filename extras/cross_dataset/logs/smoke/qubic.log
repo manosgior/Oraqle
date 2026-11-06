@@ -1,0 +1,2 @@
+  trial 0 lr=1.06e-03 bs=512 val=0.62456
+{"dataset": "qick", "model": "qubic", "T_ns": 400.0, "F": 0.67201, "p01": 0.37996, "p10": 0.27602, "params": 65, "seconds": 22.3}

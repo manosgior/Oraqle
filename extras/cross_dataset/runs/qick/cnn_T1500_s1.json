@@ -1,0 +1,19 @@
+{
+ "dataset": "qick",
+ "model": "cnn",
+ "T_ns": 1500.0,
+ "samples": 462,
+ "seed": 1,
+ "F": 0.96116,
+ "p01": 0.05182,
+ "p10": 0.02586,
+ "n_test": 100000,
+ "seconds": 820.1,
+ "threads": 6,
+ "tag": "",
+ "epochs_override": 0,
+ "params": 2609,
+ "T_ds": 19,
+ "theta": 1.087188482284546,
+ "f_cal": 0.0
+}

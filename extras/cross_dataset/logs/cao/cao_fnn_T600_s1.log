@@ -1,0 +1,21 @@
+Hidden Layer Size: 64 32
+  trial 0 lr=3.43e-04 bs=1024 val=0.43107
+Hidden Layer Size: 64 32
+  trial 1 lr=2.71e-05 bs=1024 val=0.44718
+Hidden Layer Size: 64 32
+  trial 2 lr=7.01e-03 bs=128 val=0.42827
+Hidden Layer Size: 64 32
+  trial 3 lr=1.86e-04 bs=256 val=0.43275
+Hidden Layer Size: 64 32
+  trial 4 lr=3.04e-03 bs=256 val=0.43413
+Hidden Layer Size: 64 32
+  trial 5 lr=4.45e-04 bs=256 val=0.43067
+Hidden Layer Size: 64 32
+  trial 6 lr=1.21e-05 bs=1024 val=0.48402
+Hidden Layer Size: 64 32
+  trial 7 lr=4.12e-04 bs=1024 val=0.43124
+Hidden Layer Size: 64 32
+  trial 8 lr=9.75e-05 bs=256 val=0.43450
+Hidden Layer Size: 64 32
+  trial 9 lr=8.12e-05 bs=1024 val=0.43236
+{"dataset": "cao", "model": "fnn", "T_ns": 600.0, "F": 0.8193488800279894, "p01": 0.20617477760334904, "p10": 0.15512746234067207, "params": 6242, "seconds": 119.1}

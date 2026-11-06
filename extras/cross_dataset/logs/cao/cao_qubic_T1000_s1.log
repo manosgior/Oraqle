@@ -1,0 +1,11 @@
+  trial 0 lr=1.06e-03 bs=512 val=0.34424
+  trial 1 lr=1.94e-04 bs=512 val=0.35702
+  trial 2 lr=7.89e-03 bs=64 val=0.34289
+  trial 3 lr=7.03e-04 bs=128 val=0.34186
+  trial 4 lr=4.52e-03 bs=128 val=0.34114
+  trial 5 lr=1.26e-03 bs=128 val=0.34081
+  trial 6 lr=1.14e-04 bs=512 val=0.51402
+  trial 7 lr=1.19e-03 bs=512 val=0.34209
+  trial 8 lr=4.57e-04 bs=128 val=0.34740
+  trial 9 lr=4.04e-04 bs=512 val=0.34727
+{"dataset": "cao", "model": "qubic", "T_ns": 1000.0, "F": 0.8765068561356428, "p01": 0.15993530279244564, "p10": 0.08705098493626882, "params": 65, "seconds": 100.7}

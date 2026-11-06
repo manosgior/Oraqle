@@ -1,0 +1,21 @@
+Hidden Layer Size: 739 369
+  trial 0 lr=3.43e-04 bs=1024 val=0.33819
+Hidden Layer Size: 739 369
+  trial 1 lr=2.71e-05 bs=1024 val=0.15624
+Hidden Layer Size: 739 369
+  trial 2 lr=7.01e-03 bs=128 val=0.28999
+Hidden Layer Size: 739 369
+  trial 3 lr=1.86e-04 bs=256 val=0.32830
+Hidden Layer Size: 739 369
+  trial 4 lr=3.04e-03 bs=256 val=0.32482
+Hidden Layer Size: 739 369
+  trial 5 lr=4.45e-04 bs=256 val=0.33955
+Hidden Layer Size: 739 369
+  trial 6 lr=1.21e-05 bs=1024 val=0.15659
+Hidden Layer Size: 739 369
+  trial 7 lr=4.12e-04 bs=1024 val=0.34845
+Hidden Layer Size: 739 369
+  trial 8 lr=9.75e-05 bs=256 val=0.31094
+Hidden Layer Size: 739 369
+  trial 9 lr=8.12e-05 bs=1024 val=0.25168
+{"dataset": "qick", "model": "fnn", "T_ns": 2400.0, "F": 0.96158, "p01": 0.05154, "p10": 0.0253, "params": 1368997, "seconds": 1876.7}
