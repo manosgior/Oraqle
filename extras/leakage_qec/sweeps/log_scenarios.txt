@@ -1,0 +1,14 @@
+scenarios: 240 jobs, 100 workers
+[    32s] 1/240 d=5 T=800 scenarios always hard {'base': 402}/16900
+[    52s] 21/240 d=5 T=1000 scenarios none hard {'base': 3964, 'uniform': 4000, 'flag': 3117, 'oracle': 2438}/9900
+[    60s] 41/240 d=5 T=1000 scenarios none hard {'base': 4610, 'uniform': 4575, 'flag': 4010, 'oracle': 3766}/9900
+[    95s] 61/240 d=7 T=800 scenarios always hard {'base': 400}/33646
+[   148s] 81/240 d=7 T=1000 scenarios none hard {'base': 4924, 'uniform': 4965, 'flag': 4808, 'oracle': 4488}/9900
+[   241s] 101/240 d=9 T=600 scenarios always hard {'base': 400}/63220
+[   333s] 121/240 d=9 T=800 scenarios flag hard {'base': 683, 'flag': 676}/9900
+[   418s] 141/240 d=9 T=1000 scenarios none hard {'base': 4944, 'uniform': 4960, 'flag': 5031, 'oracle': 4242}/9900
+[   601s] 161/240 d=11 T=400 scenarios flag hard {'base': 3143, 'flag': 3113}/9900
+[   729s] 181/240 d=11 T=600 scenarios none hard {'base': 4913, 'uniform': 5033, 'flag': 4925, 'oracle': 4948}/9900
+[   939s] 201/240 d=13 T=1000 scenarios always hard {'base': 401}/96539
+[  1127s] 221/240 d=13 T=400 scenarios none hard {'base': 4930, 'uniform': 4811, 'flag': 4637, 'oracle': 3460}/9900
+done 1789.1616401672363

@@ -1,0 +1,17 @@
+tolerance: 288 jobs, 100 workers
+[    32s] 1/288 d=5 T=600 tolerance always hard {'base': 400}/19662
+[    36s] 21/288 d=5 T=600 tolerance always hard {'base': 404}/20457
+[    53s] 41/288 d=5 T=1000 tolerance flag hard {'base': 434, 'flag': 429}/10751
+[    56s] 61/288 d=5 T=600 tolerance none hard {'base': 448, 'uniform': 446, 'flag': 430, 'oracle': 401}/27869
+[    94s] 81/288 d=7 T=600 tolerance always hard {'base': 400}/41795
+[   142s] 101/288 d=7 T=600 tolerance flag hard {'base': 400, 'flag': 401}/37046
+[   175s] 121/288 d=7 T=1000 tolerance flag hard {'base': 401, 'flag': 400}/33291
+[   196s] 141/288 d=7 T=1000 tolerance none hard {'base': 1066, 'uniform': 1060, 'flag': 599, 'oracle': 400}/25468
+[   332s] 161/288 d=9 T=1000 tolerance always hard {'base': 401}/52673
+[   373s] 181/288 d=9 T=600 tolerance flag hard {'base': 405, 'flag': 407}/30598
+[   435s] 201/288 d=9 T=1000 tolerance flag hard {'base': 763, 'flag': 773}/10297
+[   556s] 221/288 d=11 T=600 tolerance always hard {'base': 401}/129585
+[   720s] 241/288 d=11 T=600 tolerance flag hard {'base': 403, 'flag': 402}/117527
+[   833s] 261/288 d=11 T=600 tolerance none hard {'base': 1421, 'uniform': 1459, 'flag': 862, 'oracle': 400}/117950
+[   931s] 281/288 d=11 T=600 tolerance none hard {'base': 536, 'uniform': 528, 'flag': 498, 'oracle': 400}/210663
+done 989.8724598884583

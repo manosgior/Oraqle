@@ -1599,6 +1599,165 @@
    ],
    "tol": 0.5,
    "kind": "range"
+  },
+  "leak_rates_pooled": {
+   "key": "leak_rate_pooled_pct",
+   "ref": "system_bottleneck.tex:195",
+   "text": "1.4-3.4% of readouts pooled, 400-1000 ns",
+   "expected": [
+    1.4,
+    3.4
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "leak_rate_q3": {
+   "key": "leak_rate_q3_max_pct",
+   "ref": "system_bottleneck.tex:195",
+   "text": "up to 6.3% on Q3",
+   "expected": 6.3,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "leak_none_baseline": {
+   "key": "leak_lambda_none_600",
+   "ref": "system_bottleneck.tex:195",
+   "text": "Lambda at 600 ns from 2.5",
+   "expected": 2.5,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "leak_none_1e3": {
+   "key": "leak_lambda_none_600_1e3",
+   "ref": "system_bottleneck.tex:195",
+   "text": "to 1.7 at 1e-3",
+   "expected": 1.7,
+   "tol": 0.05,
+   "kind": "abs"
+  },
+  "leak_none_1e2": {
+   "key": "leak_lambda_none_600_1e2",
+   "ref": "system_bottleneck.tex:195",
+   "text": "~1 at 1e-2",
+   "expected": [
+    1.0,
+    1.0
+   ],
+   "tol": 0.1,
+   "kind": "within"
+  },
+  "leak_none_threshold": {
+   "key": "leak_none_best_ci_low",
+   "ref": "system_bottleneck.tex:195",
+   "text": "at or above threshold at measured rates, even with the true history",
+   "expected": 1.0,
+   "tol": 0,
+   "kind": "max"
+  },
+  "leak_always_lambda": {
+   "key": "leak_always_lambda_600",
+   "ref": "system_bottleneck.tex:195",
+   "text": "always-on: Lambda 2.0-2.4 at 600 ns",
+   "expected": [
+    2.0,
+    2.4
+   ],
+   "tol": 0.05,
+   "kind": "within"
+  },
+  "leak_always_cheapest": {
+   "key": "leak_always_600_cheapest",
+   "ref": "system_bottleneck.tex:195",
+   "text": "600 ns stays the cheapest length",
+   "expected": true,
+   "tol": 0,
+   "kind": "exact"
+  },
+  "leak_st_noleak": {
+   "key": "leak_st_hard_600_noleak",
+   "ref": "system_bottleneck.tex:195",
+   "text": "spacetime 0.70x without leakage",
+   "expected": 0.7,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "leak_st_always": {
+   "key": "leak_st_always_600",
+   "ref": "system_bottleneck.tex:195",
+   "text": "rises to 1.2-1.9x",
+   "expected": [
+    1.2,
+    1.9
+   ],
+   "tol": 0.05,
+   "kind": "range"
+  },
+  "leak_st_bits3": {
+   "key": "leak_st_always_600_bits3",
+   "ref": "system_bottleneck.tex:195",
+   "text": "three confidence bits: 0.64-1.1x",
+   "expected": [
+    0.64,
+    1.1
+   ],
+   "tol": 0.01,
+   "kind": "range"
+  },
+  "leak_flag_lambda": {
+   "key": "leak_flag_lambda_max",
+   "ref": "system_bottleneck.tex:195",
+   "text": "flag-triggered at 1% FPR stays below 1.5",
+   "expected": 1.5,
+   "tol": 0,
+   "kind": "max"
+  },
+  "leak_unit": {
+   "key": "leak_unit",
+   "ref": "system_bottleneck.tex:195",
+   "text": "assumed unit: 99% removal, 0.2% error, 200 ns",
+   "expected": [
+    0.99,
+    0.002,
+    200
+   ],
+   "tol": 0,
+   "kind": "exact"
+  },
+  "leak_fit_range_0": {
+   "key": "leak_fit_range",
+   "index": 0,
+   "ref": "system_bottleneck.tex:195",
+   "text": "fit range: 2.52, 2.34 at 600 ns; 2.57, 2.37 at 1 us",
+   "expected": 2.52,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "leak_fit_range_1": {
+   "key": "leak_fit_range",
+   "index": 1,
+   "ref": "system_bottleneck.tex:195",
+   "text": "fit range: 2.52, 2.34 at 600 ns; 2.57, 2.37 at 1 us",
+   "expected": 2.34,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "leak_fit_range_2": {
+   "key": "leak_fit_range",
+   "index": 2,
+   "ref": "system_bottleneck.tex:195",
+   "text": "fit range: 2.52, 2.34 at 600 ns; 2.57, 2.37 at 1 us",
+   "expected": 2.57,
+   "tol": 0.005,
+   "kind": "abs"
+  },
+  "leak_fit_range_3": {
+   "key": "leak_fit_range",
+   "index": 3,
+   "ref": "system_bottleneck.tex:195",
+   "text": "fit range: 2.52, 2.34 at 600 ns; 2.57, 2.37 at 1 us",
+   "expected": 2.37,
+   "tol": 0.005,
+   "kind": "abs"
   }
  },
  "known_issues": {

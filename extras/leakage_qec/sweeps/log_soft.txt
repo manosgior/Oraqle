@@ -1,0 +1,10 @@
+soft: 160 jobs, 100 workers
+[     2s] 1/160 d=5 T=1000 soft none hard {'base': 404}/21354
+[    13s] 21/160 d=5 T=800 soft none flag0.02 {'base': 402}/34022
+[    34s] 41/160 d=7 T=800 soft none flag0.05 {'base': 415}/72675
+[    39s] 61/160 d=7 T=800 soft none bits3 {'base': 402}/95838
+[    87s] 81/160 d=9 T=1000 soft none bits4 {'base': 400}/152410
+[   134s] 101/160 d=11 T=400 soft none flag0.02 {'base': 404}/41236
+[   284s] 121/160 d=13 T=400 soft none flag0.05 {'base': 400}/90348
+[   633s] 141/160 d=13 T=1000 soft none flag0.1 {'base': 400}/560810
+done 1141.15931558609

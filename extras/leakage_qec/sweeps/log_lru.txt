@@ -1,0 +1,22 @@
+lru: 400 jobs, 100 workers
+[    32s] 1/400 d=5 T=600 lru always hard {'base': 410}/15338
+[    49s] 21/400 d=5 T=1000 lru flag hard {'base': 1613, 'flag': 1594}/9900
+[    51s] 41/400 d=5 T=1000 lru flag hard {'base': 1390, 'flag': 1378}/9900
+[    54s] 61/400 d=5 T=600 lru flag hard {'base': 1407, 'flag': 1399}/9900
+[    55s] 81/400 d=5 T=600 lru flag hard {'base': 839, 'flag': 812}/9925
+[   122s] 101/400 d=7 T=600 lru always hard {'base': 400}/37486
+[   165s] 121/400 d=7 T=600 lru flag hard {'base': 1393, 'flag': 1402}/9900
+[   184s] 141/400 d=7 T=600 lru flag hard {'base': 1604, 'flag': 1570}/9939
+[   192s] 161/400 d=7 T=1000 lru flag hard {'base': 1936, 'flag': 1887}/9900
+[   194s] 181/400 d=7 T=600 lru flag hard {'base': 430, 'flag': 422}/14153
+[   318s] 201/400 d=9 T=600 lru always hard {'base': 400}/59915
+[   419s] 221/400 d=9 T=600 lru flag hard {'base': 436, 'flag': 417}/15980
+[   467s] 241/400 d=9 T=600 lru flag hard {'base': 2095, 'flag': 2094}/9900
+[   478s] 261/400 d=9 T=1000 lru flag hard {'base': 1914, 'flag': 1920}/9900
+[   487s] 281/400 d=9 T=1000 lru flag hard {'base': 474, 'flag': 463}/10221
+[   716s] 301/400 d=11 T=600 lru always hard {'base': 402}/144469
+[   852s] 321/400 d=11 T=1000 lru always hard {'base': 426}/23158
+[   965s] 341/400 d=11 T=600 lru flag hard {'base': 421, 'flag': 400}/30971
+[   981s] 361/400 d=11 T=1000 lru flag hard {'base': 2486, 'flag': 2521}/9900
+[  1010s] 381/400 d=11 T=1000 lru flag hard {'base': 2637, 'flag': 2594}/9900
+done 1067.1828768253326

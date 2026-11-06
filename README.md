@@ -62,7 +62,7 @@ CPU-days. Every step was smoke-tested from this layout, and several were replaye
 | `verify/` | automatic checks of every paper number | all |
 | `docker/` | the Docker images used for the paper, with pinned package versions | all |
 | `docs/reproduce/` | per-part reproduction tables: paper item, command, output, runtime, verification status | all |
-| `extras/` | real work that is not in the paper (three-level/leakage-aware trainers, crosstalk, seed sweeps, synthetic data, superseded scripts) | none |
+| `extras/` | real work that is not in the paper (three-level/leakage-aware trainers, crosstalk, seed sweeps, synthetic data, superseded scripts), plus the leakage QEC study behind §7.8 (`extras/leakage_qec/`) | §7.8 only |
 
 Every folder has a `PROVENANCE.md` that records where each file came from (repository and commit, or
 cluster path) and what was changed during consolidation. Changes were limited to path handling and imports.

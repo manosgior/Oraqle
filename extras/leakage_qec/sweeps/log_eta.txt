@@ -1,0 +1,10 @@
+eta: 160 jobs, 100 workers
+[    32s] 1/160 d=5 T=1000 eta always hard {'base': 1360}/9900
+[    51s] 21/160 d=5 T=1000 eta flag hard {'base': 2768, 'flag': 2922}/9900
+[    86s] 41/160 d=7 T=1000 eta always hard {'base': 425}/16289
+[   136s] 61/160 d=7 T=1000 eta flag hard {'base': 421, 'flag': 419}/14351
+[   180s] 81/160 d=9 T=600 eta always hard {'base': 806}/9902
+[   278s] 101/160 d=9 T=600 eta flag hard {'base': 518, 'flag': 516}/9900
+[   362s] 121/160 d=11 T=600 eta always hard {'base': 405}/14013
+[   522s] 141/160 d=11 T=600 eta flag hard {'base': 401, 'flag': 448}/12564
+done 616.4203531742096

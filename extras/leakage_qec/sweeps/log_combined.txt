@@ -1,0 +1,14 @@
+combined: 240 jobs, 100 workers
+[    33s] 1/240 d=5 T=1000 combined always bits2 {'base': 401}/15912
+[    34s] 21/240 d=5 T=400 combined always bits4 {'base': 414}/21880
+[    35s] 41/240 d=5 T=800 combined always bits4 {'base': 400}/21556
+[    89s] 61/240 d=7 T=800 combined always bits2 {'base': 405}/61427
+[    93s] 81/240 d=7 T=800 combined always bits2 {'base': 400}/39793
+[   213s] 101/240 d=9 T=800 combined always hard {'base': 411}/41430
+[   232s] 121/240 d=9 T=1000 combined always bits4 {'base': 400}/44312
+[   254s] 141/240 d=9 T=600 combined always bits4 {'base': 401}/122864
+[   458s] 161/240 d=11 T=400 combined always bits2 {'base': 403}/44758
+[   491s] 181/240 d=11 T=800 combined always bits4 {'base': 421}/197982
+[   802s] 201/240 d=13 T=1000 combined always bits3 {'base': 400}/103703
+[   899s] 221/240 d=13 T=400 combined always bits3 {'base': 401}/188197
+done 1354.3584632873535

@@ -19,6 +19,8 @@ Usage: python system/paper_numbers.py [--data results/system] [--check [results/
        (with --check: print every paper value against the measured one; exit 1 on any mismatch)
 """
 import argparse
+import pathlib
+import re
 import ast
 import glob
 import json
@@ -288,6 +290,36 @@ def compute(data=None):
     v["uhel_q_hard_ising100"] = rng([x for T in (600, 800, 1000) for x in dc_ratio(ising, f"{T}/0.0/Helios", "qubits")])
     v["uhel_rt_hard_all"] = rng([x for T in (600, 800, 1000) for x in dc_ratio(allp, f"{T}/0.0/Helios")])
     v["uhel_q_hard_all"] = rng([x for T in (600, 800, 1000) for x in dc_ratio(allp, f"{T}/0.0/Helios", "qubits")])
+    # ---------------- §7.8 what the costs leave out (extras/leakage_qec)
+    lq = pathlib.Path(__file__).resolve().parents[1] / "extras" / "leakage_qec"
+    Q = J("leak_summary.json") if os.path.exists(os.path.join(data, "leak_summary.json")) else json.load(open(lq / "leak_summary.json"))
+    LP = json.load(open(lq / "leak_params.json"))["T"]
+    Ts, lds = (400, 600, 800, 1000), (0.75, 0.25)
+    sc = lambda *k: Q["scenarios"].get(str(k), {})  # noqa: E731
+    rel = lambda x: x["spacetime"] / Q["reference_spacetime"]  # noqa: E731
+    v["leak_rate_pooled_pct"] = [100 * LP["400"]["pooled"]["p_create"], 100 * LP["1000"]["pooled"]["p_create"]]
+    v["leak_rate_q3_max_pct"] = max(100 * LP[str(T)]["q3_like"]["p_create"] for T in Ts)
+    v["leak_lambda_none_600"] = Q["fit_range"]["(600, (5, 7, 9, 11))"]
+    v["leak_lambda_none_600_1e3"] = Q["tolerance"][str((600, 0.75, 0.001, "none", "base"))]["Lambda"]
+    v["leak_lambda_none_600_1e2"] = [Q["tolerance"][str((600, ld, 0.01, "none", "base"))]["Lambda"] for ld in lds]
+    # at the measured rates without removal: the highest lower bound of any decoder (a curve with no Lambda is above threshold)
+    v["leak_none_best_ci_low"] = max(sc(s, T, ld, "none", dc).get("ci", [0])[0] for s in ("pooled", "q3_like") for T in Ts for ld in lds
+                                     for dc in ("base", "uniform", "flag", "oracle"))
+    v["leak_always_lambda_600"] = [sc(s, 600, ld, "always", "base")["Lambda"] for s in ("pooled", "q3_like") for ld in lds] + \
+        [Q["combined"][str((s, 600, "hard", "base"))]["Lambda"] for s in ("pooled", "q3_like")] + \
+        [Q["lru"][str((s, 600, 0.002, 200, "always", "base"))]["Lambda"] for s in ("pooled", "q3_like")]
+    v["leak_always_600_cheapest"] = all(rel(sc(s, 600, ld, "always", "base")) < min(rel(sc(s, T, ld, "always", "base")) for T in (400, 800, 1000))
+                                        for s in ("pooled", "q3_like") for ld in lds)
+    v["leak_st_hard_600_noleak"] = Q["soft"][str((600, "hard", "base"))]["spacetime"] / Q["reference_spacetime"]
+    st = [rel(sc(s, 600, ld, "always", "base")) for s in ("pooled", "q3_like") for ld in lds] + [rel(Q["combined"][str((s, 600, "hard", "base"))]) for s in ("pooled", "q3_like")]
+    v["leak_st_always_600"] = rng(st)
+    v["leak_st_always_600_bits3"] = rng([rel(Q["combined"][str((s, 600, "bits3", "base"))]) for s in ("pooled", "q3_like")])
+    v["leak_flag_lambda_max"] = max([sc(s, T, ld, "flag", dc).get("Lambda", 0) for s in ("pooled", "q3_like") for T in Ts for ld in lds for dc in ("base",)] +
+                                    [Q["lru"][str((s, T, 0.002, 200, "0.01", "base"))].get("Lambda", 0) for s in ("pooled", "q3_like") for T in (600, 1000)])
+    v["leak_fit_range"] = [Q["fit_range"][k] for k in ("(600, (5, 7, 9, 11))", "(600, (9, 11, 13))", "(1000, (5, 7, 9, 11))", "(1000, (9, 11, 13))")]
+    src = (lq / "leaksim.py").read_text() + (lq / "sweep_leak.py").read_text()
+    v["leak_unit"] = [float(re.search(r"eta: float = ([\d.]+)", src).group(1)), float(re.search(r"e_lru: float = ([\d.]+)", src).group(1)),
+                      int(re.search(r"T_LRU_NS = (\d+)", src).group(1))]
     return v
 
 

@@ -98,7 +98,8 @@ def verify_system(work):
     steps = [("analyze.py -> summary.json", [PY, "system/analyze.py", "--data", str(work)]),
              ("summarize_soft.py -> summary_soft.json", [PY, "system/summarize_soft.py", "--data", str(work)]),
              ("merge_decoders.sh -> decoders_summary.{txt,json}", ["sh", "system/merge_decoders.sh", str(work)]),
-             ("system_cost.py -> system_cost.json", [PY, "system/system_cost.py", "--data", str(work)])]
+             ("system_cost.py -> system_cost.json", [PY, "system/system_cost.py", "--data", str(work)]),
+             ("analyze_leak.py -> leak_summary.json (§7.8)", [PY, "extras/leakage_qec/analyze_leak.py", "--out", str(work / "leak_summary.json")])]
     env = dict(os.environ, PYTHON=PY)
     for name, cmd in steps:
         if not report(f"run {name}", run(cmd, env=env).returncode == 0):
@@ -107,6 +108,9 @@ def verify_system(work):
         d = diff_json(json.load(open(work / f)), json.load(open(src / f)))
         report(f"re-derived {f} == results/system/{f}", not d, f"{len(d)} differences, e.g. {d[:3]}" if d else
                "identical (numbers within rel 1e-9)")
+    d = diff_json(json.load(open(work / "leak_summary.json")), json.load(open(REPO / "extras/leakage_qec/leak_summary.json")))
+    report("re-derived leak_summary.json == extras/leakage_qec/leak_summary.json", not d, f"{len(d)} differences, e.g. {d[:3]}" if d else
+           "identical (numbers within rel 1e-9)")
     same = (work / "decoders_summary.txt").read_bytes() == (src / "decoders_summary.txt").read_bytes()
     report("re-derived decoders_summary.txt byte-identical", same)
 
