@@ -10,3 +10,8 @@ The full leakage study behind it is in this repository too:
 * Code: `leakage/` families m1tail, m2mix, m3time, m4conf, s1/s2/s3, r, vphysics, vreproduction, vstatistics,
   f (README section 4, S8). Results: `results/leakage/` (`m*`, `v*`, `s*`, `r_*`, `f_cnn_leak_xtab.json`, PNGs).
 * Open items listed in the report's section 6 (leakage-aware QEC simulation, CNN L-flag head, Q4 sub-clouds).
+
+## Is MCMit-CNN at the accuracy ceiling?
+
+[`hmm_ceiling/`](hmm_ceiling/README.md) uses a decay- and leakage-aware HMM as a discriminator and combines it with the
+CNN. The combination lowers the error by at most 0.07 pp (Q1), so little accuracy is left to gain.
