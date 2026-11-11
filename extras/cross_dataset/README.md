@@ -229,7 +229,7 @@ python extras/cross_dataset/make_figure.py               # from results/, needs 
 
 To resume MCMit-T: `run_queue.py transformer --workers 3 --threads 20`, then `transformer_cao`. Finished runs are skipped. A GPU would help a lot.
 
-MCMit-T on QICK and Cao now runs on GPUs only: `cluster/gpu_wait.sh` (on steve, and on jack with `IMAGE=oraqle:latest`) claims each remaining run with a lock in `runs/locks/`, waits until 12 GB of GPU memory is free, and runs `run_one.py` in Docker with `--device nvidia.com/gpu=all`. Logs go to `logs/gpu/`.
+MCMit-T on QICK and Cao now runs on GPUs only: `cluster/gpu_wait.sh` (on steve, and on jack with `IMAGE=oraqle:latest`) claims each remaining run with a lock in `runs/locks/`, waits until enough GPU memory is free (1.7 GB: the traces stay in host memory and only batches move to the GPU, so a 4.8M-parameter run peaks at 1.55 GB and takes about 30 s per epoch on the H200), and runs `run_one.py` in Docker with `--device nvidia.com/gpu=all`. Logs go to `logs/gpu/`.
 
 Paper figure for §4: `fig_paper_readout.py <out.pdf>` draws fidelity against duration and the 500 ns window position for all devices. Its Lienhard window curve comes from `lienhard_windows.py`, which recomputes the 250 and 500 ns sliding windows without the 10 MHz filter on all shots (`results/linear_lienhard_windows.json`, log in `logs/lienhard_windows.log`). Over Q1, Q3, Q4, Q5 the best 500 ns window is centred at 0.25-0.45 µs and gains 0.9 pp over the onset window.
 

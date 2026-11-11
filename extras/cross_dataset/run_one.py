@@ -63,7 +63,8 @@ DEV = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # MCMit-T on
 @torch.no_grad()
 def predict(model, X, bs=8192):
     model.eval()
-    return torch.cat([model(X[s:s + bs]).cpu() for s in range(0, len(X), bs)])
+    dev = next(model.parameters()).device  # data stays on the host; only batches move to the GPU
+    return torch.cat([model(X[s:s + bs].to(dev)).cpu() for s in range(0, len(X), bs)])
 
 
 def n_params(m):
@@ -360,8 +361,9 @@ def run_transformer(ds, L, seed, a):
     Xt, Xv, yt, yv = train_test_split(Xtr, ytr, test_size=0.2, random_state=42, stratify=ytr)
     mu, sd = Xt.mean((0, 1), keepdims=True), Xt.std((0, 1), keepdims=True) + EPS
     Xt, Xv, Xe = (Xt - mu) / sd, (Xv - mu) / sd, (Xte - mu) / sd
-    Xt, Xv, Xe = (torch.from_numpy(a).to(DEV) for a in (Xt, Xv, Xe))
-    yt, yv = torch.from_numpy(yt).to(DEV), torch.from_numpy(yv)
+    # the traces stay in host memory and move to the GPU one batch at a time, so a run needs well under 2 GB of GPU memory
+    Xt, Xv, Xe = (torch.from_numpy(a) for a in (Xt, Xv, Xe))
+    yt, yv = torch.from_numpy(yt), torch.from_numpy(yv)
     torch.manual_seed(seed)
     m = QubitClassifierTransformer(num_classes=2, patch_size=patch, embedding_dim=c["d"], num_heads=c["h"],
                                    num_layers=c["layers"], dropout=c["dropout"]).to(DEV)
@@ -383,9 +385,8 @@ def run_transformer(ds, L, seed, a):
         t0 = time.time()
         m.train()
         for idx in batches(len(Xt), c["batch_size"]):
-            idx = idx.to(DEV)
             opt.zero_grad(set_to_none=True)
-            crit(m(Xt[idx]), yt[idx]).backward()
+            crit(m(Xt[idx].to(DEV, non_blocking=True)), yt[idx].to(DEV, non_blocking=True)).backward()
             nn.utils.clip_grad_norm_(m.parameters(), 1.0)
             opt.step()
         sched.step()
