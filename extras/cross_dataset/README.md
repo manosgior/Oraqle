@@ -9,7 +9,7 @@ are properties of the device. QICK saturates at 1.8 µs and has its QEC optimum 
 and 600-800 ns. The likely reason is ring-up: the state contrast reaches 90% of its maximum in 0.13-0.38 µs on the Lienhard qubits,
 against 0.68 µs on QICK and 0.58 µs on Cao.
 
-MCMit-T was stopped after one run, so every statement about "large models" here means the Baseline FNN.
+MCMit-T ran later on a GPU (2026-11-11) at 400, 600, 800, 1000 ns and each plateau, on QICK and Cao; it trails the best model by at most 0.4 pp at every one of those durations. Statements below about "large models" at other durations mean the Baseline FNN.
 
 **Report with plots of the main differences:** [`report.pdf`](report.pdf).
 
@@ -22,7 +22,7 @@ MCMit-T was stopped after one run, so every statement about "large models" here 
 | **#1** Fidelity saturates by about 1 µs and declines beyond it (per qubit, peaks at 0.5-1.7 µs) | Peak at 1.8 µs; error at 1 µs is 1.8x the peak's; -0.2 pp by 2.4 µs | Saturates near 1.3 µs, where the trace ends | Hassani about 1.7 µs, Zheng transmon about 7 µs, fluxonium about 12 µs, bolometer about 10 µs | Shape holds, duration does not transfer |
 | **#2** The first 0.5 µs holds most information; any delay costs fidelity | 500 ns window: 0.74 at the start, 0.93 centred at 1.03 µs (0.72 at the start with the filter of the published windows) | 0.71 at the start, 0.88 centred at 0.74 µs (0.69 with that filter) | Hassani 0.54 to 0.93; bolometer also rises | Does not transfer |
 | **#3** Cutting to about 600 ns costs about 10% more error | CNN: 4.2x at 600 ns, 1.6x at 1 µs, 1.04x at 1.5 µs | 1.8x at 600 ns, 1.05x at 1 µs | | Principle holds, the 600 ns does not |
-| **#4** The smallest capable models match or beat much larger ones | CNN and KLiNQ match the FNN from 1 µs up; HERQULES from 1.25 µs | Same: all tie from 1.2 µs | | Holds at the plateau, against the FNN only |
+| **#4** The smallest capable models match or beat much larger ones | CNN and KLiNQ match the FNN from 1 µs up; HERQULES from 1.25 µs | Same: all tie from 1.2 µs | | Holds at the plateau, against the FNN and MCMit-T |
 | **#5** At 1 µs about 80% of errors are state changes, at most 20% overlap | 91% overlap at 1 µs, 17% at 1.5 µs, 7% at 1.8 µs | 26% at 1 µs, 18% at 1.2 µs | | Holds at each device's plateau, not at a fixed 1 µs |
 | **#9** 600-800 ns is the spacetime optimum, 0.6x of 1 µs; Λ collapses below it | Optimum at 1.25 µs, 0.65x of 1 µs; 29x at 800 ns, no suppression at 600 ns | Not simulated (labels limit its error) | | Shape holds, location moves |
 
@@ -66,7 +66,9 @@ the standard deviation is at most 0.02 pp on QICK and 0.05 pp on Cao.
 | MCMit-CNN (2,609) | 0.563 | 0.698 | 0.844 | 0.908 | 0.942 | 0.957 | 0.961 | 0.962 | 0.963 | 0.963 |
 | Baseline FNN (238,856) | 0.563 | 0.715 | 0.844 | 0.912 | 0.942 | 0.956 | 0.960 | 0.961 | 0.962 | 0.962 |
 
-MCMit-T has one run: 0.713 at 400 ns.
+MCMit-T (paper configuration at the nearest published duration, 30 epochs, GPU from 600 ns): 0.713 at 400 ns, 0.844 at 600, 0.909 at 800, 0.938 at 1000 (4.76M parameters), 0.959 at 1800 ns.
+
+On Cao, MCMit-T: 0.683 at 400 ns, 0.819 at 600, 0.874 at 800, 0.892 at 1000, 0.896 at 1360 ns (4.74M parameters from 1000 ns).
 
 **Cao**
 
@@ -200,7 +202,7 @@ A possible device-independent form of #9, from two devices and a coarse T grid: 
 
 ## Limits
 
-- **MCMit-T is missing.** One run of the planned 17 finished before the queue was stopped; the long durations would have taken an estimated 5-12 hours each on CPU. It also was not searched: `run_one.py` trains the configuration the paper's 50-trial search chose at that duration.
+- **MCMit-T covers only the durations of the paper's table** (400-1000 ns and each plateau, on QICK and Cao), and it was not searched: `run_one.py` trains the configuration the paper's 50-trial search chose at that duration.
 - **All external datasets read one qubit.** Crosstalk and multiplexing claims stay untested.
 - **One device each, one calibration each.** QICK's T1 is not in the deposit, and the deposits are not independent samples of "devices in general".
 - **Recipes had to change for one channel.** Binary outputs, HERQULES as 2-10-20-2, time constants fixed in ns. The docstring of `run_one.py` lists every departure. The FNN and QubiCML use random search, which matches TPE at 10 trials up to pruning.
