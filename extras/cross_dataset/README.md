@@ -68,8 +68,6 @@ the standard deviation is at most 0.02 pp on QICK and 0.05 pp on Cao.
 
 MCMit-T (paper configuration at the nearest published duration, 30 epochs, GPU from 600 ns): 0.713 at 400 ns, 0.844 at 600, 0.909 at 800, 0.938 at 1000 (4.76M parameters), 0.959 at 1800 ns.
 
-On Cao, MCMit-T: 0.683 at 400 ns, 0.819 at 600, 0.874 at 800, 0.892 at 1000, 0.896 at 1360 ns (4.74M parameters from 1000 ns).
-
 **Cao**
 
 | Model | 200 | 400 | 600 | 800 | 1000 | 1200 | 1360 ns |
@@ -80,6 +78,8 @@ On Cao, MCMit-T: 0.683 at 400 ns, 0.819 at 600, 0.874 at 800, 0.892 at 1000, 0.8
 | KLiNQ | 0.542 | 0.684 | 0.819 | 0.876 | 0.891 | 0.896 | 0.897 |
 | MCMit-CNN | 0.539 | 0.671 | 0.818 | 0.874 | 0.891 | 0.895 | 0.897 |
 | Baseline FNN | 0.541 | 0.685 | 0.819 | 0.877 | 0.891 | 0.896 | 0.896 |
+
+On Cao, MCMit-T: 0.683 at 400 ns, 0.819 at 600, 0.874 at 800, 0.892 at 1000, 0.896 at 1360 ns (4.74M parameters from 1000 ns).
 
 Cao's fidelity sits near 0.90 mainly because of its labels: heralding errors and decay leave about 15% of the
 prep_e shots outside the e blob.
