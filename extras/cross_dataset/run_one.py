@@ -57,10 +57,13 @@ def batches(n, bs, shuffle=True):
         yield idx
 
 
+DEV = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # MCMit-T only; the small models stay on CPU
+
+
 @torch.no_grad()
 def predict(model, X, bs=8192):
     model.eval()
-    return torch.cat([model(X[s:s + bs]) for s in range(0, len(X), bs)])
+    return torch.cat([model(X[s:s + bs]).cpu() for s in range(0, len(X), bs)])
 
 
 def n_params(m):
@@ -357,11 +360,11 @@ def run_transformer(ds, L, seed, a):
     Xt, Xv, yt, yv = train_test_split(Xtr, ytr, test_size=0.2, random_state=42, stratify=ytr)
     mu, sd = Xt.mean((0, 1), keepdims=True), Xt.std((0, 1), keepdims=True) + EPS
     Xt, Xv, Xe = (Xt - mu) / sd, (Xv - mu) / sd, (Xte - mu) / sd
-    Xt, Xv, Xe = map(torch.from_numpy, (Xt, Xv, Xe))
-    yt, yv = torch.from_numpy(yt), torch.from_numpy(yv)
+    Xt, Xv, Xe = (torch.from_numpy(a).to(DEV) for a in (Xt, Xv, Xe))
+    yt, yv = torch.from_numpy(yt).to(DEV), torch.from_numpy(yv)
     torch.manual_seed(seed)
     m = QubitClassifierTransformer(num_classes=2, patch_size=patch, embedding_dim=c["d"], num_heads=c["h"],
-                                   num_layers=c["layers"], dropout=c["dropout"])
+                                   num_layers=c["layers"], dropout=c["dropout"]).to(DEV)
     crit = nn.CrossEntropyLoss()
     decay, no_decay = [], []
     for name, p in m.named_parameters():
@@ -380,6 +383,7 @@ def run_transformer(ds, L, seed, a):
         t0 = time.time()
         m.train()
         for idx in batches(len(Xt), c["batch_size"]):
+            idx = idx.to(DEV)
             opt.zero_grad(set_to_none=True)
             crit(m(Xt[idx]), yt[idx]).backward()
             nn.utils.clip_grad_norm_(m.parameters(), 1.0)
@@ -390,6 +394,7 @@ def run_transformer(ds, L, seed, a):
     val = float(crit(predict(m, Xv, 2048), yv))
     logit = predict(m, Xe, 2048)
     c["T_actual_ns"] = Lp * ds.dt
+    c["device"] = str(DEV)
     return (logit[:, 1] - logit[:, 0]).numpy(), dict(params=n_params(m), val_loss=val, patch_samples=patch, **c)
 
 

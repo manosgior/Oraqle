@@ -11,7 +11,7 @@ against 0.68 µs on QICK and 0.58 µs on Cao.
 
 MCMit-T was stopped after one run, so every statement about "large models" here means the Baseline FNN.
 
-**Report with plots of the main differences:** [`report.pdf`](report.pdf), a snapshot from 2026-11-06. The [live version](https://claude.ai/artifact/61rjtchmgQ89jYinrFLjFG) may only open for its owner, and later edits there do not reach the PDF.
+**Report with plots of the main differences:** [`report.pdf`](report.pdf).
 
 ![Readout error against duration per device, and QEC spacetime with the Lienhard and QICK readouts](results/cross_dataset.png)
 
@@ -229,22 +229,25 @@ python extras/cross_dataset/make_figure.py               # from results/, needs 
 
 To resume MCMit-T: `run_queue.py transformer --workers 3 --threads 20`, then `transformer_cao`. Finished runs are skipped. A GPU would help a lot.
 
+MCMit-T on QICK and Cao now runs on GPUs only: `cluster/gpu_wait.sh` (on steve, and on jack with `IMAGE=oraqle:latest`) claims each remaining run with a lock in `runs/locks/`, waits until 12 GB of GPU memory is free, and runs `run_one.py` in Docker with `--device nvidia.com/gpu=all`. Logs go to `logs/gpu/`.
+
+Paper figure for §4: `fig_paper_readout.py <out.pdf>` draws fidelity against duration and the 500 ns window position for all devices. Its Lienhard window curve comes from `lienhard_windows.py`, which recomputes the 250 and 500 ns sliding windows without the 10 MHz filter on all shots (`results/linear_lienhard_windows.json`, log in `logs/lienhard_windows.log`). Over Q1, Q3, Q4, Q5 the best 500 ns window is centred at 0.25-0.45 µs and gains 0.9 pp over the onset window.
+
 `results/` holds the summaries and sweeps. Per-shot scores (under 1 GB) stay in `$ORAQLE_WORK/cross_dataset/runs`. The Lienhard traces and anything derived from them are not committed.
 
 ## What is in this folder
 
 | Path | Contents |
 |---|---|
-| `report.pdf` | The report with plots, exported from the live version linked at the top |
+| `report.pdf` | The report with plots of the main differences across datasets |
 | `results/` | Summaries, sweeps, QEC samples and fits, the figure |
 | `runs/` | One JSON per run: fidelity, both error directions, hyperparameters, runtime, thread count (297 files) |
 | `logs/` | The full log of every job (`small/`, `cao/`, `transformer/` with the stopped MCMit-T runs, `smoke/`), the pipeline stages and `downloads/` |
 | `exploration/` | One-off inspection scripts as they were run, and in `output/` what they printed. They use container paths, `report*.py` use the author's local paths, and `lp_test.py` was superseded by `check_linear_filter.py`. `risetime` gives the contrast rise times, `check_cao_labels` the label check, `onset` and `onset2` the T = 0 choices |
 | `data_manifests/` | Repository metadata and checksums of every downloaded file, as fetched on 2026-11-06 |
 | `cluster/` | The helper scripts that ran all this on jamie |
-| `research/` | The survey of public readout datasets: `report.md` and the five researchers' `notes/` |
 
-Kept on the cluster only, in `~/oraqle-work`: the raw data (`external/`, about 57 GB), per-shot scores and KLiNQ teachers (`cross_dataset/runs/`), the QICK and Cao caches, and the researchers' full session transcripts (`cross_dataset/session_transcripts/`, which hold fetched web pages). The derived Lienhard traces were deleted, so resuming MCMit-T on the control needs `prepare.py lienhard` first.
+Kept on the cluster only, in `~/oraqle-work`: the raw data (`external/`, about 57 GB), per-shot scores and KLiNQ teachers (`cross_dataset/runs/`), the QICK and Cao caches. The derived Lienhard traces were deleted, so resuming MCMit-T on the control needs `prepare.py lienhard` first.
 
 Not kept: the queue summary lines (`docker logs`), which went with their containers. The per-job logs and JSON files hold the same information.
 

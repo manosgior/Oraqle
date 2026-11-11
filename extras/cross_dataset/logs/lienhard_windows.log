@@ -1,0 +1,22 @@
+Loaded: 1600000 traces, T_max=1000, raw shape=(1600000, 1000, 2)
+Labels shape: (1600000,)
+Starting Sliding Window Evaluation (Window: 250ns, Step: 100.0ns)
+Q1 250 ns: first 0.8046 best 0.8995
+Starting Sliding Window Evaluation (Window: 500ns, Step: 100.0ns)
+Q1 500 ns: first 0.9287 best 0.9515
+Starting Sliding Window Evaluation (Window: 250ns, Step: 100.0ns)
+Q2 250 ns: first 0.6551 best 0.6744
+Starting Sliding Window Evaluation (Window: 500ns, Step: 100.0ns)
+Q2 500 ns: first 0.7070 best 0.7078
+Starting Sliding Window Evaluation (Window: 250ns, Step: 100.0ns)
+Q3 250 ns: first 0.8754 best 0.9039
+Starting Sliding Window Evaluation (Window: 500ns, Step: 100.0ns)
+Q3 500 ns: first 0.9112 best 0.9112
+Starting Sliding Window Evaluation (Window: 250ns, Step: 100.0ns)
+Q4 250 ns: first 0.8070 best 0.9005
+Starting Sliding Window Evaluation (Window: 500ns, Step: 100.0ns)
+Q4 500 ns: first 0.9190 best 0.9317
+Starting Sliding Window Evaluation (Window: 250ns, Step: 100.0ns)
+Q5 250 ns: first 0.8089 best 0.9585
+Starting Sliding Window Evaluation (Window: 500ns, Step: 100.0ns)
+Q5 500 ns: first 0.9617 best 0.9671
