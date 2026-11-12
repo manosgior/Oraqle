@@ -65,8 +65,8 @@ Programs:
 | Dynamics 10x10 | CNN 1000 ns | 53 | 0.56 M | 133 s | 1.0 MW | 3.5 MW | 1.00 |
 | | CNN 600 ns | 51 | 0.52 M | 92 s | 0.9 MW | 3.3 MW | 0.63 |
 
-- The classical plane is 20-28% of the total at 600-1000 ns and 33-47% at 400 ns.
-- A 600 ns CNN readout costs 0.63-0.65 of the energy of 1000 ns in both QPU scenarios, almost all of it from
+- The classical plane is 20-30% of the total at 600-1000 ns and 33-49% at 400 ns.
+- A 600 ns CNN readout costs 0.61-0.66 of the energy of 1000 ns in both QPU scenarios, almost all of it from
   the shorter runtime.
 - HERQULES at 600 ns draws less classical power than the CNN at 1000 ns (5.8 against 7.3 kW per logical
   qubit), but it needs a larger distance, so with the QPU included its total energy is 0.91-1.02 of the CNN's.
