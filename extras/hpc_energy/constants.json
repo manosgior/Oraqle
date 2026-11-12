@@ -1,0 +1,33 @@
+{
+ "note": "Power constants of energy_apps.py. All are vendor ceilings (TDP), not measurements of our builds: they bound the power from above and should be replaced by measured board power once available.",
+ "v80_card_w": {
+  "value": 190,
+  "meaning": "AMD Alveo V80 card power, charged in proportion to the usable LUTs a design occupies",
+  "source": "AMD DS1013 (Alveo V80 data sheet), Product Details: thermal design power 190 W, passive cooling",
+  "checked": "2026-11-12, docs.amd.com/r/en-US/ds1013-v80/Product-Details"
+ },
+ "cpu_package_w": {
+  "value": 225,
+  "meaning": "package power of the CPU the decode timings ran on (graham, AMD EPYC 7713P)",
+  "source": "AMD EPYC 7713P specification, TDP 225 W",
+  "checked": "2026-11-12, amd.com product page: 64 cores, default TDP 225 W (configurable 225-240 W)"
+ },
+ "cpu_cores": {
+  "value": 64,
+  "meaning": "cores of that CPU; power per core = cpu_package_w / cpu_cores (package only: no memory, no cooling)",
+  "source": "doctor-cluster-config docs/hosts/graham.md: 64-Core AMD EPYC 7713P",
+  "checked": "2026-11-12"
+ },
+ "qubits_per_readout_line": {
+  "value": 5,
+  "meaning": "qubits one synthesized discriminator instance reads (tab:fpga_resources is for five-qubit readout)",
+  "source": "fpga/README.md",
+  "checked": "2026-11-12"
+ },
+ "discriminator_w_per_lut": {
+  "value": null,
+  "meaning": "power per occupied LUT of the discriminator FPGA (ZCU216, xczu49dr). null = assume the V80's power per usable LUT",
+  "source": "assumption: no power report exists for the hls4ml builds",
+  "checked": "n/a"
+ }
+}
