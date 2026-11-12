@@ -4,12 +4,18 @@
   "cpu_package_w": 225,
   "cpu_cores": 64,
   "qubits_per_readout_line": 5,
+  "qpu_w_per_qubit": {
+   "scaled": 6.25,
+   "today": 490.57
+  },
   "discriminator_w_per_lut": null
  },
  "w_per_lut": 7.569060707452218e-05,
  "w_per_core": 3.515625,
  "decoder": "Micro Blossom",
  "cnn_build": "m16",
+ "qpu_scenario": "scaled",
+ "w_per_qubit": 6.25,
  "disc_luts": {
   "MCMit-CNN": 274606,
   "HERQULES": 25430,
@@ -22,144 +28,208 @@
    "decoder_cpu_w": 2140.096612947427,
    "cpu_extrapolated": false,
    "disc_w": 1000.9023117106515,
+   "qpu_w": 32506.25,
    "d": 51,
-   "total_fpga_w": 5180.521976571193,
-   "rel": 0.41952616103213397
+   "classical_w": 5180.521976571193,
+   "total_w": 37686.771976571195,
+   "classical_share": 0.13746260836008395,
+   "classical_rel": 0.41952616103213397,
+   "total_rel": 0.9432361567387274
   },
   "HERQULES/800": {
    "decoder_fpga_w": 3650.1512743422923,
    "decoder_cpu_w": 2160.247350354127,
    "cpu_extrapolated": false,
    "disc_w": 923.9098261944475,
+   "qpu_w": 30006.25,
    "d": 49,
-   "total_fpga_w": 4574.06110053674,
-   "rel": 0.3704140823092647
+   "classical_w": 4574.06110053674,
+   "total_w": 34580.31110053674,
+   "classical_share": 0.13227356709540256,
+   "classical_rel": 0.3704140823092647,
+   "total_rel": 0.8654866954797069
   },
   "HERQULES/600": {
    "decoder_fpga_w": 4761.015117217316,
    "decoder_cpu_w": 3456.310493189291,
    "cpu_extrapolated": false,
    "disc_w": 1080.9744966475037,
+   "qpu_w": 35106.25,
    "d": 53,
-   "total_fpga_w": 5841.98961386482,
-   "rel": 0.47309276682510104
+   "classical_w": 5841.98961386482,
+   "total_w": 40948.23961386482,
+   "classical_share": 0.14266766212549853,
+   "classical_rel": 0.47309276682510104,
+   "total_rel": 1.0248651750436393
   },
   "HERQULES/400": {
    "decoder_fpga_w": 73628.69302346178,
    "decoder_cpu_w": 61872.26057269094,
    "cpu_extrapolated": true,
    "disc_w": 5451.067974547241,
+   "qpu_w": 177006.25,
    "d": 119,
-   "total_fpga_w": 79079.76099800902,
-   "rel": 6.4039934000611
+   "classical_w": 79079.76099800902,
+   "total_w": 256086.010998009,
+   "classical_share": 0.30880156510627926,
+   "classical_rel": 6.4039934000611,
+   "total_rel": 6.40939969489767
   },
   "KLiNQ/1000": {
    "decoder_fpga_w": 6845.401111441138,
    "decoder_cpu_w": 3362.908354849464,
    "cpu_extrapolated": true,
    "disc_w": 15736.978231779776,
+   "qpu_w": 43506.25,
    "d": 59,
-   "total_fpga_w": 22582.379343220913,
-   "rel": 1.8287537347932026
+   "classical_w": 22582.379343220913,
+   "total_w": 66088.6293432209,
+   "classical_share": 0.34169840663426193,
+   "classical_rel": 1.8287537347932026,
+   "total_rel": 1.6540866058940586
   },
   "KLiNQ/800": {
    "decoder_fpga_w": 4761.015117217316,
    "decoder_cpu_w": 2733.298353290793,
    "cpu_extrapolated": false,
    "disc_w": 12698.113469780923,
+   "qpu_w": 35106.25,
    "d": 53,
-   "total_fpga_w": 17459.12858699824,
-   "rel": 1.4138654800027757
+   "classical_w": 17459.12858699824,
+   "total_w": 52565.37858699824,
+   "classical_share": 0.33214121264441265,
+   "classical_rel": 1.4138654800027757,
+   "total_rel": 1.3156225135636417
   },
   "KLiNQ/600": {
    "decoder_fpga_w": 5397.180596654932,
    "decoder_cpu_w": 3867.789536954976,
    "cpu_extrapolated": false,
    "disc_w": 13674.891428994839,
+   "qpu_w": 37806.25,
    "d": 55,
-   "total_fpga_w": 19072.07202564977,
-   "rel": 1.5444839720851722
+   "classical_w": 19072.07202564977,
+   "total_w": 56878.32202564977,
+   "classical_share": 0.33531354910661837,
+   "classical_rel": 1.5444839720851722,
+   "total_rel": 1.4235681926426094
   },
   "KLiNQ/400": {
    "decoder_fpga_w": 31955.493566604775,
    "decoder_cpu_w": 30203.473366479862,
    "cpu_extrapolated": true,
    "disc_w": 39107.29533000905,
+   "qpu_w": 108106.25,
    "d": 93,
-   "total_fpga_w": 71062.78889661383,
-   "rel": 5.754767406230625
+   "classical_w": 71062.78889661383,
+   "total_w": 179169.0388966138,
+   "classical_share": 0.39662426797756783,
+   "classical_rel": 5.754767406230625,
+   "total_rel": 4.484297985523284
   },
   "MCMit-CNN/1000": {
    "decoder_fpga_w": 3169.809688857503,
    "decoder_cpu_w": 1661.1493309587868,
    "cpu_extrapolated": false,
    "disc_w": 9178.697884128835,
+   "qpu_w": 27606.25,
    "d": 47,
-   "total_fpga_w": 12348.507572986338,
-   "rel": 1.0
+   "classical_w": 12348.507572986338,
+   "total_w": 39954.75757298634,
+   "classical_share": 0.30906225749033805,
+   "classical_rel": 1.0,
+   "total_rel": 1.0
   },
   "MCMit-CNN/800": {
    "decoder_fpga_w": 2345.5259000649844,
    "decoder_cpu_w": 1460.2039089614816,
    "cpu_extrapolated": false,
    "disc_w": 7682.171055194786,
+   "qpu_w": 23106.25,
    "d": 43,
-   "total_fpga_w": 10027.696955259771,
-   "rel": 0.8120574001344434
+   "classical_w": 10027.696955259771,
+   "total_w": 33133.94695525977,
+   "classical_share": 0.3026411845470751,
+   "classical_rel": 0.8120574001344434,
+   "total_rel": 0.8292866473969508
   },
   "MCMit-CNN/600": {
    "decoder_fpga_w": 2735.838423297164,
    "decoder_cpu_w": 2102.897097203182,
    "cpu_extrapolated": false,
    "disc_w": 8413.806393784764,
+   "qpu_w": 25306.25,
    "d": 45,
-   "total_fpga_w": 11149.644817081928,
-   "rel": 0.9029143603938787
+   "classical_w": 11149.644817081928,
+   "total_w": 36455.89481708193,
+   "classical_share": 0.3058392853343872,
+   "classical_rel": 0.9029143603938787,
+   "total_rel": 0.9124293834216626
   },
   "MCMit-CNN/400": {
    "decoder_fpga_w": 48194.86546210893,
    "decoder_cpu_w": 42990.716321589585,
    "cpu_extrapolated": true,
    "disc_w": 45826.977117136,
+   "qpu_w": 137806.25,
    "d": 105,
-   "total_fpga_w": 94021.84257924493,
-   "rel": 7.61402477372469
+   "classical_w": 94021.84257924493,
+   "total_w": 231828.09257924493,
+   "classical_share": 0.40556708004275105,
+   "classical_rel": 7.61402477372469,
+   "total_rel": 5.802265028282523
   },
   "QubiCML/1000": {
    "decoder_fpga_w": 12812.735226217497,
    "decoder_cpu_w": 5971.890759483266,
    "cpu_extrapolated": true,
    "disc_w": 870.5388653340605,
+   "qpu_w": 63006.25,
    "d": 71,
-   "total_fpga_w": 13683.274091551557,
-   "rel": 1.1080913228320126
+   "classical_w": 13683.274091551557,
+   "total_w": 76689.52409155156,
+   "classical_share": 0.17842429267414067,
+   "classical_rel": 1.1080913228320126,
+   "total_rel": 1.9194090704082216
   },
   "QubiCML/800": {
    "decoder_fpga_w": 6845.401111441138,
    "decoder_cpu_w": 3769.9812590275087,
    "cpu_extrapolated": true,
    "disc_w": 601.0863593973274,
+   "qpu_w": 43506.25,
    "d": 59,
-   "total_fpga_w": 7446.487470838465,
-   "rel": 0.6030273234903658
+   "classical_w": 7446.487470838465,
+   "total_w": 50952.73747083847,
+   "classical_share": 0.14614499319296195,
+   "classical_rel": 0.6030273234903658,
+   "total_rel": 1.2752608341512734
   },
   "QubiCML/600": {
    "decoder_fpga_w": 7663.346928000081,
    "decoder_cpu_w": 5296.78611193811,
    "cpu_extrapolated": true,
    "disc_w": 642.5405910799018,
+   "qpu_w": 46506.25,
    "d": 61,
-   "total_fpga_w": 8305.887519079983,
-   "rel": 0.6726227821449441
+   "classical_w": 8305.887519079983,
+   "total_w": 54812.13751907998,
+   "classical_share": 0.15153372765637396,
+   "classical_rel": 0.6726227821449441,
+   "total_rel": 1.3718550893207975
   },
   "QubiCML/400": {
    "decoder_fpga_w": 107299.8173321275,
    "decoder_cpu_w": 85508.5872633971,
    "cpu_extrapolated": true,
    "disc_w": 3055.1768750057263,
+   "qpu_w": 221106.25,
    "d": 133,
-   "total_fpga_w": 110354.99420713322,
-   "rel": 8.93670701134333
+   "classical_w": 110354.99420713322,
+   "total_w": 331461.2442071332,
+   "classical_share": 0.33293483366692295,
+   "classical_rel": 8.93670701134333,
+   "total_rel": 8.295914287595032
   }
  },
  "apps": {
@@ -179,11 +249,17 @@
      "v80": 1921.132249653838,
      "dec_kw": 365.01512743422927,
      "disc_kw": 997.6845526226994,
+     "qpu_kw": 3000.625,
      "cpu_kw": 189.03579177652495,
      "cpu_extrapolated": false,
-     "energy_mwh": 0.004656344806754525,
+     "classical_kw": 1362.6996800569286,
+     "total_kw": 4363.324680056929,
+     "classical_share": 0.3123076506970252,
+     "energy_mwh": 0.014909480431754525,
+     "energy_classical_mwh": 0.004656344806754525,
      "runtime_rel": 1.0,
-     "energy_rel": 1.0
+     "energy_rel": 1.0,
+     "energy_classical_rel": 1.0
     },
     "MCMit-CNN/800": {
      "R_ns": 946,
@@ -196,11 +272,17 @@
      "v80": 1439.9149596300863,
      "dec_kw": 273.5838423297164,
      "disc_kw": 841.3806393784764,
+     "qpu_kw": 2530.625,
      "cpu_kw": 167.34523387205473,
      "cpu_extrapolated": false,
-     "energy_mwh": 0.002986989846496249,
+     "classical_kw": 1114.9644817081928,
+     "total_kw": 3645.5894817081926,
+     "classical_share": 0.30583928533438726,
+     "energy_mwh": 0.009766534221496249,
+     "energy_classical_mwh": 0.002986989846496249,
      "runtime_rel": 0.7840210711150132,
-     "energy_rel": 0.641488113630095
+     "energy_rel": 0.6550553029799266,
+     "energy_classical_rel": 0.641488113630095
     },
     "MCMit-CNN/600": {
      "R_ns": 946,
@@ -213,11 +295,17 @@
      "v80": 1668.3208888723698,
      "dec_kw": 316.98096888575026,
      "disc_kw": 917.8697884128834,
+     "qpu_kw": 2760.625,
      "cpu_kw": 239.9751390825539,
      "cpu_extrapolated": false,
-     "energy_mwh": 0.002901899279651789,
+     "classical_kw": 1234.8507572986337,
+     "total_kw": 3995.4757572986337,
+     "classical_share": 0.30906225749033805,
+     "energy_mwh": 0.00938936802965179,
+     "energy_classical_mwh": 0.002901899279651789,
      "runtime_rel": 0.6877377816798361,
-     "energy_rel": 0.6232140015581051
+     "energy_rel": 0.6297582315245618,
+     "energy_classical_rel": 0.6232140015581051
     },
     "MCMit-CNN/400": {
      "R_ns": 946,
@@ -230,11 +318,17 @@
      "v80": 27039.108004291604,
      "dec_kw": 5137.430520815404,
      "disc_kw": 4758.955316010276,
+     "qpu_kw": 14310.625,
      "cpu_kw": 4541.6289053923,
      "cpu_extrapolated": true,
-     "energy_mwh": 0.04027829035588053,
+     "classical_kw": 9896.38583682568,
+     "total_kw": 24207.01083682568,
+     "classical_share": 0.4088231258099199,
+     "energy_mwh": 0.09852253410588054,
+     "energy_classical_mwh": 0.04027829035588053,
      "runtime_rel": 1.1911033069944394,
-     "energy_rel": 8.650194954946757
+     "energy_rel": 6.608046105754642,
+     "energy_classical_rel": 8.650194954946757
     },
     "HERQULES/600": {
      "R_ns": 910,
@@ -247,11 +341,17 @@
      "v80": 2840.6213666604904,
      "dec_kw": 539.7180596654932,
      "disc_kw": 116.41263810050036,
+     "qpu_kw": 3780.625,
      "cpu_kw": 386.7789536954976,
      "cpu_extrapolated": false,
-     "energy_mwh": 0.0017577741393150967,
+     "classical_kw": 656.1306977659935,
+     "total_kw": 4436.755697765993,
+     "classical_share": 0.147885243737078,
+     "energy_mwh": 0.011886068514315097,
+     "energy_classical_mwh": 0.001757774139315097,
      "runtime_rel": 0.7840210711150132,
-     "energy_rel": 0.3775008536234812
+     "energy_rel": 0.7972154743232969,
+     "energy_classical_rel": 0.37750085362348124
     },
     "QubiCML/600": {
      "R_ns": 910,
@@ -264,11 +364,17 @@
      "v80": 4498.864532822166,
      "dec_kw": 854.7842612362115,
      "disc_kw": 68.53766304852286,
+     "qpu_kw": 4960.625,
      "cpu_kw": 584.1953682935259,
      "cpu_extrapolated": true,
-     "energy_mwh": 0.002820748478689864,
+     "classical_kw": 923.3219242847343,
+     "total_kw": 5883.946924284734,
+     "classical_share": 0.1569222047999652,
+     "energy_mwh": 0.01797545785368987,
+     "energy_classical_mwh": 0.002820748478689864,
      "runtime_rel": 0.894059116183787,
-     "energy_rel": 0.6057859964747601
+     "energy_rel": 1.2056394544376852,
+     "energy_classical_rel": 0.6057859964747601
     },
     "QubiCML/1000": {
      "R_ns": 910,
@@ -281,11 +387,17 @@
      "v80": 7408.610275728663,
      "dec_kw": 1407.635952388446,
      "disc_kw": 92.02839433531494,
+     "qpu_kw": 6660.625,
      "cpu_kw": 650.9272049458311,
      "cpu_extrapolated": true,
-     "energy_mwh": 0.007535813342286898,
+     "classical_kw": 1499.664346723761,
+     "total_kw": 8160.289346723761,
+     "classical_share": 0.18377587889403146,
+     "energy_mwh": 0.041005453967286894,
+     "energy_classical_mwh": 0.007535813342286898,
      "runtime_rel": 1.4705882352941175,
-     "energy_rel": 1.6183967586239312
+     "energy_rel": 2.7502939592685345,
+     "energy_classical_rel": 1.6183967586239312
     }
    }
   },
@@ -313,11 +425,17 @@
      "v80": 2505.7974301143768,
      "dec_kw": 476.10151172173164,
      "disc_kw": 1167.2909265685582,
+     "qpu_kw": 3510.625,
      "cpu_kw": 241.1290473645115,
      "cpu_extrapolated": false,
-     "energy_mwh": 0.06076087472216717,
+     "classical_kw": 1643.3924382902899,
+     "total_kw": 5154.01743829029,
+     "classical_share": 0.31885659254491044,
+     "energy_mwh": 0.19055862774300053,
+     "energy_classical_mwh": 0.06076087472216718,
      "runtime_rel": 1.0,
-     "energy_rel": 1.0
+     "energy_rel": 1.0,
+     "energy_classical_rel": 1.0
     },
     "MCMit-CNN/800": {
      "R_ns": 946,
@@ -330,11 +448,17 @@
      "v80": 1921.132249653838,
      "dec_kw": 365.01512743422927,
      "disc_kw": 997.6845526226994,
+     "qpu_kw": 3000.625,
      "cpu_kw": 216.02473503541268,
      "cpu_extrapolated": false,
-     "energy_mwh": 0.03974572529825244,
+     "classical_kw": 1362.6996800569286,
+     "total_kw": 4363.324680056929,
+     "classical_share": 0.3123076506970252,
+     "energy_mwh": 0.12726465461075245,
+     "energy_classical_mwh": 0.03974572529825244,
      "runtime_rel": 0.7888738127544098,
-     "energy_rel": 0.6541335272079641
+     "energy_rel": 0.6678503939605906,
+     "energy_classical_rel": 0.654133527207964
     },
     "MCMit-CNN/600": {
      "R_ns": 946,
@@ -347,11 +471,17 @@
      "v80": 2199.799823610811,
      "dec_kw": 417.9619664860541,
      "disc_kw": 1080.8249320079244,
+     "qpu_kw": 3250.625,
      "cpu_kw": 307.5270776503196,
      "cpu_extrapolated": false,
-     "energy_mwh": 0.03816600885538977,
+     "classical_kw": 1498.7868984939785,
+     "total_kw": 4749.411898493979,
+     "classical_share": 0.3155731552719692,
+     "energy_mwh": 0.12094187423038977,
+     "energy_classical_mwh": 0.03816600885538976,
      "runtime_rel": 0.6887381275440977,
-     "energy_rel": 0.6281346183692414
+     "energy_rel": 0.6346701572258363,
+     "energy_classical_rel": 0.6281346183692412
     },
     "MCMit-CNN/400": {
      "R_ns": 946,
@@ -364,11 +494,17 @@
      "v80": 38751.943696558825,
      "dec_kw": 7362.869302346177,
      "disc_kw": 5886.338860473927,
+     "qpu_kw": 17700.625,
      "cpu_kw": 6187.226057269094,
      "cpu_extrapolated": true,
-     "energy_mwh": 0.6000628206579318,
+     "classical_kw": 13249.208162820105,
+     "total_kw": 30949.833162820105,
+     "classical_share": 0.428086577821567,
+     "energy_mwh": 1.4017323871995986,
+     "energy_classical_mwh": 0.6000628206579318,
      "runtime_rel": 1.224966078697422,
-     "energy_rel": 9.87580944813181
+     "energy_rel": 7.355911426325256,
+     "energy_classical_rel": 9.87580944813181
     },
     "HERQULES/600": {
      "R_ns": 910,
@@ -381,11 +517,17 @@
      "v80": 4033.340488421095,
      "dec_kw": 766.3346928000082,
      "disc_kw": 143.20602306013936,
+     "qpu_kw": 4650.625,
      "cpu_kw": 529.678611193811,
      "cpu_extrapolated": true,
-     "energy_mwh": 0.027021272265274367,
+     "classical_kw": 909.5407158601475,
+     "total_kw": 5560.165715860147,
+     "classical_share": 0.16358158413619212,
+     "energy_mwh": 0.16518529520277436,
+     "energy_classical_mwh": 0.027021272265274367,
      "runtime_rel": 0.803527815468114,
-     "energy_rel": 0.44471499774864653
+     "energy_rel": 0.8668476319296009,
+     "energy_classical_rel": 0.4447149977486465
     },
     "QubiCML/600": {
      "R_ns": 910,
@@ -398,11 +540,17 @@
      "v80": 6743.544855903946,
      "dec_kw": 1281.2735226217496,
      "disc_kw": 87.05388653340604,
+     "qpu_kw": 6300.625,
      "cpu_kw": 839.8745715119924,
      "cpu_extrapolated": true,
-     "energy_mwh": 0.0471038044528071,
+     "classical_kw": 1368.3274091551557,
+     "total_kw": 7668.952409155156,
+     "classical_share": 0.17842429267414067,
+     "energy_mwh": 0.2639988296819738,
+     "energy_classical_mwh": 0.04710380445280711,
      "runtime_rel": 0.9310719131614654,
-     "energy_rel": 0.7752324940710965
+     "energy_rel": 1.3853942632186635,
+     "energy_classical_rel": 0.7752324940710966
     },
     "QubiCML/1000": {
      "R_ns": 910,
@@ -415,11 +563,17 @@
      "v80": 11442.344424666322,
      "dec_kw": 2174.045440686601,
      "disc_kw": 118.97364492898826,
+     "qpu_kw": 8610.625,
      "cpu_kw": 969.3235505196127,
      "cpu_extrapolated": true,
-     "energy_mwh": 0.13102272838222717,
+     "classical_kw": 2293.019085615589,
+     "total_kw": 10903.64408561559,
+     "classical_share": 0.21029841653036052,
+     "energy_mwh": 0.6230324057780606,
+     "energy_classical_mwh": 0.13102272838222717,
      "runtime_rel": 1.5454545454545454,
-     "energy_rel": 2.1563667241680875
+     "energy_rel": 3.2695051027462356,
+     "energy_classical_rel": 2.156366724168087
     }
    }
   },
@@ -447,11 +601,17 @@
      "v80": 176864.59906066163,
      "dec_kw": 33604.273821525705,
      "disc_kw": 41464.7011792485,
+     "qpu_kw": 124691.0375,
      "cpu_kw": 14783.819285472615,
      "cpu_extrapolated": true,
-     "energy_mwh": 366602.43972324335,
+     "classical_kw": 75068.9750007742,
+     "total_kw": 199760.0125007742,
+     "classical_share": 0.3757958064829579,
+     "energy_mwh": 975536.2710250693,
+     "energy_classical_mwh": 366602.4397232433,
      "runtime_rel": 1.0,
-     "energy_rel": 1.0
+     "energy_rel": 1.0,
+     "energy_classical_rel": 1.0
     },
     "MCMit-CNN/800": {
      "R_ns": 946,
@@ -464,11 +624,17 @@
      "v80": 127585.34142634003,
      "dec_kw": 24241.214871004602,
      "disc_kw": 34188.65424927467,
+     "qpu_kw": 102812.2375,
      "cpu_kw": 11922.634478449669,
      "cpu_extrapolated": true,
-     "energy_mwh": 220935.16397863,
+     "classical_kw": 58429.86912027927,
+     "total_kw": 161242.10662027926,
+     "classical_share": 0.36237351610569074,
+     "energy_mwh": 609689.0477895506,
+     "energy_classical_mwh": 220935.16397862998,
      "runtime_rel": 0.7742746939460005,
-     "energy_rel": 0.6026560110877033
+     "energy_rel": 0.6249783487280329,
+     "energy_classical_rel": 0.6026560110877033
     },
     "MCMit-CNN/600": {
      "R_ns": 946,
@@ -481,11 +647,17 @@
      "v80": 150810.09951710212,
      "dec_kw": 28653.9189082494,
      "disc_kw": 37739.0144982378,
+     "qpu_kw": 113488.0375,
      "cpu_kw": 17785.859104104748,
      "cpu_extrapolated": true,
-     "energy_mwh": 219780.0267790068,
+     "classical_kw": 66392.9334064872,
+     "total_kw": 179880.9709064872,
+     "classical_share": 0.36909370164008165,
+     "energy_mwh": 595458.6214893563,
+     "energy_classical_mwh": 219780.0267790068,
      "runtime_rel": 0.6778467214489352,
-     "energy_rel": 0.5995050849768588
+     "energy_rel": 0.6103910630238927,
+     "energy_classical_rel": 0.599505084976859
     },
     "MCMit-CNN/400": {
      "R_ns": 946,
@@ -498,11 +670,17 @@
      "v80": 2534853.6268134494,
      "dec_kw": 481622.1890945554,
      "disc_kw": 199872.1325342211,
+     "qpu_kw": 601016.2375,
      "cpu_kw": 322962.3732192976,
      "cpu_extrapolated": true,
-     "energy_mwh": 4006228.821641622,
+     "classical_kw": 681494.3216287765,
+     "total_kw": 1282510.5591287767,
+     "classical_share": 0.5313752130756124,
+     "energy_mwh": 7539359.614562138,
+     "energy_classical_mwh": 4006228.8216416226,
      "runtime_rel": 1.203756498406842,
-     "energy_rel": 10.927992799682448
+     "energy_rel": 7.728425726949102,
+     "energy_classical_rel": 10.927992799682452
     },
     "HERQULES/600": {
      "R_ns": 910,
@@ -515,11 +693,17 @@
      "v80": 255640.83759646481,
      "dec_kw": 48571.759143328316,
      "disc_kw": 4773.435551623184,
+     "qpu_kw": 155005.0375,
      "cpu_kw": 28552.025653384306,
      "cpu_extrapolated": true,
-     "energy_mwh": 203281.76018545456,
+     "classical_kw": 53345.1946949515,
+     "total_kw": 208350.2321949515,
+     "classical_share": 0.2560361662809997,
+     "energy_mwh": 793957.2097886861,
+     "energy_classical_mwh": 203281.76018545456,
      "runtime_rel": 0.7803119235284254,
-     "energy_rel": 0.5545019294986598
+     "energy_rel": 0.8138674423191007,
+     "energy_classical_rel": 0.5545019294986598
     },
     "QubiCML/600": {
      "R_ns": 910,
@@ -532,11 +716,17 @@
      "v80": 428680.87225657544,
      "dec_kw": 81449.36572874934,
      "disc_kw": 2906.671235426072,
+     "qpu_kw": 210361.0375,
      "cpu_kw": 45392.84153817146,
      "cpu_extrapolated": true,
-     "energy_mwh": 373406.5418347693,
+     "classical_kw": 84356.03696417541,
+     "total_kw": 294717.0744641754,
+     "classical_share": 0.28622717946540077,
+     "energy_mwh": 1304581.006360742,
+     "energy_classical_mwh": 373406.54183476925,
      "runtime_rel": 0.9064229414724133,
-     "energy_rel": 1.018559893154728
+     "energy_rel": 1.3372962596151559,
+     "energy_classical_rel": 1.018559893154728
     },
     "QubiCML/1000": {
      "R_ns": 910,
@@ -549,11 +739,17 @@
      "v80": 707099.937692568,
      "dec_kw": 134348.9881615879,
      "disc_kw": 3906.522431070755,
+     "qpu_kw": 282719.2375,
      "cpu_kw": 52616.41248116267,
      "cpu_extrapolated": true,
-     "energy_mwh": 1008971.6174013331,
+     "classical_kw": 138255.51059265865,
+     "total_kw": 420974.74809265864,
+     "classical_share": 0.3284175861356604,
+     "energy_mwh": 3072221.647060503,
+     "energy_classical_mwh": 1008971.6174013332,
      "runtime_rel": 1.4943820224719102,
-     "energy_rel": 2.7522228661735832
+     "energy_rel": 3.149264397757644,
+     "energy_classical_rel": 2.7522228661735837
     }
    }
   },
@@ -581,11 +777,17 @@
      "v80": 207350.38037573622,
      "dec_kw": 39396.57227138988,
      "disc_kw": 55563.04810466337,
+     "qpu_kw": 167089.3875,
      "cpu_kw": 17813.67525977829,
      "cpu_extrapolated": true,
-     "energy_mwh": 15174.07253799143,
+     "classical_kw": 94959.62037605325,
+     "total_kw": 262049.00787605328,
+     "classical_share": 0.3623735161056907,
+     "energy_mwh": 41874.121213553924,
+     "energy_classical_mwh": 15174.07253799143,
      "runtime_rel": 1.0,
-     "energy_rel": 1.0
+     "energy_rel": 1.0,
+     "energy_classical_rel": 1.0
     },
     "MCMit-CNN/800": {
      "R_ns": 946,
@@ -598,11 +800,17 @@
      "v80": 158692.43210610794,
      "dec_kw": 30151.562100160514,
      "disc_kw": 47442.294920135646,
+     "qpu_kw": 142670.5875,
      "cpu_kw": 15290.432505984865,
      "cpu_extrapolated": true,
-     "energy_mwh": 9767.12675242978,
+     "classical_kw": 77593.85702029616,
+     "total_kw": 220264.44452029615,
+     "classical_share": 0.3522759072136416,
+     "energy_mwh": 27725.78695399228,
+     "energy_classical_mwh": 9767.12675242978,
      "runtime_rel": 0.7877280265339968,
-     "energy_rel": 0.643672074716643
+     "energy_rel": 0.6621222404308732,
+     "energy_classical_rel": 0.643672074716643
     },
     "MCMit-CNN/600": {
      "R_ns": 946,
@@ -615,11 +823,17 @@
      "v80": 190107.34136847538,
      "dec_kw": 36120.39486001032,
      "disc_kw": 52784.8956994302,
+     "qpu_kw": 158735.5875,
      "cpu_kw": 23015.604636921442,
      "cpu_extrapolated": true,
-     "energy_mwh": 9842.803501491839,
+     "classical_kw": 88905.29055944052,
+     "total_kw": 247640.87805944053,
+     "classical_share": 0.35900894576096937,
+     "energy_mwh": 27416.596766491843,
+     "energy_classical_mwh": 9842.803501491837,
      "runtime_rel": 0.6928321356182053,
-     "energy_rel": 0.6486593152133907
+     "energy_rel": 0.6547384392061598,
+     "energy_classical_rel": 0.6486593152133906
     },
     "MCMit-CNN/400": {
      "R_ns": 946,
@@ -632,11 +846,17 @@
      "v80": 3183616.506790951,
      "dec_kw": 604887.1362902806,
      "disc_kw": 278954.99535623303,
+     "qpu_kw": 838820.5875,
      "cpu_kw": 420617.4392767103,
      "cpu_extrapolated": true,
-     "energy_mwh": 173321.44201588136,
+     "classical_kw": 883842.1316465137,
+     "total_kw": 1722662.7191465138,
+     "classical_share": 0.5130674285935727,
+     "energy_mwh": 337814.1592246314,
+     "energy_classical_mwh": 173321.44201588133,
      "runtime_rel": 1.2271973466003316,
-     "energy_rel": 11.422209929597692
+     "energy_rel": 8.067373103827354,
+     "energy_classical_rel": 11.42220992959769
     },
     "HERQULES/600": {
      "R_ns": 910,
@@ -649,11 +869,17 @@
      "v80": 334690.820720424,
      "dec_kw": 63591.25593688056,
      "disc_kw": 6827.601224594348,
+     "qpu_kw": 221710.3875,
      "cpu_kw": 38223.774017618365,
      "cpu_extrapolated": true,
-     "energy_mwh": 9063.024281443759,
+     "classical_kw": 70418.85716147491,
+     "total_kw": 292129.24466147495,
+     "classical_share": 0.24105377482174936,
+     "energy_mwh": 37597.52067000627,
+     "energy_classical_mwh": 9063.024281443759,
      "runtime_rel": 0.8054173576561637,
-     "energy_rel": 0.5972703938743276
+     "energy_rel": 0.8978700825328988,
+     "energy_classical_rel": 0.5972703938743276
     },
     "QubiCML/600": {
      "R_ns": 910,
@@ -666,11 +892,17 @@
      "v80": 543333.6937886175,
      "dec_kw": 103233.40181983734,
      "disc_kw": 4078.6486918631404,
+     "qpu_kw": 295180.9875,
      "cpu_kw": 59027.606169994695,
      "cpu_extrapolated": true,
-     "energy_mwh": 15890.351115131733,
+     "classical_kw": 107312.05051170048,
+     "total_kw": 402493.0380117005,
+     "classical_share": 0.2666184017537737,
+     "energy_mwh": 59599.60381806924,
+     "energy_classical_mwh": 15890.351115131733,
      "runtime_rel": 0.9266629813893498,
-     "energy_rel": 1.0472041092031787
+     "energy_rel": 1.423303990407753,
+     "energy_classical_rel": 1.0472041092031787
     },
     "QubiCML/1000": {
      "R_ns": 910,
@@ -683,11 +915,17 @@
      "v80": 878255.8427139557,
      "dec_kw": 166868.6101156516,
      "disc_kw": 5416.492820108524,
+     "qpu_kw": 391999.3875,
      "cpu_kw": 66843.63918229101,
      "cpu_extrapolated": true,
-     "energy_mwh": 41805.26736920042,
+     "classical_kw": 172285.1029357601,
+     "total_kw": 564284.4904357601,
+     "classical_share": 0.3053160344752973,
+     "energy_mwh": 136924.57207838792,
+     "energy_classical_mwh": 41805.26736920042,
      "runtime_rel": 1.5185185185185186,
-     "energy_rel": 2.755045968347145
+     "energy_rel": 3.269909149378586,
+     "energy_classical_rel": 2.755045968347145
     }
    }
   },
@@ -715,11 +953,17 @@
      "v80": 272370.3029236985,
      "dec_kw": 51750.35755550271,
      "disc_kw": 65946.54985453938,
+     "qpu_kw": 198312.525,
      "cpu_kw": 22917.92667445206,
      "cpu_extrapolated": true,
-     "energy_mwh": 121965.38191877965,
+     "classical_kw": 117696.9074100421,
+     "total_kw": 316009.4324100421,
+     "classical_share": 0.372447450420793,
+     "energy_mwh": 327470.0411587797,
+     "energy_classical_mwh": 121965.38191877966,
      "runtime_rel": 1.0,
-     "energy_rel": 1.0
+     "energy_rel": 1.0,
+     "energy_classical_rel": 1.0
     },
     "MCMit-CNN/800": {
      "R_ns": 946,
@@ -732,11 +976,17 @@
      "v80": 194899.96341978147,
      "dec_kw": 37030.99304975848,
      "disc_kw": 54115.607355718355,
+     "qpu_kw": 162737.325,
      "cpu_kw": 18394.9365470588,
      "cpu_extrapolated": true,
-     "energy_mwh": 72965.89184459775,
+     "classical_kw": 91146.60040547684,
+     "total_kw": 253883.92540547685,
+     "classical_share": 0.3590089457609694,
+     "energy_mwh": 203242.54508459778,
+     "energy_classical_mwh": 72965.89184459775,
      "runtime_rel": 0.7725167267112713,
-     "energy_rel": 0.5982508372186125
+     "energy_rel": 0.6206446988720168,
+     "energy_classical_rel": 0.5982508372186124
     },
     "MCMit-CNN/600": {
      "R_ns": 946,
@@ -749,11 +999,17 @@
      "v80": 231356.07382561715,
      "dec_kw": 43957.65402686726,
      "disc_kw": 59885.017586624905,
+     "qpu_kw": 180085.725,
      "cpu_kw": 27518.470281806192,
      "cpu_extrapolated": true,
-     "energy_mwh": 72883.70978312305,
+     "classical_kw": 103842.67161349216,
+     "total_kw": 283928.39661349216,
+     "classical_share": 0.3657354208034773,
+     "energy_mwh": 199279.87730312307,
+     "energy_classical_mwh": 72883.70978312305,
      "runtime_rel": 0.6773031394750386,
-     "energy_rel": 0.597577022565784
+     "energy_rel": 0.608543842966382,
+     "energy_classical_rel": 0.5975770225657839
     },
     "MCMit-CNN/400": {
      "R_ns": 946,
@@ -766,11 +1022,17 @@
      "v80": 3931406.8098464613,
      "dec_kw": 746967.2938708276,
      "disc_kw": 319216.3559404116,
+     "qpu_kw": 959885.325,
      "cpu_kw": 505977.13321476115,
      "cpu_extrapolated": true,
-     "energy_mwh": 1332492.632564091,
+     "classical_kw": 1066183.6498112392,
+     "total_kw": 2026068.9748112392,
+     "classical_share": 0.5262326520303048,
+     "energy_mwh": 2532135.9809640907,
+     "energy_classical_mwh": 1332492.632564091,
      "runtime_rel": 1.2060387716589465,
-     "energy_rel": 10.925170827993119
+     "energy_rel": 7.732420260503584,
+     "energy_classical_rel": 10.925170827993119
     },
     "HERQULES/600": {
      "R_ns": 910,
@@ -783,11 +1045,17 @@
      "v80": 396927.9169616176,
      "dec_kw": 75416.30422270735,
      "disc_kw": 7628.6864784945055,
+     "qpu_kw": 247722.525,
      "cpu_kw": 44655.79503288031,
      "cpu_extrapolated": true,
-     "energy_mwh": 67307.0422412052,
+     "classical_kw": 83044.99070120185,
+     "total_kw": 330767.51570120186,
+     "classical_share": 0.25106755276482584,
+     "energy_mwh": 268083.3962812053,
+     "energy_classical_mwh": 67307.04224120521,
      "runtime_rel": 0.7821238634414136,
-     "energy_rel": 0.5518536586555925
+     "energy_rel": 0.8186501437889406,
+     "energy_classical_rel": 0.5518536586555925
     },
     "QubiCML/600": {
      "R_ns": 910,
@@ -800,11 +1068,17 @@
      "v80": 672345.1442170514,
      "dec_kw": 127745.57740123977,
      "disc_kw": 4673.052629113236,
+     "qpu_kw": 338197.725,
      "cpu_kw": 71639.68093638975,
      "cpu_extrapolated": true,
-     "energy_mwh": 125026.72783843642,
+     "classical_kw": 132418.630030353,
+     "total_kw": 470616.35503035295,
+     "classical_share": 0.28137277554200707,
+     "energy_mwh": 444345.5042784364,
+     "energy_classical_mwh": 125026.72783843642,
      "runtime_rel": 0.9111339852461829,
-     "energy_rel": 1.0251001216205382
+     "energy_rel": 1.3569042917821834,
+     "energy_classical_rel": 1.0251001216205382
     },
     "QubiCML/1000": {
      "R_ns": 910,
@@ -817,11 +1091,17 @@
      "v80": 1060714.9216976892,
      "dec_kw": 201535.83512256094,
      "disc_kw": 6117.45071447551,
+     "qpu_kw": 442727.325,
      "cpu_kw": 79627.98042059543,
      "cpu_extrapolated": true,
-     "energy_mwh": 319066.1954648011,
+     "classical_kw": 207653.28583703644,
+     "total_kw": 650380.6108370365,
+     "classical_share": 0.3192796377643973,
+     "energy_mwh": 999331.4879048011,
+     "energy_classical_mwh": 319066.1954648011,
      "runtime_rel": 1.482758620689655,
-     "energy_rel": 2.6160389976663763
+     "energy_rel": 3.051673015243118,
+     "energy_classical_rel": 2.6160389976663763
     }
    }
   }

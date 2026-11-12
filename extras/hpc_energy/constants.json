@@ -24,6 +24,12 @@
   "source": "fpga/README.md",
   "checked": "2026-11-12"
  },
+ "qpu_w_per_qubit": {
+  "value": {"scaled": 6.25, "today": 490.57},
+  "meaning": "wall power per physical qubit of the QPU: dilution refrigerator, chilled water and room-temperature control electronics. Flat per qubit in both scenarios.",
+  "source": "scaled: Parker and Vermeer, RAND working paper WR-A2427-3 (arXiv:2304.14344), 2023: a refrigerator drawing about 26 kW and holding 4,158 qubits (IBM Quantum System Two) gives 6.25 W/qubit; the authors call it extremely rough. today: Arute et al., Nature 574, 505 (2019), supplement (arXiv:1910.11333): 26 kW in total for the 53-qubit Sycamore (refrigerator ~10 kW, chilled water 10 kW or more, supporting electronics nearly 3 kW), i.e. 26000/53 W/qubit.",
+  "checked": "2026-11-12, both read from the papers' text"
+ },
  "discriminator_w_per_lut": {
   "value": null,
   "meaning": "power per occupied LUT of the discriminator FPGA (ZCU216, xczu49dr). null = assume the V80's power per usable LUT",
